@@ -43,6 +43,7 @@ async function onCreateNode({
         url: prefixes[p],
         prefix: p,
       }))
+      const basePath = urls.find(({ prefix }) => prefix === "website").url
 
       const data = Object.keys(result)
         .map(predicate => {
@@ -63,6 +64,7 @@ async function onCreateNode({
         data,
         prefixes,
         subject: resultSubject,
+        path: `/${resultSubject.replace(basePath, "")}`,
       }
       transformObject(resultObject, resultSubject, "RDF")
       return

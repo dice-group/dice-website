@@ -1,9 +1,8 @@
 const path = require(`path`)
 
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  const blogPostTemplate = path.resolve(`src/templates/markdownPage.js`)
-
-  const result = await graphql(`
+  const markdownTemplate = path.resolve(`src/templates/markdownPage.js`)
+  const mdResult = await graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -19,15 +18,36 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       }
     }
   `)
-
-  if (result.errors) {
-    return Promise.reject(result.errors)
+  if (mdResult.errors) {
+    return Promise.reject(mdResult.errors)
   }
-
-  return result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  mdResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.path,
-      component: blogPostTemplate,
+      component: markdownTemplate,
+      context: {}, // additional data can be passed via context
+    })
+  })
+
+  const personTemplate = path.resolve(`src/templates/personPage.js`)
+  const rdfResult = await graphql(`
+    {
+      allRdf(limit: 1000) {
+        edges {
+          node {
+            path
+          }
+        }
+      }
+    }
+  `)
+  if (rdfResult.errors) {
+    return Promise.reject(rdfResult.errors)
+  }
+  rdfResult.data.allRdf.edges.forEach(({ node }) => {
+    createPage({
+      path: node.path,
+      component: personTemplate,
       context: {}, // additional data can be passed via context
     })
   })
