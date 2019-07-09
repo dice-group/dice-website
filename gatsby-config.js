@@ -5,6 +5,7 @@ module.exports = {
     author: `@yamalight`,
   },
   plugins: [
+    // markdown processing
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,6 +14,18 @@ module.exports = {
       },
     },
     `gatsby-transformer-remark`,
+
+    // RDF processing
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `rdfData`,
+        path: `${__dirname}/data`,
+      },
+    },
+    `gatsby-transformer-rdf`,
+
+    // default gatsby plugins
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
