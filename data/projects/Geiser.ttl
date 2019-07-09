@@ -1,0 +1,99 @@
+@base <http://aksw.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aair: <http://xmlns.notu.be/aair#> .
+@prefix aiiso: <http://purl.org/vocab/aiiso/schema#> .
+@prefix aksw: <http://aksw.org/schema/> .
+@prefix aksworg: <http://aksw.org/> .
+@prefix akswpartner: <http://aksw.org/Partner/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix groups: <http://aksw.org/Groups/> .
+@prefix lswt2013: <http://aksw.org/Events/2013/LeipzigerSemanticWebTag/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix pf: <http://vocab.ox.ac.uk/projectfunding#> .
+@prefix schema: <http://schema.org/> .
+@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix vcard2006: <http://www.w3.org/2006/vcard/ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns16: <http://www.mmt.inf.tu-dresden.de/Team/mitarbeiter.xhtml?id=309#> .
+@prefix lod2: <http://lod2.eu/schema/> .
+@prefix ns7: <https://twitter.com/alex_siebert#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix ns6: <http://aksw.org/Events/2013/> .
+@prefix ns1: <http://cstadler.aksw.org/> .
+@prefix ns23: <http://aksw.org/Demo/> .
+@prefix ns5: <http://aksw.org/SchemaEvent/> .
+@prefix ns22: <http://aksw.org/Event/> .
+@prefix ns2: <http://139.18.2.164:4444/demo/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix ns18: <http://www.wolterskluwer.de/person#> .
+@prefix ns21: <http://www.xing.com/profile/> .
+@prefix ns19: <http://aksw.org/Events/2014/> .
+@prefix ns0: <http://139.18.2.164:8080/> .
+@prefix ns17: <https://twitter.com/FroehlichMarcel#> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/> .
+@prefix ns9: <http://www.nittka.de/index_e.html#> .
+@prefix ns8: <http://hans.uszkoreit.net/#> .
+@prefix ns14: <https://twitter.com/Daniel_hladky#> .
+@prefix ns11: <http://www.mi.fu-berlin.de/inf/groups/ag-csw/Members/almashraee.html#> .
+@prefix ns13: <http://www.xing.com/profile/Mario_Lenz#> .
+@prefix sioct: <http://rdfs.org/sioc/types#> .
+@prefix ns3: <http://nlp2rdf.lod2.eu/> .
+@prefix ns10: <http://de.linkedin.com/pub/andreas-both/22/672/942#> .
+@prefix ns15: <http://aksw.org/Events/2013/LeipzigerSemanticWebTag/Presenter/> .
+@prefix ns20: <http://twitter.com/> .
+@prefix ns12: <http://www.hpi.uni-potsdam.de/meinel/lehrstuhl/team_fotos/current_phd_students/christian_hentschel.html#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix label: <http://purl.org/net/vocab/2004/03/label#> .
+@prefix ns24: <http://de.linkedin.com/pub/andreas-k%C3%BCster/5/887/459#> .
+@prefix ns25: <http://agdistis.aksw.org/> .
+@prefix ns26: <http://aksw.org/view/r/> .
+@prefix ns27: <http://aksw.org/StudentWorker/> .
+@prefix ns28: <https://www.deri.ie/users/> .
+@prefix ns29: <http://aksw.org/newResource/> .
+@prefix ns30: <https://github.com/AKSW/mexproject/tree/master/> .
+@prefix ns32: <http://aksw.org/Teaching/2014/WiSe/> .
+@prefix ns33: <http://www.iais.fraunhofer.de/#> .
+@prefix ns34: <http://example.org/> .
+@prefix ns31: <http://aksw.org/Events/2017/> .
+@prefix ns35: <https://github.com/> .
+@prefix ns36: <http://aksw.org/Events/2018/> .
+@prefix ns37: <http://aksw.org/Partners/> .
+@prefix ns38: <http://aksw.org/Events/2019/> .
+@prefix ns39: <http://wiki.aksw.org/Events/2010/> .
+@prefix ns40: <http://wiki.aksw.org/Events/2011/> .
+@prefix ns41: <http://wiki.aksw.org/Events/2012/> .
+@prefix ns42: <http://wiki.aksw.org/Events/2009/> .
+@prefix ns43: <http://aksw.org/Events/> .
+
+@prefix website: <http://localhost:8080/> .
+
+website:GEISER aksw:hookline "Von Sensordaten zu internetbasierten Geo-Services" ;
+                aksw:partner akswpartner:Metaphacts, akswpartner:TomTomDevelopmentGermanyGmbHD, akswpartner:YellowMapD, ns33:id, <http://www.usu.de/> ;
+                aksw:publicationTag "geiser" ;
+                aksw:relatedProject website:BDE, website:GeoKnow ;
+                aksw:status "active" ;
+                site:content """* Duration: 2016–2019
+* Funding Programme: [BMWi - Smart Service Welt](http://www.bmwi.de/DE/Themen/Digitale-Welt/Digitale-Technologien/smart-service-welt.html \"BMWi - Smart Service Welt\")
+"""^^sysont:Markdown, """Tasks
+=====
+
+Leipzig University will develop processes for data acquisition, integration and fusion. For data acquisition, we will develop a unified, intelligent and extensible framework for representing data from diverse heterogeneous sources (automotive sensors, Twitter, OpenStreetMap, DBpedia, etc.) in RDF format. The acquired data has to be integrated to be useful for higher-value services. In order to process the high volume of complex geospatial data, we will develop scalable algorithms for efficiently detecting geospatial relations using machine learning techniques. Finally, we will survey if supervised machine learning can reduce the effort required for setting up data fusion pipelines. This will enable an efficient provisioning of fused data to geospatial services."""^^sysont:Markdown ;
+                dct:abstract "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;
+                doap:maintainer aksworg:AxelNgonga ;
+                pf:endDate "2019-02-28"^^xsd:date ;
+                pf:startDate "2016-03-01"^^xsd:date ;
+                a aksw:FundedProject, foaf:Project ;
+                rdfs:label "GEISER" ;
+                foaf:homepage <http://www.projekt-geiser.de> ;
+                foaf:logo <http://i.imgur.com/7VWh3lB.png> .

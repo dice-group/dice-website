@@ -32,7 +32,12 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const personTemplate = path.resolve(`src/templates/personPage.js`)
   const rdfResult = await graphql(`
     {
-      allRdf(limit: 1000) {
+      allRdf(
+        limit: 1000
+        filter: {
+          data: { rdf_type: { eq: "http://xmlns.com/foaf/0.1/Person" } }
+        }
+      ) {
         edges {
           node {
             path
