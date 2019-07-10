@@ -23,6 +23,9 @@
 
 .title {
   margin: 0;
-  font-size: 1.5rem;
   flex: 1;
+  color: #387ebd;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
 }

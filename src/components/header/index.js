@@ -11,14 +11,7 @@ const Header = () => (
         src="https://dice-research.org/fileadmin/template/img/DICE.svg"
       />
       <h1 className={styles.title}>
-        <Link
-          to="/"
-          style={{
-            color: `black`,
-            textDecoration: `none`,
-            fontSize: '0.7em',
-          }}
-        >
+        <Link to="/" className={styles.title}>
           The Data Science Group
         </Link>
       </h1>

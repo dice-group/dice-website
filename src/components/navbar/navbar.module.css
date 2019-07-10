@@ -7,3 +7,17 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.link {
+  color: #387ebd;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.activeLink {
+  color: #000;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
