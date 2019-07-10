@@ -1,17 +1,16 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import Navbar from '../navbar';
 import styles from './header.module.css';
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerWrap}>
       <img
         className={styles.image}
         src="https://dice-research.org/fileadmin/template/img/DICE.svg"
       />
-      <h1 style={{ margin: 0 }}>
+      <h1 className={styles.title}>
         <Link
           to="/"
           style={{
@@ -20,20 +19,16 @@ const Header = ({ siteTitle }) => (
             fontSize: '0.7em',
           }}
         >
-          {siteTitle}
+          The Data Science Group
         </Link>
       </h1>
+      <img
+        className={styles.image}
+        src="https://dice-research.org/fileadmin/template/img/upb_logo.svg"
+      />
     </div>
     <Navbar />
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;

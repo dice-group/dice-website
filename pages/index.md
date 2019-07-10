@@ -1,7 +1,7 @@
 ---
-path: "/"
-date: "2019-05-04"
-title: "Home page"
+path: '/'
+date: '2019-05-04'
+title: 'About'
 ---
 
 # Hi people

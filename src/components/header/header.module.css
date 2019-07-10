@@ -8,9 +8,21 @@
   padding: 1.45rem 1.0875rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  border: 0 inset #387ebd;
+  border-bottom-width: 1px;
+  margin-bottom: 10px;
 }
 
 .image {
   max-height: 50px;
   padding-right: 10px;
+  margin: 0;
+  max-width: 30%;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  flex: 1;
 }

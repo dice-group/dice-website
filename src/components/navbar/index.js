@@ -1,15 +1,10 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
+import styles from './navbar.module.css';
+
 const Navbar = () => (
-  <div
-    style={{
-      maxWidth: 960,
-      margin: '0 auto',
-      display: 'flex',
-      justifyContent: 'space-between',
-    }}
-  >
+  <div className={styles.navbar}>
     <Link to="/">About</Link>
     <Link to="/">Awards</Link>
     <Link to="/">Team</Link>
