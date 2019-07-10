@@ -9,9 +9,8 @@
 
 website:SimonBin aksw:publicationTag "sbin" ;
   aksw:room "24" ;
-  site:templateOption "minimal" ;
-  ov:businessCard <http://aksw.org/VCard/InfAIOfficeLeipzig> ;
   a foaf:Person ;
+  website:role website:Admin ;
   foaf:currentProject projects:DLLearner, projects:SAKE, projects:SANSA_Stack, projects:SMLBench ;
   foaf:depiction <http://ldap.aksw.org/pic/sn/Bin> ;
   foaf:familyName "Bin" ;
