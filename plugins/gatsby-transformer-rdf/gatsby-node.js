@@ -8,6 +8,7 @@ const processResult = ({ result, resultSubject, prefixes }) => {
   }));
   const basePath = urls.find(({ prefix }) => prefix === 'website').url;
 
+  // map prefix URLs to short names
   const data = Object.keys(result)
     .map(predicate => {
       const matchingPrefix = urls.find(({ url }) => predicate.includes(url));
@@ -22,6 +23,18 @@ const processResult = ({ result, resultSubject, prefixes }) => {
       return { predicate: result[predicate] };
     })
     .reduce((acc, val) => ({ ...acc, ...val }), {});
+
+  // link to other resources
+  Object.keys(data).forEach(key => {
+    if (key.startsWith('website:')) {
+      // get value
+      const val = data[key];
+      // remove basic value key
+      delete data[key];
+      // add link to other node
+      data[`${key}___NODE`] = val;
+    }
+  });
 
   const resultObject = {
     data,
