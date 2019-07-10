@@ -12,6 +12,8 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
+      <h1>{frontmatter.title}</h1>
+      <div>Published on: {frontmatter.date}</div>
       <MDXRenderer>{body}</MDXRenderer>
     </Layout>
   );
@@ -22,6 +24,7 @@ export const pageQuery = graphql`
     mdx(fields: { path: { eq: $path } }) {
       frontmatter {
         title
+        date
       }
       body
     }

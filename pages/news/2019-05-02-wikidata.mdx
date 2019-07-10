@@ -1,0 +1,20 @@
+---
+date: '2019-05-02'
+title: 'Getting the Most out of Wikidata: Semantic Technology Usage in Wikipedia’s Knowledge Graph'
+---
+
+Summary: The paper is about the migration of Wikidata (Wikimedia foundation project) to semantic web technologies (RDF, SPARQL). This paper shows the current status of Wikidata’s synthesis with semantic technologies, the performance of Wikidata SPARQL endpoint and the usage analysis.
+
+Three things of particular interest raised by the article are:
+
+a) The Wikidata knowledge graph encoding to RDF. The technique they used for conversion has a lot potential to be further improved e.g. they used separate triples for standard unit which I think are the duplication of the data.
+
+b) Classification of queries into robotic and organic requests to analyze the query logs. This classification is interesting because the studying of logs is a difficult task and, in most cases, analyzing the logs together creates bias.
+
+c) The statements ranking and reference system which makes Wikidata statements more reliable. Through this information we can add provenance information and can backtrack the triples for trustworthiness.
+
+We would love your opinion!
+
+The paper also suggests that they have insufficient researchers to work on this area: Why do you think that there is less research interest in the Wikidata even though it is a huge knowledge base and has potential for great advancement?
+
+Abstract - Wikidata is the collaboratively curated knowledge graph of the Wikimedia Foundation (WMF), and the core project of Wikimedia’s data management strategy. A major challenge for bringing Wikidata to its full potential was to provide reliable and powerful services for data sharing and query, and the WMF has chosen to rely on semantic technologies for this purpose. A live SPARQL endpoint, regular RDF dumps, and linked data APIs are now forming the backbone of many uses of Wikidata. We describe this influential use case and its underlying infrastructure, analyse current usage, and share our lessons learned and future plans.
