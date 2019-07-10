@@ -1,6 +1,40 @@
 const _ = require(`lodash`)
 const { Parser } = require("n3")
 
+const processResult = ({ result, resultSubject, prefixes }) => {
+  const urls = Object.keys(prefixes).map(p => ({
+    url: prefixes[p],
+    prefix: p,
+  }))
+  const basePath = urls.find(({ prefix }) => prefix === "website").url
+
+  let unused
+
+  const data = Object.keys(result)
+    .map(predicate => {
+      const matchingPrefix = urls.find(({ url }) => predicate.includes(url))
+      if (matchingPrefix) {
+        const fixedPrefix = predicate.replace(
+          matchingPrefix.url,
+          `${matchingPrefix.prefix}:`
+        )
+        return { [fixedPrefix]: result[predicate] }
+      }
+
+      return { predicate: result[predicate] }
+    })
+    .reduce((acc, val) => ({ ...acc, ...val }), {})
+
+  const resultObject = {
+    data,
+    prefixes,
+    subject: resultSubject,
+    path: `/${resultSubject.replace(basePath, "")}`,
+  }
+
+  return resultObject
+}
+
 async function onCreateNode({
   node,
   actions,
@@ -39,33 +73,7 @@ async function onCreateNode({
       return
     }
     if (!quad && prefixes) {
-      const urls = Object.keys(prefixes).map(p => ({
-        url: prefixes[p],
-        prefix: p,
-      }))
-      const basePath = urls.find(({ prefix }) => prefix === "website").url
-
-      const data = Object.keys(result)
-        .map(predicate => {
-          const matchingPrefix = urls.find(({ url }) => predicate.includes(url))
-          if (matchingPrefix) {
-            const fixedPrefix = predicate.replace(
-              matchingPrefix.url,
-              `${matchingPrefix.prefix}:`
-            )
-            return { [fixedPrefix]: result[predicate] }
-          }
-
-          return { predicate: result[predicate] }
-        })
-        .reduce((acc, val) => ({ ...acc, ...val }), {})
-
-      const resultObject = {
-        data,
-        prefixes,
-        subject: resultSubject,
-        path: `/${resultSubject.replace(basePath, "")}`,
-      }
+      const resultObject = processResult({ result, resultSubject, prefixes })
       transformObject(resultObject, resultSubject, "RDF")
       return
     }
