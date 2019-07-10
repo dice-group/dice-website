@@ -1,39 +1,37 @@
-const _ = require(`lodash`)
-const { Parser } = require("n3")
+const _ = require(`lodash`);
+const { Parser } = require('n3');
 
 const processResult = ({ result, resultSubject, prefixes }) => {
   const urls = Object.keys(prefixes).map(p => ({
     url: prefixes[p],
     prefix: p,
-  }))
-  const basePath = urls.find(({ prefix }) => prefix === "website").url
-
-  let unused
+  }));
+  const basePath = urls.find(({ prefix }) => prefix === 'website').url;
 
   const data = Object.keys(result)
     .map(predicate => {
-      const matchingPrefix = urls.find(({ url }) => predicate.includes(url))
+      const matchingPrefix = urls.find(({ url }) => predicate.includes(url));
       if (matchingPrefix) {
         const fixedPrefix = predicate.replace(
           matchingPrefix.url,
           `${matchingPrefix.prefix}:`
-        )
-        return { [fixedPrefix]: result[predicate] }
+        );
+        return { [fixedPrefix]: result[predicate] };
       }
 
-      return { predicate: result[predicate] }
+      return { predicate: result[predicate] };
     })
-    .reduce((acc, val) => ({ ...acc, ...val }), {})
+    .reduce((acc, val) => ({ ...acc, ...val }), {});
 
   const resultObject = {
     data,
     prefixes,
     subject: resultSubject,
-    path: `/${resultSubject.replace(basePath, "")}`,
-  }
+    path: `/${resultSubject.replace(basePath, '')}`,
+  };
 
-  return resultObject
-}
+  return resultObject;
+};
 
 async function onCreateNode({
   node,
@@ -44,7 +42,7 @@ async function onCreateNode({
 }) {
   // only log for nodes of mediaType `text/turtle`
   if (node.internal.mediaType !== `text/turtle`) {
-    return
+    return;
   }
 
   const transformObject = (obj, id, type) => {
@@ -57,45 +55,45 @@ async function onCreateNode({
         contentDigest: createContentDigest(obj),
         type,
       },
-    }
-    actions.createNode(rdfNode)
-    actions.createParentChildLink({ parent: node, child: rdfNode })
-  }
+    };
+    actions.createNode(rdfNode);
+    actions.createParentChildLink({ parent: node, child: rdfNode });
+  };
 
-  const content = await loadNodeContent(node)
+  const content = await loadNodeContent(node);
 
-  const result = {}
-  let resultSubject
+  const result = {};
+  let resultSubject;
 
-  const parser = new Parser()
+  const parser = new Parser();
   parser.parse(content, (error, quad, prefixes) => {
     if (error) {
-      return
+      return;
     }
     if (!quad && prefixes) {
-      const resultObject = processResult({ result, resultSubject, prefixes })
-      transformObject(resultObject, resultSubject, "RDF")
-      return
+      const resultObject = processResult({ result, resultSubject, prefixes });
+      transformObject(resultObject, resultSubject, 'RDF');
+      return;
     }
     const {
       subject: { id: subject },
       predicate: { id: predicate },
       object: { id: object },
-    } = quad
+    } = quad;
 
     if (!resultSubject) {
-      resultSubject = subject
+      resultSubject = subject;
     }
 
-    let value
+    let value;
     try {
-      value = JSON.parse(object)
+      value = JSON.parse(object);
     } catch {
-      value = object
+      value = object;
     }
 
-    result[predicate] = value
-  })
+    result[predicate] = value;
+  });
 }
 
-exports.onCreateNode = onCreateNode
+exports.onCreateNode = onCreateNode;

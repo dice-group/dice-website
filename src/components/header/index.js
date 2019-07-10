@@ -1,8 +1,8 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import Navbar from "../navbar"
-import styles from "./header.module.css"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import Navbar from '../navbar';
+import styles from './header.module.css';
 
 const Header = ({ siteTitle }) => (
   <header className={styles.header}>
@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
           style={{
             color: `black`,
             textDecoration: `none`,
-            fontSize: "0.7em",
+            fontSize: '0.7em',
           }}
         >
           {siteTitle}
@@ -26,14 +26,14 @@ const Header = ({ siteTitle }) => (
     </div>
     <Navbar />
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
