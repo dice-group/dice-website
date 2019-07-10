@@ -1,13 +1,13 @@
-import { Link } from "gatsby"
-import React from "react"
+import { Link } from 'gatsby';
+import React from 'react';
 
 const Navbar = () => (
   <div
     style={{
       maxWidth: 960,
-      margin: "0 auto",
-      display: "flex",
-      justifyContent: "space-between",
+      margin: '0 auto',
+      display: 'flex',
+      justifyContent: 'space-between',
     }}
   >
     <Link to="/">About</Link>
@@ -21,6 +21,6 @@ const Navbar = () => (
     <Link to="/">Partners</Link>
     <Link to="/">Contact</Link>
   </div>
-)
+);
 
-export default Navbar
+export default Navbar;
