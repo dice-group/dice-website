@@ -75,7 +75,6 @@
 @prefix ns41: <http://wiki.aksw.org/Events/2012/> .
 @prefix ns42: <http://wiki.aksw.org/Events/2009/> .
 @prefix ns43: <http://aksw.org/Events/> .
-
 @prefix website: <http://localhost:8080/> .
 
 website:GEISER aksw:hookline "Von Sensordaten zu internetbasierten Geo-Services" ;
