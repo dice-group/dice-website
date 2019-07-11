@@ -33,12 +33,6 @@ const fundedBy = [
   },
   {
     url: 'http://ec.europa.eu/',
-    image:
-      'https://dice-research.org/fileadmin/Front_Logos/logo-horizon2020.png',
-    text: 'Horizon2020',
-  },
-  {
-    url: 'http://ec.europa.eu/',
     image: 'https://dice-research.org/fileadmin/Front_Logos/horizon2020.png',
     text: 'Horizon2020',
   },
@@ -60,7 +54,7 @@ const FundedBy = () => (
     }}
   >
     {fundedBy.map(org => (
-      <a href={org.url}>
+      <a key={org.url} href={org.url}>
         <img src={org.image} alt={org.text} />
       </a>
     ))}
