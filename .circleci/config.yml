@@ -19,7 +19,7 @@ jobs:
       # install exoframe
       - run:
           command: |
-            npm install -g exoframe
+            sudo npm install -g exoframe
             exoframe endpoint https://exoframe.codezen.net
 
       - save_cache:
