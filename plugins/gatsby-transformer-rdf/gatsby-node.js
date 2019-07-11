@@ -1,6 +1,12 @@
 const _ = require(`lodash`);
 const { Parser } = require('n3');
 
+const arrayPredicates = [
+  'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+  'http://ns.ontowiki.net/SysOnt/Site/content',
+  'http://localhost:8080/project',
+];
+
 const processResult = ({ result, resultSubject, prefixes }) => {
   const urls = Object.keys(prefixes).map(p => ({
     url: prefixes[p],
@@ -81,7 +87,8 @@ async function onCreateNode({
   const parser = new Parser();
   parser.parse(content, (error, quad, prefixes) => {
     if (error) {
-      return;
+      console.error(`Error parsing ${node.relativePath}!`, error);
+      throw error;
     }
     if (!quad && prefixes) {
       const resultObject = processResult({ result, resultSubject, prefixes });
@@ -91,7 +98,7 @@ async function onCreateNode({
     const {
       subject: { id: subject },
       predicate: { id: predicate },
-      object: { id: object },
+      object,
     } = quad;
 
     if (!resultSubject) {
@@ -100,12 +107,18 @@ async function onCreateNode({
 
     let value;
     try {
-      value = JSON.parse(object);
+      value = JSON.parse(object.value);
     } catch {
-      value = object;
+      value = object.value;
     }
 
-    result[predicate] = value;
+    const hasArrayOfValues = arrayPredicates.includes(predicate);
+    if (!hasArrayOfValues) {
+      result[predicate] = value;
+    } else {
+      const old = result[predicate];
+      result[predicate] = [].concat(old, value).filter(Boolean);
+    }
   });
 }
 

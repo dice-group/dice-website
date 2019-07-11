@@ -1,0 +1,11 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aksw: <http://aksw.org/schema/> .
+@prefix ov: <http://open.vocab.org/terms/> .
+@prefix website: <http://localhost:8080/> .
+
+website:GERBIL a foaf:Project ;
+  aksw:hookline "is a entity annotation benchmarking framework" ;
+  ov:screenshot <https://static.aksw.org/aksw.org/online_annotator_benchmark.png> ;
+  rdfs:label "GERBIL" .

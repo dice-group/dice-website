@@ -20,7 +20,7 @@ He completed his Bachelor's Thesis with AKSW in May 2016 on a tool that helps in
   """^^sysont:Markdown ;
   a foaf:Person ;
   website:role website:Student ;
-  website:project website:GEISER ;
+  website:project website:GEISER, website:GERBIL ;
   foaf:currentProject projects:DIESEL, projects:GERBIL ;
   foaf:depiction <https://s.gravatar.com/avatar/a045c1d4b9f02a2ab21d58ce9c9b311f?s=500> ;
   foaf:familyName "Jha" ;

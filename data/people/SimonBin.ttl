@@ -10,7 +10,7 @@ website:SimonBin aksw:publicationTag "sbin" ;
   aksw:room "24" ;
   a foaf:Person ;
   website:role website:Admin ;
-  website:project website:GEISER ;
+  website:project website:GEISER, website:GERBIL ;
   foaf:currentProject projects:DLLearner, projects:SAKE, projects:SANSA_Stack, projects:SMLBench ;
   foaf:depiction <http://ldap.aksw.org/pic/sn/Bin> ;
   foaf:familyName "Bin" ;
