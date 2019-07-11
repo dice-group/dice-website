@@ -1,6 +1,35 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
 
+const renderRdfType = async ({ template, type, createPage, graphql }) => {
+  // Person RDF rendering
+  const rdfResult = await graphql(`
+    {
+      allRdf(
+        filter: {
+          data: { rdf_type: { eq: "${type}" } }
+        }
+      ) {
+        edges {
+          node {
+            path
+          }
+        }
+      }
+    }
+  `);
+  if (rdfResult.errors) {
+    return Promise.reject(rdfResult.errors);
+  }
+  rdfResult.data.allRdf.edges.forEach(({ node }) => {
+    createPage({
+      path: node.path,
+      component: template,
+      context: {}, // additional data can be passed via context
+    });
+  });
+};
+
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   // mdx news rendering
   const mdxNewsTemplate = path.resolve(`src/templates/newsPage.js`);
@@ -56,30 +85,22 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
   // Person RDF rendering
   const personTemplate = path.resolve(`src/templates/personPage.js`);
-  const rdfResult = await graphql(`
-    {
-      allRdf(
-        filter: {
-          data: { rdf_type: { eq: "http://xmlns.com/foaf/0.1/Person" } }
-        }
-      ) {
-        edges {
-          node {
-            path
-          }
-        }
-      }
-    }
-  `);
-  if (rdfResult.errors) {
-    return Promise.reject(rdfResult.errors);
-  }
-  rdfResult.data.allRdf.edges.forEach(({ node }) => {
-    createPage({
-      path: node.path,
-      component: personTemplate,
-      context: {}, // additional data can be passed via context
-    });
+  const personType = 'http://xmlns.com/foaf/0.1/Person';
+  await renderRdfType({
+    template: personTemplate,
+    type: personType,
+    createPage,
+    graphql,
+  });
+
+  // Person RDF rendering
+  const projectTemplate = path.resolve(`src/templates/projectPage.js`);
+  const projectType = 'http://xmlns.com/foaf/0.1/Project';
+  await renderRdfType({
+    template: projectTemplate,
+    type: projectType,
+    createPage,
+    graphql,
   });
 };
 
