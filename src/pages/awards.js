@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -13,8 +13,8 @@ export default function Template({
       <SEO title="Projects" />
       <div style={{ paddingBottom: 30 }}>
         {edges.map(({ node }) => (
-          <div key={node.path}>
-            <Link to={node.path}>{node.data.rdfs_label}</Link>
+          <div key={node.id}>
+            <a href={node.data.rdfs_url}>{node.data.rdfs_label}</a>
           </div>
         ))}
       </div>
@@ -26,14 +26,15 @@ export const pageQuery = graphql`
   query {
     allRdf(
       filter: {
-        data: { rdf_type: { eq: "http://xmlns.com/foaf/0.1/Project" } }
+        data: { rdf_type: { eq: "http://schema.localhost:8080/Award" } }
       }
     ) {
       edges {
         node {
-          path
+          id
           data {
             rdfs_label
+            rdfs_url
           }
         }
       }
