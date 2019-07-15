@@ -1,30 +1,19 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix aksw: <http://aksw.org/schema/> .
-@prefix ov: <http://open.vocab.org/terms/> .
-@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
-@prefix projects: <http://aksw.org/Projects/> .
-@prefix website: <http://localhost:8080/> .
-@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:KunalJha aksw:publicationTag "kunaljha" ;
-  aksw:room "P905" ;
-  site:content """# Bio
+dice:KunalJha a schema:Person ;
+  schema:content """# Bio
 
 Kunal is a  Masters Student (Computer Science) at University of Bonn and works as a Research Assistant at AKSW in Leipzig. Before joining AKSW, Kunal has completed Bachelors in Information and Communication Technology from DA-IICT, India.
 
 Kunal's  recent works have been in the areas of Benchmarking and  Semantic Search systems but in due course of his activities he has developed interests in Software-Container Virtualisation (Docker), Machine Learning, Knowledge Graphs, NLP and Functional Programming Approaches.
 
 He completed his Bachelor's Thesis with AKSW in May 2016 on a tool that helps in improving NER/ NED gold standard Datasets. He also  completed his [Google Summer of Code 2016](https://summerofcode.withgoogle.com/archive/2016/projects/6452757254897664/) with DBpedia and is currently a co-maintainer for the [DBpedia Lookup Service](https://github.com/dbpedia/lookup#maintainers).
-  """^^sysont:Markdown ;
-  a foaf:Person ;
-  website:role website:Student ;
-  website:project website:GEISER, website:GERBIL ;
-  foaf:currentProject projects:DIESEL, projects:GERBIL ;
-  foaf:depiction <https://s.gravatar.com/avatar/a045c1d4b9f02a2ab21d58ce9c9b311f?s=500> ;
-  foaf:familyName "Jha" ;
-  foaf:mbox <mailto:kunal.jha@uni-bonn.de> ;
-  foaf:name "Kunal Jha" ;
-  foaf:pastProject projects:DBpedia ;
-  foaf:phone <tel:+49-341-97-32260> .
+  """ ;
+
+  schema:role dice:Student ;
+  schema:project dice:GEISER, dice:GERBIL ;
+  schema:photo <https://s.gravatar.com/avatar/a045c1d4b9f02a2ab21d58ce9c9b311f?s=500> ;
+  schema:email <mailto:kunal.jha@uni-bonn.de> ;
+  schema:name "Kunal Jha" ;
+  schema:phone <tel:+49-341-97-32260> .

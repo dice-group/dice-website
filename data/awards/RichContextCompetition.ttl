@@ -1,8 +1,7 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix website: <http://localhost:8080/> .
-@prefix websiteSchema: <http://schema.localhost:8080/> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:RichContextCompetition a websiteSchema:Award ;
-  rdfs:url <https://coleridgeinitiative.org/richcontextcompetition> ;
-  rdfs:label "Top-4 team (out of 20 teams) in the Rich Context Competition" .
+dice:RichContextCompetition a schema:Award ;
+  schema:url <https://coleridgeinitiative.org/richcontextcompetition> ;
+  schema:label "Top-4 team (out of 20 teams) in the Rich Context Competition" ;
+  schema:author dice:AxelNgonga .

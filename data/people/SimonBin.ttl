@@ -1,19 +1,10 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix aksw: <http://aksw.org/schema/> .
-@prefix ov: <http://open.vocab.org/terms/> .
-@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
-@prefix projects: <http://aksw.org/Projects/> .
-@prefix website: <http://localhost:8080/> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:SimonBin aksw:publicationTag "sbin" ;
-  aksw:room "24" ;
-  a foaf:Person ;
-  website:role website:Admin ;
-  website:project website:GEISER, website:GERBIL ;
-  foaf:currentProject projects:DLLearner, projects:SAKE, projects:SANSA_Stack, projects:SMLBench ;
-  foaf:depiction <http://ldap.aksw.org/pic/sn/Bin> ;
-  foaf:familyName "Bin" ;
-  foaf:mbox <mailto:sbin@informatik.uni-leipzig.de> ;
-  foaf:name "Simon Bin" ;
-  foaf:phone <tel:+49-341-22903736> .
+dice:SimonBin a schema:Person ;
+  schema:role dice:Admin ;
+  schema:project dice:GEISER, dice:GERBIL ;
+  schema:image <http://ldap.aksw.org/pic/sn/Bin> ;
+  schema:email <mailto:sbin@informatik.uni-leipzig.de> ;
+  schema:name "Simon Bin" ;
+  schema:phone <tel:+49-341-22903736> .

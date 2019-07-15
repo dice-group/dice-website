@@ -1,20 +1,8 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix aksw: <http://aksw.org/schema/> .
-@prefix ov: <http://open.vocab.org/terms/> .
-@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
-@prefix projects: <http://aksw.org/Projects/> .
-@prefix sioc: <http://rdfs.org/sioc/ns#> .
-@prefix schema: <http://schema.org/> .
-@prefix website: <http://localhost:8080/> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:PaulSpooren a foaf:Person ;
-  aksw:publicationTag "spooren" ;
-  aksw:room "P906" ;
-  sioc:feed <http://blog.aksw.org/feed/> ;
-  schema:location <http://aksw.org/Address/Augustusplatz10> ;
-  website:role website:Student ;
-  website:project website:GEISER ;
-  foaf:familyName "<http://aksw.org/Spooren>" ;
-  foaf:mbox <mailto:spooren@informatik.uni-leipzig.de> ;
-  foaf:name "Paul Spooren" .
+dice:PaulSpooren a schema:Person ;
+  schema:role dice:Student ;
+  schema:project dice:GEISER ;
+  schema:email <mailto:spooren@informatik.uni-leipzig.de> ;
+  schema:name "Paul Spooren" .

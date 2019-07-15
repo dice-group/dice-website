@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Metaphacts a schema:Partner ;
+  schema:name "metaphacts GmbH" ;
+  schema:country "DE" ;
+  schema:content "metaphacts is a Germany-based company offering products, solutions and services for describing, interchanging and querying graph data, as well as a user-oriented open platform for visualizing and interacting with knowledge graphs." ;
+  schema:url <http://www.metaphacts.com/> ;
+  schema:logo <https://dice-research.org/fileadmin/partners/logo_farbe.png> .

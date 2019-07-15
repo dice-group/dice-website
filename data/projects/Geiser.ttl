@@ -1,32 +1,25 @@
-@prefix site: <http://ns.ontowiki.net/SysOnt/Site/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sysont: <http://ns.ontowiki.net/SysOnt/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix aksw: <http://aksw.org/schema/> .
-@prefix akswpartner: <http://aksw.org/Partner/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix doap: <http://usefulinc.com/ns/doap#> .
-@prefix pf: <http://vocab.ox.ac.uk/projectfunding#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix website: <http://localhost:8080/> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:GEISER a aksw:FundedProject, foaf:Project ;
-  aksw:hookline "Von Sensordaten zu internetbasierten Geo-Services" ;
-  aksw:partner akswpartner:Metaphacts, akswpartner:TomTomDevelopmentGermanyGmbHD, akswpartner:YellowMapD, <http://www.usu.de/> ;
-  aksw:publicationTag "geiser" ;
-  aksw:relatedProject website:BDE, website:GeoKnow ;
-  aksw:status "active" ;
-  site:content """* Duration: 2016–2019
-* Funding Programme: [BMWi - Smart Service Welt](http://www.bmwi.de/DE/Themen/Digitale-Welt/Digitale-Technologien/smart-service-welt.html \"BMWi - Smart Service Welt\")
-"""^^sysont:Markdown, """Tasks
-=====
+dice:GEISER a schema:Project ;
+  schema:tagline "Von Sensordaten zu internetbasierten Geo-Services" ;
+  schema:relatedProject dice:BDE, dice:GeoKnow ;
+  schema:status "active" ;
+  schema:content "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;
+  schema:maintainer dice:AxelNgonga ;
+  schema:endDate "2019-02-28"^^xsd:date ;
+  schema:startDate "2016-03-01"^^xsd:date ;
+  schema:name "GEISER" ;
+  schema:homepage <http://www.projekt-geiser.de> ;
+  schema:logo <http://i.imgur.com/7VWh3lB.png> ;
+  schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD, dicepartner:YellowMapD ;
 
-Leipzig University will develop processes for data acquisition, integration and fusion. For data acquisition, we will develop a unified, intelligent and extensible framework for representing data from diverse heterogeneous sources (automotive sensors, Twitter, OpenStreetMap, DBpedia, etc.) in RDF format. The acquired data has to be integrated to be useful for higher-value services. In order to process the high volume of complex geospatial data, we will develop scalable algorithms for efficiently detecting geospatial relations using machine learning techniques. Finally, we will survey if supervised machine learning can reduce the effort required for setting up data fusion pipelines. This will enable an efficient provisioning of fused data to geospatial services."""^^sysont:Markdown ;
-  dct:abstract "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;
-  doap:maintainer website:AxelNgonga ;
-  pf:endDate "2019-02-28"^^xsd:date ;
-  pf:startDate "2016-03-01"^^xsd:date ;
-  rdfs:label "GEISER" ;
-  foaf:homepage <http://www.projekt-geiser.de> ;
-  foaf:logo <http://i.imgur.com/7VWh3lB.png> .
+  # this is here just as example, the URL is not a real source
+  schema:sourceCode <https://github.com/mwauer/geiser> ; 
+
+  # do we need this?
+  schema:fundingProgram dicefunding:H2020 ; 
+  .

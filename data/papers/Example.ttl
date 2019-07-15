@@ -1,0 +1,19 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepapers: <https://dice-research.org/papers/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepapers:Example a schema:Publication ;
+  schema:type "Publication" ;
+  schema:title "Publishing and Interlinking the Global Health Observatory Dataset" ;
+  schema:tag "MOLE", "dice", "gho", "peer-reviewed", "simba" ;
+  schema:publicationType "article" ;
+  schema:year "2013" ;
+  schema:author dice:AxelNgonga ;
+  schema:pdfUrl "http://www.semantic-web-journal.net/system/files/swj433.pdf" ;
+  # paper.booktitle || paper.journal
+  schema:source "Semantic Web Journal" ;
+
+  # do we care about this?
+  schema:bibsonomyId "https://www.bibsonomy.org/bibtex/2c99086e74a9181752d9830dfc2806f61/aksw" ;
+
+  .

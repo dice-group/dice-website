@@ -4,7 +4,7 @@ const { Parser } = require('n3');
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
   'http://ns.ontowiki.net/SysOnt/Site/content',
-  'http://localhost:8080/project',
+  'https://dice-research.org',
 ];
 
 const processResult = ({ result, resultSubject, prefixes }) => {
@@ -12,7 +12,7 @@ const processResult = ({ result, resultSubject, prefixes }) => {
     url: prefixes[p],
     prefix: p,
   }));
-  const basePath = urls.find(({ prefix }) => prefix === 'website').url;
+  const basePath = urls.find(({ prefix }) => prefix === 'dice').url;
 
   // map prefix URLs to short names
   const data = Object.keys(result)
@@ -32,7 +32,7 @@ const processResult = ({ result, resultSubject, prefixes }) => {
 
   // link to other resources
   Object.keys(data).forEach(key => {
-    if (key.startsWith('website:')) {
+    if (key.startsWith('dice:')) {
       // get value
       const val = data[key];
       // remove basic value key

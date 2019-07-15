@@ -1,8 +1,6 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix website: <http://localhost:8080/> .
-@prefix websiteSchema: <http://schema.localhost:8080/> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
 
-website:Student a website:Role ;
-  websiteSchema:priority 2;
-  rdfs:label "Student" .
+dice:ResearchStaff a schema:Role ;
+  schema:priority 2;
+  schema:label "Research Staff - PhD Students" .
