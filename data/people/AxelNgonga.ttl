@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:AxelNgonga a schema:Person ;
+dice:AxelCyrilleNgongaNgomo a schema:Person ;
   schema:name "Axel-Cyrille Ngonga Ngomo" ;
   schema:namePrefix "Prof. Dr." ;
   schema:role dice:Head ;

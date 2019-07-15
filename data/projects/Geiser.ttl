@@ -9,7 +9,7 @@ dice:GEISER a schema:Project ;
   schema:relatedProject dice:GERBIL ; # real value: dice:BDE, dice:GeoKnow ; can't use them cause generation will fail
   schema:status "active" ;
   schema:content "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;
-  schema:maintainer dice:AxelNgonga ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:endDate "2019-02-28"^^xsd:date ;
   schema:startDate "2016-03-01"^^xsd:date ;
   schema:name "GEISER" ;

@@ -8,6 +8,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/relatedProject',
   'https://schema.dice-research.org/partner',
   'https://schema.dice-research.org/author',
+  'https://schema.dice-research.org/authorName',
 ];
 
 const relationPredicates = [
