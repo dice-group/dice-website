@@ -11,7 +11,7 @@ Kunal's  recent works have been in the areas of Benchmarking and  Semantic Searc
 He completed his Bachelor's Thesis with AKSW in May 2016 on a tool that helps in improving NER/ NED gold standard Datasets. He also  completed his [Google Summer of Code 2016](https://summerofcode.withgoogle.com/archive/2016/projects/6452757254897664/) with DBpedia and is currently a co-maintainer for the [DBpedia Lookup Service](https://github.com/dbpedia/lookup#maintainers).
   """ ;
 
-  schema:role dice:Student ;
+  schema:role dice:ResearchStaff ;
   schema:project dice:GEISER, dice:GERBIL ;
   schema:photo <https://s.gravatar.com/avatar/a045c1d4b9f02a2ab21d58ce9c9b311f?s=500> ;
   schema:email <mailto:kunal.jha@uni-bonn.de> ;

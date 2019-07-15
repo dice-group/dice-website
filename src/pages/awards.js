@@ -1,5 +1,5 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -14,7 +14,7 @@ export default function Template({
       <div style={{ paddingBottom: 30 }}>
         {edges.map(({ node }) => (
           <div key={node.id}>
-            <a href={node.data.rdfs_url}>{node.data.rdfs_label}</a>
+            <a href={node.data.url}>{node.data.name}</a>
           </div>
         ))}
       </div>
@@ -33,8 +33,8 @@ export const pageQuery = graphql`
         node {
           id
           data {
-            rdfs_label
-            rdfs_url
+            name
+            url
           }
         }
       }

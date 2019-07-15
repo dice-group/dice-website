@@ -3,4 +3,4 @@
 
 dice:Head a schema:Role ;
   schema:priority 1;
-  schema:label "Head" .
+  schema:name "Head" .

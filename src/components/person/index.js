@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
 export const Person = ({ person }) => (
   <div style={{ padding: 20 }} key={person.name}>
@@ -20,15 +20,15 @@ export const rdfToPeopleArray = edges =>
   edges
     .map(n => n.node)
     .map(({ data, path }) => ({
-      name: data.foaf_name,
-      email: data.foaf_mbox,
+      name: data.name,
+      email: data.email,
       path: path,
-      projects: data.website_project.map(p => ({
-        name: p.data.rdfs_label,
+      projects: data.project.map(p => ({
+        name: p.data.name,
         path: p.path,
       })),
       role: {
-        name: data.website_role.data.rdfs_label,
-        priority: data.website_role.data.websiteSchema_priority,
+        name: data.role.data.name,
+        priority: data.role.data.priority,
       },
     }));

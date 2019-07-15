@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:PaulSpooren a schema:Person ;
-  schema:role dice:Student ;
+  schema:role dice:ResearchStaff ;
   schema:project dice:GEISER ;
   schema:email <mailto:spooren@informatik.uni-leipzig.de> ;
   schema:name "Paul Spooren" .

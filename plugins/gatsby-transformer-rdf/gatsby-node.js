@@ -3,11 +3,28 @@ const { Parser } = require('n3');
 
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
-  'http://ns.ontowiki.net/SysOnt/Site/content',
-  'https://dice-research.org',
+  'https://schema.dice-research.org/content',
+  'https://schema.dice-research.org/project',
+  'https://schema.dice-research.org/relatedProject',
+  'https://schema.dice-research.org/partner',
+  'https://schema.dice-research.org/author',
 ];
 
-const processResult = ({ result, resultSubject, prefixes }) => {
+const relationPredicates = [
+  'schema:relatedProject',
+  'schema:maintainer',
+  'schema:partner',
+  'schema:role',
+  'schema:project',
+  'schema:author',
+];
+
+const defaultPrefixes = {
+  rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+};
+
+const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
+  const prefixes = { ...defaultPrefixes, ...filePrefixes };
   const urls = Object.keys(prefixes).map(p => ({
     url: prefixes[p],
     prefix: p,
@@ -32,13 +49,26 @@ const processResult = ({ result, resultSubject, prefixes }) => {
 
   // link to other resources
   Object.keys(data).forEach(key => {
-    if (key.startsWith('dice:')) {
+    if (relationPredicates.includes(key)) {
       // get value
       const val = data[key];
       // remove basic value key
       delete data[key];
       // add link to other node
       data[`${key}___NODE`] = val;
+    }
+  });
+
+  // replace schema: prefix with empty string for nicer queries
+  Object.keys(data).forEach(key => {
+    if (key.startsWith('schema:')) {
+      // get value
+      const val = data[key];
+      const newKey = key.replace('schema:', '');
+      // remove basic value key
+      delete data[key];
+      // add link to other node
+      data[newKey] = val;
     }
   });
 

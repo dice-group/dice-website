@@ -6,7 +6,7 @@
 
 dice:GEISER a schema:Project ;
   schema:tagline "Von Sensordaten zu internetbasierten Geo-Services" ;
-  schema:relatedProject dice:BDE, dice:GeoKnow ;
+  schema:relatedProject dice:GERBIL ; # real value: dice:BDE, dice:GeoKnow ; can't use them cause generation will fail
   schema:status "active" ;
   schema:content "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;
   schema:maintainer dice:AxelNgonga ;

@@ -1,15 +1,14 @@
-import React from 'react';
 import { graphql } from 'gatsby';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
-
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import { Person, rdfToPeopleArray } from '../components/person';
+import SEO from '../components/seo';
 
 export default function Template({ data }) {
   const {
     rdf: {
-      data: { rdfs_label, site_content },
+      data: { name, content },
     },
     allRdf: { edges },
   } = data;
@@ -18,14 +17,14 @@ export default function Template({ data }) {
 
   return (
     <Layout>
-      <SEO title={`${rdfs_label}`} />
+      <SEO title={`${name}`} />
       <div>
-        <h1>{rdfs_label}</h1>
+        <h1>{name}</h1>
         <h3 style={{ textDecoration: 'underline' }}>Description:</h3>
 
         <div style={{ paddingBottom: 30 }}>
-          {site_content &&
-            site_content.map(mdString => <ReactMarkdown source={mdString} />)}
+          {content &&
+            content.map(mdString => <ReactMarkdown source={mdString} />)}
         </div>
 
         <h3 style={{ textDecoration: 'underline' }}>Staff:</h3>
@@ -43,33 +42,33 @@ export const pageQuery = graphql`
   query($path: String!) {
     rdf(path: { eq: $path }) {
       data {
-        rdfs_label
-        site_content
+        name
+        content
       }
     }
     allRdf(
       filter: {
         data: {
-          rdf_type: { eq: "http://xmlns.com/foaf/0.1/Person" }
-          website_project: { elemMatch: { path: { eq: $path } } }
+          rdf_type: { eq: "https://schema.dice-research.org/Person" }
+          project: { elemMatch: { path: { eq: $path } } }
         }
       }
     ) {
       edges {
         node {
           data {
-            foaf_name
-            foaf_mbox
-            website_project {
+            name
+            email
+            project {
               path
               data {
-                rdfs_label
+                name
               }
             }
-            website_role {
+            role {
               data {
-                rdfs_label
-                websiteSchema_priority
+                name
+                priority
               }
             }
           }

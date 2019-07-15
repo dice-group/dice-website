@@ -85,7 +85,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
   // Person RDF rendering
   const personTemplate = path.resolve(`src/templates/personPage.js`);
-  const personType = 'http://xmlns.com/foaf/0.1/Person';
+  const personType = 'https://schema.dice-research.org/Person';
   await renderRdfType({
     template: personTemplate,
     type: personType,
@@ -95,7 +95,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
 
   // Person RDF rendering
   const projectTemplate = path.resolve(`src/templates/projectPage.js`);
-  const projectType = 'http://xmlns.com/foaf/0.1/Project';
+  const projectType = 'https://schema.dice-research.org/Project';
   await renderRdfType({
     template: projectTemplate,
     type: projectType,

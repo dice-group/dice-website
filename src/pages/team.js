@@ -1,9 +1,9 @@
+import { graphql } from 'gatsby';
 import _ from 'lodash';
 import React from 'react';
-import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import { Person, rdfToPeopleArray } from '../components/person';
+import SEO from '../components/seo';
 
 export default function Template({
   data: {
@@ -45,18 +45,18 @@ export const pageQuery = graphql`
         node {
           path
           data {
-            foaf_name
-            foaf_mbox
-            website_project {
+            name
+            email
+            project {
               path
               data {
-                rdfs_label
+                name
               }
             }
-            website_role {
+            role {
               data {
-                rdfs_label
-                websiteSchema_priority
+                name
+                priority
               }
             }
           }
