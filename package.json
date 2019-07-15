@@ -50,7 +50,8 @@
     "format": "prettier --write src/**/*.{js,jsx} plugins/**/*.js",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "papers": "node ./papers-to-ttl"
   },
   "repository": {
     "type": "git",

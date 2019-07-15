@@ -128,8 +128,6 @@ const main = async () => {
         if (err) {
           throw err;
         }
-
-        console.log('saved:', filepath);
       });
     });
   });
