@@ -26,7 +26,7 @@ export const pageQuery = graphql`
   query {
     allRdf(
       filter: {
-        data: { rdf_type: { eq: "http://schema.localhost:8080/Award" } }
+        data: { rdf_type: { eq: "https://schema.dice-research.org/Award" } }
       }
     ) {
       edges {

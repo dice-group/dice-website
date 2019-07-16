@@ -39,7 +39,9 @@ export default function Template({
 export const pageQuery = graphql`
   query {
     allRdf(
-      filter: { data: { rdf_type: { eq: "http://xmlns.com/foaf/0.1/Person" } } }
+      filter: {
+        data: { rdf_type: { eq: "https://schema.dice-research.org/Person" } }
+      }
     ) {
       edges {
         node {

@@ -3,5 +3,5 @@
 
 dice:RichContextCompetition a schema:Award ;
   schema:url <https://coleridgeinitiative.org/richcontextcompetition> ;
-  schema:label "Top-4 team (out of 20 teams) in the Rich Context Competition" ;
+  schema:name "Top-4 team (out of 20 teams) in the Rich Context Competition" ;
   schema:author dice:AxelCyrilleNgongaNgomo .

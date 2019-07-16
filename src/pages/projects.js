@@ -26,7 +26,7 @@ export const pageQuery = graphql`
   query {
     allRdf(
       filter: {
-        data: { rdf_type: { eq: "http://xmlns.com/foaf/0.1/Project" } }
+        data: { rdf_type: { eq: "https://schema.dice-research.org/Project" } }
       }
     ) {
       edges {
