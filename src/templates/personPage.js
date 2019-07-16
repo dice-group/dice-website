@@ -2,12 +2,15 @@ import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Layout from '../components/layout';
+import PapersFilter from '../components/papers/filter';
+import Paper from '../components/papers/paper';
 import SEO from '../components/seo';
 
-export default function Template({ data: { rdf } }) {
+export default function Template({ data: { rdf, allRdf } }) {
   const {
     data: { content, name, role, project },
   } = rdf;
+  const { edges } = allRdf;
   return (
     <Layout>
       <SEO title={`${name}`} />
@@ -27,6 +30,13 @@ export default function Template({ data: { rdf } }) {
             </Link>
           ))}
         </div>
+        {edges && edges.length > 0 && (
+          <PapersFilter edges={edges}>
+            {papers =>
+              papers.map(({ node }) => <Paper key={node.id} data={node.data} />)
+            }
+          </PapersFilter>
+        )}
       </div>
     </Layout>
   );
@@ -48,6 +58,38 @@ export const pageQuery = graphql`
           data {
             name
           }
+        }
+      }
+    }
+    allRdf(
+      filter: {
+        data: {
+          rdf_type: { eq: "https://schema.dice-research.org/Publication" }
+          author: { elemMatch: { path: { eq: $path } } }
+        }
+      }
+    ) {
+      edges {
+        node {
+          data {
+            type
+            title
+            publicationType
+            year
+            source
+            url
+            tag
+            bibsonomyId
+            author {
+              id
+              path
+              data {
+                name
+              }
+            }
+            authorName
+          }
+          id
         }
       }
     }
