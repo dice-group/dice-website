@@ -27,6 +27,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      # remove example data so it doesn't end up in the final build
+      - run: rm data/papers/Example.ttl
       # run build
       - run: yarn build
       # deploy with exoframe
