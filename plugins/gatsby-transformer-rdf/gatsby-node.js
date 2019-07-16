@@ -9,6 +9,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/partner',
   'https://schema.dice-research.org/author',
   'https://schema.dice-research.org/authorName',
+  'https://schema.dice-research.org/tag',
 ];
 
 const relationPredicates = [
@@ -138,7 +139,7 @@ async function onCreateNode({
 
     let value;
     try {
-      value = JSON.parse(object.value);
+      value = String(JSON.parse(object.value));
     } catch {
       value = object.value;
     }

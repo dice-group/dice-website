@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import 'bulma/css/bulma.min.css';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Header from './header';
-import './layout.css';
 import './brand.css';
+import Header from './header';
 
 const Layout = ({ children }) => {
   return (

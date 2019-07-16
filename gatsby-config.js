@@ -25,6 +25,9 @@ module.exports = {
     },
     `gatsby-plugin-mdx`,
 
+    // styled-jsx support
+    `gatsby-plugin-styled-jsx`,
+
     // default gatsby plugins
     `gatsby-plugin-react-helmet`,
     {
