@@ -29,6 +29,8 @@ jobs:
 
       # remove example data so it doesn't end up in the final build
       - run: rm data/papers/Example.ttl
+      # generate new papers from bibsonomy API
+      - run: yarn papers
       # run build
       - run: yarn build
       # deploy with exoframe
