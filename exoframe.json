@@ -1,4 +1,5 @@
 {
   "name": "dice-website",
-  "domain": "dice.codezen.net"
+  "domain": "dice.codezen.net",
+  "project": "dice-website"
 }
