@@ -56,7 +56,6 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
   // if we'd leave schema:BaseClass in - gatsby would try to resolve it and fail
   // which in turn would lead to build errors
   if (data['rdf:type'][0] === 'schema:BaseClass') {
-    console.log('removing rdf:type from', resultSubject);
     delete data['rdf:type'];
   }
 
