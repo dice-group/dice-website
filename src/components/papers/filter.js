@@ -29,11 +29,11 @@ export default ({ edges, children = () => {} }) => {
       count: edges.filter(item => item.node.data.year === it).length,
     }));
     const autocompleteTypes = Array.from(
-      new Set(edges.map(it => it.node.data.type))
+      new Set(edges.map(it => it.node.data.publicationType))
     ).map(it => ({
       type: 'type',
       data: it,
-      count: edges.filter(item => item.node.data.type === it).length,
+      count: edges.filter(item => item.node.data.publicationType === it).length,
     }));
     const res = autocompleteAuthors
       .concat(autocompleteYears)
@@ -58,7 +58,7 @@ export default ({ edges, children = () => {} }) => {
             return data.year === facet.data;
           }
           if (facet.type === 'type') {
-            return data.type === facet.data;
+            return data.publicationType === facet.data;
           }
           return false;
         })

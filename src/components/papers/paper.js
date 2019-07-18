@@ -15,7 +15,9 @@ export default ({ data }) => (
       <header className="card-header">
         <p className="card-header-title">
           {data.title}
-          <span className="tag is-rounded is-black">{data.type}</span>
+          <span className="tag is-rounded is-black">
+            {data.publicationType}
+          </span>
         </p>
         {data.pdfUrl && (
           <a
