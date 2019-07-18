@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Publication a schema:BaseClass ;
+  schema:name "Publication class" .

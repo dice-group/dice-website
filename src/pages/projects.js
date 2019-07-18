@@ -15,7 +15,7 @@ export default function Template({
         {edges.map(({ node }) => (
           <div key={node.path}>
             <Link to={node.path}>{node.data.name}</Link>{' '}
-            <span className="tag">{node.data.projectType.data.name}</span>
+            <span className="tag">{node.data.rdf_type[0].data.name}</span>
           </div>
         ))}
       </div>
@@ -27,19 +27,32 @@ export const pageQuery = graphql`
   query {
     allRdf(
       filter: {
-        data: { rdf_type: { eq: "https://schema.dice-research.org/Project" } }
+        data: {
+          rdf_type: {
+            elemMatch: {
+              id: {
+                in: [
+                  "https://dice-research.org/FundedProject"
+                  "https://dice-research.org/ProductionReadyProject"
+                  "https://dice-research.org/IncubatorProject"
+                  "https://dice-research.org/AlumniProject"
+                ]
+              }
+            }
+          }
+        }
       }
     ) {
       edges {
         node {
           path
           data {
-            name
-            projectType {
+            rdf_type {
               data {
                 name
               }
             }
+            name
           }
         }
       }

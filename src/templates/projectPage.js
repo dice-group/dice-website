@@ -49,7 +49,9 @@ export const pageQuery = graphql`
     allRdf(
       filter: {
         data: {
-          rdf_type: { eq: "https://schema.dice-research.org/Person" }
+          rdf_type: {
+            elemMatch: { id: { eq: "https://schema.dice-research.org/Person" } }
+          }
           project: { elemMatch: { path: { eq: $path } } }
         }
       }

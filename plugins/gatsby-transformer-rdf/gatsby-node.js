@@ -1,5 +1,6 @@
-const _ = require(`lodash`);
 const { Parser } = require('n3');
+
+const basePath = 'https://dice-research.org/';
 
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
@@ -14,6 +15,7 @@ const arrayPredicates = [
 ];
 
 const relationPredicates = [
+  'rdf:type',
   'schema:relatedProject',
   'schema:maintainer',
   'schema:partner',
@@ -21,7 +23,6 @@ const relationPredicates = [
   'schema:project',
   'schema:author',
   'schema:awardee',
-  'schema:projectType',
 ];
 
 const defaultPrefixes = {
@@ -34,7 +35,6 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
     url: prefixes[p],
     prefix: p,
   }));
-  const basePath = urls.find(({ prefix }) => prefix === 'dice').url;
 
   // map prefix URLs to short names
   const data = Object.keys(result)
@@ -51,6 +51,14 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
       return { predicate: result[predicate] };
     })
     .reduce((acc, val) => ({ ...acc, ...val }), {});
+
+  // remove rdf:type link to schema:BaseClass. this is required to convert RDF to GraphQL
+  // if we'd leave schema:BaseClass in - gatsby would try to resolve it and fail
+  // which in turn would lead to build errors
+  if (data['rdf:type'][0] === 'schema:BaseClass') {
+    console.log('removing rdf:type from', resultSubject);
+    delete data['rdf:type'];
+  }
 
   // link to other resources
   Object.keys(data).forEach(key => {

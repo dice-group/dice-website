@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:ProjectType a schema:BaseClass ;
+  schema:name "Project type class" .

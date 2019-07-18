@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Partner a schema:BaseClass ;
+  schema:name "Partner class" .

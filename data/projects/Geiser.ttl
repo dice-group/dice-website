@@ -4,9 +4,8 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:GEISER a schema:Project ;
+dice:GEISER a dice:FundedProject ;
   schema:tagline "Von Sensordaten zu internetbasierten Geo-Services" ;
-  schema:projectType dice:FundedProject ;
   schema:relatedProject dice:GERBIL ; # real value: dice:BDE, dice:GeoKnow ; can't use them cause generation will fail
   schema:status "active" ;
   schema:content "GEISER develops an open cloud-based platform for integrating geospatial data with sensor data from cyberphysical systems based on semantic and Big Data technologies." ;

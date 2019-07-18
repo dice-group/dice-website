@@ -64,7 +64,11 @@ export const pageQuery = graphql`
     allRdf(
       filter: {
         data: {
-          rdf_type: { eq: "https://schema.dice-research.org/Publication" }
+          rdf_type: {
+            elemMatch: {
+              id: { eq: "https://schema.dice-research.org/Publication" }
+            }
+          }
           author: { elemMatch: { path: { eq: $path } } }
         }
       }

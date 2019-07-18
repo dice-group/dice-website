@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Role a schema:BaseClass ;
+  schema:name "Role class" .

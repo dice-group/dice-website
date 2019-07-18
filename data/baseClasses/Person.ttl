@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Person a schema:BaseClass ;
+  schema:name "Person class" .

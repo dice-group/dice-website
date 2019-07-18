@@ -1,13 +1,19 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
 
-const renderRdfType = async ({ template, type, createPage, graphql }) => {
+const renderRdfType = async ({
+  template,
+  type,
+  matcher,
+  createPage,
+  graphql,
+}) => {
   // Person RDF rendering
   const rdfResult = await graphql(`
     {
       allRdf(
         filter: {
-          data: { rdf_type: { eq: "${type}" } }
+          data: { rdf_type: {elemMatch: {id: {${matcher}: ${type}}}} }
         }
       ) {
         edges {
@@ -88,17 +94,24 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   const personType = 'https://schema.dice-research.org/Person';
   await renderRdfType({
     template: personTemplate,
-    type: personType,
+    type: `"${personType}"`,
+    matcher: 'eq',
     createPage,
     graphql,
   });
 
   // Person RDF rendering
   const projectTemplate = path.resolve(`src/templates/projectPage.js`);
-  const projectType = 'https://schema.dice-research.org/Project';
+  const projectTypes = [
+    'https://dice-research.org/FundedProject',
+    'https://dice-research.org/ProductionReadyProject',
+    'https://dice-research.org/IncubatorProject',
+    'https://dice-research.org/AlumniProject',
+  ];
   await renderRdfType({
     template: projectTemplate,
-    type: projectType,
+    type: `["${projectTypes.join('","')}"]`,
+    matcher: 'in',
     createPage,
     graphql,
   });
