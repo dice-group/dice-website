@@ -2,5 +2,6 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:GERBIL a schema:Project ;
+  schema:projectType dice:ProductionReadyProject ;
   schema:tagline "is a entity annotation benchmarking framework" ;
   schema:name "GERBIL" .

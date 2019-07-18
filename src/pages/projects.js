@@ -14,7 +14,8 @@ export default function Template({
       <div style={{ paddingBottom: 30 }}>
         {edges.map(({ node }) => (
           <div key={node.path}>
-            <Link to={node.path}>{node.data.name}</Link>
+            <Link to={node.path}>{node.data.name}</Link>{' '}
+            <span className="tag">{node.data.projectType.data.name}</span>
           </div>
         ))}
       </div>
@@ -34,6 +35,11 @@ export const pageQuery = graphql`
           path
           data {
             name
+            projectType {
+              data {
+                name
+              }
+            }
           }
         }
       }

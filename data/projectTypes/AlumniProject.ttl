@@ -1,0 +1,5 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AlumniProject a schema:ProjectType ;
+  schema:name "Alumni project" .

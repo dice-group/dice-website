@@ -19,6 +19,7 @@ const relationPredicates = [
   'schema:role',
   'schema:project',
   'schema:author',
+  'schema:projectType',
 ];
 
 const defaultPrefixes = {

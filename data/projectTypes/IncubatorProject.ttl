@@ -1,0 +1,5 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:IncubatorProject a schema:ProjectType ;
+  schema:name "Incubator project" .
