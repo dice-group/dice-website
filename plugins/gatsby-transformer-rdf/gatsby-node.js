@@ -9,6 +9,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/partner',
   'https://schema.dice-research.org/author',
   'https://schema.dice-research.org/authorName',
+  'https://schema.dice-research.org/awardee',
   'https://schema.dice-research.org/tag',
 ];
 
@@ -19,6 +20,7 @@ const relationPredicates = [
   'schema:role',
   'schema:project',
   'schema:author',
+  'schema:awardee',
   'schema:projectType',
 ];
 
