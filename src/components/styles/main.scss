@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// Set your brand colors
+$blue: #387ebd;
+$black: #000000;
+
+// Update Bulma's global variables
+$navbar-item-color: $blue;
+$navbar-item-hover-color: $black;
+
+// define our custom classes
+.content {
+  .brand-color {
+    color: $blue;
+  }
+}
+
+// Import only what you need from Bulma
+@import 'node_modules/bulma/sass/utilities/_all.sass';
+@import 'node_modules/bulma/sass/base/_all.sass';
+@import 'node_modules/bulma/sass/components/_all.sass';
+@import 'node_modules/bulma/sass/elements/_all.sass';
+@import 'node_modules/bulma/sass/form/_all.sass';
+@import 'node_modules/bulma/sass/grid/_all.sass';
+@import 'node_modules/bulma/sass/layout/_all.sass';

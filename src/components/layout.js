@@ -5,10 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import { MDXProvider } from '@mdx-js/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from './header';
-import './styles/main.sass';
+import Image from './image';
+import './styles/main.scss';
+
+const mdxComponents = { Image };
 
 const Layout = ({ children }) => {
   return (
@@ -16,7 +20,7 @@ const Layout = ({ children }) => {
       <Header />
       <section className="section">
         <div className="container">
-          {children}
+          <MDXProvider components={mdxComponents}>{children}</MDXProvider>
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}
