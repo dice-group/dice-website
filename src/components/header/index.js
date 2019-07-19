@@ -1,24 +1,20 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Navbar from '../navbar';
+import DICE from './dice.inline.svg';
 import styles from './header.module.css';
+import UPB from './upb.inline.svg';
 
 const Header = () => (
   <header className={styles.header}>
     <div className={styles.headerWrap}>
-      <img
-        className={styles.image}
-        src="https://dice-research.org/fileadmin/template/img/DICE.svg"
-      />
+      <DICE className={styles.image} />
       <h1 className={styles.title}>
         <Link to="/" className={styles.title}>
           The Data Science Group
         </Link>
       </h1>
-      <img
-        className={styles.image}
-        src="https://dice-research.org/fileadmin/template/img/upb_logo.svg"
-      />
+      <UPB className={styles.image} />
     </div>
     <Navbar />
   </header>

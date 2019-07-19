@@ -28,13 +28,23 @@ module.exports = {
     // styled-jsx support
     `gatsby-plugin-styled-jsx`,
 
+    // svg inlining
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /\.inline\.svg$/,
+        },
+      },
+    },
+
     // default gatsby plugins
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -48,7 +58,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],
