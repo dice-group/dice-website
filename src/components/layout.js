@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <Header />
       <section className="section">
         <div className="container">
-          <main>{children}</main>
+          {children}
           <footer>
             © {new Date().getFullYear()}, Built with
             {` `}

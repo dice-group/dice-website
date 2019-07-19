@@ -1,6 +1,6 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -12,7 +12,9 @@ export default function Template({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <MDXRenderer>{body}</MDXRenderer>
+      <div className="content">
+        <MDXRenderer>{body}</MDXRenderer>
+      </div>
     </Layout>
   );
 }
