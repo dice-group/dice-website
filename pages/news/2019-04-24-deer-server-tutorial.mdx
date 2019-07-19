@@ -1,0 +1,204 @@
+---
+date: '2019-04-24'
+title: 'DEER Server Tutorial'
+thumbnail: 'deer-server-tutorial.png'
+---
+
+In this tutorial, we learn how to set up DEER in server mode on our local machine and how to use its rich API to execute, observe and gather the results of a simple example configuration. This post is part of a blog post series on the release of DEER 2. If you have not heard about DEER before, check our previous blog post about DEER for a short introduction to the motivation and objectives of the framework. The first step will be to define the example use case and write the configuration file.
+
+FOAF Example Use Case
+This simple example use case will operate on the following RDF dataset in Turtle serialization (also available in GitHub: server-demo-data.ttl).
+
+```
+@prefix : <urn:example:mockup/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix deer: <http://w3id.org/deer> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+
+:bob
+ a foaf:person ;
+ foaf:name "Bob Barnes" ;
+ foaf:interest deer: ;
+ foaf:based_near dbr:Paderborn ;
+ foaf:knows :tom .
+
+:tom
+ a foaf:person ;
+ foaf:name "Tom Tweed" ;
+ foaf:interest deer: ;
+ foaf:based_near dbr:Bonn .
+```
+
+Now consider an enrichment scenario, where we want our enriched dataset to:
+
+1. Include a property on both persons telling us who is the mayor of the city where they are living (i.e., specified using foaf:based_near in our example).
+2. Include each person’s full name as the default rdf:label.
+3. Include the reflexive closure of foaf:knows.
+
+Finally, our output should be in N-Triples format. The configuration in server-demo-config.ttl will achieve just that. We will explain these configuration entries in the following, although for the matters of this tutorial it is not important that we are already familiar with the DEER configuration vocabulary.
+
+```
+#Prefixes: These are the TURTLE prefix definitions used in the configuration file.
+
+@prefix : <urn:example:server-demo/> .
+@prefix fcage: <http://w3id.org/fcage/> .
+@prefix deer: <http://w3id.org/deer/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbp: <http://dbpedia.org/property/> .
+@prefix ex: <http://example.org/ruled_by> .
+
+
+#readInput: This is a model reader instance that reads our input file and outputs a copy of it to each of the two nodes specified by fcage:hasOutput. This results in two branches in the enrichment graph as can be seen in Figure 1.
+
+:readInput
+  a deer:FileModelReader ;
+  deer:fromPath "server-demo-data.ttl" ;
+  fcage:hasOutput ( :nameToLabel :dereferenceMayor ) .
+
+#nameToLabel: This predicate conformation enrichment operator will rename foaf:name to rdf:label for its individual copy of the input
+
+:nameToLabel
+  a deer:PredicateConformationEnrichmentOperator ;
+  deer:operation [
+    deer:sourcePredicate foaf:name ;
+    deer:targetPredicate rdf:label ;
+    ] ;
+  fcage:hasOutput :merge .
+
+#dereferenceMayor: This dereferencing enrichment operator will include the name of the mayor of the city the person is based near using the predicate ex:ruled_by.
+
+:dereferenceMayor
+  a deer:DereferencingEnrichmentOperator ;
+  deer:operation [
+    deer:lookUpProperty foaf:based_near ;
+    deer:lookUpPrefix "http://dbpedia.org/resource" ;
+    deer:importProperty ex:ruled_by ;
+    deer:dereferencingProperty dbp:mayor ;
+  ] ;
+  fcage:hasOutput :knowsReflexiveClosure .
+
+#knowsReflexiveClosure: This sparql update enrichment operator will form the reflexive closure of the foaf:knows predicate
+
+:knowsReflexiveClosure
+  a deer:SparqlUpdateEnrichmentOperator ;
+  deer:sparqlUpdateQuery """
+      PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+      INSERT { ?other foaf:knows ?person }
+      WHERE
+        {
+          ?person foaf:knows ?other .
+           FILTER NOT EXISTS {
+              ?other foaf:knows ?person .
+           }
+        }
+    """ ;
+  fcage:hasOutput :merge .
+
+#merge: On the node :input we branched out to several subgraphs. These are merged here by this instance of the merge enrichment operator (see Figure 1), effectively uniting the copy where the full name is in foaf:name and the copy where the full name is in rdf:label such that it is now in both predicates.
+
+:merge
+  a deer:MergeEnrichmentOperator ;
+  fcage:hasInput ( :nameToLabel :knowsReflexiveClosure ) ;
+  fcage:hasOutput ( :writeResult ) .
+
+#writeResult: This file model writer will serialize our final dataset using N-Triples syntax to a file named server-demo-output.nt
+
+:writeResult
+  a deer:FileModelWriter ;
+  deer:outputFile "server-demo-output.nt" ;
+  deer:outputFormat "NT" .
+```
+
+Setting up DEER Server
+In order to set up DEER Server, just download the deer-cli-2.0.1.jar from our GitHub repository and run:
+
+```
+java -jar deer-cli-2.0.1.jar --server --port 8080
+```
+
+Submitting a Configuration to the Server
+After you have downloaded both a data and configuration file, e.g. using
+
+```
+url="https://raw.githubusercontent.com/dice-group/"
+url=${url}"deer/master/examples/configurations/"
+curl -L ${url}"server-demo-{data,config}.ttl" -o "#1.ttl"
+```
+
+you can simply submit them to your server with the following request using the new multiple file uploads feature in DEER 2. Note the use of the part name “config” that identifies this part as the submitted configuration file. There must always be a part named config in the requests to the /submit endpoint. The other part names are not important.
+
+```
+curl --form "config=@config.ttl" --form "input=@data.ttl" localhost/submit
+```
+
+This will yield the following server response:
+
+```
+{"requestId":"a5bae153-a044-4d17-8401-74d3b76b9cff"}
+```
+
+where the request Id identifies the execution triggered by the corresponding submitted configuration file. Using the request ID you can observe the executions status, its log entries and gather result files upon completion.
+
+Observing Execution
+You can query the status of an execution using its request Id:
+
+```
+curl 'http://localhost:8080/status/a5bae153-a044-4d17-8401-74d3b76b9cff'
+{"status":{"code":2,"description":"Request has been processed successfully"}}
+```
+
+Yet, another way to observe the execution is to show its log entries:
+
+```
+curl 'http://localhost:8080/logs/a5bae153-a044-4d17-8401-74d3b76b9cff'
+
+2019-03-19T15:28:48,161 [qtp1370775830-17] INFO org.aksw.deer.DeerController 152 - Trying to read DEER configuration from file /home/deer/config.ttl...
+2019-03-19T15:28:48,212 [qtp1370775830-17] INFO org.aksw.deer.DeerController 157 - Loading /home/deer/.server-storage/a5bae153-a044-4d17-8401-74d3b76b9cff/config.ttl is done in 49ms.
+2019-03-19T15:28:48,215 [qtp1370775830-17] INFO org.aksw.faraday_cage.engine.FaradayCageContext 112 - Starting Faraday-Cage engine... runId: ae3bab5b-7a7d-48c8-a5ea-e6b120d20dbe
+2019-03-19T15:28:48,215 [qtp1370775830-17] INFO org.aksw.faraday_cage.engine.FaradayCageContext 113 - Building execution model...
+2019-03-19T15:28:49,091 [qtp1370775830-17] INFO org.aksw.faraday_cage.engine.FaradayCageContext 119 - Configuration shape validated using SHACL after 875ms.
+2019-03-19T15:28:49,111 [qtp1370775830-17] INFO org.aksw.faraday_cage.engine.FaradayCageContext 122 - Execution graph built after 896ms.
+2019-03-19T15:28:49,124 [qtp1370775830-17] INFO org.aksw.faraday_cage.engine.FaradayCageContext 125 - Execution graph compiled after 908ms.
+```
+
+Retrieving Results
+Show the contents of its results folder:
+
+```
+curl 'http://localhost:8080/results/a5bae153-a044-4d17-8401-74d3b76b9cff'
+{"availableFiles":["server-demo-config.ttl","deer-analytics.json","server-demo-output.nt","server-demo-data.ttl"]}
+```
+
+And finally retrieve the files from the results folder:
+
+```
+curl 'http://localhost:8080/result/a5bae153-a044-4d17-8401-74d3b76b9cff/server-demo-output.nt'
+
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mkup: <urn:example:mockup> .
+@prefix w3id: <http://w3id.org/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+
+mkup:tom a foaf:Person ;
+foaf:name "Tom Tweed" ;
+rdf:label "Tom Tweed" ;
+foaf:knows mkup:bob ;
+foaf:based_near dbr:Bonn ;
+faof:interest w3id:deer ;
+ex:ruled_by "Ashok-Alexander Sridharan"^^rdf:langString .
+
+mkup:bob a foaf:Person ;
+foaf:name "Bob Barnes" ;
+rdf:label "Bob Barnes" ;
+foaf:knows mkup:tom ;
+foaf:based_near dbr:Paderborn ;
+faof:interest w3id:deer ;
+ex:ruled_by "Michael Dreier"^^rdf:langString .
+```
+
+Learn more about the available enrichment operators in the DEER manual and you are set to develop your own RDF dataset enrichment configurations in no time!

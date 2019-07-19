@@ -11,13 +11,6 @@ $black: #000000;
 $navbar-item-color: $blue;
 $navbar-item-hover-color: $black;
 
-// define our custom classes
-.content {
-  .brand-color {
-    color: $blue;
-  }
-}
-
 // Import only what you need from Bulma
 @import 'node_modules/bulma/sass/utilities/_all.sass';
 @import 'node_modules/bulma/sass/base/_all.sass';
@@ -26,3 +19,23 @@ $navbar-item-hover-color: $black;
 @import 'node_modules/bulma/sass/form/_all.sass';
 @import 'node_modules/bulma/sass/grid/_all.sass';
 @import 'node_modules/bulma/sass/layout/_all.sass';
+
+// define our custom classes
+.content {
+  .brand-color {
+    color: $blue;
+  }
+}
+
+pre {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.news-thumbnail {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  float: right;
+  padding: 20px;
+}
