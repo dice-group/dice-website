@@ -1,33 +1,5 @@
-.header {
-  margin-bottom: 1.45rem;
-}
-
-.headerWrap {
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border: 0 inset #387ebd;
-  border-bottom-width: 1px;
-  margin-bottom: 10px;
-}
-
 .image {
   max-height: 50px;
-  padding-right: 10px;
-  margin: 0;
-  max-width: 30%;
   width: 150px;
   height: 100px;
-}
-
-.title {
-  margin: 0;
-  flex: 1;
-  color: #387ebd;
-  text-decoration: none;
-  font-size: 1em;
-  text-transform: uppercase;
 }
