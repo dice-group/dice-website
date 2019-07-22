@@ -29,9 +29,15 @@ const Image = ({ filename, alt, style }) => {
     return element.node.fluid.originalName === filename;
   }).node.fluid;
 
-  console.log('got image:', image);
-
-  return <Img fluid={image} objectFit="cover" alt={alt} style={style} />;
+  return (
+    <Img
+      className="image"
+      fluid={image}
+      objectFit="cover"
+      alt={alt}
+      style={style}
+    />
+  );
 };
 
 export default Image;
