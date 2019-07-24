@@ -6,7 +6,7 @@ import Layout from '../components/layout';
 import { Person, rdfToPeopleArray } from '../components/person';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function ProjectTemplate({
   data: {
     rdf: { data },
     allRdf: { edges },
@@ -39,46 +39,58 @@ export default function Template({
         <p>End date: {data.endDate}</p>
         <p>Funding program: {data.fundingProgram}</p>
 
-        <p>
-          Maintainer:{' '}
-          <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>{' '}
-        </p>
+        {data.maintainer && (
+          <p>
+            Maintainer:{' '}
+            <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>{' '}
+          </p>
+        )}
 
         <h2>Description:</h2>
         <div style={{ paddingBottom: 30 }}>
           {data.content &&
-            data.content.map(mdString => <ReactMarkdown source={mdString} />)}
+            data.content.map((mdString, i) => (
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
+            ))}
         </div>
 
-        <h2>Partners:</h2>
+        {data.partner && (
+          <>
+            <h2>Partners:</h2>
 
-        <div className="tile is-ancestor" style={{ padding: 30 }}>
-          {data.partner.map(partner => (
-            <div key={partner.id} className="tile">
-              <div className="image is-64x64" style={{ marginRight: 10 }}>
-                <Image filename={partner.data.logo} />
-              </div>
-              <a href={partner.data.url}>{partner.data.name}</a>
+            <div className="tile is-ancestor" style={{ padding: 30 }}>
+              {data.partner.map(partner => (
+                <div key={partner.id} className="tile">
+                  <div className="image is-64x64" style={{ marginRight: 10 }}>
+                    <Image filename={partner.data.logo} />
+                  </div>
+                  <a href={partner.data.url}>{partner.data.name}</a>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
 
-        <h2>Related projects:</h2>
+        {data.relatedProject && (
+          <>
+            <h2>Related projects:</h2>
 
-        <div className="tile is-ancestor" style={{ padding: 30 }}>
-          {data.relatedProject.map(proj => (
-            <div key={proj.id} className="tile">
-              <h3>
-                <Link to={proj.path}>{proj.data.name}</Link>
-              </h3>
+            <div className="tile is-ancestor" style={{ padding: 30 }}>
+              {data.relatedProject.map(proj => (
+                <div key={proj.id} className="tile">
+                  <h3>
+                    <Link to={proj.path}>{proj.data.name}</Link>
+                  </h3>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
 
         <h2>Staff:</h2>
         <div className="tile is-ancestor" style={{ flexWrap: 'wrap' }}>
           {people.map(person => (
-            <div className="tile is-4">
+            <div key={person.path} className="tile is-4">
               <Person key={person.path} person={person} />
             </div>
           ))}

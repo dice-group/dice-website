@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import { Person, rdfToPeopleArray } from '../components/person';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function Team({
   data: {
     allRdf: { edges },
   },

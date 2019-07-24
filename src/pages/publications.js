@@ -5,7 +5,7 @@ import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function Publications({
   data: {
     allRdf: { edges },
   },

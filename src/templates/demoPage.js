@@ -4,7 +4,7 @@ import Image from '../components/image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function DemoTemplate({
   data: {
     rdf: { data },
   },
@@ -25,7 +25,9 @@ export default function Template({
         <p>
           Developers:{' '}
           {data.developer.map(p => (
-            <Link to={p.path}>{p.data.name}</Link>
+            <Link key={p.path} to={p.path}>
+              {p.data.name}
+            </Link>
           ))}
         </p>
 
@@ -36,7 +38,7 @@ export default function Template({
 
         <div className="tile is-ancestor">
           {data.screenshot.map((screen, index) => (
-            <div className="tile is-parent">
+            <div key={screen} className="tile is-parent">
               <Image
                 filename={screen}
                 alt={`${data.name} screenshot ${index + 1}`}

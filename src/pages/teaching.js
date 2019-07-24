@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function Teaching({
   data: {
     allMdx: { edges },
   },

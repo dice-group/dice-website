@@ -7,7 +7,7 @@ import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
 import SEO from '../components/seo';
 
-export default function Template({ data: { rdf, allRdf } }) {
+export default function PersonTemplate({ data: { rdf, allRdf } }) {
   const {
     data: {
       content,
@@ -48,12 +48,14 @@ export default function Template({ data: { rdf, allRdf } }) {
         <h2>Description:</h2>
         <div>
           {content &&
-            content.map(mdString => <ReactMarkdown source={mdString} />)}
+            content.map((mdString, i) => (
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
+            ))}
         </div>
         <h2>Projects:</h2>
         <div style={{ paddingBottom: 30 }}>
           {project.map(p => (
-            <Link style={{ paddingRight: 10 }} to={`/${p.path}`}>
+            <Link key={p.path} style={{ paddingRight: 10 }} to={`/${p.path}`}>
               {p.data.name}
             </Link>
           ))}

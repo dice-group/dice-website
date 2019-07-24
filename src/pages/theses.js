@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import Person from '../components/person/dynamic';
 import SEO from '../components/seo';
 
-export default function Template({
+export default function Theses({
   data: {
     allMdx: { edges },
   },
