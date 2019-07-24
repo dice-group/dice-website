@@ -1,0 +1,9 @@
+---
+date: '2019-04-24'
+title: 'BQL (google graph store) to SPARQL bridge'
+type: 'Master'
+supervisor: dice:AxelCyrilleNgongaNgomo
+contact: dice:AxelCyrilleNgongaNgomo
+---
+
+Google's BadWolf (https://github.com/google/badwolf) implements BQL, a query language for a graph model loosely modelled around RDF. But how loosely? The core of this thesis is to create a converter from BQL to SPARQL and vice- versa, which will allow benchmarking the performance of BadWolf against that of existing triple stores. The main tasks will hence be to study the calculus behind BQL, map it to the SPARQL calculus, implement the mapping and run benchmarks derived from real query logs on BadWolf and 3 selected triple stores (Virtuoso, GraphDB and TENTRIS).

@@ -33,15 +33,17 @@ export const Person = ({ person }) => (
   </div>
 );
 
-export const rdfToPeopleArray = edges =>
-  edges
-    .map(n => n.node)
-    .map(({ data, path }) => ({
-      ...data,
-      path: path,
-      projects: data.project.map(p => ({
+export const rdfToPerson = ({ data, path }) => ({
+  ...data,
+  path: path,
+  projects: data.projects
+    ? data.project.map(p => ({
         name: p.data.name,
         path: p.path,
-      })),
-      role: data.role.data,
-    }));
+      }))
+    : [],
+  role: data.role ? data.role.data : {},
+});
+
+export const rdfToPeopleArray = edges =>
+  edges.map(n => n.node).map(rdfToPerson);
