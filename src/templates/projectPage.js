@@ -18,7 +18,7 @@ export default function Template({ data }) {
   return (
     <Layout>
       <SEO title={`${name}`} />
-      <div>
+      <div className="content">
         <h1>{name}</h1>
         <h3 style={{ textDecoration: 'underline' }}>Description:</h3>
 

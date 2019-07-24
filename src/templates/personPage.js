@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Image from '../components/image';
 import Layout from '../components/layout';
 import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
@@ -8,21 +9,48 @@ import SEO from '../components/seo';
 
 export default function Template({ data: { rdf, allRdf } }) {
   const {
-    data: { content, name, role, project },
+    data: {
+      content,
+      name,
+      namePrefix,
+      role,
+      project,
+      phone,
+      fax,
+      email,
+      office,
+      photo,
+    },
   } = rdf;
   const { edges } = allRdf;
   return (
     <Layout>
-      <SEO title={`${name}`} />
-      <div>
-        <h1>{name}</h1>
-        <h3>Role: {role.data.name}</h3>
-        <h3 style={{ textDecoration: 'underline' }}>Description:</h3>
+      <SEO title={`${namePrefix} ${name}`} />
+      <div className="content">
+        <h1 className="title">
+          {namePrefix} {name}
+        </h1>
+
+        <div
+          className="image"
+          style={{ width: 100, height: 100, overflow: 'hidden' }}
+        >
+          <Image filename={photo} alt={`${namePrefix} ${name} photo`} />
+        </div>
+
+        <p>Role: {role.data.name}</p>
+        <p>Phone: {phone}</p>
+        <p>Fax: {fax}</p>
+        <p>
+          Email: <a href={email}>{email.replace('mailto:', '')}</a>
+        </p>
+        <p>Office: {office}</p>
+        <h2>Description:</h2>
         <div>
           {content &&
             content.map(mdString => <ReactMarkdown source={mdString} />)}
         </div>
-        <h3 style={{ textDecoration: 'underline' }}>Projects:</h3>
+        <h2>Projects:</h2>
         <div style={{ paddingBottom: 30 }}>
           {project.map(p => (
             <Link style={{ paddingRight: 10 }} to={`/${p.path}`}>
@@ -47,6 +75,12 @@ export const pageQuery = graphql`
     rdf(path: { eq: $path }) {
       data {
         name
+        namePrefix
+        phone
+        fax
+        email
+        office
+        photo
         content
         role {
           data {
