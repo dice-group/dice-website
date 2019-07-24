@@ -6,13 +6,14 @@
  */
 
 import { MDXProvider } from '@mdx-js/react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Header from './header';
 import Image from './image';
 import './styles/main.scss';
 
-const mdxComponents = { Image };
+const mdxComponents = { Image, Link };
 
 const Layout = ({ children }) => {
   return (
