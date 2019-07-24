@@ -100,7 +100,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     graphql,
   });
 
-  // Person RDF rendering
+  // Project RDF rendering
   const projectTemplate = path.resolve(`src/templates/projectPage.js`);
   const projectTypes = [
     'https://dice-research.org/FundedProject',
@@ -112,6 +112,17 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     template: projectTemplate,
     type: `["${projectTypes.join('","')}"]`,
     matcher: 'in',
+    createPage,
+    graphql,
+  });
+
+  // Demo RDF rendering
+  const demoTemplate = path.resolve(`src/templates/demoPage.js`);
+  const demoType = 'https://schema.dice-research.org/Demo';
+  await renderRdfType({
+    template: demoTemplate,
+    type: `"${demoType}"`,
+    matcher: 'eq',
     createPage,
     graphql,
   });
