@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Demo a schema:BaseClass ;
+  schema:name "Demo class" .

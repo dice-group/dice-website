@@ -12,12 +12,15 @@ const arrayPredicates = [
   'https://schema.dice-research.org/authorName',
   'https://schema.dice-research.org/awardee',
   'https://schema.dice-research.org/tag',
+  'https://schema.dice-research.org/developer',
+  'https://schema.dice-research.org/screenshot',
 ];
 
 const relationPredicates = [
   'rdf:type',
   'schema:relatedProject',
   'schema:maintainer',
+  'schema:developer',
   'schema:partner',
   'schema:role',
   'schema:project',

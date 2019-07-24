@@ -9,6 +9,7 @@ const links = [
   { url: '/awards', text: 'Awards' },
   { url: '/team', text: 'Team' },
   { url: '/projects', text: 'Projects' },
+  { url: '/demos', text: 'Demos' },
   { url: '/publications', text: 'Publications' },
   { url: '/news', text: 'News' },
   { url: '/theses', text: 'Theses' },

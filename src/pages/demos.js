@@ -11,7 +11,7 @@ export default function Template({
 }) {
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO title="Demos" />
       <div className="content tile is-ancestor">
         {edges.map(({ node }) => (
           <div key={node.path} className="card" style={{ margin: '1em' }}>
@@ -20,8 +20,8 @@ export default function Template({
                 <div className="media-left">
                   <figure className="image is-64x64">
                     <Image
-                      filename={node.data.logo}
-                      alt={`${node.data.name} logo`}
+                      filename={node.data.screenshot[0]}
+                      alt={`${node.data.name} screenshot`}
                     />
                   </figure>
                 </div>
@@ -29,13 +29,27 @@ export default function Template({
                   <p className="title is-4">
                     <Link to={node.path}>{node.data.name}</Link>
                   </p>
-                  <p className="subtitle is-6">
-                    {node.data.rdf_type[0].data.name}
-                  </p>
                 </div>
               </div>
 
-              <div className="content">{node.data.tagline}</div>
+              <div className="content">
+                <p>{node.data.description}</p>
+                <p>
+                  Webpage: <a href={node.data.webpage}>{node.data.webpage}</a>
+                </p>
+                <p>
+                  Maintainer:{' '}
+                  <Link to={node.data.maintainer.path}>
+                    {node.data.maintainer.data.name}
+                  </Link>
+                </p>
+                <p>
+                  Developers:{' '}
+                  {node.data.developer.map(p => (
+                    <Link to={p.path}>{p.data.name}</Link>
+                  ))}
+                </p>
+              </div>
             </div>
           </div>
         ))}
@@ -50,16 +64,7 @@ export const pageQuery = graphql`
       filter: {
         data: {
           rdf_type: {
-            elemMatch: {
-              id: {
-                in: [
-                  "https://dice-research.org/FundedProject"
-                  "https://dice-research.org/ProductionReadyProject"
-                  "https://dice-research.org/IncubatorProject"
-                  "https://dice-research.org/AlumniProject"
-                ]
-              }
-            }
+            elemMatch: { id: { eq: "https://schema.dice-research.org/Demo" } }
           }
         }
       }
@@ -68,20 +73,22 @@ export const pageQuery = graphql`
         node {
           path
           data {
-            rdf_type {
+            name
+            description
+            screenshot
+            webpage
+            maintainer {
+              path
               data {
                 name
               }
             }
-            tagline
-            status
-            content
-            endDate
-            startDate
-            name
-            homepage
-            logo
-            sourceCode
+            developer {
+              path
+              data {
+                name
+              }
+            }
           }
         }
       }

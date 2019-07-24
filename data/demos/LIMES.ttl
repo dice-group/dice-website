@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LIMES a schema:Demo ;
+  schema:name "LIMES" ;
+  schema:description "Link Discovery Framework for Metric Spaces" ;
+  schema:screenshot "limes_screen1.png", "limes_screen2.png" ;
+  schema:webpage <https://github.com/dice-group/LIMES> ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:developer dice:AxelCyrilleNgongaNgomo .
