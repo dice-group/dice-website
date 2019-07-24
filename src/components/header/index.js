@@ -6,16 +6,16 @@ import styles from './header.module.css';
 
 const links = [
   { url: '/', text: 'About' },
-  { url: '/awards', text: 'Awards' },
-  { url: '/team', text: 'Team' },
-  { url: '/projects', text: 'Projects' },
-  { url: '/demos', text: 'Demos' },
-  { url: '/publications', text: 'Publications' },
-  { url: '/news', text: 'News' },
-  { url: '/theses', text: 'Theses' },
-  { url: '/teaching', text: 'Teaching' },
-  { url: '/partners', text: 'Partners' },
-  { url: '/contact', text: 'Contact' },
+  { url: '/awards/', text: 'Awards' },
+  { url: '/team/', text: 'Team' },
+  { url: '/projects/', text: 'Projects' },
+  { url: '/demos/', text: 'Demos' },
+  { url: '/publications/', text: 'Publications' },
+  { url: '/news/', text: 'News' },
+  { url: '/theses/', text: 'Theses' },
+  { url: '/teaching/', text: 'Teaching' },
+  { url: '/partners/', text: 'Partners' },
+  { url: '/contact/', text: 'Contact' },
 ];
 
 const Header = () => {
