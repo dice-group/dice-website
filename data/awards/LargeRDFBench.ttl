@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LargeRDFBench a schema:Award ;
+  schema:url <https://svn.aksw.org/papers/2018/ISWC-Satellite-ExtendedLargeRDFBench/public.pdf> ;
+  schema:name "Extending LargeRDFBench for Multi-Source Data at Scale for SPARQL Endpoint Federation" ;
+  schema:content "in ISWC Satellite Events and SSWS, 2018 (Best paper award)" ;
+  schema:year "2018";
+  schema:awardee dice:AxelCyrilleNgongaNgomo .
