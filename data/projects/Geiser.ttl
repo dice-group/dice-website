@@ -20,6 +20,6 @@ dice:GEISER a dice:FundedProject ;
   # this is here just as example, the URL is not a real source
   schema:sourceCode <https://github.com/mwauer/geiser> ; 
 
-  # do we need this?
-  schema:fundingProgram dicefunding:H2020 ; 
-  .
+  # do we need this to be a resource?
+  # e.g. dicefunding:H2020 ; 
+  schema:fundingProgram "Horizon 2020" .
