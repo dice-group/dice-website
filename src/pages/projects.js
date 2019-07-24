@@ -1,5 +1,6 @@
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
+import Image from '../components/image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -11,11 +12,31 @@ export default function Template({
   return (
     <Layout>
       <SEO title="Projects" />
-      <div style={{ paddingBottom: 30 }}>
+      <div className="content tile is-ancestor">
         {edges.map(({ node }) => (
-          <div key={node.path}>
-            <Link to={node.path}>{node.data.name}</Link>{' '}
-            <span className="tag">{node.data.rdf_type[0].data.name}</span>
+          <div key={node.path} className="card" style={{ margin: '1em' }}>
+            <div className="card-content">
+              <div className="media">
+                <div className="media-left">
+                  <figure className="image is-64x64">
+                    <Image
+                      filename={node.data.logo}
+                      alt={`${node.data.name} logo`}
+                    />
+                  </figure>
+                </div>
+                <div className="media-content">
+                  <p className="title is-4">
+                    <Link to={node.path}>{node.data.name}</Link>
+                  </p>
+                  <p className="subtitle is-6">
+                    {node.data.rdf_type[0].data.name}
+                  </p>
+                </div>
+              </div>
+
+              <div className="content">{node.data.tagline}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -52,7 +73,15 @@ export const pageQuery = graphql`
                 name
               }
             }
+            tagline
+            status
+            content
+            endDate
+            startDate
             name
+            homepage
+            logo
+            sourceCode
           }
         }
       }

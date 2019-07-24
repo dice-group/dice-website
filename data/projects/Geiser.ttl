@@ -14,7 +14,7 @@ dice:GEISER a dice:FundedProject ;
   schema:startDate "2016-03-01"^^xsd:date ;
   schema:name "GEISER" ;
   schema:homepage <http://www.projekt-geiser.de> ;
-  schema:logo <http://i.imgur.com/7VWh3lB.png> ;
+  schema:logo "geiser.png" ;
   schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD, dicepartner:YellowMapD ;
 
   # this is here just as example, the URL is not a real source
