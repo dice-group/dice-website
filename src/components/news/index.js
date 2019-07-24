@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
-import DICE from '../header/dice.inline.svg';
 import Image from '../image';
+import DICE from '../svgs/dice.inline.svg';
 
 const newsQuery = graphql`
   {

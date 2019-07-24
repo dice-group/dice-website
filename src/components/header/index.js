@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
-import DICE from './dice.inline.svg';
+import DICE from '../svgs/dice.inline.svg';
+import UPB from '../svgs/upb.inline.svg';
 import styles from './header.module.css';
-import UPB from './upb.inline.svg';
 
 const links = [
   { url: '/', text: 'About' },

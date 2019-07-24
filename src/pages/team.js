@@ -20,11 +20,15 @@ export default function Template({
   return (
     <Layout>
       <SEO title="Team" />
-      <div>
+      <div className="content">
         {Object.keys(peopleByRole).map(role => (
-          <div style={{ paddingTop: 10 }} key={role}>
-            <h2>{role}</h2>
-            <div>
+          <div
+            key={role}
+            className="tile is-vertical"
+            style={{ marginBottom: '3em' }}
+          >
+            <h2 style={{ marginBottom: '1em' }}>{role}</h2>
+            <div className="tile is-ancestor">
               {peopleByRole[role].map(person => (
                 <Person key={person.path} person={person} />
               ))}
@@ -52,7 +56,13 @@ export const pageQuery = graphql`
           path
           data {
             name
+            namePrefix
+            phone
+            fax
             email
+            office
+            photo
+            content
             project {
               path
               data {
