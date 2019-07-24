@@ -6,4 +6,4 @@ dicepartner:Metaphacts a schema:Partner ;
   schema:name "metaphacts GmbH" ;
   schema:country "DE" ;
   schema:url <http://www.metaphacts.com/> ;
-  schema:logo <https://dice-research.org/fileadmin/partners/logo_farbe.png> .
+  schema:logo "metaphacts.png" .
