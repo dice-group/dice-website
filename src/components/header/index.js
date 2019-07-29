@@ -5,7 +5,7 @@ import UPB from '../svgs/upb.inline.svg';
 import styles from './header.module.css';
 
 const links = [
-  { url: '/', text: 'About' },
+  // { url: '/', text: 'About' },
   { url: '/awards/', text: 'Awards' },
   { url: '/team/', text: 'Team' },
   { url: '/projects/', text: 'Projects' },

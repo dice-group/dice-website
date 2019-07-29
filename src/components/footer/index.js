@@ -5,7 +5,6 @@ const links = [
   { url: '/imprint', text: 'Imprint' },
   { url: '/privacy', text: 'Privacy Policy' },
   { url: '/jobs', text: 'Jobs' },
-  { url: 'https://wikis.uni-paderborn.de/dice', text: 'DICE Wiki' },
 ];
 
 const Footer = () => (
@@ -16,6 +15,7 @@ const Footer = () => (
           {l.text}
         </Link>
       ))}
+      <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
     </div>
   </div>
 );
