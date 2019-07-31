@@ -54,8 +54,8 @@ jobs:
       # deploy with exoframe
       - run:
           command: |
-            cp exoframe.json public
-            cd public && exoframe -u -t $EXO_TOKEN
+            cp exoframe.json public/
+            cd public/ && exoframe -u -t $EXO_TOKEN
 
 workflows:
   version: 2
