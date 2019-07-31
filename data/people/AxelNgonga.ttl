@@ -12,7 +12,3 @@ dice:AxelCyrilleNgongaNgomo a schema:Person ;
   schema:photo "ngonga.jpg" ;
   schema:content "# Optional markdown content for the page here" ;
   schema:project dice:GEISER, dice:GERBIL .
-
-  # do we need stuff like past/currentProject ?
-  # do we need locations? or just office is enough?
-

@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `rdfData`,
-        path: `${__dirname}/data`,
+        path: `${__dirname}/../data`,
       },
     },
     `gatsby-transformer-rdf`,
@@ -20,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/pages`,
+        path: `${__dirname}/../pages`,
       },
     },
     `gatsby-plugin-mdx`,
@@ -47,7 +47,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/images`,
+        path: `${__dirname}/../images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -61,7 +61,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `../images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
   ],

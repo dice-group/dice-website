@@ -3,9 +3,10 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.6
-    working_directory: ~/repo
+    working_directory: ~/repo/scripts
     steps:
       - checkout
+          path: ~/repo
 
       # Download and cache dependencies
       - restore_cache:

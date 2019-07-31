@@ -5,6 +5,5 @@ dice:RichContextCompetition a schema:Award ;
   schema:url <https://coleridgeinitiative.org/richcontextcompetition> ;
   schema:name "Top-4 team in the Rich Context Competition" ;
   schema:content "Top-4 team out of 20 teams in the Rich Context Competition. Longer description goes here if needed" ;
-  schema:logo <https://images.squarespace-cdn.com/content/v1/5a549bf64c0dbf97f730d260/1556206086869-K35PVKSSDAXQ4WKYPU3Z/ke17ZwdGBToddI8pDm48kI4U9qAo_m0dkRS7NJV2Jw1Zw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZamWLI2zvYWH8K3-s_4yszcp2ryTI0HqTOaaUohrI8PI9ZbTo9Qgz5A-XcrdYtdd3wy2N4pbhj6uNCE7gFJYiAU/AllenAI.PNG> ;
   schema:year "2019";
   schema:awardee dice:AxelCyrilleNgongaNgomo .

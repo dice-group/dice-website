@@ -7,7 +7,7 @@ const {
   DataFactory: { namedNode, literal, quad },
 } = require('n3');
 
-const folder = path.join(__dirname, '..', 'data', 'papers');
+const folder = path.join(__dirname, '..', '..', 'data', 'papers');
 
 const prefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
