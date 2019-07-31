@@ -35,9 +35,9 @@ jobs:
       - run: yarn build
       # Persist public folder with build into the workspace for use in deploy
       - persist_to_workspace:
-          root: workspace
+          root: /tmp/workspace
           paths:
-            - public
+            - ./public
 
   deploy:
     executor: node-executor
@@ -55,7 +55,7 @@ jobs:
       # deploy with exoframe
       - run:
           command: |
-            cp exoframe.json public/
+            cp exoframe.json /tmp/workspace
             cd /tmp/workspace && exoframe -u -t $EXO_TOKEN
 
 workflows:
