@@ -43,6 +43,7 @@ jobs:
 
   deploy:
     executor: node-executor
+    working_directory: ~/deploy/public
     steps:
       # restore built files
       - attach_workspace:
@@ -55,7 +56,7 @@ jobs:
             exoframe endpoint https://exoframe.codezen.net
       # deploy with exoframe
       #exoframe -u -t $EXO_TOKEN
-      - run: cd ~/deploy && ls
+      - run: ls
 
 workflows:
   version: 2
