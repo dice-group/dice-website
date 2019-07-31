@@ -47,7 +47,7 @@ jobs:
       # restore built files
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: /deploy
+          at: ~/deploy
       # install exoframe
       - run:
           command: |
@@ -55,7 +55,7 @@ jobs:
             exoframe endpoint https://exoframe.codezen.net
       # deploy with exoframe
       #exoframe -u -t $EXO_TOKEN
-      - run: cd /deploy && ls
+      - run: cd ~/deploy && ls
 
 workflows:
   version: 2
