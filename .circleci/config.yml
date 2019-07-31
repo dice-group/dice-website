@@ -43,19 +43,19 @@ jobs:
 
   deploy:
     executor: node-executor
-    working_directory: ~/deploy
     steps:
       # restore built files
       - attach_workspace:
           # Must be absolute path or relative path from working_directory
-          at: ~/deploy
+          at: /deploy
       # install exoframe
       - run:
           command: |
             sudo npm install -g exoframe
             exoframe endpoint https://exoframe.codezen.net
       # deploy with exoframe
-      - run: exoframe -u -t $EXO_TOKEN
+      #exoframe -u -t $EXO_TOKEN
+      - run: cd /deploy && ls
 
 workflows:
   version: 2
