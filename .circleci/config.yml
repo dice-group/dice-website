@@ -1,9 +1,14 @@
 version: 2
-jobs:
-  build:
+
+executors:
+  node-executor:
     docker:
       - image: circleci/node:12.6
     working_directory: ~/repo/scripts
+
+jobs:
+  build:
+    executor: node-executor
     steps:
       - checkout:
           path: ~/repo
@@ -28,12 +33,20 @@ jobs:
       - run: yarn papers
       # run build
       - run: yarn build
+      # Persist public folder with build into the workspace for use in deploy
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - public
 
   deploy:
-    machine:
-      enabled: true
-    working_directory: ~/repo/scripts/public
+    executor: node-executor
+    working_directory: /tmp
     steps:
+      # restore built files
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /tmp/workspace
       # install exoframe
       - run:
           command: |
@@ -43,7 +56,7 @@ jobs:
       - run:
           command: |
             cp exoframe.json public/
-            cd public && exoframe -u -t $EXO_TOKEN
+            cd /tmp/workspace && exoframe -u -t $EXO_TOKEN
 
 workflows:
   version: 2
