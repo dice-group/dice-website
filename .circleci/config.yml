@@ -29,7 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # remove example data so it doesn't end up in the final build
-      - run: rm data/papers/Example.ttl
+      - run: rm ../data/papers/Example.ttl
       # generate new papers from bibsonomy API
       - run: yarn papers
       # run build
