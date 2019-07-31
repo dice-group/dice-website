@@ -17,12 +17,6 @@ jobs:
 
       # install deps
       - run: yarn install
-      # install exoframe
-      - run:
-          command: |
-            sudo npm install -g exoframe
-            exoframe endpoint https://exoframe.codezen.net
-
       - save_cache:
           paths:
             - node_modules
@@ -34,8 +28,31 @@ jobs:
       - run: yarn papers
       # run build
       - run: yarn build
+
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/repo/scripts/public
+    steps:
+      # install exoframe
+      - run:
+          command: |
+            sudo npm install -g exoframe
+            exoframe endpoint https://exoframe.codezen.net
       # deploy with exoframe
       - run:
           command: |
             cp exoframe.json public/
             cd public && exoframe -u -t $EXO_TOKEN
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
