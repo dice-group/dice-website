@@ -1,0 +1,6 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Alumni a schema:Role ;
+  schema:priority 7;
+  schema:name "Alumni" .
