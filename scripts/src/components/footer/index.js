@@ -4,7 +4,6 @@ import React from 'react';
 const links = [
   { url: '/imprint', text: 'Imprint' },
   { url: '/privacy', text: 'Privacy Policy' },
-  { url: '/jobs', text: 'Jobs' },
 ];
 
 const Footer = () => (

@@ -15,6 +15,7 @@ const links = [
   { url: '/theses/', text: 'Theses' },
   { url: '/teaching/', text: 'Teaching' },
   { url: '/partners/', text: 'Partners' },
+  { url: '/jobs', text: 'Jobs' },
   { url: '/contact/', text: 'Contact' },
 ];
 
