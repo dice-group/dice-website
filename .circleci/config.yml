@@ -30,6 +30,8 @@ jobs:
       - run: yarn build
 
   deploy:
+    machine:
+      enabled: true
     working_directory: ~/repo/scripts/public
     steps:
       # install exoframe
