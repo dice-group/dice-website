@@ -55,8 +55,7 @@ jobs:
             sudo npm install -g exoframe
             exoframe endpoint https://exoframe.codezen.net
       # deploy with exoframe
-      #exoframe -u -t $EXO_TOKEN
-      - run: ls
+      - run: exoframe -u -t $EXO_TOKEN
 
 workflows:
   version: 2
