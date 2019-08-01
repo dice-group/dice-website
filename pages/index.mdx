@@ -4,11 +4,23 @@ date: '2019-05-04'
 title: 'About'
 ---
 
-<div style="display: flex; flex-direction: row; align-items: center; padding-bottom: 10px;">
-  <Image filename="dice-front.png" style={{ width: 60 }} />
-  <h1 class="brand-color" style="text-decoration: uppercase; font-size: 1.5em">
-    WELCOME TO THE DATA SCIENCE GROUP
-  </h1>
+import Social from '../scripts/src/components/social';
+
+<div className="columns">
+  <div
+    className="column is-flex"
+    style="flex-direction: row; align-items: center; padding-bottom: 10px; min-width: 400px;"
+  >
+    <Image filename="dice-front.png" style={{ width: 60 }} />
+    <h1
+      class="brand-color"
+      style="text-decoration: uppercase; font-size: 1.5em"
+    >
+      WELCOME TO THE DATA SCIENCE GROUP
+    </h1>
+  </div>
+  <div className="column" style="flex: 1;" />
+  <Social />
 </div>
 
 #### Important note: We moved to Technologiepark 6, 33100 Paderborn (see Google Maps)
