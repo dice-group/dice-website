@@ -41,8 +41,9 @@ pre {
 }
 
 .dice-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 0.7em;
+  align-items: center;
+  flex-direction: column;
 
   a {
     color: $grey;
