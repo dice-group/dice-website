@@ -1,7 +1,8 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import _ from 'lodash';
 import React from 'react';
-import Image from '../components/image';
 import Layout from '../components/layout';
+import Project from '../components/project';
 import SEO from '../components/seo';
 
 export default function Projects({
@@ -9,33 +10,26 @@ export default function Projects({
     allRdf: { edges },
   },
 }) {
+  const projectsByType = _.groupBy(
+    edges,
+    p => p.node.data.rdf_type[0].data.name
+  );
+
   return (
     <Layout>
       <SEO title="Projects" />
-      <div className="content tile is-ancestor">
-        {edges.map(({ node }) => (
-          <div key={node.path} className="card" style={{ margin: '1em' }}>
-            <div className="card-content">
-              <div className="media">
-                <div className="media-left">
-                  <figure className="image is-64x64">
-                    <Image
-                      filename={node.data.logo}
-                      alt={`${node.data.name} logo`}
-                    />
-                  </figure>
-                </div>
-                <div className="media-content">
-                  <p className="title is-4">
-                    <Link to={node.path}>{node.data.name}</Link>
-                  </p>
-                  <p className="subtitle is-6">
-                    {node.data.rdf_type[0].data.name}
-                  </p>
-                </div>
-              </div>
-
-              <div className="content">{node.data.tagline}</div>
+      <div className="content">
+        {Object.keys(projectsByType).map(type => (
+          <div
+            key={type}
+            className="tile is-vertical"
+            style={{ marginBottom: '3em' }}
+          >
+            <h2 style={{ marginBottom: '1em' }}>{type}</h2>
+            <div className="tile is-ancestor">
+              {projectsByType[type].map(project => (
+                <Project key={project.path} project={project.node} />
+              ))}
             </div>
           </div>
         ))}
