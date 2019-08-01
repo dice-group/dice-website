@@ -49,3 +49,31 @@ pre {
     color: $grey;
   }
 }
+
+.people-list {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+
+  li:first-child a {
+    padding-left: 0;
+  }
+
+  li + li {
+    margin-top: 0;
+  }
+  li + li::before {
+    color: #b5b5b5;
+    content: '|';
+  }
+
+  li a {
+    align-items: center;
+    color: #3273dc;
+    padding: 0 0.75em;
+  }
+}

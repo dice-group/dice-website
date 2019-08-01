@@ -6,4 +6,4 @@ dice:LargeRDFBench a schema:Award ;
   schema:name "Extending LargeRDFBench for Multi-Source Data at Scale for SPARQL Endpoint Federation" ;
   schema:content "in ISWC Satellite Events and SSWS, 2018 (Best paper award)" ;
   schema:year "2018";
-  schema:awardee dice:AxelCyrilleNgongaNgomo .
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:SimonBin .
