@@ -1,10 +1,11 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
+import Project from '../components/project';
 import SEO from '../components/seo';
 
 export default function PersonTemplate({ data: { rdf, allRdf } }) {
@@ -31,36 +32,53 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
           {namePrefix} {name}
         </h1>
 
-        <div
-          className="image"
-          style={{ width: 100, height: 100, overflow: 'hidden' }}
-        >
-          <Image filename={photo} alt={`${namePrefix} ${name} photo`} />
-        </div>
+        <div className="is-flex" style={{ padding: 10, paddingBottom: 20 }}>
+          <div
+            className="image gatsby-image"
+            style={{ width: 200, height: 200 }}
+          >
+            <Image filename={photo} alt={`${namePrefix} ${name} photo`} />
+          </div>
 
-        <p>Role: {role.data.name}</p>
-        <p>Phone: {phone}</p>
-        <p>Fax: {fax}</p>
-        <p>
-          Email: <a href={email}>{email.replace('mailto:', '')}</a>
-        </p>
-        <p>Office: {office}</p>
-        <h2>Description:</h2>
+          <div className="is-flex" style={{ padding: 10 }}>
+            <div
+              className="is-flex data-column data-header"
+              style={{
+                textAlign: 'right',
+              }}
+            >
+              <div>Role:</div>
+              {phone && <div>Phone:</div>}
+              {fax && <div>Fax:</div>}
+              {email && <div>Email:</div>}
+              {office && <div>Office:</div>}
+            </div>
+            <div className="is-flex data-column">
+              <div>{role.data.name}</div>
+              {phone && <div>{phone}</div>}
+              {fax && <div>{fax}</div>}
+              {email && (
+                <div>
+                  <a href={email}>{email.replace('mailto:', '')}</a>
+                </div>
+              )}
+              {office && <div>{office}</div>}
+            </div>
+          </div>
+        </div>
         <div>
           {content &&
             content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
         </div>
-        <h2>Projects:</h2>
-        <div style={{ paddingBottom: 30 }}>
+        <h1>Projects</h1>
+        <div className="tile is-ancestor">
           {project.map(p => (
-            <Link key={p.path} style={{ paddingRight: 10 }} to={`/${p.path}`}>
-              {p.data.name}
-            </Link>
+            <Project key={p.path} project={p} />
           ))}
         </div>
-        <h2>Publications:</h2>
+        <h1>Publications</h1>
         {edges && edges.length > 0 && (
           <PapersFilter edges={edges}>
             {papers =>
@@ -93,6 +111,11 @@ export const pageQuery = graphql`
         project {
           path
           data {
+            rdf_type {
+              data {
+                name
+              }
+            }
             name
           }
         }

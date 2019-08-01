@@ -16,18 +16,19 @@ const links = [
   },
 ];
 
-const Social = () => (
+const Social = ({ style }) => (
   <div
     className="column is-flex"
     style={{
       justifyContent: 'space-evenly',
       alignItems: 'center',
       minWidth: 150,
+      ...style,
     }}
   >
     {links.map(l => (
       <a key={l.url} href={l.url} title={l.text}>
-        <span class="icon">
+        <span className="icon">
           <l.icon />
         </span>
       </a>

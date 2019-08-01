@@ -14,8 +14,15 @@ export default function NewsTemplate({
     <Layout>
       <SEO title={frontmatter.title} />
       <div className="content">
-        <h1>{frontmatter.title}</h1>
-        <div>Published on: {frontmatter.date}</div>
+        <h1 className="title">{frontmatter.title}</h1>
+
+        <div class="tags has-addons">
+          <span class="tag is-light">Published</span>
+          <span class="tag is-dark" title={frontmatter.fullDate}>
+            {frontmatter.date}
+          </span>
+        </div>
+
         {frontmatter.thumbnail ? (
           <div className="news-thumbnail">
             <Image filename={frontmatter.thumbnail} />
@@ -34,7 +41,8 @@ export const pageQuery = graphql`
     mdx(fields: { path: { eq: $path } }) {
       frontmatter {
         title
-        date
+        fullDate: date
+        date(fromNow: true)
         thumbnail
       }
       body

@@ -7,4 +7,4 @@ dice:LIMES a schema:Demo ;
   schema:screenshot "limes_screen1.png", "limes_screen2.png" ;
   schema:webpage <https://github.com/dice-group/LIMES> ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
-  schema:developer dice:AxelCyrilleNgongaNgomo .
+  schema:developer dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:PaulSpooren .

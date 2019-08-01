@@ -9,8 +9,8 @@ import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Header from './header';
 import Footer from './footer';
+import Header from './header';
 import Image from './image';
 import './styles/main.scss';
 
@@ -23,9 +23,9 @@ const Layout = ({ children }) => {
       <section className="section">
         <div className="container">
           <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-          <Footer />
         </div>
       </section>
+      <Footer />
     </>
   );
 };

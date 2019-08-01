@@ -16,7 +16,6 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
           node {
             fluid(maxWidth: 1000, quality: 100) {
               ...GatsbyImageSharpFluid
-              originalName
             }
           }
         }
@@ -24,11 +23,10 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
     }
   `);
 
-  // find image that user wanted
-  const imageEl = images.find(element => {
-    // Match string after final slash
-    return element.node.fluid.originalName === filename;
-  });
+  // find image that user wanted by matching path end
+  const imageEl = images.find(element =>
+    element.node.fluid.src.endsWith(filename)
+  );
 
   if (!imageEl) {
     return (

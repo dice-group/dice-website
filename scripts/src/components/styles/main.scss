@@ -1,8 +1,5 @@
 @charset "utf-8";
 
-// Import a Google Font
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-
 // Set your brand colors
 $blue: #387ebd;
 $black: #000000;
@@ -41,10 +38,58 @@ pre {
 }
 
 .dice-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 0.7em;
+  align-items: center;
+  flex-direction: column;
 
   a {
     color: $grey;
+  }
+}
+
+.people-list {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+
+  li:first-child a {
+    padding-left: 0;
+  }
+
+  li + li {
+    margin-top: 0;
+  }
+  li + li::before {
+    color: #b5b5b5;
+    content: '|';
+  }
+
+  li a {
+    align-items: center;
+    color: #3273dc;
+    padding: 0 0.75em;
+  }
+}
+
+.gatsby-image {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.data-column {
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 5px 0 5px;
+
+  &.data-header {
+    font-weight: bold;
+  }
+
+  div {
+    padding-bottom: 0.75em;
   }
 }
