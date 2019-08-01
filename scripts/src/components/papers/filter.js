@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default ({ edges, children = () => {} }) => {
+const Filter = ({ edges, children = () => {} }) => {
   const [autocompleteValues, setAutocompleteValues] = useState([]);
   const [facets, setFacets] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState('');
@@ -254,3 +254,5 @@ export default ({ edges, children = () => {} }) => {
     </>
   );
 };
+
+export default Filter;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ data }) => (
+const Paper = ({ data }) => (
   <>
     <style jsx>{`
       .card {
@@ -58,3 +58,5 @@ export default ({ data }) => (
     </div>
   </>
 );
+
+export default Paper;
