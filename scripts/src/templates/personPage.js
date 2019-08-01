@@ -60,6 +60,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             </Link>
           ))}
         </div>
+        <h2>Publications:</h2>
         {edges && edges.length > 0 && (
           <PapersFilter edges={edges}>
             {papers =>
