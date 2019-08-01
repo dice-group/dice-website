@@ -28,7 +28,7 @@ const Social = ({ style }) => (
   >
     {links.map(l => (
       <a key={l.url} href={l.url} title={l.text}>
-        <span class="icon">
+        <span className="icon">
           <l.icon />
         </span>
       </a>
