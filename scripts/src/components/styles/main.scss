@@ -79,3 +79,13 @@ pre {
   overflow: hidden;
   border-radius: 10px;
 }
+
+.data-column {
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 5px 0 5px;
+
+  &.data-header {
+    font-weight: bold;
+  }
+}
