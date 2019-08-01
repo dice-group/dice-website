@@ -31,7 +31,10 @@ export default function Teaching({
 
 export const pageQuery = graphql`
   query {
-    allMdx(filter: { fields: { type: { eq: "teaching" } } }) {
+    allMdx(
+      filter: { fields: { type: { eq: "teaching" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           id
