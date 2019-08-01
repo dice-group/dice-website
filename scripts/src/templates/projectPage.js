@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import { Person, rdfToPeopleArray } from '../components/person';
+import Project from '../components/project';
 import SEO from '../components/seo';
 
 export default function ProjectTemplate({
@@ -21,33 +22,56 @@ export default function ProjectTemplate({
         <h1 className="title">{data.name}</h1>
         <p className="subtitle">{data.tagline}</p>
 
-        <div
-          className="image"
-          style={{ width: 100, height: 100, overflow: 'hidden' }}
-        >
-          <Image filename={data.logo} alt={`${data.name} logo`} />
+        <div className="is-flex" style={{ padding: 10, paddingBottom: 20 }}>
+          <div
+            className="image gatsby-image"
+            style={{ width: 200, height: 200 }}
+          >
+            <Image filename={data.logo} alt={`${data.name} logo`} />
+          </div>
+
+          <div className="is-flex" style={{ padding: 10 }}>
+            <div
+              className="is-flex data-column data-header"
+              style={{
+                textAlign: 'right',
+              }}
+            >
+              {data.homepage && <div>Homepage:</div>}
+              {data.sourceCode && <div>Source code:</div>}
+              {data.status && <div>Status:</div>}
+              {data.startDate && <div>Start date:</div>}
+              {data.endDate && <div>End date:</div>}
+              {data.fundingProgram && <div>Funding program:</div>}
+              {data.maintainer && <div>Maintainer:</div>}
+            </div>
+            <div className="is-flex data-column">
+              {data.homepage && (
+                <div>
+                  <a href={data.homepage}>{data.homepage}</a>
+                </div>
+              )}
+              {data.sourceCode && (
+                <div>
+                  <a href={data.sourceCode}>{data.sourceCode}</a>
+                </div>
+              )}
+              {data.status && <div>{data.status}</div>}
+              {data.startDate && <div>{data.startDate}</div>}
+              {data.endDate && <div>{data.endDate}</div>}
+              {data.fundingProgram && <div>{data.fundingProgram}</div>}
+              {data.maintainer && (
+                <div>
+                  <Link to={data.maintainer.path}>
+                    {data.maintainer.data.name}
+                  </Link>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
 
-        <p>
-          Homepage: <a href={data.homepage}>{data.homepage}</a>
-        </p>
-        <p>
-          Source code: <a href={data.sourceCode}>{data.sourceCode}</a>
-        </p>
-        <p>Status: {data.status}</p>
-        <p>Start date: {data.startDate}</p>
-        <p>End date: {data.endDate}</p>
-        <p>Funding program: {data.fundingProgram}</p>
-
-        {data.maintainer && (
-          <p>
-            Maintainer:{' '}
-            <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>{' '}
-          </p>
-        )}
-
-        <h2>Description:</h2>
-        <div style={{ paddingBottom: 30 }}>
+        <div>
           {data.content &&
             data.content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
@@ -56,9 +80,12 @@ export default function ProjectTemplate({
 
         {data.partner && (
           <>
-            <h2>Partners:</h2>
+            <h1>Partners</h1>
 
-            <div className="tile is-ancestor" style={{ padding: 30 }}>
+            <div
+              className="tile is-ancestor"
+              style={{ paddingTop: 30, paddingLeft: 30 }}
+            >
               {data.partner.map(partner => (
                 <div key={partner.id} className="tile">
                   <div className="image is-64x64" style={{ marginRight: 10 }}>
@@ -73,21 +100,17 @@ export default function ProjectTemplate({
 
         {data.relatedProject && (
           <>
-            <h2>Related projects:</h2>
+            <h1>Related projects</h1>
 
-            <div className="tile is-ancestor" style={{ padding: 30 }}>
+            <div className="tile is-ancestor">
               {data.relatedProject.map(proj => (
-                <div key={proj.id} className="tile">
-                  <h3>
-                    <Link to={proj.path}>{proj.data.name}</Link>
-                  </h3>
-                </div>
+                <Project key={proj.id} project={proj} />
               ))}
             </div>
           </>
         )}
 
-        <h2>Staff:</h2>
+        <h1>Staff</h1>
         <div className="tile is-ancestor" style={{ flexWrap: 'wrap' }}>
           {people.map(person => (
             <div key={person.path} className="tile is-4">
@@ -118,6 +141,11 @@ export const pageQuery = graphql`
           id
           path
           data {
+            rdf_type {
+              data {
+                name
+              }
+            }
             name
           }
         }
