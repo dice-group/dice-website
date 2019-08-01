@@ -13,12 +13,10 @@ const Footer = () => (
       <Social style={{ minWidth: 250, maxWidth: 250 }} />
       <div>
         {links.map(l => (
-          <>
-            <Link key={l.url} to={l.url}>
-              {l.text}
-            </Link>
+          <React.Fragment key={l.url}>
+            <Link to={l.url}>{l.text}</Link>
             <span> • </span>
-          </>
+          </React.Fragment>
         ))}
         <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
       </div>
