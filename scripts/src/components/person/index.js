@@ -7,13 +7,8 @@ export const Person = ({ person }) => (
     <div className="card-content">
       <div className="media">
         <div className="media-left">
-          <figure className="image is-64x64">
-            <Image
-              filename={person.photo}
-              alt={`${person.name} photo`}
-              placeholderClassName="is-rounded"
-              className="is-rounded"
-            />
+          <figure className="image gatsby-image is-64x64">
+            <Image filename={person.photo} alt={`${person.name} photo`} />
           </figure>
         </div>
         <div className="media-content">
@@ -27,8 +22,6 @@ export const Person = ({ person }) => (
           </p>
         </div>
       </div>
-
-      <div className="content" />
     </div>
   </div>
 );
