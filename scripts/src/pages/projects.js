@@ -22,7 +22,7 @@ export default function Projects({
     <Layout>
       <SEO title="Projects" />
       <div className="content">
-        <div style={{ padding: 20 }}>
+        <div style={{ padding: '0 20px 20px 20px' }}>
           <input
             className="input is-rounded"
             type="text"
@@ -45,7 +45,11 @@ export default function Projects({
                     .includes(search.toLowerCase())
                 )
                 .map(project => (
-                  <Project key={project.node.path} project={project.node} />
+                  <Project
+                    key={project.node.path}
+                    project={project.node}
+                    renderType={false}
+                  />
                 ))}
             </div>
           </div>
