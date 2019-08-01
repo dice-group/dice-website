@@ -15,26 +15,50 @@ export default function DemoTemplate({
       <div className="content">
         <h1>{data.name}</h1>
 
-        <p>
-          Webpage: <a href={data.webpage}>{data.webpage}</a>
-        </p>
-        <p>
-          Maintainer:{' '}
-          <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>
-        </p>
-        <p>
-          Developers:{' '}
-          {data.developer.map(p => (
-            <Link key={p.path} to={p.path}>
-              {p.data.name}
-            </Link>
-          ))}
-        </p>
+        <div className="is-flex" style={{ padding: 10 }}>
+          <div
+            className="is-flex data-column data-header"
+            style={{
+              textAlign: 'right',
+            }}
+          >
+            {data.webpage && <div>Webpage:</div>}
+            {data.maintainer && <div>Maintainer:</div>}
+            {data.developer && <div>Developers:</div>}
+          </div>
+          <div className="is-flex data-column">
+            {data.webpage && (
+              <div>
+                <a href={data.webpage}>{data.webpage}</a>
+              </div>
+            )}
+            {data.maintainer && (
+              <div>
+                <Link to={data.maintainer.path}>
+                  {data.maintainer.data.name}
+                </Link>
+              </div>
+            )}
+            {data.developer && (
+              <div>
+                <ul className="people-list">
+                  {data.developer.map(p => (
+                    <li key={p.path}>
+                      <Link key={p.path} to={p.path}>
+                        {p.data.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
 
-        <h2>Description:</h2>
+        <h1>Description</h1>
         <p>{data.description}</p>
 
-        <h2>Screenshots:</h2>
+        <h1>Screenshots</h1>
 
         <div className="tile is-ancestor">
           {data.screenshot.map((screen, index) => (
