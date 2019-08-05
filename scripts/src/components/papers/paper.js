@@ -27,7 +27,10 @@ const Authors = ({ authorName, author }) => {
 
   return (
     <div className="is-flex">
-      <i>Authors</i>:<ul className="people-list">{authors}</ul>
+      <i>Authors</i>:
+      <ul style={{ paddingLeft: 10 }} className="people-list">
+        {authors}
+      </ul>
     </div>
   );
 };
