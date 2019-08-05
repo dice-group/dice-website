@@ -16,10 +16,11 @@ dice:GEISER a dice:FundedProject ;
   schema:homepage <http://www.projekt-geiser.de> ;
   schema:logo "geiser.png" ;
   schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD, dicepartner:YellowMapD ;
+  schema:relatedDemo dice:LIMES ;
 
   # this is here just as example, the URL is not a real source
-  schema:sourceCode <https://github.com/mwauer/geiser> ; 
+  schema:sourceCode <https://github.com/mwauer/geiser> ;
 
   # do we need this to be a resource?
-  # e.g. dicefunding:H2020 ; 
+  # e.g. dicefunding:H2020 ;
   schema:fundingProgram "Horizon 2020" .
