@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import Demo from '../components/demo';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import { Person, rdfToPeopleArray } from '../components/person';
@@ -98,6 +99,18 @@ export default function ProjectTemplate({
           </>
         )}
 
+        {data.relatedDemo && (
+          <>
+            <h1>Related demos</h1>
+
+            <div className="tile is-ancestor">
+              {data.relatedDemo.map(demo => (
+                <Demo key={demo.id} node={demo} />
+              ))}
+            </div>
+          </>
+        )}
+
         {data.relatedProject && (
           <>
             <h1>Related projects</h1>
@@ -147,6 +160,28 @@ export const pageQuery = graphql`
               }
             }
             name
+          }
+        }
+        relatedDemo {
+          id
+          path
+          data {
+            name
+            description
+            screenshot
+            webpage
+            maintainer {
+              path
+              data {
+                name
+              }
+            }
+            developer {
+              path
+              data {
+                name
+              }
+            }
           }
         }
         partner {

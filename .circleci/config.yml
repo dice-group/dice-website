@@ -35,6 +35,8 @@ jobs:
       - run: yarn build
       # copy exoframe.json
       - run: cp exoframe.json public/
+      # copy our custom dockerfile
+      - run: cp Dockerfile public/
       # Persist public folder with build into the workspace for use in deploy
       - persist_to_workspace:
           root: .

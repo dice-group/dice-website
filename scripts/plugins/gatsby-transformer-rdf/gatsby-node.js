@@ -7,6 +7,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/content',
   'https://schema.dice-research.org/project',
   'https://schema.dice-research.org/relatedProject',
+  'https://schema.dice-research.org/relatedDemo',
   'https://schema.dice-research.org/partner',
   'https://schema.dice-research.org/author',
   'https://schema.dice-research.org/authorName',
@@ -19,6 +20,7 @@ const arrayPredicates = [
 const relationPredicates = [
   'rdf:type',
   'schema:relatedProject',
+  'schema:relatedDemo',
   'schema:maintainer',
   'schema:developer',
   'schema:partner',

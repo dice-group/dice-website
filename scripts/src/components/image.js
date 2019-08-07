@@ -51,4 +51,4 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
   );
 };
 
-export default Image;
+export default React.memo(Image);

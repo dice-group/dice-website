@@ -1,4 +1,39 @@
+import { Link } from 'gatsby';
 import React from 'react';
+
+const Authors = ({ authorName, author }) => {
+  if (!authorName) {
+    return '';
+  }
+
+  console.log(authorName, author);
+
+  const authors = authorName.map(name => {
+    const data = author.find(a => a.data.name === name);
+    if (!data) {
+      return (
+        <li key={name}>
+          <span>{name}</span>
+        </li>
+      );
+    }
+
+    return (
+      <li key={name}>
+        <Link to={data.path}>{name}</Link>
+      </li>
+    );
+  });
+
+  return (
+    <div className="is-flex">
+      <i>Authors</i>:
+      <ul style={{ paddingLeft: 10 }} className="people-list">
+        {authors}
+      </ul>
+    </div>
+  );
+};
 
 const Paper = ({ data }) => (
   <>
@@ -33,11 +68,7 @@ const Paper = ({ data }) => (
       </header>
 
       <div className="card-content">
-        {data.authorName && (
-          <p>
-            <i>Authors</i>: {data.authorName.join(', ')}
-          </p>
-        )}
+        <Authors author={data.author} authorName={data.authorName} />
         <p>
           <i>Published in</i>: {data.source || ''}
         </p>
