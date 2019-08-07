@@ -1,1 +1,3 @@
-FROM gatsbyjs/gatsby:onbuild
+FROM gatsbyjs/gatsby:latest
+
+ADD . /pub
