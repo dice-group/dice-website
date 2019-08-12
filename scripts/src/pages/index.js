@@ -65,17 +65,31 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="funded" className="section" ref={fundedRef}>
-        <div className="container content">
-          <h2>Funded by</h2>
-          <FundedBy />
+      <section
+        id="funded"
+        className="hero has-background-white is-medium"
+        ref={fundedRef}
+      >
+        <div className="hero-body">
+          <div className="container content">
+            <div className="section-header">
+              <h1 className="title">Funded by</h1>
+            </div>
+            <FundedBy />
+          </div>
         </div>
       </section>
 
-      <section id="news" className="section" ref={newsRef}>
-        <div className="container content">
-          <h2>News</h2>
-          <News paginate={false} />
+      <section
+        id="news"
+        className="hero has-background-light is-medium"
+        ref={newsRef}
+      >
+        <div className="hero-body">
+          <div className="container content">
+            <h2>News</h2>
+            <News paginate={false} />
+          </div>{' '}
         </div>
       </section>
     </Layout>

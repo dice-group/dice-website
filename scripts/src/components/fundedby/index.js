@@ -55,9 +55,11 @@ const FundedBy = () => (
     }}
   >
     {fundedBy.map(org => (
-      <a key={org.url} href={org.url}>
-        <Image filename={org.image} alt={org.text} style={{ width: 80 }} />
-      </a>
+      <div className="funded-by-item">
+        <a key={org.url} href={org.url}>
+          <Image filename={org.image} alt={org.text} style={{ width: 100 }} />
+        </a>
+      </div>
     ))}
   </div>
 );
