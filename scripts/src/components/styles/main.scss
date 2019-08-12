@@ -9,6 +9,7 @@ $family-monospace: 'normal';
 
 // Set your brand colors
 $blue: #006bd9;
+$darkblue: #003162;
 $black: #000000;
 $white: #ffffff;
 $whiteTransparent: rgba(255, 255, 255, 0.5);
@@ -58,6 +59,10 @@ $widescreen-enabled: false;
 }
 
 .dice-nav-logo {
+  max-height: 50px;
+  width: 150px;
+  height: 100px;
+
   path {
     fill: #ffffff;
   }
@@ -153,6 +158,38 @@ $widescreen-enabled: false;
   }
 }
 
+// footer customization
+.footer {
+  background-color: $darkblue;
+}
+
+.dice-footer {
+  display: flex;
+  flex: 1;
+  padding-top: 0.7em;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px;
+
+  a {
+    padding: 10px;
+    color: $white;
+  }
+}
+
+.footer {
+  .social {
+    flex-direction: row !important;
+    max-width: 200px !important;
+    align-items: flex-start !important;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {
@@ -171,16 +208,6 @@ pre {
   height: 400px;
   float: right;
   padding: 20px;
-}
-
-.dice-footer {
-  padding-top: 0.7em;
-  align-items: center;
-  flex-direction: column;
-
-  a {
-    color: $grey;
-  }
 }
 
 .people-list {

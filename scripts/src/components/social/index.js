@@ -18,17 +18,14 @@ const links = [
 
 const Social = ({ style }) => (
   <div
-    className="column is-flex"
+    className="column is-flex social"
     style={{
-      position: 'fixed',
-      left: 0,
-      top: 96,
-      height: 'calc(60% - 96px)',
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
       maxWidth: 50,
       margin: '0.5em',
+      ...style,
     }}
   >
     {links.map(l => (
