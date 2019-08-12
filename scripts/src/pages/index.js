@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import ActiveProjects from '../components/activeProjects';
 import FundedBy from '../components/fundedby';
 import Layout from '../components/layout';
 import News from '../components/news';
@@ -11,9 +12,11 @@ export default function Home() {
   const heroRef = React.createRef();
   const fundedRef = React.createRef();
   const newsRef = React.createRef();
+  const projectsRef = React.createRef();
 
   const menu = [
     { target: heroRef, title: 'About', url: 'about' },
+    { target: projectsRef, title: 'Active projects', url: 'projects' },
     { target: fundedRef, title: 'Funded by', url: 'funded' },
     { target: newsRef, title: 'News', url: 'news' },
   ];
@@ -40,6 +43,24 @@ export default function Home() {
               <Link to="/publications/">open publications</Link>.
             </p>
             <button className="button is-link action-button">Learn more</button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        className="hero has-background-light is-medium"
+        ref={projectsRef}
+      >
+        <div className="hero-body">
+          <div className="container content">
+            <div className="section-header">
+              <h1 className="title">Active projects</h1>
+              <Link className="link-more" to="/projects/">
+                All projects →
+              </Link>
+            </div>
+            <ActiveProjects />
           </div>
         </div>
       </section>
