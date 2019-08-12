@@ -8,20 +8,23 @@ $family-sans-serif: 'Roboto';
 $family-monospace: 'normal';
 
 // Set your brand colors
-$blue: #387ebd;
-$darkblue: #006bd9;
+$blue: #006bd9;
 $black: #000000;
 $white: #ffffff;
 $whiteTransparent: rgba(255, 255, 255, 0.5);
 
-// Update Bulma's global variables
-$navbar-background-color: $darkblue;
+// adjust navbar styling
+$navbar-background-color: $blue;
 $navbar-item-color: $white;
 $navbar-item-hover-color: $white;
 $navbar-item-hover-background-color: $whiteTransparent;
 $navbar-item-active-color: $white;
 $navbar-item-active-background-color: $whiteTransparent;
 $navbar-height: 6rem;
+
+// adjust sizing
+$fullhd-enabled: false;
+$widescreen-enabled: false;
 
 // Import only what you need from Bulma
 @import 'node_modules/bulma/sass/utilities/_all.sass';
@@ -35,6 +38,7 @@ $navbar-height: 6rem;
 // navbar tweaking
 .navbar-start {
   margin-left: auto;
+  margin-right: initial;
 }
 
 .navbar-item {
@@ -59,7 +63,30 @@ $navbar-height: 6rem;
   }
 }
 
-// define our custom classes
+// button tweaking
+.button {
+  font-weight: 500;
+}
+
+.action-button {
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 60px;
+  font-size: 20px;
+}
+
+// hero adjustments
+.hero-text {
+  font-size: 1.2em;
+  margin-bottom: 1.5em !important;
+}
+
+.hero-row {
+  flex-direction: row;
+  background-color: $white;
+}
+
+// our custom classes
 .content {
   .brand-color {
     color: $blue;

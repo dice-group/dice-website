@@ -20,16 +20,17 @@ const Social = ({ style }) => (
   <div
     className="column is-flex"
     style={{
-      justifyContent: 'space-evenly',
+      justifyContent: 'center',
       alignItems: 'center',
-      minWidth: 150,
-      ...style,
+      flexDirection: 'column',
+      maxWidth: 50,
+      margin: '0.5em',
     }}
   >
     {links.map(l => (
       <a key={l.url} href={l.url} title={l.text}>
-        <span className="icon">
-          <l.icon />
+        <span className="icon is-large">
+          <l.icon size={25} />
         </span>
       </a>
     ))}
