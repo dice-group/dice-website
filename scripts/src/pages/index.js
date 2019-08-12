@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import ActiveProjects from '../components/activeProjects';
 import FundedBy from '../components/fundedby';
 import Layout from '../components/layout';
@@ -13,11 +14,13 @@ export default function Home() {
   const fundedRef = React.createRef();
   const newsRef = React.createRef();
   const projectsRef = React.createRef();
+  const tweetsRef = React.createRef();
 
   const menu = [
     { target: heroRef, title: 'About', url: 'about' },
     { target: projectsRef, title: 'Active projects', url: 'projects' },
     { target: fundedRef, title: 'Funded by', url: 'funded' },
+    { target: tweetsRef, title: 'Latest tweets', url: 'tweets' },
     { target: newsRef, title: 'News', url: 'news' },
   ];
 
@@ -81,8 +84,33 @@ export default function Home() {
       </section>
 
       <section
-        id="news"
+        id="tweets"
         className="hero has-background-light is-medium"
+        ref={tweetsRef}
+      >
+        <div className="hero-body">
+          <div className="container content">
+            <div className="section-header">
+              <h1 className="title">Latest tweets</h1>
+              <a className="link-more" href="https://twitter.com/DiceResearch">
+                Follow →
+              </a>
+            </div>
+
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              screenName="DiceResearch"
+              noFooter
+              noHeader
+              options={{ height: 800 }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="news"
+        className="hero has-background-white is-medium"
         ref={newsRef}
       >
         <div className="hero-body">

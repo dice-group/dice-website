@@ -31,6 +31,7 @@
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
     "react-markdown": "^4.1.0",
+    "react-twitter-embed": "^2.0.8",
     "styled-jsx": "^3.2.1"
   },
   "devDependencies": {
