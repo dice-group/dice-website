@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import React from 'react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import ActiveProjects from '../components/activeProjects';
+import ContactForm from '../components/contact';
 import FundedBy from '../components/fundedby';
 import Layout from '../components/layout';
 import News from '../components/news';
@@ -15,6 +16,7 @@ export default function Home() {
   const newsRef = React.createRef();
   const projectsRef = React.createRef();
   const tweetsRef = React.createRef();
+  const contactRef = React.createRef();
 
   const menu = [
     { target: heroRef, title: 'About', url: 'about' },
@@ -22,6 +24,7 @@ export default function Home() {
     { target: fundedRef, title: 'Funded by', url: 'funded' },
     { target: tweetsRef, title: 'Latest tweets', url: 'tweets' },
     { target: newsRef, title: 'News', url: 'news' },
+    { target: contactRef, title: 'Contact us', url: 'contact' },
   ];
 
   return (
@@ -123,6 +126,25 @@ export default function Home() {
             </div>
 
             <News paginate={false} />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="hero has-background-light is-medium"
+        ref={contactRef}
+      >
+        <div className="hero-body">
+          <div className="container content contact-section">
+            <div className="section-header">
+              <h1 className="title">Contact us</h1>
+              <Link className="link-more" to="/contact/">
+                More contact information →
+              </Link>
+            </div>
+
+            <ContactForm />
           </div>
         </div>
       </section>

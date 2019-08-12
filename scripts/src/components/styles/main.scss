@@ -139,6 +139,20 @@ $widescreen-enabled: false;
   padding: 50px;
 }
 
+// contact section
+.contact-section {
+  padding: 40px;
+  background-color: $white;
+
+  .input {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {

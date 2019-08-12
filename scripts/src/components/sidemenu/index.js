@@ -33,7 +33,7 @@ const SideMenu = ({ targets }) => {
         position: 'fixed',
         right: 0,
         top: 96,
-        height: 'calc(100% - 96px)',
+        height: 'calc(60% - 96px)',
         justifyContent: 'center',
         alignItems: 'flex-end',
         flexDirection: 'column',

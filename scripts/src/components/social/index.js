@@ -20,6 +20,10 @@ const Social = ({ style }) => (
   <div
     className="column is-flex"
     style={{
+      position: 'fixed',
+      left: 0,
+      top: 96,
+      height: 'calc(60% - 96px)',
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
