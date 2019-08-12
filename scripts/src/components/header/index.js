@@ -1,22 +1,19 @@
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import DICE from '../svgs/dice.inline.svg';
-import UPB from '../svgs/upb.inline.svg';
 import styles from './header.module.css';
 
 const links = [
-  // { url: '/', text: 'About' },
-  { url: '/awards/', text: 'Awards' },
-  { url: '/team/', text: 'Team' },
+  { url: '/', text: 'Home' },
   { url: '/projects/', text: 'Projects' },
-  { url: '/demos/', text: 'Demos' },
   { url: '/publications/', text: 'Publications' },
-  { url: '/news/', text: 'News' },
-  { url: '/theses/', text: 'Theses' },
-  { url: '/teaching/', text: 'Teaching' },
-  { url: '/partners/', text: 'Partners' },
+  { url: '/awards/', text: 'Awards' },
+
+  { url: '/teaching/', text: 'For students' },
+  { url: '/demos/', text: 'For collaborators' },
+
+  { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Jobs' },
-  { url: '/contact/', text: 'Contact' },
 ];
 
 const Header = () => {
@@ -26,7 +23,7 @@ const Header = () => {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item brand-color">
-          <DICE className={styles.image} />
+          <DICE className={`${styles.image} dice-nav-logo`} />
           {/* <h1>The Data Science Group</h1> */}
         </Link>
 
@@ -35,7 +32,7 @@ const Header = () => {
           className="navbar-burger burger"
           aria-label="menu"
           aria-expanded="false"
-          data-target="navbarBasicExample"
+          data-target="navbarMenu"
           onClick={() => setExpanded(!expanded)}
         >
           <span aria-hidden="true" />
@@ -45,7 +42,7 @@ const Header = () => {
       </div>
 
       <div
-        id="navbarBasicExample"
+        id="navbarMenu"
         className={`navbar-menu ${expanded ? 'is-active' : ''}`}
       >
         <div className="navbar-start">
@@ -63,7 +60,9 @@ const Header = () => {
 
         <div className="navbar-end">
           <div className="navbar-item">
-            <UPB className={styles.image} />
+            <Link to="/contact/" className="button">
+              Contact us
+            </Link>
           </div>
         </div>
       </div>

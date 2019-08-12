@@ -1,12 +1,27 @@
 @charset "utf-8";
 
+// import font from google
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// set font
+$family-sans-serif: 'Roboto';
+$family-monospace: 'normal';
+
 // Set your brand colors
 $blue: #387ebd;
+$darkblue: #006bd9;
 $black: #000000;
+$white: #ffffff;
+$whiteTransparent: rgba(255, 255, 255, 0.5);
 
 // Update Bulma's global variables
-$navbar-item-color: $blue;
-$navbar-item-hover-color: $black;
+$navbar-background-color: $darkblue;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $white;
+$navbar-item-hover-background-color: $whiteTransparent;
+$navbar-item-active-color: $white;
+$navbar-item-active-background-color: $whiteTransparent;
+$navbar-height: 6rem;
 
 // Import only what you need from Bulma
 @import 'node_modules/bulma/sass/utilities/_all.sass';
@@ -16,6 +31,33 @@ $navbar-item-hover-color: $black;
 @import 'node_modules/bulma/sass/form/_all.sass';
 @import 'node_modules/bulma/sass/grid/_all.sass';
 @import 'node_modules/bulma/sass/layout/_all.sass';
+
+// navbar tweaking
+.navbar-start {
+  margin-left: auto;
+}
+
+.navbar-item {
+  font-weight: 500;
+  font-size: 20px;
+
+  .button {
+    font-weight: 500;
+    font-size: 20px;
+    color: $white;
+    background-color: $whiteTransparent;
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.dice-nav-logo {
+  path {
+    fill: #ffffff;
+  }
+}
 
 // define our custom classes
 .content {
