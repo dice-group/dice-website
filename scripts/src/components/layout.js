@@ -16,15 +16,19 @@ import './styles/main.scss';
 
 const mdxComponents = { Image, Link };
 
-const Layout = ({ children }) => {
+const Layout = ({ children, withContainer = true }) => {
   return (
     <>
       <Header />
-      <section className="section">
-        <div className="container">
-          <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-        </div>
-      </section>
+      {withContainer ? (
+        <section className="section">
+          <div className="container">
+            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+          </div>
+        </section>
+      ) : (
+        <>{children}</>
+      )}
       <Footer />
     </>
   );

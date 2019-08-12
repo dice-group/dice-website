@@ -1,7 +1,5 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React, { useEffect, useState } from 'react';
-import Image from '../image';
-import DICE from '../svgs/dice.inline.svg';
 
 const newsQuery = graphql`
   {
@@ -75,45 +73,17 @@ const News = ({ limit = 10, paginate = true }) => {
         {edges
           .slice(limit * currentPage, limit * currentPage + limit)
           .map(({ node }) => (
-            <div
-              key={node.id}
-              className="columns is-mobile"
-              style={{ marginBottom: 20 }}
-            >
-              {node.frontmatter.thumbnail ? (
-                <div className="column is-one-quarter">
-                  <Image
-                    filename={node.frontmatter.thumbnail}
-                    alt={node.frontmatter.title}
-                  />
-                </div>
-              ) : (
-                <div
-                  className="column is-one-quarter is-flex"
-                  style={{ maxHeight: 200, justifyContent: 'center' }}
-                >
-                  <DICE
-                    viewBox="0 0 700 763"
-                    height="100%"
-                    width="180"
-                    preserveAspectRatio="xMidYMid meet"
-                  />
-                </div>
-              )}
-              <div className="column">
-                <h2
-                  className="subtitle is-6 has-text-grey"
-                  title={node.frontmatter.fullDate}
-                  style={{ paddingBottom: 10 }}
-                >
-                  Published {node.frontmatter.date}
-                </h2>
-                <h1 className="title is-4" style={{ marginBottom: 10 }}>
-                  <Link to={node.fields.path}>{node.frontmatter.title}</Link>
-                </h1>
-
-                <p>{node.excerpt}</p>
-              </div>
+            <div key={node.id} style={{ marginBottom: '2em' }}>
+              <h2
+                className="subtitle is-6 has-text-grey-light"
+                title={node.frontmatter.fullDate}
+                style={{ paddingBottom: 10 }}
+              >
+                {node.frontmatter.date}
+              </h2>
+              <h1 className="title is-5" style={{ marginBottom: '2em' }}>
+                <Link to={node.fields.path}>{node.frontmatter.title}</Link>
+              </h1>
             </div>
           ))}
       </div>

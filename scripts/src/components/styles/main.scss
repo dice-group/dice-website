@@ -1,12 +1,31 @@
 @charset "utf-8";
 
-// Set your brand colors
-$blue: #387ebd;
-$black: #000000;
+// import font from google
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
-// Update Bulma's global variables
-$navbar-item-color: $blue;
-$navbar-item-hover-color: $black;
+// set font
+$family-sans-serif: 'Roboto';
+$family-monospace: 'normal';
+
+// Set your brand colors
+$blue: #006bd9;
+$darkblue: #003162;
+$black: #000000;
+$white: #ffffff;
+$whiteTransparent: rgba(255, 255, 255, 0.5);
+
+// adjust navbar styling
+$navbar-background-color: $blue;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $white;
+$navbar-item-hover-background-color: $whiteTransparent;
+$navbar-item-active-color: $white;
+$navbar-item-active-background-color: $whiteTransparent;
+$navbar-height: 6rem;
+
+// adjust sizing
+$fullhd-enabled: false;
+$widescreen-enabled: false;
 
 // Import only what you need from Bulma
 @import 'node_modules/bulma/sass/utilities/_all.sass';
@@ -17,7 +36,161 @@ $navbar-item-hover-color: $black;
 @import 'node_modules/bulma/sass/grid/_all.sass';
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
-// define our custom classes
+// navbar tweaking
+.navbar-start {
+  margin-left: auto;
+  margin-right: initial;
+}
+
+.navbar-item {
+  font-weight: 500;
+  font-size: 20px;
+
+  .button {
+    font-weight: 500;
+    font-size: 20px;
+    color: $white;
+    background-color: $whiteTransparent;
+    border: none;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.dice-nav-logo {
+  max-height: 50px;
+  width: 150px;
+  height: 100px;
+
+  path {
+    fill: #ffffff;
+  }
+}
+
+// button tweaking
+.button {
+  font-weight: 500;
+}
+
+.action-button {
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 60px;
+  font-size: 20px;
+}
+
+// hero adjustments
+.hero-text {
+  font-size: 1.2em;
+  margin-bottom: 1.5em !important;
+}
+
+.hero-row {
+  flex-direction: row;
+  background-color: $white;
+}
+
+// main page links
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+
+  .title {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+.link-more {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+// active project card styling
+.active-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $white;
+  border-radius: 10px;
+  max-width: 30%;
+  height: 400px;
+
+  .project-image {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    color: $blue;
+    font-size: 1.5em;
+  }
+
+  .separator {
+    flex: 1;
+  }
+
+  .link {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+}
+
+// funded by items
+.funded-by-item {
+  padding: 50px;
+}
+
+// contact section
+.contact-section {
+  padding: 40px;
+  background-color: $white;
+
+  .input {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+}
+
+// footer customization
+.footer {
+  background-color: $darkblue;
+}
+
+.dice-footer {
+  display: flex;
+  flex: 1;
+  padding-top: 0.7em;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px;
+
+  a {
+    padding: 10px;
+    color: $white;
+  }
+}
+
+.footer {
+  .social {
+    flex-direction: row !important;
+    max-width: 200px !important;
+    align-items: flex-start !important;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+// our custom classes
 .content {
   .brand-color {
     color: $blue;
@@ -35,16 +208,6 @@ pre {
   height: 400px;
   float: right;
   padding: 20px;
-}
-
-.dice-footer {
-  padding-top: 0.7em;
-  align-items: center;
-  flex-direction: column;
-
-  a {
-    color: $grey;
-  }
 }
 
 .people-list {
