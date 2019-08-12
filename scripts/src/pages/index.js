@@ -115,9 +115,15 @@ export default function Home() {
       >
         <div className="hero-body">
           <div className="container content">
-            <h2>News</h2>
+            <div className="section-header">
+              <h1 className="title">News</h1>
+              <Link className="link-more" to="/news/">
+                More news →
+              </Link>
+            </div>
+
             <News paginate={false} />
-          </div>{' '}
+          </div>
         </div>
       </section>
     </Layout>
