@@ -6,7 +6,7 @@ const SideMenu = ({ targets }) => {
 
   useEffect(() => {
     const options = {
-      threshold: 0.5, // activate at 50% visibility
+      threshold: 0.8, // activate at 70% visibility
     };
 
     const observer = new IntersectionObserver(entries => {
