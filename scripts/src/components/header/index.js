@@ -8,8 +8,8 @@ const links = [
   { url: '/publications/', text: 'Publications' },
   { url: '/awards/', text: 'Awards' },
 
-  { url: '/teaching/', text: 'For students' },
-  { url: '/demos/', text: 'For collaborators' },
+  { url: '/students/', text: 'For students' },
+  { url: '/collaborators/', text: 'For collaborators' },
 
   { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Jobs' },
@@ -51,6 +51,7 @@ const Header = () => {
               to={l.url}
               className="navbar-item"
               activeClassName="is-active"
+              partiallyActive={l.url !== '/'}
             >
               {l.text}
             </Link>

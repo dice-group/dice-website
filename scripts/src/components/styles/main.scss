@@ -209,6 +209,30 @@ $widescreen-enabled: false;
   justify-content: center;
 }
 
+// custom tabs for subnav
+.tabs {
+  border-bottom-color: #dbdbdb;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-top: 0.7em;
+
+  ul {
+    border-bottom: none;
+  }
+
+  li {
+    font-size: 1.2em;
+    &.is-active {
+      border-bottom: solid 3px #006bd9;
+    }
+  }
+
+  a {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {
