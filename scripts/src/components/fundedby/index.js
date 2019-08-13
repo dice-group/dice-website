@@ -45,17 +45,9 @@ const fundedBy = [
 ];
 
 const FundedBy = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    }}
-  >
+  <div className="columns is-multiline">
     {fundedBy.map(org => (
-      <div key={org.url} className="funded-by-item">
+      <div key={org.url} className="column is-3 funded-by-item">
         <a href={org.url}>
           <Image filename={org.image} alt={org.text} style={{ width: 100 }} />
         </a>

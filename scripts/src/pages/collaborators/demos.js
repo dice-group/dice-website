@@ -1,8 +1,8 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import React from 'react';
-import Demo from '../components/demo';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Demo from '../../components/demo';
+import Layout from '../../components/layout';
+import SEO from '../../components/seo';
 
 export default function Demos({
   data: {
@@ -10,13 +10,28 @@ export default function Demos({
   },
 }) {
   return (
-    <Layout>
+    <Layout withContainer={false}>
       <SEO title="Demos" />
-      <div className="content tile is-ancestor">
-        {edges.map(({ node }) => (
-          <Demo key={node.path} node={node} />
-        ))}
+      <div className="tabs">
+        <ul className="container">
+          <li className="is-active">
+            <a>Demos</a>
+          </li>
+          <li>
+            <Link to="/collaborators/partners/">Partners</Link>
+          </li>
+        </ul>
       </div>
+
+      <section className="section">
+        <div className="container">
+          <div className="content tile is-ancestor">
+            {edges.map(({ node }) => (
+              <Demo key={node.path} node={node} />
+            ))}
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

@@ -87,7 +87,6 @@ $widescreen-enabled: false;
 }
 
 .hero-row {
-  flex-direction: row;
   background-color: $white;
 }
 
@@ -97,14 +96,23 @@ $widescreen-enabled: false;
   align-items: center;
   margin-bottom: 2em;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   .title {
     flex: 1;
     margin-bottom: 0;
   }
-}
-.link-more {
-  font-size: 1.2em;
-  font-weight: 600;
+
+  .link-more {
+    font-size: 1.2em;
+    font-weight: 600;
+
+    @include mobile {
+      padding-top: 1em;
+    }
+  }
 }
 
 // active project card styling
@@ -114,7 +122,6 @@ $widescreen-enabled: false;
   align-items: center;
   background-color: $white;
   border-radius: 10px;
-  max-width: 30%;
   height: 400px;
 
   .project-image {
@@ -141,7 +148,9 @@ $widescreen-enabled: false;
 
 // funded by items
 .funded-by-item {
-  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // contact section
@@ -165,7 +174,7 @@ $widescreen-enabled: false;
 
 .dice-footer {
   display: flex;
-  flex: 1;
+  flex: 3;
   padding-top: 0.7em;
   align-items: center;
   flex-direction: column;
@@ -181,12 +190,46 @@ $widescreen-enabled: false;
 .footer {
   .social {
     flex-direction: row !important;
-    max-width: 200px !important;
     align-items: flex-start !important;
 
     a {
       color: $white;
     }
+  }
+}
+
+.has-content-centered {
+  align-items: center;
+  justify-content: center;
+}
+.vertically-centered {
+  align-items: center;
+}
+.horizontally-centered {
+  justify-content: center;
+}
+
+// custom tabs for subnav
+.tabs {
+  border-bottom-color: #dbdbdb;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-top: 0.7em;
+
+  ul {
+    border-bottom: none;
+  }
+
+  li {
+    font-size: 1.2em;
+    &.is-active {
+      border-bottom: solid 3px #006bd9;
+    }
+  }
+
+  a {
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
   }
 }
 

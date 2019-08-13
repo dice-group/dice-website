@@ -36,7 +36,37 @@ const renderRdfType = async ({
   });
 };
 
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
+exports.createPages = async ({
+  actions: { createPage, createRedirect },
+  graphql,
+}) => {
+  // redirect to students subpage
+  createRedirect({
+    fromPath: `/students`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/students/teaching/`,
+  });
+  createRedirect({
+    fromPath: `/students/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/students/teaching/`,
+  });
+  // redirect to collaborators subpage
+  createRedirect({
+    fromPath: `/collaborators`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/collaborators/demos/`,
+  });
+  createRedirect({
+    fromPath: `/collaborators/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    toPath: `/collaborators/demos/`,
+  });
+
   // mdx news rendering
   const mdxNewsTemplate = path.resolve(`src/templates/newsPage.js`);
   const mdxNewsResult = await graphql(`

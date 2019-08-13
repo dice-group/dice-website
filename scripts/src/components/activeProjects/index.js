@@ -54,9 +54,9 @@ const ActiveProjects = () => {
   } = useStaticQuery(newsQuery);
 
   return (
-    <>
+    <div className="columns">
       {edges.map(({ node }) => (
-        <div className="active-project" key={node.path}>
+        <div className="column is-one-third active-project" key={node.path}>
           <div className="project-image">
             <Image
               filename={node.data.logo}
@@ -71,7 +71,7 @@ const ActiveProjects = () => {
           </Link>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

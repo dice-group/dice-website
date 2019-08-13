@@ -27,21 +27,31 @@ const links = [
 const Footer = () => (
   <div className="footer">
     <div className="container content is-flex" style={{ maxWidth: 1100 }}>
-      <div className="is-flex">
-        <DICE className="dice-nav-logo" />
+      <div className="columns" style={{ flex: 1 }}>
+        <div className="column is-flex horizontally-centered">
+          <DICE className="dice-nav-logo" />
+        </div>
+        <div className="column dice-footer">
+          {links.map(l => (
+            <Link key={l.url} to={l.url}>
+              {l.text}
+            </Link>
+          ))}
+          <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
+        </div>
+        <Social
+          hiddenMobile={false}
+          style={{
+            position: 'inherit',
+            justifyContent: 'center',
+            maxWidth: '!inherit',
+            height: 'auto',
+          }}
+        />
       </div>
-      <div className="dice-footer">
-        {links.map(l => (
-          <Link key={l.url} to={l.url}>
-            {l.text}
-          </Link>
-        ))}
-        <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
-      </div>
-      <Social />
     </div>
 
-    <div className="is-flex" style={{ justifyContent: 'center' }}>
+    <div className="is-flex horizontally-centered">
       <a href="https://www.uni-paderborn.de/">
         <UPB
           style={{ filter: 'grayscale(1) invert(1) opacity(0.5)', width: 200 }}

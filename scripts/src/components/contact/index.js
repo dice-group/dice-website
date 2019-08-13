@@ -51,7 +51,6 @@ const ContactForm = () => {
       edges: [{ node: axelProfile }],
     },
   } = useStaticQuery(axelQuery);
-  console.log(axelProfile);
 
   return (
     <div className="columns">

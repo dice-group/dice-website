@@ -16,10 +16,16 @@ const links = [
   },
 ];
 
-const Social = ({ style }) => (
+const Social = ({ style, hiddenMobile = true }) => (
   <div
-    className="column is-flex social"
+    className={`column is-flex social ${
+      hiddenMobile ? 'is-hidden-mobile' : ''
+    }`}
     style={{
+      position: 'absolute',
+      left: 0,
+      top: 96,
+      height: 'calc(60% - 96px)',
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
