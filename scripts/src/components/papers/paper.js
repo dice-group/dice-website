@@ -6,8 +6,6 @@ const Authors = ({ authorName, author }) => {
     return '';
   }
 
-  console.log(authorName, author);
-
   const authors = authorName.map(name => {
     const data = author.find(a => a.data.name === name);
     if (!data) {

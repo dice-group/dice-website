@@ -32,10 +32,9 @@ export default function Home() {
       <SEO title="Home" />
 
       <SideMenu targets={menu} />
+      <Social />
 
       <section id="about" className="hero hero-row is-medium" ref={heroRef}>
-        <Social />
-
         <div className="hero-body">
           <div className="container content">
             <h1 className="title">Welcome to the Data Science Group</h1>

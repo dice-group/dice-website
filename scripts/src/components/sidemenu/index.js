@@ -28,7 +28,7 @@ const SideMenu = ({ targets }) => {
 
   return (
     <div
-      className="column is-flex"
+      className="column is-flex is-hidden-mobile"
       style={{
         position: 'fixed',
         right: 0,
