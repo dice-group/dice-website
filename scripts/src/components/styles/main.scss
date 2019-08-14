@@ -36,6 +36,16 @@ $widescreen-enabled: false;
 @import 'node_modules/bulma/sass/grid/_all.sass';
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
+// text sizes
+.content {
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+
 // navbar tweaking
 .navbar-start {
   margin-left: auto;
@@ -43,15 +53,25 @@ $widescreen-enabled: false;
 }
 
 .navbar-item {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 1.25em;
+  opacity: 0.5;
+  background-color: transparent !important;
+
+  &.no-opacity {
+    opacity: 1;
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
 
   .button {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 1em;
     color: $white;
-    background-color: $whiteTransparent;
-    border: none;
+    background-color: transparent;
+    border: 2px solid #ffffff;
     border-radius: 5px;
     padding-left: 40px;
     padding-right: 40px;
@@ -170,19 +190,32 @@ $widescreen-enabled: false;
 // footer customization
 .footer {
   background-color: $darkblue;
+
+  .social {
+    position: inherit !important;
+    justify-content: flex-end !important;
+    max-width: inherit !important;
+    height: auto !important;
+
+    @include mobile {
+      justify-content: flex-start !important;
+    }
+  }
 }
 
 .dice-footer {
   display: flex;
   flex: 3;
-  padding-top: 0.7em;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 200px;
 
   a {
-    padding: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     color: $white;
   }
 }

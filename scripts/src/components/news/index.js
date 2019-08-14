@@ -75,13 +75,13 @@ const News = ({ limit = 10, paginate = true }) => {
           .map(({ node }) => (
             <div key={node.id} style={{ marginBottom: '2em' }}>
               <h2
-                className="subtitle is-6 has-text-grey-light"
+                className="subtitle is-5 has-text-grey-light"
                 title={node.frontmatter.fullDate}
                 style={{ paddingBottom: 10 }}
               >
                 {node.frontmatter.date}
               </h2>
-              <h1 className="title is-5" style={{ marginBottom: '2em' }}>
+              <h1 className="title is-4" style={{ marginBottom: '2em' }}>
                 <Link to={node.fields.path}>{node.frontmatter.title}</Link>
               </h1>
             </div>

@@ -21,9 +21,8 @@ const Header = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-item brand-color">
+        <Link to="/" className="navbar-item no-opacity">
           <DICE className="dice-nav-logo" />
-          {/* <h1>The Data Science Group</h1> */}
         </Link>
 
         <a
@@ -59,7 +58,7 @@ const Header = () => {
         </div>
 
         <div className="navbar-end">
-          <div className="navbar-item">
+          <div className="navbar-item no-opacity">
             <Link to="/contact/" className="button">
               Contact us
             </Link>
