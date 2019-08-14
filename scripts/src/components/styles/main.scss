@@ -53,15 +53,25 @@ $widescreen-enabled: false;
 }
 
 .navbar-item {
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 1.25em;
+  opacity: 0.5;
+  background-color: transparent !important;
+
+  &.no-opacity {
+    opacity: 1;
+  }
+
+  &.is-active {
+    opacity: 1;
+  }
 
   .button {
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 1em;
     color: $white;
-    background-color: $whiteTransparent;
-    border: none;
+    background-color: transparent;
+    border: 2px solid #ffffff;
     border-radius: 5px;
     padding-left: 40px;
     padding-right: 40px;
