@@ -170,19 +170,32 @@ $widescreen-enabled: false;
 // footer customization
 .footer {
   background-color: $darkblue;
+
+  .social {
+    position: inherit !important;
+    justify-content: flex-end !important;
+    max-width: inherit !important;
+    height: auto !important;
+
+    @include mobile {
+      justify-content: flex-start !important;
+    }
+  }
 }
 
 .dice-footer {
   display: flex;
   flex: 3;
-  padding-top: 0.7em;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 200px;
 
   a {
-    padding: 10px;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     color: $white;
   }
 }

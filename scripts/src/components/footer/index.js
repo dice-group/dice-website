@@ -18,7 +18,7 @@ const links = [
   { url: '/partners/', text: 'Partners' },
   { url: '/jobs/', text: 'Jobs' },
   { url: '/contact/', text: 'Contact' },
-  { url: '', text: '' },
+  { url: '#', text: '' },
 
   { url: '/imprint', text: 'Imprint' },
   { url: '/privacy', text: 'Privacy Policy' },
@@ -26,29 +26,19 @@ const links = [
 
 const Footer = () => (
   <div className="footer">
-    <div className="container content is-flex" style={{ maxWidth: 1100 }}>
-      <div className="columns" style={{ flex: 1 }}>
-        <div className="column is-flex horizontally-centered">
-          <DICE className="dice-nav-logo" />
-        </div>
-        <div className="column dice-footer">
-          {links.map(l => (
-            <Link key={l.url} to={l.url}>
-              {l.text}
-            </Link>
-          ))}
-          <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
-        </div>
-        <Social
-          hiddenMobile={false}
-          style={{
-            position: 'inherit',
-            justifyContent: 'center',
-            maxWidth: '!inherit',
-            height: 'auto',
-          }}
-        />
+    <div className="columns" style={{ flex: 1 }}>
+      <div className="column is-flex">
+        <DICE className="dice-nav-logo" />
       </div>
+      <div className="column dice-footer">
+        {links.map(l => (
+          <Link key={l.url} to={l.url}>
+            {l.text}
+          </Link>
+        ))}
+        <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
+      </div>
+      <Social hiddenMobile={false} />
     </div>
 
     <div className="is-flex horizontally-centered">
