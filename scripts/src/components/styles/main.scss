@@ -36,6 +36,16 @@ $widescreen-enabled: false;
 @import 'node_modules/bulma/sass/grid/_all.sass';
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
+// text sizes
+.content {
+  h1 {
+    font-size: 2.5em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+}
+
 // navbar tweaking
 .navbar-start {
   margin-left: auto;
