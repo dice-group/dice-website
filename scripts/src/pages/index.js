@@ -104,7 +104,9 @@ export default function Home() {
               screenName="DiceResearch"
               noFooter
               noHeader
-              options={{ height: 800 }}
+              noScrollbar
+              autoHeight
+              options={{ tweetLimit: 3, dnt: true }}
             />
           </div>
         </div>
