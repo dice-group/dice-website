@@ -25,9 +25,11 @@ export default function Demos({
 
       <section className="section">
         <div className="container">
-          <div className="content tile is-ancestor">
+          <div className="content columns is-multiline is-5 is-variable">
             {edges.map(({ node }) => (
-              <Demo key={node.path} node={node} />
+              <div className="column is-one-third" key={node.path}>
+                <Demo node={node} />
+              </div>
             ))}
           </div>
         </div>

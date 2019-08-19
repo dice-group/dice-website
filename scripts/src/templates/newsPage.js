@@ -1,14 +1,10 @@
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
+import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-
-const goBack = e => {
-  e.preventDefault();
-  window.history.back();
-};
 
 export default function NewsTemplate({
   data: {
@@ -18,10 +14,8 @@ export default function NewsTemplate({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="content" style={{ marginBottom: 260 }}>
-        <a href="#" onClick={goBack}>
-          ← Go back
-        </a>
+      <div className="content" style={{ marginBottom: 160 }}>
+        <BackButton />
 
         <h1 className="title">{frontmatter.title}</h1>
 

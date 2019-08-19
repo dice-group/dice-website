@@ -22,38 +22,50 @@ export default function Projects({
     <Layout>
       <SEO title="Projects" />
       <div className="content">
-        <div style={{ padding: '0 20px 20px 20px' }}>
+        {/*<div style={{ padding: '0 20px 20px 20px' }}>
           <input
             className="input is-rounded"
             type="text"
             placeholder="Search for project.."
             onChange={handleSearch}
           />
-        </div>
-        {Object.keys(projectsByType).map(type => (
-          <div
-            key={type}
-            className="tile is-vertical"
-            style={{ marginBottom: '3em' }}
-          >
-            <h2 style={{ marginBottom: '1em' }}>{type}</h2>
-            <div className="tile is-ancestor">
-              {projectsByType[type]
-                .filter(project =>
-                  project.node.data.name
-                    .toLowerCase()
-                    .includes(search.toLowerCase())
-                )
-                .map(project => (
-                  <Project
-                    key={project.node.path}
-                    project={project.node}
-                    renderType={false}
-                  />
-                ))}
+        </div>*/}
+        {Object.keys(projectsByType)
+          .filter(type => {
+            return (
+              projectsByType[type].filter(project =>
+                project.node.data.name
+                  .toLowerCase()
+                  .includes(search.toLowerCase())
+              ).length > 0
+            );
+          })
+          .map(type => (
+            <div
+              key={type}
+              className="tile is-vertical"
+              style={{ marginBottom: '3em' }}
+            >
+              <h1 style={{ marginBottom: '1em' }}>{type}</h1>
+              <div className="columns is-multiline is-5 is-variable">
+                {projectsByType[type]
+                  .filter(project =>
+                    project.node.data.name
+                      .toLowerCase()
+                      .includes(search.toLowerCase())
+                  )
+                  .map(({ node }) => (
+                    <div className="column is-one-third" key={node.path}>
+                      <Project
+                        key={node.path}
+                        project={node}
+                        renderType={false}
+                      />
+                    </div>
+                  ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </Layout>
   );

@@ -10,6 +10,7 @@ $family-monospace: 'normal';
 // Set your brand colors
 $blue: #006bd9;
 $darkblue: #003162;
+$darkbrown: #463232;
 $black: #000000;
 $white: #ffffff;
 $whiteTransparent: rgba(255, 255, 255, 0.5);
@@ -135,7 +136,7 @@ $widescreen-enabled: false;
   }
 }
 
-// active project card styling
+// projects styling
 .active-project {
   display: flex;
   flex-direction: column;
@@ -143,16 +144,20 @@ $widescreen-enabled: false;
   background-color: $white;
   border-radius: 10px;
   height: 400px;
+  padding-top: 10px;
 
   .project-image {
     flex: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 200px;
+    min-height: 200px;
+    max-width: 200px;
   }
 
   .title {
-    color: $blue;
+    color: $darkbrown;
     font-size: 1.5em;
   }
 
@@ -163,6 +168,96 @@ $widescreen-enabled: false;
   .link {
     font-size: 1.2em;
     margin-bottom: 20px;
+  }
+}
+
+.project-card {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  &.project-rounded {
+    border-radius: 10px;
+  }
+}
+
+.projects {
+  .project-full-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    margin-bottom: 64px;
+
+    .project-image {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      max-height: 200px;
+      max-width: 200px;
+    }
+
+    .tagline {
+      font-weight: '1.5em';
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .button {
+        padding: 14px 94px;
+        height: 60px;
+        font-size: 1.3em;
+        border-width: 2px;
+      }
+    }
+  }
+
+  .project-description {
+    margin-bottom: 64px;
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1.25em;
+    }
+  }
+
+  .project-extended-info {
+    font-size: 1.25em;
+    margin-bottom: 88px !important;
+
+    h6 {
+      margin-bottom: 6px;
+    }
+
+    .staff-list {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .horizontal-separator {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    opacity: 0.2;
+    margin-bottom: 40px;
+  }
+
+  .see-also {
+    h2 {
+      font-size: 2em;
+      margin-bottom: 35px;
+    }
   }
 }
 
@@ -200,6 +295,12 @@ $widescreen-enabled: false;
     @include mobile {
       justify-content: flex-start !important;
     }
+  }
+
+  .horizontal-separator {
+    opacity: 0.5;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
   }
 }
 
