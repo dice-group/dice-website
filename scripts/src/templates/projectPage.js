@@ -1,5 +1,5 @@
 import format from 'date-fns/format';
-import { graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/backButton';
@@ -19,6 +19,7 @@ export default function ProjectTemplate({
   },
 }) {
   const people = rdfToPeopleArray(edges);
+  console.log(people);
 
   return (
     <Layout>
@@ -61,68 +62,85 @@ export default function ProjectTemplate({
           </div>
         </div>
 
-        <div className="project-description">
-          <h1>About the project</h1>
+        {data.content && (
+          <div className="project-description">
+            <h1>About the project</h1>
 
-          {data.content &&
-            data.content.map((mdString, i) => (
+            {data.content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
-        </div>
+          </div>
+        )}
 
         <div className="columns project-extended-info">
-          <div className="column">
-            <h6>Maintainer</h6>
-            <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>
-          </div>
+          {data.maintainer && (
+            <div className="column">
+              <h6>Maintainer</h6>
+              <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>
+            </div>
+          )}
 
-          <div className="column staff-list">
-            <h6>Staff</h6>
+          {people && people.length > 0 && (
+            <div className="column staff-list">
+              <h6>Staff</h6>
 
-            {people
-              .filter(p => data.maintainer && data.maintainer.path !== p.path)
-              .map(person => (
-                <Link key={person.path} to={person.path}>
-                  {person.name}
-                </Link>
+              {people
+                .filter(
+                  p =>
+                    !data.maintainer ||
+                    (data.maintainer && data.maintainer.path !== p.path)
+                )
+                .map(person => (
+                  <Link key={person.path} to={person.path}>
+                    {person.name}
+                  </Link>
+                ))}
+            </div>
+          )}
+
+          {data.partner && (
+            <div className="column">
+              <h6>Partners</h6>
+
+              {data.partner.map(partner => (
+                <a key={partner.id} href={partner.data.url}>
+                  {partner.data.name}
+                </a>
               ))}
-          </div>
+            </div>
+          )}
 
-          <div className="column">
-            <h6>Partners</h6>
+          {data.fundingProgram && (
+            <div className="column">
+              <h6>Funding program</h6>
 
-            {data.partner.map(partner => (
-              <a key={partner.id} href={partner.data.url}>
-                {partner.data.name}
-              </a>
-            ))}
-          </div>
-
-          <div className="column">
-            <h6>Funding program</h6>
-
-            {data.fundingProgram}
-          </div>
+              {data.fundingProgram}
+            </div>
+          )}
         </div>
 
         <div className="horizontal-separator" />
 
-        <div className="see-also">
-          <h2>See also</h2>
+        {(data.relatedDemo || data.relatedProject) && (
+          <div className="see-also">
+            <h2>See also</h2>
 
-          <div className="columns is-multiline is-5 is-variable">
-            {data.relatedProject.map(proj => (
-              <div className="column is-one-third" key={proj.id}>
-                <Project project={proj} />
-              </div>
-            ))}
-            {data.relatedDemo.map(demo => (
-              <div className="column is-one-third" key={demo.id}>
-                <Demo node={demo} />
-              </div>
-            ))}
+            <div className="columns is-multiline is-5 is-variable">
+              {data.relatedProject &&
+                data.relatedProject.map(proj => (
+                  <div className="column is-one-third" key={proj.id}>
+                    <Project project={proj} />
+                  </div>
+                ))}
+              {data.relatedDemo &&
+                data.relatedDemo.map(demo => (
+                  <div className="column is-one-third" key={demo.id}>
+                    <Demo node={demo} />
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </Layout>
   );
