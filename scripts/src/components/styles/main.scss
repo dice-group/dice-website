@@ -190,6 +190,7 @@ $widescreen-enabled: false;
     justify-content: space-evenly;
     min-height: 400px;
     margin-bottom: 64px;
+    padding: 15px;
 
     .project-image {
       display: flex;
@@ -201,13 +202,14 @@ $widescreen-enabled: false;
     }
 
     .tagline {
-      font-weight: '1.5em';
+      font-weight: 1.5em;
+      text-align: center;
     }
 
     .buttons {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
 
       .button {
         padding: 14px 94px;
