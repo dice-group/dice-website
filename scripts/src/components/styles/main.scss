@@ -10,6 +10,7 @@ $family-monospace: 'normal';
 // Set your brand colors
 $blue: #006bd9;
 $darkblue: #003162;
+$darkbrown: #463232;
 $black: #000000;
 $white: #ffffff;
 $whiteTransparent: rgba(255, 255, 255, 0.5);
@@ -149,10 +150,12 @@ $widescreen-enabled: false;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-height: 200px;
+    max-width: 200px;
   }
 
   .title {
-    color: $blue;
+    color: $darkbrown;
     font-size: 1.5em;
   }
 
@@ -164,6 +167,12 @@ $widescreen-enabled: false;
     font-size: 1.2em;
     margin-bottom: 20px;
   }
+}
+
+.project-card {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 // funded by items
