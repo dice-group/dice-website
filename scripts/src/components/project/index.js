@@ -3,7 +3,7 @@ import React from 'react';
 import Image from '../image';
 
 const Project = ({ project, renderType = true }) => (
-  <div className="active-project">
+  <div className="active-project project-card">
     <div className="project-image">
       <Image
         filename={project.data.logo}
