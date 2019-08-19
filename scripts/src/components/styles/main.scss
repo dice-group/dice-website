@@ -175,6 +175,7 @@ $widescreen-enabled: false;
   border: 1px solid rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   border-radius: 5px;
+  cursor: pointer;
 
   &.project-rounded {
     border-radius: 10px;
