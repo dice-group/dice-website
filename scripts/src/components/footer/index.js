@@ -41,6 +41,8 @@ const Footer = () => (
       <Social hiddenMobile={false} />
     </div>
 
+    <div className="horizontal-separator" />
+
     <div className="is-flex horizontally-centered">
       <a href="https://www.uni-paderborn.de/">
         <UPB

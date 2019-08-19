@@ -296,6 +296,12 @@ $widescreen-enabled: false;
       justify-content: flex-start !important;
     }
   }
+
+  .horizontal-separator {
+    opacity: 0.5;
+    border-bottom: 1px solid #ffffff;
+    width: 100%;
+  }
 }
 
 .dice-footer {
