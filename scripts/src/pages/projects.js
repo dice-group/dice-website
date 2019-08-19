@@ -47,7 +47,7 @@ export default function Projects({
               style={{ marginBottom: '3em' }}
             >
               <h1 style={{ marginBottom: '1em' }}>{type}</h1>
-              <div className="tile is-ancestor">
+              <div className="columns is-multiline is-5 is-variable">
                 {projectsByType[type]
                   .filter(project =>
                     project.node.data.name
@@ -55,10 +55,7 @@ export default function Projects({
                       .includes(search.toLowerCase())
                   )
                   .map(({ node }) => (
-                    <div
-                      className="column is-one-third project-card"
-                      key={node.path}
-                    >
+                    <div className="column is-one-third" key={node.path}>
                       <Project
                         key={node.path}
                         project={node}
