@@ -1,9 +1,12 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import React from 'react';
 import Image from '../image';
 
 const Project = ({ project, renderType = true }) => (
-  <div className="active-project project-card">
+  <div
+    className="active-project project-card"
+    onClick={() => navigate(project.path)}
+  >
     <div className="project-image">
       <Image
         filename={project.data.logo}
