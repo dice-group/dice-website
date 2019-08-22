@@ -29,12 +29,37 @@ $fullhd-enabled: false;
 $widescreen-enabled: false;
 
 // Import only what you need from Bulma
-@import 'node_modules/bulma/sass/utilities/_all.sass';
+// Utilities
+@import 'node_modules/bulma/sass/utilities/initial-variables.sass';
+@import 'node_modules/bulma/sass/utilities/functions.sass';
+@import 'node_modules/bulma/sass/utilities/derived-variables.sass';
+@import 'node_modules/bulma/sass/utilities/mixins.sass';
+@import 'node_modules/bulma/sass/utilities/controls.sass';
+// base
 @import 'node_modules/bulma/sass/base/_all.sass';
-@import 'node_modules/bulma/sass/components/_all.sass';
-@import 'node_modules/bulma/sass/elements/_all.sass';
-@import 'node_modules/bulma/sass/form/_all.sass';
-@import 'node_modules/bulma/sass/grid/_all.sass';
+// components
+@import 'node_modules/bulma/sass/components/card.sass';
+@import 'node_modules/bulma/sass/components/media.sass';
+@import 'node_modules/bulma/sass/components/navbar.sass';
+@import 'node_modules/bulma/sass/components/pagination.sass';
+@import 'node_modules/bulma/sass/components/tabs.sass';
+// elements
+@import 'node_modules/bulma/sass/elements/box.sass';
+@import 'node_modules/bulma/sass/elements/button.sass';
+@import 'node_modules/bulma/sass/elements/container.sass';
+@import 'node_modules/bulma/sass/elements/content.sass';
+// @import "icon.sass"
+@import 'node_modules/bulma/sass/elements/image.sass';
+@import 'node_modules/bulma/sass/elements/table.sass';
+@import 'node_modules/bulma/sass/elements/tag.sass';
+@import 'node_modules/bulma/sass/elements/title.sass';
+// form
+@import 'node_modules/bulma/sass/form/shared.sass';
+@import 'node_modules/bulma/sass/form/input-textarea.sass';
+// grid
+@import 'node_modules/bulma/sass/grid/columns.sass';
+@import 'node_modules/bulma/sass/grid/tiles.sass';
+// layout
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
 // text sizes
