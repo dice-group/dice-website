@@ -417,9 +417,20 @@ $widescreen-enabled: false;
   }
   .meta {
     font-size: 1.25em;
-    color: #463232;
-    opacity: 0.5;
+    color: rgba(70, 50, 50, 0.5);
     margin-bottom: 0 !important;
+
+    .bib-link {
+      display: none;
+      color: $blue;
+    }
+  }
+  &:hover {
+    .meta {
+      .bib-link {
+        display: inline;
+      }
+    }
   }
 }
 
@@ -432,6 +443,10 @@ $widescreen-enabled: false;
 .facets {
   display: flex;
   flex-direction: row;
+
+  @include mobile {
+    flex-direction: column;
+  }
 
   .tags {
     display: flex;

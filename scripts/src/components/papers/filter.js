@@ -122,7 +122,7 @@ const Filter = ({ edges, children = () => {} }) => {
 
       <div className="facets">
         {facets.map(facet => (
-          <div className="tags has-addons">
+          <div className="tags has-addons" key={facet.data}>
             <span className="tag is-medium is-info">{facet.data}</span>
             <a
               className="tag is-medium is-delete"
