@@ -444,6 +444,10 @@ $widescreen-enabled: false;
   display: flex;
   flex-direction: row;
 
+  @include mobile {
+    flex-direction: column;
+  }
+
   .tags {
     display: flex;
     margin-right: 1em;
