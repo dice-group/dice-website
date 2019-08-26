@@ -13,7 +13,8 @@ export default function Publications({
   return (
     <Layout>
       <SEO title="Publications" />
-      <div style={{ paddingBottom: 30 }}>
+      <div className="content">
+        <h1>Publications</h1>
         <PapersFilter edges={edges}>
           {papers =>
             papers.map(({ node }) => <Paper key={node.id} data={node.data} />)
