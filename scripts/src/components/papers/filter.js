@@ -1,51 +1,74 @@
+import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+const sort = arr => _.sortBy(arr, ['label', 'count']);
 
 const Filter = ({ edges, children = () => {} }) => {
-  const [autocompleteValues, setAutocompleteValues] = useState([]);
-  const [facets, setFacets] = useState([]);
-  const [searchKeyword, setSearchKeyword] = useState('');
+  const [options, setOptions] = useState([]);
+  const [authors, setAuthors] = useState([]);
+  const [years, setYears] = useState([]);
+  const [types, setTypes] = useState([]);
   const [filteredPapers, setFilteredPapers] = useState([]);
+  const [expandedType, setExpanded] = useState(false);
+  const [facets, setFacets] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
+  // precalc lists
   useEffect(() => {
-    // precalc autocompleteItems
-    const autocompleteAuthors = Array.from(
+    // calc unique author strings
+    const authorsList = Array.from(
       new Set(
         edges
           .map(({ node: { data } }) => data.authorName || [])
           .reduce((acc, val) => acc.concat(val), [])
       )
-    ).map(a => ({
-      type: 'author',
-      data: a,
-      count: edges.filter(({ node: { data } }) =>
-        (data.authorName || []).includes(a)
-      ).length,
-    }));
-    const autocompleteYears = Array.from(
-      new Set(edges.map(it => it.node.data.year))
-    ).map(it => ({
-      type: 'year',
-      data: it,
-      count: edges.filter(item => item.node.data.year === it).length,
-    }));
-    const autocompleteTypes = Array.from(
+    );
+    const groupedByFirstLetter = _.groupBy(authorsList, it =>
+      it[0].toUpperCase()
+    );
+    const sortedAuthorsLetters = Object.keys(groupedByFirstLetter)
+      .sort((a, b) => a.localeCompare(b))
+      .filter(letter => letter.trim().length > 0);
+    setAuthors(
+      sortedAuthorsLetters
+        .map(letter => ({
+          [letter]: groupedByFirstLetter[letter].map(author => ({
+            author,
+            count: edges.filter(({ node: { data } }) =>
+              (data.authorName || []).includes(author)
+            ).length,
+          })),
+        }))
+        .reduce((acc, val) => Object.assign(acc, val), {})
+    );
+
+    // get years list
+    const yearsList = Array.from(new Set(edges.map(it => it.node.data.year)));
+    const yearsWithCount = yearsList
+      .sort((a, b) => b - a)
+      .map(year => ({
+        year,
+        count: edges.filter(item => item.node.data.year === year).length,
+      }));
+    setYears(yearsWithCount);
+
+    // calc authors for autosuggest
+    const typesList = Array.from(
       new Set(edges.map(it => it.node.data.publicationType))
-    ).map(it => ({
-      type: 'type',
-      data: it,
-      count: edges.filter(item => item.node.data.publicationType === it).length,
+    );
+    const typesWithCount = typesList.map(type => ({
+      type,
+      count: edges.filter(item => item.node.data.publicationType === type)
+        .length,
     }));
-    const res = autocompleteAuthors
-      .concat(autocompleteYears)
-      .concat(autocompleteTypes)
-      .reduce((acc, val) => acc.concat(val), []);
-    setAutocompleteValues(res);
+    setTypes(typesWithCount);
   }, [edges]);
 
   useEffect(() => {
     const newFilteredPapers = edges
       .filter(({ node: { data } }) =>
-        data.title.toLowerCase().includes(searchKeyword.toLowerCase())
+        data.title.toLowerCase().includes(searchText.toLowerCase())
       )
       .filter(({ node: { data } }) =>
         facets.every(facet => {
@@ -65,190 +88,161 @@ const Filter = ({ edges, children = () => {} }) => {
       );
 
     setFilteredPapers(newFilteredPapers);
-  }, [facets, searchKeyword]);
+  }, [facets, searchText]);
+
+  const filterYear = year => {
+    const newFacets = facets.concat({ type: 'year', data: year });
+    setFacets(newFacets);
+  };
+
+  const filterAuthor = author => {
+    const newFacets = facets.concat({ type: 'author', data: author });
+    setFacets(newFacets);
+  };
+
+  const filterType = type => {
+    const newFacets = facets.concat({ type: 'type', data: type });
+    setFacets(newFacets);
+  };
 
   const removeFacet = facet => {
-    const newFacets = facets.filter(f => f.data !== facet.data);
+    const newFacets = facets.filter(f => f !== facet);
     setFacets(newFacets);
-  };
-
-  const addFacet = facet => {
-    const newFacets = facets.concat([facet]);
-    setFacets(newFacets);
-  };
-
-  const handleChange = e => {
-    const { value } = e.target;
-    setSearchKeyword(value);
   };
 
   return (
     <>
-      <style jsx>
-        {`
-          .tag {
-            margin-left: 5px;
-          }
-
-          .facets {
-            margin-top: 10px;
-            margin-bottom: 10px;
-          }
-
-          .autocomplete {
-            position: fixed;
-            z-index: 1000;
-            background: #fff;
-            width: 99%;
-            border: 1px solid black;
-          }
-
-          .box {
-            margin-top: 10px;
-            height: 200px;
-            overflow: auto;
-          }
-
-          .filter-item {
-            margin-top: 5px;
-            cursor: pointer;
-          }
-
-          .search-input {
-            margin-top: 5px;
-            margin-bottom: 10px;
-          }
-
-          .tag-count {
-            width: 30px;
-          }
-        `}
-      </style>
-
-      <strong>Keyword</strong>
       <input
         type="text"
-        className="input search-input"
-        value={searchKeyword}
-        onChange={handleChange}
+        className="input papers-filter"
+        placeholder="Search by article name"
+        value={searchText}
+        onChange={e => setSearchText(e.target.value)}
       />
 
-      <div className="columns">
-        <div className="column">
-          <strong>Year</strong>
-          <div className="box">
-            {facets
-              .filter(f => f.type === 'year')
-              .map(f => (
-                <div key={f.data} className="control">
-                  <div className="tags has-addons">
-                    <a className="tag is-link">{f.data}</a>
-                    <a
-                      className="tag is-delete"
-                      onClick={() => removeFacet(f)}
-                    />
-                  </div>
-                </div>
-              ))}
-
-            {autocompleteValues
-              .filter(val => val.type === 'year')
-              .filter(
-                val =>
-                  !facets.find(f => f.type === val.type && f.data === val.data)
-              )
-              .sort((a, b) => Number(b.data) - Number(a.data))
-              .map(it => (
-                <div
-                  className="filter-item"
-                  key={it.data}
-                  onClick={() => addFacet(it)}
-                >
-                  <div className="tags has-addons">
-                    <span className="tag tag-count">{it.count}</span>
-                    <span className="tag is-primary">{it.data}</span>
-                  </div>
-                </div>
-              ))}
+      <div className="facets">
+        {facets.map(facet => (
+          <div className="tags has-addons">
+            <span className="tag is-medium is-info">{facet.data}</span>
+            <a
+              className="tag is-medium is-delete"
+              onClick={() => removeFacet(facet)}
+            />
           </div>
-        </div>
-        <div className="column">
-          <strong>Type</strong>
-          <div className="box">
-            {facets
-              .filter(f => f.type === 'type')
-              .map(f => (
-                <div key={f.data} className="control">
-                  <div className="tags has-addons">
-                    <a className="tag is-link">{f.data}</a>
-                    <a
-                      className="tag is-delete"
-                      onClick={() => removeFacet(f)}
-                    />
-                  </div>
-                </div>
-              ))}
-
-            {autocompleteValues
-              .filter(val => val.type === 'type')
-              .filter(
-                val =>
-                  !facets.find(f => f.type === val.type && f.data === val.data)
-              )
-              .sort((a, b) => b.count - a.count)
-              .map(it => (
-                <div
-                  className="filter-item"
-                  key={it.data}
-                  onClick={() => addFacet(it)}
-                >
-                  <div className="tags has-addons">
-                    <span className="tag tag-count">{it.count}</span>
-                    <span className="tag is-primary">{it.data}</span>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-        <div className="column">
-          <strong>(Co-)Authors</strong>
-          <div className="box">
-            {facets
-              .filter(f => f.type === 'author')
-              .map(f => (
-                <div key={f.data} className="control">
-                  <div className="tags has-addons">
-                    <a className="tag is-link">{f.data}</a>
-                    <a
-                      className="tag is-delete"
-                      onClick={() => removeFacet(f)}
-                    />
-                  </div>
-                </div>
-              ))}
-
-            {autocompleteValues
-              .filter(val => val.type === 'author')
-              .filter(
-                val =>
-                  !facets.find(f => f.type === val.type && f.data === val.data)
-              )
-              .sort((a, b) => b.count - a.count)
-              .map(it => (
-                <div
-                  className="filter-item"
-                  key={it.data}
-                  onClick={() => addFacet(it)}
-                >
-                  <div className="tags has-addons">
-                    <span className="tag tag-count">{it.count}</span>
-                    <span className="tag is-primary">{it.data}</span>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
+        ))}
       </div>
+
+      <div className="tabs papers-facets">
+        <ul>
+          <li>
+            <a
+              onClick={() =>
+                expandedType === 'authors'
+                  ? setExpanded('')
+                  : setExpanded('authors')
+              }
+            >
+              Authors{' '}
+              {expandedType === 'authors' ? (
+                <FaChevronUp className="icon" />
+              ) : (
+                <FaChevronDown className="icon" />
+              )}
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() =>
+                expandedType === 'years'
+                  ? setExpanded('')
+                  : setExpanded('years')
+              }
+            >
+              Years{' '}
+              {expandedType === 'years' ? (
+                <FaChevronUp className="icon" />
+              ) : (
+                <FaChevronDown className="icon" />
+              )}
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={() =>
+                expandedType === 'type' ? setExpanded('') : setExpanded('type')
+              }
+            >
+              Type{' '}
+              {expandedType === 'type' ? (
+                <FaChevronUp className="icon" />
+              ) : (
+                <FaChevronDown className="icon" />
+              )}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {expandedType === 'authors' && (
+        <div className="papers-facets columns is-multiline is-5 is-variable">
+          {Object.keys(authors).map(letter => (
+            <div className="column is-3" key={letter}>
+              <h4>{letter}</h4>
+              {authors[letter].map(({ author, count }) => (
+                <p
+                  className="facet"
+                  key={author}
+                  onClick={() => filterAuthor(author)}
+                >
+                  {author} <span className="count">{count}</span>
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+
+      {expandedType === 'years' && (
+        <div className="papers-facets centered">
+          <div
+            className="columns is-multiline is-5 is-variable"
+            style={{ maxWidth: '50%' }}
+          >
+            {years
+              .filter(({ year }) => !facets.find(f => f.data === year))
+              .map(({ year, count }) => (
+                <div
+                  className="column is-4 facet"
+                  onClick={() => filterYear(year)}
+                  key={year}
+                >
+                  {year} <span className="count">{count}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      {expandedType === 'type' && (
+        <div className="papers-facets centered">
+          <div
+            className="columns is-multiline is-5 is-variable"
+            style={{ maxWidth: '50%' }}
+          >
+            {types
+              .filter(({ type }) => !facets.find(f => f.data === type))
+              .map(({ type, count }) => (
+                <div
+                  className="column is-4 facet"
+                  onClick={() => filterType(type)}
+                  key={type}
+                >
+                  {type} <span className="count">{count}</span>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
 
       {children(filteredPapers)}
     </>

@@ -396,6 +396,92 @@ $widescreen-enabled: false;
   }
 }
 
+// papers formatting
+.paper {
+  margin-bottom: 2.5em;
+
+  .text {
+    font-size: 1.25em;
+    margin-bottom: 0.25em !important;
+  }
+  .name {
+    font-size: 1.5em;
+    margin-top: 0 !important;
+    margin-bottom: 0.3em !important;
+    color: $blue;
+    font-weight: bold;
+
+    a {
+      // TODO: style ones with URL differently
+    }
+  }
+  .meta {
+    font-size: 1.25em;
+    color: #463232;
+    opacity: 0.5;
+    margin-bottom: 0 !important;
+  }
+}
+
+.papers-filter {
+  height: 60px;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+}
+
+.facets {
+  display: flex;
+  flex-direction: row;
+
+  .tags {
+    display: flex;
+    margin-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.papers-facets {
+  &.tabs {
+    border-bottom: none;
+  }
+
+  .icon {
+    color: $blue;
+  }
+
+  ul {
+    margin: 0;
+
+    li {
+      a {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.papers-facets {
+  margin-top: 1em;
+  margin-bottom: 2em;
+
+  &.centered {
+    display: flex;
+    justify-content: center;
+  }
+
+  .facet {
+    cursor: pointer;
+  }
+
+  p {
+    margin-bottom: 0.75em;
+  }
+  .count {
+    opacity: 0.5;
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {
