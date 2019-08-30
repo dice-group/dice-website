@@ -1,3 +1,4 @@
+/* global IntersectionObserver */
 import React, { useEffect, useState } from 'react';
 import Item from './item';
 
