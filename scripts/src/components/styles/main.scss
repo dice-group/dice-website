@@ -11,6 +11,7 @@ $family-monospace: 'normal';
 $blue: #006bd9;
 $darkblue: #003162;
 $darkbrown: #463232;
+$darkbrownOpacity: rgba(70, 50, 50, 0.5);
 $black: #000000;
 $white: #ffffff;
 $whiteTransparent: rgba(255, 255, 255, 0.5);
@@ -68,7 +69,7 @@ $widescreen-enabled: false;
     font-size: 2.5em;
   }
   p {
-    font-size: 1.2em;
+    font-size: 1.25em;
   }
 }
 
@@ -417,7 +418,7 @@ $widescreen-enabled: false;
   }
   .meta {
     font-size: 1.25em;
-    color: rgba(70, 50, 50, 0.5);
+    color: $darkbrownOpacity;
     margin-bottom: 0 !important;
 
     .bib-link {
@@ -494,6 +495,40 @@ $widescreen-enabled: false;
   }
   .count {
     opacity: 0.5;
+  }
+}
+
+// awards
+
+.award {
+  .year {
+    color: $darkbrownOpacity;
+    margin-bottom: 5px !important;
+  }
+
+  .ext-icon {
+    // color: $blue;
+    width: 0.75em;
+    height: 0.75em;
+  }
+
+  .name {
+    margin-bottom: 5px;
+  }
+
+  .description {
+    color: $darkbrown;
+    margin-bottom: 5px !important;
+  }
+
+  .awardee {
+    &:after {
+      content: ', ';
+    }
+
+    &:last-child::after {
+      content: '';
+    }
   }
 }
 

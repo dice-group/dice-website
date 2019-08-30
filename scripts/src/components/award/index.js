@@ -1,25 +1,32 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const Award = ({ node: { id, data } }) => (
-  <div key={id} className="tile is-vertical" style={{ marginBottom: '2em' }}>
-    <h5 className="title is-4">
-      <a href={data.url}>{data.name}</a>
-      <span className="tag" style={{ marginLeft: 10 }}>
-        {data.year}
-      </span>
+  <div
+    key={id}
+    className="award tile is-vertical"
+    style={{ marginBottom: '2em' }}
+  >
+    <p className="year">{data.year}</p>
+    <h5 className="name title is-4">
+      {data.url ? (
+        <a href={data.url}>
+          {data.name} <FaExternalLinkAlt className="ext-icon" />
+        </a>
+      ) : (
+        data.name
+      )}
     </h5>
-    <p className="subtitle">{data.content}</p>
-    <div className="tile">
-      <div style={{ marginRight: 10 }}>Awarded to:</div>
-      <ul className="people-list">
-        {data.awardee.map(person => (
-          <li key={person.path}>
-            <Link to={person.path}>{person.data.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <p className="description">{data.content}</p>
+    <p>
+      Awarded to:{' '}
+      {data.awardee.map(person => (
+        <Link className="awardee" to={person.path}>
+          {person.data.name}
+        </Link>
+      ))}
+    </p>
   </div>
 );
 
