@@ -9,6 +9,8 @@ const Filter = ({ edges, children = () => {} }) => {
   const [authors, setAuthors] = useState([]);
   const [years, setYears] = useState([]);
   const [types, setTypes] = useState([]);
+  const [showall, setShowall] = useState(false);
+  const [hasmore, setHasmore] = useState(false);
   const [filteredPapers, setFilteredPapers] = useState([]);
   const [expandedType, setExpanded] = useState(false);
   const [facets, setFacets] = useState([]);
@@ -87,8 +89,18 @@ const Filter = ({ edges, children = () => {} }) => {
         })
       );
 
-    setFilteredPapers(newFilteredPapers);
-  }, [facets, searchText]);
+    const slicedPapers = showall
+      ? newFilteredPapers
+      : newFilteredPapers.slice(0, 10);
+
+    setHasmore(newFilteredPapers.length > slicedPapers.length);
+    setFilteredPapers(slicedPapers);
+  }, [facets, searchText, showall]);
+
+  const search = text => {
+    setSearchText(text);
+    setShowall(false);
+  };
 
   const filterYear = year => {
     const newFacets = facets.concat({ type: 'year', data: year });
@@ -117,7 +129,7 @@ const Filter = ({ edges, children = () => {} }) => {
         className="input papers-filter"
         placeholder="Search by article name"
         value={searchText}
-        onChange={e => setSearchText(e.target.value)}
+        onChange={e => search(e.target.value)}
       />
 
       <div className="facets">
@@ -245,6 +257,17 @@ const Filter = ({ edges, children = () => {} }) => {
       )}
 
       {children(filteredPapers)}
+
+      {!showall && hasmore && (
+        <div className="has-content-centered is-flex">
+          <button
+            className="button is-link action-button"
+            onClick={() => setShowall(true)}
+          >
+            Load all <FaChevronDown style={{ marginLeft: 10 }} />
+          </button>
+        </div>
+      )}
     </>
   );
 };
