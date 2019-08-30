@@ -1,5 +1,5 @@
 import format from 'date-fns/format';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/backButton';
@@ -10,7 +10,7 @@ import { rdfToPeopleArray } from '../components/person';
 import Project from '../components/project';
 import SEO from '../components/seo';
 
-const dateFormat = 'MMMM YYYY';
+const dateFormat = 'MMMM yyyy';
 
 export default function ProjectTemplate({
   data: {
@@ -30,8 +30,9 @@ export default function ProjectTemplate({
         <h1 className="title">{data.name}</h1>
 
         <p className="has-text-grey-light">
-          {data.rdf_type[0].data.name} ({format(data.startDate, dateFormat)} -{' '}
-          {format(data.endDate, dateFormat)})
+          {data.rdf_type[0].data.name} (
+          {format(new Date(data.startDate), dateFormat)} -{' '}
+          {format(new Date(data.endDate), dateFormat)})
         </p>
 
         <div className="project-card project-rounded project-full-info">

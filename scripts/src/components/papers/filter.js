@@ -2,10 +2,10 @@ import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const sort = arr => _.sortBy(arr, ['label', 'count']);
+// const sort = arr => _.sortBy(arr, ['label', 'count']);
 
 const Filter = ({ edges, children = () => {} }) => {
-  const [options, setOptions] = useState([]);
+  // const [options, setOptions] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [years, setYears] = useState([]);
   const [types, setTypes] = useState([]);

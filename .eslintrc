@@ -5,7 +5,7 @@
   "rules": {
     "max-len": ["error", 120, 4],
     "camelcase": "off",
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "promise/param-names": "off",
     "prefer-promise-reject-errors": "off",
