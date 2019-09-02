@@ -137,6 +137,20 @@ $widescreen-enabled: false;
   background-color: $white;
 }
 
+// main page side-menu
+
+.sidemenu {
+  align-items: center;
+  height: 32px;
+
+  .is-current {
+    opacity: 1;
+  }
+  .is-not-current {
+    opacity: 0.2;
+  }
+}
+
 // main page links
 .section-header {
   display: flex;
