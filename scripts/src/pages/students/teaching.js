@@ -1,14 +1,53 @@
 import { graphql, Link } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
+import UKFlag from '../../components/svgs/ukflag.inline.svg';
+
+const processData = edges => {
+  const years = [...new Set(edges.map(it => it.node.frontmatter.year))];
+  const data = {};
+  for (const year of years) {
+    if (!data[year]) {
+      data[year] = {};
+    }
+
+    const itemsInYear = edges.filter(it => it.node.frontmatter.year === year);
+    const termsInYear = [
+      ...new Set(itemsInYear.map(it => it.node.frontmatter.term)),
+    ];
+
+    for (const term of termsInYear) {
+      if (!data[year][term]) {
+        data[year][term] = {};
+      }
+
+      const itemsInYearTerm = itemsInYear.filter(
+        it => it.node.frontmatter.term === term
+      );
+      const typesInTerm = [
+        ...new Set(itemsInYearTerm.map(it => it.node.frontmatter.type)),
+      ];
+
+      for (const type of typesInTerm) {
+        const itemsInYearTermType = itemsInYearTerm.filter(
+          it => it.node.frontmatter.type === type
+        );
+        data[year][term][type] = itemsInYearTermType;
+      }
+    }
+  }
+
+  return data;
+};
 
 export default function Teaching({
   data: {
     allMdx: { edges },
   },
 }) {
+  const result = processData(edges);
+
   return (
     <Layout withContainer={false}>
       <SEO title="Teaching" />
@@ -18,26 +57,49 @@ export default function Teaching({
             <a>Teaching</a>
           </li>
           <li>
+            <Link to="/students/mentoring/">Mentoring</Link>
+          </li>
+          <li>
             <Link to="/students/theses/">Theses</Link>
           </li>
         </ul>
       </div>
 
       <section className="section">
-        <div className="container">
-          <div className="content tile is-ancestor is-vertical">
-            {edges.map(({ node }) => (
-              <div
-                key={node.id}
-                className="tile is-vertical"
-                style={{ margin: '1em' }}
-              >
-                <p className="title">{node.frontmatter.title}</p>
+        <div className="container content teaching">
+          <h1>Teaching</h1>
 
-                <MDXRenderer>{node.body}</MDXRenderer>
-              </div>
-            ))}
-          </div>
+          {Object.keys(result).map(year => (
+            <div key={year}>
+              <h2>{year}</h2>
+
+              {Object.keys(result[year]).map(term => (
+                <div key={term}>
+                  <h3 className="term">{term} Term</h3>
+
+                  {Object.keys(result[year][term]).map(kind => (
+                    <div key={kind}>
+                      <div className="kind">{kind}</div>
+
+                      {result[year][term][kind].map(course => (
+                        <div key={course} className="course">
+                          <Link to={course.node.fields.path}>
+                            {course.node.frontmatter.title}
+                          </Link>
+                          <span className="kind-label has-text-grey-light">
+                            {course.node.frontmatter.kind}
+                          </span>
+                          {course.node.frontmatter.language === 'en' && (
+                            <UKFlag style={{ width: 24, height: 12 }} />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </Layout>
@@ -59,11 +121,12 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            supervisor
-            contact
             type
+            year
+            term
+            kind
+            language
           }
-          body
         }
       }
     }
