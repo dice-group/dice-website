@@ -87,7 +87,8 @@ const Filter = ({ edges, children = () => {} }) => {
           }
           return false;
         })
-      );
+      )
+      .sort((a, b) => Number(b.node.data.year) - Number(a.node.data.year));
 
     const slicedPapers = showall
       ? newFilteredPapers
