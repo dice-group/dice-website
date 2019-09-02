@@ -36,6 +36,40 @@ const renderRdfType = async ({
   });
 };
 
+const renderMarkdownType = async ({
+  type,
+  matcher,
+  templatePath,
+  createPage,
+  graphql,
+}) => {
+  // mdx news rendering
+  const mdxNewsTemplate = path.resolve(templatePath);
+  const mdxNewsResult = await graphql(`
+    {
+      allMdx(filter: { fields: { type: { ${matcher}: ${type} } } }) {
+        edges {
+          node {
+            fields {
+              path
+            }
+          }
+        }
+      }
+    }
+  `);
+  if (mdxNewsResult.errors) {
+    return Promise.reject(mdxNewsResult.errors);
+  }
+  mdxNewsResult.data.allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.path,
+      component: mdxNewsTemplate,
+      context: {}, // additional data can be passed via context
+    });
+  });
+};
+
 exports.createPages = async ({
   actions: { createPage, createRedirect },
   graphql,
@@ -68,55 +102,30 @@ exports.createPages = async ({
   });
 
   // mdx news rendering
-  const mdxNewsTemplate = path.resolve(`src/templates/newsPage.js`);
-  const mdxNewsResult = await graphql(`
-    {
-      allMdx(filter: { fields: { type: { eq: "news" } } }) {
-        edges {
-          node {
-            fields {
-              path
-            }
-          }
-        }
-      }
-    }
-  `);
-  if (mdxNewsResult.errors) {
-    return Promise.reject(mdxNewsResult.errors);
-  }
-  mdxNewsResult.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.path,
-      component: mdxNewsTemplate,
-      context: {}, // additional data can be passed via context
-    });
+  await renderMarkdownType({
+    type: '"news"',
+    matcher: 'eq',
+    templatePath: 'src/templates/newsPage.js',
+    createPage,
+    graphql,
   });
 
-  // mdx rendering
-  const mdxTemplate = path.resolve(`src/templates/markdownPage.js`);
-  const mdxResult = await graphql(`
-    {
-      allMdx(filter: { fields: { type: { ne: "news" } } }) {
-        edges {
-          node {
-            fields {
-              path
-            }
-          }
-        }
-      }
-    }
-  `);
-  if (mdxResult.errors) {
-    return Promise.reject(mdxResult.errors);
-  }
-  mdxResult.data.allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.path,
-      component: mdxTemplate,
-      context: {}, // additional data can be passed via context
-    });
+  // mdx teaching rendering
+  await renderMarkdownType({
+    type: '"teaching"',
+    matcher: 'eq',
+    templatePath: 'src/templates/teachingPage.js',
+    createPage,
+    graphql,
+  });
+
+  // rest pages mdx rendering
+  await renderMarkdownType({
+    type: '["news", "teaching"]',
+    matcher: 'nin',
+    templatePath: 'src/templates/markdownPage.js',
+    createPage,
+    graphql,
   });
 
   // Person RDF rendering

@@ -54,7 +54,7 @@ const News = ({ limit = 10, paginate = true }) => {
           >
             <ul className="pagination-list">
               {pages.map(page => (
-                <li>
+                <li key={page}>
                   <a
                     className={`pagination-link ${page === currentPage &&
                       'is-current'}`}

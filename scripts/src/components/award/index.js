@@ -22,7 +22,7 @@ const Award = ({ node: { id, data } }) => (
     <p>
       Awarded to:{' '}
       {data.awardee.map(person => (
-        <Link className="awardee" to={person.path}>
+        <Link key={person.path} className="awardee" to={person.path}>
           {person.data.name}
         </Link>
       ))}

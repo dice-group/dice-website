@@ -2,34 +2,33 @@ import { graphql, Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Layout from '../../components/layout';
-import Person from '../../components/person/dynamic';
 import SEO from '../../components/seo';
 
-export default function Theses({
+export default function Teaching({
   data: {
     allMdx: { edges },
   },
 }) {
   return (
     <Layout withContainer={false}>
-      <SEO title="Theses" />
+      <SEO title="Teaching" />
       <div className="tabs">
         <ul className="container">
           <li>
             <Link to="/students/teaching/">Teaching</Link>
           </li>
-          <li>
-            <Link to="/students/mentoring/">Mentoring</Link>
-          </li>
           <li className="is-active">
-            <a>Theses</a>
+            <a>Mentoring</a>
+          </li>
+          <li>
+            <Link to="/students/theses/">Theses</Link>
           </li>
         </ul>
       </div>
 
       <section className="section">
         <div className="container content">
-          <h1>Theses</h1>
+          <h1>Mentoring</h1>
 
           <div className="tile is-ancestor is-vertical">
             {edges.map(({ node }) => (
@@ -38,16 +37,6 @@ export default function Theses({
                 className="tile is-vertical"
                 style={{ margin: '1em' }}
               >
-                <p className="title">{node.frontmatter.title}</p>
-
-                <p className="subtitle">
-                  Type: <strong>{node.frontmatter.type}</strong>
-                  <br />
-                  Supervisor: <Person id={node.frontmatter.supervisor} />
-                  <br />
-                  Contact: <Person id={node.frontmatter.contact} />
-                </p>
-
                 <MDXRenderer>{node.body}</MDXRenderer>
               </div>
             ))}
@@ -60,7 +49,10 @@ export default function Theses({
 
 export const pageQuery = graphql`
   query {
-    allMdx(filter: { fields: { type: { eq: "theses" } } }) {
+    allMdx(
+      filter: { fields: { type: { eq: "mentoring" } } }
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
       edges {
         node {
           id
