@@ -82,7 +82,7 @@ export default function Teaching({
                       <div className="kind">{kind}</div>
 
                       {result[year][term][kind].map(course => (
-                        <div key={course} className="course">
+                        <div key={course.node.fields.path} className="course">
                           <Link to={course.node.fields.path}>
                             {course.node.frontmatter.title}
                           </Link>
