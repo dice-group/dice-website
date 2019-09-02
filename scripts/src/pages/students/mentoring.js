@@ -37,8 +37,6 @@ export default function Teaching({
                 className="tile is-vertical"
                 style={{ margin: '1em' }}
               >
-                <p className="title">{node.frontmatter.title}</p>
-
                 <MDXRenderer>{node.body}</MDXRenderer>
               </div>
             ))}
