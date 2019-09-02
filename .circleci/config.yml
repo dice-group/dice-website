@@ -27,6 +27,8 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+      # lint code
+      - run: yarn lint
       # remove example data so it doesn't end up in the final build
       - run: rm ../data/papers/Example.ttl
       # generate new papers from bibsonomy API
