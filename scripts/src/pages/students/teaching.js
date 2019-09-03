@@ -67,7 +67,7 @@ export default function Teaching({
 
       <section className="section">
         <div className="container content teaching">
-          <h1>Teaching</h1>
+          <h1 className="page-title">Teaching</h1>
 
           {Object.keys(result).map(year => (
             <div key={year}>
