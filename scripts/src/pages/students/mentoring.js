@@ -27,20 +27,12 @@ export default function Teaching({
       </div>
 
       <section className="section">
-        <div className="container content">
-          <h1>Mentoring</h1>
+        <div className="container content teaching-page mentoring">
+          <h1 className="page-title">Mentoring</h1>
 
-          <div className="tile is-ancestor is-vertical">
-            {edges.map(({ node }) => (
-              <div
-                key={node.id}
-                className="tile is-vertical"
-                style={{ margin: '1em' }}
-              >
-                <MDXRenderer>{node.body}</MDXRenderer>
-              </div>
-            ))}
-          </div>
+          {edges.map(({ node }) => (
+            <MDXRenderer key={node.id}>{node.body}</MDXRenderer>
+          ))}
         </div>
       </section>
     </Layout>

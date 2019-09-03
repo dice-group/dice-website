@@ -137,6 +137,16 @@ $widescreen-enabled: false;
   background-color: $white;
 }
 
+.external-link {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    color: rgba($color: #000000, $alpha: 0.3);
+    margin-left: 5px;
+  }
+}
+
 // main page side-menu
 
 .sidemenu {
@@ -575,11 +585,22 @@ $widescreen-enabled: false;
 }
 
 .teaching-page {
+  h1,
+  h2,
+  h3,
+  .term {
+    color: $black;
+  }
+
   line-height: 2.1em;
 
   .title {
     margin-top: 0.5em !important;
     margin-bottom: 0.25em !important;
+  }
+
+  .page-title {
+    font-size: 3.125em;
   }
 
   h1 {
@@ -597,9 +618,12 @@ $widescreen-enabled: false;
     counter-reset: my-awesome-counter;
 
     li {
+      margin-left: 40px;
       counter-increment: my-awesome-counter;
 
       &::before {
+        margin-left: -40px;
+        margin-right: 20px;
         content: counter(my-awesome-counter) '. ';
         color: rgba($color: #000000, $alpha: 0.5);
       }
