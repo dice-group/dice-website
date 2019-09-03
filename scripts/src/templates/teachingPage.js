@@ -21,7 +21,9 @@ export default function MarkdownTemplate({
           {frontmatter.type}{' '}
           <span className="has-text-grey-light">{frontmatter.kind}</span>{' '}
           {frontmatter.language === 'en' && (
-            <UKFlag style={{ width: 24, height: 12 }} />
+            <span title="English language">
+              <UKFlag style={{ width: 24, height: 12 }} />
+            </span>
           )}
         </div>
 

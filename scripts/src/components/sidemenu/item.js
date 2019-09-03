@@ -13,18 +13,10 @@ const SideMenuItem = ({ item, isCurrent }) => {
 
   return (
     <div
-      className="is-flex"
+      className="sidemenu is-flex"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <style jsx>{`
-        .is-current {
-          opacity: 1;
-        }
-        .is-not-current {
-          opacity: 0.2;
-        }
-      `}</style>
       {showTooltip && (
         <span className="tag is-medium is-light">{item.title}</span>
       )}

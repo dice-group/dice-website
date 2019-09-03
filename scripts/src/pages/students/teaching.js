@@ -67,7 +67,7 @@ export default function Teaching({
 
       <section className="section">
         <div className="container content teaching">
-          <h1>Teaching</h1>
+          <h1 className="page-title">Teaching</h1>
 
           {Object.keys(result).map(year => (
             <div key={year}>
@@ -90,7 +90,9 @@ export default function Teaching({
                             {course.node.frontmatter.kind}
                           </span>
                           {course.node.frontmatter.language === 'en' && (
-                            <UKFlag style={{ width: 24, height: 12 }} />
+                            <span title="English language">
+                              <UKFlag style={{ width: 24, height: 12 }} />
+                            </span>
                           )}
                         </div>
                       ))}
