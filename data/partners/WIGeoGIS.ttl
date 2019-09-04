@@ -1,0 +1,11 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:WIGeoGIS a schema:Partner ;
+  schema:name "WIGeoGIS" ;
+  schema:country "" ;
+  schema:url <https://www.wigeogis.com/de/home> ;
+  schema:logo "wigeogis.png" .
+
+

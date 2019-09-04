@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:ProDV a schema:Partner ;
+  schema:name "ProDV AG" ;
+  schema:country "D" ;
+  schema:url <http://prodv.com/> ;
+  schema:logo "proDV.png" .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:GET a schema:Partner ;
+  schema:name "GET" ;
+  schema:country "GR" ;
+  schema:url <https://www.getmap.eu> ;
+  schema:logo "getLogo.png" .

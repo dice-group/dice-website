@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Athena a schema:Partner ;
+  schema:name "Athena Research and Innovation Center" ;
+  schema:country "GR" ;
+  schema:url <http://www.imsi.athenarc.gr/> ;
+  schema:logo "athenaResearch.png" .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Piranha a schema:Partner ;
+  schema:name "Piranha womex AG" ;
+  schema:country "D" ;
+  schema:url <http://www.piranha.de/> ;
+  schema:logo "piranha.png" .

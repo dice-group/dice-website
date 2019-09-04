@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Semantic a schema:Partner ;
+  schema:name "Semantic Web Company" ;
+  schema:country "A" ;
+  schema:url <https://semantic-web.com/> ;
+  schema:logo "semantic.png" .

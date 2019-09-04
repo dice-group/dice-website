@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:CentrumWiskunde a schema:Partner ;
+  schema:name "Centrum Wiskunde & Informatica" ;
+  schema:country "NL" ;
+  schema:url <https://www.cwi.nl/> ;
+  schema:logo "centrum.png" .

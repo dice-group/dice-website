@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:NUI a schema:Partner ;
+  schema:name "National University of Ireland, Galway" ;
+  schema:country "IRL" ;
+  schema:url <https://www.nuigalway.ie/> ;
+  schema:logo "nui.gif" .
