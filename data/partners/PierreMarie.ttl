@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:PierreMarie a schema:Partner ;
+  schema:name "Pierre-and-Marie-Curie University Paris VI" ;
+  schema:country "FR" ;
+  schema:url <https://www.lip6.fr/> ;
+  schema:logo "upmc.gif" .

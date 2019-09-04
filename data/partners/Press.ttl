@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Press a schema:Partner ;
+  schema:name "Press Association" ;
+  schema:country "UK" ;
+  schema:url <https://pa.media/> ;
+  schema:logo "pressassociation.jpg" .

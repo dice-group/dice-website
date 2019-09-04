@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Fraunhofer a schema:Partner ;
+  schema:name "Fraunhofer IAIS" ;
+  schema:country "DE" ;
+  schema:url <https://www.iais.fraunhofer.de/> ;
+  schema:logo "fraunhoferiais.svg" .

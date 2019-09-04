@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:DigitalTrowel a schema:Partner ;
+  schema:name "Digital Trowel Inc." ;
+  schema:country "IL" ;
+  schema:url <http://www.digitaltrowel.com/> ;
+  schema:logo "digitalTrowel.jpg" .

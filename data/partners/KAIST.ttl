@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:KAIST a schema:Partner ;
+  schema:name "Korea Advanced Institute of Science and Technology" ;
+  schema:country "" ;
+  schema:url <http://www.kaist.edu/html/en/index.html> ;
+  schema:logo "kaist.png" .
