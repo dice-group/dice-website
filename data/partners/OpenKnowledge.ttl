@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:OpenKnowledge a schema:Partner ;
+  schema:name "Open Knowledge Foundation" ;
+  schema:country "GB" ;
+  schema:url <https://okfn.org/> ;
+  schema:logo "okfn.png" .

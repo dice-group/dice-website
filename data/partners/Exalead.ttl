@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Exalead a schema:Partner ;
+  schema:name "Exalead" ;
+  schema:country "F" ;
+  schema:url <https://www.3ds.com/products-services/exalead/> ;
+  schema:logo "exalead.png" .

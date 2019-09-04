@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Bitstars a schema:Partner ;
+  schema:name "bitstars GmbH" ;
+  schema:country "DE" ;
+  schema:url <https://www.bitstars.com/> ;
+  schema:logo "bitstars.png" .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Heidelberger a schema:Partner ;
+  schema:name "Heidelberger Druckmaschinen AG" ;
+  schema:country "DE" ;
+  schema:url <https://www.heidelberg.com/global/de/> ;
+  schema:logo "heidelberger.png" .

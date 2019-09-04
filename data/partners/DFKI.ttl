@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:DFKI a schema:Partner ;
+  schema:name "German Research Centre for Artificial Intelligence" ;
+  schema:country "D" ;
+  schema:url <https://www.dfki.de/web/> ;
+  schema:logo "dfki.png" .

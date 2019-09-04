@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Wolters a schema:Partner ;
+  schema:name "Wolters Kluwer Deutschland" ;
+  schema:country "D" ;
+  schema:url <https://www.wolterskluwer.de/> ;
+  schema:logo "woltersKluwer.gif" .

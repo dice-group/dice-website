@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:USU a schema:Partner ;
+  schema:name "USU Software AG" ;
+  schema:country "DE" ;
+  schema:url <https://www.usu.de/en/> ;
+  schema:logo "ususoftware.jpg" .

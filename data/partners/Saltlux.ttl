@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Saltlux a schema:Partner ;
+  schema:name "Saltlux Inc." ;
+  schema:country "" ;
+  schema:url <http://www.saltlux.com/index.do> ;
+  schema:logo "saltlux.png" .

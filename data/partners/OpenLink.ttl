@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:OpenLink a schema:Partner ;
+  schema:name "OpenLink Software" ;
+  schema:country "GB" ;
+  schema:url <https://www.openlinksw.com/> ;
+  schema:logo "openlink.png" .

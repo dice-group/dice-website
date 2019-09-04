@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Siemens a schema:Partner ;
+  schema:name "Siemens AG" ;
+  schema:country "DE" ;
+  schema:url <https://new.siemens.com/global/en.html> ;
+  schema:logo "siemens.png" .

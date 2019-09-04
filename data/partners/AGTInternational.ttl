@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:AGTInternational a schema:Partner ;
+  schema:name "AGT International" ;
+  schema:country "CH" ;
+  schema:url <https://www.agtinternational.com/> ;
+  schema:logo "agtInternational.png" .

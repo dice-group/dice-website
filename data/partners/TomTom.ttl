@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:TomTom a schema:Partner ;
+  schema:name "TomTom" ;
+  schema:country "" ;
+  schema:url <https://www.tomtom.com/de_de/> ;
+  schema:logo "tomtom.png" .

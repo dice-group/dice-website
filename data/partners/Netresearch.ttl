@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Netresearch a schema:Partner ;
+  schema:name "Netresearch GmbH & Co. KG" ;
+  schema:country "D" ;
+  schema:url <https://www.netresearch.de> ;
+  schema:logo "netresearch.gif" .
