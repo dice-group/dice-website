@@ -9,6 +9,10 @@ export default function Partners({
     allRdf: { edges },
   },
 }) {
+  const data = edges.sort((a, b) =>
+    a.node.data.name.localeCompare(b.node.data.name)
+  );
+
   return (
     <Layout withContainer={false}>
       <SEO title="Projects" />
@@ -25,9 +29,13 @@ export default function Partners({
 
       <section className="section">
         <div className="container">
-          <div className="content tile is-ancestor">
-            {edges.map(({ node }) => (
-              <div key={node.id} className="tile" style={{ margin: '1em' }}>
+          <div className="content columns is-multiline is-5 is-variable">
+            {data.map(({ node }) => (
+              <div
+                key={node.id}
+                className="column is-3"
+                style={{ margin: '1em' }}
+              >
                 <div className="image is-64x64" style={{ marginRight: 10 }}>
                   <Image filename={node.data.logo} />
                 </div>
