@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DanishAhmed a schema:Person ;
+  schema:name "Danish Ahmed" ;
+  schema:namePrefix "" ;
+  schema:role dice:Alumni ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "dahmed.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

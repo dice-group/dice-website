@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FelixConrads a schema:Person ;
+  schema:name "Felix Conrads" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:+49-341-97-32329> ;
+  schema:email <mailto:conrads@informatik.uni-leipzig.de> ;
+  schema:office "" ;
+  schema:photo "conrads.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+  

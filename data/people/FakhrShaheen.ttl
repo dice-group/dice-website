@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FakhrShaheen a schema:Person ;
+  schema:name "Fakhr Shaheen" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:+49-157-88-064013> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:fakhrshaheen@gmail.com> ;
+  schema:office "" ;
+  schema:photo "shaheen.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GeraldoDeSouza a schema:Person ;
+  schema:name "Geraldo de Souza" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:+49-525-16-03763> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:gsjunior@mail.uni-paderborn.de> ;
+  schema:office "O4.122" ;
+  schema:photo "souza.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+  

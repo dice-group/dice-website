@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ElizaSimpson a schema:Person ;
+  schema:name "Eliza Simpson" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:+49-163-48-09684> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:elizashaw16@gmail.com> ;
+  schema:office "" ;
+  schema:photo "simpson.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 
