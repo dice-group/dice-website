@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:NikitSrivastava a schema:Person ;
+  schema:name "Nikit Srivastava" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:+49-176-67-371775> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:nikit@mail.uni-paderborn.de> ;
+  schema:office "O4.216" ;
+  schema:photo "srivastava.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

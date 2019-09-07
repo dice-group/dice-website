@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SvetlanaPestryakova a schema:Person ;
+  schema:name "Svetlana Pestryakova" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:pestryak@mail.uni-paderborn.de> ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

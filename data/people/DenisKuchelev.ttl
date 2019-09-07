@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DenisKuchelev a schema:Person ;
+  schema:name "Denis Kuchelev" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:kuchelev@informatik.uni-leipzig.de> ;
+  schema:office "" ;
+  schema:photo "dkuchelev.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+  

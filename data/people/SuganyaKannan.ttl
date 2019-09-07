@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SuganyaKannan a schema:Person ;
+  schema:name "Suganya Kannan" ;
+  schema:namePrefix "" ;
+  schema:role dice:Alumni ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

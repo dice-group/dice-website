@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:KevinDreßler a schema:Person ;
+  schema:name "Kevin Dreßler" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:> ;
+  schema:fax <tel:+49-341-97-32329> ;
+  schema:email <mailto:dressler@informatik.uni-leipzig.de> ;
+  schema:office "" ;
+  schema:photo "dressler.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

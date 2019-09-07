@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AdnanAkhter a schema:Person ;
+  schema:name "Adnan Akhter" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "akhter.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

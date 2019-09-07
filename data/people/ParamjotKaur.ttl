@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ParamjotKaur a schema:Person ;
+  schema:name "Paramjot Kaur" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:paramjot.kaur@uni-paderborn.de> ;
+  schema:office "TP6.3.310" ;
+  schema:photo "kaur.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

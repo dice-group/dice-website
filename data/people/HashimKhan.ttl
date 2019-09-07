@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:HashimKhan a schema:Person ;
+  schema:name "Hashim Khan" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:hashim.khan@uni-paderborn.de> ;
+  schema:office "TP6.3.305" ;
+  schema:photo "hkhan.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+  

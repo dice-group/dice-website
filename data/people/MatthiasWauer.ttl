@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:MatthiasWauer a schema:Person ;
+  schema:name "Matthias Wauer" ;
+  schema:namePrefix "Dr." ;
+  schema:role dice:Alumni ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "wauer.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

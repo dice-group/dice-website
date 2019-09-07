@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ReneSpeck a schema:Person ;
+  schema:name "René Speck" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-341-97-32362> ;
+  schema:fax <tel:+49-341-97-32329> ;
+  schema:email <mailto:speck@informatik.uni-leipzig.de> ;
+  schema:office "105, Hainstraße 11, 04109 Leipzig" ;
+  schema:photo "speck.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .

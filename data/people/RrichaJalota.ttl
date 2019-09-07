@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:RrichaJalota a schema:Person ;
+  schema:name "Rricha Jalota" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:+49-525-16-05194> ;
+  schema:fax <tel:+49-525-16-03436> ;
+  schema:email <mailto:rricha.jalota@uni-paderborn.de> ;
+  schema:office "TP6.3.310" ;
+  schema:photo "jalota.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 
