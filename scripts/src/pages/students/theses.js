@@ -1,8 +1,7 @@
 import { graphql, Link } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
+import _ from 'lodash';
 import React from 'react';
 import Layout from '../../components/layout';
-import Person from '../../components/person/dynamic';
 import SEO from '../../components/seo';
 
 export default function Theses({
@@ -10,6 +9,8 @@ export default function Theses({
     allMdx: { edges },
   },
 }) {
+  const thesesByType = _.groupBy(edges, 'node.frontmatter.type');
+
   return (
     <Layout withContainer={false}>
       <SEO title="Theses" />
@@ -28,30 +29,20 @@ export default function Theses({
       </div>
 
       <section className="section">
-        <div className="container content">
+        <div className="container content theses">
           <h1>Theses</h1>
 
-          <div className="tile is-ancestor is-vertical">
-            {edges.map(({ node }) => (
-              <div
-                key={node.id}
-                className="tile is-vertical"
-                style={{ margin: '1em' }}
-              >
-                <p className="title">{node.frontmatter.title}</p>
+          {Object.keys(thesesByType).map(type => (
+            <div className="kind" key={type}>
+              <h2>{type}</h2>
 
-                <p className="subtitle">
-                  Type: <strong>{node.frontmatter.type}</strong>
-                  <br />
-                  Supervisor: <Person id={node.frontmatter.supervisor} />
-                  <br />
-                  Contact: <Person id={node.frontmatter.contact} />
-                </p>
-
-                <MDXRenderer>{node.body}</MDXRenderer>
-              </div>
-            ))}
-          </div>
+              {thesesByType[type].map(({ node }) => (
+                <Link key={node.id} to={node.fields.path}>
+                  {node.frontmatter.title}
+                </Link>
+              ))}
+            </div>
+          ))}
         </div>
       </section>
     </Layout>

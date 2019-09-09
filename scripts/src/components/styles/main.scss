@@ -640,6 +640,21 @@ $widescreen-enabled: false;
   }
 }
 
+.theses {
+  font-size: 1.25em;
+
+  h1,
+  h2,
+  h3,
+  .kind {
+    color: $black;
+  }
+
+  .kind {
+    margin-top: 1.25em;
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {
