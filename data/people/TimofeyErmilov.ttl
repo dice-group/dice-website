@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TimofeyErmilov a schema:Person ;
+  schema:name "Timofey Ermilov" ;
+  schema:namePrefix "Dr.-Ing." ;
+  schema:role dice:SeniorResearcher ;
+  schema:phone <tel:+49-341-97-32362> ;
+  schema:fax <tel:+49-341-97-32329> ;
+  schema:email <mailto:ermilov@informatik.uni-leipzig.de> ;
+  schema:office "" ;
+  schema:photo "ermilov.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+  

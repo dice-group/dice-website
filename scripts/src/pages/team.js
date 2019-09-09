@@ -28,10 +28,14 @@ export default function Team({
             style={{ marginBottom: '3em' }}
           >
             <h2 style={{ marginBottom: '1em' }}>{role}</h2>
-            <div className="tile is-ancestor">
-              {peopleByRole[role].map(person => (
-                <Person key={person.path} person={person} />
-              ))}
+            <div className="columns is-multiline is-5 is-variable">
+              {peopleByRole[role]
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map(person => (
+                  <div className="column is-half" key={person.path}>
+                    <Person person={person} />
+                  </div>
+                ))}
             </div>
           </div>
         ))}

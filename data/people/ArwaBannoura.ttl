@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ArwaBannoura a schema:Person ;
+  schema:name "Arwa Bannoura" ;
+  schema:namePrefix "Dr." ;
+  schema:role dice:SeniorResearcher ;
+  schema:phone <tel:+49-525-16-05189> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:arwa.bannoura@uni-paderborn.de> ;
+  schema:office "TP6.3.308" ;
+  schema:photo "bannoura.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .

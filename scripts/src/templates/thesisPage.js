@@ -3,10 +3,10 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import BackButton from '../components/backButton';
 import Layout from '../components/layout';
+import Person from '../components/person/dynamic';
 import SEO from '../components/seo';
-import UKFlag from '../components/svgs/ukflag.inline.svg';
 
-export default function TeachingTemplate({
+export default function ThesisTemplate({
   data: {
     mdx: { frontmatter, body },
   },
@@ -14,20 +14,23 @@ export default function TeachingTemplate({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="content teaching-page">
+      <div className="content thesis-page">
         <BackButton />
         <h1 className="title">{frontmatter.title}</h1>
-        <div>
-          {frontmatter.type}{' '}
-          <span className="has-text-grey-light">{frontmatter.kind}</span>{' '}
-          {frontmatter.language === 'en' && (
-            <span title="English language">
-              <UKFlag style={{ width: 24, height: 12 }} />
-            </span>
-          )}
-        </div>
+        <div className="type">{frontmatter.type} Thesis</div>
 
         <MDXRenderer>{body}</MDXRenderer>
+
+        <div className="columns contact-info">
+          <div className="column">
+            <h6>Supervisor</h6>
+            <Person id={frontmatter.supervisor} />
+          </div>
+          <div className="column">
+            <h6>Contact</h6>
+            <Person id={frontmatter.contact} />
+          </div>
+        </div>
       </div>
     </Layout>
   );
@@ -38,11 +41,9 @@ export const pageQuery = graphql`
     mdx(fields: { path: { eq: $path } }) {
       frontmatter {
         title
+        supervisor
+        contact
         type
-        year
-        term
-        kind
-        language
       }
       body
     }

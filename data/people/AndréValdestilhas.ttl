@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AndréValdestilhas a schema:Person ;
+  schema:name "André Valdestilhas" ;
+  schema:namePrefix "" ;
+  schema:role dice:Alumni ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "valdestilhas.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 

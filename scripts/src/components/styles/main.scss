@@ -640,6 +640,51 @@ $widescreen-enabled: false;
   }
 }
 
+.theses {
+  font-size: 1.25em;
+
+  h1,
+  h2,
+  h3,
+  .kind {
+    color: $black;
+  }
+
+  .kind {
+    margin-top: 1.25em;
+  }
+}
+
+.thesis-page {
+  h1,
+  h2,
+  h3,
+  .term {
+    color: $black;
+  }
+
+  .type {
+    margin-bottom: 20px;
+  }
+
+  line-height: 2.1em;
+
+  h1 {
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  .contact-info {
+    font-size: 1.25em;
+    margin-top: 64px;
+    margin-bottom: 88px !important;
+
+    h6 {
+      margin-bottom: 6px;
+    }
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {

@@ -73,11 +73,13 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             ))}
         </div>
         <h1>Projects</h1>
-        <div className="tile is-ancestor">
-          {project.map(p => (
-            <Project key={p.path} project={p} />
-          ))}
-        </div>
+        {project && (
+          <div className="tile is-ancestor">
+            {project.map(p => (
+              <Project key={p.path} project={p} />
+            ))}
+          </div>
+        )}
         <h1>Publications</h1>
         {edges && edges.length > 0 && (
           <PapersFilter edges={edges}>

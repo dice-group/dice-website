@@ -119,9 +119,18 @@ exports.createPages = async ({
     graphql,
   });
 
+  // mdx thesis rendering
+  await renderMarkdownType({
+    type: '"theses"',
+    matcher: 'eq',
+    templatePath: 'src/templates/thesisPage.js',
+    createPage,
+    graphql,
+  });
+
   // rest pages mdx rendering
   await renderMarkdownType({
-    type: '["news", "teaching"]',
+    type: '["news", "teaching", "theses"]',
     matcher: 'nin',
     templatePath: 'src/templates/markdownPage.js',
     createPage,

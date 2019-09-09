@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DenizInan a schema:Person ;
+  schema:name "DenizInan" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:+49-160-72-05492> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:dice-webteam@gmx.de> ;
+  schema:office "" ;
+  schema:photo "inan.jpg" ;
+  schema:content """
+# Content from RDF
+  """ .
+ 
