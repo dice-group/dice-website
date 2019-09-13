@@ -1,0 +1,19 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SAGE a dice:FundedProject ;
+  schema:tagline "Semantic Geospatial Analytics" ;
+  schema:status "active" ;
+  schema:content """Data integration is one of the main barriers to harnessing the full power of data in companies. Business-relevant data can be distributed across thousands of data silos in different formats in large companies. For companies driven by geospatial data (e.g., disaster management, automobile), the knowledge to be managed accounts for billions of rapidly changing facts (Big Data). Developing dedicated solutions for managing such large amounts of geospatial data is of central importance to improve the efficiency and effectiveness of data delivery for business-critical applications. However, dealing with geospatial data demands specific solutions for dealing with their intrinsic complexity (up to 5 dimensions) and the rapid changes in the data.
+
+SAGE addresses exactly this challenge by aiming to develop dedicated algorithms for the management of big geospatial data. We will develop time-efficient storage and querying strategies for geospatial data by extending the GeoSPARQL standard so as to deal with continuous queries. A time-efficient knowledge extraction framework dedicated to recognizing geospatial entities will also be developed. In addition, we will focus on developing scalable link discovery approaches for streams of RDF data that will interplay with the storage solution while running on distributed solutions such as FLINK.
+
+SAGE’s main result will be a set of interoperable solutions that implement time-efficient geospatial analytics that can be integrated into a high-performance solutions. These procedures will enable the fast deployment of SAGE-driven solutions such as triple store geospatial benchmarking, geographic based marketing, disaster management and the continuous delivery of big interlinked geospatial data. Using SAGE in data-driven companies promises to increase the reuse of company internal knowledge, the productivity of employees, the reduction of parallel development and a better use of company-internal resources.""" ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:name "SAGE" ;
+  schema:homepage <https://sage.cs.uni-paderborn.de/sage/> ;
+  schema:logo "sage.png" ;
+  schema:partner dicepartner:Geomer, dicepartner:OpenLink .

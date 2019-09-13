@@ -1,0 +1,15 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DEISEL a dice:FundedProject ;
+  schema:tagline "Distributed Search in Large Enterprise Data" ;
+  schema:status "active" ;
+  schema:content "What we want to do: Develop a generic keyword search and question answering infrastructure for distributed and structured enterprise data. Our framework will exploit the distribution of the data to improve both the interpretation and the federated execution of user queries while abiding by the users’ access restrictions. We will deliver an open-source version of the framework that implements keyword search functionality as well as prototypical extensions of the partners’ product suites and use case studies. " ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "DIESEL" ;
+  schema:homepage <https://diesel-project.eu/> ;
+  schema:logo "diesel.png" ;
+  schema:partner dicepartner:Metaphacts, dicepartner:Zazuko .

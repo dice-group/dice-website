@@ -1,0 +1,15 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SAKE a dice:FundedProject ;
+  schema:tagline "With RDF and Machine Learning Getting Results Faster" ;
+  schema:status "active" ;
+  schema:content "The increasing use of automation in machine and plant construction has inevitably led to a large growth in the number of industrial production processes being recorded and monitored by sensors. If the vast quantities of data this generates could be centrally evaluated in real time it would be possible for the results to be used to optimize internal processes and drastically reduce production costs. Unfortunately, the most commonly used data analysis tools are simply not designed to handle such enormous amounts of real time data. The SAKE project has been set up to resolve this problem by developing a framework specifically designed to analyze these vast streams of data. By implementing prefabricated modules it will also be possible to use individual applications in a number of different roles. The modules will be evaluated in real-life industrial environments by the project's industrial partners." ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "SAKE" ;
+  schema:homepage <https://www.sake-projekt.de/en/start/> ;
+  schema:logo "sake.png" ;
+  schema:partner dicepartner:Avicomp, dicepartner:Fraunhofer, dicepartner:Heidelberger, dicepartner:USU .
