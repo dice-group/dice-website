@@ -1,0 +1,14 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GeoKnow a dice:FundedProject ;
+  schema:tagline "Making the Web an Exploratory for Geospatial Knowledge" ;
+  schema:status "completed" ;
+  schema:content "GeoKnow addresses a bold challenge in the area of intelligent information management: the exploitation of the Web as a platform for geospatial knowledge integration as well as for exploration of geographic information." ;
+  schema:name "GeoKnow" ;
+  schema:homepage <http://geoknow.eu/Welcome.html> ;
+  schema:logo "geoknow.png" ;
+  schema:partner dicepartner:Athena, dicepartner:BroxIT, dicepartner:OpenLink, dicepartner:Ontos, dicepartner:Unister .

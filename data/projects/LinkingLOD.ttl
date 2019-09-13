@@ -1,0 +1,12 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LinkingLOD a dice:FundedProject ;
+  schema:tagline "Interlinking knowledge bases" ;
+  schema:status "completed" ;
+  schema:content "In LinkingLOD we will research and develop new Link Discovery methods, in particular methods which will use property semantics, link quality improvements as well as active learning to produce results beyond the state of the art. In addition to that, the resulting methods will be integrated into a Link Discovery framework." ;
+  schema:name "LinkingLOD" ;
+  schema:partner dicepartner:DatabaseGroup .

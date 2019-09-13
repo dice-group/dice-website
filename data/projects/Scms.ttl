@@ -1,0 +1,12 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SCMS a dice:FundedProject ;
+  schema:tagline "Semantic Content Management Systems" ;
+  schema:status "completed" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:content "SCMS aims at combining automatic knowledge discovery and participative, end-user-driven knowledge curation and extension techniques through Social Semantic Web approaches so as to create novel applications in Enterprise Knowledge Management and real-time News Mining." ;
+  schema:name "SCMS" .
