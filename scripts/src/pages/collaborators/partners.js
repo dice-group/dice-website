@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import Image from '../../components/image';
 import Layout from '../../components/layout';
+import Partner from '../../components/partner';
 import SEO from '../../components/seo';
 
 export default function Partners({
@@ -28,20 +28,13 @@ export default function Partners({
       </div>
 
       <section className="section">
-        <div className="container">
-          <div className="content columns is-multiline is-5 is-variable">
+        <div className="container content">
+          <h1>Partners</h1>
+
+          <div className="columns is-multiline is-5 is-variable">
             {data.map(({ node }) => (
-              <div
-                key={node.id}
-                className="column is-3"
-                style={{ margin: '1em' }}
-              >
-                <div className="image is-64x64" style={{ marginRight: 10 }}>
-                  <Image filename={node.data.logo} />
-                </div>
-                <p className="title">
-                  <a href={node.data.url}>{node.data.name}</a>
-                </p>
+              <div className="column is-one-third" key={node.id}>
+                <Partner partner={node} />
               </div>
             ))}
           </div>

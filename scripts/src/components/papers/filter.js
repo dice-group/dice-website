@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 // const sort = arr => _.sortBy(arr, ['label', 'count']);
 
-const Filter = ({ edges, children = () => {} }) => {
+const Filter = ({ edges, limit = 10, children = () => {} }) => {
   // const [options, setOptions] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [years, setYears] = useState([]);
@@ -92,7 +92,7 @@ const Filter = ({ edges, children = () => {} }) => {
 
     const slicedPapers = showall
       ? newFilteredPapers
-      : newFilteredPapers.slice(0, 10);
+      : newFilteredPapers.slice(0, limit);
 
     setHasmore(newFilteredPapers.length > slicedPapers.length);
     setFilteredPapers(slicedPapers);

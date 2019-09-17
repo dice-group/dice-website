@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Microblogging a schema:Award ;
+  schema:name "Analyse von Mikro-Blogging-Daten" ;
+  schema:content "Best Paper (Informatiktage). Informatik-Spektrum, 38(5):400–405, 2014" ;
+  schema:year "2014";
+  schema:awardee dice:RicardoUsbeck .

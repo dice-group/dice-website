@@ -10,6 +10,7 @@ dice:TimofeyErmilov a schema:Person ;
   schema:email <mailto:ermilov@informatik.uni-leipzig.de> ;
   schema:office "" ;
   schema:photo "ermilov.jpg" ;
+  schema:project dice:HOBBIT, dice:QAMEL, dice:BioASQ ;
   schema:content """
 # Content from RDF
   """ .

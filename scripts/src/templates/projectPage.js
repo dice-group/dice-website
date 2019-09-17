@@ -1,5 +1,5 @@
 import format from 'date-fns/format';
-import { Link, graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/backButton';
@@ -183,21 +183,8 @@ export const pageQuery = graphql`
           path
           data {
             name
-            description
+            logo
             screenshot
-            webpage
-            maintainer {
-              path
-              data {
-                name
-              }
-            }
-            developer {
-              path
-              data {
-                name
-              }
-            }
           }
         }
         partner {

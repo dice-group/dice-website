@@ -1,0 +1,15 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:QAMEL a dice:FundedProject ;
+  schema:tagline "Question Answering on Mobil Devices" ;
+  schema:status "active" ;
+  schema:content "In QAMEL, we will develop a resource-aware and generic multimodal question answering (QA) framework for mobile devices.QAMEL will support speech, text and gestures as input. Moreover, QAMEL will use the distribution of the data to improve the execution of queries in both offline and online modes. We will deliver an open-source framework that implements (1) multimodal QA, (2) feedback processing functionality as well as (3) prototypical extensions of the partners’ product suites and use case studies." ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "QAMEL" ;
+  schema:homepage <https://qamel.eu/> ;
+  schema:logo "qamel.png" ;
+  schema:partner dicepartner:Bitstars, dicepartner:KAIST, dicepartner:Saltlux .

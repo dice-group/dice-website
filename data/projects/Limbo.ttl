@@ -1,0 +1,24 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LIMBO a dice:FundedProject ;
+  schema:tagline "Linked Data Services for Mobility" ;
+  schema:status "active" ;
+  schema:content """LIMBO - Linked Data Services for Mobility
+#Problem
+In open-data portals, such as the mCLOUD, citizens, researchers and entrepreneurs have access to a large number of datasets. Many of these data on the topics of weather or traffic are usually unstructured and not related to each other. The use of the available data requires expert knowledge and complicates the machine processing of the contents.
+
+#Project goal
+Specifically, the LIMBO project aims to set up a Mobility Data Space to make data from the Federal Ministry of Transport and Digital Infrastructure accessible for as many applications as possible. 
+The proposed approach will encourage the reuse of data by third parties (industry, startups, citizens). The planned data catalog will in particular pave the way for innovative services in the field of mobility.
+
+#Execution
+The project is implemented using semantic technologies that allow the linking of different data sources (linked data) and a formal description (semantics). The goal is to firmly anchor the Mobility Data Space with open Semantic Web data sources (DBpedia, Linked Geo Data). Deploying as linked data provides the ability to network mobility data with new data sources from other domains, and to develop innovative mobility solutions and new business models based on this. The prototype of the system to be developed is being tested in various application scenarios.""" ;
+  schema:maintainer dice:Eccenca ;
+  schema:name "LIMBO" ;
+  schema:homepage <https://www.limbo-project.org/> ;
+  schema:logo "limbo.png" ;
+  schema:partner dicepartner:Fraunhofer, dicepartner:USU, dicepartner:YellowMap .

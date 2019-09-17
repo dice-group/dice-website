@@ -10,6 +10,7 @@ dice:KleanthiGeorgala a schema:Person ;
   schema:email <mailto:georgala@informatik.uni-leipzig.de> ;
   schema:office "" ;
   schema:photo "georgala.jpg" ;
+  schema:project dice:HOBBIT, dice:SAKE ;
   schema:content """
 # Content from RDF
   """ .

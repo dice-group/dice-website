@@ -1,0 +1,19 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:BDE a dice:FundedProject ;
+  schema:tagline "Big Data Europe" ;
+  schema:status "active" ;
+  schema:content "Big Data Europe will undertake the foundational work for enabling European companies to build innovative multilingual products and services based on semantically interoperable, large-scale, multi-lingual data assets and knowledge, available under a variety of licenses and business models. " ;
+  schema:name "BDE" ;
+  schema:homepage <https://www.big-data-europe.eu/> ;
+  schema:logo "bde.png" ;
+  schema:partner dicepartner:Fraunhofer ;
+  schema:sourceCode <https://github.com/big-data-europe> ;
+
+  # do we need this to be a resource?
+  # e.g. dicefunding:H2020 ;
+  schema:fundingProgram "Horizon 2020" .

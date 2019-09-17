@@ -1,0 +1,24 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:OPAL a dice:FundedProject ;
+  schema:tagline "Portal zur Nutzung offener Daten (Open Data Portal Germany)" ;
+  schema:status "active" ;
+  schema:content """OPAL - Portal for the use of open data (Open Data Portal Germany)
+#Problem
+In many areas of daily life, data is collected and made available. Examples include weather and climate data, information about road traffic or public transport. These data are increasingly being provided as open data in corresponding online portals, but are sometimes in different formats and are difficult to link. This makes it difficult for companies and authorities to search for suitable data records and their corresponding use, for example in the automotive and logistics sectors.
+
+#Project goal
+The objectives of OPAL are the conception and development of a holistic portal for open data with an explicit focus on Germany. Procedures will be developed to allow users to find appropriate sets of records for a particular application. This is done via the search function of the portal as well as further demonstrators. For example, a social media wizard will alert users to appropriate open data for their requests.
+
+#Execution
+In a first step, the requirements of user groups from research and industry are first collected and analyzed. In a further step, the platform will be modular. A particular focus of OPAL is metadata refinement, that is, data that contains information about features of other data. These should be transferred to another format (5-Star Linked Open Data). Deploying as Linked Data allows you to network the data with new data sources from other domains and thus generate more knowledge. The search for data for the specific application in, for example, the automotive and logistics industry (smart fueling u.Ä.) Is thus possible.""" ;
+  schema:maintainer "University of Paderborn" ;
+  schema:endDate "2020-06-30"^^xsd:date ;
+  schema:startDate "2017-07-01"^^xsd:date ;
+  schema:name "OPAL" ;
+  schema:partner "VDI/VDE Innovation + Technik GmbH" ;
+  schema:fundingProgram "BMVI" .

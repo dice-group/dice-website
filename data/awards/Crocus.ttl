@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Crocus a schema:Award ;
+  schema:name "CROCUS: Cluster-based Ontology Data Cleansing" ;
+  schema:content "Best of Workshop (WASABI) in Joint Second International Workshop on Semantic Web Enterprise Adoption and Best Practice and Second International Workshop on Finance and Economics on the Semantic Web at ESWC, 2014" ;
+  schema:year "2014";
+  schema:awardee dice:RicardoUsbeck ;
+  schema:awardeeExternal "D. Cherix", "A. Both", "J. Lehmann" .

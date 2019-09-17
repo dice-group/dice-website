@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Sansa a schema:Award ;
+  schema:name "SANSA Notebooks: “The Tale of Sansa Spark”" ;
+  schema:content "Best Demo Award" ;
+  schema:year "2017";
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:IvanErmilov, dice:SimonBin ;
+  schema:awardeeExternal "Jens Lehmann", "Gezim Sejdiu", "Buehmann Lorenz", "Patrick Westphal", "Claus Stadler", "Nilesh Chakraborty", "Henning Petzka", "Hajira Jabeen" . 

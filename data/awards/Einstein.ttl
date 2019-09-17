@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Einstein a schema:Award ;
+  schema:name "Next Einstein Forum Award" ;
+  schema:content "as one of the top-15 African researchers under 42" ;
+  schema:year "2016";
+  schema:awardee dice:AxelCyrilleNgongaNgomo .

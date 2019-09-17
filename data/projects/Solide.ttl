@@ -1,0 +1,21 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SOLIDE a dice:FundedProject ;
+  schema:tagline "Sprachgesteuerte, kontextuelle Lagebildinformation für Stäbe und Einsatzkräfte im Bevölkerungsschutz" ;
+  schema:status "active" ;
+  schema:content """#Motivation
+Bei (Groß-)Schadenslagen, Krisen, Katastrophen und Notfällen werden die Einsatzkräfte mit einer Vielzahl von Informationen aus unterschiedlichen Quellen konfrontiert. Diese Informationsflut muss analysiert, zu einem Lagebild verarbeitet und nutzerspezifisch zur Verfügung gestellt werden, ohne die Einsatzkräfte von ihren Aufgaben abzulenken.
+
+#Ziele und Vorgehen
+Ziele und Vorgehen Im Projekt SOLIDE soll ein neuer Ansatz für den effizienten Zugriff auf ein integriertes Lagebild erarbeitet werden. Im Fokus steht hierbei die Nutzung einer sprachbasierten Steuerung sowie innovativer Datenintegrationstechniken. Dazu werden alle relevanten Daten, wie beispielsweise Sensordaten, Einsatztagebücher oder geografische Daten, in ein Lagebild integriert. Durch die Erforschung fachspezifischer Algorithmen zur Filterung des relevanten Wissens und geeigneter Verknüpfungsverfahren werden die Daten nutzbar und abrufbar vorgehalten. Die zu erarbeitenden Benutzerschnittstellen und Algorithmen zur Beantwortung von Fragen ermöglichen eine sprachliche, ablenkungsfreie Abfrage der Informationen. Das Demonstrationssystem wird in mehreren Übungen mit Anwendern optimiert und evaluiert.
+
+#Innovationen und Perspektiven
+Mit den Ergebnissen von SOLIDE werden Anwendungen zur Lagebilddarstellung durch eine Sprachsteuerung und eine innovative Datenintegration erweitert. Da relevante Informationen durch gesprochene Ein und Ausgaben zeitnah zugänglich gemacht werden können, tragen sie zur effizienten Unterstützung aller Einsatzkräfte in der Gefahrenabwehr bei. Dabei soll das System in vorhandene Stabs- und Führungssysteme integrierbar sein, um bestehende Lagebilddarstellungen optimal zu nutzen.""" ;
+  schema:maintainer "Smart Data Analytics" ;
+  schema:name "SOLIDE" ;
+  schema:homepage <http://solide-projekt.de/> ;
+  schema:partner dicepartner:ProDV .

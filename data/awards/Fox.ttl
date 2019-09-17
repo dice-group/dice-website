@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Fox a schema:Award ;
+  schema:name "FOX: “Ensemble Learning for Named Entity Recognition”" ;
+  schema:content "Best Performing System at OKE 2017 for Tasks 1 and 2" ;
+  schema:year "2017";
+  schema:awardee dice:ReneSpecl, dice:MichaelRoeder .

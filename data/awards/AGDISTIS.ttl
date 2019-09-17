@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AGDISTIS a schema:Award ;
+  schema:name "AGDISTIS - Graph-Based Disambiguation of Named Entities Using Linked Data" ;
+  schema:content "Best Research Paper Award in International Semantic Web Conference (ISWC), pages 457–471, 2014" ;
+  schema:year "2014";
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:MichaelRoeder, dice:RicardoUsbeck ;
+  schema:awardeeExternal "L. Buhmann", "D. Gerber", "S. Athaide Coelho", "S. Auer", "A. Both" .

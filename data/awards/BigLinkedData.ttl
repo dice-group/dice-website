@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:BigLinkedData a schema:Award ;
+  schema:name "Fostering Serendipity through Big Linked Data" ;
+  schema:content "Semantic Web Challenge (Big Data Track Award) at ISWC 2013" ;
+  schema:year "2013".
+  

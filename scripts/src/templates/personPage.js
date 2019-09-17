@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
-import Project from '../components/project';
 import SEO from '../components/seo';
 
 export default function PersonTemplate({ data: { rdf, allRdf } }) {
@@ -27,66 +27,86 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
   return (
     <Layout>
       <SEO title={`${namePrefix} ${name}`} />
-      <div className="content">
-        <h1 className="title">
-          {namePrefix} {name}
-        </h1>
+      <div className="content person-page">
+        <BackButton />
 
-        <div className="is-flex" style={{ padding: 10, paddingBottom: 20 }}>
-          <div
-            className="image gatsby-image"
-            style={{ width: 200, height: 200 }}
-          >
-            <Image filename={photo} alt={`${namePrefix} ${name} photo`} />
+        <h1 className="title">Profile page</h1>
+
+        <div className="is-flex">
+          <div className="person-image">
+            <Image
+              filename={photo}
+              alt={`${namePrefix} ${name} photo`}
+              style={{ width: 300 }}
+            />
           </div>
 
-          <div className="is-flex" style={{ padding: 10 }}>
-            <div
-              className="is-flex data-column data-header"
-              style={{
-                textAlign: 'right',
-              }}
-            >
-              <div>Role:</div>
-              {phone && <div>Phone:</div>}
-              {fax && <div>Fax:</div>}
-              {email && <div>Email:</div>}
-              {office && <div>Office:</div>}
-            </div>
-            <div className="is-flex data-column">
-              <div>{role.data.name}</div>
-              {phone && <div>{phone}</div>}
-              {fax && <div>{fax}</div>}
-              {email && (
-                <div>
+          <div className="is-flex is-flex-vertical">
+            <h2>
+              {namePrefix} {name}
+            </h2>
+            <p className="role">{role.data.name}</p>
+            {email && (
+              <div className="is-flex meta">
+                <div className="meta-label">Email</div>
+                <div className="meta-value">
                   <a href={email}>{email.replace('mailto:', '')}</a>
                 </div>
-              )}
-              {office && <div>{office}</div>}
-            </div>
+              </div>
+            )}
+            {phone && (
+              <div className="is-flex meta">
+                <div className="meta-label">Phone</div>
+                <div className="meta-value">{phone.replace('tel:', '')}</div>
+              </div>
+            )}
+            {fax && (
+              <div className="is-flex meta">
+                <div className="meta-label">Fax</div>
+                <div className="meta-value">{fax.replace('tel:', '')}</div>
+              </div>
+            )}
+            {office && (
+              <div className="is-flex meta">
+                <div className="meta-label">Office</div>
+                <div className="meta-value">{office}</div>
+              </div>
+            )}
           </div>
         </div>
-        <div>
-          {content &&
-            content.map((mdString, i) => (
+        {content && (
+          <div className="person-content">
+            {content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
-            ))}
-        </div>
-        <h1>Projects</h1>
-        {project && (
-          <div className="tile is-ancestor">
-            {project.map(p => (
-              <Project key={p.path} project={p} />
             ))}
           </div>
         )}
-        <h1>Publications</h1>
+
+        {project && (
+          <>
+            <h1>Projects</h1>
+            <div className="projects">
+              {project
+                .sort((a, b) => a.data.name.localeCompare(b.data.name))
+                .map(p => (
+                  <Link key={p.path} to={p.path}>
+                    {p.data.name} – {p.data.tagline}
+                  </Link>
+                ))}
+            </div>
+          </>
+        )}
         {edges && edges.length > 0 && (
-          <PapersFilter edges={edges}>
-            {papers =>
-              papers.map(({ node }) => <Paper key={node.id} data={node.data} />)
-            }
-          </PapersFilter>
+          <>
+            <h1>Publications</h1>
+            <PapersFilter limit={5} edges={edges}>
+              {papers =>
+                papers.map(({ node }) => (
+                  <Paper key={node.id} data={node.data} />
+                ))
+              }
+            </PapersFilter>
+          </>
         )}
       </div>
     </Layout>
@@ -119,6 +139,7 @@ export const pageQuery = graphql`
               }
             }
             name
+            tagline
           }
         }
       }

@@ -14,8 +14,9 @@ import Footer from './footer';
 import Header from './header';
 import Image from './image';
 import './styles/main.scss';
+import Table from './table';
 
-const mdxComponents = { Image, Link, ExternalLink };
+const mdxComponents = { Image, Link, ExternalLink, Table };
 
 const Layout = ({ children, withContainer = true }) => {
   return (

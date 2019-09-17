@@ -12,7 +12,7 @@ export default function MarkdownTemplate({
   return (
     <Layout>
       <SEO title={frontmatter.title} />
-      <div className="content">
+      <div className="content markdown-page">
         <h1>{frontmatter.title}</h1>
         <MDXRenderer>{body}</MDXRenderer>
       </div>

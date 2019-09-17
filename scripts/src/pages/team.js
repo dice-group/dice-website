@@ -20,7 +20,9 @@ export default function Team({
   return (
     <Layout>
       <SEO title="Team" />
-      <div className="content">
+      <div className="content team">
+        <h1>Team</h1>
+
         {Object.keys(peopleByRole).map(role => (
           <div
             key={role}
@@ -32,7 +34,7 @@ export default function Team({
               {peopleByRole[role]
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map(person => (
-                  <div className="column is-half" key={person.path}>
+                  <div className="column is-one-quarter" key={person.path}>
                     <Person person={person} />
                   </div>
                 ))}

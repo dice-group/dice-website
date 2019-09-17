@@ -138,7 +138,7 @@ $widescreen-enabled: false;
 }
 
 .external-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
   .icon {
@@ -681,6 +681,166 @@ $widescreen-enabled: false;
 
     h6 {
       margin-bottom: 6px;
+    }
+  }
+}
+
+// demos
+.demos-page {
+  h1 {
+    color: $black;
+  }
+}
+
+.demo {
+  .project-extended-info {
+    margin-top: 64px;
+  }
+}
+
+// partners
+.partner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  padding-top: 10px;
+  cursor: pointer;
+
+  .project-image {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 150px;
+  }
+
+  .name {
+    font-size: 1.25em;
+    color: $blue;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+// team
+.team {
+  font-size: 1.25em;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  padding-top: 10px;
+  cursor: pointer;
+
+  .person-image {
+    flex: 3;
+    max-height: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    border-radius: 80px;
+    overflow: hidden;
+  }
+
+  a {
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+.person-page {
+  font-size: 1.25em;
+
+  .is-flex-vertical {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .person-image {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    border-radius: 150px;
+    overflow: hidden;
+    margin-right: 3em;
+  }
+
+  .role {
+    color: $darkbrownOpacity;
+  }
+
+  .meta {
+    margin-bottom: 0.75em;
+
+    .meta-label {
+      color: $black;
+      flex: 1;
+    }
+
+    .meta-value {
+      flex: 2;
+    }
+  }
+
+  .person-content {
+    margin-top: 2em;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
+// markdown render style
+.markdown-page {
+  color: $black;
+  font-size: 1.25em;
+
+  .header-link {
+    color: inherit;
+  }
+
+  .key-val {
+    flex-direction: column;
+
+    .key-row {
+      margin-bottom: 0.5em;
+    }
+
+    .key {
+      flex: 1;
+    }
+
+    .val {
+      flex: 3;
+    }
+  }
+
+  ol {
+    font-size: 1.25em;
+    list-style: none !important;
+    counter-reset: my-awesome-counter;
+
+    li {
+      margin-left: 40px;
+      counter-increment: my-awesome-counter;
+
+      &::before {
+        margin-left: -48px;
+        margin-right: 20px;
+        content: counter(my-awesome-counter) '. ';
+        color: rgba($color: #000000, $alpha: 0.5);
+      }
     }
   }
 }
