@@ -1,9 +1,13 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import React from 'react';
 import Image from '../image';
 
 export const Person = ({ person }) => (
-  <div className="person" style={{ margin: '1em' }}>
+  <div
+    className="person"
+    style={{ margin: '1em' }}
+    onClick={() => navigate(person.path)}
+  >
     <div className="person-image">
       <Image
         filename={person.photo}

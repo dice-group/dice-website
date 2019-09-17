@@ -753,6 +753,54 @@ $widescreen-enabled: false;
   }
 }
 
+.person-page {
+  font-size: 1.25em;
+
+  .is-flex-vertical {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .person-image {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    border-radius: 150px;
+    overflow: hidden;
+    margin-right: 3em;
+  }
+
+  .role {
+    color: $darkbrownOpacity;
+  }
+
+  .meta {
+    margin-bottom: 0.75em;
+
+    .meta-label {
+      color: $black;
+      flex: 1;
+    }
+
+    .meta-value {
+      flex: 2;
+    }
+  }
+
+  .person-content {
+    margin-top: 2em;
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 0.25em;
+    }
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {
