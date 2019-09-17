@@ -32,6 +32,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      sort: { fields: data___year, order: DESC }
     ) {
       edges {
         node {
