@@ -801,6 +801,32 @@ $widescreen-enabled: false;
   }
 }
 
+// markdown render style
+.markdown-page {
+  color: $black;
+  font-size: 1.25em;
+
+  .header-link {
+    color: inherit;
+  }
+
+  .key-val {
+    flex-direction: column;
+
+    .key-row {
+      margin-bottom: 0.5em;
+    }
+
+    .key {
+      flex: 1;
+    }
+
+    .val {
+      flex: 3;
+    }
+  }
+}
+
 // our custom classes
 .content {
   .brand-color {

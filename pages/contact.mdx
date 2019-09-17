@@ -1,14 +1,95 @@
 ---
 path: '/contact'
-title: 'Contact'
+title: 'Contact information'
 ---
 
-| Contact                                                     | &nbsp;                                                                |
-| ----------------------------------------------------------- | --------------------------------------------------------------------- |
-| <Link to="/AxelCyrilleNgongaNgomo">Prof. Axel Ngonga</Link> | Please contact Miss Auinger for an appointment <br /> Room: TP6.3.106 |
-| <Link to="/SimoneAuinger">Simone Auinger</Link>             | Office Hours (mornings Monday - Thursday) <br /> Room: TP6.3.107      |
+## <Link className="header-link" to="/AxelCyrilleNgongaNgomo">Prof. Dr. Axel-Cyrille Ngonga Ngomo</Link>
 
-| Postal Addresses | &nbsp;                                                                                                |
-| ---------------- | ----------------------------------------------------------------------------------------------------- |
-| For Visitors     | Technologiepark Paderborn <br /> Office: TP6.3.106 <br /> Technologiepark 6 <br /> 33100 Paderborn    |
-| Postal Addresses | Universität Paderborn <br /> Fakultät EIM-Informatik <br /> Warburger Str. 100 <br /> 33098 Paderborn |
+<Table
+  data={[
+    { key: 'Position', value: 'Head of DICE' },
+    { key: 'Phone', value: '+49 5251 60-3342' },
+    { key: 'Fax', value: '+49 5251 60-3436' },
+    {
+      key: 'Email',
+      value: <a href="mailto:axel.ngonga@upb.de">axel.ngonga@upb.de</a>,
+    },
+    { key: 'Office', value: 'TP6.3.107' },
+    {
+      key: 'Office hours',
+      value: 'Please contact Miss Auinger for an appointment',
+    },
+  ]}
+/>
+
+## <Link className="header-link" to="/SimoneAuinger">Simone Auinger</Link>
+
+<Table
+  data={[
+    { key: 'Position', value: 'Secretary' },
+    { key: 'Phone', value: '+49 5251 60-1764' },
+    {
+      key: 'Email',
+      value: <a href="mailto:mone@upb.de">mone@upb.de</a>,
+    },
+    { key: 'Office', value: 'TP6.3.107' },
+    {
+      key: 'Office hours',
+      value: '9:00 - 11:00 (Mondays - Thursdays)',
+    },
+  ]}
+/>
+
+## Dice in Social Media
+
+<Table
+  data={[
+    {
+      key: 'Facebook',
+      value: (
+        <a href="https://www.facebook.com/DiceUPB">facebook.com/DiceUPB</a>
+      ),
+    },
+    {
+      key: 'Twitter',
+      value: <a href="https://twitter.com/DiceResearch">@DiceResearch</a>,
+    },
+    {
+      key: 'GitHub',
+      value: <a href="https://github.com/dice-group">github.com/dice-group</a>,
+    },
+    {
+      key: 'Youtube',
+      value: (
+        <a href="https://www.youtube.com/channel/UCDshdIaiXqwZsQ4Gl_70OMA">
+          Dice DataScienceGroup
+        </a>
+      ),
+    },
+  ]}
+/>
+
+## Adresses
+
+<Table
+  data={[
+    {
+      key: 'For Visitors',
+      value: (
+        <>
+          Technologiepark Paderborn <br /> Office: TP6.3.106 <br />{' '}
+          Technologiepark 6 <br /> 33100 Paderborn
+        </>
+      ),
+    },
+    {
+      key: 'Postal Address',
+      value: (
+        <>
+          Universität Paderborn <br /> Fakultät EIM-Informatik <br /> Warburger
+          Str. 100 <br /> 33098 Paderborn
+        </>
+      ),
+    },
+  ]}
+/>
