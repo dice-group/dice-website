@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:QALD a schema:Award ;
+  schema:name "HAWK@QALD5 – Trying to Answer Hybrid Questions with Various Simple Ranking Techniques" ;
+  schema:content "2nd prize at Question Answering over Linked Data (QALD) 5 in CLEF 2015 Labs and Workshops, Notebook Papers. CEUR Workshop Proceedings (CEUR-WS.org/Vol-1391), 2015" ;
+  schema:year "2015";
+  schema:awardee dice:RicardoUsbeck, dice:AxelCyrilleNgongaNgomo .

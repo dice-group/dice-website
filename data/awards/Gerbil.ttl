@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Gerbil a schema:Award ;
+  schema:name "Evaluating entity annotators using GERBIL" ;
+  schema:content "Best Demo Award in The Semantic Web: ESWC 2015 Satellite Events, Revised Selected Papers, Demos & Posters, pages 159–164, 2015" ;
+  schema:year "2015";
+  schema:awardee dice:RicardoUsbeck, dice:MichaelRoeder, dice:AxelCyrilleNgongaNgomo .

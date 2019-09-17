@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GenomeAtlas a schema:Award ;
+  schema:name "Linked Cancer Genome Atlas Database" ;
+  schema:content "I-Challenge Award (Linked Data Cup Award) at I-Semantics 2013" ;
+  schema:year "2013".
+  

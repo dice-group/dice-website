@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GenomeSnip a schema:Award ;
+  schema:name "GenomeSnip: Fragmenting the Genomic Wheel to augment discovery in cancer research" ;
+  schema:content "Best paper award at conference on Semantics in Healthcare and Life Sciences (CSHALS 2014)" ;
+  schema:year "2014".
+  

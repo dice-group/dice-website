@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Leopard a schema:Award ;
+  schema:name "Leopard: a baseLinE approach to attribute Prediction And validation for knowledge graph population" ;
+  schema:content "Second-best score in ISWC Semantic Web Challenge 2017 tasks behind the IBMs system Socrates" ;
+  schema:year "2017";
+  schema:awardee dice:ReneSpeck .

@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SemanticSE a schema:Award ;
+  schema:name "Requirements to Modern Semantic Search Engines" ;
+  schema:content "Runner Up for Best Paper Award at KESW 2016" ;
+  schema:year "2016";
+  schema:awardee dice:RicardoUsbeck, dice:AxelCyrilleNgongaNgomo, dice:MichaelRoeder, dice:MuhammedSaleem .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LinkedOpenData a schema:Award ;
+  schema:name "Linked Open Data Statistics: Collection and Exploitation" ;
+  schema:content "Best System Description Award at KESW'2013 conference " ;
+  schema:year "2013";
+  schema:awardee dice:IvanErmilov ;
+  schema:awardeeExternal "M. Martin", "J. Lehmann", "S. Auer" .
