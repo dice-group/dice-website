@@ -24,7 +24,9 @@ export default function Demos({
       </div>
 
       <section className="section">
-        <div className="container">
+        <div className="container content demos-page">
+          <h1>Demos</h1>
+
           <div className="content columns is-multiline is-5 is-variable">
             {edges.map(({ node }) => (
               <div className="column is-one-third" key={node.path}>
