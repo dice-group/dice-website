@@ -3,8 +3,17 @@
 
 dice:LIMES a schema:Demo ;
   schema:name "LIMES" ;
-  schema:description "Link Discovery Framework for Metric Spaces" ;
+  schema:tagline "Link Discovery Framework for Metric Spaces" ;
+  schema:content """
+Extended markdown description here.
+
+## More stuff
+
+If needed.
+""" ;
   schema:screenshot "limes_screen1.png", "limes_screen2.png" ;
-  schema:webpage <https://github.com/dice-group/LIMES> ;
+  schema:logo "limes_logo.png" ;
+  schema:homepage <https://github.com/dice-group/LIMES> ;
+  schema:sourceCode <https://github.com/dice-group/LIMES> ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:developer dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:PaulSpooren .

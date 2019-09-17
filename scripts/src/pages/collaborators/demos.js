@@ -56,21 +56,8 @@ export const pageQuery = graphql`
           path
           data {
             name
-            description
+            logo
             screenshot
-            webpage
-            maintainer {
-              path
-              data {
-                name
-              }
-            }
-            developer {
-              path
-              data {
-                name
-              }
-            }
           }
         }
       }
