@@ -32,7 +32,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
 
         <h1 className="title">Profile page</h1>
 
-        <div className="is-flex">
+        <div className="is-flex person-info">
           <div className="person-image">
             <Image
               filename={photo}

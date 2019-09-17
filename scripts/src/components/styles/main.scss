@@ -65,12 +65,7 @@ $widescreen-enabled: false;
 
 // text sizes
 .content {
-  h1 {
-    font-size: 2.5em;
-  }
-  p {
-    font-size: 1.25em;
-  }
+  font-size: 1.25em;
 }
 
 // navbar tweaking
@@ -216,7 +211,7 @@ $widescreen-enabled: false;
   }
 
   .link {
-    font-size: 1.2em;
+    // font-size: 0.75em;
     margin-bottom: 20px;
   }
 }
@@ -264,7 +259,6 @@ $widescreen-enabled: false;
       .button {
         padding: 14px 94px;
         height: 60px;
-        font-size: 1.3em;
         border-width: 2px;
       }
     }
@@ -272,18 +266,9 @@ $widescreen-enabled: false;
 
   .project-description {
     margin-bottom: 64px;
-
-    h1 {
-      font-size: 2em;
-    }
-
-    p {
-      font-size: 1.25em;
-    }
   }
 
   .project-extended-info {
-    font-size: 1.25em;
     margin-bottom: 88px !important;
 
     h6 {
@@ -427,11 +412,10 @@ $widescreen-enabled: false;
   margin-bottom: 2.5em;
 
   .text {
-    font-size: 1.25em;
     margin-bottom: 0.25em !important;
   }
   .name {
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin-top: 0 !important;
     margin-bottom: 0.3em !important;
     color: $blue;
@@ -442,7 +426,6 @@ $widescreen-enabled: false;
     }
   }
   .meta {
-    font-size: 1.25em;
     color: $darkbrownOpacity;
     margin-bottom: 0 !important;
 
@@ -602,33 +585,38 @@ $widescreen-enabled: false;
     margin-bottom: 0.25em !important;
   }
 
-  .page-title {
-    font-size: 3.125em;
-  }
-
   h1 {
     margin-top: 0.5em !important;
     margin-bottom: 0.5em !important;
-  }
-
-  ul,
-  ol {
-    font-size: 1.25em;
   }
 
   ol {
     list-style: none !important;
     counter-reset: my-awesome-counter;
 
+    @include mobile {
+      margin-left: 1em;
+      margin-top: 0.5em;
+    }
+
     li {
       margin-left: 40px;
       counter-increment: my-awesome-counter;
+
+      @include mobile {
+        margin-left: 20px;
+      }
 
       &::before {
         margin-left: -40px;
         margin-right: 20px;
         content: counter(my-awesome-counter) '. ';
         color: rgba($color: #000000, $alpha: 0.5);
+
+        @include mobile {
+          margin-left: -32px;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -675,7 +663,6 @@ $widescreen-enabled: false;
   }
 
   .contact-info {
-    font-size: 1.25em;
     margin-top: 64px;
     margin-bottom: 88px !important;
 
@@ -718,7 +705,6 @@ $widescreen-enabled: false;
   }
 
   .name {
-    font-size: 1.25em;
     color: $blue;
     text-align: center;
     margin-top: 10px;
@@ -761,6 +747,19 @@ $widescreen-enabled: false;
     flex: 1;
   }
 
+  .person-info {
+    flex-direction: row;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+
   .person-image {
     max-height: 300px;
     min-height: 300px;
@@ -768,6 +767,11 @@ $widescreen-enabled: false;
     border-radius: 150px;
     overflow: hidden;
     margin-right: 3em;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 1em;
+    }
   }
 
   .role {
@@ -804,7 +808,6 @@ $widescreen-enabled: false;
 // markdown render style
 .markdown-page {
   color: $black;
-  font-size: 1.25em;
 
   .header-link {
     color: inherit;
@@ -827,19 +830,32 @@ $widescreen-enabled: false;
   }
 
   ol {
-    font-size: 1.25em;
     list-style: none !important;
     counter-reset: my-awesome-counter;
+
+    @include mobile {
+      margin-left: 1em;
+      margin-top: 0.5em;
+    }
 
     li {
       margin-left: 40px;
       counter-increment: my-awesome-counter;
 
+      @include mobile {
+        margin-left: 20px;
+      }
+
       &::before {
-        margin-left: -48px;
+        margin-left: -42px;
         margin-right: 20px;
         content: counter(my-awesome-counter) '. ';
         color: rgba($color: #000000, $alpha: 0.5);
+
+        @include mobile {
+          margin-left: -32px;
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -855,14 +871,6 @@ $widescreen-enabled: false;
 pre {
   margin-top: 1em;
   margin-bottom: 1em;
-}
-
-.news-thumbnail {
-  display: inline-block;
-  width: 400px;
-  height: 400px;
-  float: right;
-  padding: 20px;
 }
 
 .people-list {

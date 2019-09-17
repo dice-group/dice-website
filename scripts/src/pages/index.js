@@ -137,7 +137,7 @@ export default function Home() {
         ref={contactRef}
       >
         <div className="hero-body">
-          <div className="container content contact-section">
+          <div className="container contact-section">
             <div className="section-header">
               <h1 className="title">Contact us</h1>
               <Link className="link-more" to="/contact/">

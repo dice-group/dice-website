@@ -6,26 +6,30 @@ const SideMenu = ({ targets }) => {
   const [currentUrl, setCurrentUrl] = useState(null);
 
   useEffect(() => {
-    const options = {
-      threshold: 0.5, // activate at 70% visibility
-      rootMargin: '-50px',
-    };
-
-    const observer = new IntersectionObserver(entries => {
-      entries
-        .filter(entry => entry.isIntersecting)
-        .forEach(entry => {
+    const observers = targets.map(({ target: { current } }) => {
+      const observer = new IntersectionObserver(
+        entries => {
+          const entry = entries.filter(entry => entry.isIntersecting).pop();
+          if (!entry) {
+            return;
+          }
           const target = targets.find(t => t.target.current === entry.target);
           if (!target) {
             return;
           }
           setCurrentUrl(target.url);
-        });
-    }, options);
+        },
+        {
+          threshold: 0.25,
+          rootMargin: '0px',
+        }
+      );
+      observer.observe(current);
 
-    targets.forEach(({ target: { current } }) => observer.observe(current));
+      return observer;
+    });
 
-    return () => observer.disconnect();
+    return () => observers.forEach(observer => observer.disconnect());
   }, targets);
 
   return (
