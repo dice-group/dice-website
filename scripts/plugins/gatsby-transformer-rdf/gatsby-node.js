@@ -12,6 +12,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/author',
   'https://schema.dice-research.org/authorName',
   'https://schema.dice-research.org/awardee',
+  'https://schema.dice-research.org/awardeeExternal',
   'https://schema.dice-research.org/tag',
   'https://schema.dice-research.org/developer',
   'https://schema.dice-research.org/screenshot',

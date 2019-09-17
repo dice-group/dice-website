@@ -19,14 +19,22 @@ const Award = ({ node: { id, data } }) => (
       )}
     </h5>
     <p className="description">{data.content}</p>
-    <p>
-      Awarded to:{' '}
-      {data.awardee.map(person => (
-        <Link key={person.path} className="awardee" to={person.path}>
-          {person.data.name}
-        </Link>
-      ))}
-    </p>
+    {(data.awardee || data.awardeeExternal) && (
+      <p>
+        Awarded to:{' '}
+        {data.awardee.map(person => (
+          <Link key={person.path} className="awardee" to={person.path}>
+            {person.data.name}
+          </Link>
+        ))}
+        {data.awardeeExternal &&
+          data.awardeeExternal.map(p => (
+            <span key={p} className="awardee">
+              {p}
+            </span>
+          ))}
+      </p>
+    )}
   </div>
 );
 
