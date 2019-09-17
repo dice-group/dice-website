@@ -26,7 +26,7 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
   // find image that user wanted by matching path end
   const imageEl =
     filename && filename.length > 0
-      ? images.find(element => element.node.fluid.src.endsWith(filename))
+      ? images.find(element => element.node.fluid.src.endsWith(`/${filename}`))
       : undefined;
 
   if (!imageEl) {
