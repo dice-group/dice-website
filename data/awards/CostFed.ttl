@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:CostFed a schema:Award ;
+  schema:url <https://svn.aksw.org/papers/2018/SEMANTICS_CostFed/public.pdf> ;
+  schema:name "CostFed: Cost-Based Query Optimization for SPARQL Endpoint Federation" ;
+  schema:content "in Semantics Semantics 2018 (Best research paper award)" ;
+  schema:year "2018";
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:MuhammadSaleem ;
+  schema:awardeeExternal "Alexander Potocki", "Tommaso Soru", "Olaf Hartig" .

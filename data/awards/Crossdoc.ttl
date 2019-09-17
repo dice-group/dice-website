@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Crossdoc a schema:Award ;
+  schema:name "Cross-document coreference resolution using latent features" ;
+  schema:content "Best of Workshop (LD4IE) in 2nd International Workshop on Linked Data for Information Extraction at the International Semantic Web Conference, pages 33–44, 2014" ;
+  schema:year "2014";
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:MichaelRoeder, dice:RicardoUsbeck .

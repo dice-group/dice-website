@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Torpedo a schema:Award ;
+  schema:name "Torpedo: Improving the State-of-the-Art RDF Dataset Slicing" ;
+  schema:content "Runner Up for Best Paper Award at ISCS 2017" ;
+  schema:year "2017";
+  schema:awardee dice:AxelCyrilleNgongaNgomo, dice:MuhammadSaleem ;
+  schema:awardeeExternal "Edgard Marx", "Saeedeh Shekarpour", "Tommaso Soru", "Adrian M.P. Brasoveanu", "Ciro Baron", "Albert Weichselbraun", "Jens Lehmann", "Soren Auer" .

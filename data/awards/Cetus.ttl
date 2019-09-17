@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Cetus a schema:Award ;
+  schema:name "CETUS – A Baseline Approach to Type Extraction" ;
+  schema:content "1st prize at Task 2 of Open Knowledge Extraction (OKE) Challenge at International Semantic Web Conference, 2015" ;
+  schema:year "2015";
+  schema:awardee dice:MichaelRoeder, dice:RicardoUsbeck, dice:ReneSpeck, dice:AxelCyrilleNgongaNgomo .
