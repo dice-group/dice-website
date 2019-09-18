@@ -463,6 +463,16 @@ $widescreen-enabled: false;
     margin-top: 1em;
     margin-bottom: 1em;
   }
+
+  .is-facet {
+    color: $white;
+    background-color: $blue;
+  }
+
+  .is-delete:hover {
+    background-color: $darkblue !important;
+    color: $white;
+  }
 }
 
 .papers-facets {
@@ -496,6 +506,14 @@ $widescreen-enabled: false;
 
   .facet {
     cursor: pointer;
+    margin-bottom: 0.75em;
+    display: flex;
+
+    .facet-text {
+      display: flex;
+      flex: 1;
+      white-space: normal;
+    }
   }
 
   p {
@@ -503,6 +521,34 @@ $widescreen-enabled: false;
   }
   .count {
     opacity: 0.5;
+    display: inline-flex;
+  }
+
+  .filter-dropdown {
+    min-width: 200px;
+    max-width: 380px;
+    min-height: 300px;
+    max-height: 600px;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 16px;
+    overflow: auto;
+
+    .input {
+      font-size: 1.25em;
+    }
+
+    .facet-group {
+      display: flex;
+      flex-direction: column;
+      padding-top: 15px;
+      padding-left: 10px;
+      flex: 1;
+    }
   }
 }
 

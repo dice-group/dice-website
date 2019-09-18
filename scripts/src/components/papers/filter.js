@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
+import Dropdown from './dropdown';
 
 // const sort = arr => _.sortBy(arr, ['label', 'count']);
 
@@ -15,6 +16,7 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
   const [expandedType, setExpanded] = useState(false);
   const [facets, setFacets] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const [authorSearchText, setAuthorSearchText] = useState('');
 
   // precalc lists
   useEffect(() => {
@@ -69,8 +71,13 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
 
   useEffect(() => {
     const newFilteredPapers = edges
-      .filter(({ node: { data } }) =>
-        data.title.toLowerCase().includes(searchText.toLowerCase())
+      .filter(
+        ({ node: { data } }) =>
+          data.title.toLowerCase().includes(searchText) ||
+          (data.authorName &&
+            data.authorName.some(name =>
+              name.toLowerCase().includes(searchText)
+            ))
       )
       .filter(({ node: { data } }) =>
         facets.every(facet => {
@@ -99,23 +106,27 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
   }, [facets, searchText, showall]);
 
   const search = text => {
-    setSearchText(text);
+    setSearchText(text.toLowerCase());
     setShowall(false);
   };
 
   const filterYear = year => {
     const newFacets = facets.concat({ type: 'year', data: year });
     setFacets(newFacets);
+    setExpanded('');
   };
 
   const filterAuthor = author => {
     const newFacets = facets.concat({ type: 'author', data: author });
     setFacets(newFacets);
+    setExpanded('');
+    setAuthorSearchText('');
   };
 
   const filterType = type => {
     const newFacets = facets.concat({ type: 'type', data: type });
     setFacets(newFacets);
+    setExpanded('');
   };
 
   const removeFacet = facet => {
@@ -123,12 +134,16 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
     setFacets(newFacets);
   };
 
+  const handleAuthorSearch = txt => {
+    setAuthorSearchText(txt.toLowerCase());
+  };
+
   return (
     <>
       <input
         type="text"
         className="input papers-filter"
-        placeholder="Search by article name"
+        placeholder="Search by article or author name"
         value={searchText}
         onChange={e => search(e.target.value)}
       />
@@ -136,9 +151,9 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
       <div className="facets">
         {facets.map(facet => (
           <div className="tags has-addons" key={facet.data}>
-            <span className="tag is-medium is-info">{facet.data}</span>
+            <span className="tag is-medium is-facet">{facet.data}</span>
             <a
-              className="tag is-medium is-delete"
+              className="tag is-medium is-delete is-facet"
               onClick={() => removeFacet(facet)}
             />
           </div>
@@ -148,114 +163,106 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
       <div className="tabs papers-facets">
         <ul>
           <li>
-            <a
+            <Dropdown
               onClick={() =>
                 expandedType === 'authors'
                   ? setExpanded('')
                   : setExpanded('authors')
               }
-            >
-              Authors{' '}
-              {expandedType === 'authors' ? (
-                <FaChevronUp className="icon" />
-              ) : (
-                <FaChevronDown className="icon" />
-              )}
-            </a>
+              title="Authors"
+              isExpanded={expandedType === 'authors'}
+              facets={
+                <>
+                  <input
+                    type="text"
+                    placeholder="Search by name"
+                    className="input"
+                    onChange={e => handleAuthorSearch(e.target.value)}
+                  />
+
+                  {Object.keys(authors)
+                    .filter(letter =>
+                      authors[letter].some(({ author }) =>
+                        author.toLowerCase().includes(authorSearchText)
+                      )
+                    )
+                    .map(letter => (
+                      <div className="facet-group" key={letter}>
+                        <h4>{letter}</h4>
+                        {authors[letter]
+                          .filter(({ author }) =>
+                            author.toLowerCase().includes(authorSearchText)
+                          )
+                          .map(({ author, count }) => (
+                            <div
+                              className="facet"
+                              key={author}
+                              onClick={() => filterAuthor(author)}
+                            >
+                              <div className="facet-text">{author}</div>{' '}
+                              <div className="count">{count}</div>
+                            </div>
+                          ))}
+                      </div>
+                    ))}
+                </>
+              }
+            />
           </li>
           <li>
-            <a
+            <Dropdown
               onClick={() =>
                 expandedType === 'years'
                   ? setExpanded('')
                   : setExpanded('years')
               }
-            >
-              Years{' '}
-              {expandedType === 'years' ? (
-                <FaChevronUp className="icon" />
-              ) : (
-                <FaChevronDown className="icon" />
-              )}
-            </a>
+              title="Years"
+              isExpanded={expandedType === 'years'}
+              facets={
+                <>
+                  {years
+                    .filter(({ year }) => !facets.find(f => f.data === year))
+                    .map(({ year, count }) => (
+                      <div
+                        className="facet"
+                        onClick={() => filterYear(year)}
+                        key={year}
+                      >
+                        <div className="facet-text">{year}</div>{' '}
+                        <div className="count">{count}</div>
+                      </div>
+                    ))}
+                </>
+              }
+            />
           </li>
           <li>
-            <a
+            <Dropdown
               onClick={() =>
                 expandedType === 'type' ? setExpanded('') : setExpanded('type')
               }
-            >
-              Type{' '}
-              {expandedType === 'type' ? (
-                <FaChevronUp className="icon" />
-              ) : (
-                <FaChevronDown className="icon" />
-              )}
-            </a>
+              title="Type"
+              isExpanded={expandedType === 'type'}
+              facets={
+                <>
+                  {types
+                    .filter(({ type }) => !facets.find(f => f.data === type))
+                    .map(({ type, count }) => (
+                      <div
+                        className="facet"
+                        onClick={() => filterType(type)}
+                        key={type}
+                      >
+                        <div className="facet-text">{type}</div>{' '}
+                        <div className="count">{count}</div>
+                      </div>
+                    ))}
+                </>
+              }
+            />
           </li>
         </ul>
       </div>
-
-      {expandedType === 'authors' && (
-        <div className="papers-facets columns is-multiline is-5 is-variable">
-          {Object.keys(authors).map(letter => (
-            <div className="column is-3" key={letter}>
-              <h4>{letter}</h4>
-              {authors[letter].map(({ author, count }) => (
-                <p
-                  className="facet"
-                  key={author}
-                  onClick={() => filterAuthor(author)}
-                >
-                  {author} <span className="count">{count}</span>
-                </p>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {expandedType === 'years' && (
-        <div className="papers-facets centered">
-          <div
-            className="columns is-multiline is-5 is-variable"
-            style={{ maxWidth: '50%' }}
-          >
-            {years
-              .filter(({ year }) => !facets.find(f => f.data === year))
-              .map(({ year, count }) => (
-                <div
-                  className="column is-4 facet"
-                  onClick={() => filterYear(year)}
-                  key={year}
-                >
-                  {year} <span className="count">{count}</span>
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
-
-      {expandedType === 'type' && (
-        <div className="papers-facets centered">
-          <div
-            className="columns is-multiline is-5 is-variable"
-            style={{ maxWidth: '50%' }}
-          >
-            {types
-              .filter(({ type }) => !facets.find(f => f.data === type))
-              .map(({ type, count }) => (
-                <div
-                  className="column is-4 facet"
-                  onClick={() => filterType(type)}
-                  key={type}
-                >
-                  {type} <span className="count">{count}</span>
-                </div>
-              ))}
-          </div>
-        </div>
-      )}
 
       {children(filteredPapers)}
 
