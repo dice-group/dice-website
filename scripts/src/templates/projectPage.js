@@ -100,7 +100,7 @@ export default function ProjectTemplate({
           )}
 
           {data.partner && (
-            <div className="column">
+            <div className="column staff-list">
               <h6>Partners</h6>
 
               {data.partner.map(partner => (
