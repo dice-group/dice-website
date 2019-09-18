@@ -12,7 +12,7 @@ export default function Awards({
   return (
     <Layout>
       <SEO title="Projects" />
-      <div className="content tile is-ancestor is-vertical">
+      <div className="content">
         <h1>Awards</h1>
         {edges.map(({ node }) => (
           <Award key={node.id} node={node} />
