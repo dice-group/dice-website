@@ -74,16 +74,16 @@ const News = ({ limit = 10, paginate = true }) => {
           .slice(limit * currentPage, limit * currentPage + limit)
           .map(({ node }) => (
             <div key={node.id} style={{ marginBottom: '2em' }}>
-              <h2
-                className="subtitle is-5 has-text-grey-light"
+              <h6
+                className="subtitle has-text-grey-light"
                 title={node.frontmatter.fullDate}
                 style={{ paddingBottom: 10 }}
               >
                 {node.frontmatter.date}
-              </h2>
-              <h1 className="title is-4" style={{ marginBottom: '2em' }}>
+              </h6>
+              <h4 className="title" style={{ marginBottom: '2em' }}>
                 <Link to={node.fields.path}>{node.frontmatter.title}</Link>
-              </h1>
+              </h4>
             </div>
           ))}
       </div>

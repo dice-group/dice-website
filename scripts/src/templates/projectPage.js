@@ -48,14 +48,14 @@ export default function ProjectTemplate({
 
           <div className="buttons">
             {data.homepage && (
-              <a href={data.homepage} className="button is-large is-link">
+              <a href={data.homepage} className="button is-medium is-link">
                 Homepage
               </a>
             )}
             {data.sourceCode && (
               <a
                 href={data.sourceCode}
-                className="button is-large is-link is-outlined"
+                className="button is-medium is-link is-outlined"
               >
                 Source code
               </a>

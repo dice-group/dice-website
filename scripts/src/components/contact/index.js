@@ -65,13 +65,11 @@ const ContactForm = () => {
         .property-name {
           padding-top: 20px;
           margin-bottom: 5px !important;
-          font-size: 1.1em;
           font-weight: normal;
         }
 
         .property-value {
-          font-size: 1.2em;
-          font-weight: 600;
+          font-weight: 500;
           padding-top: 0;
           margin-bottom: 0 !important;
         }

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import ExternalLink from '../externalLink';
 
 const Award = ({ node: { id, data } }) => (
   <div
@@ -9,15 +9,13 @@ const Award = ({ node: { id, data } }) => (
     style={{ marginBottom: '2em' }}
   >
     <p className="year">{data.year}</p>
-    <h5 className="name title is-4">
+    <h4 className="name title">
       {data.url ? (
-        <a href={data.url}>
-          {data.name} <FaExternalLinkAlt className="ext-icon" />
-        </a>
+        <ExternalLink to={data.url}>{data.name}</ExternalLink>
       ) : (
         data.name
       )}
-    </h5>
+    </h4>
     <p className="description">{data.content}</p>
     {(data.awardee || data.awardeeExternal) && (
       <p>
