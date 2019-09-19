@@ -49,12 +49,12 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
 const main = async () => {
   // get papers for tag `simba`
   const { items: papers } = await fetch(
-    `https://www.bibsonomy.org/json/user/aksw/simba?items=1000`
+    `https://www.bibsonomy.org/json/user/dice-research/simba?items=1000`
   ).then(r => r.json());
 
   // load papers with "dice" tag and add them to result dataset
   const papersDice = await fetch(
-    `https://www.bibsonomy.org/json/user/aksw/dice?items=1000`
+    `https://www.bibsonomy.org/json/user/dice-research/dice?items=1000`
   ).then(r => r.json());
   papersDice.items.forEach(paper => {
     // ignore papers that are already added
