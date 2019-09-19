@@ -18,7 +18,6 @@ const links = [
   { url: '/partners/', text: 'Partners' },
   { url: '/jobs/', text: 'Jobs' },
   { url: '/contact/', text: 'Contact' },
-  { url: '#', text: '' },
 
   { url: '/imprint', text: 'Imprint' },
   { url: '/privacy', text: 'Privacy Policy' },
