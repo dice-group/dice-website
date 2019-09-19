@@ -1,11 +1,17 @@
 @charset "utf-8";
 
 // import font from google
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto&font-display=swap');
 
 // set font
 $family-sans-serif: 'Roboto';
 $family-monospace: 'normal';
+
+$weight-light: 300;
+$weight-normal: 400;
+$weight-medium: 450;
+$weight-semibold: 500;
+$weight-bold: 600;
 
 // Set your brand colors
 $blue: #006bd9;
@@ -63,9 +69,9 @@ $widescreen-enabled: false;
 // layout
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
-// text sizes
-.content {
-  font-size: 1.25em;
+// text size
+body {
+  font-size: 1.125em;
 }
 
 // navbar tweaking
@@ -75,8 +81,7 @@ $widescreen-enabled: false;
 }
 
 .navbar-item {
-  font-weight: bold;
-  font-size: 1.25em;
+  font-weight: 500;
   opacity: 0.5;
   background-color: transparent !important;
 
@@ -89,8 +94,7 @@ $widescreen-enabled: false;
   }
 
   .button {
-    font-weight: bold;
-    font-size: 1em;
+    font-weight: 500;
     color: $white;
     background-color: transparent;
     border: 2px solid #ffffff;
@@ -116,15 +120,13 @@ $widescreen-enabled: false;
 }
 
 .action-button {
-  padding-left: 100px;
-  padding-right: 100px;
-  height: 60px;
-  font-size: 20px;
+  padding-left: 70px;
+  padding-right: 70px;
+  height: 50px;
 }
 
 // hero adjustments
 .hero-text {
-  font-size: 1.2em;
   margin-bottom: 1.5em !important;
 }
 
@@ -172,7 +174,6 @@ $widescreen-enabled: false;
   }
 
   .link-more {
-    font-size: 1.2em;
     font-weight: 600;
 
     @include mobile {
@@ -203,7 +204,6 @@ $widescreen-enabled: false;
 
   .title {
     color: $darkbrown;
-    font-size: 1.5em;
   }
 
   .separator {
@@ -211,7 +211,6 @@ $widescreen-enabled: false;
   }
 
   .link {
-    // font-size: 0.75em;
     margin-bottom: 20px;
   }
 }
@@ -258,7 +257,7 @@ $widescreen-enabled: false;
 
       .button {
         padding: 14px 94px;
-        height: 60px;
+        height: 50px;
         border-width: 2px;
       }
     }
@@ -294,7 +293,6 @@ $widescreen-enabled: false;
 
   .see-also {
     h2 {
-      font-size: 2em;
       margin-bottom: 35px;
     }
   }
@@ -316,7 +314,6 @@ $widescreen-enabled: false;
     box-shadow: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    font-size: 1.2em;
     margin-bottom: 1.2em;
   }
 }
@@ -395,7 +392,6 @@ $widescreen-enabled: false;
   }
 
   li {
-    font-size: 1.2em;
     &.is-active {
       border-bottom: solid 3px #006bd9;
     }
@@ -415,11 +411,10 @@ $widescreen-enabled: false;
     margin-bottom: 0.25em !important;
   }
   .name {
-    font-size: 1.25em;
     margin-top: 0 !important;
     margin-bottom: 0.3em !important;
     color: $blue;
-    font-weight: bold;
+    font-weight: 500;
 
     a {
       // TODO: style ones with URL differently
@@ -445,7 +440,6 @@ $widescreen-enabled: false;
 
 .papers-filter {
   height: 60px;
-  font-size: 1.25em;
   margin-bottom: 1em;
 }
 
@@ -538,10 +532,6 @@ $widescreen-enabled: false;
     padding: 16px;
     overflow: auto;
 
-    .input {
-      font-size: 1.25em;
-    }
-
     .facet-group {
       display: flex;
       flex-direction: column;
@@ -588,8 +578,6 @@ $widescreen-enabled: false;
 
 // teaching formatting
 .teaching {
-  font-size: 1.25em;
-
   h1,
   h2,
   h3,
@@ -603,7 +591,7 @@ $widescreen-enabled: false;
 
   .kind {
     margin-top: 1.25em;
-    font-weight: bold;
+    font-weight: 500;
     color: $darkbrown;
   }
 
@@ -675,8 +663,6 @@ $widescreen-enabled: false;
 }
 
 .theses {
-  font-size: 1.25em;
-
   h1,
   h2,
   h3,
@@ -759,7 +745,6 @@ $widescreen-enabled: false;
 
 // team
 .team {
-  font-size: 1.25em;
 }
 
 .person {
@@ -786,8 +771,6 @@ $widescreen-enabled: false;
 }
 
 .person-page {
-  font-size: 1.25em;
-
   .is-flex-vertical {
     flex-direction: column;
     flex: 1;
@@ -963,7 +946,7 @@ pre {
   padding: 0 5px 0 5px;
 
   &.data-header {
-    font-weight: bold;
+    font-weight: 500;
   }
 
   div {
