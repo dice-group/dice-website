@@ -487,6 +487,11 @@ body {
     li {
       a {
         border-bottom: none;
+
+        @include mobile {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
       }
     }
   }
@@ -534,6 +539,10 @@ body {
     border-radius: 5px;
     padding: 16px;
     overflow: auto;
+
+    @include mobile {
+      left: 10px;
+    }
 
     .facet-group {
       display: flex;
