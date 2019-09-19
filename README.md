@@ -1,5 +1,7 @@
 # DICE Website
 
+[![Actions Status](https://github.com/dice-group/dice-website/workflows/.github/workflows/build.yml/badge.svg)](https://github.com/dice-group/dice-website/actions)
+
 This is a repo containing DICE research group website.
 
 ## Structure
