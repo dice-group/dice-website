@@ -255,7 +255,7 @@ body {
       justify-content: center;
 
       .button {
-        padding: 14px 94px;
+        padding: 14px 70px;
         height: 50px;
         border-width: 2px;
       }
@@ -346,6 +346,10 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 200px;
+
+  @include mobile {
+    max-height: fit-content;
+  }
 
   a {
     padding-top: 10px;
