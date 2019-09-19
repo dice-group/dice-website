@@ -1,7 +1,5 @@
 # DICE Website
 
-[![CircleCI](https://circleci.com/gh/dice-group/dice-website.svg?style=svg)](https://circleci.com/gh/dice-group/dice-website)
-
 This is a repo containing DICE research group website.
 
 ## Structure
