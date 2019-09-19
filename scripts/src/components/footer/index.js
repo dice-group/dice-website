@@ -8,14 +8,14 @@ const links = [
   { url: '/awards/', text: 'Awards' },
   { url: '/team/', text: 'Team' },
   { url: '/projects/', text: 'Projects' },
-  { url: '/demos/', text: 'Demos' },
+  { url: '/collaborators/demos/', text: 'Demos' },
 
   { url: '/publications/', text: 'Publications' },
   { url: '/news/', text: 'News' },
-  { url: '/theses/', text: 'Theses' },
-  { url: '/teaching/', text: 'Teaching' },
+  { url: '/students/theses/', text: 'Theses' },
+  { url: '/students/teaching/', text: 'Teaching' },
 
-  { url: '/partners/', text: 'Partners' },
+  { url: '/collaborators/partners/', text: 'Partners' },
   { url: '/jobs/', text: 'Jobs' },
   { url: '/contact/', text: 'Contact' },
 
