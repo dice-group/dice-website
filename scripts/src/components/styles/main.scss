@@ -174,7 +174,7 @@ body {
   }
 
   .link-more {
-    font-weight: 600;
+    font-weight: 500;
 
     @include mobile {
       padding-top: 1em;
@@ -246,7 +246,6 @@ body {
     }
 
     .tagline {
-      font-weight: 1.5em;
       text-align: center;
     }
 

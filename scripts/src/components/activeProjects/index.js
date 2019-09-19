@@ -48,14 +48,14 @@ const newsQuery = graphql`
   }
 `;
 
-const ActiveProjects = () => {
+const ActiveProjects = ({ limit = 6 }) => {
   const {
     allRdf: { edges },
   } = useStaticQuery(newsQuery);
 
   return (
     <div className="columns is-multiline is-5 is-variable">
-      {edges.map(({ node }) => (
+      {edges.slice(0, limit).map(({ node }) => (
         <div className="column is-one-third" key={node.path}>
           <Project project={node} />
         </div>
