@@ -416,11 +416,11 @@ body {
   .name {
     margin-top: 0 !important;
     margin-bottom: 0.3em !important;
-    color: $blue;
+    color: $black;
     font-weight: 500;
 
     a {
-      // TODO: style ones with URL differently
+      color: $blue;
     }
   }
   .meta {
