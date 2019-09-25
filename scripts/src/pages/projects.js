@@ -11,7 +11,11 @@ export default function Projects({
   },
 }) {
   const projectsByType = useMemo(
-    () => _.groupBy(edges, p => p.node.data.rdf_type[0].data.name),
+    () =>
+      _.groupBy(
+        _.sortBy(edges, p => p.node.data.rdf_type[0].data.priority),
+        p => p.node.data.rdf_type[0].data.name
+      ),
     [edges]
   );
 
@@ -67,6 +71,7 @@ export const pageQuery = graphql`
             rdf_type {
               data {
                 name
+                priority
               }
             }
             tagline

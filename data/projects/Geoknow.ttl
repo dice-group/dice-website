@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:GeoKnow a dice:FundedProject ;
+dice:GeoKnow a dice:AlumniProject ;
   schema:tagline "Making the Web an Exploratory for Geospatial Knowledge" ;
   schema:status "completed" ;
   schema:content "GeoKnow addresses a bold challenge in the area of intelligent information management: the exploitation of the Web as a platform for geospatial knowledge integration as well as for exploration of geographic information." ;

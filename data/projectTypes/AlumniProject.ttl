@@ -2,4 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AlumniProject a schema:ProjectType ;
+  schema:priority 4;
   schema:name "Alumni project" .

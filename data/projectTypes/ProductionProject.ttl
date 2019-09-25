@@ -2,4 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ProductionReadyProject a schema:ProjectType ;
+  schema:priority 2;
   schema:name "Production-ready project" .
