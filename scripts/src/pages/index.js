@@ -1,4 +1,4 @@
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import React from 'react';
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import ActiveProjects from '../components/activeProjects';
@@ -47,7 +47,12 @@ export default function Home() {
               <Link to="/demos/">open-source</Link> software and{' '}
               <Link to="/publications/">open publications</Link>.
             </p>
-            <button className="button is-link action-button">Learn more</button>
+            <button
+              onClick={() => navigate('/projects/')}
+              className="button is-link action-button"
+            >
+              Learn more
+            </button>
           </div>
         </div>
       </section>
