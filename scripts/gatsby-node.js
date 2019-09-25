@@ -92,13 +92,13 @@ exports.createPages = async ({
     fromPath: `/collaborators`,
     isPermanent: true,
     redirectInBrowser: true,
-    toPath: `/collaborators/demos/`,
+    toPath: `/collaborators/activeprojects/`,
   });
   createRedirect({
     fromPath: `/collaborators/`,
     isPermanent: true,
     redirectInBrowser: true,
-    toPath: `/collaborators/demos/`,
+    toPath: `/collaborators/activeprojects/`,
   });
 
   // mdx news rendering

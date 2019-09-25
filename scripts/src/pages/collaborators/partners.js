@@ -19,6 +19,9 @@ export default function Partners({
       <div className="tabs">
         <ul className="container">
           <li>
+            <Link to="/collaborators/activeprojects/">Active projects</Link>
+          </li>
+          <li>
             <Link to="/collaborators/demos/">Demos</Link>
           </li>
           <li className="is-active">
