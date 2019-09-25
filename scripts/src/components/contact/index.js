@@ -2,7 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Image from '../image';
 
-const axelQuery = graphql`
+const contactsQuery = graphql`
   {
     allRdf(
       filter: {
@@ -10,7 +10,14 @@ const axelQuery = graphql`
           rdf_type: {
             elemMatch: { id: { eq: "https://schema.dice-research.org/Person" } }
           }
-          role: { id: { eq: "https://dice-research.org/Head" } }
+          role: {
+            id: {
+              in: [
+                "https://dice-research.org/Head"
+                "https://dice-research.org/Secretary"
+              ]
+            }
+          }
         }
       }
     ) {
@@ -21,17 +28,8 @@ const axelQuery = graphql`
             name
             namePrefix
             phone
-            fax
             email
-            office
             photo
-            content
-            project {
-              path
-              data {
-                name
-              }
-            }
             role {
               data {
                 name
@@ -47,14 +45,25 @@ const axelQuery = graphql`
 
 const ContactForm = () => {
   const {
-    allRdf: {
-      edges: [{ node: axelProfile }],
-    },
-  } = useStaticQuery(axelQuery);
+    allRdf: { edges },
+  } = useStaticQuery(contactsQuery);
+
+  const axelProfile = edges.find(
+    ({ node }) => node.data.role.data.name === 'Head'
+  ).node;
+  const simoneProfile = edges.find(
+    ({ node }) => node.data.role.data.name === 'Secretary'
+  ).node;
 
   return (
     <div className="columns">
       <style jsx>{`
+        .column {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
         .round-image {
           width: 200px;
           height: 200px;
@@ -79,7 +88,7 @@ const ContactForm = () => {
           justify-content: center;
         }
       `}</style>
-      <div className="column is-one-quarter">
+      <div className="column is-half">
         <div className="round-image">
           <Image
             filename={axelProfile.data.photo}
@@ -101,28 +110,32 @@ const ContactForm = () => {
           {axelProfile.data.phone.replace('tel:', '')}
         </p>
       </div>
-      <div className="column form-column is-flex">
-        <input type="text" className="input" placeholder="Your name" />
-        <input type="text" className="input" placeholder="Email" />
-        <input
-          type="text"
-          className="input"
-          placeholder="Contact phone (optional)"
-        />
-        <input
-          type="text"
-          className="input"
-          placeholder="Company name (optional)"
-        />
-        <textarea className="input" placeholder="Your message" />
-        <div>
-          <button
-            className="button is-link action-button"
-            style={{ height: 50 }}
-          >
-            Send
-          </button>
+      <div className="column is-half">
+        <div className="round-image">
+          <Image
+            filename={simoneProfile.data.photo}
+            alt={`${simoneProfile.data.name} photo`}
+          />
         </div>
+        <p className="property-name has-text-grey-light">
+          {simoneProfile.data.role.data.name}
+        </p>
+        <p className="property-value">
+          {simoneProfile.data.namePrefix} {simoneProfile.data.name}
+        </p>
+
+        <p className="property-name has-text-grey-light">Email</p>
+        <a
+          className="property-value brand-color"
+          href={simoneProfile.data.email}
+        >
+          {simoneProfile.data.email.replace('mailto:', '')}
+        </a>
+
+        <p className="property-name has-text-grey-light">Phone</p>
+        <p className="property-value">
+          {simoneProfile.data.phone.replace('tel:', '')}
+        </p>
       </div>
     </div>
   );
