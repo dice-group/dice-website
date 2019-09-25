@@ -1,5 +1,5 @@
-import _ from 'lodash';
 import { graphql } from 'gatsby';
+import _ from 'lodash';
 import React, { useMemo } from 'react';
 import Layout from '../components/layout';
 import Project from '../components/project';
@@ -25,7 +25,7 @@ export default function Projects({
             className="tile is-vertical"
             style={{ marginBottom: '3em' }}
           >
-            <h1 style={{ marginBottom: '1em' }}>{type}</h1>
+            <h1 style={{ marginBottom: '1em' }}>{type}s</h1>
             <div className="columns is-multiline is-5 is-variable">
               {projectsByType[type].map(({ node }) => (
                 <div className="column is-one-third" key={node.path}>
