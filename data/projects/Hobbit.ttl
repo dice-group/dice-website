@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:HOBBIT a dice:FundedProject ;
+dice:HOBBIT a dice:AlumniProject ;
   schema:tagline "Holistic Benchmarking of Big Linked Data" ;
   schema:status "active" ;
   schema:content """HOBBIT is a European project that develops a holistic open-source platform and industry-grade benchmarks for benchmarking big linked data.

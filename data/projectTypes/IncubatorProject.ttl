@@ -2,4 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:IncubatorProject a schema:ProjectType ;
+  schema:priority 3;
   schema:name "Incubator project" .

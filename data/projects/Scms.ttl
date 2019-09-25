@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SCMS a dice:FundedProject ;
+dice:SCMS a dice:AlumniProject ;
   schema:tagline "Semantic Content Management Systems" ;
   schema:status "completed" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;

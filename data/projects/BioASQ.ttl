@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:BioASQ a dice:FundedProject ;
+dice:BioASQ a dice:AlumniProject ;
   schema:tagline "A challenge on large-scale biomedical semantic indexing and question answering" ;
   schema:status "completed" ;
   schema:content "BioASQ will push towards improved biomedical semantic indexing and QA via ambitious, yet realistic challenge tasks. The challenge will run in two stages, designed to (a) adapt traditional semantic indexing and QA methods to the needs of biomedical experts, and (b) collect feedback and improve the experimental setting itself. A large computational infrastructure, already available to the consortium, will be used to evaluate competing systems. The required datasets and evaluation measures will be established before the challenge. Biomedical experts will participate in the consortium, both as partners and through a supporting network of third parties." ;

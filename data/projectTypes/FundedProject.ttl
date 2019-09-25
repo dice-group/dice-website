@@ -2,4 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:FundedProject a schema:ProjectType ;
+  schema:priority 1;
   schema:name "Funded project" .

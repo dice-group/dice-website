@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:GEISER a dice:FundedProject ;
+dice:GEISER a dice:AlumniProject ;
   schema:tagline "Von Sensordaten zu internetbasierten Geo-Services" ;
   schema:relatedProject dice:GERBIL ; # real value: dice:BDE, dice:GeoKnow ; can't use them cause generation will fail
   schema:status "active" ;

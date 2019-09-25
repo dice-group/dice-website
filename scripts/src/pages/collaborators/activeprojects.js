@@ -1,24 +1,24 @@
-import { graphql, Link } from 'gatsby';
+import { graphql, Link, navigate } from 'gatsby';
 import React from 'react';
-import Demo from '../../components/demo';
 import Layout from '../../components/layout';
+import Project from '../../components/project';
 import SEO from '../../components/seo';
 
-export default function Demos({
+export default function ActiveProjects({
   data: {
     allRdf: { edges },
   },
 }) {
   return (
     <Layout withContainer={false}>
-      <SEO title="Demos" />
+      <SEO title="Active Projects" />
       <div className="tabs">
         <ul className="container">
-          <li>
-            <Link to="/collaborators/activeprojects/">Active projects</Link>
-          </li>
           <li className="is-active">
-            <a>Demos</a>
+            <a>Active projects</a>
+          </li>
+          <li>
+            <Link to="/collaborators/demos/">Demos</Link>
           </li>
           <li>
             <Link to="/collaborators/partners/">Partners</Link>
@@ -28,14 +28,23 @@ export default function Demos({
 
       <section className="section">
         <div className="container content demos-page">
-          <h1>Demos</h1>
+          <h1>Active Projects</h1>
 
           <div className="columns is-multiline is-5 is-variable">
             {edges.map(({ node }) => (
               <div className="column is-one-third" key={node.path}>
-                <Demo node={node} />
+                <Project key={node.path} project={node} renderType={false} />
               </div>
             ))}
+          </div>
+
+          <div className="is-flex has-content-centered" style={{ padding: 20 }}>
+            <button
+              onClick={() => navigate('/projects/')}
+              className="button is-link action-button"
+            >
+              Show all projects
+            </button>
           </div>
         </div>
       </section>
@@ -49,7 +58,7 @@ export const pageQuery = graphql`
       filter: {
         data: {
           rdf_type: {
-            elemMatch: { id: { eq: "https://schema.dice-research.org/Demo" } }
+            elemMatch: { id: { eq: "https://dice-research.org/FundedProject" } }
           }
         }
       }
@@ -58,9 +67,21 @@ export const pageQuery = graphql`
         node {
           path
           data {
+            rdf_type {
+              data {
+                name
+                priority
+              }
+            }
+            tagline
+            status
+            content
+            endDate
+            startDate
             name
+            homepage
             logo
-            screenshot
+            sourceCode
           }
         }
       }

@@ -235,6 +235,7 @@ body {
     min-height: 400px;
     margin-bottom: 64px;
     padding: 15px;
+    cursor: inherit;
 
     .project-image {
       display: flex;
@@ -416,11 +417,11 @@ body {
   .name {
     margin-top: 0 !important;
     margin-bottom: 0.3em !important;
-    color: $blue;
+    color: $black;
     font-weight: 500;
 
     a {
-      // TODO: style ones with URL differently
+      color: $blue;
     }
   }
   .meta {
