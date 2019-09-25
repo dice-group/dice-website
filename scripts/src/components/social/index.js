@@ -22,7 +22,7 @@ const Social = ({ style, className, hiddenMobile = true }) => (
       hiddenMobile ? 'is-hidden-mobile' : ''
     }`}
     style={{
-      position: 'absolute',
+      position: 'fixed',
       left: 0,
       top: 96,
       height: 'calc(60% - 96px)',
