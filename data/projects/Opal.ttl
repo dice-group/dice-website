@@ -20,6 +20,7 @@ In a first step, the requirements of user groups from research and industry are 
   schema:endDate "2020-06-30"^^xsd:date ;
   schema:startDate "2017-07-01"^^xsd:date ;
   schema:name "OPAL" ;
+  schema:fundingProgram "Funding code 19F2028A" ;
   schema:partner "VDI/VDE Innovation + Technik GmbH" ;
   schema:homepage <http://projekt-opal.de/> ;
   schema:sourceCode <https://github.com/projekt-opal> ;
