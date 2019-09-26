@@ -19,7 +19,6 @@ export default function ProjectTemplate({
   },
 }) {
   const people = rdfToPeopleArray(edges);
-  console.log(people);
 
   return (
     <Layout>

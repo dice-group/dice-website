@@ -11,7 +11,7 @@ export default function Teaching({
 }) {
   return (
     <Layout withContainer={false}>
-      <SEO title="Teaching" />
+      <SEO title="Mentoring" />
       <div className="tabs">
         <ul className="container">
           <li>

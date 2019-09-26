@@ -15,7 +15,7 @@ export default function Partners({
 
   return (
     <Layout withContainer={false}>
-      <SEO title="Projects" />
+      <SEO title="Partners" />
       <div className="tabs">
         <ul className="container">
           <li>
