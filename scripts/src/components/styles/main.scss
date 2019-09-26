@@ -182,6 +182,11 @@ body {
   }
 }
 
+// hero block background
+#about {
+  background-image: url('/background.svg');
+}
+
 // projects styling
 .active-project {
   display: flex;
