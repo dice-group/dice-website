@@ -11,7 +11,7 @@ export default function Awards({
 }) {
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO title="Awards" />
       <div className="content">
         <h1>Awards</h1>
         {edges.map(({ node }) => (
