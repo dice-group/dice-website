@@ -21,4 +21,4 @@ Axel is our main test person that has all properties.
 
 This is a test markdown that can include anything.
   """ ;
-  schema:project dice:GEISER, dice:GERBIL, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:QAMEL, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS .
+  schema:project dice:GEISER, dice:GERBIL, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS .

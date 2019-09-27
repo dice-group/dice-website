@@ -2,7 +2,7 @@
 @prefix dicepapers: <https://dice-research.org/papers/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dicepapers:Example a schema:Publication ;
+dicepapers:ExamplePaper a schema:Publication ;
   schema:type "Publication" ;
   schema:title "Example publication" ;
   schema:tag "MOLE", "dice", "gho", "peer-reviewed", "simba" ;

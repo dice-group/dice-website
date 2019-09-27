@@ -1,6 +1,6 @@
 # DICE Website
 
-[![Actions Status](https://github.com/dice-group/dice-website/workflows/Build%20and%20deploy/badge.svg)](https://github.com/dice-group/dice-website/actions)
+[![Actions Status](https://github.com/dice-group/dice-website/workflows/Build/badge.svg)](https://github.com/dice-group/dice-website/actions)
 
 This is a repo containing DICE research group website.
 
@@ -10,3 +10,5 @@ This is a repo containing DICE research group website.
 - `/data` folder contains RDF (Turtle) files with data used to generate pages for the website
 - `/images` folder contains images used in the website (will be optimized build-time)
 - `/scripts` folder contains scripts and templates that build the website (Gatsby and such)
+
+For more detailed info see [docs folder](./docs/README.md)

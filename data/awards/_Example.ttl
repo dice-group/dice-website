@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleAward a schema:Award ;
+  schema:url <https://award.url/external/link> ;
+  schema:name "Award name here" ;
+  schema:content "Award descript here" ;
+  schema:year "2018 (award year)";
+  schema:awardee dice:AxelCyrilleNgongaNgomo ; # Awardees from our team
+  schema:awardeeExternal "Other person", "Another person" . # External awardees

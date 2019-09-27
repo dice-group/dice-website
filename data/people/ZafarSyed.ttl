@@ -6,6 +6,7 @@ dice:ZafarSyed a schema:Person ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-176-41-976922> ;
+  schema:project dice:OPAL ;
   schema:fax <tel:> ;
   schema:email <mailto:zsyed@mail.uni-paderborn.de> ;
   schema:office "TP6.3.103" ;

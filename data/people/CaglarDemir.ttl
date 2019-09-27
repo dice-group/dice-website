@@ -7,6 +7,7 @@ dice:CaglarDemir a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
+  schema:project dice:OPAL ;
   schema:email <mailto:caglar.demir@uni-paderborn.de> ;
   schema:office "TP6.3.102" ;
   schema:photo "demir.jpg" ;

@@ -71,4 +71,4 @@ yarn-error.log
 
 # ignore auto-generated papers files
 data/papers/*.ttl
-!data/papers/Example.ttl
+!data/papers/_Example.ttl
