@@ -6,6 +6,7 @@ dice:AfshinAmini a schema:Person ;
   schema:namePrefix "" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
+  schema:project dice:OPAL ;
   schema:fax <tel:> ;
   schema:email <mailto:afshin.amini@uni-paderborn.de> ;
   schema:office "TP6.3.309" ;

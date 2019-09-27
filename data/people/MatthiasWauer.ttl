@@ -6,6 +6,7 @@ dice:MatthiasWauer a schema:Person ;
   schema:namePrefix "Dr." ;
   schema:role dice:Alumni ;
   schema:phone <tel:> ;
+  schema:project dice:OPAL ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
   schema:office "" ;
