@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:ExamplePartner a schema:Partner ;
+  schema:name "Example Partner" ;
+  schema:country "County" ;
+  schema:url <https://www.partner.com/> ;
+  schema:logo "partner_logo.png" .

@@ -1,0 +1,21 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleProject a dice:AlumniProject ;
+  schema:name "Project name" ;
+  schema:tagline "Project tagline here" ;
+  schema:relatedProject dice:BDE, dice:GeoKnow ; # related projects
+  schema:status "active" ; # current project status
+  schema:content "Detailed project description" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
+  schema:endDate "2019-02-28"^^xsd:date ;
+  schema:startDate "2016-03-01"^^xsd:date ;
+  schema:homepage <http://www.projekt-homepage.de> ;
+  schema:logo "project_logo.png" ;
+  schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
+  schema:relatedDemo dice:LIMES ; # list of related demos
+  schema:sourceCode <https://github.com/project-group/project> ;
+  schema:fundingProgram "Horizon 2020" .

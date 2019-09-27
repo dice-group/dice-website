@@ -1,0 +1,20 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleDemo a schema:Demo ;
+  schema:name "Example Demo" ;
+  schema:tagline "Tagline for deom" ;
+  schema:content """
+Extended markdown description here.
+
+## More stuff
+
+If needed.
+""" ;
+  schema:screenshot "demo_screenshot1.png", "demo_screenshot2.png" ;
+  schema:logo "demo_logo.png" ;
+  schema:homepage <https://mydemo.dice-research.org> ;
+  schema:sourceCode <https://github.com/dice-group/mydemo> ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ; # Current demo maintainer
+  schema:developer dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:PaulSpooren . # List of all people working on Demo
+
