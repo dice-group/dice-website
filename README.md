@@ -1,6 +1,6 @@
 # DICE Website
 
-[![Actions Status](https://github.com/dice-group/dice-website/workflows/Build%20and%20deploy/badge.svg)](https://github.com/dice-group/dice-website/actions)
+[![Actions Status](https://github.com/dice-group/dice-website/workflows/Build/badge.svg)](https://github.com/dice-group/dice-website/actions)
 
 This is a repo containing DICE research group website.
 

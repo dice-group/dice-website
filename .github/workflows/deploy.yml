@@ -1,6 +1,9 @@
-name: Build
+name: Deploy
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -24,3 +27,13 @@ jobs:
       - name: build
         working-directory: ./scripts
         run: yarn build
+      - name: prepare deploy
+        working-directory: ./scripts
+        run: |
+          cp exoframe.json public/
+          cp Dockerfile public/
+      - name: deploy
+        working-directory: ./scripts/public
+        run: npx exoframe -u -e https://exoframe.codezen.net -t $EXO_TOKEN
+        env:
+          EXO_TOKEN: ${{ secrets.EXO_TOKEN }}
