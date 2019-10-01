@@ -690,6 +690,12 @@ body {
 
   .kind {
     margin-top: 1.25em;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      padding-top: 6px;
+    }
   }
 }
 
