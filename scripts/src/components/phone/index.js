@@ -5,6 +5,10 @@ const phoneRegex = /\+49(\d{4})(\d+)/;
 const formatPhone = phone => {
   // cleanup string from data, remove tel: prefix, extra dashes/spaces
   const cleanNumber = phone.replace('tel:', '').replace(/[\s-]/g, '');
+  // check if we actually have a number
+  if (!cleanNumber.length) {
+    return '';
+  }
   // match to +49-4digits-rest
   const res = phoneRegex.exec(cleanNumber);
   // construct DIN 5008 international number

@@ -25,6 +25,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
     },
   } = rdf;
   const { edges } = allRdf;
+
   return (
     <Layout>
       <SEO title={`${namePrefix} ${name}`} />
@@ -55,7 +56,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
                 </div>
               </div>
             )}
-            {phone && (
+            {phone && phone.replace('tel:', '') && (
               <div className="is-flex meta">
                 <div className="meta-label">Phone</div>
                 <div className="meta-value">
@@ -63,7 +64,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
                 </div>
               </div>
             )}
-            {fax && (
+            {fax && fax.replace('tel:', '') && (
               <div className="is-flex meta">
                 <div className="meta-label">Fax</div>
                 <div className="meta-value">
