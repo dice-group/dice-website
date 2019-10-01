@@ -1,0 +1,24 @@
+---
+date: '2019-04-24'
+title: 'Development of a benchmark for dataset linkage recommendation systems'
+type: 'Master'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+<Image filename="benchmarkForDataset.png" />
+
+A central aim of linked data is to interlink datasets. Therefore, a newly created dataset should be linked to existing datasets. Since no user can have an overview over thousands of existing datasets, search engines like Tapioca exist to retrieve datasets that might be candidates for links for a given dataset.
+
+The goal of the thesis is the development of a benchmark for such dataset similarity approaches. The goal of the benchmark is to measure how well a dataset linkage recommendation system orders the available datasets based on a given datasets (comparable to a 'normal' information retrieval search engine).
+
+To be able to measure the quality of the ranking, the student will use either a classification or a fact checking task. The task is mainly based on the RDF dataset which will be used as a query for the dataset linkage recommendation system. The assumption is that a good recommendation system should provide datasets that increase the classifiers (or fact checkers) performance on its task. This increase of the performance (Delta@n in the figure above) is used as the performance indicator of the recommendation system.
+
+As a stretch goal, the benchmark should be executable on the HOBBIT platform. 
+
+Related projects:
+
+* [Tapioca](http://aksw.org/Projects/Tapioca.html) 
+* [LIMES](http://aksw.org/Projects/LIMES.html) / [Wombat](http://svn.aksw.org/papers/2017/ESWC_WOMBAT/public.pdf) for the automatic linking of retrieved datasets
+* [COPAAL](https://github.com/dice-group/COPAAL) for the unsupervised fact checking
+* [HOBBIT](https://project-hobbit.eu/)
