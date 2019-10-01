@@ -8,6 +8,7 @@ dice:ArwaBannoura a schema:Person ;
   schema:phone <tel:+49-525-16-05189> ;
   schema:fax <tel:> ;
   schema:email <mailto:arwa.bannoura@uni-paderborn.de> ;
+  schema:project dice:OPAL ;
   schema:office "TP6.3.308" ;
   schema:photo "bannoura.jpg" ;
   schema:content """
