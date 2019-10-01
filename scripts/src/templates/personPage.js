@@ -6,6 +6,7 @@ import Image from '../components/image';
 import Layout from '../components/layout';
 import PapersFilter from '../components/papers/filter';
 import Paper from '../components/papers/paper';
+import Phone from '../components/phone';
 import SEO from '../components/seo';
 
 export default function PersonTemplate({ data: { rdf, allRdf } }) {
@@ -24,6 +25,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
     },
   } = rdf;
   const { edges } = allRdf;
+
   return (
     <Layout>
       <SEO title={`${namePrefix} ${name}`} />
@@ -54,16 +56,20 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
                 </div>
               </div>
             )}
-            {phone && (
+            {phone && phone.replace('tel:', '') && (
               <div className="is-flex meta">
                 <div className="meta-label">Phone</div>
-                <div className="meta-value">{phone.replace('tel:', '')}</div>
+                <div className="meta-value">
+                  <Phone phone={phone} />
+                </div>
               </div>
             )}
-            {fax && (
+            {fax && fax.replace('tel:', '') && (
               <div className="is-flex meta">
                 <div className="meta-label">Fax</div>
-                <div className="meta-value">{fax.replace('tel:', '')}</div>
+                <div className="meta-value">
+                  <Phone phone={fax} />
+                </div>
               </div>
             )}
             {office && (

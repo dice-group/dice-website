@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Image from '../image';
+import Phone from '../phone';
 
 const contactsQuery = graphql`
   {
@@ -107,7 +108,7 @@ const ContactForm = () => {
 
         <p className="property-name has-text-grey-light">Phone</p>
         <p className="property-value">
-          {axelProfile.data.phone.replace('tel:', '')}
+          <Phone phone={axelProfile.data.phone} />
         </p>
       </div>
       <div className="column is-half">
@@ -134,7 +135,7 @@ const ContactForm = () => {
 
         <p className="property-name has-text-grey-light">Phone</p>
         <p className="property-value">
-          {simoneProfile.data.phone.replace('tel:', '')}
+          <Phone phone={simoneProfile.data.phone} />
         </p>
       </div>
     </div>
