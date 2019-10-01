@@ -1,0 +1,24 @@
+---
+date: '2019-04-24'
+title: 'Online Query-Planning for SPARQL Features'
+type: 'Master'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+For our tensor-based RDF Triple Store we developed a highly flexible data structure based on advanced C++ Meta programming. Currently it allows to run basic graph patterns with or without distinct. The student will extend it by adding (a, Master) filter and functions or (b, Master) aggregates or (c, Bachelor) optional.
+
+Theoretical work:
+
+* The student will define a new operator in the query graph that handles the selected feature. Alternatively, an existing operator may be modified to reach the goal.
+* The student will extend an existing metric for choosing the best operator greedily.
+
+The student implement three parts:
+
+* adding the selected feature to the query parser and internal parsed query representation
+* implement the operator
+* implement the extended metric
+
+The student will evaluate the performance of the implemented feature against other triplestores ( e.g. Fuseki, Virtuoso, BlazeGraph). The thesis includes a theoretical discussion of the data structure and query processing.
+
+Requirement: solid modern C++11/14/17 skills
