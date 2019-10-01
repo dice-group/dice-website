@@ -10,6 +10,7 @@ dice:AbdelmoneimDesouki a schema:Person ;
   schema:email <mailto:desouki@mail.upb.de> ;
   schema:office "TP6.3.306" ;
   schema:photo "desouki.jpg" ;
+  schema:project dice:OPAL ;
   schema:content """
 # Content from RDF
   """ .
