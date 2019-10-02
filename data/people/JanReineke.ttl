@@ -4,7 +4,7 @@
 dice:JanReineke a schema:Person ;
   schema:name "Jan Reineke" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Infrastructure ;
   schema:phone <tel:+49-525-16-05190> ;
   schema:fax <tel:> ;
   schema:email <mailto:jan.reineke@uni-paderborn.de> ;
@@ -13,4 +13,3 @@ dice:JanReineke a schema:Person ;
   schema:content """
 # Content from RDF
   """ .
-  
