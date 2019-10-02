@@ -5,6 +5,9 @@ import Trianglify from 'trianglify';
  * Generates randomized background pattern using brand colors.
  * WARNING: will only work when running in dev mode (since it's only in dev deps)
  * DO NOT try to run it in production, it is pretty heavy!
+ * 
+ * NOTE: requires trianglify to be installed, it is not in dev deps due to
+ * some issues with nested deps using outdated node-gyp stuff
  *
  * Usage:
  * 1. Use as hook to get background svg html

@@ -48,8 +48,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.15.1",
     "eslint-plugin-standard": "^4.0.1",
-    "prettier": "^1.18.2",
-    "trianglify": "^2.0.0"
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby"
