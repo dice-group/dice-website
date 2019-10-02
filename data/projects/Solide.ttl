@@ -7,6 +7,8 @@
 dice:SOLIDE a dice:FundedProject ;
   schema:tagline "Sprachgesteuerte, kontextuelle Lagebildinformation für Stäbe und Einsatzkräfte im Bevölkerungsschutz" ;
   schema:status "active" ;
+  schema:endDate "2020-07-31"^^xsd:date ;
+  schema:startDate "2017-08-01"^^xsd:date ;
   schema:content """#Motivation
 Bei (Groß-)Schadenslagen, Krisen, Katastrophen und Notfällen werden die Einsatzkräfte mit einer Vielzahl von Informationen aus unterschiedlichen Quellen konfrontiert. Diese Informationsflut muss analysiert, zu einem Lagebild verarbeitet und nutzerspezifisch zur Verfügung gestellt werden, ohne die Einsatzkräfte von ihren Aufgaben abzulenken.
 
@@ -18,4 +20,5 @@ Mit den Ergebnissen von SOLIDE werden Anwendungen zur Lagebilddarstellung durch 
   schema:maintainer "Smart Data Analytics" ;
   schema:name "SOLIDE" ;
   schema:homepage <http://solide-projekt.de/> ;
+  schema:partner dicepartner:Aristech ;
   schema:partner dicepartner:ProDV .
