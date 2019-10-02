@@ -5,7 +5,7 @@ dice:AsepFajarFirmansyah a schema:Person ;
   schema:name "Asep Fajar Firmansyah" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-176-68-657547> ;
+  schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:asep.fajar.firmansyah@uni-paderborn.de> ;
   schema:office "TP6.3.102" ;
