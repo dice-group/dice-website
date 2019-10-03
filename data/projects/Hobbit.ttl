@@ -8,13 +8,13 @@ dice:HOBBIT a dice:AlumniProject ;
   schema:tagline "Holistic Benchmarking of Big Linked Data" ;
   schema:status "active" ;
   schema:content """HOBBIT is a European project that develops a holistic open-source platform and industry-grade benchmarks for benchmarking big linked data.
-#Summary
+# Summary
 Big Data is one of the key assets of the future. However, the cost and efforts required for introducing Big Data technology in a value chain is significant. Mastering the creation of value from Big Data will enhance European competitiveness will result in economic growth and jobs and will deliver societal benefit. To facilitate the use of Big Linked Data, the European Union funds a research and innovation project called "HOBBIT". A European consortium, led by the Institute for Applied Informatics (InfAI) e.V., aims to develop a holistic benchmarking platform for big linked data and corresponding industry-grade benchmarks.
 
-#Premises
+# Premises
 A key step towards abolishing the barriers to the adoption and deployment of Big Data is to provide European companies with open benchmarking reports that allow them to assess the fitness of existing solutions for their purposes. Achieving this goal demands: The deployment of benchmarks on data that reflects reality within realistic settings. The provision of corresponding industry-relevant key performance indicators. The computation of comparable results on standardized hardware.
 
-#Goals
+# Goals
 HOBBIT aims to address these tasks by means of a strong team composed of leading research institutes, large industry customers and innovative small and medium-sized enterprises. In particular, the consortium will aim to achieve the following goals: Define benchmarks for domains of industrial relevance in Europe that make use of Big Linked Data. Determine the key performance indicators for processing Big Linked Data by collaborating with stakeholders from industry and research. Create an open benchmarking platform to evaluate the performance of state-of-the-art systems on standardized hardware. Organize yearly evaluation campaigns, using the platform and the industry-defined KPIs.""" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:endDate "2018-11-30"^^xsd:date ;
