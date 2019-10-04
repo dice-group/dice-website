@@ -10,6 +10,4 @@ dice:AsepFajarFirmansyah a schema:Person ;
   schema:email <mailto:asep.fajar.firmansyah@uni-paderborn.de> ;
   schema:office "TP6.3.102" ;
   schema:photo "firmansyah.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

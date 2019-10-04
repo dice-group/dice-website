@@ -10,7 +10,4 @@ dice:FelixConrads a schema:Person ;
   schema:email <mailto:conrads@informatik.uni-leipzig.de> ;
   schema:office "" ;
   schema:photo "conrads.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

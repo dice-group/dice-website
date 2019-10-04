@@ -10,6 +10,4 @@ dice:JanReineke a schema:Person ;
   schema:email <mailto:jan.reineke@uni-paderborn.de> ;
   schema:office "TP6.3.307" ;
   schema:photo "reineke.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

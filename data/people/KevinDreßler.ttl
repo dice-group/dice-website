@@ -10,7 +10,4 @@ dice:KevinDreßler a schema:Person ;
   schema:email <mailto:dressler@informatik.uni-leipzig.de> ;
   schema:office "" ;
   schema:photo "dressler.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

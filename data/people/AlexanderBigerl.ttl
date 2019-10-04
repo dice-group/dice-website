@@ -10,7 +10,4 @@ dice:AlexanderBigerl a schema:Person ;
   schema:email <mailto:alexander.bigerl@uni-paderborn.de> ;
   schema:office "TP6.3.108" ;
   schema:photo "bigerl.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

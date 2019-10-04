@@ -10,7 +10,4 @@ dice:DenizInan a schema:Person ;
   schema:email <mailto:dice-webteam@gmx.de> ;
   schema:office "" ;
   schema:photo "inan.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

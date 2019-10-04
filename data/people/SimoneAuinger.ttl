@@ -10,7 +10,4 @@ dice:SimoneAuinger a schema:Person ;
   schema:email <mailto:mone@upb.de> ;
   schema:office "TP6.3.107" ;
   schema:photo "auinger.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

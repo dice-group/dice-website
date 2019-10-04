@@ -10,7 +10,4 @@ dice:AndréValdestilhas a schema:Person ;
   schema:email <mailto:> ;
   schema:office "" ;
   schema:photo "valdestilhas.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

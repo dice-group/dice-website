@@ -11,7 +11,5 @@ dice:CaglarDemir a schema:Person ;
   schema:email <mailto:caglar.demir@uni-paderborn.de> ;
   schema:office "TP6.3.102" ;
   schema:photo "demir.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .
+

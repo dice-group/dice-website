@@ -10,7 +10,4 @@ dice:NikitSrivastava a schema:Person ;
   schema:email <mailto:nikit@mail.uni-paderborn.de> ;
   schema:office "O4.216" ;
   schema:photo "srivastava.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

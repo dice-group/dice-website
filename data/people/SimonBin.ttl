@@ -7,4 +7,5 @@ dice:SimonBin a schema:Person ;
   schema:image <http://ldap.aksw.org/pic/sn/Bin> ;
   schema:email <mailto:sbin@informatik.uni-leipzig.de> ;
   schema:name "Simon Bin" ;
-  schema:phone <tel:+49-341-22903736> .
+  schema:phone <tel:+49-341-22903736> ;
+  schema:content """""" .

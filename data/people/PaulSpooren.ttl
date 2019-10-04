@@ -5,4 +5,5 @@ dice:PaulSpooren a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:project dice:GEISER ;
   schema:email <mailto:spooren@informatik.uni-leipzig.de> ;
-  schema:name "Paul Spooren" .
+  schema:name "Paul Spooren" ;
+  schema:content """""" .

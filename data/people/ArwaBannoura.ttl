@@ -11,6 +11,4 @@ dice:ArwaBannoura a schema:Person ;
   schema:project dice:OPAL ;
   schema:office "TP6.3.308" ;
   schema:photo "bannoura.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

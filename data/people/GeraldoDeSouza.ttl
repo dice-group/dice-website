@@ -11,7 +11,5 @@ dice:GeraldoDeSouza a schema:Person ;
   schema:project dice:OPAL ;
   schema:office "O4.122" ;
   schema:photo "souza.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .
+

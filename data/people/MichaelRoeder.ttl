@@ -11,7 +11,4 @@ dice:MichaelRoeder a schema:Person ;
   schema:office "TP6.3.108" ;
   schema:photo "roeder.jpg" ;
   schema:project dice:DIESEL, dice:HOBBIT ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

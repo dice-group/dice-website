@@ -11,7 +11,4 @@ dice:MohamedAhmedSherif a schema:Person ;
   schema:office "TP6.3.306" ;
   schema:photo "sherif.jpg" ;
   schema:project dice:DIESEL, dice:GEISER, dice:HOBBIT, dice:SAKE, dice:SAGE, dice:GeoKnow, dice:LinkingLOD ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

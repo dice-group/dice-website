@@ -10,7 +10,4 @@ dice:AbdullahFathiAhmed a schema:Person ;
   schema:email <mailto:afaahmed@mail.uni-paderborn.de> ;
   schema:office "TP6.3.308" ;
   schema:photo "ahmed.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

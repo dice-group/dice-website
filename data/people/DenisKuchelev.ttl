@@ -10,7 +10,4 @@ dice:DenisKuchelev a schema:Person ;
   schema:email <mailto:kuchelev@informatik.uni-leipzig.de> ;
   schema:office "" ;
   schema:photo "dkuchelev.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

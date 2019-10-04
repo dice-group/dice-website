@@ -10,6 +10,4 @@ dice:AdrianWilke a schema:Person ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
   schema:office "TP6.3.109" ;
   schema:photo "wilke.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

@@ -11,7 +11,5 @@ dice:AfshinAmini a schema:Person ;
   schema:email <mailto:afshin.amini@uni-paderborn.de> ;
   schema:office "TP6.3.309" ;
   schema:photo "amini.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .
+
