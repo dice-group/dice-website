@@ -43,6 +43,10 @@ export const pageQuery = graphql`
         term
         kind
         language
+        sort: {
+          fields: [year]
+          order: ASC
+        }
       }
       body
     }
