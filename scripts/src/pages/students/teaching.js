@@ -69,39 +69,41 @@ export default function Teaching({
         <div className="container content teaching">
           <h1 className="page-title">Teaching</h1>
 
-          {Object.keys(result).map(year => (
-            <div key={year}>
-              <h2>{year}</h2>
+          {Object.keys(result)
+            .sort((a, b) => b - a)
+            .map(year => (
+              <div className="years" key={year}>
+                <h2>{year}</h2>
 
-              {Object.keys(result[year]).map(term => (
-                <div key={term}>
-                  <h3 className="term">{term} Term</h3>
+                {Object.keys(result[year]).map(term => (
+                  <div className="terms" key={term}>
+                    <h3 className="term">{term} Term</h3>
 
-                  {Object.keys(result[year][term]).map(kind => (
-                    <div key={kind}>
-                      <div className="kind">{kind}</div>
+                    {Object.keys(result[year][term]).map(kind => (
+                      <div key={kind}>
+                        <div className="kind">{kind}</div>
 
-                      {result[year][term][kind].map(course => (
-                        <div key={course.node.fields.path} className="course">
-                          <Link to={course.node.fields.path}>
-                            {course.node.frontmatter.title}
-                          </Link>
-                          <span className="kind-label has-text-grey-light">
-                            {course.node.frontmatter.kind}
-                          </span>
-                          {course.node.frontmatter.language === 'en' && (
-                            <span title="English language">
-                              <UKFlag style={{ width: 24, height: 12 }} />
+                        {result[year][term][kind].map(course => (
+                          <div key={course.node.fields.path} className="course">
+                            <Link to={course.node.fields.path}>
+                              {course.node.frontmatter.title}
+                            </Link>
+                            <span className="kind-label has-text-grey-light">
+                              {course.node.frontmatter.kind}
                             </span>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          ))}
+                            {course.node.frontmatter.language === 'en' && (
+                              <span title="English language">
+                                <UKFlag style={{ width: 24, height: 12 }} />
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
         </div>
       </section>
     </Layout>
@@ -112,7 +114,7 @@ export const pageQuery = graphql`
   query {
     allMdx(
       filter: { fields: { type: { eq: "teaching" } } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { fields: frontmatter___year, order: DESC }
     ) {
       edges {
         node {
