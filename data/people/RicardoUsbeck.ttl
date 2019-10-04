@@ -11,7 +11,4 @@ dice:RicardoUsbeck a schema:Person ;
   schema:office "O4.116" ;
   schema:photo "usbeck.jpg" ;
   schema:project dice:DIESEL, dice:QAMEL ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

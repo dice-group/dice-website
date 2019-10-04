@@ -10,7 +10,4 @@ dice:HamadaZahera a schema:Person ;
   schema:email <mailto:hamada.zahera@uni-paderborn.de> ;
   schema:office "O4.216" ;
   schema:photo "zahera.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

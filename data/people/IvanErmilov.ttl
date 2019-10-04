@@ -11,7 +11,4 @@ dice:IvanErmilov a schema:Person ;
   schema:office "" ;
   schema:photo "iermilov.jpg" ;
   schema:project dice:BDE, dice:HOBBIT ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

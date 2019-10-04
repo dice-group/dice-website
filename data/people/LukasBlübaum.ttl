@@ -10,7 +10,4 @@ dice:LukasBlübaum a schema:Person ;
   schema:email <mailto:lukasbl@campus.uni-paderborn.de> ;
   schema:office "" ;
   schema:photo "bluehbaum.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

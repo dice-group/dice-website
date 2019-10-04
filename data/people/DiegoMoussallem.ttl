@@ -10,7 +10,4 @@ dice:DiegoMoussallem a schema:Person ;
   schema:email <mailto:diego.moussallem@uni-paderborn.de> ;
   schema:office "TP6.3.109" ;
   schema:photo "moussallem.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

@@ -10,7 +10,4 @@ dice:ElizaSimpson a schema:Person ;
   schema:email <mailto:elizashaw16@gmail.com> ;
   schema:office "" ;
   schema:photo "simpson.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

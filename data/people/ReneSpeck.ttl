@@ -11,6 +11,4 @@ dice:ReneSpeck a schema:Person ;
   schema:office "105, Hainstraße 11, 04109 Leipzig" ;
   schema:photo "speck.jpg" ;
   schema:project dice:DIESEL, dice:BioASQ, dice:SCMS ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

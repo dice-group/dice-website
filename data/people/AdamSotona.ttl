@@ -10,7 +10,4 @@ dice:AdamSotona a schema:Person ;
   schema:email <mailto:> ;
   schema:office "" ;
   schema:photo "" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

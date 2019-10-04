@@ -11,7 +11,5 @@ dice:MatthiasWauer a schema:Person ;
   schema:email <mailto:> ;
   schema:office "" ;
   schema:photo "wauer.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .
+

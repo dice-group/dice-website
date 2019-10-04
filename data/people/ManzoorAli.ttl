@@ -10,7 +10,4 @@ dice:ManzoorAli a schema:Person ;
   schema:email <mailto:manzoor@campus.uni-paderborn.de> ;
   schema:office "TP6.3.305" ;
   schema:photo "mali.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .

@@ -10,7 +10,4 @@ dice:RrichaJalota a schema:Person ;
   schema:email <mailto:rricha.jalota@uni-paderborn.de> ;
   schema:office "TP6.3.310" ;
   schema:photo "jalota.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

@@ -10,6 +10,4 @@ dice:RiaHariGusmita a schema:Person ;
   schema:email <mailto:ria.hari.gusmita@uni-paderborn.de> ;
   schema:office "TP6.3.101" ;
   schema:photo "gusmita.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .

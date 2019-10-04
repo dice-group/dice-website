@@ -10,7 +10,4 @@ dice:AdnanAkhter a schema:Person ;
   schema:email <mailto:> ;
   schema:office "" ;
   schema:photo "akhter.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

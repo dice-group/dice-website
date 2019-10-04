@@ -11,7 +11,5 @@ dice:KleanthiGeorgala a schema:Person ;
   schema:office "" ;
   schema:photo "georgala.jpg" ;
   schema:project dice:HOBBIT, dice:SAKE ;
-  schema:content """
-# Content from RDF
-  """ .
+  schema:content """""" .
 

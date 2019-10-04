@@ -10,7 +10,4 @@ dice:FakhrShaheen a schema:Person ;
   schema:email <mailto:fakhrshaheen@gmail.com> ;
   schema:office "" ;
   schema:photo "shaheen.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
- 
+  schema:content """""" .

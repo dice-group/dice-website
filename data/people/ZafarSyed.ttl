@@ -11,7 +11,5 @@ dice:ZafarSyed a schema:Person ;
   schema:email <mailto:zsyed@mail.uni-paderborn.de> ;
   schema:office "TP6.3.103" ;
   schema:photo "syed.jpg" ;
-  schema:content """
-# Content from RDF
-  """ .
-  
+  schema:content """""" .
+
