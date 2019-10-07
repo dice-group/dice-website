@@ -75,33 +75,38 @@ export default function Teaching({
               <div className="years" key={year}>
                 <h2>{year}</h2>
 
-                {Object.keys(result[year]).map(term => (
-                  <div className="terms" key={term}>
-                    <h3 className="term">{term} Term</h3>
+                {Object.keys(result[year])
+                  .sort((a, b) => b.localeCompare(a))
+                  .map(term => (
+                    <div className="terms" key={term}>
+                      <h3 className="term">{term} Term</h3>
 
-                    {Object.keys(result[year][term]).map(kind => (
-                      <div key={kind}>
-                        <div className="kind">{kind}</div>
+                      {Object.keys(result[year][term]).map(kind => (
+                        <div key={kind}>
+                          <div className="kind">{kind}</div>
 
-                        {result[year][term][kind].map(course => (
-                          <div key={course.node.fields.path} className="course">
-                            <Link to={course.node.fields.path}>
-                              {course.node.frontmatter.title}
-                            </Link>
-                            <span className="kind-label has-text-grey-light">
-                              {course.node.frontmatter.kind}
-                            </span>
-                            {course.node.frontmatter.language === 'en' && (
-                              <span title="English language">
-                                <UKFlag style={{ width: 24, height: 12 }} />
+                          {result[year][term][kind].map(course => (
+                            <div
+                              key={course.node.fields.path}
+                              className="course"
+                            >
+                              <Link to={course.node.fields.path}>
+                                {course.node.frontmatter.title}
+                              </Link>
+                              <span className="kind-label has-text-grey-light">
+                                {course.node.frontmatter.kind}
                               </span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                ))}
+                              {course.node.frontmatter.language === 'en' && (
+                                <span title="English language">
+                                  <UKFlag style={{ width: 24, height: 12 }} />
+                                </span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
               </div>
             ))}
         </div>
