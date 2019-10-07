@@ -5,9 +5,9 @@ dice:HamadaZahera a schema:Person ;
   schema:name "Hamada Zahera" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-152-07-842674> ;
-  schema:fax <tel:+49-525-16-03436> ;
+  schema:phone <tel:+49-5251-60-5194> ;
+  schema:fax <tel:+49-5251-603436> ;
   schema:email <mailto:hamada.zahera@uni-paderborn.de> ;
-  schema:office "O4.216" ;
+  schema:office "TP6.3.101" ;
   schema:photo "zahera.jpg" ;
   schema:content """""" .
