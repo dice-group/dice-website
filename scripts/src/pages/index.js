@@ -44,7 +44,7 @@ export default function Home() {
               applications for the extraction, integrations, storage, querying,
               access and consumption of large-scale datasets. DICE focuses on
               knowledge-driven methods. We are dedicated to{' '}
-              <Link to="/demos/">open-source</Link> software and{' '}
+              <Link to="/collaborators/demos/">open-source</Link> software and{' '}
               <Link to="/publications/">open publications</Link>.
             </p>
             <button
