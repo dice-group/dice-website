@@ -44,6 +44,8 @@ jobs:
       - uses: actions/checkout@v1
       - name: merge master to develop
         run: |
+          git config --global user.email "bot@dice-research.org"
+          git config --global user.name "DICE Bot"
           git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
           git checkout develop
           git merge origin/master
