@@ -34,10 +34,12 @@ export default function Home() {
       <SideMenu targets={menu} style={{ margin: 'auto' }} />
       <Social style={{ maxWidth: 40, margin: 'auto' }} />
 
-      <section id="about" className="hero hero-row is-medium" ref={heroRef}>
+      <section id="about" className="hero hero-row is-medium">
         <div className="hero-body">
           <div className="container content">
-            <h1 className="title">Welcome to the Data Science Group</h1>
+            <h1 className="title" ref={heroRef}>
+              Welcome to the Data Science Group
+            </h1>
             <p className="hero-text">
               We are DICE (Data Science Group).{' '}
               <Link to="/team/">Our team</Link> develops methods,algorithms and
@@ -57,15 +59,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="projects"
-        className="hero has-background-light is-medium"
-        ref={projectsRef}
-      >
+      <section id="projects" className="hero has-background-light is-medium">
         <div className="hero-body">
           <div className="container content">
             <div className="section-header">
-              <h1 className="title">Active projects</h1>
+              <h1 className="title" ref={projectsRef}>
+                Active projects
+              </h1>
               <Link className="link-more" to="/projects/">
                 All projects →
               </Link>
@@ -75,30 +75,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="funded"
-        className="hero has-background-white is-medium"
-        ref={fundedRef}
-      >
+      <section id="funded" className="hero has-background-white is-medium">
         <div className="hero-body">
           <div className="container content">
             <div className="section-header">
-              <h1 className="title">Funded by</h1>
+              <h1 className="title" ref={fundedRef}>
+                Funded by
+              </h1>
             </div>
             <FundedBy />
           </div>
         </div>
       </section>
 
-      <section
-        id="tweets"
-        className="hero has-background-light is-medium"
-        ref={tweetsRef}
-      >
+      <section id="tweets" className="hero has-background-light is-medium">
         <div className="hero-body">
           <div className="container content">
             <div className="section-header">
-              <h1 className="title">Latest tweets</h1>
+              <h1 className="title" ref={tweetsRef}>
+                Latest tweets
+              </h1>
               <a className="link-more" href="https://twitter.com/DiceResearch">
                 Follow →
               </a>
@@ -117,15 +113,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="news"
-        className="hero has-background-white is-medium"
-        ref={newsRef}
-      >
+      <section id="news" className="hero has-background-white is-medium">
         <div className="hero-body">
           <div className="container content">
             <div className="section-header">
-              <h1 className="title">News</h1>
+              <h1 className="title" ref={newsRef}>
+                News
+              </h1>
               <Link className="link-more" to="/news/">
                 More news →
               </Link>
@@ -136,15 +130,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="contact"
-        className="hero has-background-light is-medium"
-        ref={contactRef}
-      >
+      <section id="contact" className="hero has-background-light is-medium">
         <div className="hero-body">
           <div className="container contact-section">
             <div className="section-header">
-              <h1 className="title">Contact us</h1>
+              <h1 className="title" ref={contactRef}>
+                Contact us
+              </h1>
               <Link className="link-more" to="/contact/">
                 More contact information →
               </Link>
