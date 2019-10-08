@@ -7,7 +7,7 @@ dice:DenisKuchelev a schema:Person ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:kuchelev@informatik.uni-leipzig.de> ;
+  schema:email <mailto:kuchelev+diceweb@campus.uni-paderborn.de> ;
   schema:office "" ;
-  schema:photo "dkuchelev.jpg" ;
+  schema:photo "" ;
   schema:content """""" .
