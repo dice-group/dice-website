@@ -19,7 +19,7 @@ const links = [
 const Social = ({ style, className, hiddenMobile = true }) => (
   <div
     className={`column is-flex social ${
-      hiddenMobile ? 'is-hidden-mobile' : ''
+      hiddenMobile ? 'is-hidden-mobile is-hidden-tablet-only' : ''
     }`}
     style={{
       position: 'fixed',

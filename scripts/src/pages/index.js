@@ -31,8 +31,8 @@ export default function Home() {
     <Layout withContainer={false}>
       <SEO title="Home" />
 
-      <SideMenu targets={menu} />
-      <Social />
+      <SideMenu targets={menu} style={{ margin: 'auto' }} />
+      <Social style={{ maxWidth: 40, margin: 'auto' }} />
 
       <section id="about" className="hero hero-row is-medium" ref={heroRef}>
         <div className="hero-body">
