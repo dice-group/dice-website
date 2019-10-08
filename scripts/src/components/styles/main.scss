@@ -69,11 +69,6 @@ $widescreen-enabled: false;
 // layout
 @import 'node_modules/bulma/sass/layout/_all.sass';
 
-// text size
-body {
-  font-size: 1.125em;
-}
-
 // navbar tweaking
 .navbar-start {
   margin-left: auto;
