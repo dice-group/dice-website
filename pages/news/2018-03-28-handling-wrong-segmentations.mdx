@@ -1,0 +1,16 @@
+---
+date: '2018-03-28'
+title: 'Handling wrong segmentations in NER tools'
+author: 'Michael Röder'
+---
+
+<Image filename='banner-iiwas17-1.png' style="height: 50%; width: 50%;"/>
+<Image filename='NerTools_handling-wrong-seg-2.jpg' style="height: 50%; width: 50%;"/>
+
+---
+
+We are happy to announce that our paper, [“Characterizing Mention Mismatching Problems for Improving Recognition Results”](https://dl.acm.org/citation.cfm?id=3151794), was accepted at the 19th International Conference on Information Integration and Web-based Applications & Services (iiWAS2017). Our paper supports the work of Jean Carlos Oliveira de Abreu and [Renato Fileto](http://www.inf.ufsc.br/~r.fileto/) from the [Federal University of Santa Catarina](http://structure.ufsc.br/) who tackle the problem of over and under segmentation when a named entity recognition (NER) tool searches for named entities in a natural language document.
+
+An analysis of existing NER approaches shows that several tools wrongly segment the named entities. For example, the named entity “[George H. W. Bush]” is split into “[George] [H.] [W.] [Bush]”—creating four single entities while only one single named entity is represented in the given text. The paper presents a family of algorithms called MInT (Mention Increasing in Text), that expand mentions like the above, to correct over segmentation while trying to reduce the chance of under segmentation.
+
+The MInT algorithms are a post processing of an NER tool, and based on a dictionary of possible entity labels. The evaluation of these approaches using [GERBIL](http://gerbil.aksw.org/) shows that the MInT approach is able to increase the performance of an NER system by up to 0.19 F1-score. Another insight is that the type of natural language texts has a huge influence on performance. In datasets with short documents—especially search queries—the MInT approach does not improve performance. The best performance has been achieved on normal documents like news articles. A typical case, in which the MInT approach improved performance, was articles mentioning places in the United States. They are typically written as "Muscatine, Iowa", which is identified as two single entities by most NER tools but merged by MInT in post processing.

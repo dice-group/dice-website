@@ -1,0 +1,23 @@
+---
+date: '2019-01-18'
+title: 'Squirrel 0.3'
+author: 'Geraldo de Souza'
+---
+
+<Image filename='squirrel.png' style="height: 50%; width: 50%;"/> 
+
+---
+
+The Squirrel development team is happy to announce the updated [Squirrel 0.3](https://github.com/dice-group/Squirrel/releases/tag/0.3). [Squirrel](https://dice-group.github.io/squirrel.github.io/) is a crawler of Linked Data, designed to exploit all the content of the linked web. By ingesting initial seeds, Squirrel fetches these URIs and performs a deep search to crawl everything. This tool has a extensible architecture allowing the user to customise the type of content that they want to crawl, making it possible to transform non-linked data on RDF graphs.
+
+This release includes several improvements, with new analysers and fetchers.
+
+- SparqlDatasetFetcher - Fetches RDF graphs from SparqlEndpoints that are a dcat:Dataset
+- MicrodataParser - An Analyser to extract microdata from HTML pages as triples
+- MicroformatMF2JParser - An Analyzer to extract microformats from HTML pages as triples
+- RDFaSemarglParser - An Analyzer to extract triples from from structured documents  
+([https://github.com/semarglproject/semargl](https://github.com/semarglproject/semargl))
+- RDFaSemarglParser - An Analyser to extract triples from structured documents  
+([https://github.com/semarglproject/semargl](https://github.com/semarglproject/semargl))
+
+The release can be found [here](https://github.com/dice-group/Squirrel/releases/tag/0.3). Stay tuned for the next releases!

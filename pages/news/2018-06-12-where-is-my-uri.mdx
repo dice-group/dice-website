@@ -1,0 +1,67 @@
+---
+date: '2018-06-12'
+title: 'Where Is My URI?'
+author: 'Andre Valdestilhas'
+---
+
+<Image filename='where-is-my-uri-1.png' style="height: 70%; width: 70%;"/>
+<Image filename='where-is-my-uri-2.png' style="height: 70%; width: 70%;"/>
+<Image filename='where-is-my-uri-3.png' style="height: 70%; width: 70%;"/>
+
+---
+
+(WIMU) is a service where the URI is inserted and the output is a rank of datasets amongst which this URI is most likely to have been defined. WIMU ranks the corresponding datasets according to how a dataset contributes to the definition of a URI proportional to the number of literals. All the data from comes from [LODStats](http://lodstats.aksw.org/) and [LODLoundromat](http://lodlaundromat.org/). 
+
+**WIMU is able to:** 
+- Find datasets for a given URI or many URIs (in this case, a linkset) .
+- Generate CBDs for a given URI and Dataset.
+
+WIMU can be used via Web interface or as a service API, giving you an output in JSON format. 
+
+The web interface (fig.2) is based on two parameters, the URI and the top occurrences. The output is an HTML table showing the datasets and its provenances, allowing download of the datasets and generation of the CBDs for the given URI. 
+
+The service API (fig.3; fig.4) (WIMU with JSON).
+
+The service API provides a JSON as output (fig.5), allowing users to use WIMU with some programing language compatible with JSON. Here we give examples. 
+
+**Usage examples:** 
+- Service: [w3id.org/where-is-my-uri/Find](https://w3id.org/where-is-my-uri/Find)
+- Parameter Description
+- top Top occurrences of the datasets where the URI was defined.
+- uri URI expected to search.
+
+**Input (Single URI example):** _[w3id.org/where-is-my-uri/Find](https://w3id.org/where-is-my-uri/Find?top=5&amp;uri=http://dbpedia.org/resource/Leipzig)_ 
+
+**Output:** 
+```
+[  
+ {  
+"dataset": "http://downloads.dbpedia.org/2016-10/core-i18n/en/infobox_properties_en.ttl.bz2",  
+   "CountLiteral": "236"  
+ },  
+ {  
+   "dataset": "http://gaia.infor.uva.es/hdt/dbpedia2015.hdt.gz",  
+   "CountLiteral": "165"  
+ },  
+ {  
+   "dataset": "http://download.lodlaundromat.org/a9dabf348fd6262edfbbcf7256b0f839?type=hdt",  
+   "CountLiteral": "142"  
+ },  
+ {  
+   "dataset": "http://download.lodlaundromat.org/dde1dcc095b38a1b65ebfbc7696d7998?type=hdt",  
+   "CountLiteral": "124"  
+ }  
+] 
+```
+
+The contributions of this work can be summarized in three elements: (1) A regularly updated 5 database index of more than 660K datasets from LODStats and LOD Laundromat. (2) An efficient, low cost and scalable service on the web that shows which dataset most likely defines a URI. (3) Various statistics of datasets indexed from LODStats and LOD Laundromat. The service is available from [w3id.org/where-is-my-uri/](https://w3id.org/where-is-my-uri/) under GNU Affero public license 3.0 and the source code is available online.  
+Contact: Andre Valdestilhas, Tommaso Soru, Markus Nentwig, Edgard Marx, Muhammad Saleem and Axel-Cyrille Ngonga Ngomo. 
+- [valdestilhas(at)informatik.uni-leipzig.de]()
+- [tsoru(at)informatik.uni-leipzig.de]()
+- [nentwig(at)informatik.uni-leipzig.de]()
+- [saleem(at)informatik.uni-leipzig.de]()
+- [axel.ngonga(at)upb.de]()
+- Github repository: [https://github.com/dice-group/wimu](https://github.com/dice-group/wimu)
+- Paper: [https://2018.eswc-conferences.org/wp-content/uploads/2018/02/ESWC2018_paper_57.pdf](https://2018.eswc-conferences.org/wp-content/uploads/2018/02/ESWC2018_paper_57.pdf)
+
+Accepted for publication at ESWC 2018.

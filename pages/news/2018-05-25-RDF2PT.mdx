@@ -1,0 +1,33 @@
+---
+date: '2018-05-25'
+title: 'RDF2PT: Generating Brazilian Portuguese Texts from RDF Data'
+author: 'Diego Moussallem'
+---
+
+<Image filename='RDF2PT_1.png' style="width: 50%; height: 50%;"/> 
+<Image filename='RDF2PT_2.png' style="width: 50%; height: 50%;"/> 
+
+---
+
+- Paper: [www.lrec-conf.org/proceedings/lrec2018/pdf/783.pdf](http://www.lrec-conf.org/proceedings/lrec2018/pdf/783.pdf)
+- Source code: [github.com/dice-group/RDF2PT](https://github.com/dice-group/RDF2PT)
+
+Natural Language Generation (NLG) is the process of generating coherent natural language text from non-linguistic data (Reiter and Dale, 2000). Despite community agreement on the actual text and speech output of these systems, there is far less consensus on what the input should be (Gatt and Krahmer, 2017). A large number of inputs have been taken for NLG systems, including images (Xu et al., 2015), numeric data (Gkatzia et al., 2014), semantic representations (Theune et al., 2001) and Semantic Web (SW) data (Ngonga Ngomo et al., 2013; Bouayad-Agha et al., 2014). Presently, the generation of natural language from SW, more precisely from RDF data, has gained substantial attention (Bouayad-Agha et al., 2014; Staykova, 2014). Some challenges have been proposed to investigate the quality of automatically generated texts from RDF (Colin et al., 2016). Moreover, RDF has demonstrated a promising ability to support the creation of NLG benchmarks (Gardent et al., 2017). However, English is the only language which has been widely targeted. To this end we propose RDF2PT.
+
+**What is RDF2PT?**  
+To the best of our knowledge, RDF2PT is the first system for the generation of Brazilian Portuguese texts from RDF data.  While the exciting avenue of using deep learning techniques in NLG approaches (Gatt and Krahmer, 2017) is open to this task and deep learning has already shown promising results for RDF data (Sleimi and Gardent, 2016), the morphological richness of Portuguese led us to develop a rule-based approach. This was to ensure that we could identify the challenges imposed by this language from the SW perspective before applying Machine Learning (ML) algorithms. RDF2PT is able to generate either a single sentence or a summary of a given resource. RDF2PT is based on Ngonga Ngomo et.al SemWeb2NL and it also uses the Brazilian adaptation of SimpleNLG to the realization task.
+
+**How did we evaluate the quality of RDF2PT?**  
+In order to validate our approach, we evaluated RDF2PT with an open questionnaire using experts in Natural Language Processing (NLP) and SW as well as non-experts who are lay users or non-users of SW technologies. Both groups are native speakers of Brazilian Portuguese and they were 44 in total. The results (Likert scale from 1 to 5) suggested that RDF2PT generates texts which can be easily understood by humans and also help to identify some of the challenges related to the automatic generation of Brazilian Portuguese (especially from RDF).
+
+**An example of RDF2PT application:**  
+We envisioned a promising application by using RDF2PT which aims to support the automatic creation of benchmarking datasets to Named Entity Recognition (NER) and Entity Linking (EL) tasks. In Brazilian Portuguese, there is a lack of gold standards datasets for these tasks, which makes the investigation of these problems difficult for the scientific community. Our aim is to create Brazilian Portuguese silver standard datasets which are able to be uploaded into GERBIL for easy evaluation. To this end, we implemented RDF2PT in BENGAL , which is an approach for automatically generating NER benchmarks based on RDF triples and Knowledge Graphs. This application has already resulted in promising datasets which we have used to investigate the capability of multilingual entity linking systems for recognizing and disambiguating entities in Brazilian Portuguese texts. Some results you can find below:
+
+NER - [http://gerbil.aksw.org/gerbil/experiment?id=201801050043](http://gerbil.aksw.org/gerbil/experiment?id=201801050043)  
+NED - [http://gerbil.aksw.org/gerbil/experiment?id=201801110012](http://gerbil.aksw.org/gerbil/experiment?id=201801110012)
+
+---
+
+5. Blog post about GERBIL, [tinyurl.com/y7yqnehb](https://tinyurl.com/y7yqnehb)  
+6. There is already a blog post, see [tinyurl.com/yd3f243r](https://tinyurl.com/yd3f243r)  
+7. [github.com/dice-group/BENGAL/tree/portuguese](https://github.com/dice-group/BENGAL/tree/portuguese)

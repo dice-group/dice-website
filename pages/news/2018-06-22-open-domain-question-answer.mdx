@@ -1,0 +1,21 @@
+---
+date: '2018-06-22'
+title: 'Never-Ending Learning for Open-Domain Question Answering over Knowledge Bases by Abujabal et al'
+author: 'Rricha Jalota'
+---
+
+The goal of Question Answering over Knowledge Bases (KB) is to provide short and crisp answers to natural language questions. A KB-QA system performs this by first translating the user’s question to a SPARQL query and then executing it over a Knowledge Base like DBpedia, YAGO or Freebase.  
+
+Traditionally, a model is first learned or manually crafted (i.e., a template bank is created) before it is deployed to answer users’ queries. However, this approach suffers from three significant shortcomings. It:
+
+1. Requires large training sets with sufficient lexical and syntactic coverage
+2. Has no mechanism to improve performance over time
+3. Fails on questions from domains not observed previously (during training)
+
+The template-based KB-QA system, [NEQA, proposed by Abujabal et al.](https://dl.acm.org/citation.cfm?doid=3178876.3186004) overcomes these shortcomings by using a continuous learning paradigm to answer questions from unseen domains. It is initialized with a small training set and invokes user-feedback on failure cases to extend its template repository and improve performance over time. It relies on templates and a similarity-based approach to answer a user’s question. When the template-based approach fails to answer a question, NEQA exploits a similarity function, which computes 1) the question likelihood based on a language model and 2) word embedding-based similarity obtained through word2vec, to find the most semantically similar question from the bank of questions it satisfactorily answered previously.
+
+Once the answer-sets are generated, NEQA asks for feedback from users regarding the quality of answers. When an input question is answered using templates, the question and the SPARQL query, which was used to generate the most satisfactory answer (as selected by the user), are added to the Question-Query bank. Otherwise, if it is answered using the Similarity-based approach, the question and the SPARQL query are not just added to the Question-Query bank but are also generalized to be added to the Template Bank. In this way, the Template Bank is extended to handle syntactically various cases which weren’t observed during training.
+
+Intrigued by it? Check out the research paper here:[ https://bit.ly/2JH457V](https://bit.ly/2JH457V)
+
+and its slides here:[](https://www.slideshare.net/secret/17XwfPW29wXrlX)[https://bit.ly/2I0Kzl0](https://bit.ly/2I0Kzl0).  

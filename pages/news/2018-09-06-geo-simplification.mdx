@@ -1,0 +1,43 @@
+---
+date: '2018-09-06'
+title: 'Geo Simplification: On the Effect of Geometries Simplification on Geo-spatial Link Discovery'
+author: 'Dr. Mohamed Sherif'
+---
+
+Source code: [https://github.com/dice-group/LIMES](https://github.com/dice-group/LIMES)
+
+With the increasing growth of Linked Data in geospatial resources over recent years comes the need to develop highly scalable approaches for discovering links among such resources. As pointed out in previous works [^1], only 7.1% of the links between resources connect geospatial entities. This is due to two main factors: 1) The large number of  resources with geospatial representation available on the Linked Open Data (LOD), which require scalable algorithms for computing links between geospatial resources. For example, LinkedGeoData [http://linkedgeodata.org](http://linkedgeodata.org/) contains more than 20 billion triples that describe millions of geospatial entities. 2) The vector representation of geospatial resources demands the computation of particular relations, i.e., distance and topological relations between geospatial resources. For example, finding the ‘nearby point of interest’ within a given radius.
+
+According to the Linked Data principles, [https://www.w3.org/DesignIssues/LinkedData.html](https://www.w3.org/DesignIssues/LinkedData.html) the provision of links between knowledge bases in RDF (Resource Description Framework, see [https://www.w3.org/RDF](https://www.w3.org/RDF)) is of central importance for numerous semantic web tasks. However, the link discovery process becomes more challenging especially when dealing with geospatial resources in real-time application, including structured machine learning [^2] question Answering [^3] and data fusion[^4]. In such real-time application, the provision of explicit geospatial relations among resources is of central importance to achieving scalability.
+
+Only a few state-of-the-art approaches for Link Discovery (LD) have been developed to deal with geospatial data represented in RDF. For example, [^1] uses the Hausdorff distance to compute the distance between geospatial entities. A survey of 10 point-set distance measures for LD is provided in [^5]. Based on the MultiBlock, silk[^6] computes topological relations according to the DE-9IM standard. Recently, RADON [^7] has provided an indexing method combined with space tiling that enables the efficient computation of topological relations between geospatial resources.
+
+To the best of our knowledge, no previous work has studied the problem of discovery of geospatial relations among a simplified version of vector representations of geospatial resources. The core idea behind the Geo Simplification is to use simplification line algorithms such as Douglas-Peucker and Visvalingam-Whyatt to generate a new simplified geoSpatial data version and apply these two line-simplification algorithms as a preprocessing step prior to the discovery of geospatial relations among such resources.
+
+In this paper, we  present and formalize the problem of LD for geospatial resources as well as the line simplification problem. Also we study the effect of simplifying the geospatial representation of resources upon the quality of discovered relations. Moreover, we study the speedup of various LD approaches when dealing with RDF resources with simplified geometries. In particular, we consider the effect of simplification upon both efficiency of discovered relations (i.e., F-measure) and scalability of the LD approaches (i.e., runtime).
+
+Based on our extensive evaluation of two line-simplification approaches for different LD approaches, Geo Simplification  shows that such approaches only lose on average 15% F-measure on the original data and they gain up to 67× speedup when applied to the simplified data.
+
+---
+
+Geo Simplification  was accepted at the Research Track of Semantics 2018
+
+Link to the full paper: [http://svn.aksw.org/papers/2018/SEMANTICS_GeoSimp/paper/public.pdf](http://svn.aksw.org/papers/2018/SEMANTICS_GeoSimp/paper/public.pdf)
+
+---
+
+References:
+
+[^1]: A.-C. Ngonga Ngomo, Orchid - reduction-ratio-optimal computation of geo-spatial distances for link discovery, in: Proceedings of ISWC 2013, 2013
+
+[^2]: M. Sherif, A.-C. Ngonga Ngomo, J. Lehmann, WOMBAT - A Generalization Approach for Automatic Link Discovery, in: 14th Extended Semantic Web Conference, Portorož, Slovenia, 28th May - 1st June 2017, Springer, 2017.
+
+[^3]: J. Lehmann, T. Furche, G. Grasso, A.-C. Ngonga Ngomo, C. Schallhart, A. Sellers, C. Unger, L. Bühmann, D. Gerber, K. Höffner, D. Liu, S. Auer, Deqa: Deep web extraction for Question Answering, in: Proceedings of ISWC, 2012.
+
+[^4]: M. Sherif, A.-C. Ngonga Ngomo, J. Lehmann, Automating RDF dataset transformation and enrichment, in: Proceedings of 12th Extended Semantic Web Conference, Springer, 2015.
+
+[^5]: M. A. Sherif, A.-C. N. Ngomo, A systematic survey of point set distance measures for link discovery, Semantic Web Journal.
+
+[^6]: P. Smeros, M. Koubarakis, Discovering spatial and temporal links among rdf data., in: LDOW@ WWW, 2016.
+
+[^7]: M. A. Sherif, K. Dreßler, P. Smeros, A.-C. Ngonga Ngomo, RADON - Rapid Discovery of Topological Relations, in: Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence (AAAI-17), 2017.
