@@ -1,0 +1,18 @@
+---
+date: '2019-03-29'
+title: 'DICE Colloquium 03.29.2019 - "Learning efficient logic programs"'
+---
+
+At the DICE Colloquium on Friday 29th of March, 2019
+**Denis Kuchelev** from DICE presented the paper [“Learning efficient logic programs”](https://link.springer.com/article/10.1007%2Fs10994-018-5712-6)
+by Andrew Cropper and Stephen H. Muggleton.
+
+The paper is about improving existing approaches in learning programs for data in a way that allows us to learn the most efficient programs with the help of iterative descent and specialized cost functions.
+
+The paper contains an overview of known work and a fairly complete program source for its distinguishing points, as well as a description of the data used for its evaluation. Time-efficient and resource-efficient approaches are demonstrated.
+
+It is still an open question whether some of provided results will hold in other domains. Other possible research can be done in the area of finding cost functions, which would allow the optimization of programs for specific problem domains. Authors also note that one of possible improvements would be allowing usage of noisy input data.
+
+## ABSTRACT
+
+When machine learning programs from data, we ideally want to learn efficient rather than inefficient programs. However, existing inductive logic programming (ILP) techniques cannot distinguish between the efficiencies of programs, such as permutation sort (n!) and merge sort (O(n log n)). To address this limitation, we introduce Metaopt, an ILP system which iteratively learns lower cost logic programs, each time further restricting the hypothesis space. We prove that given sufficiently large numbers of examples, Metaopt converges on minimal cost programs, and our experiments show that in practice only small numbers of examples are needed. To learn minimal time-complexity programs, including non-deterministic programs, we introduce a cost function called tree cost which measures the size of the SLD-tree searched when a program is given a goal. Our experiments on programming puzzles, robot strategies, and real-world string transformation problems show that Metaopt learns minimal cost programs. To our knowledge, Metaopt is the first machine learning approach that, given sufficient numbers of training examples, is guaranteed to learn minimal cost logic programs, including minimal time-complexity programs.

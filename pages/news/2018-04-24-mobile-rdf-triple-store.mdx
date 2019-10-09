@@ -1,0 +1,15 @@
+---
+date: '2018-04-24'
+title: 'Mobile RDF Triple Store for Offline Data Storage under Android'
+author: 'Paramjot Kaur'
+---
+
+<Image filename='qamel.png' style="height: 50%; width: 50%;"/>
+
+---
+
+The most important point for the implementation of an offline Question Answering system is to store data when the system is in offline mode, i.e. has no WiFi or LTE connection. Therefore, we use an on-device triple store to save data on Android-based devices.
+
+For Java, there is the RDF4J (formerly known as Sesame) framework for storing RDF graphs, which also allows access via SPARQL queries. This includes creating, parsing, scalable storing, reasoning and querying with RDF and Linked Data. It offers an easy-to-use API that can be connected to all leading RDF database solutions.
+
+Unfortunately, this framework was not available for Android, so we had to port it. The Android framework lacks the javax.xml classes. These are in turn required by Apache Xerces, Xerxes? a library required by RDF4J. In order to make the triple store executable under Android, the Java classes have been moved to another package and integrated into RDF4J. The ported triple store, which was called RDF4A, is the only triple store that runs under Android. It is based on RDF4J 1.0.3 and can be downloaded from [https://github.com/dice-group/qamel/tree/master/rdf4a](https://github.com/dice-group/qamel/tree/master/rdf4a).

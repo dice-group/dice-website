@@ -1,0 +1,64 @@
+---
+date: '2019-03-25'
+title: 'DEER 2 Released'
+author: 'Kevin Dreßler'
+---
+
+<Image filename='deer-2.png' style="height: 50%; width: 50%;"/> 
+
+---
+
+We are happy to announce the release of the second major version of the RDF Dataset Enrichment Framework (_**DEER**_)!
+
+This release features an updated configuration vocabulary, shiny new prefixes provided by [w3id.org](https://w3id.org/), an improved version of DEER server, revamped analytics as JSON file output, an all new plugin type (DeerExecutionNodeWrapper), automatic configuration validation using [SHACL](https://www.w3.org/TR/shacl/) and of course improvements to most of the existing enrichment operators.
+
+If this is the first time you read about DEER, hang on for an introduction to our framework and a subsequent tutorial on client-server based RDF data enrichment with DEER 2!
+
+## Defining RDF Dataset Enrichment
+
+When talking about RDF dataset enrichment, we mean the targeted insertion and deletion of triples in existing RDF datasets with the goal of enriching the data, where the concrete definition of enriched data depends on the given use case.
+
+Specifically, RDF dataset enrichment may be conforming data from general knowledge graphs to an application-specific ontology, integrating datasets from various sources, gathering and transforming data for rendering in a GUI, extracting triples from literals using, for example, named entity recognition and much more.
+
+Given this definition, RDF dataset enrichment is indeed a challenging topic. The main research questions that motivated the development of DEER 2 were: Q1 How can we integrate the whole spectrum of specific use cases into a highly configurable user-friendly system? Q2 How could such a system be used to make the technology available to a broader audience than the usual domain experts?
+
+DEER 2 is the answer to Q1 and in upcoming releases and publications we will strive to answer Q2 using techniques such as automated GUI generation and machine learning.
+
+Keep reading to learn about how we tackled question Q1.
+
+---
+
+## About DEERs Design
+
+Our framework for RDF dataset enrichment is inspired by the first two principles of the UNIX philosophy [as summarized by Peter H. Salus](https://dl.acm.org/citation.cfm?id=191771):
+
+> _Write programs that do one thing and do it well. Write programs to work together._
+
+The adaptation of this quote in DEER means that it does not try to be a monolithic swiss-knife of RDF dataset enrichment, which cannot be feasible whatsoever given all the possibilities of highly specialized use cases that arise from the broad definition of RDF dataset enrichment itself. Rather, DEER is envisioned as a multiplier facility for all kinds of algorithms and tools that operate on RDF datasets and hence can be used to power arbitrary complex RDF dataset enrichment processes. DEER is a framework for the orchestration of DEER plugins which “do one thing and do it well”. We represent the flow of control and data in DEER as a directed acyclic labeled multigraph whose vertices represent DEER plugins and whose edges represent the data flow between them. We call this graph the enrichment graph.
+
+### DEER Plugins
+
+A DEER plugin is defined as a Java program that takes as input a (potentially empty) list of RDF datasets and outputs a (potentially empty) list of RDF datasets. Most DEER plugins can be configured using the DEER parameter system. There are two fundamental categories of DEER plugins: **execution nodes** and **execution node wrappers**.
+
+**Execution nodes** come in three types:
+
+1. **Model readers** capable of obtaining RDF datasets from various sources and feeding them into the enrichment graph 
+2. **Model writers**, which are the enrichment graph’s sink vertices, i.e. vertices with incoming but no outgoing edges 
+3. **Enrichment operators**, which are the most important types of execution nodes in DEER. These are the atomic specialized programs that carry out one particular dataset enrichment (sub-)task. 
+
+**Execution node wrappers** are not part of the enrichment (execution) graph themselves. Rather, they can be understood as factories for [decorators](https://en.wikipedia.org/wiki/Decorator_pattern), i.e. they can add a certain type of functionality to a defined subset of the execution nodes in the enrichment graph. The main use of execution node wrappers currently lies in their ability to generate general statistical analytics data for all execution nodes. However, their possibilities are definitely not limited to that, as they could for example be used as caching facilities.
+
+DEER ships with a set of predefined model readers, model writers, enrichment operators and execution node wrappers. However its real strength lies in its plugin system that offers developers the opportunity to integrate their own RDF dataset enrichment algorithms or tools into DEER. A simple example plugin for interested developers can be found in the [DEER GitHub repository](https://github.com/dice-group/deer/tree/master/examples/simple-plugin-example).
+
+However, DEERs core functionality is pretty powerful itself, so if you want to use DEER with just its core functionality all you need to do is to configure an enrichment graph by writing an RDF configuration document using DEER’s domain specific [configuration vocabulary](https://dice-group.github.io/deer/configuring_deer/).
+
+DEER then goes through the following steps, given an RDF configuration file:
+
+1. Validation of the configuration graph utilizing the [Shapes Constraint Language (SHACL)](https://www.w3.org/TR/shacl/). (new in DEER 2) 
+2. Instantiation and Initialization of the DEER plugins declared in the configuration graph. 
+3. Parsing of the configuration graph (RDF representation of DEER’s configuration) into the internal enrichment graph (native Java representation). 
+4. Compilation of the enrichment graph using the the initialized plugins. 
+5. Execution of the compiled enrichment graph, automatically parallelizing execution of independent plugins. 
+6. Gathering of statistical analytics data from plugins as JSON. (new in DEER 2) 
+
+_Stay tuned for our next blog about how easy the DEER setup really is. Also, we will go through a quick tutorial on using DEER in server mode for a simple example use case._

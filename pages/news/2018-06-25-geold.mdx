@@ -1,0 +1,29 @@
+---
+date: '2018-06-25'
+title: 'GeoLD 2018'
+author: 'Matthias Wauer'
+---
+
+<Image filename='geold.png' style="height: 50%; width: 50%;"/>
+
+---
+
+Geospatial data is vital for many application scenarios, such as navigation, logistics, and tourism. At the same time, a large number of currently available datasets (both RDF and conventional) contain geospatial information. Examples include DBpedia, Wikidata, Geonames, OpenStreetMap and its RDF counterpart, LinkedGeoData. RDF stores have become robust and scalable enough to support volumes of billions of records (RDF triples). Likewise, geospatial information systems (GIS) can benefit from Linked Data principles (e.g., schema agility and interoperability).
+
+Matthias Wauer (AKSW at University of Leipzig), Mohamed Sherif and Axel Ngonga (DICE Group at University of Paderborn) therefore organized the third edition of the workshop on Geospatial Linked Data ([GeoLD 2018](https://geold2018.github.io/)). It was co-located with the 15th Extended Semantic Web Conference (ESWC) in Crete. The workshop received 8 paper submissions and 5 of them were accepted. On June 3rd, about 20 participants discussed the current state of GeoLD standards such as GeoSPARQL, tools, applications and novel research.
+
+After a short introduction by the organizing committee chair, Ali Khalili presented a convincing approach to a concept called Functional Urban Areas. Several tools, also targeted towards end-users, can be used for integrating Linked Data within spatial boundaries extracted from different datasets. He showed how this combination of data can provide new insights that aren't captured by data provided by the OECD(1). The only weakness of this paper is a lack of related work, resulting in a best workshop paper nomination.
+
+Alan Meehan then discussed an approach for fine-grained access control on geospatial data. He argued that a combination of template and licence, described by novel RDF vocabularies, would provide the necessary restrictions for the analysed use cases. Although the paper contains a section on related work, the authors do not compare against these or comment on another approach for fine-grained access control in Apache Rya, as suggested by a reviewer.
+
+After a coffee break, Finn Årup Nielsen presented an extension to their website visualising scientific data from Wikidata. While the presented use cases and maps were interesting for the audience, reviewers argued that the method of how the queries are generated is not made clear.
+
+In the following short paper presentation, Peru Bhardwaj explained the issues she ran into when executing link discovery. This talk was controversial and caused a lively discussion with the audience. While some improvement suggestions should be addressed by the link discovery tool developers, it remained unclear why the application of unsupervised or active learning approaches was not successful.
+
+Finally, Matthias Wauer presented an early version of a platform for integrating geospatial and sensor data. Using semantic technologies and a message bus based on RabbitMQ, the approach and implementation were motivated by three use cases. The discussion with the audience led to the suggestion of comparing this approach with the Linked Data Notifications W3C recommendation which could be relevant.
+
+To summarize, the workshop discussed many aspects of geospatial linked data, perhaps with the notable exception of data quality. An audience member concluded that now that there are several full-featured GeoSPARQL-capable stores and other tools available, it will be interesting to see which applications will be possible in the coming years. The importance of the topic was further highlighted by several presentations in the "Semantic Geo Resources" session of the main conference. The proceedings of the workshop have been published at [CEUR-WS](http://ceur-ws.org/Vol-2110/). All presentation slides and further information can be found on the [workshop website](https://geold2018.github.io/). The organizing committee would like to thank all participants and the program committee members for their comprehensive reviews.
+
+---
+
+1. Organization for Economic Co-operation and Development

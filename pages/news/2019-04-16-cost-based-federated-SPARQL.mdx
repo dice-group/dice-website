@@ -1,0 +1,17 @@
+---
+date: '2019-04-16'
+title: 'An Empirical Evaluation of Cost-based Federated SPARQL Query Processing Engines'
+author: 'Umair Qudus'
+---
+
+**Authors: Umair Qudus, Muhammad Saleem, Axel-Cyrille Ngonga Ngomo, and Young-Koo Lee**
+
+This week’s colloquium was presented on my own article which provides insights into the query plans of federated query engines. It provides a metric to improve the quality of query planning and the way the error is correlated with runtime. The article provides an empirical evaluation of state-of-the-art federated query engines on LargeRDFBench benchmark queries.
+
+## ABSTRACT
+
+Finding a good query plan is a key step in the optimization of query runtime. This holds in particular for cost-based federation engines, which make use of cardinality estimations to achieve this goal. A number of studies compare SPARQL federation engines across different performance metrics, including query runtime, result set completeness and correctness, number of sources selected and number of requests sent. Although informative, these metrics are generic and unable to quantify and evaluate the accuracy of the cardinality estimators of the cost-based federation engines. In addition, a thorough evaluation of cost-based federation engines demands the measurement of the effect of the estimated cardinality errors on the overall query runtime performance of the federation engines. In this paper, we address this challenge by presenting novel evaluation metrics targeted at a fine-grained benchmarking of cost-based federated SPARQL query engines. We evaluate the query planners of five different cost-based federated SPARQL query engines using LargeRDFBench queries. Our results suggest that our metrics are clearly correlated with the overall query runtime performance of the selected federation engines and can hence provide important hints when developing the future generations of federation engines.
+
+Do you have experience with this area of Data Science. We would love your thoughts on these questions...
+
+How do you think we could improve the quality of query planners, as we proved from experiments that reducing query plan error will increase the efficiency of federated query engines? How could we design future generations of federated query engines to reduce errors in query plans?

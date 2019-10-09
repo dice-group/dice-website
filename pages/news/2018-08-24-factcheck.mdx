@@ -1,0 +1,17 @@
+---
+date: '2018-08-24'
+title: 'FactCheck - Validation of triples in a Knowledge Graph'
+author: 'Zafar Habeeb Syed'
+---
+
+<Image filename="factcheck-1.png" style="width: 50%;"/> 
+<Image filename='factcheck-2.png' style="width: 50%; height: 50%;" /> 
+<Image filename='factcheck-3.png' style="width: 50%; height: 50%;"/> 
+
+---
+
+With the increasing usage of tools to extract structured data from various information sources, the Linked Data Web is growing in both the number of knowledge graphs being published and the size of already existing knowledge graphs. Several applications which aim to exploit the wealth of information in the Linked Data Web are being developed. For example, applications such as geo-spatial information systems or question-answering systems. With the increasing uptake of knowledge graphs in such applications arises a need for validated knowledge contained in these graphs. The information in knowledge graphs may be incorrect due to several reasons. For instance, for the knowledge graphs created automatically, the information is extracted from structured and semi-structured sources. They suffer from the drawback that the information presented in them is not validated by the large part of the Web containing plain text. In principle, manual validation of triples in knowledge graphs is possible, however, due to the sheer size and number of knowledge graphs used in real-world applications it is impractical. Therefore, there is a need for automatic validation of triples in knowledge graphs.
+
+With our open source framework, FactCheck, we address the problem of validation of triples in a given knowledge graph. The fundamental idea of FactCheck is to identify textual evidences that contain the subject and object of an input triple from documents retrieved from a given reference corpus. These evidences are used to validate/invalidate the triple in question. To do this, FactCheck extracts features based on distance similarities and sentence parsing from each piece of textual evidence. The extracted features are used to train machine learning models and subsequently use the learned models for real time classification of evidence. In addition to evidence features, FactCheck determines the trustworthiness features of source documents from which the evidences are extracted. For extracting the trustworthiness features, FactCheck determines topic similarity between the input triple and source documents. To generate topic terms related to an input triple, FactCheck relies on Word set coherence measures that rate topic terms on par with human judgments.
+
+We evaluated FactCheck using two different benchmark datasets and against two different reference corpora. A paper describing the approach and the results of our experiments will be published in the journals of CIKM 2018 (link:[ http://www.cikm2018.units.it/](http://www.cikm2018.units.it/) ). The source code of FactCheck is available on GitHub (Link:[ https://github.com/dice-group/FactCheck](https://github.com/dice-group/FactCheck) ).
