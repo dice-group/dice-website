@@ -1,20 +1,22 @@
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 import Image from '../image';
 
 export const Person = ({ person }) => (
-  <div className="person" onClick={() => navigate(person.path)}>
-    <div className="person-image">
-      <Image
-        filename={person.photo}
-        alt={`${person.name} photo`}
-        style={{ width: 160 }}
-      />
+  <Link to={person.path}>
+    <div className="person">
+      <div className="person-image">
+        <Image
+          filename={person.photo}
+          alt={`${person.name} photo`}
+          style={{ width: 160 }}
+        />
+      </div>
+      <span className="link">
+        {person.namePrefix} {person.name}
+      </span>
     </div>
-    <Link to={person.path}>
-      {person.namePrefix} {person.name}
-    </Link>
-  </div>
+  </Link>
 );
 
 export const rdfToPerson = ({ data, path }) => ({
