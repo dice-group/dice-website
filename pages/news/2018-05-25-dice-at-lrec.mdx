@@ -1,0 +1,56 @@
+---
+date: '2018-05-25'
+title: 'DICE at LREC'
+author: 'Diego Moussallem'
+---
+
+**LIdioms: A Multilingual Linked Idioms Data Set** 
+- Source: [github.com/dice-group/LIdioms](https://github.com/dice-group/LIdioms)
+- Paper: [www.lrec-conf.org/proceedings/lrec2018/pdf/46.pdf](http://www.lrec-conf.org/proceedings/lrec2018/pdf/46.pdf)
+
+Last week our PhD student Diego Moussallem presented two papers pertaining to his thesis in LREC, held in Miyazaki, Japan. The first paper entitled LIdioms: A Multilingual Linked Idioms Data Set is a resource intended to support natural language processing applications by providing links between idioms across languages. The second paper named RDF2PT: Generating Brazilian Portuguese Texts from RDF Data aims to generate Brazilian Portuguese texts from RDF data (Knowledge Graphs). Below we introduce you to a bit more about both.  
+
+Recently, the Linguistic Linked Open Data (LLOD) movement has gained significant momentum. A large number of linguistic data sets have been extracted from various sources and represented as Linked Data (LD). This new movement was motivated by the novel capabilities of the LD paradigm pertaining to transforming, sharing, and linking linguistic data on the Web. Resources such as dictionaries and knowledge bases are essential in the development of Natural Language Processing (NLP) systems. However, most of these resources are still bilingual on the LLOD. Thus it became worthwhile to develop multilingual knowledge bases by reusing these bilingual contents. Multilingualism is important not only for sharing information across the Web but also for learning new concepts from other cultures.  
+  
+**What does LIdioms stand for?**  
+
+Despite there being many data sets and linguistic resources available at LLOD, most of them do not contain much information about Multiword Expressions (MWE). MWE are known to constitute a difficult problem on a number of NLP tasks such as machine translation, language generation, and sentiment analysis/opinion mining. There are different types of MWE, categorized as phrase verbs, compounds, fixed expressions, semi-fixed expressions, idioms, slang, and others. Our resource (LIdioms) focuses on idioms, a particular type of MWE. Most idioms are culture-bound and their senses come from particular concepts of everyday life to a given culture. By definition, idioms are a sequence of words whose meaning cannot be derived from the meaning of words that constitute them (Nunberg et al., 1994). Idioms are generally classified as non-compositional. One of the direct consequences of non-compositionality is the impossibility of translating this kind of word group literally posing challenges to human translators and to machine translation systems.  
+  
+LIdioms is a multilingual linked data set of idioms in five languages. In LIdioms, we do not distinguish between idioms sub-categories and thus work on idioms in general by providing lexical and semantic knowledge on a multilingual basis. The selected languages are English, German, Italian, Portuguese, and Russian. This choice of languages intends to show the possibility of correct translations among idioms independent of their language family, syntax or culture. Additionally, one of the goals of LIdioms is to support further investigations of similarity among idioms from different languages.   
+  
+**How we model the idioms?**  
+
+The representation model of Lidioms aims at describing idioms correctly as a sub-type of MWE together with their translations and geographical usage area. For this purpose, LIdioms data set is based on Ontolex model. We chose the Ontolex model because it contains the necessary classes to represent MWE and its translations properly. Ontolex also reuses the well-known Lexinfo ontology which has an essential term type called lexinfo:idiom for representing idioms as one type of MWE. In Figure 1, we present a complete example of a translation of two idioms from Portuguese (“custa os olhos da cara”) to English (“arm and a leg”) using vartrans class along with the other descriptions modeled by Ontolex in LIdioms.   
+
+**Examples** 
+
+- Below you can visualize the representation of “kill two birds with one stone” idiom:  
+[http://lid.aksw.org/en/kill_two_birds_with_one_stone](http://lid.aksw.org/en/kill_two_birds_with_one_stone)  
+ 
+- Also, a translation example of when pigs fly idiom through its sense.  
+[http://lid.aksw.org/en/when_pigs_fly_sense](http://lid.aksw.org/en/when_pigs_fly_sense)  
+ 
+- Feel free to play around with the knowledge representations ;).
+  
+**How to use**  
+
+Suppose you want to find idioms which share the same definition across languages. Also, Machine translation agents are commonly in need of expressions that have a certain meaning. By using Lidioms, you can search it through a simple SPARQL query. Below, the query retrieves English, Italian and Russian idioms containing the verb &gt; “to deceive” in their definitions. 
+
+```
+SELECT ?label ?definition  
+WHERE {  
+        ?idiom rdfs:label ?label.  
+        ?idiom ontolex:sense ?sense.  
+        ?sense ontolex:isLexicalizedSenseOf ?concept.  
+        ?concept skos:definition ?definition.  
+FILTER(bif:contains(?definition, "deceive")) .  
+FILTER( lang(?label) = "it" || lang(?label) = "en" || lang(?label) = "rus" ).} 
+```
+- More examples you can find at [https://github.com/dice-group/LIdioms/wiki/SPARQL-Examples](https://github.com/dice-group/LIdioms/wiki/SPARQL-Examples)
+
+---
+
+fig.1: RDF representation of translation of two idioms from Portuguese (“Custa os olhos da cara”) to English (“arm and a leg”) by entries modeled with the LIDIOMS model. 
+
+1. http://linguistic-lod.org/llod-cloud  
+2. Nunberg, G., Sag, I. A., and Wasow, T. (1994). Idioms. Language, pages 491–538.

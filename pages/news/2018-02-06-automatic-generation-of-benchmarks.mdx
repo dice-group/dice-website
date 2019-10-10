@@ -1,0 +1,24 @@
+---
+date: '2018-02-06'
+title: 'Automatic Generation of Benchmarks for Entity Recognition and Linking'
+author: 'Michael Röder'
+---
+
+<Image filename='benchmark-1.jpg' style="height: 50%; width: 50%;"/>
+<Image filename='benchmark-2.jpg' style="height: 50%; width: 50%;"/>
+
+---
+
+Since the amount of available textual documents is growing, there is also a growing need to be able to process these documents in an automatic way. Therefore, Named Entity Recognition and Linking are becoming more and more important for automatically processing natural language texts. Benchmarking such systems using benchmarking platforms like [GERBIL](http://aksw.org/Projects/GERBIL.html) focuses mainly on the quality of the results. But with the growing importance of Big Data applications, the effectiveness of the different approaches must be checked. For benchmarking the scalability of systems, large datasets are necessary, however, since the manual annotation of documents is a time consuming and expensive task, the largest datasets still have much less than 10 000 documents.
+
+Simply repeating the available, manually annotated documents, i.e., querying the systems with the same documents again and again, is not sufficient. Typically, NER and EL systems rely on lookup tables, databases or other stores which are not held in main memory. If the same documents are queried again, cashes or other optimizations would have a huge impact on the evaluation result. Querying the systems with new, unseen documents is important to make sure that the influence of cashes does not become unrealistic.
+
+Our open source library BENGAL relies on the abundance of structured data in RDF on the Web and is based on verbalizing such data to generate automatically annotated natural-language statements. Based on this approach, we can generate large quantities of documents that are only restricted by the underlying knowledge base regarding the maximum size of the documents and their language. Evaluation results suggest that our approach can generate diverse benchmarks with characteristics similar to those of a large proportion of existing benchmarks in several languages.
+
+The paper describing the complete approach will be published and available in a few weeks. Additionally, a large collection of [detailed evaluation results](http://faturl.com/bengalexp) is available. The source code is [available on github](https://github.com/dice-group/bengal).
+
+---
+
+Picture 1 [imgflip.com/memegenerator/68093563/Question](https://imgflip.com/memegenerator/68093563/Question)
+
+Picture 2 [imgflip.com/memegenerator/85389077/Asking-the-real-questions-here](https://imgflip.com/memegenerator/85389077/Asking-the-real-questions-here)

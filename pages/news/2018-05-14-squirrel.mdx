@@ -1,0 +1,17 @@
+---
+date: '2018-05-14'
+title: 'Squirrel - linked open data crawler'
+author: 'Geraldo Souza'
+---
+
+<Image filename='squirrel.png' style="height: 50%; width: 50%;"/>
+
+---
+
+Linked Data enables data to beopened up and connected so that people can build interesting new things from it. We present Squirrel, a crawler of Linked Data, in order to exploit all the content of the Linked Web. By looking at initial RDF or Html seeds, Squirrel follows all available links and performs a deep search to crawl everything.
+
+Squirrel comprises two major parts - a single frontier and ‘n workers’. The frontier manages the crawling process and is based on a queue as well as a database containing the URIs that have already been crawled in the past. The worker requests work packages from the frontier, performs the actual crawling (fetching, analysing, storage) and sends new URIs to the frontier.
+
+You can setup your seeds as RDF and/or HTML’s, configuring an additional yaml config file to determine which html elements should be crawled, using the JSOUP selector synthax [https://jsoup.org/cookbook/extracting-data/selector-syntax](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+
+Project Repository: [github.com/dice-group/Squirrel](github.com/dice-group/Squirrel)

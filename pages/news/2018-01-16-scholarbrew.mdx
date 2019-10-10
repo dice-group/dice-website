@@ -1,0 +1,24 @@
+---
+date: '2018-01-16'
+title: 'ScholarBrew'
+author: 'Tim Ermilov'
+---
+
+<Image filename='scholarbrew-1.png' style="height: 50%; width: 50%;"/>
+<Image filename='scholarbrew-2.png' style="height: 50%; width: 50%;"/>
+
+---
+
+We are happy to present the first version of [ScholarBrew](https://s2.exynize.com/) - our attempt to provide better insights into scholarly data using various visualisations.
+
+The current demo features core data taken from [Semantic Scholar dataset](http://labs.semanticscholar.org/corpus/). Due to quality issues with organizations gathered by Semantic Scholar, we had to perform additional steps to get satisfiable results. First, we’ve merged the core dataset with [CiteSeerX dataset](http://csxstatic.ist.psu.edu/about/data) to get better author affiliations. Then we’ve used [FOX](http://aksw.org/Projects/FOX.html) to clean up organizations, as Semantic Scholar dataset frequently has more than one organization mentioned in one “name”. After the basic cleanup, we used the [OSM Names](https://github.com/OSMNames/OSMNames) dataset to get locations for all extracted organizations.
+
+This resulted in 7210983 papers with 8303571 authors and 5382618 organizations in our dataset.
+
+ScholarBrew provides search by organizations, authors or keywords as well as faceted search that allows users to mix-and-match those entities.
+
+Entity pages - be it organization, author or keyword - feature basic data about entities (such as h-index, affiliation, number of papers and related entities), heatmap visualisation of related locations (figure 1), top related co-authors, top related organizations as well as a list of articles.
+
+Additionally ScholarBrew provides a global statistic visualisation page. Currently it features a way to see the distribution of the h-index of all organizations included in the dataset - viewed either over the whole world, or limited to a user-defined country. You can see the example visualisation for the whole world in figure 2 below.
+
+This is the demo of the first stage of ScholarBrew. In the upcoming release we are planning to introduce a “hot topics” feature that will use machine learning techniques to predict and highlight research topics that are currently trending among researchers.

@@ -1,0 +1,31 @@
+---
+date: '2018-03-01'
+title: 'DEER 1.0.0 Released'
+author: 'Mohamed Ahmed Sherif'
+---
+
+<Image filename='deer-1.png' style="height: 50%; width: 50%;"/>
+
+---
+
+Linked Data enrichment is the process of adding, altering or deleting the set of triples of an input dataset in order to obtain an enriched version of it. This enriched dataset usually provides significant benefits for specific use case scenarios. These benefits include (but are not limited to) more data (quantity), better data quality, better data organization (refined ontology) and interoperability with other datasets (interlinking).
+
+[DEER](http://aksw.org/Projects/DEER) is a linked data enrichment framework that provides one main type of artifact: enrichment operators. Thus, in the case where a user knows the type of enrichment that is to be carried out, (s)he can define a [DEER](http://aksw.org/Projects/DEER) configuration in a form of directed acyclic graph ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) of enrichment operators to be used by [DEER](http://aksw.org/Projects/DEER) to process a set of one or more input datasets. The task of an enrichment operator is to determine the set of triples to be added, altered or deleted from one or more source datasets to generate one or more enriched datasets. Each of such enrichment operators accepts a set of one or more input dataset(s) and also a set of one or more output datasets.
+
+Currently,[](http://aksw.org/Projects/DEER)the set of enrichment operators provided by [DEER](http://aksw.org/Projects/DEER) includes dereferencing, linking, conformation, filtering, geo-fusion and NLP. For instance, the idea behind the dereferencing enrichment operator is to find enrichment data from interlinked datasets. That is, for a source dataset which contains owl:sameAs or similar links,[](http://aksw.org/Projects/DEER)it will dereference all links from this dataset to other datasets by using content negotiation on HTTP in order to add relevant information from the returned set of triples to the input dataset.
+
+We are happy to announce [DEER 1.0.0 ](https://github.com/dice-group/deer/releases/tag/1.0.0)– the first release of the the RDF data enrichment and transformation framework. The main feature we provide in the current version is the extensibility of DEER, i.e. that it is easy-to-implement custom enrichment operators with arbitrarily complex configurations. The following features are currently supported by [DEER](http://aksw.org/Projects/DEER):
+
+- Support for multiple datasets as input 
+- Support for multiple datasets as output 
+- Introducing the new directed enrichment graph for configuration 
+- Simplified and more powerful RDF configuration file 
+- New core with dynamic parallel implementation planning for time efficient enrichment process execution for big datasets 
+- New geo-fusion operator for merging various geospatial datasets into one fused dataset with many alternative fusion policies 
+- New DEER server 
+- [User manual](https://dice-group.github.io/deer/) 
+- Migrated codebase to Java 9 and Jena 3.6.0 
+
+Stay tuned for our next releases where we will include supervised machine learning algorithms to ease the process of [DEER](http://aksw.org/Projects/DEER) configuration. In our next release we will include a new web based graphic user interface, and as usual more enrichment operators, better performance and bug fixes.
+
+We would like to thank everyone who helped to create this release. We also acknowledge the support of the [](https://www.sake-projekt.de/en/start/)[SLIPO](http://slipo.eu/) and [](https://project-hobbit.eu/)[SAGE](http://sageproject.eu/) projects.

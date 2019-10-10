@@ -1,0 +1,32 @@
+---
+date: '2018-03-15'
+title: 'DRAGON: Decision Tree Learning for Link Discovery'
+author: 'Daniel Obraczka'
+---
+
+<Image filename='dragon.png' style="height: 50%; width: 50%;"/>
+
+---
+
+With the ever growing number and size of knowledge bases comes the necessity to find links between these data sources as well. To tackle this problem we present DRAGON, a time-efficient and accurate decision-tree-based approach for link discovery.  The goal of our algorithm is to build a decision tree that will correctly classify unseen links as either a match, i.e. an actual link, or non-match. Using a set of labeled links between source and target knowledge base, our approach determines the best combination of similarity measures and aggregation operators to find new high-quality links. The aforementioned combination takes the form of a decision tree (see picture for example).
+
+There are three steps in building our trees:
+
+1. calculate similarities between knowledge base properties 
+2. build tree 
+3. prune tree 
+
+First we execute a set of given similarity measures on the properties of the knowledge bases we intend to link. We disregard, i.e. set to 0.0, similarity measures below a certain threshold. We do this, because we determined that this improves the accuracy of our approach. After calculating the values of all similarity measures for all properties of all links from our training data the next step is to find the best similarity measures and aggregations of them.
+
+We have implemented two fitness measures to determine how well a similarity measure helps us build a good tree:
+
+- Global F-measure: We try to improve the F-measure of the whole tree in regards to correctly classifying our training links. 
+- Gini Index: We improve locally and try to find the measure that improves the correct classification of links in the current subtree we are looking at. 
+
+The tree is built until the fitness measure can't find any more improvements to the tree, or if the tree has reached a certain height.
+
+The last step is pruning the tree to avoid overfitting the training data. This is an important step, since our task is to correctly classify new links. We have implemented two pruning methods. The first is the error estimate pruning we know from C4.5[1]. The second is Global F-measure pruning. In the latter approach we start at the leaves of our tree, iterate across these leaves and compute the F-measure of the tree if the current leaf is removed. The tree with the best F-measure is kept. We do this at each height of the tree until we reach the root.
+
+Our approach is implemented in the [LIMES](http://aksw.org/Projects/LIMES.html) framework. The code can be found [here](https://github.com/dice-group/LIMES/tree/feature/NewDecisionTrees/limes-core/src/main/java/org/aksw/limes/core/ml/algorithm/decisionTreeLearning).
+
+[1] Quinlan, J.R.: C4.5: Programs for Machine Learning. Morgan Kaufmann Publishers Inc., San Francisco, CA, USA (1993)
