@@ -10,15 +10,5 @@ dice:AxelCyrilleNgongaNgomo a schema:Person ;
   schema:email <mailto:axel.ngonga@upb.de> ;
   schema:office "TP6.3.106" ;
   schema:photo "ngonga.jpg" ;
-  schema:content """
-# Content from RDF
-
-## Stuff
-
-Axel is our main test person that has all properties.
-
-## Test
-
-This is a test markdown that can include anything.
-  """ ;
+  schema:content """""" ;
   schema:project dice:GEISER, dice:GERBIL, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS .
