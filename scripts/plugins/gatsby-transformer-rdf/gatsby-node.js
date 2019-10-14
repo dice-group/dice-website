@@ -16,6 +16,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/tag',
   'https://schema.dice-research.org/developer',
   'https://schema.dice-research.org/screenshot',
+  'https://schema.dice-research.org/member',
 ];
 
 const relationPredicates = [
@@ -29,6 +30,8 @@ const relationPredicates = [
   'schema:project',
   'schema:author',
   'schema:awardee',
+  'schema:member',
+  'schema:lead',
 ];
 
 const defaultPrefixes = {

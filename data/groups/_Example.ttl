@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleGroup a schema:Group ;
+  schema:name "Subgroup name" ;
+  schema:tagline "Subgroup tagline here" ;
+  schema:relatedProject dice:BDE, dice:GeoKnow ; # related projects
+  schema:content """Detailed subgroup description.
+The AIKE group focuses on the application of Semantic Web technologies to support adaptive Information and Knowledge Engineering. The research goal is to use domain specific vocabularies for modelling of application software and compiling software components. To achieve results in this fields, research activities of the AIKE group are in the scope of agile and collaborative requirements engineering, knowledge extraction from existing databases, knowledge engineering, and knowledge alignment to software component interfaces. The group also provides established open source tools and use cases in the field of digital humanities.
+""" ;
+  schema:lead dice:AxelCyrilleNgongaNgomo ; # group maintainer
+  schema:member dice:AdrianWilke, dice:AlexanderBigerl ; # group members list
+  schema:relatedDemo dice:LIMES . # list of related demos
