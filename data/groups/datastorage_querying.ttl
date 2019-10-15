@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DSQ a schema:Group ;
+  schema:name "Data Storage and Querying" ;
+  schema:tagline "We build scalable RDF datastorage solutions" ;
+  schema:relatedProject dice:BDE, dice:GeoKnow ; # related projects
+  schema:content """
+The constant growth of Linked Data on the Web gives rise to new challenges for querying and integrating massive amounts of data. 
+Such datasets are available through various interfaces, such as data dumps, Linked Data documents and webpages, SPARQL endpoints, Triple Pattern Fragments, or the Linked Data Platform. In addition, various sources produce streaming data. Efficiently querying these sources is of central importance for the scalability of Linked Data and Semantic Web technologies. 
+To exploit the massive amount of data to its full potential, users should be able to store, query, and combine this data easily and effectively. 
+The DSQ group develops scalable and high performance RDF sytems for storing and querying Big RDF data. In addition, we are also working on knowledge extraction from the Web and their RDF graph modelling. Finally, we are keen to design most representative benchmarsk pertaining to the storing, querying, and extracting RDF data. 
+""" ;
+  schema:lead dice:MuhammadSaleem ; # group maintainer
+  schema:member dice:HashimKhan, dice:AlexanderBigerl, dice:ManzoorAli ; # group members list
+  schema:relatedDemo dice:QaldGen . # list of related demos
