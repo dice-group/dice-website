@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:InfAI a schema:Partner ;
+  schema:name " Institut für Angewandte Informatik" ;
+  schema:country "D" ;
+  schema:url <https://infai.org/> ;
+  schema:logo "infai.png" .

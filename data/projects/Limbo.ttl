@@ -19,6 +19,8 @@ The proposed approach will encourage the reuse of data by third parties (industr
 The project is implemented using semantic technologies that allow the linking of different data sources (linked data) and a formal description (semantics). The goal is to firmly anchor the Mobility Data Space with open Semantic Web data sources (DBpedia, Linked Geo Data). Deploying as linked data provides the ability to network mobility data with new data sources from other domains, and to develop innovative mobility solutions and new business models based on this. The prototype of the system to be developed is being tested in various application scenarios.""" ;
   schema:maintainer dice:Eccenca ;
   schema:name "LIMBO" ;
+  schema:endDate "2020-05-31"^^xsd:date ;
+  schema:startDate "2017-06-01"^^xsd:date ;
   schema:homepage <https://www.limbo-project.org/> ;
   schema:logo "limbo.png" ;
-  schema:partner dicepartner:Fraunhofer, dicepartner:USU, dicepartner:YellowMap .
+  schema:partner dicepartner:Fraunhofer, dicepartner:USU, dicepartner:YellowMap ,dicepartner:Eccenca, dicepartner:AppPlant, dicepartner:CISS, dicepartner:InfAI, dicepartner:TUBerlin.

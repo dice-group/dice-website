@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:TUBerlin a schema:Partner ;
+  schema:name "Technische Universität Berlin" ;
+  schema:country "D" ;
+  schema:url <https://www.tu-berlin.de/menue/home/> ;
+  schema:logo "tuberlin.png" .
