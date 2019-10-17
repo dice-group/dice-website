@@ -11,4 +11,4 @@ This is a repo containing DICE research group website.
 - `/images` folder contains images used in the website (will be optimized build-time)
 - `/scripts` folder contains scripts and templates that build the website (Gatsby and such)
 
-For more detailed info see [docs folder](./docs/README.md)
+For more detailed info see [wiki](https://github.com/dice-group/dice-website/wiki)

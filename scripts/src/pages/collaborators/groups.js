@@ -1,0 +1,139 @@
+import { graphql, Link } from 'gatsby';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import CollaboratorsNav from '../../components/collabnav';
+import Layout from '../../components/layout';
+import SEO from '../../components/seo';
+
+export default function Groups({
+  data: {
+    allRdf: { edges },
+  },
+}) {
+  const data = edges.sort((a, b) =>
+    a.node.data.name.localeCompare(b.node.data.name)
+  );
+
+  return (
+    <Layout withContainer={false}>
+      <SEO title="Groups" />
+      <CollaboratorsNav activeLink="/collaborators/groups/" />
+
+      <section className="section">
+        <div className="container content projects">
+          <h1>Groups</h1>
+
+          {data.map(({ node }) => (
+            <div key={node.id}>
+              <h2>{node.data.name}</h2>
+
+              <p>
+                {node.data.content.map((mdString, i) => (
+                  <ReactMarkdown key={`content_${i}`} source={mdString} />
+                ))}
+              </p>
+
+              <div className="columns project-extended-info">
+                {node.data.lead && (
+                  <div className="column">
+                    <h6>Lead</h6>
+                    <Link to={node.data.lead.path}>
+                      {node.data.lead.data.name}
+                    </Link>
+                  </div>
+                )}
+
+                {node.data.member && node.data.member.length > 0 && (
+                  <div className="column staff-list">
+                    <h6>Members</h6>
+
+                    {node.data.member.map(person => (
+                      <Link key={person.path} to={person.path}>
+                        {person.data.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {node.data.relatedProject && (
+                  <div className="column staff-list">
+                    <h6>Projects</h6>
+
+                    {node.data.relatedProject.map(project => (
+                      <a key={project.path} href={project.path}>
+                        {project.data.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                {node.data.relatedDemo && (
+                  <div className="column staff-list">
+                    <h6>Demos</h6>
+
+                    {node.data.relatedDemo.map(project => (
+                      <a key={project.path} href={project.path}>
+                        {project.data.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="horizontal-separator" />
+            </div>
+          ))}
+        </div>
+      </section>
+    </Layout>
+  );
+}
+
+export const pageQuery = graphql`
+  query {
+    allRdf(
+      filter: {
+        data: {
+          rdf_type: {
+            elemMatch: { id: { eq: "https://schema.dice-research.org/Group" } }
+          }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          data {
+            name
+            tagline
+            relatedProject {
+              path
+              data {
+                name
+              }
+            }
+            content
+            lead {
+              path
+              data {
+                name
+              }
+            }
+            member {
+              path
+              data {
+                name
+              }
+            }
+            relatedDemo {
+              path
+              data {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

@@ -1,0 +1,11 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleGroup a schema:Group ;
+  schema:name "Data Access and Knowledge Extraction" ;
+  schema:tagline "TODO: We access data and extract knowledge" ;
+  schema:relatedProject dice:LIMBO, dice:SOLIDE ; # related projects
+  schema:content """TODO: Describe me""" ;
+  schema:lead dice:DiegoMoussallem ; # group maintainer
+  schema:member dice:RrichaJalota, dice:ParamjotKaur ; # group members list
+  schema:relatedDemo dice:LIMES . # list of related demos

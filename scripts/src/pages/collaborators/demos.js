@@ -1,5 +1,6 @@
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
+import CollaboratorsNav from '../../components/collabnav';
 import Demo from '../../components/demo';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
@@ -12,19 +13,7 @@ export default function Demos({
   return (
     <Layout withContainer={false}>
       <SEO title="Demos" />
-      <div className="tabs">
-        <ul className="container">
-          <li>
-            <Link to="/collaborators/activeprojects/">Active projects</Link>
-          </li>
-          <li className="is-active">
-            <a>Demos</a>
-          </li>
-          <li>
-            <Link to="/collaborators/partners/">Partners</Link>
-          </li>
-        </ul>
-      </div>
+      <CollaboratorsNav activeLink="/collaborators/demos/" />
 
       <section className="section">
         <div className="container content demos-page">

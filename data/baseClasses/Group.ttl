@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Group a schema:BaseClass ;
+  schema:name "Group class" .

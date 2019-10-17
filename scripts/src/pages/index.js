@@ -50,7 +50,7 @@ export default function Home() {
               <Link to="/publications/">open publications</Link>.
             </p>
             <button
-              onClick={() => navigate('/projects/')}
+              onClick={() => navigate('/collaborators/groups/')}
               className="button is-link action-button"
             >
               Learn more
