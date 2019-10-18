@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:HamadaZahera a schema:Person ;
-  schema:name "Hamada Zahera" ;
+  schema:name "Hamada M. Zahera" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5194> ;
