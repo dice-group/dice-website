@@ -12,7 +12,7 @@ const links = [
   { url: '/collaborators/', text: 'For collaborators' },
 
   { url: '/team/', text: 'Team' },
-  { url: '/jobs', text: 'Jobs' },
+  { url: '/jobs', text: 'Vacancies' },
 ];
 
 const Header = () => {
