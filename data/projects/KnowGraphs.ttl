@@ -1,0 +1,22 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:KnowGraphs a dice:FundedProject ;
+  schema:tagline "Knowledge Graphs at Scale" ;
+  schema:status "active" ;
+  schema:content """Knowledge Graphs at Scale
+# Goal
+KnowGraphs addresses the problem of scaling up the use of knowledge graphs. 15 Early Stage Researchers (ESRs) will addresses challenges pertaining to the representation, creation, management and utilization of knowledge graphs. 7 beneficiaries and 7 associated partners will facilitate the career development of the ESRs through mentoring, workshops, winter schools and dedicated training. Open positions can be found [here](http://dice-research.org/jobs). """ ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:endDate "2023-09-30"^^xsd:date ;
+  schema:startDate "2017-10-01"^^xsd:date ;
+  schema:name "KnowGraphs" ;
+  schema:fundingProgram "Innovative Training Network, Grant Number 860801" ;
+  schema:partner "EU Commission" ;
+  schema:homepage <http://kg.codezen.net/> ;
+  schema:sourceCode <https://github.com/dice-group> ;
+  schema:logo "opal.png" ;
+  schema:fundingProgram "H2020" .
