@@ -18,5 +18,5 @@ KnowGraphs addresses the problem of scaling up the use of knowledge graphs. 15 E
   schema:partner "EU Commission" ;
   schema:homepage <http://kg.codezen.net/> ;
   schema:sourceCode <https://github.com/dice-group> ;
-  schema:logo "opal.png" ;
+  schema:logo "knowgraphs.png" ;
   schema:fundingProgram "H2020" .
