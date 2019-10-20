@@ -8,8 +8,8 @@ const links = [
   { url: '/publications/', text: 'Publications' },
   { url: '/awards/', text: 'Awards' },
 
-  { url: '/students/', text: 'For students' },
-  { url: '/collaborators/', text: 'For collaborators' },
+  { url: '/students/teaching/', text: 'For students' },
+  { url: '/collaborators/activeprojects/', text: 'For collaborators' },
 
   { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Vacancies' },
