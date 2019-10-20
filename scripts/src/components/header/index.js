@@ -44,7 +44,7 @@ const Header = () => {
         className={`navbar-menu ${expanded ? 'is-active' : ''}`}
       >
         <div className="navbar-start">
-          {links.map(l => (
+          {links.flatMap(l => [
             <Link
               key={l.url}
               to={l.url}
@@ -53,8 +53,9 @@ const Header = () => {
               partiallyActive={l.url !== '/'}
             >
               {l.text}
-            </Link>
-          ))}
+            </Link>,
+            ' ',
+          ])}
         </div>
 
         <div className="navbar-end">

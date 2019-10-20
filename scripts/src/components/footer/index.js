@@ -30,11 +30,12 @@ const Footer = () => (
         <DICE className="dice-nav-logo" />
       </div>
       <div className="column dice-footer">
-        {links.map(l => (
+        {links.flatMap(l => [
           <Link key={l.url} to={l.url}>
             {l.text}
-          </Link>
-        ))}
+          </Link>,
+          ' ',
+        ])}
         <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
       </div>
       <Social hiddenMobile={false} />
