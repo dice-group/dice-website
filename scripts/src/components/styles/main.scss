@@ -922,6 +922,11 @@ $widescreen-enabled: false;
   .brand-color {
     color: $blue;
   }
+
+  // adjust heading sizes
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 pre {
