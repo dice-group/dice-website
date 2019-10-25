@@ -3,8 +3,8 @@
 
 dice:FOX a schema:Demo ;
   schema:name "FOX" ;
-  schema:tagline """Federated Knowledge Extraction Framework" ;
-  schema:content "FOX is a framework that integrates the 
+  schema:tagline "Federated Knowledge Extraction Framework" ;
+  schema:content """FOX is a framework that integrates the 
 	Linked Data Cloud and makes use of the diversity of NLP 
 	algorithms to extract RDF triples of high accuracy out of NL. 
 	
