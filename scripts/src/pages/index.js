@@ -41,13 +41,8 @@ export default function Home() {
               Welcome to the Data Science Group
             </h1>
             <p className="hero-text">
-              We are DICE (Data Science Group).{' '}
-              <Link to="/team/">Our team</Link> develops methods,algorithms and
-              applications for the extraction, integrations, storage, querying,
-              access and consumption of large-scale datasets. DICE focuses on
-              knowledge-driven methods. We are dedicated to{' '}
-              <Link to="/collaborators/demos/">open-source</Link> software and{' '}
-              <Link to="/publications/">open publications</Link>.
+              Welcome.{' '}<Link to="/team/>The DICE group</Link> at <Link to ="http://upb.de">Paderborn University</Link> is dedicated to  <Link to="/projects/">research</Link> at the interfaces between humans, machines and data.{' '}This includes in particular the extraction, integration, querying and use of <Link to="/KnowGraphs/">knowledge graphs</Link> in all forms.{' '}We currently focus on developing <Link to="/collaborators/demos/">data-driven solutions</Link> to challenges such as question answering, explainable ans responsible machine learning as well as safety.{' '}The results of our research has led to more than 25 <Link to="/awards/">international research awards</Link>.{' '}
+As a university research group, we support the upcoming generation of computer scientists through <Link to="/students/teaching/">lectures, seminars and project groups</Link> on topics including knowledge graphs, information retrieval, natural language processing and Semantic Web technologies.{' '}We often have <Link to="/jobs/"> job vacancies for students and postgraduates</Link> and welcome applications.{' '}We are dedicated to <Link to="collaborators/demos/>open-source software</Link> and <Link to="/publications/">open publications</Link> and are always up to a good research challenge.{' '}Do not hesitate to <Link to ="/contact/">contact us</Link> if you are interested in <Link to="collaborators/activeprojects/">collaborating</Link> with us.{' '}Please scroll down for more info on our current activities.{' '}  
             </p>
             <button
               onClick={() => navigate('/collaborators/groups/')}
