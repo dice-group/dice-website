@@ -34,18 +34,16 @@ export default function Home() {
       <SideMenu targets={menu} style={{ margin: 'auto' }} />
       <Social style={{ maxWidth: 40, margin: 'auto' }} />
 
-      <section id="about" className="hero hero-row is-medium">
+      <section id="about" className="hero">
         <div className="hero-body">
-          <div className="container content">
+          <div className="container">
             <h1 className="title" ref={heroRef}>
               Welcome to the Data Science Group
             </h1>
             <p className="hero-text">
-              {' '}
-              Welcome. <Link to="/team/">The DICE group</Link>
-              at <Link to="http://upb.de">Paderborn University</Link> is
-              dedicated to
-              <Link to="/projects/">research</Link> at the interfaces between
+              Welcome. <Link to="/team/">The DICE group</Link> at{' '}
+              <Link to="http://upb.de">Paderborn University</Link> is dedicated
+              to <Link to="/projects/">research</Link> at the interfaces between
               humans, machines and data. This includes in particular the
               extraction, integration, querying and use of{' '}
               <Link to="/KnowGraphs/">knowledge graphs</Link> in all forms. We
@@ -71,14 +69,14 @@ export default function Home() {
               <Link to="collaborators/demos/">
                 open-source software
               </Link> and <Link to="/publications/">open publications</Link> and
-              are always up to a good research challenge. Do not hesitate to
-              <Link to="/contact/">contact us</Link> if you are interested in
+              are always up to a good research challenge. Do not hesitate to{' '}
+              <Link to="/contact/">contact us</Link> if you are interested in{' '}
               <Link to="collaborators/activeprojects/">collaborating</Link> with
               us. Please scroll down for more info on our current activities.{' '}
             </p>
             <button
               onClick={() => navigate('/collaborators/groups/')}
-              className="button is-link action-button"
+              className="action-button"
             >
               Learn more
             </button>
@@ -86,9 +84,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="hero has-background-light is-medium">
+      <section id="projects" className="hero has-background-light">
         <div className="hero-body">
-          <div className="container content">
+          <div className="container">
             <div className="section-header">
               <h1 className="title" ref={projectsRef}>
                 Active projects
@@ -102,9 +100,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="funded" className="hero has-background-white is-medium">
+      <section id="funded" className="hero">
         <div className="hero-body">
-          <div className="container content">
+          <div className="container">
             <div className="section-header">
               <h1 className="title" ref={fundedRef}>
                 Funded by
@@ -115,9 +113,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="tweets" className="hero has-background-light is-medium">
+      <section id="tweets" className="hero has-background-light">
         <div className="hero-body">
-          <div className="container content">
+          <div className="container">
             <div className="section-header">
               <h1 className="title" ref={tweetsRef}>
                 Latest tweets
@@ -140,9 +138,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="news" className="hero has-background-white is-medium">
+      <section id="news" className="hero">
         <div className="hero-body">
-          <div className="container content">
+          <div className="container">
             <div className="section-header">
               <h1 className="title" ref={newsRef}>
                 News
@@ -157,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="hero has-background-light is-medium">
+      <section id="contact" className="hero has-background-light">
         <div className="hero-body">
           <div className="container contact-section">
             <div className="section-header">

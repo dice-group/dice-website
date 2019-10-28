@@ -13,19 +13,13 @@ const SideMenuItem = ({ item, isCurrent }) => {
 
   return (
     <div
-      className="sidemenu is-flex"
+      className="sidemenu-item"
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      {showTooltip && (
-        <span className="tag is-medium is-light">{item.title}</span>
-      )}
+      {showTooltip && <span className="tag">{item.title}</span>}
       <a href={`#${item.url}`} title={item.title} onClick={handleClick}>
-        <span
-          className={`icon is-medium ${
-            isCurrent ? 'is-current' : 'is-not-current'
-          }`}
-        >
+        <span className={`${isCurrent ? 'is-current' : 'is-not-current'}`}>
           <FaCircle size={16} />
         </span>
       </a>

@@ -69,19 +69,19 @@ const News = ({ limit = 10, paginate = true }) => {
           </nav>
         </div>
       )}
-      <div className="content">
+      <div className="news">
         {edges
           .slice(limit * currentPage, limit * currentPage + limit)
           .map(({ node }) => (
             <div key={node.id} style={{ marginBottom: '2em' }}>
               <h6
-                className="subtitle has-text-grey-light"
+                className="new-subtitle"
                 title={node.frontmatter.fullDate}
                 style={{ paddingBottom: 10 }}
               >
                 {node.frontmatter.date}
               </h6>
-              <h4 className="title" style={{ marginBottom: '2em' }}>
+              <h4 className="news-title" style={{ marginBottom: '2em' }}>
                 <Link to={node.fields.path}>{node.frontmatter.title}</Link>
               </h4>
             </div>
