@@ -1,0 +1,38 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Exoframe a dice:ProductionReadyProject ;
+  schema:name "Exoframe" ;
+  schema:tagline "Exoframe is a self-hosted tool that allows simple one-command deployments using Docker" ;
+  schema:status "active" ; # current project status
+  schema:content """Exoframe is a self-hosted tool that allows simple one-command deployments using Docker.
+
+## Features
+
+- One-command project deployment
+- SSH key based auth
+- Rolling updates
+- Deploy tokens (e.g. to deploy from CI)
+- Deploy secrets (e.g. to hide sensitive env vars)
+- Automated HTTPS setup via letsencrypt
+- Automated gzip compression
+- Rate-limit support
+- Basic HTTP Auth support
+- Simple access to the logs of deployments
+- Docker-compose support
+- Simple function deployments
+- Multiple deployment endpoints and multi-user support
+- Simple update procedure for client, server and Traefik
+- Optional automatic subdomain assignment (i.e. every deployment gets its own subdomain)
+- Swarm mode deployments
+- Complex recipes support (i.e. deploy complex systems in one command)
+  """ ;
+  schema:maintainer dice:TimofeyErmilov ; # project maintainer
+  schema:endDate "2021-01-01"^^xsd:date ;
+  schema:startDate "2017-05-12"^^xsd:date ;
+  schema:homepage <https://github.com/exoframejs/exoframe> ;
+  schema:logo "exoframe.png" ;
+  schema:sourceCode <https://github.com/exoframejs/exoframe> .
