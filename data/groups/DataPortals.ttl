@@ -1,0 +1,12 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DataPortals a schema:Group ;
+  schema:name "Data Portals" ;
+  schema:tagline "" ;
+  schema:relatedProject dice:OPAL ; # related projects
+  schema:content """Open Data opens up social and commercial chances. For instance, mobility data like routes of trains and buses can be combined with other data by citizens and companies to plan excursions for special interests. Metadata records and data itself are often distributed across multiple systems and available in different formats. The Data Portals Group works, inter alia, on the following topics: Data on multiple systems and in different formats has to be crawled and stored. For this purpose 5-Star-Linked-Data and appropriate ontologies are used. The stored data is then analyzed and refined. For huge amounts of data,  related quality ratings and data enrichments are preferably executed using automatic approaches. Enrichments, for instance, are the recognition of named entities like locations, and the following linking of the data to related geo data, like coordinates or regions. Additional knowledge bases can be integrated to assist in further tasks, e.g. finding appropriate licenses for the distribution of combined datasets. Knowledge graphs are also used to overcome barriers of natural language, like matching synonyms and therefore improve the findability of datasets. This is also developed by specialized interfaces like Question Answering systems.
+""" ;
+  schema:lead dice:AdrianWilke ; # group maintainer
+  schema:member dice:AxelCyrilleNgongaNgomo, dice:AlexanderBigerl ; # group members list
+.
