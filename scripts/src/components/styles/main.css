@@ -37,13 +37,6 @@ body {
     @apply flex items-center flex-grow-0 flex-shrink-0 pb-1 pt-1 pl-2 pr-2;
   }
 
-  .dice-nav-logo {
-    height: 50px;
-    max-height: 50px;
-    width: 150px;
-    filter: brightness(0) invert(1);
-  }
-
   .navbar-menu {
     @apply flex items-stretch flex-grow flex-shrink-0;
   }
@@ -71,6 +64,13 @@ body {
     color: var(--bright-text-color);
     border-color: var(--bright-text-color);
   }
+}
+
+.dice-nav-logo {
+  height: 50px;
+  max-height: 50px;
+  width: 150px;
+  filter: brightness(0) invert(1);
 }
 
 /*
@@ -296,10 +296,11 @@ a {
  * Funded by items
  */
 .funded-by-item {
-  @apply w-auto flex justify-center;
+  @apply w-auto justify-center;
+  @apply flex !important;
 
   @screen sm {
-    @apply w-auto flex !important;
+    @apply w-auto !important;
   }
   @screen md {
     @apply w-1/4 block !important;
@@ -333,10 +334,10 @@ a {
 }
 
 .contacts {
-  @apply flex flex-wrap justify-center;
+  @apply flex flex-wrap justify-around;
 
   .column {
-    @apply flex flex-col items-center w-auto;
+    @apply flex flex-col items-center w-auto pt-4;
 
     @screen sm {
       @apply w-auto pt-4;
