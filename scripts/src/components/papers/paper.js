@@ -14,7 +14,7 @@ const Paper = ({
 }) => (
   <div className="paper">
     <p className="text">{source}</p>
-    <h3 className="name is-size-4">
+    <h3 className="name">
       {pdfUrl ? <ExternalLink to={pdfUrl}>{title}</ExternalLink> : title}
     </h3>
     <p className="meta">By {(authorName || []).join(', ')}</p>

@@ -17,7 +17,7 @@
 
 /* Define default text color */
 body {
-  color: #4a4a4a;
+  /* color: #4a4a4a; */
 }
 
 /*
@@ -547,7 +547,7 @@ a {
 
 .button {
   @apply flex items-center justify-center border border-solid rounded;
-  @apply text-white cursor-pointer ml-1 mr-1 pl-16 pr-16 pt-4 pb-4;
+  @apply text-white cursor-pointer ml-1 mr-1 pl-16 pr-16 pt-3 pb-4;
 
   background-color: var(--primary-color);
   height: 50px;
@@ -556,5 +556,161 @@ a {
     background-color: transparent;
     border-color: var(--primary-color);
     color: var(--primary-color);
+  }
+}
+
+.external-link {
+  @apply inline-flex items-center;
+
+  .icon {
+    @apply ml-1;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/*
+ * Inputs
+ */
+.input {
+  @apply inline-flex items-center justify-start;
+  @apply m-0 mb-2 pt-2 pb-2 pl-3 pr-3 w-full max-w-full;
+  @apply border border-solid rounded border-gray-400;
+}
+
+/*
+ * Papers
+ */
+
+.papers-filter {
+  height: 60px;
+}
+
+.papers-facets {
+  @apply flex mt-2 mb-4;
+
+  li {
+    @apply block;
+
+    a {
+      @apply flex items-center justify-center cursor-pointer;
+      @apply pb-2 pt-2 pl-4 pr-4 text-black;
+    }
+
+    .icon {
+      @apply ml-2 mr-2;
+      color: var(--primary-color);
+    }
+
+    .filter-dropdown {
+      @apply absolute bg-white p-4 shadow-lg;
+      @apply border border-gray-400 rounded-lg;
+
+      max-height: 600px;
+      max-width: 380px;
+      min-height: 300px;
+      min-width: 200px;
+      overflow: auto;
+
+      .facet-group {
+        @apply flex flex-1 flex-col pt-3 pl-2;
+      }
+
+      .facet-header {
+        @apply text-xl font-medium mb-2;
+      }
+      .facet {
+        @apply flex cursor-pointer mb-2;
+
+        .facet-text {
+          @apply flex flex-1;
+        }
+        .count {
+          @apply inline-flex opacity-50;
+        }
+      }
+    }
+  }
+}
+
+.facets {
+  @apply flex;
+
+  .selected-facet {
+    @apply flex flex-wrap justify-start items-center mt-4 mb-4 mr-4;
+
+    .facet-name {
+      @apply flex items-center justify-center pl-2 pr-2 mr-0 mb-2;
+
+      background-color: var(--primary-color);
+      color: var(--bright-text-color);
+
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 0px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 0px;
+      height: 32px;
+    }
+    .delete-icon {
+      @apply relative flex items-center justify-center cursor-pointer;
+      @apply mb-2 ml-0 mr-0 p-0;
+
+      background-color: var(--primary-color);
+      color: var(--bright-text-color);
+
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 4px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 4px;
+      height: 32px;
+      width: 32px;
+    }
+    .delete-icon::before {
+      @apply absolute block bg-white text-white cursor-pointer;
+
+      content: '';
+      height: 1px;
+      left: 16px;
+      top: 16px;
+      transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, -8, -0.5);
+      transform-origin: 8px 0.5px;
+      width: 16px;
+    }
+    .delete-icon::after {
+      @apply absolute block bg-white text-white cursor-pointer;
+
+      content: '';
+      height: 16px;
+      left: 16px;
+      top: 16px;
+      transform: matrix(0.707107, 0.707107, -0.707107, 0.707107, -0.5, -8);
+      transform-origin: 0.5px 8px;
+      width: 1px;
+    }
+  }
+}
+
+.paper {
+  @apply mb-8;
+
+  .text {
+    @apply mb-1;
+  }
+
+  .name {
+    @apply mb-1 text-2xl;
+  }
+
+  .meta {
+    @apply text-gray-600;
+  }
+
+  .bib-link {
+    @apply hidden;
+    color: var(--primary-color);
+  }
+  &:hover {
+    .bib-link {
+      @apply inline;
+    }
   }
 }
