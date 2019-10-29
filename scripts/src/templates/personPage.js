@@ -32,9 +32,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
       <div className="content person-page">
         <BackButton />
 
-        <h1 className="title">Profile page</h1>
+        <h1 className="header">Profile page</h1>
 
-        <div className="is-flex person-info">
+        <div className="person-info">
           <div className="person-image">
             <Image
               filename={photo}
@@ -43,13 +43,13 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             />
           </div>
 
-          <div className="is-flex is-flex-vertical">
+          <div className="person-data">
             <h2>
               {namePrefix} {name}
             </h2>
             <p className="role">{role.data.name}</p>
             {email && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Email</div>
                 <div className="meta-value">
                   <a href={email}>{email.replace('mailto:', '')}</a>
@@ -57,7 +57,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {phone && phone.replace('tel:', '') && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Phone</div>
                 <div className="meta-value">
                   <Phone phone={phone} />
@@ -65,7 +65,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {fax && fax.replace('tel:', '') && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Fax</div>
                 <div className="meta-value">
                   <Phone phone={fax} />
@@ -73,7 +73,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {office && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Office</div>
                 <div className="meta-value">{office}</div>
               </div>

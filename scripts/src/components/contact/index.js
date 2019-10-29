@@ -57,75 +57,42 @@ const ContactForm = () => {
   ).node;
 
   return (
-    <div className="columns">
-      <style jsx>{`
-        .column {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .round-image {
-          width: 200px;
-          height: 200px;
-          border-radius: 100px;
-          overflow: hidden;
-        }
-
-        .property-name {
-          padding-top: 20px;
-          margin-bottom: 5px !important;
-          font-weight: normal;
-        }
-
-        .property-value {
-          font-weight: 500;
-          padding-top: 0;
-          margin-bottom: 0 !important;
-        }
-
-        .form-column {
-          flex-direction: column;
-          justify-content: center;
-        }
-      `}</style>
-      <div className="column is-half">
+    <div className="contacts">
+      <div className="column">
         <div className="round-image">
           <Image
             filename={axelProfile.data.photo}
             alt={`${axelProfile.data.name} photo`}
           />
         </div>
-        <p className="property-name has-text-grey-light">Head of DICE</p>
+        <p className="property-name">Head of DICE</p>
         <p className="property-value">
           {axelProfile.data.namePrefix} {axelProfile.data.name}
         </p>
 
-        <p className="property-name has-text-grey-light">Email</p>
+        <p className="property-name">Email</p>
         <a className="property-value brand-color" href={axelProfile.data.email}>
           {axelProfile.data.email.replace('mailto:', '')}
         </a>
 
-        <p className="property-name has-text-grey-light">Phone</p>
+        <p className="property-name">Phone</p>
         <p className="property-value">
           <Phone phone={axelProfile.data.phone} />
         </p>
       </div>
-      <div className="column is-half">
+      <div className="column">
         <div className="round-image">
           <Image
             filename={simoneProfile.data.photo}
             alt={`${simoneProfile.data.name} photo`}
           />
         </div>
-        <p className="property-name has-text-grey-light">
-          {simoneProfile.data.role.data.name}
-        </p>
+        <p className="property-name">{simoneProfile.data.role.data.name}</p>
         <p className="property-value">
           {simoneProfile.data.namePrefix} {simoneProfile.data.name}
         </p>
 
-        <p className="property-name has-text-grey-light">Email</p>
+        <p className="property-name">Email</p>
         <a
           className="property-value brand-color"
           href={simoneProfile.data.email}
@@ -133,7 +100,7 @@ const ContactForm = () => {
           {simoneProfile.data.email.replace('mailto:', '')}
         </a>
 
-        <p className="property-name has-text-grey-light">Phone</p>
+        <p className="property-name">Phone</p>
         <p className="property-value">
           <Phone phone={simoneProfile.data.phone} />
         </p>

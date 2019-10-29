@@ -26,7 +26,7 @@ const links = [
 const Footer = () => (
   <div className="footer">
     <div className="columns" style={{ flex: 1 }}>
-      <div className="column is-flex">
+      <div className="column">
         <DICE className="dice-nav-logo" />
       </div>
       <div className="column dice-footer">
@@ -42,7 +42,7 @@ const Footer = () => (
 
     <div className="horizontal-separator" />
 
-    <div className="is-flex horizontally-centered">
+    <div className="flex justify-center">
       <a href="https://www.uni-paderborn.de/">
         <UPB
           style={{ filter: 'grayscale(1) invert(1) opacity(0.5)', width: 200 }}

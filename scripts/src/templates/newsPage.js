@@ -19,7 +19,7 @@ export default function NewsTemplate({
 
         <h1 className="title">{frontmatter.title}</h1>
 
-        <p className="has-text-grey" title={frontmatter.fullDate}>
+        <p className="text-gray-500" title={frontmatter.fullDate}>
           {frontmatter.date}
         </p>
 

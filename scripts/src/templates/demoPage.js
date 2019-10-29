@@ -14,12 +14,12 @@ export default function DemoTemplate({
   return (
     <Layout>
       <SEO title={`${data.name}`} />
-      <div className="content projects demo" style={{ marginBottom: 160 }}>
+      <div className="content project demo" style={{ marginBottom: 160 }}>
         <BackButton />
 
         <h1 className="title">{data.name}</h1>
 
-        <div className="project-card project-rounded project-full-info">
+        <div className="project-card">
           <div className="project-image">
             <Image
               filename={data.logo}
@@ -32,15 +32,12 @@ export default function DemoTemplate({
 
           <div className="buttons">
             {data.homepage && (
-              <a href={data.homepage} className="button is-medium is-link">
+              <a href={data.homepage} className="button">
                 Homepage
               </a>
             )}
             {data.sourceCode && (
-              <a
-                href={data.sourceCode}
-                className="button is-medium is-link is-outlined"
-              >
+              <a href={data.sourceCode} className="button is-outlined">
                 Source code
               </a>
             )}
@@ -49,7 +46,7 @@ export default function DemoTemplate({
 
         {data.content && (
           <div className="project-description">
-            <h1>About the demo</h1>
+            <h1 className="subheader">About the demo</h1>
 
             {data.content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
@@ -57,9 +54,9 @@ export default function DemoTemplate({
           </div>
         )}
 
-        <div className="tile is-ancestor is-vertical">
+        <div className="flex flex-col">
           {data.screenshot.map((screen, index) => (
-            <div key={screen} className="tile is-parent">
+            <div key={screen} className="flex p-4 w-full">
               <Image
                 filename={screen}
                 alt={`${data.name} screenshot ${index + 1}`}
@@ -72,14 +69,14 @@ export default function DemoTemplate({
         <div className="columns project-extended-info">
           {data.maintainer && (
             <div className="column">
-              <h6>Maintainer</h6>
+              <h6 className="column-header">Maintainer</h6>
               <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>
             </div>
           )}
 
           {data.developer && data.developer.length > 0 && (
             <div className="column staff-list">
-              <h6>Staff</h6>
+              <h6 className="column-header">Staff</h6>
 
               {data.developer
                 .filter(

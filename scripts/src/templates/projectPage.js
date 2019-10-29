@@ -23,18 +23,18 @@ export default function ProjectTemplate({
   return (
     <Layout>
       <SEO title={`${data.name}`} />
-      <div className="content projects" style={{ marginBottom: 160 }}>
+      <div className="project content">
         <BackButton />
 
-        <h1 className="title">{data.name}</h1>
+        <h1 className="header">{data.name}</h1>
 
-        <p className="has-text-grey-light">
+        <p className="subtitle">
           {data.rdf_type[0].data.name} (
           {format(new Date(data.startDate), dateFormat)} -{' '}
           {format(new Date(data.endDate), dateFormat)})
         </p>
 
-        <div className="project-card project-rounded project-full-info">
+        <div className="project-card">
           <div className="project-image">
             <Image
               filename={data.logo}
@@ -47,15 +47,12 @@ export default function ProjectTemplate({
 
           <div className="buttons">
             {data.homepage && (
-              <a href={data.homepage} className="button is-medium is-link">
+              <a href={data.homepage} className="button">
                 Homepage
               </a>
             )}
             {data.sourceCode && (
-              <a
-                href={data.sourceCode}
-                className="button is-medium is-link is-outlined"
-              >
+              <a href={data.sourceCode} className="button is-outlined">
                 Source code
               </a>
             )}
@@ -64,7 +61,7 @@ export default function ProjectTemplate({
 
         {data.content && (
           <div className="project-description">
-            <h1>About the project</h1>
+            <h1 className="subheader">About the project</h1>
 
             {data.content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
@@ -75,14 +72,14 @@ export default function ProjectTemplate({
         <div className="columns project-extended-info">
           {data.maintainer && (
             <div className="column">
-              <h6>Maintainer</h6>
+              <h6 className="column-header">Maintainer</h6>
               <Link to={data.maintainer.path}>{data.maintainer.data.name}</Link>
             </div>
           )}
 
           {people && people.length > 0 && (
             <div className="column staff-list">
-              <h6>Staff</h6>
+              <h6 className="column-header">Staff</h6>
 
               {people
                 .filter(
@@ -100,7 +97,7 @@ export default function ProjectTemplate({
 
           {data.partner && (
             <div className="column staff-list">
-              <h6>Partners</h6>
+              <h6 className="column-header">Partners</h6>
 
               {data.partner.map(partner => (
                 <a key={partner.id} href={partner.data.url}>
@@ -112,7 +109,7 @@ export default function ProjectTemplate({
 
           {data.fundingProgram && (
             <div className="column">
-              <h6>Funding program</h6>
+              <h6 className="column-header">Funding program</h6>
 
               {data.fundingProgram}
             </div>
@@ -123,7 +120,7 @@ export default function ProjectTemplate({
 
         {(data.relatedDemo || data.relatedProject) && (
           <div className="see-also">
-            <h2>See also</h2>
+            <h2 className="subheader">See also</h2>
 
             <div className="columns is-multiline is-5 is-variable">
               {data.relatedProject &&

@@ -67,13 +67,13 @@ export default function Teaching({
 
       <section className="section">
         <div className="container content teaching">
-          <h1 className="page-title">Teaching</h1>
+          <h1 className="header">Teaching</h1>
 
           {Object.keys(result)
             .sort((a, b) => b - a)
             .map(year => (
               <div className="years" key={year}>
-                <h2>{year}</h2>
+                <h2 className="subheader">{year}</h2>
 
                 {Object.keys(result[year])
                   .sort((a, b) => b.localeCompare(a))
@@ -93,11 +93,14 @@ export default function Teaching({
                               <Link to={course.node.fields.path}>
                                 {course.node.frontmatter.title}
                               </Link>
-                              <span className="kind-label has-text-grey-light">
+                              <span className="kind-label">
                                 {course.node.frontmatter.kind}
                               </span>
                               {course.node.frontmatter.language === 'en' && (
-                                <span title="English language">
+                                <span
+                                  className="language"
+                                  title="English language"
+                                >
                                   <UKFlag style={{ width: 24, height: 12 }} />
                                 </span>
                               )}

@@ -33,20 +33,7 @@ const SideMenu = ({ targets }) => {
   }, targets);
 
   return (
-    <div
-      className="column is-flex is-hidden-mobile is-hidden-tablet-only"
-      style={{
-        position: 'fixed',
-        right: 0,
-        top: 96,
-        height: 'calc(60% - 96px)',
-        justifyContent: 'center',
-        alignItems: 'flex-end',
-        flexDirection: 'column',
-        maxWidth: 100,
-        margin: '0.5em',
-      }}
-    >
+    <div className="sidemenu">
       {targets.map(l => (
         <Item key={l.url} item={l} isCurrent={currentUrl === l.url} />
       ))}
