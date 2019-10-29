@@ -24,12 +24,22 @@ body {
  * Navbar
  */
 .navbar {
-  @apply flex items-stretch;
+  @apply flex flex-col items-stretch;
+
+  @screen lg {
+    @apply flex-row;
+  }
+
   min-height: 6rem;
   background-color: var(--primary-color);
 
   .navbar-brand {
-    @apply flex items-stretch flex-shrink-0;
+    @apply flex flex-1 items-stretch flex-shrink-0;
+
+    @screen lg {
+      @apply flex-initial;
+    }
+
     min-height: 6rem;
   }
 
@@ -37,8 +47,56 @@ body {
     @apply flex items-center flex-grow-0 flex-shrink-0 pb-1 pt-1 pl-2 pr-2;
   }
 
+  .navbar-burger {
+    @apply block relative ml-auto text-white w-24 h-24;
+
+    @screen lg {
+      @apply hidden;
+    }
+
+    span:first-child {
+      top: calc(50% - 6px);
+    }
+    span:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+    span:nth-child(3) {
+      top: calc(50% + 4px);
+    }
+
+    span {
+      @apply block bg-white cursor-pointer absolute;
+
+      height: 1px;
+      left: calc(50% - 8px);
+      width: 16px;
+    }
+  }
+
   .navbar-menu {
-    @apply flex items-stretch flex-grow flex-shrink-0;
+    @apply hidden items-stretch flex-grow flex-shrink-0;
+
+    @screen lg {
+      @apply flex;
+    }
+
+    @media (max-width: 1023px) {
+      &.is-active {
+        @apply block;
+
+        .navbar-start {
+          @apply flex-col;
+        }
+
+        .navbar-end {
+          @apply justify-start pb-3;
+        }
+
+        .navbar-item {
+          @apply p-2 pl-3;
+        }
+      }
+    }
   }
 
   .navbar-start {
