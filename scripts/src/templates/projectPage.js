@@ -61,7 +61,7 @@ export default function ProjectTemplate({
 
         {data.content && (
           <div className="project-description">
-            <h1 className="section-header">About the project</h1>
+            <h1 className="subheader">About the project</h1>
 
             {data.content.map((mdString, i) => (
               <ReactMarkdown key={`content_${i}`} source={mdString} />
@@ -120,7 +120,7 @@ export default function ProjectTemplate({
 
         {(data.relatedDemo || data.relatedProject) && (
           <div className="see-also">
-            <h2 className="section-header">See also</h2>
+            <h2 className="subheader">See also</h2>
 
             <div className="columns is-multiline is-5 is-variable">
               {data.relatedProject &&
