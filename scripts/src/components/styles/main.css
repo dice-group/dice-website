@@ -714,3 +714,33 @@ a {
     }
   }
 }
+
+/*
+ * Awards
+ */
+
+.award {
+  @apply flex flex-col mb-8;
+
+  .year {
+    @apply text-gray-500 mb-1;
+  }
+
+  .name {
+    @apply text-xl mb-1;
+  }
+
+  .description {
+    @apply mb-1;
+  }
+
+  .awardee {
+    &:after {
+      content: ', ';
+    }
+
+    &:last-child::after {
+      content: '';
+    }
+  }
+}

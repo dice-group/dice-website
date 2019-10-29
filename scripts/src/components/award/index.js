@@ -3,13 +3,9 @@ import React from 'react';
 import ExternalLink from '../externalLink';
 
 const Award = ({ node: { id, data } }) => (
-  <div
-    key={id}
-    className="award tile is-vertical"
-    style={{ marginBottom: '2em' }}
-  >
+  <div key={id} className="award">
     <p className="year">{data.year}</p>
-    <h4 className="name title">
+    <h4 className="name">
       {data.url ? (
         <ExternalLink to={data.url}>{data.name}</ExternalLink>
       ) : (
