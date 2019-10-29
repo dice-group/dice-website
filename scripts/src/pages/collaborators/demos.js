@@ -16,10 +16,10 @@ export default function Demos({
       <CollaboratorsNav activeLink="/collaborators/demos/" />
 
       <section className="section">
-        <div className="container content demos-page">
-          <h1>Demos</h1>
+        <div className="container content">
+          <h1 className="header">Demos</h1>
 
-          <div className="columns is-multiline is-5 is-variable">
+          <div className="columns">
             {edges.map(({ node }) => (
               <div className="column is-one-third" key={node.path}>
                 <Demo node={node} />

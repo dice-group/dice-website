@@ -878,3 +878,34 @@ a {
     }
   }
 }
+
+/*
+ * Partners
+ */
+
+.partner {
+  @apply flex flex-col items-center pt-2 cursor-pointer;
+
+  height: 250px;
+
+  .project-image {
+    @apply flex items-center justify-center;
+    flex: 3;
+    max-height: 150px;
+    min-height: 150px;
+    max-width: 150px;
+  }
+
+  .name {
+    @apply mt-2 text-center;
+    color: var(--primary-color);
+  }
+}
+
+/*
+ * Groups
+ */
+
+.group {
+  @apply mb-6;
+}
