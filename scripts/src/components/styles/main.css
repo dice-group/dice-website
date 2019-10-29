@@ -69,6 +69,26 @@ body {
       }
     }
   }
+
+  .key-val {
+    @apply flex flex-col;
+
+    .key-row {
+      @apply flex mb-1;
+    }
+
+    .key {
+      flex: 1;
+    }
+
+    .val {
+      flex: 3;
+    }
+  }
+
+  .header-link {
+    color: inherit;
+  }
 }
 
 /*
