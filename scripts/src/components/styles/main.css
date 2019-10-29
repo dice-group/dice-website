@@ -390,7 +390,7 @@ a {
   }
 
   .column {
-    @apply flex-1 block p-3 w-auto;
+    @apply flex-1 block p-3 w-auto break-all;
 
     &.is-one-third {
       @screen md {
@@ -598,7 +598,11 @@ a {
   }
 
   .buttons {
-    @apply flex flex-row;
+    @apply flex flex-col;
+
+    @screen md {
+      @apply flex-row;
+    }
   }
 
   .project-description {
@@ -632,7 +636,7 @@ a {
 
 .button {
   @apply flex items-center justify-center border border-solid rounded;
-  @apply text-white cursor-pointer ml-1 mr-1 pl-16 pr-16 pt-3 pb-4;
+  @apply text-white cursor-pointer ml-1 mr-1 pl-12 pr-12 pt-3 pb-4;
 
   background-color: var(--primary-color);
   height: 50px;
@@ -671,14 +675,14 @@ a {
 }
 
 .papers-facets {
-  @apply flex mt-2 mb-4;
+  @apply flex mt-2 mb-4 -ml-3;
 
   li {
     @apply block;
 
     a {
       @apply flex items-center justify-center cursor-pointer;
-      @apply pb-2 pt-2 pl-4 pr-4 text-black;
+      @apply pb-2 pt-2 pl-3 pr-3 text-black;
     }
 
     .icon {
@@ -695,6 +699,10 @@ a {
       min-height: 300px;
       min-width: 200px;
       overflow: auto;
+
+      @media screen and (max-width: 768px) {
+        left: 10px;
+      }
 
       .facet-group {
         @apply flex flex-1 flex-col pt-3 pl-2;
@@ -964,11 +972,6 @@ a {
  * Team
  */
 
-.team {
-  .column {
-  }
-}
-
 .person {
   @apply flex flex-col items-center pt-2;
   height: 250px;
@@ -1069,12 +1072,20 @@ a {
 }
 
 .pagination {
-  @apply flex items-center justify-around -m-2;
+  @apply flex items-center justify-around mt-2 mb-2;
+
+  @screen md {
+    @apply -m-2;
+  }
 
   .pagination-list {
     @apply list-none;
-    @apply flex flex-grow flex-shrink flex-wrap items-center justify-center;
-    @apply mb-0 mt-6 ml-12 mr-0;
+    @apply flex flex-grow flex-shrink items-center justify-center;
+    @apply m-0 pl-8 pr-2 overflow-auto;
+
+    @screen md {
+      @apply mt-6 ml-12;
+    }
 
     li {
       @apply text-center m-0 p-0;
