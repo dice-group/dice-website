@@ -16,12 +16,12 @@ export default function TeachingTemplate({
       <SEO title={frontmatter.title} />
       <div className="content teaching-page">
         <BackButton />
-        <h1 className="title">{frontmatter.title}</h1>
+        <h1 className="header">{frontmatter.title}</h1>
         <div>
           {frontmatter.type}{' '}
-          <span className="has-text-grey-light">{frontmatter.kind}</span>{' '}
+          <span className="text-gray-500">{frontmatter.kind}</span>{' '}
           {frontmatter.language === 'en' && (
-            <span title="English language">
+            <span className="language" title="English language">
               <UKFlag style={{ width: 24, height: 12 }} />
             </span>
           )}

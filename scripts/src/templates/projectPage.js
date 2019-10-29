@@ -23,7 +23,7 @@ export default function ProjectTemplate({
   return (
     <Layout>
       <SEO title={`${data.name}`} />
-      <div className="project">
+      <div className="project content">
         <BackButton />
 
         <h1 className="header">{data.name}</h1>
