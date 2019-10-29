@@ -445,11 +445,8 @@ a {
   @apply w-auto justify-center;
   @apply flex !important;
 
-  @screen sm {
-    @apply w-auto !important;
-  }
   @screen md {
-    @apply w-1/4 block !important;
+    @apply w-1/4 block flex-none !important;
   }
 }
 
