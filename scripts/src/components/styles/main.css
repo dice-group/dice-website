@@ -942,3 +942,71 @@ a {
     @apply mt-2 text-center;
   }
 }
+
+.person-page {
+  @apply mb-16;
+
+  .person-info {
+    @apply flex flex-col items-center;
+
+    h2 {
+      @apply text-center;
+    }
+
+    @screen md {
+      @apply flex-row;
+
+      h2 {
+        @apply text-left;
+      }
+    }
+  }
+
+  .person-image {
+    @apply mr-0 mb-3;
+
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    border-radius: 150px;
+    overflow: hidden;
+
+    @screen md {
+      @apply mr-6;
+    }
+  }
+
+  .person-data {
+    @apply flex flex-col flex-1;
+  }
+
+  .role {
+    @apply opacity-50 mb-2;
+
+    color: var(--dark-text-color);
+  }
+
+  .meta {
+    @apply flex mb-2;
+
+    .meta-label {
+      @apply flex-1 text-black;
+    }
+
+    .meta-value {
+      flex: 2;
+    }
+  }
+
+  .person-content {
+    @apply mt-5;
+  }
+
+  .projects {
+    @apply flex flex-col;
+
+    a {
+      @apply mb-1;
+    }
+  }
+}
