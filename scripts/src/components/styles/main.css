@@ -25,6 +25,8 @@ body {
  */
 
 .content {
+  @apply leading-relaxed;
+
   h1 {
     @apply text-3xl mb-3 mt-4;
   }
@@ -39,30 +41,30 @@ body {
   }
 
   ol {
+    @apply ml-3 mt-1;
     counter-reset: list-counter;
 
-    @screen sm {
-      margin-left: 1em;
-      margin-top: 0.5em;
+    @screen md {
+      @apply ml-6 mt-3;
     }
 
     li {
-      margin-left: 40px;
+      margin-left: 20px;
       counter-increment: list-counter;
 
-      @screen sm {
-        margin-left: 20px;
+      @screen md {
+        margin-left: 40px;
       }
 
       &::before {
-        margin-left: -40px;
-        margin-right: 20px;
+        margin-left: -32px;
+        margin-right: 10px;
         content: counter(list-counter) '. ';
         color: rgba(0, 0, 0, 0.5);
 
-        @screen sm {
-          margin-left: -32px;
-          margin-right: 10px;
+        @screen md {
+          margin-left: -40px;
+          margin-right: 20px;
         }
       }
     }
