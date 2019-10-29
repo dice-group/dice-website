@@ -13,7 +13,7 @@ import ExternalLink from '../components/externalLink';
 import Footer from './footer';
 import Header from './header';
 import Image from './image';
-import './styles/main.scss';
+import './styles/main.css';
 import Table from './table';
 
 const mdxComponents = { Image, Link, ExternalLink, Table };

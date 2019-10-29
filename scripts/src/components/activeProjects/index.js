@@ -54,7 +54,7 @@ const ActiveProjects = ({ limit = 6 }) => {
   } = useStaticQuery(newsQuery);
 
   return (
-    <div className="columns is-multiline is-5 is-variable">
+    <div className="columns is-padded">
       {edges.slice(0, limit).map(({ node }) => (
         <div className="column is-one-third" key={node.path}>
           <Project project={node} />

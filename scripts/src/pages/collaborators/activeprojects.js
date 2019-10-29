@@ -16,10 +16,10 @@ export default function ActiveProjects({
       <CollaboratorsNav activeLink="/collaborators/activeprojects/" />
 
       <section className="section">
-        <div className="container content demos-page">
-          <h1>Active Projects</h1>
+        <div className="container content">
+          <h1 className="header">Active Projects</h1>
 
-          <div className="columns is-multiline is-5 is-variable">
+          <div className="columns">
             {edges.map(({ node }) => (
               <div className="column is-one-third" key={node.path}>
                 <Project key={node.path} project={node} renderType={false} />
@@ -27,10 +27,10 @@ export default function ActiveProjects({
             ))}
           </div>
 
-          <div className="is-flex has-content-centered" style={{ padding: 20 }}>
+          <div className="flex justify-center p-4">
             <button
               onClick={() => navigate('/projects/')}
-              className="button is-link action-button"
+              className="action-button"
             >
               Show all projects
             </button>

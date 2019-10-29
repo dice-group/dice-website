@@ -21,9 +21,9 @@ export default function Partners({
 
       <section className="section">
         <div className="container content">
-          <h1>Partners</h1>
+          <h1 className="header">Partners</h1>
 
-          <div className="columns is-multiline is-5 is-variable">
+          <div className="columns">
             {data.map(({ node }) => (
               <div className="column is-one-third" key={node.id}>
                 <Partner partner={node} />

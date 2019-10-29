@@ -20,12 +20,12 @@ export default function Groups({
       <CollaboratorsNav activeLink="/collaborators/groups/" />
 
       <section className="section">
-        <div className="container content projects">
-          <h1>Groups</h1>
+        <div className="container content">
+          <h1 className="header">Groups</h1>
 
           {data.map(({ node }) => (
-            <div key={node.id}>
-              <h2>{node.data.name}</h2>
+            <div className="project" key={node.id}>
+              <h2 className="subheader">{node.data.name}</h2>
 
               <p>
                 {node.data.content.map((mdString, i) => (
@@ -36,7 +36,7 @@ export default function Groups({
               <div className="columns project-extended-info">
                 {node.data.lead && (
                   <div className="column">
-                    <h6>Lead</h6>
+                    <h6 className="column-header">Lead</h6>
                     <Link to={node.data.lead.path}>
                       {node.data.lead.data.name}
                     </Link>
@@ -45,7 +45,7 @@ export default function Groups({
 
                 {node.data.member && node.data.member.length > 0 && (
                   <div className="column staff-list">
-                    <h6>Members</h6>
+                    <h6 className="column-header">Members</h6>
 
                     {node.data.member.map(person => (
                       <Link key={person.path} to={person.path}>
@@ -55,21 +55,22 @@ export default function Groups({
                   </div>
                 )}
 
-                {node.data.relatedProject && (
-                  <div className="column staff-list">
-                    <h6>Projects</h6>
+                {node.data.relatedProject &&
+                  node.data.relatedProject.length > 0 && (
+                    <div className="column staff-list">
+                      <h6 className="column-header">Projects</h6>
 
-                    {node.data.relatedProject.map(project => (
-                      <a key={project.path} href={project.path}>
-                        {project.data.name}
-                      </a>
-                    ))}
-                  </div>
-                )}
+                      {node.data.relatedProject.map(project => (
+                        <a key={project.path} href={project.path}>
+                          {project.data.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
 
-                {node.data.relatedDemo && (
+                {node.data.relatedDemo && node.data.relatedDemo.length > 0 && (
                   <div className="column staff-list">
-                    <h6>Demos</h6>
+                    <h6 className="column-header">Demos</h6>
 
                     {node.data.relatedDemo.map(project => (
                       <a key={project.path} href={project.path}>

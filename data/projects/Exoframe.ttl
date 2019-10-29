@@ -29,7 +29,9 @@ dice:Exoframe a dice:ProductionReadyProject ;
 - Optional automatic subdomain assignment (i.e. every deployment gets its own subdomain)
 - Swarm mode deployments
 - Complex recipes support (i.e. deploy complex systems in one command)
-  """ ;
+
+Find out more on [github](https://github.com/exoframejs/exoframe).
+""" ;
   schema:maintainer dice:TimofeyErmilov ; # project maintainer
   schema:endDate "2021-01-01"^^xsd:date ;
   schema:startDate "2017-05-12"^^xsd:date ;

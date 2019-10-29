@@ -24,13 +24,9 @@ export default function Projects({
       <SEO title="Projects" />
       <div className="content">
         {Object.keys(projectsByType).map(type => (
-          <div
-            key={type}
-            className="tile is-vertical"
-            style={{ marginBottom: '3em' }}
-          >
-            <h1 style={{ marginBottom: '1em' }}>{type}s</h1>
-            <div className="columns is-multiline is-5 is-variable">
+          <div key={type} className="category">
+            <h1 className="header">{type}s</h1>
+            <div className="columns is-padded">
               {projectsByType[type].map(({ node }) => (
                 <div className="column is-one-third" key={node.path}>
                   <Project key={node.path} project={node} renderType={false} />
