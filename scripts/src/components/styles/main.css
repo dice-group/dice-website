@@ -367,6 +367,12 @@ a {
         @apply w-1/3 flex-none;
       }
     }
+
+    &.is-one-quarter {
+      @screen md {
+        @apply w-1/4 flex-none;
+      }
+    }
   }
 }
 
@@ -908,4 +914,31 @@ a {
 
 .group {
   @apply mb-6;
+}
+
+/*
+ * Team
+ */
+
+.team {
+  .column {
+  }
+}
+
+.person {
+  @apply flex flex-col items-center pt-2;
+  height: 250px;
+
+  .person-image {
+    flex: 3;
+    max-height: 160px;
+    min-height: 160px;
+    max-width: 160px;
+    border-radius: 80px;
+    overflow: hidden;
+  }
+
+  .link {
+    @apply mt-2 text-center;
+  }
 }
