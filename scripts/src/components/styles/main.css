@@ -293,7 +293,7 @@ a {
  */
 
 .columns {
-  @apply flex-wrap;
+  @apply flex-wrap -ml-3 -mr-3;
 
   @screen sm {
     @apply block;
@@ -311,11 +311,11 @@ a {
   }
 
   .column {
-    @apply flex-none block p-3 w-auto;
+    @apply flex-1 block p-3 w-auto;
 
     &.is-one-third {
       @screen md {
-        @apply w-1/3;
+        @apply w-1/3 flex-none;
       }
     }
   }
@@ -482,4 +482,79 @@ a {
 
 .header {
   @apply text-3xl mb-4;
+}
+
+.subtitle {
+  @apply text-gray-500 mb-4;
+}
+
+.section-header {
+  @apply text-2xl mb-3;
+}
+
+.project {
+  @apply mb-32;
+
+  .header {
+    @apply mt-6;
+  }
+
+  .project-card {
+    @apply flex flex-col items-center justify-around border border-solid rounded-lg p-6 mb-12;
+
+    min-height: 400px;
+  }
+
+  .project-image {
+    @apply flex flex-1 items-center justify-center;
+
+    max-height: 200px;
+    max-width: 200px;
+  }
+
+  .buttons {
+    @apply flex flex-row;
+  }
+
+  .project-description {
+    @apply mb-8;
+  }
+
+  .project-extended-info {
+    @apply flex-no-wrap mb-8;
+
+    .column-header {
+      @apply font-bold mb-1;
+    }
+
+    .staff-list {
+      @apply flex flex-col;
+
+      a {
+        @apply mb-1;
+      }
+    }
+  }
+
+  .horizontal-separator {
+    @apply w-full border-b border-solid border-black mb-6 opacity-25;
+  }
+}
+
+/*
+ * Buttons
+ */
+
+.button {
+  @apply flex items-center justify-center border border-solid rounded;
+  @apply text-white cursor-pointer ml-1 mr-1 pl-16 pr-16 pt-4 pb-4;
+
+  background-color: var(--primary-color);
+  height: 50px;
+
+  &.is-outlined {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
 }
