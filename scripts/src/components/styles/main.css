@@ -841,10 +841,10 @@ a {
 
 .tabs {
   @apply flex items-stretch border-b border-solid justify-around mb-6 mt-3;
+  @apply whitespace-no-wrap overflow-hidden overflow-x-auto;
 
   border-bottom-color: rgb(219, 219, 219);
   border-bottom-width: 0.6px;
-  overflow: auto hidden;
 
   .container {
     @apply relative flex items-center flex-grow flex-shrink-0 justify-start;
