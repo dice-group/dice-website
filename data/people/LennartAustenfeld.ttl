@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LennartAustenfeld a schema:Person ;
+  schema:name "Lennart Austenfeld" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """""" .
