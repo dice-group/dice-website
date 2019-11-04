@@ -4,8 +4,8 @@
 dice:ExampleGroup a schema:Group ;
   schema:name "Data Access and Knowledge Extraction" ;
   schema:tagline "TODO: We access data and extract knowledge" ;
-  schema:relatedProject dice:LIMBO, dice:SOLIDE ; # related projects
+  schema:relatedProject dice:LIMBO, dice:SOLIDE, dice:OPAL, dice:QAMEL, dice:DEISEL, dice:GEISER, dice:GERBIL, dice:KnowGraphs ; # related projects
   schema:content """TODO: Describe me""" ;
   schema:lead dice:DiegoMoussallem ; # group maintainer
-  schema:member dice:RrichaJalota, dice:ParamjotKaur ; # group members list
-  schema:relatedDemo dice:LIMES . # list of related demos
+  schema:member dice:RrichaJalota, dice:ParamjotKaur, dice:JanReineke, dice:RiaHariGusmita, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck ; # group members list
+  schema:relatedDemo dice:FOX, dice:AGDISTIS . # list of related demos
