@@ -20,4 +20,4 @@ dice:MichaelRoeder a schema:Person ;
 <li><a href="https://journals.plos.org/plosone/">PLOS ONE</a> in <a href="https://doi.org/10.1371/journal.pone.0194158.s006">2018</a></li>
 <li><a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> in <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">2018</a>
 <ul>
-""" 
+""" .
