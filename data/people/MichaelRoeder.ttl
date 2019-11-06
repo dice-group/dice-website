@@ -11,4 +11,13 @@ dice:MichaelRoeder a schema:Person ;
   schema:office "TP6.3.108" ;
   schema:photo "roeder.jpg" ;
   schema:project dice:DIESEL, dice:HOBBIT ;
-  schema:content """""" .
+  schema:content """My little free time seems to be partly consumed by reviewing, e.g.,
+<ul>
+<li>International Conference on Weblogs and Social Media (ICWSM) in 2013</li>
+<li>Journal of Biomedical Semantics on Bio-Medical Information Retrieval (JBMS Bio-IR) in 2015</li>
+<li><a href="https://sites.google.com/site/cikm2015topicmodels/workshop-organizers">CIKM 2015 Workshop on Topic Models: Post-Processing and Applications</a></li>
+<li><a href="https://www.journals.elsevier.com/journal-of-web-semantics/">Journal of Web Semantics (JWS)</a> in 2018, 2019</li>
+<li><a href="https://journals.plos.org/plosone/">PLOS ONE</a> in <a href="https://doi.org/10.1371/journal.pone.0194158.s006">2018</a></li>
+<li><a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> in <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">2018</a>
+<ul>
+""" 
