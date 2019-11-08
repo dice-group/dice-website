@@ -14,6 +14,7 @@ dice:GEISER a dice:AlumniProject ;
   schema:startDate "2016-03-01"^^xsd:date ;
   schema:name "GEISER" ;
   schema:homepage <http://www.projekt-geiser.de> ;
+  schema:publicationTag "geiser" ;
   schema:logo "geiser.png" ;
   schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD, dicepartner:YellowMapD ;
   schema:relatedDemo dice:LIMES ;

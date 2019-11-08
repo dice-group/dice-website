@@ -6,6 +6,7 @@ import BackButton from '../components/backButton';
 import Demo from '../components/demo';
 import Image from '../components/image';
 import Layout from '../components/layout';
+import PapersList from '../components/papers/list';
 import { rdfToPeopleArray } from '../components/person';
 import Project from '../components/project';
 import SEO from '../components/seo';
@@ -142,6 +143,13 @@ export default function ProjectTemplate({
             </div>
           </div>
         )}
+
+        {data.publicationTag && data.publicationTag.length > 0 && (
+          <div>
+            <h1>Publications</h1>
+            <PapersList publicationTag={data.publicationTag} />
+          </div>
+        )}
       </div>
     </Layout>
   );
@@ -166,6 +174,7 @@ export const pageQuery = graphql`
         logo
         sourceCode
         fundingProgram
+        publicationTag
         relatedProject {
           id
           path
