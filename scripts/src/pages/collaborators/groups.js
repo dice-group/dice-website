@@ -29,7 +29,11 @@ export default function Groups({
 
               <p>
                 {node.data.content.map((mdString, i) => (
-                  <ReactMarkdown key={`content_${i}`} source={mdString} />
+                  <ReactMarkdown
+                    key={`content_${i}`}
+                    source={mdString}
+                    escapeHtml={false}
+                  />
                 ))}
               </p>
 

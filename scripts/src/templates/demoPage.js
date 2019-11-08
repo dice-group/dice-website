@@ -49,7 +49,11 @@ export default function DemoTemplate({
             <h1 className="subheader">About the demo</h1>
 
             {data.content.map((mdString, i) => (
-              <ReactMarkdown key={`content_${i}`} source={mdString} />
+              <ReactMarkdown
+                key={`content_${i}`}
+                source={mdString}
+                escapeHtml={false}
+              />
             ))}
           </div>
         )}

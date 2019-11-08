@@ -10,6 +10,7 @@ dice:ExamplePerson a schema:Person ;
   schema:email <mailto:your.email@upb.de> ;
   schema:office "TP6.3.106 (your office)" ;
   schema:photo "yourphoto.jpg" ;
+  schema:publicationTag "roeder" ;
   schema:content """
 # Content from RDF
 

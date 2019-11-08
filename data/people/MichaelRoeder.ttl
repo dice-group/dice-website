@@ -11,6 +11,7 @@ dice:MichaelRoeder a schema:Person ;
   schema:office "TP6.3.108" ;
   schema:photo "roeder.jpg" ;
   schema:project dice:DIESEL, dice:HOBBIT ;
+  schema:publicationTag "roeder" ;
   schema:content """My little free time seems to be partly consumed by reviewing, e.g.,
 <ul>
 <li>International Conference on Weblogs and Social Media (ICWSM) in 2013</li>
