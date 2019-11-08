@@ -4,12 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
-import PapersFilter from '../components/papers/filter';
-import Paper from '../components/papers/paper';
+import PapersList from '../components/papers/list';
 import Phone from '../components/phone';
 import SEO from '../components/seo';
 
-export default function PersonTemplate({ data: { rdf, allRdf } }) {
+export default function PersonTemplate({ data: { rdf } }) {
   const {
     data: {
       content,
@@ -22,9 +21,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
       email,
       office,
       photo,
+      publicationTag,
     },
   } = rdf;
-  const { edges } = allRdf;
 
   return (
     <Layout>
@@ -83,7 +82,11 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
         {content && (
           <div className="person-content">
             {content.map((mdString, i) => (
-              <ReactMarkdown key={`content_${i}`} source={mdString} />
+              <ReactMarkdown
+                key={`content_${i}`}
+                source={mdString}
+                escapeHtml={false}
+              />
             ))}
           </div>
         )}
@@ -102,18 +105,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             </div>
           </>
         )}
-        {edges && edges.length > 0 && (
-          <>
-            <h1>Publications</h1>
-            <PapersFilter limit={5} edges={edges}>
-              {papers =>
-                papers.map(({ node }) => (
-                  <Paper key={node.id} data={node.data} />
-                ))
-              }
-            </PapersFilter>
-          </>
-        )}
+
+        <h1>Publications</h1>
+        <PapersList name={name} tag={publicationTag} />
       </div>
     </Layout>
   );
@@ -131,6 +125,7 @@ export const pageQuery = graphql`
         office
         photo
         content
+        publicationTag
         role {
           data {
             name
@@ -147,42 +142,6 @@ export const pageQuery = graphql`
             name
             tagline
           }
-        }
-      }
-    }
-    allRdf(
-      filter: {
-        data: {
-          rdf_type: {
-            elemMatch: {
-              id: { eq: "https://schema.dice-research.org/Publication" }
-            }
-          }
-          author: { elemMatch: { path: { eq: $path } } }
-        }
-      }
-    ) {
-      edges {
-        node {
-          data {
-            type
-            title
-            publicationType
-            year
-            source
-            url
-            tag
-            bibsonomyId
-            author {
-              id
-              path
-              data {
-                name
-              }
-            }
-            authorName
-          }
-          id
         }
       }
     }
