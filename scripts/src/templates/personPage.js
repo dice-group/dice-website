@@ -107,7 +107,7 @@ export default function PersonTemplate({ data: { rdf } }) {
         )}
 
         <h1>Publications</h1>
-        <PapersList name={name} tag={publicationTag} />
+        <PapersList name={name} publicationTag={publicationTag} />
       </div>
     </Layout>
   );

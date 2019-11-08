@@ -67,12 +67,16 @@ export default ({ name, publicationTag }) => {
     return hasTag || hasAuthor;
   });
 
-  console.log(papers);
-
   return (
     <PapersFilter limit={5} edges={papers}>
       {papers =>
-        papers.map(({ node }) => <Paper key={node.id} data={node.data} />)
+        papers.length === 0 ? (
+          <div className="paper">
+            <h3 className="paper-name">No papers found</h3>
+          </div>
+        ) : (
+          papers.map(({ node }) => <Paper key={node.id} data={node.data} />)
+        )
       }
     </PapersFilter>
   );

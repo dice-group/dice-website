@@ -17,5 +17,6 @@ dice:ExampleProject a dice:AlumniProject ;
   schema:logo "project_logo.png" ;
   schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
   schema:relatedDemo dice:LIMES ; # list of related demos
+  schema:publicationTag "opal" ; # tag used for publications list on project page
   schema:sourceCode <https://github.com/project-group/project> ;
   schema:fundingProgram "Horizon 2020" .
