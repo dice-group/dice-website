@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AGDISTIS a schema:Demo ;
+  schema:name "QaldGen" ;
+  schema:tagline "QaldGen: Towards Microbenchmarking of Question Answering Systems over Knowledge Graphs" ;
+  schema:content """QaldGen is a framework for microbenchmarking of QA systems over KGs which is able to select customised question samples from existing QA datasets. The framework is flexible enough to select question samples of varying sizes and according to the user-defined criteria on the most important features to be considered for QA benchmarking. This is achieved using different clustering algorithms.""" ;
+  schema:screenshot "";
+  schema:logo "" ;
+  schema:homepage <http://qaldgen.aksw.org/> ;
+  schema:sourceCode <https://github.com/dice-group/qald-generator> ;
+  schema:maintainer dice:MuhammadSaleem ;
+  schema:developer dice:MuhammadSaleem .
