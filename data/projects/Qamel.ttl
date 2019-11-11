@@ -12,4 +12,5 @@ dice:QAMEL a dice:AlumniProject ;
   schema:name "QAMEL" ;
   schema:homepage <https://qamel.eu/> ;
   schema:logo "qamel.png" ;
+  schema:publicationTag "qamel" ;
   schema:partner dicepartner:Bitstars, dicepartner:KAIST, dicepartner:Saltlux .

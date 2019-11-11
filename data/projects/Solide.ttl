@@ -22,4 +22,5 @@ Mit den Ergebnissen von SOLIDE werden Anwendungen zur Lagebilddarstellung durch 
   schema:logo "solide.png" ;
   schema:homepage <http://solide-projekt.de/> ;
   schema:partner dicepartner:Aristech ;
+  schema:publicationTag "solide" ;
   schema:partner dicepartner:ProDV .

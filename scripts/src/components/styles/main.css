@@ -983,7 +983,7 @@ a {
   }
 
   .link {
-    @apply mt-2 text-center;
+    @apply mt-2 text-center break-normal;
   }
 }
 

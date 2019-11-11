@@ -23,7 +23,7 @@ HOBBIT aims to address these tasks by means of a strong team composed of leading
   schema:homepage <http://project-hobbit.eu/> ;
   schema:logo "hobbit.png" ;
   schema:partner dicepartner:AGTInternational, dicepartner:DemokritosNCSR, dicepartner:FORTH, dicepartner:Fraunhofer, dicepartner:iMinds, dicepartner:OpenLink, dicepartner:TomTom, dicepartner:USU ;
-
+  schema:publicationTag "projecthobbit" ;
   # do we need this to be a resource?
   # e.g. dicefunding:H2020 ;
   schema:fundingProgram "EU H2020 Research and Innovation Program" .
