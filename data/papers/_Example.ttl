@@ -12,8 +12,5 @@ dicepapers:ExamplePaper a schema:Publication ;
   schema:authorName "Axel-Cyrille Ngonga Ngomo" ;
   schema:url <https://aclanthology.info/papers/W18-6521/w18-6521> ;
   schema:pdfUrl <http://www.semantic-web-journal.net/system/files/swj433.pdf> ;
-  # paper.booktitle || paper.journal
   schema:source "Semantic Web Journal" ;
-
-  # do we care about this?
   schema:bibsonomyId <https://www.bibsonomy.org/bibtex/2c99086e74a9181752d9830dfc2806f61/aksw> .

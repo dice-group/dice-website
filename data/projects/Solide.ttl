@@ -19,6 +19,8 @@ Ziele und Vorgehen Im Projekt SOLIDE soll ein neuer Ansatz für den effizienten 
 Mit den Ergebnissen von SOLIDE werden Anwendungen zur Lagebilddarstellung durch eine Sprachsteuerung und eine innovative Datenintegration erweitert. Da relevante Informationen durch gesprochene Ein und Ausgaben zeitnah zugänglich gemacht werden können, tragen sie zur effizienten Unterstützung aller Einsatzkräfte in der Gefahrenabwehr bei. Dabei soll das System in vorhandene Stabs- und Führungssysteme integrierbar sein, um bestehende Lagebilddarstellungen optimal zu nutzen.""" ;
   schema:maintainer "Smart Data Analytics" ;
   schema:name "SOLIDE" ;
+  schema:logo "solide.png" ;
   schema:homepage <http://solide-projekt.de/> ;
   schema:partner dicepartner:Aristech ;
+  schema:publicationTag "solide" ;
   schema:partner dicepartner:ProDV .

@@ -14,7 +14,7 @@ export default function Publications({
     <Layout>
       <SEO title="Publications" />
       <div className="content">
-        <h1>Publications</h1>
+        <h1 className="header">Publications</h1>
         <PapersFilter edges={edges}>
           {papers =>
             papers.map(({ node }) => <Paper key={node.id} data={node.data} />)

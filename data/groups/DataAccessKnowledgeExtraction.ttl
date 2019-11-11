@@ -3,9 +3,12 @@
 
 dice:ExampleGroup a schema:Group ;
   schema:name "Data Access and Knowledge Extraction" ;
-  schema:tagline "TODO: We access data and extract knowledge" ;
-  schema:relatedProject dice:LIMBO, dice:SOLIDE ; # related projects
-  schema:content """TODO: Describe me""" ;
+  schema:tagline "We extract knowledge and make them accessible and understandable for borh humans and computers" ;
+  schema:relatedProject dice:LIMBO, dice:SOLIDE, dice:OPAL, dice:QAMEL, dice:DEISEL, dice:GEISER, dice:GERBIL, dice:KnowGraphs ; # related projects
+  schema:content """
+Our group works on the intersection of Data Science and Natural Language Processing areas. We focus on creating algorithms that allow computers to extract automatically large-scale knowledge from unstructured data and process them while preserving their semantic key information. We aim to make the acquired knowledge accessible and understandable for both humans and computers. Our team has started addressing two of the most important tasks in NLP by relying on Knowledge Graphs,  Named Entity Recognition, and Entity Linking. Our research resulted in two state-of-the-art frameworks in respect of multilingualism and knowledge-graph-based algorithms. Recently, we expanded our focus on different NLP tasks ranging from basic research in computational linguistics to Question Answering, Machine Translation, Natural Language Generation, and Understanding.
+
+Our group includes members of both Paderborn and Leipzig universities.""" ;
   schema:lead dice:DiegoMoussallem ; # group maintainer
-  schema:member dice:RrichaJalota, dice:ParamjotKaur ; # group members list
-  schema:relatedDemo dice:LIMES . # list of related demos
+  schema:member dice:RrichaJalota, dice:ParamjotKaur, dice:JanReineke, dice:RiaHariGusmita, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:KevinDreßler ; # group members list
+  schema:relatedDemo dice:FOX, dice:AGDISTIS . # list of related demos

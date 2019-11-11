@@ -2,9 +2,9 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:DenizInan a schema:Person ;
-  schema:name "DenizInan" ;
+  schema:name "Deniz Inan" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-160-72-05492> ;
   schema:fax <tel:> ;
   schema:email <mailto:dice-webteam@gmx.de> ;

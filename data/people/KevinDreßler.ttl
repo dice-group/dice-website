@@ -4,7 +4,7 @@
 dice:KevinDreßler a schema:Person ;
   schema:name "Kevin Dreßler" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:+49-341-97-32329> ;
   schema:email <mailto:dressler@informatik.uni-leipzig.de> ;

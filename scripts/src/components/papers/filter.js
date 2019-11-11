@@ -150,124 +150,117 @@ const Filter = ({ edges, limit = 10, children = () => {} }) => {
 
       <div className="facets">
         {facets.map(facet => (
-          <div className="tags has-addons" key={facet.data}>
-            <span className="tag is-medium is-facet">{facet.data}</span>
-            <a
-              className="tag is-medium is-delete is-facet"
-              onClick={() => removeFacet(facet)}
-            />
+          <div className="selected-facet" key={facet.data}>
+            <span className="facet-name">{facet.data}</span>
+            <a className="delete-icon" onClick={() => removeFacet(facet)} />
           </div>
         ))}
       </div>
 
-      <div className="tabs papers-facets">
-        <ul>
-          <li>
-            <Dropdown
-              onClick={() =>
-                expandedType === 'authors'
-                  ? setExpanded('')
-                  : setExpanded('authors')
-              }
-              title="Authors"
-              isExpanded={expandedType === 'authors'}
-              facets={
-                <>
-                  <input
-                    type="text"
-                    placeholder="Search by name"
-                    className="input"
-                    onChange={e => handleAuthorSearch(e.target.value)}
-                  />
+      <ul className="papers-facets">
+        <li>
+          <Dropdown
+            onClick={() =>
+              expandedType === 'authors'
+                ? setExpanded('')
+                : setExpanded('authors')
+            }
+            title="Authors"
+            isExpanded={expandedType === 'authors'}
+            facets={
+              <>
+                <input
+                  type="text"
+                  placeholder="Search by name"
+                  className="input"
+                  onChange={e => handleAuthorSearch(e.target.value)}
+                />
 
-                  {Object.keys(authors)
-                    .filter(letter =>
-                      authors[letter].some(({ author }) =>
-                        author.toLowerCase().includes(authorSearchText)
-                      )
+                {Object.keys(authors)
+                  .filter(letter =>
+                    authors[letter].some(({ author }) =>
+                      author.toLowerCase().includes(authorSearchText)
                     )
-                    .map(letter => (
-                      <div className="facet-group" key={letter}>
-                        <h4>{letter}</h4>
-                        {authors[letter]
-                          .filter(({ author }) =>
-                            author.toLowerCase().includes(authorSearchText)
-                          )
-                          .map(({ author, count }) => (
-                            <div
-                              className="facet"
-                              key={author}
-                              onClick={() => filterAuthor(author)}
-                            >
-                              <div className="facet-text">{author}</div>{' '}
-                              <div className="count">{count}</div>
-                            </div>
-                          ))}
-                      </div>
-                    ))}
-                </>
-              }
-            />
-          </li>
-          <li>
-            <Dropdown
-              onClick={() =>
-                expandedType === 'years'
-                  ? setExpanded('')
-                  : setExpanded('years')
-              }
-              title="Years"
-              isExpanded={expandedType === 'years'}
-              facets={
-                <>
-                  {years
-                    .filter(({ year }) => !facets.find(f => f.data === year))
-                    .map(({ year, count }) => (
-                      <div
-                        className="facet"
-                        onClick={() => filterYear(year)}
-                        key={year}
-                      >
-                        <div className="facet-text">{year}</div>{' '}
-                        <div className="count">{count}</div>
-                      </div>
-                    ))}
-                </>
-              }
-            />
-          </li>
-          <li>
-            <Dropdown
-              onClick={() =>
-                expandedType === 'type' ? setExpanded('') : setExpanded('type')
-              }
-              title="Type"
-              isExpanded={expandedType === 'type'}
-              facets={
-                <>
-                  {types
-                    .filter(({ type }) => !facets.find(f => f.data === type))
-                    .map(({ type, count }) => (
-                      <div
-                        className="facet"
-                        onClick={() => filterType(type)}
-                        key={type}
-                      >
-                        <div className="facet-text">{type}</div>{' '}
-                        <div className="count">{count}</div>
-                      </div>
-                    ))}
-                </>
-              }
-            />
-          </li>
-        </ul>
-      </div>
+                  )
+                  .map(letter => (
+                    <div className="facet-group" key={letter}>
+                      <h4 className="facet-header">{letter}</h4>
+                      {authors[letter]
+                        .filter(({ author }) =>
+                          author.toLowerCase().includes(authorSearchText)
+                        )
+                        .map(({ author, count }) => (
+                          <div
+                            className="facet"
+                            key={author}
+                            onClick={() => filterAuthor(author)}
+                          >
+                            <div className="facet-text">{author}</div>{' '}
+                            <div className="count">{count}</div>
+                          </div>
+                        ))}
+                    </div>
+                  ))}
+              </>
+            }
+          />
+        </li>
+        <li>
+          <Dropdown
+            onClick={() =>
+              expandedType === 'years' ? setExpanded('') : setExpanded('years')
+            }
+            title="Years"
+            isExpanded={expandedType === 'years'}
+            facets={
+              <>
+                {years
+                  .filter(({ year }) => !facets.find(f => f.data === year))
+                  .map(({ year, count }) => (
+                    <div
+                      className="facet"
+                      onClick={() => filterYear(year)}
+                      key={year}
+                    >
+                      <div className="facet-text">{year}</div>{' '}
+                      <div className="count">{count}</div>
+                    </div>
+                  ))}
+              </>
+            }
+          />
+        </li>
+        <li>
+          <Dropdown
+            onClick={() =>
+              expandedType === 'type' ? setExpanded('') : setExpanded('type')
+            }
+            title="Type"
+            isExpanded={expandedType === 'type'}
+            facets={
+              <>
+                {types
+                  .filter(({ type }) => !facets.find(f => f.data === type))
+                  .map(({ type, count }) => (
+                    <div
+                      className="facet"
+                      onClick={() => filterType(type)}
+                      key={type}
+                    >
+                      <div className="facet-text">{type}</div>{' '}
+                      <div className="count">{count}</div>
+                    </div>
+                  ))}
+              </>
+            }
+          />
+        </li>
+      </ul>
 
       {children(filteredPapers)}
 
       {!showall && hasmore && (
-        <div className="has-content-centered is-flex">
+        <div className="flex justify-center">
           <button
             className="button is-link action-button"
             onClick={() => setShowall(true)}

@@ -13,12 +13,12 @@ const Paper = ({
   },
 }) => (
   <div className="paper">
-    <p className="text">{source}</p>
-    <h3 className="name is-size-4">
+    <p className="paper-text">{source}</p>
+    <h3 className="paper-name">
       {pdfUrl ? <ExternalLink to={pdfUrl}>{title}</ExternalLink> : title}
     </h3>
-    <p className="meta">By {(authorName || []).join(', ')}</p>
-    <p className="meta">
+    <p className="paper-meta">By {(authorName || []).join(', ')}</p>
+    <p className="paper-meta">
       {year}, #{publicationType}{' '}
       <a className="bib-link" href={bibsonomyId}>
         Get BibTex

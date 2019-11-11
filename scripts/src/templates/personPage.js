@@ -4,12 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
-import PapersFilter from '../components/papers/filter';
-import Paper from '../components/papers/paper';
+import PapersList from '../components/papers/list';
 import Phone from '../components/phone';
 import SEO from '../components/seo';
 
-export default function PersonTemplate({ data: { rdf, allRdf } }) {
+export default function PersonTemplate({ data: { rdf } }) {
   const {
     data: {
       content,
@@ -22,9 +21,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
       email,
       office,
       photo,
+      publicationTag,
     },
   } = rdf;
-  const { edges } = allRdf;
 
   return (
     <Layout>
@@ -32,9 +31,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
       <div className="content person-page">
         <BackButton />
 
-        <h1 className="title">Profile page</h1>
+        <h1 className="header">Profile page</h1>
 
-        <div className="is-flex person-info">
+        <div className="person-info">
           <div className="person-image">
             <Image
               filename={photo}
@@ -43,13 +42,13 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             />
           </div>
 
-          <div className="is-flex is-flex-vertical">
+          <div className="person-data">
             <h2>
               {namePrefix} {name}
             </h2>
             <p className="role">{role.data.name}</p>
             {email && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Email</div>
                 <div className="meta-value">
                   <a href={email}>{email.replace('mailto:', '')}</a>
@@ -57,7 +56,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {phone && phone.replace('tel:', '') && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Phone</div>
                 <div className="meta-value">
                   <Phone phone={phone} />
@@ -65,7 +64,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {fax && fax.replace('tel:', '') && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Fax</div>
                 <div className="meta-value">
                   <Phone phone={fax} />
@@ -73,7 +72,7 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
               </div>
             )}
             {office && (
-              <div className="is-flex meta">
+              <div className="meta">
                 <div className="meta-label">Office</div>
                 <div className="meta-value">{office}</div>
               </div>
@@ -83,7 +82,11 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
         {content && (
           <div className="person-content">
             {content.map((mdString, i) => (
-              <ReactMarkdown key={`content_${i}`} source={mdString} />
+              <ReactMarkdown
+                key={`content_${i}`}
+                source={mdString}
+                escapeHtml={false}
+              />
             ))}
           </div>
         )}
@@ -102,18 +105,9 @@ export default function PersonTemplate({ data: { rdf, allRdf } }) {
             </div>
           </>
         )}
-        {edges && edges.length > 0 && (
-          <>
-            <h1>Publications</h1>
-            <PapersFilter limit={5} edges={edges}>
-              {papers =>
-                papers.map(({ node }) => (
-                  <Paper key={node.id} data={node.data} />
-                ))
-              }
-            </PapersFilter>
-          </>
-        )}
+
+        <h1>Publications</h1>
+        <PapersList name={name} publicationTag={publicationTag} />
       </div>
     </Layout>
   );
@@ -131,6 +125,7 @@ export const pageQuery = graphql`
         office
         photo
         content
+        publicationTag
         role {
           data {
             name
@@ -147,42 +142,6 @@ export const pageQuery = graphql`
             name
             tagline
           }
-        }
-      }
-    }
-    allRdf(
-      filter: {
-        data: {
-          rdf_type: {
-            elemMatch: {
-              id: { eq: "https://schema.dice-research.org/Publication" }
-            }
-          }
-          author: { elemMatch: { path: { eq: $path } } }
-        }
-      }
-    ) {
-      edges {
-        node {
-          data {
-            type
-            title
-            publicationType
-            year
-            source
-            url
-            tag
-            bibsonomyId
-            author {
-              id
-              path
-              data {
-                name
-              }
-            }
-            authorName
-          }
-          id
         }
       }
     }

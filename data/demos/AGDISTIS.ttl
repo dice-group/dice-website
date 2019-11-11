@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AGDISTIS a schema:Demo ;
+  schema:name "AGDISTIS" ;
+  schema:tagline "Agnostic Named Entity Disambiguation Framework" ;
+  schema:content """A novel multilingual, knowledge-base agnostic and deterministic approach to entity linking. MAG is based on a combination of context-based retrieval on structured knowledge bases and graph algorithms. MAG is an extension of AGDISTIS which is an Open Source Named Entity Disambiguation Framework.""" ;
+  schema:screenshot "agdistis_screen.png";
+  schema:logo "agdistis_logo.png" ;
+  schema:homepage <http://agdistis.aksw.org/demo> ;
+  schema:sourceCode <https://github.com/dice-group/AGDISTIS> ;
+  schema:maintainer dice:DiegoMoussallem ;
+  schema:developer dice:DanielVollmer .

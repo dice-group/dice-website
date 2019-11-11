@@ -27,8 +27,8 @@ export default function Teaching({
       </div>
 
       <section className="section">
-        <div className="container content teaching-page mentoring">
-          <h1 className="page-title">Mentoring</h1>
+        <div className="container content mentoring">
+          <h1 className="header">Mentoring</h1>
 
           {edges.map(({ node }) => (
             <MDXRenderer key={node.id}>{node.body}</MDXRenderer>

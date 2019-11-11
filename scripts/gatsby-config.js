@@ -35,11 +35,16 @@ module.exports = {
       },
     },
 
-    // sass support
-    `gatsby-plugin-sass`,
-
-    // styled-jsx support
-    `gatsby-plugin-styled-jsx`,
+    // postcss support
+    `gatsby-plugin-postcss`,
+    // css auto-cleanup
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        purgeOnly: [`src/components/styles/main.css`],
+      },
+    },
 
     // default gatsby plugins
     `gatsby-plugin-react-helmet`,

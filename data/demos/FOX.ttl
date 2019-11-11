@@ -1,0 +1,20 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FOX a schema:Demo ;
+  schema:name "FOX" ;
+  schema:tagline "Federated Knowledge Extraction Framework" ;
+  schema:content """FOX is a framework that integrates the 
+	Linked Data Cloud and makes use of the diversity of NLP 
+	algorithms to extract RDF triples of high accuracy out of NL. 
+	
+	In its current version, it integrates and merges the results 
+	of Named Entity Recognition tools based on Ensemble Learning 
+	as well as it integrates 
+	several Relation Extraction tools.""" ;
+  schema:screenshot "fox_screen1.png", "fox_screen2.png" ;
+  schema:logo "fox_logo.png" ;
+  schema:homepage <http://fox.cs.uni-paderborn.de:4444> ;
+  schema:sourceCode <https://github.com/dice-group/FOX> ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:developer dice:ReneSpeck .

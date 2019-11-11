@@ -12,4 +12,5 @@ dice:DEISEL a dice:AlumniProject ;
   schema:name "DIESEL" ;
   schema:homepage <https://diesel-project.eu/> ;
   schema:logo "diesel.png" ;
+  schema:publicationTag "diesel" ;
   schema:partner dicepartner:Metaphacts, dicepartner:Zazuko .

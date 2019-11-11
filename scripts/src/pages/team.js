@@ -21,16 +21,12 @@ export default function Team({
     <Layout>
       <SEO title="Team" />
       <div className="content team">
-        <h1>Team</h1>
+        <h1 className="header">Team</h1>
 
         {Object.keys(peopleByRole).map(role => (
-          <div
-            key={role}
-            className="tile is-vertical"
-            style={{ marginBottom: '3em' }}
-          >
+          <div key={role} className="mb-8">
             <h2 style={{ marginBottom: '1em' }}>{role}</h2>
-            <div className="columns is-multiline is-5 is-variable">
+            <div className="columns">
               {peopleByRole[role]
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map(person => (

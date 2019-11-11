@@ -13,7 +13,4 @@ dice:BDE a dice:AlumniProject ;
   schema:logo "bde.png" ;
   schema:partner dicepartner:Fraunhofer ;
   schema:sourceCode <https://github.com/big-data-europe> ;
-
-  # do we need this to be a resource?
-  # e.g. dicefunding:H2020 ;
   schema:fundingProgram "Horizon 2020" .

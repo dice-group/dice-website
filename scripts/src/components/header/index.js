@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-item no-opacity">
+        <Link to="/" className="navbar-brand-item">
           <DICE className="dice-nav-logo" />
         </Link>
 
@@ -40,7 +40,7 @@ const Header = () => {
       </div>
 
       <div
-        id="navbarMenu"
+        id="navbar-menu"
         className={`navbar-menu ${expanded ? 'is-active' : ''}`}
       >
         <div className="navbar-start">
@@ -58,8 +58,8 @@ const Header = () => {
         </div>
 
         <div className="navbar-end">
-          <div className="navbar-item no-opacity">
-            <Link to="/contact/" className="button">
+          <div className="navbar-item is-active">
+            <Link to="/contact/" className="contact-button">
               Contact us
             </Link>
           </div>
