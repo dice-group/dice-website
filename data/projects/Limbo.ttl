@@ -23,4 +23,5 @@ The project is implemented using semantic technologies that allow the linking of
   schema:startDate "2017-06-01"^^xsd:date ;
   schema:homepage <https://www.limbo-project.org/> ;
   schema:logo "limbo.png" ;
+  schema:publicationTag "limboproject" ;
   schema:partner dicepartner:Fraunhofer, dicepartner:USU, dicepartner:YellowMap ,dicepartner:Eccenca, dicepartner:AppPlant, dicepartner:CISS, dicepartner:InfAI, dicepartner:TUBerlin.

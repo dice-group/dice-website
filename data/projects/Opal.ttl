@@ -26,5 +26,6 @@ In a first step, the requirements of user groups from research and industry are 
   schema:homepage <http://projekt-opal.de/> ;
   schema:sourceCode <https://github.com/projekt-opal> ;
   schema:logo "opal.png" ;
+  schema:publicationTag "opal" ;
   schema:fundingProgram "BMVI" .
 
