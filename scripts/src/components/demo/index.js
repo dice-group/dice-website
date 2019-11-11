@@ -1,25 +1,22 @@
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import React from 'react';
 import Image from '../image';
 
 const Demo = ({ node }) => (
-  <div
-    className="active-project project-card"
-    onClick={() => navigate(node.path)}
-  >
-    <div className="project-image">
-      <Image
-        filename={node.data.logo || node.data.screenshot[0]}
-        alt={`${node.data.name} logo`}
-        style={{ width: 200 }}
-      />
+  <Link to={node.path}>
+    <div className="active-project project-card">
+      <div className="project-image">
+        <Image
+          filename={node.data.logo || node.data.screenshot[0]}
+          alt={`${node.data.name} logo`}
+          style={{ width: 200 }}
+        />
+      </div>
+      <h2 className="title">{node.data.name}</h2>
+      <div className="separator" />
+      <span className="link">Learn more</span>
     </div>
-    <h2 className="title">{node.data.name}</h2>
-    <div className="separator" />
-    <Link to={node.path} className="link">
-      Learn more
-    </Link>
-  </div>
+  </Link>
 );
 
 export default Demo;
