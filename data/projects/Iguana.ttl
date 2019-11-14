@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:Iguana a dice:AlumniProject ;
+dice:Iguana a dice:ProductionProject ;
   schema:name "Iguana" ;
   schema:tagline "SPARQL benchmark execution framework for read-write performance" ;
   schema:relatedProject dice:GEISER ; # related projects
@@ -14,7 +14,7 @@ dice:Iguana a dice:AlumniProject ;
   schema:endDate "2019-02-28"^^xsd:date ;
   schema:startDate "2016-03-01"^^xsd:date ;
   schema:homepage <http://iguana-benchmark.eu> ;
-  schema:logo "iguana.png" ;
+  schema:logo "Iguana_new_logo6.png" ;
   schema:publicationTag "iguana" ; # tag used for publications list on project page
   schema:sourceCode <https://github.com/dice-group/Iguana> ;
   schema:fundingProgram "Horizon 2020" .
