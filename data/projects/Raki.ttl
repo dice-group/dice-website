@@ -1,0 +1,20 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:RAKI a dice:FundedProject ;
+  schema:tagline "Rapide XAI for Industrial Plants" ;
+  schema:status "active" ;
+  schema:content """ """ ;
+  schema:endDate "2022-08-31"^^xsd:date ;
+  schema:startDate "2019-09-01"^^xsd:date ;
+  schema:content "" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "RAKI" ;
+  schema:fundingProgram "BMWi, Grant Number 01MD19012D" ;
+  schema:homepage <https://raki-projekt.de/> ;
+  schema:logo "raki.png" ;
+  schema:partner dicepartner:Siemens, dicepartner:LeipzigUniversity, dicepartner:AI4BD ;
+  schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
