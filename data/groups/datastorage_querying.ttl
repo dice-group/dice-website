@@ -12,5 +12,5 @@ To exploit the massive amount of data to its full potential, users should be abl
 The DSQ group develops scalable and high performance RDF sytems for storing and querying Big RDF data. In addition, we are also working on knowledge extraction from the Web and their RDF graph modelling. Finally, we are keen to design most representative benchmarsk pertaining to the storing, querying, and extracting RDF data. 
 """ ;
   schema:lead dice:MuhammadSaleem ; # group maintainer
-  schema:member dice:HashimKhan, dice:AlexanderBigerl, dice:ManzoorAli, dice:AdnanAkhter ; # group members list
+  schema:member dice:HashimKhan, dice:AlexanderBigerl, dice:ManzoorAli, dice:AndréValdestilhas, dice:AdnanAkhter ; # group members list
   schema:relatedDemo dice:QaldGen, dice:AGDISTIS . # list of related demos
