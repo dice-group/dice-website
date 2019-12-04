@@ -48,24 +48,30 @@ export default ({ name, publicationTag }) => {
     allRdf: { edges: allPapers },
   } = useStaticQuery(papersQuery);
 
-  const papers = allPapers.filter(({ node: { data: { tag, authorName } } }) => {
-    const hasTag =
-      publicationTag &&
-      tag &&
-      tag.length > 0 &&
-      tag.find(
-        t =>
-          t.localeCompare(publicationTag, 'en', { sensitivity: 'base' }) === 0
-      ) !== undefined;
-    const hasAuthor =
-      name &&
-      authorName &&
-      authorName.length > 0 &&
-      authorName.find(
-        n => n.localeCompare(name, 'en', { sensitivity: 'base' }) === 0
-      ) !== undefined;
-    return hasTag || hasAuthor;
-  });
+  const papers = allPapers.filter(
+    ({
+      node: {
+        data: { tag, authorName },
+      },
+    }) => {
+      const hasTag =
+        publicationTag &&
+        tag &&
+        tag.length > 0 &&
+        tag.find(
+          t =>
+            t.localeCompare(publicationTag, 'en', { sensitivity: 'base' }) === 0
+        ) !== undefined;
+      const hasAuthor =
+        name &&
+        authorName &&
+        authorName.length > 0 &&
+        authorName.find(
+          n => n.localeCompare(name, 'en', { sensitivity: 'base' }) === 0
+        ) !== undefined;
+      return hasTag || hasAuthor;
+    }
+  );
 
   return (
     <PapersFilter limit={5} edges={papers}>

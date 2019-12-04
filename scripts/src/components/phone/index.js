@@ -2,9 +2,11 @@ import React from 'react';
 
 const phoneRegex = /\+49(\d{4})(\d+)/;
 
+const cleanPhone = phone => phone.replace('tel:', '').replace(/[\s-]/g, '');
+
 const formatPhone = phone => {
   // cleanup string from data, remove tel: prefix, extra dashes/spaces
-  const cleanNumber = phone.replace('tel:', '').replace(/[\s-]/g, '');
+  const cleanNumber = cleanPhone(phone);
   // check if we actually have a number
   if (!cleanNumber.length) {
     return '';
@@ -15,4 +17,6 @@ const formatPhone = phone => {
   return `+49 ${res[1]} ${res[2]}`;
 };
 
-export default ({ phone }) => <a href={`tel:${phone}`}>{formatPhone(phone)}</a>;
+export default ({ phone }) => (
+  <a href={`tel:${cleanPhone(phone)}`}>{formatPhone(phone)}</a>
+);
