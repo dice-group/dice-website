@@ -8,16 +8,7 @@ const newsQuery = graphql`
       filter: {
         data: {
           rdf_type: {
-            elemMatch: {
-              id: {
-                in: [
-                  "https://dice-research.org/FundedProject"
-                  "https://dice-research.org/ProductionReadyProject"
-                  "https://dice-research.org/IncubatorProject"
-                  "https://dice-research.org/AlumniProject"
-                ]
-              }
-            }
+            elemMatch: { id: { eq: "https://dice-research.org/FundedProject" } }
           }
           status: { eq: "active" }
         }
