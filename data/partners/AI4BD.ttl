@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:AI4BD a schema:Partner ;
+  schema:name "AI4BD Deutschland GmbH" ;
+  schema:country "D" ;
+  schema:url <https://ai4bd.com/> ;
+  schema:logo "ai4bd.png" .

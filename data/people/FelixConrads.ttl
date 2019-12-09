@@ -6,8 +6,8 @@ dice:FelixConrads a schema:Person ;
   schema:namePrefix "" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
-  schema:fax <tel:+49-341-97-32329> ;
-  schema:email <mailto:conrads@informatik.uni-leipzig.de> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:felix.conrads@uni-paderborn.de> ;
   schema:office "" ;
   schema:photo "conrads.jpg" ;
   schema:content """""" .

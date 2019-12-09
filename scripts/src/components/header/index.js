@@ -13,6 +13,7 @@ const links = [
 
   { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Vacancies' },
+  { url: '/news/', text: 'News' },
 ];
 
 const Header = () => {
