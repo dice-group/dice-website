@@ -11,5 +11,5 @@ dice:SLIPO a dice:FundedProject ;
   schema:maintainer dice:MohamedAhmedSherif ;
   schema:name "SLIPO" ;
   schema:homepage <http://www.slipo.eu/> ;
-  schema:logo "slipo.jpg" ;
+  schema:logo "slipo.png" ;
   schema:partner dicepartner:Athena, dicepartner:Fraunhofer, dicepartner:GET, dicepartner:TomTom, dicepartner:WIGeoGIS .
