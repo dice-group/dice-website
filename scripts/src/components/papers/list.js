@@ -43,7 +43,7 @@ const papersQuery = graphql`
   }
 `;
 
-export default ({ name, publicationTag }) => {
+export default ({ name, publicationTag, path }) => {
   const {
     allRdf: { edges: allPapers },
   } = useStaticQuery(papersQuery);
@@ -51,7 +51,7 @@ export default ({ name, publicationTag }) => {
   const papers = allPapers.filter(
     ({
       node: {
-        data: { tag, authorName },
+        data: { tag, authorName, author },
       },
     }) => {
       const hasTag =
@@ -62,14 +62,15 @@ export default ({ name, publicationTag }) => {
           t =>
             t.localeCompare(publicationTag, 'en', { sensitivity: 'base' }) === 0
         ) !== undefined;
-      const hasAuthor =
+      const hasAuthorByName =
         name &&
         authorName &&
         authorName.length > 0 &&
         authorName.find(
           n => n.localeCompare(name, 'en', { sensitivity: 'base' }) === 0
         ) !== undefined;
-      return hasTag || hasAuthor;
+      const hasAuthorByPath = author && author.find(a => a.path === path);
+      return hasTag || hasAuthorByName || hasAuthorByPath;
     }
   );
 
