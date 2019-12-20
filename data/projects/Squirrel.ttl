@@ -2,5 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:GERBIL a dice:ProductionReadyProject ;
-  schema:tagline "is a entity annotation benchmarking framework" ;
-  schema:name "GERBIL" .
+  schema:tagline "Squirrel is a Data Web Crawler" ;
+  schema:name "Squirrel" .
