@@ -1,0 +1,24 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Palmetto a schema:Demo ;
+  schema:name "Palmetto Demo" ;
+  schema:tagline "Palmetto is a quality measuring tool for topics" ;
+  schema:content """
+With Topic Modeling it is possible to extract topics from a collection of documents automatically and unsupervised. A disadvantage of Topic Modeling is that in most cases the created topics have to be evaluated manually by humans. Palmetto is a tool which tries to help researchers by offering different coherence calculations for a topic's top words. These coherences are based on word co-occurrences in the english wikipedia and have been proven to correlate with human ratings.
+
+The source code is dual licensed and can be found at [Github](https://github.com/AKSW/Palmetto). For larger experiments the program can be downloaded or the webservice can be used. More on how Palmetto could be used can be found on [this wikipage](https://github.com/AKSW/Palmetto/wiki/How-Palmetto-can-be-used).
+
+A Dutch index for Palmetto has been created by van der Zwaan, Marx and Kamps. Thus, Palmetto can be used for Dutch as well. The index can be downloaded [here](https://zenodo.org/record/46377#.Vs8iMZDR_IU).
+
+For researchers who want to try out different coherences by themself, it might be interesting that Palmetto can be used as Java library and already contains more than 200.000 coherences that have been evaluated for the publication [_Exploring the Space of Topic Coherences_](https://papers.dice-research.org/2015/WSDM_Palmetto/WSDM_palmetto_public.pdf).
+
+The topics and human ratings used in this publication as well as the Movie and RTL-Wiki corpora can be found [here](https://hobbitdata.informatik.uni-leipzig.de/homes/mroeder/palmetto/datasets/). Since we did not create all datasets by ourself, please cite the creators/providers of the datasets where appropriate. You can find the reference of their publications in our paper in the section that describes the datasets.
+""" ;
+  schema:screenshot "palmetto_screenshot.png" ;
+  schema:logo "palmetto_64px.png" ;
+  schema:homepage <http://palmetto.aksw.org/palmetto-webapp/> ;
+  schema:sourceCode <https://github.com/dice-group/Palmetto> ;
+  schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
+  schema:developer dice:MichaelRoeder . # List of all people working on Demo
+
