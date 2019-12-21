@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GerbilKBC a schema:Demo ;
+  schema:name "GERBIL KBC" ;
+  schema:tagline "GERBIL KBC" ;
+  schema:content """-
+
+""" ;
+  schema:logo "gerbil_demo_logo.png" ;
+  schema:screenshot ".png" ;
+  schema:sourceCode <https://github.com/dice-group/gerbil/tree/KBC> ;
+  schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
+  schema:developer dice:AxelCyrilleNgongaNgomo, dice:FelixConrads, dice:KunalJha, dice:RicardoUsbeck . # List of all people working on Demo
+
