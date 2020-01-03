@@ -31,7 +31,7 @@ The integration and benchmarking of the tool against user-specified datasets is 
 | DBpedia Spotlight | ✔         |   ✔          |   ✔         |  A2KB      |  [Link](https://www.researchgate.net/publication/220727213_DBpedia_spotlight_Shedding_light_on_the_web_of_documents)|
 | Dexter        |               |   ✔          |   ✔         |  A2KB      |  [Link](https://www.researchgate.net/publication/263246375_Dexter_an_Open_Source_Framework_for_Entity_Linking)|
 | DoSeR         |               |              |   ✔         |  D2KB      |  [Link](https://core.ac.uk/download/pdf/45268413.pdf)|
-| entityclassier.eu NER|        |              |   ✔         |  A2KB      |  [Link](https://link.springer.com/chapter/10.1007%2F978-3-642-40994-3_48)|
+| entityclassifier.eu NER|      |              |   ✔         |  A2KB      |  [Link](https://link.springer.com/chapter/10.1007%2F978-3-642-40994-3_48)|
 | FOX           |               |              |   ✔         |  OKE Task 1|  [Link](https://renespeck.de/data/2014/ISWCpaper.pdf)|
 | FRED          |               |              |   ✔         |  OKE Task 1|  [Link](https://www.researchgate.net/publication/283221416_Using_FRED_for_Named_Entity_Resolution_Linking_and_Typing_for_Knowledge_Base_Population)|
 | FREME NER     |               |              |   ✔         |  OKE Task 1|  [Link](https://freme-project.github.io/knowledge-base/freme-for-api-users/freme-ner.html)|
@@ -61,7 +61,7 @@ However, since the comparison might not be fair, we marked these annotators with
 | DBpedia Spotlight| ✔                               |  ✔    |         ✔         |     ✔      |            |   ✔   |    |
 | Dexter        |  ✔                                 | (✔)   |                   |            |            |       |    |  
 | DoSeR         |                                    |  ✔    |                   |            |            |       |    |
-| entityclassier.eu NER| ✔                           | (✔)   |                   |            |            |       |    |
+| entityclassifier.eu NER| ✔                         | (✔)   |                   |            |            |       |    |
 | FOX           |  ✔                                 | (✔)   |        (✔)        |     ✔      |            |   ✔   |  ✔ |  
 | FRED          |  ✔                                 | (✔)   |        (✔)        |     ✔      |            |   ✔   |    |  
 | FREME NER     |  ✔                                 |  ✔    |         ✔         |     ✔      |            |   ✔   |    |  
@@ -141,6 +141,7 @@ The survey data from our paper can be found at GERBIL's [GitHub repository](http
 
 
 ## Contributors
+In alphabetic order.
 
 - Ciro Baron (University Leipzig, Germany)
 - Andreas Both (R&D, Unister GmbH, Germany)
@@ -163,6 +164,7 @@ The survey data from our paper can be found at GERBIL's [GitHub repository](http
 
 """ ;
   schema:maintainer dice:MichaelRoeder ;
+  schema:developer dice:FelixConrads, dice:LukasBlübaum ;
   schema:name "GERBIL" ;
   schema:logo "gerbil_logo.png" ;
   schema:relatedDemo dice:GerbilKE, dice:GerbilQA, dice:GerbilKBC ;
