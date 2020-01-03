@@ -78,6 +78,20 @@ body {
     }
   }
 
+  /*! purgecss start ignore */
+  table {
+    @apply w-full border-collapse;
+
+    th {
+      @apply bg-gray-200 border px-4 py-2 border-gray-400;
+    }
+  
+    td {
+      @apply border px-4 py-2 border-gray-400;
+    }
+  }
+  /*! purgecss end ignore */
+  
   .key-val {
     @apply flex flex-col;
 
