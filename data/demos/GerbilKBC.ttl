@@ -4,12 +4,16 @@
 dice:GerbilKBC a schema:Demo ;
   schema:name "GERBIL KBC" ;
   schema:tagline "GERBIL KBC" ;
-  schema:content """-
+  schema:content """
+GERBIL KBC is a branch of the evaluation platform [GERBIL](https://dice-research.org/GERBIL) adapter for the area of Knowledge Base Curation. 
+It's main purpose is the benchmarking of fact checking approaches.
+
+It has been used for several challenges, including the Semantic Web Challenges [2017](http://challenge.semanticweb.org/), [2018](http://iswc2018.semanticweb.org/) and [2019](https://dice-group.github.io/semantic-web-challenge.github.io/) at the ISWC.
 
 """ ;
   schema:logo "gerbil_demo_logo.png" ;
   schema:screenshot ".png" ;
   schema:sourceCode <https://github.com/dice-group/gerbil/tree/KBC> ;
   schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
-  schema:developer dice:AxelCyrilleNgongaNgomo, dice:FelixConrads, dice:KunalJha, dice:RicardoUsbeck . # List of all people working on Demo
+  schema:developer dice:FelixConrads . # List of all people working on Demo
 
