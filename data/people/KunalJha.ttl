@@ -12,7 +12,7 @@ He completed his Bachelor's Thesis with AKSW in May 2016 on a tool that helps in
   """ ;
 
   schema:role dice:ResearchStaff ;
-  schema:project dice:GEISER, dice:GERBIL, dice:BDE ;
+  schema:project dice:GEISER, dice:BDE ;
   schema:photo "jha.jpg" ;
   schema:email <mailto:kunal.jha@uni-bonn.de> ;
   schema:name "Kunal Jha" ;
