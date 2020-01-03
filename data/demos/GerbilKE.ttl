@@ -23,5 +23,5 @@ dice:GerbilKE a schema:Demo ;
   schema:homepage <http://gerbil.aksw.org/gerbil/> ;
   schema:sourceCode <https://github.com/dice-group/gerbil> ;
   schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
-  schema:developer dice:AxelCyrilleNgongaNgomo, dice:FelixConrads, dice:RicardoUsbeck . # List of all people working on Demo
+  schema:developer dice:FelixConrads . # List of all people working on Demo
 
