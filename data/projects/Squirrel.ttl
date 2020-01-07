@@ -5,6 +5,7 @@ dice:SQUIRREL a dice:ProductionReadyProject ;
   schema:tagline "Squirrel is a Data Web Crawler" ;
   schema:name "Squirrel" .
   schema:content """
+## About the project
 Squirrel is a crawler of Linked Data, in order to exploit all the content of the linked web. 
 By ingesting initial seeds, it follows all the links availables and performs a deep search to crawl everything.
 Squirrel has a extensible architecture allowing the user to customise the type of content that wants to crawl. 
