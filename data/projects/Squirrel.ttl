@@ -3,7 +3,9 @@
 
 dice:SQUIRREL a dice:ProductionReadyProject ;
   schema:tagline "Squirrel is a Data Web Crawler" ;
-  schema:name "Squirrel" .
+  schema:name "Squirrel" ;
+  schema:sourceCode <https://github.com/dice-group/Squirrel/> ;
+  schema:homepage <https://dice-group.github.io/squirrel.github.io//> ;
   schema:content """
 ## About the project
 Squirrel is a crawler of Linked Data, in order to exploit all the content of the linked web. 
