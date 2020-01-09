@@ -8,8 +8,6 @@ dice:GERBIL a dice:ProductionReadyProject ;
   schema:tagline "General Entity Annotation Benchmark Framework" ;
   schema:status "active" ; # current project status
   schema:content """
-
-
 GERBIL is a general Linked Data benchmarking system (formerly used for entity annotation systems based on the BAT-Framework). 
 GERBIL offers an easy-to-use web-based platform for the agile comparison of annotators using multiple datasets and uniform measuring approaches. 
 To add a tool to GERBIL, all the end user has to do is to provide a URL to a REST interface to its tool which abides by a given specification. 
@@ -165,6 +163,7 @@ In alphabetic order.
 """ ;
   schema:maintainer dice:MichaelRoeder ;
   schema:developer dice:FelixConrads, dice:LukasBlübaum ;
+  schema:startDate "2014-09-07"^^xsd:date ;
   schema:name "GERBIL" ;
   schema:logo "gerbil_logo.png" ;
   schema:relatedDemo dice:GerbilKE, dice:GerbilQA, dice:GerbilKBC ;
