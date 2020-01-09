@@ -1,0 +1,4 @@
+[build]
+  # If there was no difference between the last two commits 
+  # in one of the sub directories do not build the page again
+  ignore = "git diff --quiet HEAD^ HEAD data/ images/ pages/ scripts/"
