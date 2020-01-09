@@ -35,7 +35,7 @@ Tutorial videos can be found in the [HOBBIT YouTube channel](https://www.youtube
   schema:logo "hobbit-logo-no-title.png" ;
   schema:homepage <https://master.project-hobbit.eu> ;
   schema:sourceCode <https://github.com/hobbit-project/platform> ;
+  schema:screenshot "HOBBIT_demo.png" ;
   schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
   schema:developer dice:MichaelRoeder, dice:DenisKuchelev . # List of all people working on Demo
 
-#   schema:screenshot "palmetto_screenshot.png" ;
