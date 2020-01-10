@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FactCheck a schema:Demo ;
+  schema:name "FactCheck" ;
+  schema:tagline "FactCheck: Validating RDF Triples Using Textual Evidence" ;
+  schema:content """FactCheck is an algorithm that is used to validate triples i.e., <s, p, o> from a given Knowledge base KB. It does this by finding textual evidences from the Web or given reference corpus and use them to classify a triple as correct or incorrect. Additional to the textual features, FactCheck determines the trustworthiness of the source documents and uses them as classification features. The trustworthiness of documents is determined by combining word set coherences and and topic indicators. The architecture of the FactCheck is shown below. For detailed information see the publication (accepted at CIKM 2018) here https://svn.aksw.org/papers/2018/CIKM_FACTCHECK/public.pdf.""" ;
+  schema:screenshot "FactCheck_Arch.png";
+  schema:logo "dice-icon.png" ;
+  schema:homepage <http://db-fact.cs.uni-paderborn.de/> ;
+  schema:sourceCode <https://github.com/dice-group/FactCheck> ;
+  schema:maintainer dice:ZafarSyed ;
+  schema:developer dice:ZafarSyed .
