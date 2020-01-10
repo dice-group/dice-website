@@ -1,14 +1,13 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SQUIRREL a dice:ProductionReadyProject ;
+dice:Squirrel a dice:ProductionReadyProject ;
   schema:tagline "Squirrel is a Data Web Crawler" ;
   schema:name "Squirrel" ;
   schema:sourceCode <https://github.com/dice-group/Squirrel/> ;
   schema:homepage <https://dice-group.github.io/squirrel.github.io/> ;
   schema:content """
-## About the project
-Squirrel is a crawler for Linked Data and is to exploit the content of the Linked Data web. 
+Squirrel is a crawler for Linked Data and can be used to exploit the content of the Linked Data web. 
 By ingesting initial seeds, it follows all the links found to gather more Linked Data using a load-balancing strategy.
 Squirrel has an extensible architecture allowing the user to customise the type of content that should be crawled. 
 An example for this extensibility is the scraper component of Squirrel allowing the transformation of structured and semi-structured data from HTML into RDF.
