@@ -10,5 +10,5 @@ dice:ReneSpeck a schema:Person ;
   schema:email <mailto:speck@informatik.uni-leipzig.de> ;
   schema:office "2.OG, Hainstraße 11, 04109 Leipzig" ;
   schema:photo "speck.jpg" ;
-  schema:project dice:SCMS, dice:BioASQ, dice:DIESEL, dice:GEISER, dice:SAIM, dice:HOBBIT, dice:Qamel, dice:Gerbil ;
+  schema:project dice:SCMS, dice:BioASQ, dice:DIESEL, dice:GEISER, dice:SAIM, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI ;
   schema:content """""" .

@@ -1,0 +1,25 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GerbilQA a schema:Demo ;
+  schema:name "GERBIL QA" ;
+  schema:tagline "GERBIL Question Answering Demo" ;
+  schema:content """
+  We present GERBIL QA, an extension of the [general entity annotation system GERBIL](https://dice-research.org/GERBIL). 
+  It offers an easy-to-use web-based platform for the agile comparison of QA systems using multiple datasets and uniform measuring approaches.
+  Gerbil QA supports three different setups. The user can either benchmark one of the already integrated QA systems, add another QA system via URI, 
+  or upload a JSON file with answers. In order to be used with GERBIL QA, a QA system has to implement the webservice interface as
+  specified [here](https://github.com/dice-group/gerbil/wiki/Question-Answering#web-service-interface). 
+  For easier usage, we provide a [template](https://github.com/dice-group/GerbilQA-Benchmarking-Template) 
+  that already implements this interface. Uploaded JSON files also have to be in the 
+  [QALD-JSON format](https://github.com/dice-group/gerbil/wiki/Question-Answering#web-service-interface).
+
+  More information about the QA systems, with their papers and webservices, can be found [here](https://github.com/dice-group/NLIWOD/tree/master/qa.systems).
+""" ;
+  schema:logo "gerbil_demo_logo.png" ;
+  schema:screenshot "gerbil_qa_overview.png", "gerbil_qa_screenshot.png" ;
+  schema:homepage <http://gerbil-qa.aksw.org/gerbil/> ;
+  schema:sourceCode <https://github.com/dice-group/gerbil/tree/QuestionAnswering> ;
+  schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
+  schema:developer dice:FelixConrads, dice:LukasBlübaum, dice:RicardoUsbeck . # List of all people working on Demo
+

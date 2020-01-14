@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:COPAAL a schema:Demo ;
+  schema:name "COPAAL" ;
+  schema:tagline "COPAAL -- An Interface for Explaining Facts using Corroborative Paths" ;
+  schema:content """COPAAL is an unsupervised fact validation approach for RDF knowledge graphs which identifies paths that support a given fact (s,p,o). This approach is based on the insight that the predicate p (e.g., nationality) carries mutual information with a set of other paths (e.g., paths pertaining to birthPlace and country) in the background knowledge graph G. Hence,the presence of certain sets of paths in G that begin in s and end in o can be regarded as evidence which corroborates the veracity of (s,p,o). For example, we would have good reasons to believe that BarackObama is a citizen of the USA given that BarackObama was born in Hawaii and Hawaii is located in the USA (see figure below). For detailed information see the publication (accepted at ISWC 2019) here https://pdfs.semanticscholar.org/061d/c4da92e38f0552c12dc36b2b75fbbc98a5fc.pdf""" ;
+  schema:screenshot "COPAAL_Fact_Obama.png", "COPAAL_Screen.png";
+  schema:logo "dice-icon.png" ;
+  schema:homepage <http://copaal.dice-research.org/demo/> ;
+  schema:sourceCode <https://github.com/dice-group/COPAAL> ;
+  schema:maintainer dice:ZafarSyed ;
+  schema:developer dice:ZafarSyed .

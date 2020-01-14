@@ -10,6 +10,7 @@ import SEO from '../components/seo';
 
 export default function PersonTemplate({ data: { rdf } }) {
   const {
+    path,
     data: {
       content,
       name,
@@ -107,7 +108,7 @@ export default function PersonTemplate({ data: { rdf } }) {
         )}
 
         <h1>Publications</h1>
-        <PapersList name={name} publicationTag={publicationTag} />
+        <PapersList name={name} publicationTag={publicationTag} path={path} />
       </div>
     </Layout>
   );
@@ -116,6 +117,7 @@ export default function PersonTemplate({ data: { rdf } }) {
 export const pageQuery = graphql`
   query($path: String!) {
     rdf(path: { eq: $path }) {
+      path
       data {
         name
         namePrefix

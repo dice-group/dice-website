@@ -1,0 +1,12 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:GENESIS a schema:Demo ;
+  schema:name "GENESIS" ;
+  schema:tagline "A Generic RDF Data Access Interface" ;
+  schema:content """we present Genesis, a generic RDF data access interface. Genesis can be deployed on top of any knowledge base and search engine with minimal effort and allows for the representation of RDF data in a layperson-friendly way. This is facilitated by the modular architecture for reusable components underlying our framework. Currently, these include a generic search back-end, together with corresponding interactive user interface components based on a service for similar and related entities as well as verbalization services to bridge between RDF and natural language""" ;
+  schema:screenshot ".png";
+  schema:logo "dice-icon.png" ;
+  schema:homepage <http://genesis.aksw.org> ;
+  schema:sourceCode <https://github.com/dice-group/GENESIS> ;
+  schema:maintainer dice:DiegoMoussallem .
