@@ -4,17 +4,15 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:Iguana a dice:ProductionProject ;
-  schema:name "Iguana" ;
+dice:IGUANA a dice:ProductionReadyProject ;
   schema:tagline "SPARQL benchmark execution framework for read-write performance" ;
-  schema:relatedProject dice:GEISER ; # related projects
   schema:status "active" ; # current project status
-  schema:content "Iguana is a SPARQL Benchmark execution performance, which can execute a read and write stresstest on rdf storage solutions to measure a fair and comparable performance benchmark." ;
-  schema:maintainer dice:FelixConrads ; # project maintainer
-  schema:endDate "2019-02-28"^^xsd:date ;
+  schema:content """
+Iguana is a SPARQL Benchmark execution performance, which can execute a read and write stresstest on rdf storage solutions to measure a fair and comparable performance benchmark.
+""" ;
+  schema:maintainer dice:FelixConrads ;
+  schema:developer dice:FelixConrads ;
   schema:startDate "2016-03-01"^^xsd:date ;
-  schema:homepage <http://iguana-benchmark.eu> ;
+  schema:name "Iguana" ;
   schema:logo "Iguana_new_logo6.png" ;
-  schema:publicationTag "iguana" ; # tag used for publications list on project page
-  schema:sourceCode <https://github.com/dice-group/Iguana> ;
-  schema:fundingProgram "Horizon 2020" .
+  schema:publicationTag "iguana" .
