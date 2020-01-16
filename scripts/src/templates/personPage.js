@@ -20,6 +20,7 @@ export default function PersonTemplate({ data: { rdf } }) {
       phone,
       fax,
       email,
+      chat,
       office,
       photo,
       publicationTag,
@@ -53,6 +54,14 @@ export default function PersonTemplate({ data: { rdf } }) {
                 <div className="meta-label">Email</div>
                 <div className="meta-value">
                   <a href={email}>{email.replace('mailto:', '')}</a>
+                </div>
+              </div>
+            )}
+            {chat && (
+              <div className="meta">
+                <div className="meta-label">Riot chat</div>
+                <div className="meta-value">
+                  <a href={`https://riot.im/app/#/user/${chat}`}>{chat}</a>
                 </div>
               </div>
             )}
@@ -124,6 +133,7 @@ export const pageQuery = graphql`
         phone
         fax
         email
+        chat
         office
         photo
         content
