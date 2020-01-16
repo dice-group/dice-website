@@ -8,6 +8,7 @@ dice:TimofeyErmilov a schema:Person ;
   schema:phone <tel:+49-341-97-32362> ;
   schema:fax <tel:+49-341-97-32329> ;
   schema:email <mailto:ermilov@informatik.uni-leipzig.de> ;
+  schema:chat "@ermilov:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "ermilov.jpg" ;
   schema:project dice:HOBBIT, dice:QAMEL, dice:BioASQ ;
