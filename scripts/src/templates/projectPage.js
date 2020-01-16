@@ -13,6 +13,21 @@ import SEO from '../components/seo';
 
 const dateFormat = 'MMMM yyyy';
 
+const printDates = ({ startDate, endDate }) => {
+  if (startDate && endDate) {
+    return `(${format(new Date(startDate), dateFormat)} - ${format(
+      new Date(endDate),
+      dateFormat
+    )})`;
+  }
+
+  if (startDate && !endDate) {
+    return `(${format(new Date(startDate), dateFormat)} - Ongoing)`;
+  }
+
+  return '';
+};
+
 export default function ProjectTemplate({
   data: {
     rdf: { data },
@@ -30,9 +45,7 @@ export default function ProjectTemplate({
         <h1 className="header">{data.name}</h1>
 
         <p className="subtitle">
-          {data.rdf_type[0].data.name} (
-          {format(new Date(data.startDate), dateFormat)} -{' '}
-          {format(new Date(data.endDate), dateFormat)})
+          {data.rdf_type[0].data.name} {printDates(data)}
         </p>
 
         <div className="project-card">
