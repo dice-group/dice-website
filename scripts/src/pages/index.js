@@ -1,6 +1,5 @@
 import { Link, navigate } from 'gatsby';
 import React from 'react';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import ActiveProjects from '../components/activeProjects';
 import ContactForm from '../components/contact';
 import FundedBy from '../components/fundedby';
@@ -9,22 +8,7 @@ import News from '../components/news';
 import SEO from '../components/seo';
 import SideMenu from '../components/sidemenu';
 import Social from '../components/social';
-
-const injectTwitterStyle = () => {
-  // get timeline by ID
-  const timeline = document.getElementById('twitter-widget-0');
-  // create new style element
-  const style = document.createElement('style');
-  style.innerHTML = `
-  .timeline-Tweet-text {
-    font-size: 1.25em !important;
-    line-height: inherit !important;
-    margin-bottom: 0;
-  }
-  `;
-  // add style to iframe
-  timeline.contentWindow.document.head.appendChild(style);
-};
+import TwitterFeed from '../components/twitterFeed';
 
 export default function Home() {
   const heroRef = React.createRef();
@@ -141,16 +125,7 @@ export default function Home() {
               </a>
             </div>
 
-            <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName="DiceResearch"
-              noFooter
-              noHeader
-              noScrollbar
-              autoHeight
-              options={{ tweetLimit: 3, dnt: true }}
-              onLoad={injectTwitterStyle}
-            />
+            <TwitterFeed />
           </div>
         </div>
       </section>
