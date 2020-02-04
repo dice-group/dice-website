@@ -10,4 +10,6 @@ dice:ArwaBannoura a schema:Person ;
   schema:email <mailto:arwa.bannoura@uni-paderborn.de> ;
   schema:office "TP6.3.308" ;
   schema:photo "bannoura.jpg" ;
+  schema:project dice:OPAL ;
   schema:content """""" .
+
