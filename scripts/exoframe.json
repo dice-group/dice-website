@@ -1,9 +1,5 @@
 {
   "name": "dice-website",
-  "domain": "dice-research.org, www.dice-research.org, dice.cs.upb.de, dice.cs.uni-paderborn.de",
-  "project": "dice-website",
-  "labels": {
-    "traefik.frontend.redirect.regex": "^https://(.*?).de/(.*)",
-    "traefik.frontend.redirect.replacement": "https://dice-research.org/$2"
-  }
+  "domain": "Host(`dice-research.org`, `www.dice-research.org`)",
+  "project": "dice-website"
 }
