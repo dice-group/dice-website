@@ -35,7 +35,7 @@ const News = ({ limit = 10, paginate = true }) => {
   } = useStaticQuery(newsQuery);
 
   useEffect(() => {
-    const newPagesCount = Math.floor(edges.length / limit);
+    const newPagesCount = Math.ceil(edges.length / limit);
     const newPages = [];
     for (let i = 0; i < newPagesCount; i++) {
       newPages.push(i);
