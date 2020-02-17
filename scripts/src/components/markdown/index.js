@@ -20,8 +20,6 @@ const parseHtml = htmlParser({
         return node && node.name && node.name === 'img';
       },
       processNode: function(node, children) {
-        console.log(node);
-
         return (
           <Image
             filename={node.attribs.src}

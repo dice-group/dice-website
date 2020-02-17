@@ -7,8 +7,8 @@ dice:SOLIDE-Demo a schema:Demo ;
   schema:contenthtml """The research project demonstrates a natural-language dialogue with fast,
   natural-looking information acquisition, easy handling and free hands for other activities.
   <img src="logo-bmbf.png" alt="Logog BMBF" class="max-w-1/5">
-  <video controls>
-    <source src="videos/SOLIDE-Video.mp4" type="video/mp4">
+  <video controls class="max-w-full">
+    <source src="/videos/SOLIDE-Video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   The SOLIDE research project is funded by the Federal Ministry of Education and Research.
