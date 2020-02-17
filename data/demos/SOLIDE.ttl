@@ -13,7 +13,6 @@ dice:SOLIDE-Demo a schema:Demo ;
   </video>
   The SOLIDE research project is funded by the Federal Ministry of Education and Research.
   """ ;
-  schema:screenshot "opal_screenshot.png";
   schema:logo "solide.png" ;
   schema:maintainer dice:JanReineke ;
   schema:developer dice:Janreineke .
