@@ -8,7 +8,7 @@ dice:SOLIDE-Demo a schema:Demo ;
   natural-looking information acquisition, easy handling and free hands for other activities.
   <img src ="images/logo-bmbf.png" alt="Logog BMBF">
   <video controls>
-  <src = "images/demo/SOLIDE-Video.mp4" type="video/mp4">
+  <src = "videos/SOLIDE-Video.mp4" type="video/mp4">
   Your browser does not support the video tag.
   </video>
   The SOLIDE research project is funded by the Federal Ministry of Education and Research.
