@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
@@ -49,11 +49,7 @@ export default function DemoTemplate({
             <h1 className="subheader">About the demo</h1>
 
             {data.content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
           </div>
         )}

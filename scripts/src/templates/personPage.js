@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
@@ -92,11 +92,7 @@ export default function PersonTemplate({ data: { rdf } }) {
         {content && (
           <div className="person-content">
             {content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
           </div>
         )}
