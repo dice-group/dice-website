@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `DICE Research Group`,
@@ -43,6 +45,17 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/components/styles/main.css`],
+        content: [
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx}'),
+          path.join(process.cwd(), '..', 'data/**/*.ttl'),
+          path.join(process.cwd(), '..', 'pages/**/*.{md,mdx}'),
+        ],
+        extractors: [
+          {
+            extractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+            extensions: ['ttl'],
+          },
+        ],
       },
     },
 

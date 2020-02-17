@@ -12,7 +12,6 @@ export default function DemoTemplate({
     rdf: { data },
   },
 }) {
-  console.log(data);
   return (
     <Layout>
       <SEO title={`${data.name}`} />
