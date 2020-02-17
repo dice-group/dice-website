@@ -4,7 +4,7 @@
 dice:SOLIDE-Demo a schema:Demo ;
   schema:name "SOLIDE Demo Video" ;
   schema:tagline "SOLIDE Sprachgesteuerte, kontextuelle Lagebildinformation für Stäbe und Einsatzkräfte im Bevölkerungsschutz" ;
-  schema:content """The research project demonstrates a natural-language dialogue with fast,
+  schema:contenthtml """The research project demonstrates a natural-language dialogue with fast,
   natural-looking information acquisition, easy handling and free hands for other activities.
   <img src="logo-bmbf.png" alt="Logog BMBF" class="max-w-1/5">
   <video controls>
