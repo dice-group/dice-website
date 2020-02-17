@@ -11,6 +11,13 @@ Extended markdown description here.
 
 If needed.
 """ ;
+  schema:content """
+  <h1>Extended html description here if needed</h1>
+
+  Supports all tags, autoresolves images.
+
+  If needed.
+""" ;
   schema:screenshot "demo_screenshot1.png", "demo_screenshot2.png" ;
   schema:logo "demo_logo.png" ;
   schema:homepage <https://mydemo.dice-research.org> ;

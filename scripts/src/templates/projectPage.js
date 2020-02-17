@@ -1,7 +1,7 @@
 import format from 'date-fns/format';
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Demo from '../components/demo';
 import Image from '../components/image';
@@ -78,11 +78,7 @@ export default function ProjectTemplate({
             <h1 className="subheader">About the project</h1>
 
             {data.content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
           </div>
         )}

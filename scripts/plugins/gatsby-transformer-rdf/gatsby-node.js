@@ -5,6 +5,7 @@ const basePath = 'https://dice-research.org/';
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
   'https://schema.dice-research.org/content',
+  'https://schema.dice-research.org/contenthtml',
   'https://schema.dice-research.org/project',
   'https://schema.dice-research.org/relatedProject',
   'https://schema.dice-research.org/relatedDemo',
