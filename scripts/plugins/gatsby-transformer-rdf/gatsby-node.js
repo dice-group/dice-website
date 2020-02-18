@@ -1,7 +1,9 @@
 const { Parser } = require('n3');
 
+// base path for the URLs
 const basePath = 'https://dice-research.org/';
 
+// list of predicates that can have multiple values
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
   'https://schema.dice-research.org/content',
@@ -20,6 +22,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/member',
 ];
 
+// list of predicates that define relations between entities
 const relationPredicates = [
   'rdf:type',
   'schema:relatedProject',
@@ -35,12 +38,21 @@ const relationPredicates = [
   'schema:lead',
 ];
 
+// default predicates mapping
 const defaultPrefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
 };
 
+/**
+ * Processes RDF result and returns Gatsby data node for writing
+ *
+ * @param {Object} { result, resultSubject, prefixes }
+ * @returns {Object} Gatsby data node
+ */
 const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
+  // merge default prefixes with those from the file
   const prefixes = { ...defaultPrefixes, ...filePrefixes };
+  // map prefixes into array of {url, prefix} objects
   const urls = Object.keys(prefixes).map(p => ({
     url: prefixes[p],
     prefix: p,
@@ -49,7 +61,9 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
   // map prefix URLs to short names
   const data = Object.keys(result)
     .map(predicate => {
+      // try to find matching prefix
       const matchingPrefix = urls.find(({ url }) => predicate.includes(url));
+      // if found - replace with short one
       if (matchingPrefix) {
         const fixedPrefix = predicate.replace(
           matchingPrefix.url,
@@ -58,8 +72,10 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
         return { [fixedPrefix]: result[predicate] };
       }
 
+      // if not - leave as-is
       return { predicate: result[predicate] };
     })
+    // reduce into original {predicate: value} object
     .reduce((acc, val) => ({ ...acc, ...val }), {});
 
   // remove rdf:type link to schema:BaseClass. this is required to convert RDF to GraphQL
@@ -104,6 +120,9 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
   return resultObject;
 };
 
+/**
+ * Gatsby node creation handler
+ */
 async function onCreateNode({
   node,
   actions,
@@ -116,6 +135,8 @@ async function onCreateNode({
     return;
   }
 
+  // create transform function that generates
+  // new nodes in gatsby node format
   const transformObject = (obj, id, type) => {
     const rdfNode = {
       ...obj,
@@ -131,32 +152,49 @@ async function onCreateNode({
     actions.createParentChildLink({ parent: node, child: rdfNode });
   };
 
+  // load full file content
   const content = await loadNodeContent(node);
 
+  // init result data
   const result = {};
   let resultSubject;
 
+  // create new N3 parser
   const parser = new Parser();
+  // parse content loaded from file
   parser.parse(content, (error, quad, prefixes) => {
+    // if we errored out show message in console
+    // and re-throw error to interrupt build
     if (error) {
       console.error(`Error parsing ${node.relativePath}!`, error);
       throw error;
     }
+    // if there's no quads, but prefixes do exist - we're done
+    // start processing the result
     if (!quad && prefixes) {
+      // process the results
       const resultObject = processResult({ result, resultSubject, prefixes });
+      // write to gatsby
       transformObject(resultObject, resultSubject, 'RDF');
       return;
     }
+
+    // split quad into subject, predicate, object
     const {
       subject: { id: subject },
       predicate: { id: predicate },
       object,
     } = quad;
 
+    // of we don't have resultSubject yet
+    // set it to current subject
     if (!resultSubject) {
       resultSubject = subject;
     }
 
+    // try to parse value
+    // if we can - we should get a parsed JSON
+    // if not - we just use value as-is
     let value;
     try {
       value = String(JSON.parse(object.value));
@@ -164,6 +202,8 @@ async function onCreateNode({
       value = object.value;
     }
 
+    // if predicate is in the array of predicates
+    // we're going to store value as array
     const hasArrayOfValues = arrayPredicates.includes(predicate);
     if (!hasArrayOfValues) {
       result[predicate] = value;

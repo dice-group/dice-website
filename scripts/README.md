@@ -50,6 +50,12 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 9.  **`Dockerfile`**: This file is describes the build process for Docker.
 
+### Styling
+
+We use [Tailwindcss](https://tailwindcss.com/) for styling all components.  
+Component use their own custom classes when they get complex enough (more than 2-3 tailwind helper classes).  
+Styles for those components are pre-defined using tailwind macro in `./src/components/styles/main.css`.  
+
 ## Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:

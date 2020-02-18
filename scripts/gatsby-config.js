@@ -59,8 +59,10 @@ module.exports = {
       },
     },
 
-    // default gatsby plugins
+    //  head (title, meta, etc) modification plugin
     `gatsby-plugin-react-helmet`,
+
+    // image pre-processing
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -70,6 +72,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    // PWA manifest generation (icon, theme, etc)
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
