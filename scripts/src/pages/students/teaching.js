@@ -4,6 +4,13 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import UKFlag from '../../components/svgs/ukflag.inline.svg';
 
+/**
+ * Processes the teaching data from graphql
+ * Splits it by year and term
+ *
+ * @param {Object} edges term data from graphql
+ * @returns {Object} data object split by year and term
+ */
 const processData = edges => {
   const years = [...new Set(edges.map(it => it.node.frontmatter.year))];
   const data = {};
