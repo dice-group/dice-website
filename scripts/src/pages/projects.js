@@ -4,6 +4,7 @@ import React, { useMemo } from 'react';
 import Layout from '../components/layout';
 import Project from '../components/project';
 import SEO from '../components/seo';
+import ProjectsNav from '../components/projectsnav';
 
 export default function Projects({
   data: {
@@ -20,22 +21,30 @@ export default function Projects({
   );
 
   return (
-    <Layout>
+    <Layout withContainer={false}>
       <SEO title="Projects" />
-      <div className="content">
-        {Object.keys(projectsByType).map(type => (
-          <div key={type} className="category">
-            <h1 className="header">{type}s</h1>
-            <div className="columns is-padded">
-              {projectsByType[type].map(({ node }) => (
-                <div className="column is-one-third" key={node.path}>
-                  <Project key={node.path} project={node} renderType={false} />
-                </div>
-              ))}
+      <ProjectsNav activeLink="/projects/" />
+
+      <section className="section">
+        <div className="container content">
+          {Object.keys(projectsByType).map(type => (
+            <div key={type} className="category">
+              <h1 className="header">{type}s</h1>
+              <div className="columns is-padded">
+                {projectsByType[type].map(({ node }) => (
+                  <div className="column is-one-third" key={node.path}>
+                    <Project
+                      key={node.path}
+                      project={node}
+                      renderType={false}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 }

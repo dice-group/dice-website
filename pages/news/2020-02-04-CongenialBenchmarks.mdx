@@ -1,0 +1,27 @@
+---
+date: '2020-02-04'
+title: 'Congenial Benchmarking of Triplestores'
+author: 'Felix Conrads'
+---
+
+Triple stores are the backbone of the semantic web, thus the performance of these stores is very important and several benchmarks have been created over the past two decades.
+
+Two main categories of benchmark have been formed: synthetic and real world benchmarks.
+
+While the synthetic benchmarks use generated data, real data benchmarks use real datasets and queries derived from query logs.
+
+  
+
+Real world benchmarks, however, are based on query features and hence represent only the performance of queries of one feature or a combination of features.
+
+  
+
+Congenial Benchmarks, conceives a new benchmark category based on real data, where we consider user intention rather than query features. We introduce an implementation of a benchmark generator called Sparrow. In previous recent work in the field, metrics to calculate the semantic similarity between two OWL concepts have been researched and tools to calculate such metrics have been made public. Sparrow builds upon this work by converting a SPARQL query to its OWL concept, making it as representable as possible. Thus we can calculate the semantic similarity between the converted OWL concepts and infer the similarity on the original SPARQL query. Sparrow can generate a benchmark on congenial queries using their semantic similarity. In using such a benchmark, we can have more insight into how well triple stores perform on query relaxation and similar things. This is especially interesting in terms of Machine Learning and Question Answering.
+
+  
+
+For more information read our paper at K'CAP 2019 here: https://lat.inf.tu-dresden.de/research/papers/2019/NCPT-KCap-19.pdf
+
+Our implementation is available here: https://github.com/dice-group/sparrow
+
+Feel free to code with us!

@@ -1,13 +1,5 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import { MDXProvider } from '@mdx-js/react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import ExternalLink from '../components/externalLink';
 import Footer from './footer';
@@ -16,9 +8,10 @@ import Image from './image';
 import './styles/main.css';
 import Table from './table';
 
+// components that are exposed to MDX files
 const mdxComponents = { Image, Link, ExternalLink, Table };
 
-const Layout = ({ children, withContainer = true }) => {
+export default function Layout({ children, withContainer = true }) {
   return (
     <MDXProvider components={mdxComponents}>
       <Header />
@@ -32,10 +25,4 @@ const Layout = ({ children, withContainer = true }) => {
       <Footer />
     </MDXProvider>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default Layout;
+}

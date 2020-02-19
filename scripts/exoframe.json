@@ -1,5 +1,6 @@
 {
   "name": "dice-website",
-  "domain": "dice-research.org, www.dice-research.org, dice.cs.upb.de, dice.cs.uni-paderborn.de",
+  "restart": "always",
+  "domain": "Host(`dice-research.org`, `www.dice-research.org`)",
   "project": "dice-website"
 }

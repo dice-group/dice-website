@@ -14,7 +14,7 @@ dice:FOX a schema:Demo ;
   """ ;
   schema:screenshot "fox_screen1.png", "fox_screen2.png" ;
   schema:logo "fox_logo.png" ;
-  schema:homepage <http://fox.cs.uni-paderborn.de:4444> ;
+  schema:homepage <http://fox.demos.dice-research.org/> ;
   schema:sourceCode <https://github.com/dice-group/FOX> ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:developer dice:ReneSpeck .

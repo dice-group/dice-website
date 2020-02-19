@@ -32,6 +32,10 @@ export default function Theses({
         <div className="container content theses">
           <h1>Theses</h1>
 
+          <Link to="/thesesinfo/">
+            Information about writing student theses at DICE
+          </Link>
+
           {Object.keys(thesesByType).map(type => (
             <div className="kind" key={type}>
               <h2>{type}</h2>

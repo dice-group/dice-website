@@ -1,0 +1,10 @@
+---
+date: '2020-02-10'
+title: 'An Empirical Evaluation of Cost-based Federated SPARQL Query Processing Engines'
+author: 'Umair Qudus'
+---
+  
+
+Query optimization in cost-based SPARQL federation engines is a complex challenging task due to its dependence on various cardinality estimations. Existing studies have considered different performance metrics such as query runtime, quality of the result set (completeness and correctness of the result), and volume of used resources. However, the metrics used in existing studies are too generic to evaluate the accuracy of the cardinality estimators of a cost-based federation engine. Moreover, we observe that the cardinality errors highly affect the performance of federation engines, which does not get much attention in the existing research. In this paper, we present a novel evaluation metric for benchmarking cost-based federated SPARQL query engines that can efficiently evaluate the performance of cardinality estimators. Based on our vigorous observation, we propose a metric that estimates the cardinality errors on overall query runtime to evaluate the performance of federation engines. We evaluate the query planners of five different cost-based federated SPARQL query engines using [LargeRDFBench](https://github.com/dice-group/LargeRDFBench) queries. The evaluated results suggest that our proposed metrics clearly correlate with the overall runtime performance of the selected federation engines (CostFed, SemaGrow, Odyssey, SPLENDID, LHD), and can hence provide important solutions when developing future generations of federation engines.
+
+For the source code of our analysis: [https://github.com/umairq/CostBased-FedEval](https://github.com/umairq/CostBased-FedEval)

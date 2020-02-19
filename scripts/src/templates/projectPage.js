@@ -1,7 +1,7 @@
 import format from 'date-fns/format';
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Demo from '../components/demo';
 import Image from '../components/image';
@@ -12,6 +12,21 @@ import Project from '../components/project';
 import SEO from '../components/seo';
 
 const dateFormat = 'MMMM yyyy';
+
+const printDates = ({ startDate, endDate }) => {
+  if (startDate && endDate) {
+    return `(${format(new Date(startDate), dateFormat)} - ${format(
+      new Date(endDate),
+      dateFormat
+    )})`;
+  }
+
+  if (startDate && !endDate) {
+    return `(${format(new Date(startDate), dateFormat)} - Ongoing)`;
+  }
+
+  return '';
+};
 
 export default function ProjectTemplate({
   data: {
@@ -30,9 +45,7 @@ export default function ProjectTemplate({
         <h1 className="header">{data.name}</h1>
 
         <p className="subtitle">
-          {data.rdf_type[0].data.name} (
-          {format(new Date(data.startDate), dateFormat)} -{' '}
-          {format(new Date(data.endDate), dateFormat)})
+          {data.rdf_type[0].data.name} {printDates(data)}
         </p>
 
         <div className="project-card">
@@ -65,11 +78,7 @@ export default function ProjectTemplate({
             <h1 className="subheader">About the project</h1>
 
             {data.content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
           </div>
         )}

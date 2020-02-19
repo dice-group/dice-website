@@ -5,6 +5,7 @@ import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Person from '../components/person/dynamic';
 
 export default function NewsTemplate({
   data: {
@@ -19,8 +20,9 @@ export default function NewsTemplate({
 
         <h1 className="title">{frontmatter.title}</h1>
 
-        <p className="text-gray-500" title={frontmatter.fullDate}>
-          {frontmatter.date}
+        <p className="text-gray-500">
+          <span title={frontmatter.fullDate}>{frontmatter.date}</span> by{' '}
+          <Person name={frontmatter.author} className="text-gray-500" />
         </p>
 
         {frontmatter.thumbnail ? (
@@ -41,6 +43,7 @@ export const pageQuery = graphql`
     mdx(fields: { path: { eq: $path } }) {
       frontmatter {
         title
+        author
         fullDate: date
         date(fromNow: true)
         thumbnail

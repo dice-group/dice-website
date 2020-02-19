@@ -1,6 +1,7 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import ReactMarkdownHTML from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
@@ -44,17 +45,21 @@ export default function DemoTemplate({
           </div>
         </div>
 
-        {data.content && (
+        {(data.content || data.contenthtml) && (
           <div className="project-description">
             <h1 className="subheader">About the demo</h1>
 
-            {data.content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
-            ))}
+            {data.content &&
+              data.content.map((mdString, i) => (
+                <ReactMarkdown key={`content_${i}`} source={mdString} />
+              ))}
+            {data.contenthtml &&
+              data.contenthtml.map((mdString, i) => (
+                <ReactMarkdownHTML
+                  key={`content_html_${i}`}
+                  source={mdString}
+                />
+              ))}
           </div>
         )}
 
@@ -108,6 +113,7 @@ export const pageQuery = graphql`
         name
         tagline
         content
+        contenthtml
         logo
         screenshot
         homepage

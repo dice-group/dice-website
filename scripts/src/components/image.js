@@ -29,6 +29,7 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
       ? images.find(element => element.node.fluid.src.endsWith(`/${filename}`))
       : undefined;
 
+  // if image not found - return DICE logo placeholder
   if (!imageEl) {
     return (
       <DICE
