@@ -8,6 +8,7 @@
     "@mdx-js/mdx": "^1.5.4",
     "@mdx-js/react": "^1.5.4",
     "@mdx-js/tag": "^0.20.3",
+    "@pauliescanlon/gatsby-mdx-embed": "0.0.17",
     "cssnano": "^4.1.10",
     "date-fns": "^2.9.0",
     "gatsby": "^2.18.22",

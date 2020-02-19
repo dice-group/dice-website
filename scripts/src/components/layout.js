@@ -1,4 +1,5 @@
 import { MDXProvider } from '@mdx-js/react';
+import { MdxEmbedProvider } from '@pauliescanlon/gatsby-mdx-embed';
 import { Link } from 'gatsby';
 import React from 'react';
 import ExternalLink from '../components/externalLink';
@@ -13,16 +14,18 @@ const mdxComponents = { Image, Link, ExternalLink, Table };
 
 export default function Layout({ children, withContainer = true }) {
   return (
-    <MDXProvider components={mdxComponents}>
-      <Header />
-      {withContainer ? (
-        <section className="section">
-          <div className="container">{children}</div>
-        </section>
-      ) : (
-        <>{children}</>
-      )}
-      <Footer />
-    </MDXProvider>
+    <MdxEmbedProvider>
+      <MDXProvider components={mdxComponents}>
+        <Header />
+        {withContainer ? (
+          <section className="section">
+            <div className="container">{children}</div>
+          </section>
+        ) : (
+          <>{children}</>
+        )}
+        <Footer />
+      </MDXProvider>
+    </MdxEmbedProvider>
   );
 }

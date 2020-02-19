@@ -26,6 +26,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    // support for embeds from third-parties
+    `@pauliescanlon/gatsby-mdx-embed`,
 
     // svg inlining
     {
