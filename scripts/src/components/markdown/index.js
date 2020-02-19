@@ -1,16 +1,14 @@
+import HtmlToReact from 'html-to-react';
 import React from 'react';
-import Image from '../image';
 import ReactMarkdown from 'react-markdown';
 import htmlParser from 'react-markdown/plugins/html-parser';
-import HtmlToReact from 'html-to-react';
+import Image from '../image';
 
 // create default HTML processing function
 const processNodeDefinitions = new HtmlToReact.ProcessNodeDefinitions(React);
 
 // See https://github.com/aknuds1/html-to-react#with-custom-processing-instructions
 // for more info on the processing instructions
-//
-// memo the resulting parser as we don't need to re-create it
 const parseHtml = htmlParser({
   // isValidNode: node => node.type !== 'script',
   processingInstructions: [

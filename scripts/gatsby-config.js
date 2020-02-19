@@ -26,6 +26,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    // support for embeds from third-parties
+    `@pauliescanlon/gatsby-mdx-embed`,
 
     // svg inlining
     {
@@ -59,8 +61,10 @@ module.exports = {
       },
     },
 
-    // default gatsby plugins
+    //  head (title, meta, etc) modification plugin
     `gatsby-plugin-react-helmet`,
+
+    // image pre-processing
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -70,6 +74,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    // PWA manifest generation (icon, theme, etc)
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
