@@ -15,7 +15,7 @@ dice:MichaelRoeder a schema:Person ;
   schema:content """
 <p>
 <b>Speaking hours</b>: Monday, 14:00 - 16:00</br>
-Please note that you should <b>always write a mail to make an appointment before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
+<b>Always</b> write an e-mail to make an appointment <b>before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
 </p>
 
 <p>
