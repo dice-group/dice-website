@@ -1,5 +1,4 @@
 [build]
-  # If there was no difference between the last two commits 
-  # in one of the sub directories do not build the page again
-  # 15.01.2020 MR: Removed command since it did not work as it should
-  #ignore = "git diff --quiet HEAD^ HEAD -- data/ images/ pages/ scripts/"
+  # Always force rebuilds since default ignore setting,
+  # won't trigger on changes to data folders
+  ignore = "false"
