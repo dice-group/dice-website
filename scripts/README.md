@@ -54,7 +54,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 We use [Tailwindcss](https://tailwindcss.com/) for styling all components.  
 Component use their own custom classes when they get complex enough (more than 2-3 tailwind helper classes).  
-Styles for those components are pre-defined using tailwind macro in `./src/components/styles/main.css`.  
+Styles for those components are pre-defined using tailwind macro in `./src/components/styles/main.css`.
 
 ## Learning Gatsby
 
@@ -74,3 +74,8 @@ yarn build
 docker build -t dice-website .
 docker run --name dice-website-instance -p 80:80 dice-website
 ```
+
+## Automated deployment
+
+The website is being automatically deployed to `dice-website.cs.upb.de` VM.  
+Deployment is carried out using [Github Actions](https://github.com/dice-group/dice-website/actions) and [Exoframe](https://github.com/exoframejs/exoframe).
