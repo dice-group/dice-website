@@ -1,0 +1,26 @@
+---
+date: '2020-02-27'
+title: 'Offline Question Answering over Linked Data using Limited Resources'
+author: 'Diego Moussallem'
+---
+  
+
+Since the beginning of the digital era, Question-Answering systems have been espoused as intelligent. They provide interaction with humans and respond to questions being asked based on certain facts or rules stored in the knowledge base. Most of the QA systems require high-speed internet and other resources. Our goal was to build an offline, mobile Question Answering system that is able to answer a user question by using only the limited resources of a mobile device such as a smartphone, and without an internet connection.
+
+  
+
+To accomplish this goal and explore research challenges in QA, (e.g., tourists walking through buildings and inner cities with weak internet coverage), we created OQA. It is the first offline Question Answering system over Linked Data for mobile devices with its own mobile Linked Data triple store for Android on RDF4J that answers a spoken or typed user question without connection to a high-performance server using only the resources of a mobile device such as a smartphone. It is an effective algorithm, which does not require machine learning, for the transformation of natural language to SPARQL queries. OQA works in the following steps:
+
+1) Question analysis - deterministic, linguistic (syntactic and semantic) analysis of question/user input.
+
+2) Query generation -  which identifies the type question and reforms it into a semantically meaningful data structure, i.e., a SPARQL query.
+
+3) Query execution - by using a novel mobile triple store, it retrieves the most likely answer based on the relatedness of retrieved concepts.
+
+  
+
+We evaluated OQA first with a use-case-driven dataset about Cologne. OQA was able to answer questions on the mobile device with [72% accuracy](https://tinyurl.com/QAMEL-Accuracy-Report). Secondly, we tested the battery consumption of the mobile device in offline mode by using [Battery Historian](https://developer.android.com/studio/profile/battery-historian). OQA only consumes 5.28% of the battery in offline mode to answer 200 questions using the QALD-9 dataset on a reduced version of roughly 120 MB DBpedia data. OQA is lightweight and able to work on questions with incorrect grammar. The OQA system is easily extensible to other languages as it relies on simple look-ups only.
+
+  
+
+For more details, please check out our [paper](http://ceur-ws.org/Vol-2451/paper-15.pdf) that was presented as a demo at [SEMANTiCS 2019](https://2019.semantics.cc/). Source code is publicly available on our [GitHub repository](https://github.com/dice-group/qamel/tree/master/app) as well as a video of the App in the README. The latest release of OQA on Android is available here [https://github.com/dice-group/qamel/releases](https://github.com/dice-group/qamel/releases).
