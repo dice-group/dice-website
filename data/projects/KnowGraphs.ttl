@@ -16,7 +16,7 @@ KnowGraphs addresses the problem of scaling up the use of knowledge graphs. 15 E
   schema:name "KnowGraphs" ;
   schema:fundingProgram "Innovative Training Network, Grant Number 860801" ;
   schema:partner "EU Commission" ;
-  schema:homepage <http://kg.codezen.net/> ;
+  schema:homepage <http://knowgraphs.eu> ;
   schema:sourceCode <https://github.com/dice-group> ;
   schema:logo "knowgraphs.png" ;
   schema:publicationTag "knowgraphs" ;
