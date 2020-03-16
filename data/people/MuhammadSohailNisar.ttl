@@ -1,0 +1,14 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AbdullahFathiAhmed a schema:Person ;
+  schema:name "Muhammad Sohail Nisar" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:> ;
+  schema:fax <tel:+49-525-16-03436> ;
+  schema:email <mailto:msohail@campus.uni-paderborn.de> ;
+  schema:chat "@msohail:chat.dice-research.org" ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """""" .
