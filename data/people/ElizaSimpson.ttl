@@ -8,6 +8,7 @@ dice:ElizaSimpson a schema:Person ;
   schema:phone <tel:+49-163-48-09684> ;
   schema:fax <tel:> ;
   schema:email <mailto:elizashaw16@gmail.com> ;
+  schema:chat "@esimpson:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "simpson.jpg" ;
   schema:content """""" .

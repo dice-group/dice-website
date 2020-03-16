@@ -7,7 +7,8 @@ dice:LennartAustenfeld a schema:Person ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:> ;
+  schema:email <mailto:> ;#
+  schema:chat "@lennarta:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .

@@ -8,6 +8,7 @@ dice:LukasBlübaum a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:lukasbl@campus.uni-paderborn.de> ;
+  schema:chat "@lukasbl:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "bluehbaum.jpg" ;
   schema:content """""" .
