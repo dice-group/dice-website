@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:AbdullahFathiAhmed a schema:Person ;
+dice:MuhammadSohailNisar a schema:Person ;
   schema:name "Muhammad Sohail Nisar" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
