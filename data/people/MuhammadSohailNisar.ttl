@@ -5,7 +5,7 @@ dice:MuhammadSohailNisar a schema:Person ;
   schema:name "Muhammad Sohail Nisar" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-5251-60-5192> ;
   schema:fax <tel:> ;
   schema:email <mailto:msohail@campus.uni-paderborn.de> ;
   schema:chat "@msohail:chat.dice-research.org" ;
