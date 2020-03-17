@@ -8,6 +8,7 @@ dice:UmairQudus a schema:Person ;
   schema:chat "@uqudus:chat.dice-research.org" ;
   schema:fax <tel:> ;
   schema:email <mailto:uqudus@campus.uni-paderborn.de> ;
+  schema:chat "@uqudus:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "umair.jpg" ;
   schema:content """""" .

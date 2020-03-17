@@ -8,6 +8,7 @@ dice:ManzoorAli a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:manzoor@campus.uni-paderborn.de> ;
+  schema:chat "@manzoor:chat.dice-research.org" ;
   schema:office "TP6.3.305" ;
   schema:photo "mali.jpg" ;
   schema:content """""" .

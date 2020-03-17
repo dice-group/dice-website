@@ -8,6 +8,7 @@ dice:ParamjotKaur a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:paramjot.kaur@uni-paderborn.de> ;
+  schema:chat "@paramjot:chat.dice-research.org" ;
   schema:office "TP6.3.310" ;
   schema:photo "kaur.jpg" ;
   schema:content """""" .
