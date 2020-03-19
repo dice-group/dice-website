@@ -11,4 +11,27 @@ dice:DiegoMoussallem a schema:Person ;
   schema:chat "@diegom:chat.dice-research.org" ;
   schema:office "TP6.3.109" ;
   schema:photo "moussallem.jpg" ;
-  schema:content """""" .
+  schema:project dice:DIESEL, dice:GEISER, dice:OPAL, dice:SOLIDE, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI, dice:KnowGraphs, dice:LIMBO ;
+  schema:content """ Diego Moussallem is a Brazilian computer scientist living in Germany since 2015, where he is a Ph. D. candidate at Leipzig and Paderborn Universities. Diego is currently a lead research scientist in the DICE research group at Paderborn University. His research resulted in the first neural machine translation model augmented with knowledge graphs and one state-of-the-art framework in respect of multilingualism and knowledge-graph-based algorithms. Recently, Diego is working on different NLP tasks ranging from basic research in computational linguistics to Question Answering, Machine Translation, Natural Language Generation, and Understanding. Before moving to Germany, in 2014, he was awarded an M.Sc in Machine Translation at the Military Institute of Engineering, IME, which is one of the most prestigious research institutes in Brazil. He also holds a bachelor's degree in Information Systems at Veiga de Almeida University, UVA, in 2011, Brazil. Additionally, Diego contributes actively to the scientific community, being responsible for the Portuguese chapter of DBpedia as well as mentoring students at the Google Summer of Code.
+  
+  <p>
+  <b>Speaking hours</b>: Write an e-mail to make an appointment <b>before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
+  </p>
+
+  <p>
+  Member and Reviewer at:
+  <ul>
+  <li>International Conference on Knowledge Capture (KCAP) 2017, 2019</li>
+  <li>Conference on Empirical Methods in Natural Language Processing (EMNLP) 2019</li>
+  <li>Conference of the North American Chapter of the Association for Computational Linguistics (NAACL) 2019</li>
+  <li>Annual Meeting of the Association for Computational Linguistics (ACL) 2018, 2019, 2020</li>
+  <li>International Conference on Natural Language Generation (INLG) 2018, 2019</li>
+  <li>International Conference on Computational Linguistics (COLING) 2016</li>
+  <li>Extended Semantic Web Conference (ESWC) 2016, 2020</li>
+  <li>Journal of Web Semantics</li>
+  <li>Semantic Web Journal</li>
+  <li>Journal on Semantic Web and Information Systems.</li>
+  <li>Artificial Intelligence Review</li>
+  <ul>
+  </p>
+  """ .
