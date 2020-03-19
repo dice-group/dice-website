@@ -2,10 +2,6 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:DiegoMoussallem a schema:Person ;
-  schema:content """
-
-Diego Moussallem is a Brazilian computer scientist living in Germany since 2015, where he is a Ph. D. candidate at Leipzig and Paderborn Universities. Diego is currently a lead research scientist in the DICE research group at Paderborn University. His research resulted in the first neural machine translation model augmented with knowledge graphs and one state-of-the-art framework in respect of multilingualism and knowledge-graph-based algorithms. Recently, Diego is working on different NLP tasks ranging from basic research in computational linguistics to Question Answering, Machine Translation, Natural Language Generation, and Understanding. Before moving to Germany, in 2014, he was awarded an M.Sc in Machine Translation at the Military Institute of Engineering, IME, which is one of the most prestigious research institutes in Brazil. He also holds a bachelor's degree in Information Systems at Veiga de Almeida University, UVA, in 2011, Brazil. Additionally, Diego contributes actively to the scientific community, being responsible for the Portuguese chapter of DBpedia as well as mentoring students at the Google Summer of Code.
-  """ ;
   schema:name "Diego Moussallem" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
@@ -16,7 +12,7 @@ Diego Moussallem is a Brazilian computer scientist living in Germany since 2015,
   schema:office "TP6.3.109" ;
   schema:photo "moussallem.jpg" ;
   schema:project dice:DIESEL, dice:GEISER, dice:OPAL, dice:SOLIDE, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI, dice:KnowGraphs, dice:LIMBO ;
-  schema:content """""" .
+  schema:content """ Diego Moussallem is a Brazilian computer scientist living in Germany since 2015, where he is a Ph. D. candidate at Leipzig and Paderborn Universities. Diego is currently a lead research scientist in the DICE research group at Paderborn University. His research resulted in the first neural machine translation model augmented with knowledge graphs and one state-of-the-art framework in respect of multilingualism and knowledge-graph-based algorithms. Recently, Diego is working on different NLP tasks ranging from basic research in computational linguistics to Question Answering, Machine Translation, Natural Language Generation, and Understanding. Before moving to Germany, in 2014, he was awarded an M.Sc in Machine Translation at the Military Institute of Engineering, IME, which is one of the most prestigious research institutes in Brazil. He also holds a bachelor's degree in Information Systems at Veiga de Almeida University, UVA, in 2011, Brazil. Additionally, Diego contributes actively to the scientific community, being responsible for the Portuguese chapter of DBpedia as well as mentoring students at the Google Summer of Code.
   
   <p>
   <b>Speaking hours</b>: Write an e-mail to make an appointment <b>before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
