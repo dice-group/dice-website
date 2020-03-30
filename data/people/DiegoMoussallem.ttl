@@ -4,7 +4,7 @@
 dice:DiegoMoussallem a schema:Person ;
   schema:name "Diego Moussallem" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05385> ;
   schema:fax <tel:+49-525-16-05385> ;
   schema:email <mailto:diego.moussallem@uni-paderborn.de> ;
