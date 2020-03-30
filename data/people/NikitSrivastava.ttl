@@ -8,6 +8,7 @@ dice:NikitSrivastava a schema:Person ;
   schema:phone <tel:+49-176-67-371775> ;
   schema:fax <tel:> ;
   schema:email <mailto:nikit@mail.uni-paderborn.de> ;
+  schema:chat "@nikit:chat.dice-research.org" ;
   schema:office "O4.216" ;
   schema:photo "srivastava.jpg" ;
   schema:content """""" .

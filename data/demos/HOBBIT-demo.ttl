@@ -1,0 +1,41 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:HOBBIT-demo a schema:Demo ;
+  schema:name "HOBBIT Platform" ;
+  schema:tagline "The HOBBIT Platform is a holistic benchmarking for Big Linked Data systems." ;
+  schema:content """
+
+The HOBBIT evaluation platform is a distributed FAIR benchmarking platform for the Linked Data lifecycle. This means that the platform was designed to provide means to:
+
+benchmark any step of the Linked Data lifecycle, including [generation and acquisition](https://project-hobbit.eu/outcomes/benchmark-i-generation-acquisition/), [analytics and processing](https://project-hobbit.eu/outcomes/benchmark-ii-analysis-processing/), [storage and curation](https://project-hobbit.eu/outcomes/benchmark-iii-storage-curation/) as well as [visualization and services](https://project-hobbit.eu/outcomes/benchmark-iv-visualisation-services/)
+ensure that benchmarking results can be found, accessed, integrated and reused easily ([FAIR principles](https://www.nature.com/articles/sdata201618))
+benchmark Big Data platforms by being the first distributed benchmarking platform for Linked data.
+
+We are hosting an [online instance of our platform]() for
+* running public challenges and
+* making sure that even people without the required infrastructure are able to run the benchmarks they are interested in.
+
+The platform is [open-source](https://github.com/hobbit-project) and can be downloaded and executed locally.
+
+## Underlying Principles
+The HOBBIT benchmarking platform ensures that:
+1. Users can test systems with the HOBBIT benchmarks without having to worry about finding standardized hardware
+2. New benchmarks can be easily created and added to the platform by third parties.
+3. The evaluation can be scaled out to large datasets and on distributed architectures.
+4. The publishing and analysis of the results of different systems can be carried out in a uniform manner across the different benchmarks.
+
+The first version of the platform has been [released in February 2017](https://project-hobbit.eu/a-platform-for-benchmarking-big-linked-data-solutions/). It offers the main features of an evaluation platform and has been further enhanced over time. The release of the second version is planned for February 2018. For this release we are mainly focussing on the usability of the platform as well as its support for additional features that can be used by the benchmark implementations (e.g., shared volumes or hardware statistics).
+
+How to use the platform
+The online instance of the HOBBIT benchmarking platform is accessible at [master.project-hobbit.eu](http://master.project-hobbit.eu/). More information about its features and how to use it can be found in [deliverable D2.2.1](https://project-hobbit.eu/wp-content/uploads/2017/04/D2.2.1.pdf) and our [online documentation](https://hobbit-project.github.io/quick_guide.html).
+
+Tutorial videos can be found in the [HOBBIT YouTube channel](https://www.youtube.com/channel/UC3eWNVAKXLqAdOhuQ5kd57g/featured).
+""" ;
+  schema:logo "hobbit-logo-no-title.png" ;
+  schema:homepage <https://master.project-hobbit.eu> ;
+  schema:sourceCode <https://github.com/hobbit-project/platform> ;
+  schema:screenshot "HOBBIT_demo.png" ;
+  schema:maintainer dice:MichaelRoeder ; # Current demo maintainer
+  schema:developer dice:MichaelRoeder, dice:DenisKuchelev . # List of all people working on Demo
+

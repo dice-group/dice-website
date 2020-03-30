@@ -8,6 +8,7 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
+  schema:chat "@aams:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .

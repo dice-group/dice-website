@@ -1,6 +1,170 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:GERBIL a dice:ProductionReadyProject ;
-  schema:tagline "is a entity annotation benchmarking framework" ;
-  schema:name "GERBIL" .
+  schema:tagline "General Entity Annotation Benchmark Framework" ;
+  schema:status "active" ; # current project status
+  schema:content """
+GERBIL is a general Linked Data benchmarking system (formerly used for entity annotation systems based on the BAT-Framework). 
+GERBIL offers an easy-to-use web-based platform for the agile comparison of annotators using multiple datasets and uniform measuring approaches. 
+To add a tool to GERBIL, all the end user has to do is to provide a URL to a REST interface to its tool which abides by a given specification. 
+The integration and benchmarking of the tool against user-specified datasets is then carried out automatically by the GERBIL platform.
+
+- If you want to know more, please have a look at our novel paper about [GERBIL at the Semantic Web Journal](http://www.semantic-web-journal.net/system/files/swj1671.pdf)
+- We also used GERBIL for [benchmarking system for question answering](http://www.semantic-web-journal.net/system/files/swj1578.pdf)
+
+
+## Available Annotators
+
+|               | BAT-FRAMEWORK | GERBIL 1.0.0 | GERBIL1.2.5 | Experiment | Paper |
+|:--------------|:-------------:|:------------:|:-----------:|:----------:|:-----:|
+| AGDISTIS      | (✔)           |   ✔          |   ✔         |  D2KB      |  [Link](https://www.researchgate.net/publication/264412537_AGDISTIS_-_Graph-Based_Disambiguation_of_Named_Entities_using_Linked_Data)|
+| AIDA          |  ✔            |   ✔          |   ✔         |  A2KB      |  [Link](https://dl.acm.org/citation.cfm?id=2145521)|
+| Babely        |               |   ✔          |   ✔         |  A2KB      |  [Link](https://www.aclweb.org/anthology/Q14-1019)|
+| CETUS         |               |              |   ✔         |  OKE Task 2|  [Link](https://svn.aksw.org/papers/2015/ESWC_CETUS_OKE_challenge/public.pdf)|
+| CETUS (FOX)   |               |              |   ✔         |  OKE Task 2|  [Link](https://svn.aksw.org/papers/2015/ESWC_CETUS_OKE_challenge/public.pdf)|
+| DBpedia Spotlight | ✔         |   ✔          |   ✔         |  A2KB      |  [Link](https://www.researchgate.net/publication/220727213_DBpedia_spotlight_Shedding_light_on_the_web_of_documents)|
+| Dexter        |               |   ✔          |   ✔         |  A2KB      |  [Link](https://www.researchgate.net/publication/263246375_Dexter_an_Open_Source_Framework_for_Entity_Linking)|
+| DoSeR         |               |              |   ✔         |  D2KB      |  [Link](https://core.ac.uk/download/pdf/45268413.pdf)|
+| entityclassifier.eu NER|      |              |   ✔         |  A2KB      |  [Link](https://link.springer.com/chapter/10.1007%2F978-3-642-40994-3_48)|
+| FOX           |               |              |   ✔         |  OKE Task 1|  [Link](https://renespeck.de/data/2014/ISWCpaper.pdf)|
+| FRED          |               |              |   ✔         |  OKE Task 1|  [Link](https://www.researchgate.net/publication/283221416_Using_FRED_for_Named_Entity_Resolution_Linking_and_Typing_for_Knowledge_Base_Population)|
+| FREME NER     |               |              |   ✔         |  OKE Task 1|  [Link](https://freme-project.github.io/knowledge-base/freme-for-api-users/freme-ner.html)|
+| KEA           |               |   ✔          |   ✔         |  A2KB      |  [Link](https://link.springer.com/chapter/10.1007%2F978-3-642-38288-8_26)|
+| NERD-ML       |               |   ✔          |   ✔         |  A2KB      |  [Link](https://www.aclweb.org/anthology/L14-1185/)|
+| NERFGUN       |               |              |   ✔         |  D2KB      |  [Link](https://www.researchgate.net/publication/307931926_Combining_Textual_and_Graph-Based_Features_for_Named_Entity_Disambiguation_Using_Undirected_Probabilistic_Graphical_Models)|
+| OpenTapioca   |               |              |   ✔         |  A2KB      |  [Link](https://arxiv.org/abs/1904.09131)|
+| PBOH          |               |              |   ✔         |  D2KB      |  [Link](https://arxiv.org/abs/1509.02301)|
+| TagMe 2       |  ✔            |   ✔          |   ✔         |  A2KB      |  [Link](https://arxiv.org/abs/1006.3498)|
+| WAT           |               |   ✔          |   ✔         |  A2KB      |  [Link](https://dl.acm.org/citation.cfm?id=2634350)|
+| xLisa         |               |              |   ✔         |  A2KB      |  [Link](http://www.vldb.org/pvldb/vol7/p1693-zhang.pdf)|
+
+## Supported Experiments for each Annotator
+
+The following table lists the annotators that are currently available and the experiment types they support. 
+Note that some of the A2KB annotators support the D2KB experiment by offering an own API method. 
+Other A2KB annotators can be chosen for a D2KB experiment as well as [described in the wiki](https://github.com/dice-group/gerbil/wiki/D2KB#handling-of-higher-order-annotators). 
+However, since the comparison might not be fair, we marked these annotators with (✔) in the table. The same is done for Entity Typing.
+
+|               | A2KB, C2KB <br> ENTITY RECOGNITION |  D2KB | ENTITY <br> TYPING| OKE TASK 1 | OKE TASK 2 | RT2KB | RE | 
+|:--------------|:----------------------------------:|:-----:|:-----------------:|:----------:|:----------:|:-----:|:--:|
+| AGDISTIS      |                                    |  ✔    |                   |            |            |       |    |     
+| AIDA          |  ✔                                 | (✔)   |                   |            |            |       |    |  
+| Babely        |  ✔                                 |  ✔    |                   |            |            |       |    |  
+| CETUS         |                                    |       |                   |            |     ✔      |       |    |  
+| CETUS (FOX)   |                                    |       |                   |            |     ✔      |       |    |
+| DBpedia Spotlight| ✔                               |  ✔    |         ✔         |     ✔      |            |   ✔   |    |
+| Dexter        |  ✔                                 | (✔)   |                   |            |            |       |    |  
+| DoSeR         |                                    |  ✔    |                   |            |            |       |    |
+| entityclassifier.eu NER| ✔                         | (✔)   |                   |            |            |       |    |
+| FOX           |  ✔                                 | (✔)   |        (✔)        |     ✔      |            |   ✔   |  ✔ |  
+| FRED          |  ✔                                 | (✔)   |        (✔)        |     ✔      |            |   ✔   |    |  
+| FREME NER     |  ✔                                 |  ✔    |         ✔         |     ✔      |            |   ✔   |    |  
+| KEA           |  ✔                                 |  ✔    |                   |            |            |       |    | 
+| NERD-ML       |  ✔                                 | (✔)   |                   |            |            |       |    |  
+| NERFGUN       |                                    |  ✔    |                   |            |            |       |    |  
+| OpenTapioca   |  ✔                                 |  ✔    |                   |            |            |       |    |  
+| PBOH          |                                    |  ✔    |                   |            |            |       |    |  
+| TagMe 2       |  ✔                                 | (✔)   |                   |            |            |       |    |  
+| WAT           |  ✔                                 |  ✔    |                   |            |            |       |    | 
+| xLisa         |  ✔                                 | (✔)   |                   |            |            |       |    |   
+
+
+## Available Datasets
+
+The following table lists the datasets that are currently available and the experiment types they support.
+
+|               | A2KB, C2KB, D2KB <br> ENTITY RECOGNITION | ENTITY <br> TYPING| OKE TASK 1 | OKE TASK 2 | RT2KB | RE | Paper |
+|:--------------|:----------------------------------------:|:-----------------:|:----------:|:----------:|:-----:|:--:|:-----:|
+| ACE2004       |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2002642)|     
+| AIDA/CoNLL-Complete|              ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|         
+| AIDA/CoNLL-Test A|                ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|  
+| AIDA/CoNLL-Test B|                ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|  
+| AIDA/CoNLL-Training|              ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|
+| AQUAINT       |                   ✔                      |                   |            |            |       |    |-|
+| CoNLL2003     |                                          |                   |            |            |       |    |[Link](https://www.aclweb.org/anthology/W03-0419/)| 
+| DBpediaSpotlight|                 ✔                      |                   |            |            |       |    |[Link](https://old.datahub.io/dataset/dbpedia-spotlight-nif-ner-corpus)|    
+| Derczynski    |                   ✔                      |                   |            |            |       |    |[Link](https://arxiv.org/abs/1410.7182)|
+| ERD2014       |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2600734&dl=ACM&coll=DL)| 
+| GERDAQ-Dev    |                   ✔                      |                   |            |            |       |    |[Link](http://gdac.uqam.ca/WWW2016-Proceedings/proceedings/p567.pdf)|    
+| GERDAQ-Test   |                   ✔                      |                   |            |            |       |    |[Link](http://gdac.uqam.ca/WWW2016-Proceedings/proceedings/p567.pdf)|
+| GERDAQ-TrainingA|                 ✔                      |                   |            |            |       |    |[Link](http://gdac.uqam.ca/WWW2016-Proceedings/proceedings/p567.pdf)| 
+| GERDAQ-TrainingB|                 ✔                      |                   |            |            |       |    |[Link](http://gdac.uqam.ca/WWW2016-Proceedings/proceedings/p567.pdf)|    
+| IITB          |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=1557073)|
+| KORE50        |                   ✔                      |                   |            |            |       |    |[Link](https://www.researchgate.net/publication/233530327_KORE_Keyphrase_Overlap_Relatedness_for_Entity_Disambiguation)| 
+| MSNBC         |                   ✔                      |                   |            |            |       |    |[Link](https://www.semanticscholar.org/paper/Large-Scale-Named-Entity-Disambiguation-Based-on-Cucerzan/1c909ac1c331c0c246a88da047cbdcca9ec9b7e7)|    
+| Microposts2013-Test|                                     |         ✔         |            |            |   ✔   |    |[Link](https://www.researchgate.net/publication/256574019_Making_Sense_of_Microposts_MSM2013_Concept_Extraction_Challenge)|
+| Microposts2013-Train|                                    |         ✔         |            |            |   ✔   |    |[Link](https://www.researchgate.net/publication/256574019_Making_Sense_of_Microposts_MSM2013_Concept_Extraction_Challenge)|
+| Microposts2014-Test|              ✔                      |                   |            |            |       |    |[Link](https://www.researchgate.net/publication/261758468_Making_Sense_of_Microposts_Microposts2014_Named_Entity_Extraction_Linking_Challenge)|
+| Microposts2014-Train|             ✔                      |                   |            |            |       |    |[Link](https://www.researchgate.net/publication/261758468_Making_Sense_of_Microposts_Microposts2014_Named_Entity_Extraction_Linking_Challenge)| 
+| Microposts2015-Test|              ✔                      |                   |            |            |       |    |[Link](http://www.www2015.it/documents/proceedings/companion/p1551.pdf)|
+| Microposts2015-Train|             ✔                      |                   |            |            |       |    |[Link](http://www.www2015.it/documents/proceedings/companion/p1551.pdf)| 
+| Microposts2016-Test|              ✔                      |                   |            |            |       |    |[Link](https://www.semanticscholar.org/paper/%23Microposts2016%3A-6th-Workshop-on-Making-Sense-of-in-Cano-Preotiuc-Pietro/05e078a2b667a38c2d7a500fe393cc544ef724de)|
+| Microposts2016-Train|             ✔                      |                   |            |            |       |    |[Link](https://www.semanticscholar.org/paper/%23Microposts2016%3A-6th-Workshop-on-Making-Sense-of-in-Cano-Preotiuc-Pietro/05e078a2b667a38c2d7a500fe393cc544ef724de)|  
+| N3-RSS-500    |                   ✔                      |                   |            |            |       |    |[Link](https://github.com/AKSW/n3-collection)|    
+| N3-Reuters-128|                   ✔                      |                   |            |            |       |    |[Link](https://github.com/AKSW/n3-collection)|
+| OKE 2015 Task 1|                  ✔                      |         ✔         |     ✔      |            |   ✔   |    |[Link](https://www.researchgate.net/publication/288981586_Open_Knowledge_Extraction_Challenge)| 
+| OKE 2015 Task 2|                                         |                   |            |      ✔     |       |    |[Link](https://www.researchgate.net/publication/288981586_Open_Knowledge_Extraction_Challenge)| 
+| OKE 2016 Task 1|                  ✔                      |         ✔         |     ✔      |            |   ✔   |    |[Link](https://www.semanticscholar.org/paper/The-Second-Open-Knowledge-Extraction-Challenge-Nuzzolese-Gentile/a57960bac5dd15847ee31ffa90739c67acd20402)| 
+| OKE 2016 Task 2|                                         |                   |            |      ✔     |       |    |[Link](https://www.semanticscholar.org/paper/The-Second-Open-Knowledge-Extraction-Challenge-Nuzzolese-Gentile/a57960bac5dd15847ee31ffa90739c67acd20402)| 
+| OKE 2017 Task 1|                  ✔                      |                   |            |            |       |    |[Link](https://svn.aksw.org/papers/2017/ESWC_Challenge_OKE/public.pdf)| 
+| OKE 2017 Task 2|                  ✔                      |                   |            |            |       |    |[Link](https://svn.aksw.org/papers/2017/ESWC_Challenge_OKE/public.pdf)| 
+| OKE 2017 Task 3|                  ✔                      |         ✔         |     ✔      |            |   ✔   |    |[Link](https://svn.aksw.org/papers/2017/ESWC_Challenge_OKE/public.pdf)| 
+| OKE 2018 Task 1|                  ✔                      |                   |            |            |       |    |[Link](https://www.springer.com/us/book/9783030000714)| 
+| OKE 2018 Task 2|                  ✔                      |                   |            |            |       |    |[Link](https://www.springer.com/us/book/9783030000714)| 
+| OKE 2018 Task 3|                                         |                   |            |            |       | ✔  |[Link](https://www.springer.com/us/book/9783030000714)| 
+| OKE 2018 Task 4|                  ✔                      |                   |            |            |       | ✔  |[Link](https://www.springer.com/us/book/9783030000714)| 
+| Ritter        |                   ✔                      |         ✔         |            |            |   ✔   |    |[Link](https://www.aclweb.org/anthology/D11-1141/)|    
+| Senseval 2    |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2387364.2387365)|
+| Senseval 3    |                   ✔                      |                   |            |            |       |    |[Link](https://www.researchgate.net/publication/228756562_The_Senseval-3_English_lexical_sample_task)|
+| UMBC-Test     |                   ✔                      |         ✔         |            |            |   ✔   |    |[Link](https://dl.acm.org/citation.cfm?id=1866709)|
+| UMBC-Train    |                   ✔                      |         ✔         |            |            |   ✔   |    |[Link](https://dl.acm.org/citation.cfm?id=1866709)|
+| WSDM 2012     |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2685317)|
+
+
+
+## Long term stability
+The idea of GERBIL emerged in September 2014 when a couple of articles released at the same time claimed to be state-of-the-art. 
+Especially, those approaches were not easily comparable due to their heterogeneous set-up, dataset use and evaluation metrics. 
+Thus, we decided to build GERBIL and extend the [BAT-Framework](https://github.com/marcocor/bat-framework) to break the barriers for people not able to write source code.
+
+GERBIL is now more than 3 years old and has hosted more than 50.000 experiments. 
+It is currently hosted at the research and development unit of the University Leipzig Computation Center and the Paderborn University which keep 
+daily backups to ensure long-term quotability.
+
+The survey data from our paper can be found at GERBIL's [GitHub repository](https://github.com/dice-group/gerbil/blob/master/documentation/survey.csv).
+
+
+## Contributors
+In alphabetic order.
+
+- Ciro Baron (University Leipzig, Germany)
+- Andreas Both (R&D, Unister GmbH, Germany)
+- Martin Brümmer (University Leipzig, Germany)
+- Diego Ceccarelli (Unversity Pisa, Italy)
+- Marco Cornolti (University of Pisa, Italy)
+- Didier Cherix (R&D, Unister GmbH, Germany)
+- Bernd Eickmann (R&D, Unister GmbH, Germany)
+- Paolo Ferragina (University of Pisa, Italy)
+- Christiane Lemke (R&D, Unister GmbH, Germany)
+- Andrea Moro (Sapienza University of Rome, Italy)
+- Roberto Navigli (Sapienza University of Rome, Italy)
+- Francesco Piccinno (University of Pisa, Italy)
+- Giuseppe Rizzo (EURECOM, France)
+- Harald Sack (HPI Potsdam, Germany)
+- René Speck (Institute for Applied Informatics, Germany)
+- Raphaël Troncy (EURECOM, France)
+- Jörg Waitelonis (HPI Potsdam, Germany)
+- Lars Wesemann (R&D, Unister GmbH, Germany)
+
+""" ;
+  schema:maintainer dice:MichaelRoeder ;
+  schema:developer dice:FelixConrads, dice:LukasBlübaum ;
+  schema:startDate "2014-09-07"^^xsd:date ;
+  schema:name "GERBIL" ;
+  schema:logo "gerbil_logo.png" ;
+  schema:relatedDemo dice:GerbilKE, dice:GerbilQA, dice:GerbilKBC ;
+  schema:publicationTag "gerbil" .

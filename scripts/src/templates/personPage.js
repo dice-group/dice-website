@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
@@ -10,6 +10,7 @@ import SEO from '../components/seo';
 
 export default function PersonTemplate({ data: { rdf } }) {
   const {
+    path,
     data: {
       content,
       name,
@@ -19,6 +20,7 @@ export default function PersonTemplate({ data: { rdf } }) {
       phone,
       fax,
       email,
+      chat,
       office,
       photo,
       publicationTag,
@@ -55,6 +57,14 @@ export default function PersonTemplate({ data: { rdf } }) {
                 </div>
               </div>
             )}
+            {chat && (
+              <div className="meta">
+                <div className="meta-label">Riot chat</div>
+                <div className="meta-value">
+                  <a href={`https://riot.im/app/#/user/${chat}`}>{chat}</a>
+                </div>
+              </div>
+            )}
             {phone && phone.replace('tel:', '') && (
               <div className="meta">
                 <div className="meta-label">Phone</div>
@@ -82,11 +92,7 @@ export default function PersonTemplate({ data: { rdf } }) {
         {content && (
           <div className="person-content">
             {content.map((mdString, i) => (
-              <ReactMarkdown
-                key={`content_${i}`}
-                source={mdString}
-                escapeHtml={false}
-              />
+              <ReactMarkdown key={`content_${i}`} source={mdString} />
             ))}
           </div>
         )}
@@ -107,7 +113,7 @@ export default function PersonTemplate({ data: { rdf } }) {
         )}
 
         <h1>Publications</h1>
-        <PapersList name={name} publicationTag={publicationTag} />
+        <PapersList name={name} publicationTag={publicationTag} path={path} />
       </div>
     </Layout>
   );
@@ -116,12 +122,14 @@ export default function PersonTemplate({ data: { rdf } }) {
 export const pageQuery = graphql`
   query($path: String!) {
     rdf(path: { eq: $path }) {
+      path
       data {
         name
         namePrefix
         phone
         fax
         email
+        chat
         office
         photo
         content

@@ -43,29 +43,36 @@ const papersQuery = graphql`
   }
 `;
 
-export default ({ name, publicationTag }) => {
+export default ({ name, publicationTag, path }) => {
   const {
     allRdf: { edges: allPapers },
   } = useStaticQuery(papersQuery);
 
-  const papers = allPapers.filter(({ node: { data: { tag, authorName } } }) => {
-    const hasTag =
-      publicationTag &&
-      tag &&
-      tag.length > 0 &&
-      tag.find(
-        t =>
-          t.localeCompare(publicationTag, 'en', { sensitivity: 'base' }) === 0
-      ) !== undefined;
-    const hasAuthor =
-      name &&
-      authorName &&
-      authorName.length > 0 &&
-      authorName.find(
-        n => n.localeCompare(name, 'en', { sensitivity: 'base' }) === 0
-      ) !== undefined;
-    return hasTag || hasAuthor;
-  });
+  const papers = allPapers.filter(
+    ({
+      node: {
+        data: { tag, authorName, author },
+      },
+    }) => {
+      const hasTag =
+        publicationTag &&
+        tag &&
+        tag.length > 0 &&
+        tag.find(
+          t =>
+            t.localeCompare(publicationTag, 'en', { sensitivity: 'base' }) === 0
+        ) !== undefined;
+      const hasAuthorByName =
+        name &&
+        authorName &&
+        authorName.length > 0 &&
+        authorName.find(
+          n => n.localeCompare(name, 'en', { sensitivity: 'base' }) === 0
+        ) !== undefined;
+      const hasAuthorByPath = author && author.find(a => a.path === path);
+      return hasTag || hasAuthorByName || hasAuthorByPath;
+    }
+  );
 
   return (
     <PapersFilter limit={5} edges={papers}>

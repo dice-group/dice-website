@@ -1,0 +1,4 @@
+[build]
+  # Always force rebuilds since default ignore setting,
+  # won't trigger on changes to data folders
+  ignore = "false"

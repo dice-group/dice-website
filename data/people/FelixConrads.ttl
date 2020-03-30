@@ -7,7 +7,8 @@ dice:FelixConrads a schema:Person ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:felix.conrads@uini-paderborn.de> ;
+  schema:email <mailto:felix.conrads@uni-paderborn.de> ;
+  schema:chat "@fconrads:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "conrads.jpg" ;
   schema:content """""" .

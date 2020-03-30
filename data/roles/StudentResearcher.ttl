@@ -2,5 +2,5 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:StudentResearcher a schema:Role ;
-  schema:priority 6;
+  schema:priority 7;
   schema:name "Student Researchers" .

@@ -8,8 +8,9 @@ dice:GeraldoDeSouza a schema:Person ;
   schema:phone <tel:+49-525-16-03763> ;
   schema:fax <tel:> ;
   schema:email <mailto:gsjunior@mail.uni-paderborn.de> ;
-  schema:project dice:OPAL ;
-  schema:office "O4.122" ;
+  schema:chat "@gsjunior:chat.dice-research.org" ;
+  schema:project dice:OPAL, dice:SQUIRREL;
+  schema:office "TP6.3.309" ;
   schema:photo "souza.jpg" ;
   schema:content """""" .
 

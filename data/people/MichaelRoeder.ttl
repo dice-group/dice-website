@@ -4,15 +4,26 @@
 dice:MichaelRoeder a schema:Person ;
   schema:name "Michael Röder" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-03894> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:michael.roeder@uni-paderborn.de> ;
+  schema:chat "@mroeder:chat.dice-research.org" ;
   schema:office "TP6.3.108" ;
   schema:photo "roeder.jpg" ;
   schema:project dice:DIESEL, dice:HOBBIT ;
   schema:publicationTag "roeder" ;
-  schema:content """My little free time seems to be partly consumed by reviewing, e.g.,
+  schema:content """
+
+<h3>Speaking hours</h3>
+Monday, 14:00 - 16:00</br>
+<p><b>Always</b> write an e-mail to make an appointment <b>before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
+</p>
+
+
+<h3>Reviewing</h3>
+<p>
+My little free time seems to be partly consumed by reviewing, e.g.,
 <ul>
 <li>International Conference on Weblogs and Social Media (ICWSM) in 2013</li>
 <li>Journal of Biomedical Semantics on Bio-Medical Information Retrieval (JBMS Bio-IR) in 2015</li>
@@ -21,4 +32,5 @@ dice:MichaelRoeder a schema:Person ;
 <li><a href="https://journals.plos.org/plosone/">PLOS ONE</a> in <a href="https://doi.org/10.1371/journal.pone.0194158.s006">2018</a></li>
 <li><a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> in <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">2018</a>
 <ul>
+</p>
 """ .

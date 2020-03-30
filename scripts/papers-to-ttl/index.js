@@ -7,8 +7,11 @@ const {
   DataFactory: { namedNode, literal, quad },
 } = require('n3');
 
+// path to folder with papers
+// uses ./data/papers from project root
 const folder = path.join(__dirname, '..', '..', 'data', 'papers');
 
+// common prefixes that we use
 const prefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
   dice: 'https://dice-research.org/',
@@ -16,12 +19,19 @@ const prefixes = {
   schema: 'https://schema.dice-research.org/',
 };
 
-// writer config
+// writer config that outputs turtle with our prefixes
 const writerConfig = {
   format: 'Turtle',
   prefixes,
 };
 
+/**
+ * Creates new function with given writer and URL
+ * that will add predicate and object as named node
+ *
+ * @param {Object} writer N3 writer instance
+ * @param {any} paperUrl URL of the subject
+ */
 const createUrlWriter = (writer, paperUrl) => (predicate, obj) => {
   // only write triples with non-null objects
   if (!obj || !obj.length) {
@@ -32,6 +42,13 @@ const createUrlWriter = (writer, paperUrl) => (predicate, obj) => {
   );
 };
 
+/**
+ * Creates new function with given writer and URL
+ * that will add predicate and object as literal
+ *
+ * @param {Object} writer N3 writer instance
+ * @param {any} paperUrl URL of the subject
+ */
 const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
   // only write triples with non-null objects
   if (!obj || !obj.length) {
@@ -46,6 +63,9 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
   );
 };
 
+/**
+ * Main logic execution (because we still don't have top level async)
+ */
 const main = async () => {
   // get papers for tag `simba`
   const { items: papers } = await fetch(
@@ -56,6 +76,8 @@ const main = async () => {
   const papersDice = await fetch(
     `https://www.bibsonomy.org/json/user/dice-research/dice?items=1000`
   ).then(r => r.json());
+
+  // merge papers into one array
   papersDice.items.forEach(paper => {
     // ignore papers that are already added
     if (papers.find(p => p.id === paper.id)) {
@@ -67,6 +89,7 @@ const main = async () => {
 
   console.log('Processing papers:', papers.length);
 
+  // process papers one by one
   papers.forEach(paper => {
     // create new turtle writer for paper
     const writer = new Writer(writerConfig);
@@ -116,6 +139,7 @@ const main = async () => {
       });
     }
 
+    // save paper to the file
     writer.end((error, result) => {
       if (error) {
         throw error;

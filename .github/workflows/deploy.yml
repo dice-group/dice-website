@@ -17,16 +17,16 @@ jobs:
       - name: install and lint
         working-directory: ./scripts
         run: |
-          yarn install
-          yarn lint
+          npm install
+          npm run lint
       - name: update papers
         working-directory: ./scripts
         run: |
           rm ../data/**/_Example.ttl
-          yarn papers
+          npm run papers
       - name: build
         working-directory: ./scripts
-        run: yarn build
+        run: npm run build
       - name: prepare deploy
         working-directory: ./scripts
         run: |
@@ -34,9 +34,9 @@ jobs:
           cp Dockerfile public/
       - name: deploy
         working-directory: ./scripts/public
-        run: npx exoframe -u -e https://dice-papers.cs.uni-paderborn.de -t $EXO_TOKEN
+        run: npx exoframe -u -e https://dice-website.cs.upb.de -t $EXO_TOKEN_DICE
         env:
-          EXO_TOKEN: ${{ secrets.EXO_TOKEN }}
+          EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
   syncBranches:
     needs: deploy
     runs-on: ubuntu-latest

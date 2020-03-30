@@ -1,0 +1,19 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:DataIntegration a schema:Group ;
+  schema:name "Data Integration" ;
+  schema:tagline "We build algorithms for the efficient and scalable linking of RDF data" ;
+  schema:relatedProject dice:HOBBIT, dice:OPAL, dice:BDE, dice:GeoKnow, dice:Feasible, dice:DEISEL, dice:SLIPO, dice:SAGE, dice:LIMBO, dice:KnowGraphs, dice:GEISER ; # related projects
+  schema:content """
+The Linked Data paradigm builds upon the backbone of distributed knowledge bases connected by typed links. 
+The mere volume of current knowledge bases as well as their sheer number pose two major challenges when aiming to support the integration of data across and within them. 
+The first is that tools for data integration have to be time-efficient specially when to deal with big datasets.
+Secondly, these tools have to carry out the data integration tasks of high quality to serve the applications built upon Linked Data well. 
+Our solutions to the second problem build upon efficient computational approaches developed to solve the first and combine these with dedicated machine learning techniques. 
+All our frameworks for data integration such as LIMES and DEER are open-source and available under a GNU license at https: //github.com/dice-group together with user/developer manuals.
+""" ;
+  schema:lead dice:MohamedAhmedSherif ; # group maintainer
+  schema:member dice:AbdullahFathiAhmed, dice:HamadaMZahera, dice:KevinDreßler, dice:TommasoSoru, dice:IdressTahirMugdal, dice:KleanthiGeorgala, dice:SvetlanaPestryakova ; # group members list
+  schema:relatedDemo dice:LIMES . # list of related demos
+

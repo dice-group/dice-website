@@ -1,6 +1,5 @@
 import { Link, navigate } from 'gatsby';
 import React from 'react';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import ActiveProjects from '../components/activeProjects';
 import ContactForm from '../components/contact';
 import FundedBy from '../components/fundedby';
@@ -9,6 +8,7 @@ import News from '../components/news';
 import SEO from '../components/seo';
 import SideMenu from '../components/sidemenu';
 import Social from '../components/social';
+import TwitterFeed from '../components/twitterFeed';
 
 export default function Home() {
   const heroRef = React.createRef();
@@ -125,15 +125,7 @@ export default function Home() {
               </a>
             </div>
 
-            <TwitterTimelineEmbed
-              sourceType="profile"
-              screenName="DiceResearch"
-              noFooter
-              noHeader
-              noScrollbar
-              autoHeight
-              options={{ tweetLimit: 3, dnt: true }}
-            />
+            <TwitterFeed />
           </div>
         </div>
       </section>
