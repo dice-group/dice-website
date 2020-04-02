@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:RAKI a dice:FundedProject ;
+dice:DAIKIRI a dice:FundedProject ;
   schema:tagline "Diagnostische KI für industrielle Daten" ;
   schema:status "active" ;
   schema:content """ """ ;
