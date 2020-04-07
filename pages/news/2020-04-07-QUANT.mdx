@@ -1,0 +1,21 @@
+---
+date: '2020-04-07'
+title: 'QUANT - Question Answering Benchmark Curator'
+author: 'Ria Hari Gusmita'
+---
+
+  
+  
+Since question answering (QA) over linked data has received considerable scholarly attention in recent years, the provision of means to quantify the performance of current QA approaches on current datasets has become crucial. However, a large percentage of the queries found in popular QA benchmarks cannot be executed on current versions of their reference dataset due to changes in it. There is, therefore, a clear need to periodically curate QA benchmarks. However, the manual alteration of QA benchmarks is often error-prone. We alleviate this problem by presenting QUANT, a framework for the intelligent creation and curation of QA benchmarks.
+
+  
+
+In QUANT, curators - users who annotate and improve the dataset - are provided with smart suggestions for each benchmark question a) to ensure high-quality data, and b) to speed up the curation process as compared to the commonly-used manual and text-editor-based creation and curation process. To achieve its goal, QUANT (1) supports the creation of SPARQL queries answering a particular information need, and the execution of the query against a predefined endpoint or knowledge base; (2) checks the validity of benchmark metadata; and 3) verifies the spelling and grammatical correctness of questions across multiple languages both in their natural-language query and keyword form.
+
+  
+
+In order to demonstrate the usability of QUANT and the efficiency of the smart suggestions, we performed two extensive evaluation campaigns. First, we analyzed the performance gain using QUANT over the traditional manual curation process with 3 experts. The results show that we decreased the required curation time by 91% while keeping the inter-rater agreement at 0.82. Second, we used QUANT to create a new joint benchmark from 8 QALD datasets by [involving 10 annotators](https://github.com/dice-group/QUANT/tree/master/Data/Curation%20Result%20from%2010%20Annotators). The smart suggestions were accepted by 83.75% of the users on average, indicating their usefulness. The novel, large and high-quality QA benchmark dataset, called QALD-9, is available at [https://github.com/ag-sc/QALD/tree/master/9/data](https://github.com/ag-sc/QALD/tree/master/9/data).
+
+  
+
+To get more details, check out our [slides](https://www.slideshare.net/RiaHariGusmita/quantquestion-answering-benchmark-curator) presented at [SEMANTiCS 2019](https://2019.semantics.cc/), or the [paper](https://link.springer.com/chapter/10.1007/978-3-030-33220-4_25). The source codes as well as datasets and evaluation results are publicly available on our [GitHub respository](https://github.com/dice-group/QUANT/tree/master). We are currently developing a new version of QUANT that can be accessed [here](https://github.com/dice-group/QUANT/tree/development).
