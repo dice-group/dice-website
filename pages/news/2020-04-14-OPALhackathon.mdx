@@ -1,0 +1,58 @@
+---
+date: '2020-04-14'
+title: 'OPAL Open Data Hackathon'
+author: 'Adrian Wilke'
+---
+
+  
+
+On 6 April 2020, the OPAL Open Data Hackathon took place in the form of a remote event. It focused on mobility data, for which participants developed ideas and software solutions. For this purpose, information on possible tasks, data formats and data collections were provided on the [Hackathon website](https://projekt-opal.github.io/hackathon/), allowing the participants to explore the Semantic Web and description languages on their own. Among the solutions submitted, two winners were chosen.
+
+  
+
+Winner: Spatial visualization of available datasets
+
+Nikit Srivastava developed his solution [Show-Geo](https://github.com/projekt-opal/hackathon/tree/show-geo) for displaying data records on a map. For this purpose, a software component queries datasets and the associated spatial data in DCAT format using SPARQL. The processed related polygons are provided for online access through webservices via a REST interface. A second component then manages the preparation of data for displaying in web browsers. Users have access to worldwide data on a map, showing the respective number of available datasets in different geographical regions. Depending on the zoom level of the map, the number of datasets is displayed in clusters. Additional technologies used are Java, Spring Boot, Apache Jena, JavaScript, Node, React (Angular in development) and Mapbox.  
+  
+
+![](https://lh5.googleusercontent.com/gRCuWSpAv8nqQwQ2Sn-7fcYXAtQA4U0GFitXxrIyJLCKcD7WkbGJkSs06nMyfPPuE5vW4YNWSrc9413oiGs-nvdYb7piHygFcaP4kuWN5aeWpyYr5sDM8-Q2VM7ow0nEePVH_kgc)
+
+  
+
+Winner: Classification of datasets for category assignment
+
+Ana Alexandra Morim da Silva contributes [Theme-Classify](https://github.com/projekt-opal/hackathon/tree/theme-classify), a method for classifying datasets. Actual data collections contain datasets, which are partly not assigned to a category. In order to automatically assign categories, the description of dataset texts is analyzed. Thereby, it is assumed that similar words are used in descriptions of datasets of the same category. Based on this assumption, the system determines which word combinations of already categorized datasets are statistically most similar to an uncategorized dataset.
+
+In the contribution, a SPARQL query is used to determine names, descriptions and categories of records. Afterwards the data is split into training and test data. After a normalization of the words and removal of stopwords, vectors are computed. TF-IDF (term frequency and inverse document frequency), and decision trees are used in the analysis. Users can specify whether J48 or Naive Bayes is used and choose between the size of n-grams. Finally, an evaluation of the correctness of the allocations is provided. The developed software uses Java, WEKA, Apache Jena, SPARQL and Stanford NLP, among others.
+
+  
+
+Closing of the event
+
+We sincerely thank all participants. A certificate of participation will be provided for all students who have submitted a [Hackathon result](https://github.com/projekt-opal/hackathon#results). The two winners will also be sharing a prize, preferably in the form of [Hasentalers](https://www.hasentaler.de/), to support the local economy in Paderborn. Links to [Open Data for the Paderborn region](https://projekt-opal.github.io/hackathon/open-data-paderborn.html) can still be found on the website; for potential use at a future event. If you have any questions about the event, please contact Adrian Wilke, details are available on the [DICE website](https://dice-research.org/). This event has been supported by the German Federal Ministry of Transport and Digital Infrastructure (BMVI) in the [OPAL](http://projekt-opal.de/en/welcome-project-opal/) project (no. 19F2028A).
+
+  
+
+OPAL Open Data Hackathon
+
+Am 6. April 2020 fand der OPAL Open Data Hackathon als Remote-Veranstaltung statt. Im Fokus standen Mobilitätsdaten, zu denen die Teilnehmer Ideen und Softwarelösungen entwickelten. Dafür wurden auf der [Hackathon-Webseite](https://projekt-opal.github.io/hackathon/) Informationen zu möglichen Aufgabenstellungen, Datenformaten und -sammlungen bereitgestellt, mit denen die Teilnehmer sich eigenständig mit dem Semantic Web und Beschreibungssprachen auseinandersetzen konnten. Unter den eingereichten Lösungen wurden zwei Gewinner ermittelt.
+
+Gewinner: Räumliche Visualisierung verfügbarer Datensätze
+
+Nikit Srivastava entwickelte seine Lösung [Show-Geo](https://github.com/projekt-opal/hackathon/tree/show-geo) zur Anzeige von Datensätzen auf einer Karte. Dazu werden von einer Softwarekomponente Datensätze und zugehörige räumliche Daten im DCAT-Format per SPARQL abgefragt. Die verarbeiteten zugehörigen Polygone werden über Webservices über eine REST-Schnittstelle für einen Online-Zugriff bereitgestellt. Eine weitere Komponente regelt anschließend die Datenaufbereitung zur Anzeige in Webbrowsern. Nutzer können auf einer Karte weltweite Daten betrachten, wobei die jeweilige Anzahl verfügbarer Datensätze in verschiedenen Regionen angezeigt wird. Je nach Vergrößerung der Karte wird die Anzahl von Datensätze in Clustern zusammengefasst angezeigt. Zur Verwendung kommen dabei außerdem Java, Spring Boot, Apache Jena sowie JavaScript, Node, React (in Entwicklung zunächst Angular) und Mapbox.
+
+  
+
+![](https://lh5.googleusercontent.com/gRCuWSpAv8nqQwQ2Sn-7fcYXAtQA4U0GFitXxrIyJLCKcD7WkbGJkSs06nMyfPPuE5vW4YNWSrc9413oiGs-nvdYb7piHygFcaP4kuWN5aeWpyYr5sDM8-Q2VM7ow0nEePVH_kgc)
+
+Gewinner: Klassifizierung von Datensätzen zur Zuordnung von Kategorien
+
+Ana Alexandra Morim da Silva stellt mit ihrem Beitrag [Theme-Classify](https://github.com/projekt-opal/hackathon/tree/theme-classify) ein Verfahren zur Verfügung, mit dem Datensätze klassifiziert werden. Aktuelle Datensammlungen enthalten Datensätze, die teilweise keiner Kategorie zugeordnet sind. Um automatisch Kategorien zuzuordnen werden die Beschreibungstexte von Datensätzen analysiert. Es wird dabei davon ausgegangen, dass sich verwendete Wörter in Beschreibungen von Datensätzen gleicher Kategorie ähneln. Basierend auf dieser Annahme wird für Datensätze ohne Kategorie ermittelt, welche Wortkombinationen von bereits kategorisierten Datensätzen statistisch am ähnlichsten sind.
+
+Im Beitrag werden über eine SPARQL Anfrage Namen, Beschreibungstexte und Kategorien von Datensätzen ermittelt. Danach findet eine Unterteilung der Daten in Trainings- und Testdaten statt. Nach einer Normalisierung der Wörter und Entfernung von Stopwords werden Vektoren berechnet. Bei der Analyse kommen TF-IDF (Vorkommenshäufigkeit von Termen und inverse Dokumenthäufigkeit) sowie Entscheidungsbäume zum Einsatz. Nutzer können dabei angeben, ob J48 oder Naive Bayes verwendet wird sowie zwischen der Größe von n-Grammen wählen. Abschließend ist eine Evaluierung zur Korrektheit der Zuordnungen inbegriffen. Die entwickelte Software verwendet unter anderem Java, WEKA, Apache Jena, SPARQL und Stanford NLP.
+
+  
+
+Abschluss der Veranstaltung
+
+Wir bedanken uns herzlich bei allen Teilnehmern. Für alle Studierende, die ein [Hackathon Ergebnis](https://github.com/projekt-opal/hackathon#results) eingereicht haben, wird eine Teilnahmebescheinigung ausgestellt. Die beiden Gewinner teilen sich zudem einen Preis, der vorzugsweise in Form von [Hasentalern](https://www.hasentaler.de/) vergeben wird, um die lokale Wirtschaft in Paderborn zu unterstützen. Links zu [offenen Daten für den Raum Paderborn](https://projekt-opal.github.io/hackathon/open-data-paderborn.html) sind weiterhin auf der Webseite zu finden. Vielleicht können sie bei einer zukünftigen Veranstaltung verwendet werden. Bei Nachfragen zur Veranstaltung können Sie sich an Adrian Wilke wenden, Kontaktdaten sind auf der [DICE Webseite](https://dice-research.org/) zu finden. Diese Veranstaltung fand im Rahmen des Projektes [OPAL](http://projekt-opal.de/) statt, das vom Bundesministerium für Verkehr und digitale Infrastruktur (BMVI) gefördert wird (Förderkennzeichen 19F2028A).
