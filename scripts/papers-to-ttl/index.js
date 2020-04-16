@@ -86,17 +86,17 @@ const main = async () => {
   // get papers for tag `simba`
   const { items: papers } = await fetch(
     `https://www.bibsonomy.org/json/user/dice-research/simba?items=1000`
-  ).then(r => r.json());
+  ).then((r) => r.json());
 
   // load papers with "dice" tag and add them to result dataset
   const papersDice = await fetch(
     `https://www.bibsonomy.org/json/user/dice-research/dice?items=1000`
-  ).then(r => r.json());
+  ).then((r) => r.json());
 
   // merge papers into one array
-  papersDice.items.forEach(paper => {
+  papersDice.items.forEach((paper) => {
     // ignore papers that are already added
-    if (papers.find(p => p.id === paper.id)) {
+    if (papers.find((p) => p.id === paper.id)) {
       return;
     }
 
@@ -106,7 +106,7 @@ const main = async () => {
   console.log('Processing papers:', papers.length);
 
   // process papers one by one
-  papers.forEach(paper => {
+  papers.forEach((paper) => {
     // create new turtle writer for paper
     const writer = new Writer(writerConfig);
 
@@ -136,7 +136,7 @@ const main = async () => {
       writeLiteral('source', paper.booktitle || paper.journal);
     }
     if (paper.tags && paper.tags.length > 0) {
-      paper.tags.forEach(tag => {
+      paper.tags.forEach((tag) => {
         writeLiteral('tag', tag);
       });
     }
@@ -145,15 +145,13 @@ const main = async () => {
       writeUrl(`${prefixes.schema}url`, paper.url);
     }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    if (checkUrl(paper['bdsk-url-1'] || paper['1'])) {
-      writeUrl(
-        `${prefixes.schema}pdfUrl`,
-        preprocessPdfUrl(paper['bdsk-url-1'] || paper['1'])
-      );
+    var pdfUrl = preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']);
+    if (checkUrl(pdfUrl)) {
+      writeUrl(`${prefixes.schema}pdfUrl`, pdfUrl);
     }
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
-      paper.authors.forEach(author => {
+      paper.authors.forEach((author) => {
         const name = _.upperFirst(_.camelCase(author.first + author.last));
         writeUrl(`${prefixes.schema}author`, `${prefixes.dice}${name}`);
       });
@@ -172,7 +170,7 @@ const main = async () => {
       const filename = `${baseFileName}.ttl`;
       const filepath = path.join(folder, filename);
       // write result
-      fs.writeFile(filepath, result, err => {
+      fs.writeFile(filepath, result, (err) => {
         if (err) {
           throw err;
         }
