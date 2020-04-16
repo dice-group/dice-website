@@ -76,7 +76,7 @@ function checkUrl(url) {
  * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
  */
 function preprocessPdfUrl(url) {
-  return url.replace(/\\/g,'');
+  return url.replace(/\\/g, '');
 }
 
 /**
@@ -146,7 +146,10 @@ const main = async () => {
     }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
     if (checkUrl(paper['bdsk-url-1'] || paper['1'])) {
-      writeUrl(`${prefixes.schema}pdfUrl`, preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']));
+      writeUrl(
+        `${prefixes.schema}pdfUrl`,
+        preprocessPdfUrl(paper['bdsk-url-1'] || paper['1'])
+      );
     }
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
