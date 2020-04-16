@@ -76,6 +76,9 @@ function checkUrl(url) {
  * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
  */
 function preprocessPdfUrl(url) {
+  if (url === null || url === undefined) {
+    return '';
+  }
   return url.replace(/\\/g, '');
 }
 
