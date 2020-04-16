@@ -64,12 +64,12 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
 };
 
 /**
- * Function for checking whether a given string is a valid URL. The regex is copied from 
+ * Function for checking whether a given string is a valid URL. The regex is copied from
  * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
  */
 function checkUrl(url) {
   var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
-  return regexp.test(url);   
+  return regexp.test(url);
 }
 
 /**
@@ -134,11 +134,11 @@ const main = async () => {
       });
     }
     // make sure that URL is valid before adding it
-    if(checkUrl(paper.url)) {
+    if (checkUrl(paper.url)) {
       writeUrl(`${prefixes.schema}url`, paper.url);
     }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    // TODO: Throws error parsing '\\_' and '\\%' 
+    // TODO: Throws error parsing '\\_' and '\\%'
     // See: https://github.com/dice-group/dice-website/issues/210
     // writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
     if (paper.authors && paper.authors.length > 0) {
