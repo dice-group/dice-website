@@ -68,7 +68,7 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
  * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
  */
 function checkUrl(url) {
-  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/;
+  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?$/;
   return regexp.test(url);
 }
 
