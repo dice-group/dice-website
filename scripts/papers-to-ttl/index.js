@@ -73,6 +73,13 @@ function checkUrl(url) {
 }
 
 /**
+ * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
+ */
+function preprocessPdfUrl(url) {
+  return url.replace(/\\/g,'');
+}
+
+/**
  * Main logic execution (because we still don't have top level async)
  */
 const main = async () => {
@@ -138,9 +145,9 @@ const main = async () => {
       writeUrl(`${prefixes.schema}url`, paper.url);
     }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    // TODO: Throws error parsing '\\_' and '\\%'
-    // See: https://github.com/dice-group/dice-website/issues/210
-    // writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
+    if (checkUrl(paper['bdsk-url-1'] || paper['1'])) {
+      writeUrl(`${prefixes.schema}pdfUrl`, preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']));
+    }
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
