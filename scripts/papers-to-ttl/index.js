@@ -64,6 +64,22 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
 };
 
 /**
+ * Function for checking whether a given string is a valid URL. The regex is copied from
+ * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
+ */
+function checkUrl(url) {
+  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?$/;
+  return regexp.test(url);
+}
+
+/**
+ * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
+ */
+function preprocessPdfUrl(url) {
+  return url.replace(/\\/g, '');
+}
+
+/**
  * Main logic execution (because we still don't have top level async)
  */
 const main = async () => {
@@ -124,9 +140,17 @@ const main = async () => {
         writeLiteral('tag', tag);
       });
     }
-    writeUrl(`${prefixes.schema}url`, paper.url);
+    // make sure that URL is valid before adding it
+    if (checkUrl(paper.url)) {
+      writeUrl(`${prefixes.schema}url`, paper.url);
+    }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
+    if (checkUrl(paper['bdsk-url-1'] || paper['1'])) {
+      writeUrl(
+        `${prefixes.schema}pdfUrl`,
+        preprocessPdfUrl(paper['bdsk-url-1'] || paper['1'])
+      );
+    }
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
