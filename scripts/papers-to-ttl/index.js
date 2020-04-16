@@ -126,7 +126,9 @@ const main = async () => {
     }
     writeUrl(`${prefixes.schema}url`, paper.url);
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
+    // TODO: Throws error parsing '\\_' and '\\%' 
+    // See: https://github.com/dice-group/dice-website/issues/210
+    //writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
