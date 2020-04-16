@@ -34,7 +34,7 @@ jobs:
           cp Dockerfile public/
       - name: deploy
         working-directory: ./scripts/public
-        run: npx exoframe -u -e https://dice-website.cs.upb.de -t $EXO_TOKEN_DICE
+        run: npx exoframe -u -vvv -e https://dice-website.cs.upb.de -t $EXO_TOKEN_DICE
         env:
           EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
   syncBranches:
