@@ -71,8 +71,10 @@ To deploy it locally run the following commands:
 
 ```sh
 yarn build
+cp Dockerfile public/
+cd public/
 docker build -t dice-website .
-docker run --name dice-website-instance -p 80:80 dice-website
+docker run --name dice-website-instance -p 8080:80 dice-website
 ```
 
 ## Automated deployment
