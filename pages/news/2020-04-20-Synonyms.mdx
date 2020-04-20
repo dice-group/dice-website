@@ -1,0 +1,117 @@
+---
+date: '2020-04-20'
+title: 'Extracting Synonyms from Knowledge Graphs'
+author: 'Adrian Wilke'
+---
+
+
+  
+
+Simple text-based search systems do not reflect the semantics of individual input words of search queries. For example, a query for the word “house” would not return records for the words “building” or “real estate”. How can such relationships be represented in a technical system? One approach is to include synonyms. Search engines like Elasticsearch provide methods to integrate synonym lists. However, a list of synonyms itself is required for configuration.
+
+## Synonyms in knowledge graphs
+
+There are several knowledge graphs that contain synonyms. The Linguistic Linked Open Data Cloud (LingHub) describes corresponding datasets. The following list shows a selection of linguistic knowledge graphs and their limitations:
+
+  
+
+-   [BabelNet](https://babelnet.org/download) ([Limits in API requests](https://babelnet.org/guide))
+    
+-   [DBnary](http://kaiko.getalp.org/) (Multilingual. Creative Commons Attribution-ShareAlike 3.0)
+    
+-   [RDF/OWL Representation of WordNet](https://www.w3.org/TR/wordnet-rdf/) ([Limited to English](https://www.w3.org/TR/wordnet-rdf/))
+    
+-   [LingHub](http://linghub.org/) lists further data sources
+    
+
+  
+  
+
+![](https://lh6.googleusercontent.com/mpju0LW3qkUSdCw0U9lyTUmBfNgeYLRC75LJhvlAMG1lZyJoGvXTqudry6Twe-vV5D1YVefLWvJc7xbsyCoH6NXK_hzYqKzwCeCT7buZAFJrRU4pUatxmn58AX8lJslWvcfq5ybu)
+
+Figure: Linguistic Linked Open Data Cloud (LingHub)
+
+Source:: LIDER [http://linghub.org/llod-cloud](http://linghub.org/llod-cloud) (data license: CC BY-NC-SA 4.0)
+
+  
+
+## Extracting synonyms from DBnary
+
+To extract synonyms out of a knowledge graph, the underlying ontology has to be first understood. The following figure shows the part of the ontology required for the extraction of synonyms in the German language:
+
+  
+
+![](https://lh6.googleusercontent.com/4ywt8qSNKMz5UxT3qkZH-sz4If5ovBEBPuRytEImNu0aJ4YEyybQIVGwRJcTZ3Eq2GtkH-KQNXXt5BGLzqhyn1pOPZX4O0W_u1btf8qTVKtRLCtDJpz-K3y_ItNvMM7EVOMP_Ndn)
+
+Figure: Graphical representation of the SPARQL request
+
+  
+  
+
+With knowledge of the required DBnary data structures, a SPARQL query can now be formulated. An execution of the following example will return 100 entries for German synonyms. The query can be tested using the SPARQL endpoint at [http://kaiko.getalp.org/sparql](http://kaiko.getalp.org/sparql).
+
+  
+
+SELECT DISTINCT ?germannoun ?synonym WHERE {
+
+?n a <http://www.lexinfo.net/ontology/2.0/lexinfo#Noun> .
+
+?n <http://www.w3.org/ns/lemon/lime#language> "de" .
+
+?n <http://kaiko.getalp.org/dbnary#synonym> ?p .
+
+?p <http://kaiko.getalp.org/dbnary#describes> ?n2 .
+
+?n2 a <http://www.lexinfo.net/ontology/2.0/lexinfo#Noun> .
+
+?n <http://www.w3.org/ns/lemon/ontolex#canonicalForm> ?c .
+
+?c <http://www.w3.org/ns/lemon/ontolex#writtenRep> ?germannoun .
+
+?n2 <http://www.w3.org/ns/lemon/ontolex#canonicalForm> ?c2 .
+
+?c2 <http://www.w3.org/ns/lemon/ontolex#writtenRep> ?synonym .
+
+}
+
+LIMIT 100
+
+OFFSET 0
+
+Listing: SPARQL request
+
+  
+  
+
+In a test run, we extracted 6,668 nouns in German and 21,634 corresponding synonyms. As a final step, the synonym list can be used to configure search engines and thus improve the findability of data records.
+
+## Further reading
+
+-   German version of this text: [OPAL deliverable D7.1: Suchkomponente](https://drive.google.com/file/d/1Vqc5BRJKUVYtYlOomZ6kg2CgOaLcc5wt/edit) ([Tweet](https://twitter.com/adrianwilke/status/1146515964722372609))
+    
+-   Learn more about the [Open Data Portal Germany (OPAL)](https://dice-research.org/OPAL) project
+    
+
+# Backup: German texts
+
+(Maybe required later)
+
+  
+
+Einfache textbasierte Suchanfragen bilden die Semantik von Eingaben nicht ab. Beispielsweise würde eine Anfrage nach dem Wort “Haus” keine Datensätze zum Wort “Gebäude” oder “Immobilie” zurückgeben. Wie können solche Beziehungen in einem technischen System abgebildet werden? Ein Ansatz ist die Einbindung von Synonymen. Suchmaschinen wie Elasticsearch bieten eine solche Funktionalität an. Dazu wird allerdings eine Liste von Synonymen benötigt.
+
+  
+
+Es existieren mehrere Wissensgraphen, die Synonyme abbilden. In der Linguistic Linked Open Data Cloud (LingHub) sind entsprechende Wissensgraphen beschrieben. Die folgende Liste enthält einen Auszug linguistischer Wissensgraphen und deren Limitierungen:
+
+  
+
+Um Synonyme aus einem Wissensgraph zu extrahieren, muss zunächst die unterliegende Ontologie verstanden werden. Die folgende Grafik zeigt einen Ausschnitt der Bestandteile, die für eine Extraktion deutschsprachiger Synonyme notwendig ist:
+
+  
+
+Mit dem Wissen über die DBnary Datenstrukturen kann nun eine SPARQL Anfrage formuliert werden. Das folgende Beispiel gibt 100 Einträge für deutschsprachige Synonyme zurück. Die Anfrage kann über den SPARQL Endpunkt http://kaiko.getalp.org/sparql getestet werden.
+
+  
+
+In unserem Test wurden 6.668 deutschsprachige und 21.634 entsprechende Synonyme extrahiert. Abschließend kann die Synonymliste verwendet werden, um Suchmaschinen zu konfigurieren und damit die Auffindbarkeit von Datensätzen zu verbessern.
