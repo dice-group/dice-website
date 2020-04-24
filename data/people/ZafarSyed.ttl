@@ -4,7 +4,7 @@
 dice:ZafarSyed a schema:Person ;
   schema:name "Zafar Syed" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-176-41-976922> ;
   schema:project dice:OPAL ;
   schema:fax <tel:> ;
