@@ -1,14 +1,14 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:LennartAustenfeld a schema:Person ;
-  schema:name "Lennart Austenfeld" ;
+dice:MelissaDas a schema:Person ;
+  schema:name "Melissa Das" ;
   schema:namePrefix "" ;
   schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:> ;
-  schema:chat "@lennarta:chat.dice-research.org" ;
+  schema:email "" ;
+  schema:chat "" ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .
