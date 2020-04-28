@@ -17,6 +17,16 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+
+      - name: configure DNS server
+        run: |
+          sudo mkdir /usr/lib/systemd/resolved.conf.d
+          echo "[Resolve]" > resolved.conf
+          echo "DNS=8.8.8.8" >> resolved.conf
+          sudo mv resolved.conf /usr/lib/systemd/resolved.conf.d/resolved.conf
+          sudo systemctl daemon-reload
+          sudo systemctl restart systemd-networkd
+          sudo systemctl restart systemd-resolved
       - name: install and lint
         working-directory: ./scripts
         run: |
