@@ -7,8 +7,8 @@ dice:HardikTopiwala a schema:Person ;
   schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email "" ;
-  schema:chat "" ;
+  schema:email <mailto:topiwala@mail.uni-paderborn.de> ;
+  schema:chat "@topiwala:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .
