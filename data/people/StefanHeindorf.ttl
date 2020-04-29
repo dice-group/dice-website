@@ -1,0 +1,11 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:StefanHeindorf a schema:Person ;
+  schema:name "Stefan Heindorf" ;
+  schema:namePrefix "Dr. rer. nat." ;
+  schema:role dice:SeniorResearcher ;
+  schema:email <mailto:heindorf@uni-paderborn.de> ;
+  schema:photo "heindorf.jpg" ;
+  schema:project dice:RAKI, dice:DAIKIRI ;
+  schema:content """""" .
