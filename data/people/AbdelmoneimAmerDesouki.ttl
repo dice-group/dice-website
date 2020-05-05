@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:AbdelmoneimDesouki a schema:Person ;
+dice:AbdelmoneimAmerDesouki a schema:Person ;
   schema:name "Abdelmoneim Mahmoud Amer Desouki" ;
   schema:namePrefix "Dr." ;
   schema:role dice:Infrastructure ;
