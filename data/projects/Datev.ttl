@@ -1,0 +1,18 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+
+
+dice:DATEV a dice:FundedProject ;
+  schema:tagline "Cooperation with DATEV eG" ;
+  schema:status "active" ;
+  schema:content """The aim of the cooporation with DATEV eG is to exchange ideas regarding technologies and research topics. In addition, the collaboration includes submitting proposals for research topic, working on research projects and organising regular meetings.""" ;
+  schema:endDate "2020-12-31"^^xsd:date ;
+  schema:startDate "2019-07-01"^^xsd:date ;
+  schema:content "" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "DATEV" ;
+  schema:partner dicepartner:DATEV .
