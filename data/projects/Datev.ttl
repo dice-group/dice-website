@@ -9,10 +9,11 @@
 dice:DATEV a dice:FundedProject ;
   schema:tagline "Cooperation with DATEV eG" ;
   schema:status "active" ;
-  schema:content """The aim of the cooperation with DATEV eG is to exchange ideas regarding technologies and research topics in the fields of machine learning and big data processing. In addition, the collaboration includes writing and submitting research proposals, working on joint research projects and organising regular meetings.""" ;
+  schema:content """The aim of the cooperation with DATEV eG is to exchange ideas regarding technologies and research topics in the fields of machine learning and Big Data processing. In addition, the collaboration includes writing and submitting research proposals, working on joint research projects and organising regular meetings.""" ;
   schema:endDate "2020-12-31"^^xsd:date ;
-  schema:startDate "2019-07-01"^^xsd:date ;
+  schema:startDate "2018-10-15"^^xsd:date ;
   schema:content "" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "DATEV" ;
   schema:partner dicepartner:DATEV .
+  
