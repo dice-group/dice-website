@@ -13,67 +13,38 @@ Our RDF dataset generation is based on papers related to COVID-19 and coronaviru
 
 In this blog post we briefly introduce our dataset conversion process and give some example resources.
 
-  
-
 ## Namespaces
 
-  
-
-We use the following namespaces in COVID19-DS
-
-  
+We use the following namespaces in COVID19-DS:
 
 ```turtle
-
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-
 @prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
-
 @prefix covid: <https://covid-19ds.data.dice-research.org/resource/> .
-
 @prefix dcterms: <http://purl.org/dc/terms/> .
-
 @prefix fabio: <http://purl.org/spar/fabio/> .
-
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
 @prefix its: <http://www.w3.org/2005/11/its/rdf#> .
-
 @prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
-
 @prefix prov: <http://www.w3.org/ns/prov#> .
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 @prefix schema: <http://schema.org/> .
-
 @prefix sdo: <http://salt.semanticauthoring.org/ontologies/sdo#> .
-
 @prefix swc: <http://data.semanticweb.org/ns/swc/ontology#> .
-
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
-
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
 ```
-
-  
 
 ## Article metadata
 
 The base URI is represented as 'https://covid-19ds.data.dice-research.org/resource/paperId' where paperId is the paper_id from the JSON file of the paper.
 
-  
-
 The following items are included as an article metadata:
 
-- authors (`bibtex:hasAuthor`)
-
-- primary source (`prov:hadPrimarySource`)
+-   authors (`bibtex:hasAuthor`)
+-   primary source (`prov:hadPrimarySource`)
 
   
 
@@ -81,233 +52,134 @@ Moreover, the article metadata includes linking to different parts of the paper 
 
 For example:
 
-- `covid:hasBody covid:PMC1616946_Body`
+-   covid:hasBody covid:PMC1616946_Body`
 
-- `covid:hasDiscussion covid:PMC1616946_Discussion`
+-   covid:hasDiscussion covid:PMC1616946_Discussion`
 
-- `covid:hasIntroduction covid:PMC1616946_Introduction`.
+-   covid:hasIntroduction covid:PMC1616946_Introduction`.
 
   
 
 Here is an example of article metadata:
 
 ```turtle
-
 covid:PMC1616946 a swc:Paper,
-
 bibo:AcademicArticle,
-
 fabio:ResearchPaper,
-
 schema:ScholarlyArticle ;
-
 bibtex:hasAuthor covid:ChristineAnderson,
-
 covid:ClarkHenderson,
-
 covid:MichaelHoward ;
-
 prov:hadPrimarySource covid:nonCommercialUseDataset ;
-
 covid:hasBody covid:PMC1616946_Body ;
-
 covid:hasDiscussion covid:PMC1616946_Discussion ;
-
 covid:hasIntroduction covid:PMC1616946_Introduction .
-
 ```
-
-  
 
 Each part of the paper can consist of more than one paragraph. Each piece of text that belongs to the same part stores paperId and the number of the section in RDF triples:
 
 ```turtle
-
 covid:PMC1616946_Introduction covid:hasSection covid:PMC1616946_Section1,
-
 covid:PMC1616946_Section2,
-
 covid:PMC1616946_Section3,
-
 covid:PMC1616946_Section4,
-
 covid:PMC1616946_Section5,
-
 covid:PMC1616946_Section6 .
-
 ```
-
-  
-
 Each section presents the metadata about the string (`nif:isString`) and the title (`bibtex:hasTitle`).
-
 An example of the section representation looks as follows:
 
 ```turtle
-
 covid:PMC1616946_Section1 a sdo:Section ;
-
 nif:isString "The standard triplet readout of the genetic code can be reprogrammed by signals in the mRNA to induce ribosomal frameshifting [reviewed in (1–3)]. Generally, the resulting trans-frame protein product is functional and may in some cases be expressed in equal amounts to the product of standard translation. This elaboration of the genetic code (4,5) demonstrates versatility in decoding." ;
-
 bibtex:hasTitle "INTRODUCTION" .
-
 ```
-
-  
 
 When the text includes references (For example, (1-3), (4,5), Figure1A, Fig.1, etc.), the metadata about them are added as RDF triples as well. The section metadata comprises of the following items:
 
-- number of the reference (`nif:anchorOf`)
-
-- begin position in the string (`nif:beginIndex`)
-
-- end position in the string (`nif:endIndex`)
-
-- reference to the source string (`nif:referenceContext`)
-
-- reference to the bibtex entry or entity of the figure (`its:taIdentRef`)
-
-  
+-   number of the reference (`nif:anchorOf`)
+-   begin position in the string (`nif:beginIndex`)
+-   end position in the string (`nif:endIndex`)
+-   reference to the source string (`nif:referenceContext`)
+-   reference to the bibtex entry or entity of the figure (`its:taIdentRef`)
 
 An example of the section metadata is shown below:
 
 ```turtle
-
 covid:PMC1616946_Section1_B1_1 a nif:Phrase ;
-
 nif:anchorOf "1" ;
-
 nif:beginIndex "140"^^xsd:nonNegativeInteger ;
-
 nif:endIndex "141"^^xsd:nonNegativeInteger ;
-
 nif:referenceContext covid:PMC1616946_Section1 ;
-
 its:taIdentRef covid:PMC1616946_B1_1 .
-
 ```
-
-  
 
 An example of a bibtex entry:
 
 ```turtle
-
 covid:PMC1616946_B1_1 a bibtex:Entry ;
-
 bibtex:Inbook "159-183" ;
-
 bibtex:hasAuthor covid:DMDunn,
-
 covid:JFAtkins,
-
 covid:RBWeiss,
-
 covid:RFGesteland ;
-
 bibtex:hasTitle "Ribosomal frameshifting from −2 to +50 nucleotides" ;
-
 bibtex:hasVolume "39" ;
-
 bibtex:hasYear 1990 ;
-
 schema:EventVenue "Prog. Nucleic Acid Res. Mol. Biol." .
-
 ```
 
 Here is an example of the metadata of the figure:
 
 ```turtle
-
 covid:PMC1616946_Figure1A_1 a sdo:Figure ;
-
 bibtex:hasTitle "Figure 1: (A) Reporter construct design: cis- and trans-acting stimulators of frameshifting. Sequence of the shift site and downstream sequences for dual luciferase constructs containing cis-acting structures used in this paper. P2luc-AZ1wt contains the wild-type antizyme frameshift cassette, p2luc-AZ1-0sp has a 3 bp deletion of the spacer sequences separating the shift site from the pseudoknot and p2luc-AZ1hp contains a hairpin replacement of the pseudoknot structure. S1 and S2 refer to stem 1 and stem 2 of the RNA pseudoknot. L1 and L2 refer to loops 1 and 2 of the pseudoknot. Fluc and Rluc represent Firefly and Renilla luciferase genes, respectively. (B) Sequence of the shift site and downstream sequences for dual luciferase constructs and their complementary antisense oligonucleotide partners. Fluc and Rluc represent Firefly and Renilla luciferase genes, respectively." .
-
 ```
-
-  
 
 ## Provenance information
 
 We make sure to preserve the provenance information about the source of each paper in our dataset. Currently, there are 3 types of source subsets that are handled by our Python script:
-
-- `covid:nonCommercialUseDataset`
-
-- `covid:commercialUseDataset`
-
-- `covid:customLicenseDataset`.
-
-  
+-   covid:nonCommercialUseDataset`
+-   covid:commercialUseDataset`
+-   covid:customLicenseDataset`.
 
 An example of the provenance information of a converted publication is shown below:
 
 ```turtle
-
 covid:nonCommercialUseDataset a prov:Entity ;
-
 prov:wasDerivedFrom "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-20/noncomm_use_subset.tar.gz" .
-
 ```
 
 ## Sparql endpoint
 
 We publicly serve our final RDF dataset via our SPARQL endpoint [link](https://covid-19ds.data.dice-research.org/sparql). Some example queries are performed below.
 
-  
-
 * List all papers-URIs written by the author "Ian Mackay" ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
 
-  
-
 ```sparql
-
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-
 PREFIX bibtex: <http://purl.org/net/nknouf/ns/bibtex#>
-
 SELECT DISTINCT ?paper
-
 WHERE {
-
 ?paper bibtex:hasAuthor ?author .
-
 ?author foaf:firstName "Ian".
-
-?author foaf:lastName "Mackay" .
-
+?author foaf:lastName "Mackay" 
 }
-
 ```
 
 * The 10 papers-URIs with the most number of authors ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
 
-  
-
 ```sparql
-
 PREFIX swc: <http://data.semanticweb.org/ns/swc/ontology#>
-
 PREFIX bibtex: <http://purl.org/net/nknouf/ns/bibtex#>
-
-  
-
 SELECT ?author count( * ) as ?cnt
-
 WHERE {
-
 ?paper a swc:Paper.
-
 ?paper bibtex:hasAuthor ?author.
-
 }
-
 ORDER BY DESC(?cnt)
-
 LIMIT 10
-
 ```
-
-  
 
 ## Dereferencing our resources
 
@@ -315,20 +187,12 @@ We also allow dereferencing our dataset URIs using LodView [link](https://lodvie
 
 <Image filename='lodview_resource.png' style="height: 60%; width: 60%;"/>
 
-  
-
 ## Dump files
 
 We also provide dump files of our converted dataset. The generated RDF datasets are located in our [HOBBIT storage](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/). Currently, we have 3 turtle files there:
 
-  
-
 * corona_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_commercial.ttl)) - generated from the [commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/comm_use_subset.tar.gz)
 
-  
-
 * corona_custom_license.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_custom_license.ttl)) - generated from the [custom license subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/custom_license.tar.gz)
-
-  
 
 * corona_non_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_non_commercial.ttl)) - generated from the [non-commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/noncomm_use_subset.tar.gz)
