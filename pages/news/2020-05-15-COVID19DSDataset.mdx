@@ -141,7 +141,7 @@ prov:wasDerivedFrom "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.
 
 We publicly serve our final RDF dataset via our SPARQL endpoint [link](https://covid-19ds.data.dice-research.org/sparql). Some example queries are performed below.
 
-* List all papers-URIs written by the author "Ian Mackay" ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
+-   List all papers-URIs written by the author "Ian Mackay" ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
 
 ```sparql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -154,7 +154,7 @@ WHERE {
 }
 ```
 
-* The 10 papers-URIs with the most number of authors ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
+-   The 10 papers-URIs with the most number of authors ([link](https://covid-19ds.data.dice-research.org/sparql/?default-graph-uri=&query=PREFIX+foaf%3A+++%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%3E%0D%0APREFIX+bibtex%3A+++%3Chttp%3A%2F%2Fpurl.org%2Fnet%2Fnknouf%2Fns%2Fbibtex%23%3E%0D%0ASELECT+DISTINCT+%3Fpaper%0D%0AWHERE+%7B%0D%0A+%3Fpaper+bibtex%3AhasAuthor+%3Fauthor+.%0D%0A+%3Fauthor++foaf%3AfirstName+%22Ian%22.%0D%0A+%3Fauthor+foaf%3AlastName+%22Mackay%22+.%0D%0A%7D&format=text%2Fhtml&timeout=0&debug=on&run=+Run+Query+)):
 
 ```sparql
 PREFIX swc: <http://data.semanticweb.org/ns/swc/ontology#>
@@ -178,8 +178,8 @@ We also allow dereferencing our dataset URIs using LodView [link](https://lodvie
 
 We also provide dump files of our converted dataset. The generated RDF datasets are located in our [HOBBIT storage](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/). Currently, we have 3 turtle files there:
 
-* corona_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_commercial.ttl)) - generated from the [commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/comm_use_subset.tar.gz)
+-   corona_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_commercial.ttl)) - generated from the [commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/comm_use_subset.tar.gz)
 
-* corona_custom_license.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_custom_license.ttl)) - generated from the [custom license subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/custom_license.tar.gz)
+-   corona_custom_license.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_custom_license.ttl)) - generated from the [custom license subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/custom_license.tar.gz)
 
-* corona_non_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_non_commercial.ttl)) - generated from the [non-commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/noncomm_use_subset.tar.gz)
+-   corona_non_commercial.ttl ([download](https://hobbitdata.informatik.uni-leipzig.de/COVID19DS/corona_non_commercial.ttl)) - generated from the [non-commercial use subset](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/latest/noncomm_use_subset.tar.gz)
