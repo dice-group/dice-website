@@ -89,7 +89,7 @@ In order to get the result of the previous run, you should click on *Check the s
 """ ;
   schema:screenshot "full_limes_with_marks.png" ;
   schema:logo "limes_logo.png" ;
-  schema:homepage <http://limes.aksw.org> ;
+  schema:homepage <https://limes.demos.dice-research.org/> ;
   schema:sourceCode <https://github.com/dice-group/LIMES> ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:developer dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:PaulSpooren .
