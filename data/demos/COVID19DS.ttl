@@ -1,0 +1,212 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:COVID19DS a schema:Demo ;
+  schema:name "COVID19DS" ;
+  schema:tagline "COVID19DS based on CORD-19 datasets" ;
+  schema:content """
+
+
+# Introduction
+The rapid generation of large amounts of information about
+the novel coronavirus SARS-CoV-2 and the disease COVID-19 makes it
+increasingly difficult to gain a comprehensive overview of current insights
+related to the disease. This holds especially for scientific research, where
+a growing number of publications provide insights that might support the
+development of a cure or vaccine. With this work, we aim to support the
+rapid access to a comprehensive data source on COVID-19 targeted especially at researchers. 
+Our dataset, Covid-19-DS, an RDF knowledge
+graph of scientific publications, abides by the Linked Data and FAIR
+principles. The base dataset for the extraction is CORD-19, a dataset
+of COVID-19-related publications, which is regularly updated. Consequently, Covid-19-DS is updated periodically. Our generation pipeline
+applies named entity recognition, entity linking and link discovery approaches to the original data. The current version of the resulting dataset
+contains 69,434,763 triples and is linked to 9 other datasets by over 1 million links. In a case study, we demonstrate the usefulness of our knowledg graph for different applications. Covid-19-DS can be accessed as an
+RDF dump, a SPARQL endpoint, and via an HTML endpoint. All data
+we generated is available under the CC BY-NC license. 3 The software
+developed for the extraction is available under the GPL 3.0 license.
+
+
+The number of papers pertaining to SARS-CoV-2 and COVID-19 has surged
+over the last few months, making it hard to keep track of the latest research
+findings on the subject matter. Hence, the Allen Institute initiated a growing
+corpus of publications about COVID-19 called [CORD-19](https://www.semanticscholar.org/cord19), which is updated on a regular basis.
+we present Covid-19-DS, a comprehensive RDF knowledge
+graph of COVID-19 based on CORD-19. We provide a detailed representation of the COVID-19 publications in RDF including properties like publication title, authors names and their
+institutions, paper sections (e.g., abstract, introduction, body, discussion etc.)
+and annotated references (e.g., references to figures). Resources such as authors
+and named entities augment the original data and make it easier to process for
+the sake of question answering and machine learning. All resources in the dataset
+are dereferenceable HTTP IRIs, which can be accessed via LodView 5 or via the
+dataset’s SPARQL endpoint. 6 In addition, we link our dataset to the biomedical
+entities in other relevant datasets (e.g., DrugBank, Sider, Kegg).
+
+# RDF Data Model
+## Namespaces
+
+We use the following namespaces in COVID19-DS
+
+```
+@prefix cvdr: <https://covid-19ds.data.dice-research.org/resource/> .
+@prefix cvdo: <https://covid-19ds.data.dice-research.org/ontology/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix bibtex: <http://purl.org/net/nknouf/ns/bibtex#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix its: <http://www.w3.org/2005/11/its/rdf#> .
+@prefix nif: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sdo: <http://salt.semanticauthoring.org/ontologies/sdo#> .
+@prefix swc: <http://data.semanticweb.org/ns/swc/ontology#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix inria: <http://ns.inria.fr/covid19/> .
+@prefix ncbi: <https://www.ncbi.nlm.nih.gov/pmc/articles/> .
+@prefix pubnt: <http://pubannotation.org/docs/sourcedb/CORD-19/sourceid/> .
+@prefix ldf: <https://data.linkeddatafragments.org/> .
+@prefix fccc: <https://fhircat.org/cord-19/fhir/Commercial/Composition/> .
+@prefix makg: <http://ma-graph.org/property/> .
+```
+
+  
+## RDF Example Resource
+```
+cvdr:pmc1616946     a swc:Paper,
+                    bibo:AcademicArticle,
+                    fabio:ResearchPaper,
+                    schema:ScholarlyArticle ;
+    dcterms:license "cc-by-nc" ;
+    dcterms:title "Antisense-induced ribosomal frameshifting" ;
+    bibtex:hasAuthor    cvdr:christineAnderson,
+                        cvdr:clarkHenderson,
+                        cvdr:michaelHoward ;
+    bibtex:hasJournal "Nucleic Acids Res" ;
+    bibo:doi "10.1093/nar/gkl531" ;
+    bibo:pmid "16920740" ;
+    fabio:hasPubMedCentralId "PMC1616946" ;
+    schema:url ncbi:PMC1616946 ;
+    rdfs:seeAlso 
+    fccc:c1ad13d83e926979dbf2bbe52e4944082f28dfea.json ;
+    owl:sameAs inria:c1ad13d83e926979dbf2bbe52e4944082f28dfea,
+        inria:pmc1616946,
+        pubnt:c1ad13d83e926979dbf2bbe52e4944082f28dfea,
+        ldf:covid19?object=http%3A%2F%2Fidlab.github.io%2Fcovid19%23c1ad13
+        d83e926979dbf2bbe52e4944082f28dfea>,
+        fccc:c1ad13d83e926979dbf2bbe52e4944082f28dfea.ttl,
+        ncbi:pmc1616946 ;
+    prov:hadPrimarySource cvdr:cord19Dataset ;
+    foaf:sha1 "c1ad13d83e926979dbf2bbe52e4944082f28dfea" ;
+    cvdo:cordUid "xgwbl8em" ;
+    cvdo:hasBody cvdr:pmc1616946_Body ;
+    cvdo:hasDiscussion  cvdr:pmc1616946_Discussion ;
+    cvdo:hasIntroduction    cvdr:pmc1616946_Introduction ;
+    cvdo:publishTime    "2006-08-18" ;
+    cvdo:sourceX    "PMC" .
+
+cvdr:pmc1616946_Introduction a cvdo:PaperIntroduction ;
+    cvdo:hasSectionv cvdr:pmc1616946_Section1, cvdr:pmc1616946_Section2,
+        cvdr:pmc1616946_Section3, cvdr:pmc1616946_Section4,
+        cvdr:pmc1616946_Section5, cvdr:pmc1616946_Section6 .
+```
+
+## Example section representation
+```
+cvdr:pmc1616946_Section1 a sdo:Section ;
+    nif:isString "The standard triplet 
+    readout of the genetic code can be 
+    reprogrammed by signals in the mRNA 
+    to induce ribosomal frameshifting [reviewed in (1-3)]." ;
+    bibtex:hasTitle "INTRODUCTION" .
+```
+
+## Example of a reference to a paper and its associated bibtex entry
+```
+cvdr:PMC1616946_Section1_B1_1 a nif:Phrase ;
+    nif:anchorOf "1" ;
+    nif:beginIndex "140"^^xsd:nonNegativeInteger ;
+    nif:endIndex "141"^^xsd:nonNegativeInteger ;
+    nif:referenceContext cvdr:PMC1616946_Section1 ;
+    its:taIdentRef cvdr:PMC1616946_B1_1 .
+
+cvdr:PMC1616946_B1_1 a bibtex:Entry ;
+    bibtex:Inbook "159-183" ;
+    bibtex:hasAuthor cvdr:DMDunn, cvdr:JFAtkins,
+                       cvdr:RBWeiss, cvdr:RFGesteland ;
+    bibtex:hasTitle "Ribosomal frameshifting from -2 to +50 nucleotides";
+    bibtex:hasVolume "39" ;
+    bibtex:hasYear 1990 ;
+    schema:EventVenue "Prog. Nucleic Acid Res. Mol. Biol." .
+```
+
+## Provenance information for the non-commercial dataset
+```
+cvdr:cord19Dataset a prov:Entity ;
+    prov:generatedAtTime
+    "2020-05-21T02:52:02+00:00"^^xsd:dateTime ;
+    prov:wasDerivedFrom 
+    "https://ai2-semanticscholar-cord-19.s3-us-west-2.amazon
+    aws.com/latest/document_parses.tar.gz" .
+```
+
+## Sparql endpoint
+We publicly serve our final RDF dataset via our SPARQL endpoint [link](https://covid-19ds.data.dice-research.org/sparql). Some example queries are performed below.
+
+-   List all paper URIs written by the author “Ian Mackay.”
+```
+  SELECT DISTINCT ?paper
+  WHERE {
+      ?paper bibtex:hasAuthor ?author .
+      ?author  foaf:firstName "Ian" .
+      ?author foaf:lastName "Mackay" .
+  }
+```
+
+-   List the top 10 papers-URIs with the most number of authors.
+```
+  SELECT ?author count( * ) as ?cnt
+  WHERE {
+      ?paper a swc:Paper .
+      ?paper bibtex:hasAuthor ?author .
+  }
+  ORDER BY DESC(?cnt)
+  LIMIT 10
+```
+
+-   List all papers and sections mentioning “folic acid.”
+```
+  SELECT DISTINCT  ?paper ?section
+    WHERE {
+        ?s nif:anchorOf "folic acid" .
+        ?s nif:referenceContext ?section .
+        ?body cvdo:hasSection ?section .
+        ?paper cvdo:hasBody ?body .
+    }
+```
+
+-   SPARQL example for retieving more data via interlinking with MAKG
+```
+  SELECT DISTINCT ?name ?paperCount ?citationCount WHERE {
+      ?paper a swc:Paper.
+      ?paper bibtex:hasAuthor ?author .
+      ?author owl:sameAs ?maAuthor.
+      
+      SERVICE <http://ma-graph.org/sparql> {
+          ?maAuthor makg:paperCount ?paperCount .
+          ?maAuthor makg:citationCount ?citationCount.
+          ?maAuthor foaf:name ?name.
+      }
+  }
+  LIMIT 100
+```
+
+""" ;
+  schema:screenshot "lodview_resource_1.png" ;
+  schema:logo "demo_logo.png" ;
+  schema:homepage <https://covid-19ds.data.dice-research.org/sparql> ;
+  schema:sourceCode <https://github.com/dice-group/COVID19DS> ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:developer dice:SvetlanaPestryakova .
