@@ -34,7 +34,7 @@ export default function DemoTemplate({
           <div className="buttons">
             {data.homepage && (
               <a href={data.homepage} className="button">
-                Homepage
+                Open Demo
               </a>
             )}
             {data.sourceCode && (
