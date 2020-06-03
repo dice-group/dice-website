@@ -7,7 +7,14 @@
 dice:OPAL a dice:FundedProject ;
   schema:tagline "Portal zur Nutzung offener Daten (Open Data Portal Germany)" ;
   schema:status "active" ;
-  schema:content """OPAL - Portal for the use of open data (Open Data Portal Germany)
+  schema:content """
+
+### Articles, Data and Software
+- **Code** repositories are listed at GitHub: https://github.com/projekt-opal/doc#repositories
+- **Data** is stored at https://hobbitdata.informatik.uni-leipzig.de/OPAL/
+- **Deliverables** are listed at the OPAL website, see http://projekt-opal.de/en/results/deliverables/
+- **Demo** is linked at the DICE website, see https://dice-research.org/OPAL-Demo
+- **Publications** are listed below and can be referred with https://dice-research.org/OPAL
 
 ### Problem
 In many areas of daily life, data is collected and made available. Examples include weather and climate data, information about road traffic or public transport. These data are increasingly being provided as open data in corresponding online portals, but are partly available in different formats and difficult to link. This makes it difficult for companies and authorities to search for suitable data records and also to use them, for example in the automotive and logistics sectors.
@@ -16,7 +23,9 @@ In many areas of daily life, data is collected and made available. Examples incl
 The objectives of OPAL are the conception and development of a holistic portal for open data with an explicit focus on Germany. Procedures will be developed to allow users to find appropriate sets of records for a particular application. This is done via the search function of the portal as well as further demonstrators. For example, a social media wizard will provide users with appropriate open data for their requests.
 
 ### Execution
-In a first step, the requirements of user groups from research and industry are collected and analyzed. In a further step, a modular platform will be developed. A particular focus of OPAL is metadata refinement. Metadata records will be transferred to 5-Star Linked Open Data. The deployment as Linked Data allows users to combine data with additional data sources from other domains and therefore to generate an extended knowledge base. This results in improved findability of data for specific applications and sectors, e.g. the automotive and logistics industry.""" ;
+In a first step, the requirements of user groups from research and industry are collected and analyzed. In a further step, a modular platform will be developed. A particular focus of OPAL is metadata refinement. Metadata records will be transferred to 5-Star Linked Open Data. The deployment as Linked Data allows users to combine data with additional data sources from other domains and therefore to generate an extended knowledge base. This results in improved findability of data for specific applications and sectors, e.g. the automotive and logistics industry.
+""" ;
+
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:endDate "2020-09-30"^^xsd:date ;
   schema:startDate "2017-07-01"^^xsd:date ;
