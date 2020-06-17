@@ -205,7 +205,7 @@ We publicly serve our final RDF dataset via our SPARQL endpoint [link](https://c
 
 """ ;
   schema:screenshot "lodview_resource_1.png" ;
-  schema:logo "demo_logo.png" ;
+  schema:logo "covid19ds_logo.png" ;
   schema:homepage <https://covid-19ds.data.dice-research.org/sparql> ;
   schema:sourceCode <https://github.com/dice-group/COVID19DS> ;
   schema:maintainer dice:MohamedAhmedSherif ;
