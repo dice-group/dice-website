@@ -1,0 +1,28 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AbdelmoneimAmerDesouki a schema:Person ;
+  schema:name "Abdelmoneim Mahmoud Amer Desouki" ;
+  schema:namePrefix "Dr." ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:+49-525-16-01761> ;
+  schema:fax <tel:+49-525-16-03436> ;
+  schema:email <mailto:desouki@mail.upb.de> ;
+  schema:chat "@desouki:chat.dice-research.org" ;
+  schema:office "TP6.3.306" ;
+  schema:photo "desouki.jpg" ;
+  schema:project dice:OPAL ;
+  schema:content """ 
+  <p>
+  <b> ResearchGate:</b> <a
+     href="https://www.researchgate.net/profile/Abdelmoneim_Desouki">Abdelmoneim_Desouki</a><span
+     class=MsoHyperlink><b><span style='font-size:12.0pt;color:windowtext;
+     text-decoration:none;text-underline:none'><o:p></o:p></span></b></span></li>
+</p>
+<p>
+  <b> Google scholar:</b> <a
+href="https://scholar.google.com/citations?user=q5MLF20AAAAJ&amp;hl=en">Abdelmoneim Amer Desouki</a><span
+style='font-size:12.0pt;mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+</p>
+""" .
+

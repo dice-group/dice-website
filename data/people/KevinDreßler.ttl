@@ -5,10 +5,11 @@ dice:KevinDreßler a schema:Person ;
   schema:name "Kevin Dreßler" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:> ;
-  schema:fax <tel:+49-341-97-32329> ;
-  schema:email <mailto:dressler@informatik.uni-leipzig.de> ;
-  schema:office "" ;
+  schema:phone <tel:+49-525-16-05190> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:kevin.dressler@upb.de> ;
+  schema:chat "@kdr:chat.dice-research.org" ;
+  schema:office "TP6.3.302" ;
   schema:photo "dressler.jpg" ;
-  schema:project dice:SLIPO ;
+  schema:project dice:SLIPO, dice:LIMBO ;
   schema:content """""" .

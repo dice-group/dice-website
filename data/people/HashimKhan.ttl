@@ -8,6 +8,7 @@ dice:HashimKhan a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:hashim.khan@uni-paderborn.de> ;
+  schema:chat "@hashim:chat.dice-research.org" ;
   schema:office "TP6.3.305" ;
   schema:photo "hkhan.jpg" ;
   schema:content """""" .

@@ -1,0 +1,12 @@
+---
+date: '2020-05-14'
+title: 'Predicate Co-occurrence Partitioning'
+author: 'Adnan Akhter'
+---
+
+
+In the last few years we have witnessed a dramatic upsurge of Linked Open Data (LOD). In order to maintain the data consistently and efficiently, we need it to distribute over multiple machines. In our previous work (https://bit.ly/2QHfOZw), we presented an evaluation of seven RDF graph partitioning techniques, which suggests that the number of sources selected has a direct impact on query execution time. Therefore, in order to get better query execution results, we need to minimize the number of sources selected.
+
+  
+
+To achieve this, we propose a graph-partitioning technique - Predicate Co-occurrence partitioning, which uses the co-occurrences of predicates in triple patterns of query workload. The idea is to assign the most co-occurred predicates to the same partition. This technique significantly reduces the number of sources selected. We evaluated this technique on two real-world datasets (DBpedia and Semantic Web Dog Food), and real queries (selected from the users queries log) using the SPARQL benchmark generation framework from the FEASIBLE queries log. We compared our results with seven state of the art partitioning techniques. Our overall results suggest that our proposed technique gives a better query execution result than the state of the art.

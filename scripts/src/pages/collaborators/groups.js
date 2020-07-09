@@ -1,6 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from '../../components/markdown';
 import CollaboratorsNav from '../../components/collabnav';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
@@ -46,11 +46,7 @@ export default function Groups({
 
               <p>
                 {node.data.content.map((mdString, i) => (
-                  <ReactMarkdown
-                    key={`content_${i}`}
-                    source={mdString}
-                    escapeHtml={false}
-                  />
+                  <ReactMarkdown key={`content_${i}`} source={mdString} />
                 ))}
               </p>
 

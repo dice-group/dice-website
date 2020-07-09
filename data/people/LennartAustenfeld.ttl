@@ -4,10 +4,11 @@
 dice:LennartAustenfeld a schema:Person ;
   schema:name "Lennart Austenfeld" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
+  schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
+  schema:chat "@lennarta:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .

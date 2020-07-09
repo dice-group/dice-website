@@ -7,8 +7,11 @@ const {
   DataFactory: { namedNode, literal, quad },
 } = require('n3');
 
+// path to folder with papers
+// uses ./data/papers from project root
 const folder = path.join(__dirname, '..', '..', 'data', 'papers');
 
+// common prefixes that we use
 const prefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
   dice: 'https://dice-research.org/',
@@ -16,12 +19,19 @@ const prefixes = {
   schema: 'https://schema.dice-research.org/',
 };
 
-// writer config
+// writer config that outputs turtle with our prefixes
 const writerConfig = {
   format: 'Turtle',
   prefixes,
 };
 
+/**
+ * Creates new function with given writer and URL
+ * that will add predicate and object as named node
+ *
+ * @param {Object} writer N3 writer instance
+ * @param {any} paperUrl URL of the subject
+ */
 const createUrlWriter = (writer, paperUrl) => (predicate, obj) => {
   // only write triples with non-null objects
   if (!obj || !obj.length) {
@@ -32,6 +42,13 @@ const createUrlWriter = (writer, paperUrl) => (predicate, obj) => {
   );
 };
 
+/**
+ * Creates new function with given writer and URL
+ * that will add predicate and object as literal
+ *
+ * @param {Object} writer N3 writer instance
+ * @param {any} paperUrl URL of the subject
+ */
 const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
   // only write triples with non-null objects
   if (!obj || !obj.length) {
@@ -46,6 +63,28 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
   );
 };
 
+/**
+ * Function for checking whether a given string is a valid URL. The regex is copied from
+ * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
+ */
+function checkUrl(url) {
+  var regexp = /^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?$/;
+  return regexp.test(url);
+}
+
+/**
+ * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
+ */
+function preprocessPdfUrl(url) {
+  if (url === null || url === undefined) {
+    return '';
+  }
+  return url.replace(/\\/g, '');
+}
+
+/**
+ * Main logic execution (because we still don't have top level async)
+ */
 const main = async () => {
   // get papers for tag `simba`
   const { items: papers } = await fetch(
@@ -56,6 +95,8 @@ const main = async () => {
   const papersDice = await fetch(
     `https://www.bibsonomy.org/json/user/dice-research/dice?items=1000`
   ).then(r => r.json());
+
+  // merge papers into one array
   papersDice.items.forEach(paper => {
     // ignore papers that are already added
     if (papers.find(p => p.id === paper.id)) {
@@ -67,6 +108,7 @@ const main = async () => {
 
   console.log('Processing papers:', papers.length);
 
+  // process papers one by one
   papers.forEach(paper => {
     // create new turtle writer for paper
     const writer = new Writer(writerConfig);
@@ -101,9 +143,15 @@ const main = async () => {
         writeLiteral('tag', tag);
       });
     }
-    writeUrl(`${prefixes.schema}url`, paper.url);
+    // make sure that URL is valid before adding it
+    if (checkUrl(paper.url)) {
+      writeUrl(`${prefixes.schema}url`, paper.url);
+    }
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
-    writeUrl(`${prefixes.schema}pdfUrl`, paper['bdsk-url-1'] || paper['1']);
+    var pdfUrl = preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']);
+    if (checkUrl(pdfUrl)) {
+      writeUrl(`${prefixes.schema}pdfUrl`, pdfUrl);
+    }
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
@@ -116,6 +164,7 @@ const main = async () => {
       });
     }
 
+    // save paper to the file
     writer.end((error, result) => {
       if (error) {
         throw error;

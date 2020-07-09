@@ -85,13 +85,13 @@ body {
     th {
       @apply bg-gray-200 border px-4 py-2 border-gray-400;
     }
-  
+
     td {
       @apply border px-4 py-2 border-gray-400;
     }
   }
   /*! purgecss end ignore */
-  
+
   .key-val {
     @apply flex flex-col;
 
@@ -794,22 +794,22 @@ a {
 }
 
 .paper {
-  @apply mb-8;
+  @apply mb-4;
 
   .paper-text {
-    @apply mb-1;
+    @apply mb-0 text-xs;
   }
 
   .paper-name {
-    @apply mb-1 mt-0 text-2xl;
+    @apply mb-0 mt-0 text-base;
   }
 
   .paper-meta {
-    @apply mb-1 text-gray-600;
+    @apply mb-0 text-gray-600 text-sm;
   }
 
   .bib-link {
-    @apply hidden ml-1;
+    @apply hidden ml-1 text-sm;
     color: var(--primary-color);
   }
   &:hover {

@@ -1,0 +1,14 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:MelissaDas a schema:Person ;
+  schema:name "Melissa Das" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email "" ;
+  schema:chat "" ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """""" .

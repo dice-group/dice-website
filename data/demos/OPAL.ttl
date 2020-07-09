@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:OPAL-Demo a schema:Demo ;
+  schema:name "OPAL Demo" ;
+  schema:tagline "Open Data Portal Germany" ;
+  schema:content """
+The [Open Data Portal Germany (OPAL)](OPAL) project enhances open metadata records. 
+The deployment as Linked Data allows to combine data with additional data sources from multiple domains and therefore to generate an extended knowledge base. 
+This results in improved findability of data for specific applications and sectors.""" ;
+  schema:screenshot "opal_screenshot.png";
+  schema:logo "opal.png" ;
+  schema:homepage <https://opal.demos.dice-research.org/> ;
+  schema:sourceCode <https://github.com/projekt-opal/doc#repositories> ;
+  schema:maintainer dice:AdrianWilke ;
+  schema:developer dice:AfshinAmini .

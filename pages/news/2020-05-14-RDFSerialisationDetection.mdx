@@ -1,0 +1,28 @@
+---
+date: '2020-05-14'
+title: 'RDF Serialisation Detection'
+author: 'Denis Kuchelev'
+---
+  
+
+In our [Squirrel](https://dice-research.org/Squirrel) data crawler, we sometimes need to parse data files without any information regarding whether they contain RDF data and if so, which serialization format the data is in. A dumb approach would be to try and parse it with all available formats until one succeeds. To improve on that, we developed a smarter way to guess possible serialization formats of a given RDF data stream. It is now available as a separate AGPL-licensed library to use with Java projects: [https://github.com/dice-group/rdfdetector](https://github.com/dice-group/rdfdetector)
+
+  
+
+The main idea is to peek at the beginning of the data stream and check if the data conforms to each of the serialization formats.
+
+  
+
+<Image filename='RDFSerialisationDetection.png' style="height: 60%; width: 60%;"/>
+
+  
+
+To make the serialization guess simple and fast, we created automata for detection of all required formats. They are simpler than fully-fledged parsing automata since we don’t really need to parse or even validate the given data, rather, just distinguish between possible formats. All automata are run in parallel on a given input stream, and the ones that are stuck in an “invalid” state (which means that the data doesn’t conform to the corresponding format) are thrown away. When there is just one automaton remaining, or a specified peek limit is reached, the results are returned as a collection of possible serialization formats.
+
+  
+
+In addition, and as a helper used in RDF serialization detection, there’s also a function to detect Unicode encoding of a given RDF data stream. While in general encoding detection can be a complicated task, when limited only to Unicode and RDF serialization formats listed above, it becomes quite simple - only the first four bytes need to be read to accomplish it.
+
+  
+
+Some information for the library users: the most important publicly visible function is RdfSerializationDetector::detect, which takes BufferedInputStream as an argument and returns a Collection&lt;[Lang](https://jena.apache.org/documentation/javadoc/arq/org/apache/jena/riot/Lang.html)&gt;. This makes integration with Jena simple. Currently supported formats are: HDT, JSON-LD, Notation3, N-Quads, N-Triples, RDFJSON, RDF/XML, TriG, TriX, Turtle.

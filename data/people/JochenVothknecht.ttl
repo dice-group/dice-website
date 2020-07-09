@@ -10,5 +10,6 @@ dice:JochenVothknecht a schema:Person ;
   schema:email <mailto:jocv@mail.uni-paderborn.de> ;
   schema:office "" ;
   schema:photo "" ;
+  schema:project dice:OPAL ;
   schema:content """""" .
 

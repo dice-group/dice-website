@@ -8,6 +8,7 @@ dice:AsepFajarFirmansyah a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:asep.fajar.firmansyah@uni-paderborn.de> ;
+  schema:chat "@asepff:chat.dice-research.org" ;
   schema:office "TP6.3.102" ;
   schema:photo "firmansyah.jpg" ;
   schema:content """""" .

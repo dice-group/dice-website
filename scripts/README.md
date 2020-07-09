@@ -50,6 +50,12 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 9.  **`Dockerfile`**: This file is describes the build process for Docker.
 
+### Styling
+
+We use [Tailwindcss](https://tailwindcss.com/) for styling all components.  
+Component use their own custom classes when they get complex enough (more than 2-3 tailwind helper classes).  
+Styles for those components are pre-defined using tailwind macro in `./src/components/styles/main.css`.
+
 ## Learning Gatsby
 
 Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
@@ -65,6 +71,13 @@ To deploy it locally run the following commands:
 
 ```sh
 yarn build
+cp Dockerfile public/
+cd public/
 docker build -t dice-website .
-docker run --name dice-website-instance -p 80:80 dice-website
+docker run --name dice-website-instance -p 8080:80 dice-website
 ```
+
+## Automated deployment
+
+The website is being automatically deployed to `dice-website.cs.upb.de` VM.  
+Deployment is carried out using [Github Actions](https://github.com/dice-group/dice-website/actions) and [Exoframe](https://github.com/exoframejs/exoframe).

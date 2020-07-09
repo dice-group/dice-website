@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `DICE Research Group`,
@@ -23,7 +25,21 @@ module.exports = {
         path: `${__dirname}/../pages`,
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              icon: false,
+            },
+          },
+        ],
+      },
+    },
+    // support for embeds from third-parties
+    `@pauliescanlon/gatsby-mdx-embed`,
 
     // svg inlining
     {
@@ -43,11 +59,24 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/components/styles/main.css`],
+        content: [
+          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx}'),
+          path.join(process.cwd(), '..', 'data/**/*.ttl'),
+          path.join(process.cwd(), '..', 'pages/**/*.{md,mdx}'),
+        ],
+        extractors: [
+          {
+            extractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+            extensions: ['ttl'],
+          },
+        ],
       },
     },
 
-    // default gatsby plugins
+    //  head (title, meta, etc) modification plugin
     `gatsby-plugin-react-helmet`,
+
+    // image pre-processing
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,6 +86,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+
+    // PWA manifest generation (icon, theme, etc)
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

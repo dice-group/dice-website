@@ -8,8 +8,9 @@ dice:AdrianWilke a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5186> ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
+  schema:chat "@wilke:chat.dice-research.org" ;
   schema:office "TP6.3.109" ;
   schema:photo "wilke.jpg" ;
   schema:content """
-Profile, biography, and publications can be found at [upb.de/person/9101/](https://www.uni-paderborn.de/person/9101/) or [cs.upb.de/ddi/person/adrian-wilke](https://cs.uni-paderborn.de/ddi/person/adrian-wilke/). 
+Profile, biography, and publications can be found at: https://go.upb.de/wilke
 """ .
