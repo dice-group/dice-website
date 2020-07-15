@@ -1,0 +1,28 @@
+---
+date: 'starting from 2020-09-01'
+title: 'Evaluation of Persistance Layer Approaches for In-Memory Triple Stores'
+type: 'Master'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+In the DICE group, we develop [Tentris](https://github.com/dice-group/tentris), one of the fastest triple stores currently availabe. 
+
+Tentris is an in-memory triple store, i.e. all indices and data are held in the RAM rather than on the disc. 
+While the in-memory nature of Tentris is crucial for its performance, it currently lacks the possibility to store and reload dataset between two runs. 
+
+The objective of this thesis is to explore at least two serialization/deserialization strategies, evaluate them and discuss their pros and cons. 
+Stragegies could involve:
+* memory-mapped files
+* custom serialization formats that are incrementally updateable
+* synchronization mechanisms that have the implementation fo ACID guarantees in mind (implementing ACID guarantees is not part of the thesis)
+
+The master thesis includes:
+* develop and implement a two serialization strategies
+* evaluate the two stragegies in different use-case settings
+* discuss required extensions to support give full ACID guarantees
+
+Required skills: 
+* knowledge of Semnatic Web Standards like SPARQL and RDF
+* good modern C++ coding skills (C++17/20)
+* experience with C++ template programming 
