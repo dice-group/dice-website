@@ -1,0 +1,25 @@
+---
+date: '2020-09-01'
+title: 'Distributing an in-memory triple store'
+type: 'Master'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+In the DICE group, we develop [Tentris](https://github.com/dice-group/tentris), one of the fastest triple stores currently availabe. 
+
+Tentris is an in-memory triple store, i.e. all indices and data are held in the RAM rather than on the disc. 
+As RAM per Machine is limited, the way to load enourmous graphs is to distribute the data stored and implement Tentris Cluster. 
+
+The master thesis includes:
+* develop and implement a data distrubution strategy for bulk loading data into Tentris Cluster
+* develop and implement a query planner for answering queries in the cluster
+* develop and implement a communication protocoll to executed queries in the cluster
+* benchmarking the implementation regarding its loading time, query processing performance and scalability
+* compare with at least one other distributed triple store
+
+Required skills: 
+* knowledge of Semnatic Web Standards like SPARQL and RDF
+* good modern C++ coding skills (C++17/20)
+* experience with C++ template programming
+* some prior knowledge on distributed data bases might be helpful
