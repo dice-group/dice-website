@@ -1,0 +1,44 @@
+---
+date: '2020-07-19'
+title: 'COVID19DS Dataset Version 4'
+author: 'Svetlana Pestryakova and Mohamed Sherif'
+---
+  
+
+The Dice research group are happy to present version 4 of our Covid-19-related research publication dataset, dubbed COVID-19-DS. 
+Our new version includes the following updates and new features:
+ - We added to our dataset all the newly added resources in the last releases of the [CORD-19](https://www.semanticscholar.org/cord19/download).
+- Compared to the previous version, the dataset increased by 33%.
+- The data is represented in one archive and it is no longer divided by three parts (commercial, non-commercial, custom license), as in the original data from the [CORD-19](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/historical_releases.html).
+- Bib entries were linked with papers using *cvdo:hasPublication*.
+- Our publications were linked to MAKG Publications using *owl:sameAs*.
+- The number of links increased respectively to other changes that had been applied (i.e., 400K+ more links). 
+- The ontology was expanded (see the UML class diagram of the Covid-19-DS Ontology).
+ 
+The following tables show the statistics between two versions (previous and current one):
+### The statistics of our publication dataset
+|                                       | Version_3  | Version _4   | Difference |
+|---------------------------------------|------------|-------------|------------|
+| Distinct number of over all resources | 11,249,740 | 15,761,537  | 4,511,797  |
+| Distinct number of publications       |     40,224 |     58,739  |    18,515  |
+| Distinct number of authors            |  1,434,809 |  1,484,024  |    49,215  |
+| Distinct number of bib entries        |  1,482,257 |  2,022,147  |   539,890  |
+| Distinct number of bib figures        |    333,509 |    461,386  |   127,877  |
+| Distinct number of bib tables         |    158,896 |    251,970  |    93,074  |
+
+### External datasets linking statistics
+|                                                     | Predicate | Version_3 | Version_4  | Difference |
+|-----------------------------------------------------|---------------------|-------------|------------|------------|
+| Distinct number of overall links                    |                     |     989,843 | 4,799,883  | 3,810,040  |
+| Distinct number of links to [Cord19-NEKG](http://ns.inria.fr/covid19/)             | owl:sameAs          |      31,261 |    58,739  |    27,478  |
+| Distinct number of links to [LitCovid](https://www.ncbi.nlm.nih.gov/pmc/)                | owl:sameAs          |      31,261 |    53,432  |    22,171  |
+| Distinct number of links to [Covid-19-Literature](https://data.linkeddatafragments.org/covid19)     | owl:sameAs          |      31,261 |    58,739  |    27,478  |
+| Distinct number of links to [Covid19-pubannotation](http://pubannotation.org/docs/sourcedb/CORD-19/)   | owl:sameAs          |      31,261 |    58,739  |    27,478  |
+| Distinct number of links to [Cord-19-on-FHIR](https://fhircat.org/cord-19/fhir/)         | owl:sameAs          |      31,261 |    58,739  |    27,478  |
+| Distinct number of links to [Cord-19-on-FHIR](https://fhircat.org/cord-19/fhir/)         | rdfs:seeAlso        |      31,261 |    58,739  |    27,478  |
+| Distinct number of links of bib entries with papers | cvdo:hasPublication |         0    |   146,382  |   146,382  |
+| Distinct number of links to [MAKG](http://ma-graph.org/) Authors            | owl:sameAs          |       9,345 |    23,472  |    14,127  |
+| Distinct number of links to [MAKG](http://ma-graph.org/) Publications       | owl:sameAs          |       0      |    82,211  |    82,211  |
+| Distinct number of links to [KEGG](https://www.genome.jp/kegg/)                    | itsrdf:taIdentRef   |    593,272  | 2,785,655  |   2,192,383  |
+| Distinct number of links to [Sider](http://sideeffects.embl.de/)                   | itsrdf:taIdentRef   |    120,652  |   786,215  |   665,563  |
+| Distinct number of links to [DrugBank](https://www.drugbank.ca/)                | itsrdf:taIdentRef   |     79,008  |   628,821  |   549,813  |
