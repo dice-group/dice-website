@@ -10,6 +10,8 @@ Nowadays, processing large amounts of data becomes more and more important. At t
 Pseudo-random seeds
 A first idea to create a seed generator could be to use a “Master RNG”, which is used to generate all the seed values for the other RNGs. However, since a lot of RNG implementations typically rely on the concept of a linear congruential generator, this would lead to all RNGs creating nearly the same numbers.
 
+<Image filename='image2.png' style="height: 60%; width: 60%;"/>
+
 In the example, 0 is chosen as seed for the “Master RNG”. Following the logic of a linear congruential generator, this RNG would calculate the next pseudo-random number—in this example the 1—and use it as seed for the second pseudo-random number―the 5. These two would be used as seeds for the two example RNGs. This leads to both RNGs starting at almost the same position on the ring of numbers. RNG2 would simply be one step ahead of RNG1. This is a strong relation that is created between these two RNGs, which would lead to biased random numbers and, hence, to biased results. 
 
 The default implementation in Java has a different behavior. It never returns its “internal” seed—i.e., in the example above, it would not return 1. Because the class works internally with 48 bit numbers, it transforms them before returning a result. This transformation allows only 32 bit numbers to be returned, i.e., 16 bits of its internal number never leave the class. Hence, the effect described above cannot be directly seen when implementing it in Java using the default Random class. In general, it is not recommended for linear congruential generators.
