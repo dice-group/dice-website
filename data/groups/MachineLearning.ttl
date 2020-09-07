@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MachineLearning a schema:Group ;
-  schema:name "Maschine Learning" ;
+  schema:name "Machine Learning" ;
   schema:tagline "" ;
   schema:relatedProject dice:DAIKIRI, dice:RAKI ;
   schema:content """
