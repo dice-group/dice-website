@@ -9,5 +9,4 @@ dice:MachineLearning a schema:Group ;
 The machine learning group focuses on machine learning technologies for knowledge graphs. The research goal is to develop novel machine learning algorithms, e.g., for entity embeddings, clustering of high-dimensional data, and explainable machine learning models.
 """ ;
   schema:lead dice:StefanHeindorf ; # group maintainer
-  schema:member dice: ArwaBannoura, dice:CaglarDemir, dice:GeraldoDeSouza, dice:SimonBin ; # group members list
-
+  schema:member dice:ArwaBannoura, dice:CaglarDemir, dice:GeraldoDeSouza, dice:SimonBin ; # group members list
