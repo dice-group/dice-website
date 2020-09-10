@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import UKFlag from '../../components/svgs/ukflag.inline.svg';
+import DEFlag from '../../components/svgs/deflag.inline.svg';
 
 /**
  * Processes the teaching data from graphql
@@ -109,6 +110,14 @@ export default function Teaching({
                                   title="English language"
                                 >
                                   <UKFlag style={{ width: 24, height: 12 }} />
+                                </span>
+                              )}
+                              {course.node.frontmatter.language === 'de' && (
+                                <span
+                                  className="language"
+                                  title="German language"
+                                >
+                                  <DEFlag style={{ width: 24, height: 12 }} />
                                 </span>
                               )}
                             </div>
