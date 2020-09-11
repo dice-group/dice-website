@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:UBI a schema:Partner ;
+  schema:name "Universität Bielefeld" ;
+  schema:country "DE" ;
+  schema:url <https://www.uni-bielefeld.de/> ;
+  # schema:logo "ususoftware.jpg" .
