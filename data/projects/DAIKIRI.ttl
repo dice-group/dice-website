@@ -14,7 +14,7 @@ dice:DAIKIRI a dice:FundedProject ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "DAIKIRI" ;
   schema:fundingProgram "BMBF, Grant Number 01IS19085B" ;
-  # schema:homepage <https://daikiri-projekt.de/> ;
-  # schema:logo "daikiri.png" ;
+  schema:homepage <https://daikiri-projekt.de/> ;
+  schema:logo "daikiri.png" ;
   schema:partner dicepartner:pmOne, dicepartner:USU, dicepartner:AI4BD .
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
