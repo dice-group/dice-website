@@ -1,20 +1,21 @@
+  
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix dicepartner: <https://dice-research.org/partner/> .
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:DAIKIRI a dice:FundedProject ;
-  schema:tagline "Diagnostische KI für industrielle Daten" ;
+dice:EML4U a dice:FundedProject ;
+  schema:tagline "Erklärbares Maschinelles Lernen für interaktive episodische Updates von Modellen" ;
   schema:status "active" ;
   schema:content """ """ ;
-  schema:endDate "2021-12-31"^^xsd:date ;
-  schema:startDate "2020-01-01"^^xsd:date ;
+  schema:endDate "2022-03-31"^^xsd:date ;
+  schema:startDate "2020-04-01"^^xsd:date ;
   schema:content "" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
-  schema:name "DAIKIRI" ;
-  schema:fundingProgram "BMBF, Grant Number 01IS19085B" ;
-  schema:homepage <https://daikiri-projekt.de/> ;
-  schema:logo "daikiri.png" ;
-  schema:partner dicepartner:pmOne, dicepartner:USU, dicepartner:AI4BD .
+  schema:name "EML4U" ;
+  # schema:fundingProgram "BMBF, Grant Number 01IS19085B" ;
+  # schema:homepage <https://daikiri-projekt.de/> ;
+  # schema:logo "daikiri.png" ;
+  schema:partner dicepartner:UBI, dicepartner:ISML, dicepartner:Semalytix .
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

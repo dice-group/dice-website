@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Semalytix a schema:Partner ;
+  schema:name "Semalytix" ;
+  schema:country "EN" ;
+  schema:url <https://www.semalytix.com/> .
+  # schema:logo "ususoftware.jpg" .
