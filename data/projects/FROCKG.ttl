@@ -1,0 +1,38 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FROCKG a dice:FundedProject ;
+  schema:tagline "Fact Checking for Large Enterprise Knowledge Graphs" ;
+  schema:status "active" ;
+  schema:content """
+<h2>Project Goal</h2>
+
+<p>The goal of FROCKG is the development of a framework which allows
+<ol>
+<li>the quantification of the veracity of facts (i.e., their likelihood to be true/false) found in enterprise knowledge graphs,</li>
+<li>the justification and explanation of the assessment,</li>
+<li>the collection of evidence for this veracity, and</li>
+<li>the collaborative curation of potentially erroneous facts.</li>
+</ol>
+Enterprise Knowledge Graphs are increasingly business-critical to a growing number of modern knowledge-driven companies. Determining the veracity of the facts in these EKG is hence mission-critical. The project is motivated by the current lack of market-ready (w.r.t. cost and scalability) solutions for this purpose.</p>
+
+<h2>Core Functionality</h2>
+<ul>
+<li>Automatic evaluation of the veracity of facts: innovative explainable machine learning algorithms (e.g., based on refinement operators) to quantify the reliability of facts and explain why the approach classifies certain facts as true/false</li>
+<li>Computation and ranking of evidence for facts: NLP algorithms to gather succinct pieces of evidence from large text corpora (e.g., news streams, Web pages) which corroborate or disprove a given fact</li>
+<li>Collaborative curation of potentially erroneous facts: classical collaborative paradigms combined with formal ontologies to support the generation of corrections for erroneous facts and their rapid curation by domain experts</li>
+</ul>
+<p>The solution proposed by FROCKG is a breakthrough solution to a known problem as there are currently no fact checking tools for knowledge graphs available on the market. The core innovation lies in the combination of natural language generation, machine learning, stationary distributions and natural language processing to bridge between structured and unstructured data so as to use enterprise-specific documents or even the Web to verify the semantics of facts found in enterprise knowledge graphs.</p>
+""" ;
+  schema:endDate "2022-12-31"^^xsd:date ;
+  schema:startDate "2020-01-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "FROCKG" ;
+  schema:fundingProgram "Eureka Eurostars, Grant Number E! 113314 (BMBF Grant Number 01QE19418)" ;
+  schema:homepage <https://frockg.eu/> ;
+  schema:logo "frockg.png" ;
+  schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:SirmaAI .
+  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
