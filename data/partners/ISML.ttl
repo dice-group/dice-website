@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:ISML a schema:Partner ;
+  schema:name "Universität Paderborn - Arbeitsgruppe Intelligente Systeme und Maschinelles Lernen" ;
+  schema:country "EN" ;
+  schema:url <https://en.cs.uni-paderborn.de/is> ;
+  schema:logo "upb.png" .

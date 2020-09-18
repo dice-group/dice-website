@@ -1,0 +1,42 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:IDA a dice:FundedProject ;
+  schema:tagline "Intelligent Data Science Chatbot" ;
+  schema:status "active" ;
+  schema:content """
+<p>In the current day and age, data is centric to most processes and decisions being made. New and interesting concepts for analysing and understanding data have been developed. However, using these typically requires both―expensive tools and data science experts. This project aims to change this situation by developing an intelligent data science chatbot which enables data owners to access and analyze their data on a single platform, with chatbot providing all the assistance they might need.</p>
+
+
+<h2>Project Goal</h2>
+<p>The goal of this project is to enable a user to analyse their own data with the support of an intelligent chatbot. This chatbot will
+communicate with the user using natural language; 
+execute data analysis algorithms and generate data visualizations based on the user's commands (e.g., clustering algorithms, bar charts);
+support the user regarding the configuration of the algorithms;
+suggest algorithms or configurations based on the data;
+be extendable using a modular design (e.g., the addition of new analysis or visualization algorithms);
+and offer the possibility to be trained and deployed with different languages.</p>
+
+<h2>Research questions</h2>
+<p>To reach the project's goals, several research questions have to be tackled. Firstly, the given data has to be analyzed and transformed into a form which enables the chatbot to understand its structure. This is necessary to be able to communicate with the user, e.g., to ask which data should be part of a visualisation or a clustering. 
+Secondly, existing solutions for chatbots have to be analyzed to which extent they fit to the special scenario in which the goal of the user is to generate a certain result like a visualisation or a certain clustering. Based on the analysis result, an existing bot is chosen and adapted to be used for the prototypical implementation.
+Thirdly, the metadata of the available algorithms have to be modeled in a way to enable the chatbot to 1) ask the user for certain parameters and 2) suggest an algorithm or a configuration for a given data set.</p>
+<h2>Novelty</h2>
+<p>The novelty of the proposed chatbot could be described through the following points:
+<ol>
+<li>It will be focused on the analysis of data―a use case which to the best of our knowledge has not been addressed.</li>
+<li>The automatic analysis of a given dataset and the suggestion of available algorithms or visualizations has not been tackled before and can have a huge impact in all areas in which data has to be understood by the users.</li>
+</ol>
+""" ;
+  schema:endDate "2021-05-31"^^xsd:date ;
+  schema:startDate "2020-06-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "IDA" ;
+  schema:fundingProgram "Softwarecampus Grant Number" .
+  # schema:homepage <https://frockg.eu/> ;
+  # schema:logo "frockg.png" ;
+  # schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:SirmaAI .
+  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

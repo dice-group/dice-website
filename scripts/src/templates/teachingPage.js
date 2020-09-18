@@ -5,6 +5,7 @@ import BackButton from '../components/backButton';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import UKFlag from '../components/svgs/ukflag.inline.svg';
+import DEFlag from '../components/svgs/deflag.inline.svg';
 
 export default function TeachingTemplate({
   data: {
@@ -23,6 +24,11 @@ export default function TeachingTemplate({
           {frontmatter.language === 'en' && (
             <span className="language" title="English language">
               <UKFlag style={{ width: 24, height: 12 }} />
+            </span>
+          )}
+          {frontmatter.language === 'de' && (
+            <span className="language" title="German language">
+              <DEFlag style={{ width: 24, height: 12 }} />
             </span>
           )}
         </div>
