@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:ONSEI a schema:Partner ;
+  schema:name "ONSEI" ;
+  schema:country "D" ;
+  schema:url <https://www.onsei.de/> .

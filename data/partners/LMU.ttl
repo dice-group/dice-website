@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:LMU a schema:Partner ;
+  schema:name "Ludwig-Maximilians-Universität München" ;
+  schema:country "D" ;
+  schema:url <https://www.uni-muenchen.de/> .
