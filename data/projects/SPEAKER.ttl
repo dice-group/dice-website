@@ -7,13 +7,12 @@
 dice:SPEAKER a dice:FundedProject ;
   schema:tagline "SPEAKER: Eine Sprachassistenzplattform »Made in Germany«" ;
   schema:status "active" ;
-  schema:content """ """ ;
+  schema:content """The SPEAKER project seeks to develop a leading German-made voice assistant platform for business-to-business (B2B) applications. This platform should be open, modular and scalable and provide technologies, services and data via service interfaces. The SPEAKER platform will be embedded in a comprehensive ecosystem made up of big industry, SMEs, start-ups and research partners who secure high innovation capabilities.""" ;
   schema:endDate "2023-12-31"^^xsd:date ;
   schema:startDate "2020-04-01"^^xsd:date ;
-  schema:content "" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "SPEAKER" ;
   schema:fundingProgram "BMWi, Grant Number 01MK20011U" ;
   schema:homepage <https://www.speaker.fraunhofer.de/> ;
-  schema:partner dicepartner:Fraunhofer .
+  schema:partner dicepartner:Fraunhofer, dicepartner:DFKI, dicepartner:Siemens, dicepartner:Datev, dicepartner:IAV, dicepartner:DB, dicepartner:SAP, dicepartner:retresco, dicepartner:SCOPEVISIO, dicepartner:IDSA, dicepartner:CommaSoft, dicepartner:ONSEI, dicepartner:Grundig-gbs, dicepartner:audeering, dicepartner:LMU, dicepartner:TUBraunschweig.
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

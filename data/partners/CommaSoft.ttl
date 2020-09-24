@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:CommaSoft a schema:Partner ;
+  schema:name "Comma Soft AG" ;
+  schema:country "D" ;
+  schema:url <https://comma-soft.com/> .

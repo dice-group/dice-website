@@ -14,5 +14,5 @@ Iguana is a SPARQL Benchmark execution performance, which can execute a read and
   schema:developer dice:FelixConrads ;
   schema:startDate "2016-03-01"^^xsd:date ;
   schema:name "Iguana" ;
-  schema:logo "Iguana_new_logo6.png" ;
+  schema:logo "IGUANA_logo.png" ;
   schema:publicationTag "iguana" .
