@@ -4,12 +4,13 @@
 dice:UmairQudus a schema:Person ;
   schema:name "Umair Qudus" ;
   schema:namePrefix "" ;
-  schema:role dice:ExternalStudent ;
+  schema:role dice:ResearchStaff ;
   schema:chat "@uqudus:chat.dice-research.org" ;
+  schema:phone <tel:+49-525-16-05190> ;
   schema:fax <tel:> ;
   schema:email <mailto:uqudus@campus.uni-paderborn.de> ;
   schema:chat "@uqudus:chat.dice-research.org" ;
-  schema:office "" ;
+  schema:office "TP6.3.307" ;
   schema:photo "umair.jpg" ;
+  schema:project dice:KnowGraphs;
   schema:content """""" .
-
