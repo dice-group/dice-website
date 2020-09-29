@@ -1,0 +1,29 @@
+---
+date: '2020-09-29'
+title: 'LIGON – Link Discovery with Noisy Oracles (OM-2020 - Long technical paper)'
+author: 'Mohamed Ahmed Sherif'
+---
+
+
+The provision of links between knowledge graphs in RDF3 is of central importance for numerous tasks on the Semantic Web, including federated queries, question answering and data fusion. While links can be created manually for small knowledge bases, the sheer size and number of knowledge bases commonly used in modern applications (e.g., DBpedia with more than 3 × 106  resources) demands the use of automated link discovery mechanisms.
+
+In this work, we focus on active learning for link discovery. State-of-the-art approaches that rely on active learning assume that the oracle they rely upon is perfect. Formally, this means that given an oracle ω, the probability of the oracle returning a wrong result (i.e., returning false when an example is to be classified as true) is exactly 0. While these approaches show pertinent results in evaluation scenarios, (in which the need for a perfect oracle can be fulfilled) this need is difficult, if not impossible to uphold in real-world settings (e.g., when crowdsourcing training data). No previous work has addressed link discovery based on oracles that are not perfect.
+
+We address this research gap by presenting a novel approach for learning link specifications (LS) from noisy oracles, i.e., oracles that are not guaranteed to return correct classifications. This approach is motivated by the problem of learning LS using crowdsourcing. Previous works have shown that agents in real crowdsourcing scenarios are often not fully reliable. We model these agents as noisy oracles, which provides erroneous answers to questions with a fixed probability. We address the problem of learning from such oracles by using a probabilistic model, which approximates the odds of the answer of a set of oracles being correct. Our approach, dubbed Ligon, assumes that the underlying oracles are independent, i.e., that the probability distributions underlying oracles are pairwise independent. Moreover, we assume that the oracles have a static behavior, i.e., that the probability of them generating correct/incorrect answers is constant over time.
+
+The contributions of this paper are as follows:
+
+1.  We present a formalization of the problem of learning LS from noisy oracles. We derive a probabilistic model for learning from such oracles.
+    
+2.  We develop the first learning algorithm dedicated to learning LS from noisy data. The approach combines iterative operators for LS with an entropy-based approach for selecting most informative training examples. In addition, it uses cumulative evidence to approximate the probability distribution underlying the noisy oracles that provide it with training data.
+    
+3.  We present a thorough evaluation of Ligon and show that it is robust against noise, scales well and converges with 10 learning iterations to more than 95% of the average F-measure achieved by Wombat—a state-of-the-art approach for learning LS—provided with a perfect oracle.
+    
+
+Authors: [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif), [Kevin Dreßler](https://dice-research.org/KevinDre%C3%9Fler), and [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo)
+
+Paper: [https://papers.dice-research.org/2020/OM_LIGON/public.pdf](https://papers.dice-research.org/2020/OM_LIGON/public.pdf)
+
+Github repository: [https://github.com/dice-group/LIMES](https://github.com/dice-group/LIMES)
+
+
