@@ -1,0 +1,31 @@
+---
+date: '2020-09-29'
+title: 'LIGER – Link Discovery with Partial Recall (OM-2020 - Short technical paper)	'
+author: 'Mohamed Ahmed Sherif'
+---
+
+
+Sensor data is used in a plethora of modern applications, including condition monitoring and predictive maintenance in Industry-4.0 applications, environmental protection applications, health monitoring systems4 and traffic monitoring. An increasing number of these machines implement intelligent predictive maintenance and condition monitoring by generating knowledge graphs in the Resource Description Framework (RDF) format. This representation format facilitates the implementation of condition monitoring and predictive maintenance applications as explainable machine learning solutions, which learn and update OWL axioms periodically to detect (condition monitoring) or predict (predictive maintenance) error events. A key step for learning axioms that generalize well is to learn them across several machines. However, single machines generate independent data streams. Hence, time-efficient data integration (in particular, link discovery, short LD) approaches must precede machine learning approaches to render integrated machine learning over data streams from several machines possible. Given that new data batches are available periodically (e.g., every 2 hours), practical applications of machine learning on RDF streams demand LD solutions that can guarantee the completion of their computation under constraints such as time (i.e., their total runtime for a particular integration task) or expected recall (i.e., the estimated fraction of a given LD task they are guaranteed to complete). In this paper, we address the problem of integrating streams of RDF data under constraints pertaining to expected recall. We dub this type of LD partial-recall LD.
+
+  
+
+In this work, we address the problem of LD with partial recall by proposing LIGER (Link discovery with Guaranteed Expected Recall) - the first partial-recall LD approach. Given a link specification L that is to be executed, LIGER aims to compute a portion of the links returned by L efficiently, while achieving a guaranteed expected recall. Our approach relies on a refinement operator, which allows the exploration of potential solutions to this problem efficiently.
+
+  
+
+The main contributions of our work can be summarized as follows:
+
+1.  We present a downward refinement operator that allows the detection of subsumed LSs with partial recall. We use this operator to develop the first approach for partial-recall LD.
+    
+2.  We use a monotonicity assumption to improve the time efficiency of our approach even further.
+    
+3.  We evaluate our approach using four benchmark datasets as well as three new datasets based on real data. In addition to an intrinsic evaluation, we also provide an extrinsic evaluation of our approach to quantify the effect of partial-recall LD on positive-only learning for LD.
+    
+
+Authors: [Kleanthi Georgala](https://dice-research.org/KleanthiGeorgala), [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif), and [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo)
+
+Paper: [https://papers.dice-research.org/2020/OM_LIGER/public.pdf](https://papers.dice-research.org/2020/OM_LIGER/public.pdf)
+
+Github repository: [https://github.com/dice-group/LIMES](https://github.com/dice-group/LIMES)
+
+Cite as:
