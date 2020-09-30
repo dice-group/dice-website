@@ -4,7 +4,7 @@
 dice:AfshinAmini a schema:Person ;
   schema:name "Afshin Amini" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:project dice:OPAL ;
   schema:fax <tel:> ;
