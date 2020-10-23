@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Spiekermann a schema:Partner ;
+  schema:name "Spiekermann GmbH Con­sul­ting Engi­neers" ;
+  schema:country "D" ;
+  schema:url <https://www.spiekermann.de/> .
