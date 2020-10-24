@@ -11,5 +11,5 @@ dice:SvetlanaPestryakova a schema:Person ;
   schema:chat "@pestryak:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "pestryakova.jpg" ;
-  schema:project dice:SLIPO ;
+  schema:project dice:SLIPO , dice:OPAL ;
   schema:content """""" .

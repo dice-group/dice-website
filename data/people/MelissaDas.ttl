@@ -11,4 +11,5 @@ dice:MelissaDas a schema:Person ;
   schema:chat "" ;
   schema:office "" ;
   schema:photo "" ;
+  schema:project dice:OPAL ;
   schema:content """""" .

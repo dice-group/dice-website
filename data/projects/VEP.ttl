@@ -1,0 +1,28 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:VEP a dice:FundedProject ;
+  schema:tagline "Traffic Detection Paderborn (Verkehrserfassung Paderborn)" ;
+  schema:status "active" ;
+  schema:content """
+
+In the project, we develop a traffic detection system to classify and count pedestrians and cyclists in the city of Paderborn.
+
+### Partners
+
+- [Spiekermann GmbH Con­sul­ting Engi­neers](https://www.spiekermann.de/)
+- [Stadt Paderborn - Amt für Vermessung und Geoinformation - Geoinformationsservice](https://mein-digiport.de/aemter-einrichtungen/-/egov-bis-detail/einrichtung/2601/show)
+
+""" ;
+
+  schema:maintainer dice:AdrianWilke ;
+  schema:endDate "2021-12-31"^^xsd:date ;
+  schema:startDate "2020-05-01"^^xsd:date ;
+  schema:name "VEP" ;
+  schema:publicationTag "VEP" ;
+  schema:logo "vep.png" ;
+  schema:partner dicepartner:StadtPaderborn, dicepartner:Spiekermann .
+
