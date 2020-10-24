@@ -13,6 +13,11 @@ dice:AdrianWilke a schema:Person ;
   schema:photo "wilke.jpg" ;
   schema:content """
 
-Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
+# Information
+
+- The best way to contact me is by email
+- Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
+- [Mentoring](/students/mentoring/) (obligatory for students of the Bachelor's Degree program)
+- [Java Online Exercises](https://github.com/dice-group/JavaOnlineExercises) (Jupyter + Java + grading)
 
 """ .

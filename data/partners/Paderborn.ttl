@@ -5,4 +5,5 @@
 dicepartner:StadtPaderborn a schema:Partner ;
   schema:name "Stadt Paderborn" ;
   schema:country "D" ;
-  schema:url <https://www.paderborn.de/> .
+  schema:url <https://www.paderborn.de/> ;
+  schema:logo "paderborn.png" .

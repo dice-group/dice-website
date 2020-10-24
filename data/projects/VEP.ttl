@@ -9,6 +9,8 @@ dice:VEP a dice:FundedProject ;
   schema:status "active" ;
   schema:content """
 
+In the project, we develop a traffic detection system to classify and count pedestrians and cyclists in the city of Paderborn.
+
 ### Partners
 
 - [Spiekermann GmbH Con­sul­ting Engi­neers](https://www.spiekermann.de/)

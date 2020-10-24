@@ -5,4 +5,5 @@
 dicepartner:Spiekermann a schema:Partner ;
   schema:name "Spiekermann GmbH Con­sul­ting Engi­neers" ;
   schema:country "D" ;
-  schema:url <https://www.spiekermann.de/> .
+  schema:url <https://www.spiekermann.de/> ;
+  schema:logo "spiekermann.png" .
