@@ -13,4 +13,4 @@ This results in improved findability of data for specific applications and secto
   schema:homepage <https://opal.demos.dice-research.org/> ;
   schema:sourceCode <https://github.com/projekt-opal/doc#repositories> ;
   schema:maintainer dice:AdrianWilke ;
-  schema:developer dice:AfshinAmini .
+  schema:developer dice:AfshinAmini , dice:ArwaBannoura , dice:AxelCyrilleNgongaNgomo , dice:CaglarDemir , dice:GeraldoDeSouza , dice:MatthiasWauer , dice:MelissaDas , dice:SvetlanaPestryakova , dice:ZafarSyed , dice:AdrianWilke .
