@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Tentris a schema:Award ;
+  schema:url <https://papers.dice-research.org/2020/ISWC_Tentris/iswc2020_tentris_public.pdf> ;
+  schema:name "Tentris – A Tensor-Based Triple Store" ;
+  schema:content "in the 19th International Semantic Web Conference (ISWC 2020) (Spotlight paper)" ;
+  schema:year "2020";
+  schema:awardee dice:AlexanderBigerl, dice:FelixConrads, dice:MohamedAhmedSherif, dice:MuhammadSaleem, dice:AxelCyrilleNgongaNgomo;
+  schema:awardeeExternal "Charlotte Behning" .
