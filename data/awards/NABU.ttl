@@ -4,7 +4,7 @@
 dice:NABU a schema:Award ;
   schema:url <https://arxiv.org/pdf/2009.07728.pdf> ;
   schema:name "NABU - Multilingual Graph-based Neural RDF Verbalizer" ;
-  schema:content "in the 19th International Semantic Web Conference (ISWC 2020) (Spotlight paper and Best student paper award)" ;
+  schema:content "in the 19th International Semantic Web Conference (ISWC 2020) (Spotlight paper and Runner-Up for Best student paper award)" ;
   schema:year "2020";
   schema:awardee dice:DiegoMoussallem, dice:AxelCyrilleNgongaNgomo;
   schema:awardeeExternal "Dwaraknath Gnaneshwar", "Thiago Castro Ferreira".
