@@ -1,0 +1,13 @@
+---
+date: '2020-11-20'
+title: 'Benchmarking of vector indexing strategies in large vector spaces'
+type: 'Bachelor'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+With the growing importance of embedding spaces, retrieving vectors from these spaces becomes more and more important. In most cases, a vector is given and from a large number of available vectors, the vector with the highest similarity (typically the cosine similarity) should be retrieved. Most implementations rely on a brute force method that leads to long run times in cases in which the number of vectors is high.
+
+However, different indexing strategies are possible and range from the simple triangle inequality to the usage of [dimensionality reduction algorithms](https://members.loria.fr/moberger/Enseignement/AVR/Exposes/TR_Dimensiereductie.pdf) or other [embedding spaces with a smaller number of dimensions](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=1195989). The aim of this thesis is to implement these indexing strategies (in case they are not already available) and compare their performance in different scenarios (original vectors vs. normalized vectors) and based on different datasets.
+
+
