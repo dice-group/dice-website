@@ -18,7 +18,7 @@ In the project, we develop a traffic detection system to classify and count pede
 
 """ ;
 
-  schema:maintainer dice:AdrianWilke ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:endDate "2021-12-31"^^xsd:date ;
   schema:startDate "2020-05-01"^^xsd:date ;
   schema:name "VEP" ;
