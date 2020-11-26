@@ -3,9 +3,12 @@
 
 dice:SimonBin a schema:Person ;
   schema:role dice:ResearchStaff ;
-  schema:project dice:GEISER ;
-  schema:image <http://ldap.aksw.org/pic/sn/Bin> ;
+  schema:project dice:DATEV ;
+  schema:photo "sbin.jpg" ;
   schema:email <mailto:sbin@informatik.uni-leipzig.de> ;
+  schema:chat "@sbin:chat.dice-research.org" ;
   schema:name "Simon Bin" ;
+  schema:namePrefix "" ;
   schema:phone <tel:+49-341-22903736> ;
+  schema:office "Leipzig" ;
   schema:content """""" .
