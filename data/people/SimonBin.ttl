@@ -3,7 +3,6 @@
 
 dice:SimonBin a schema:Person ;
   schema:role dice:ResearchStaff ;
-  schema:project dice:DATEV ;
   schema:photo "sbin.jpg" ;
   schema:email <mailto:sbin@informatik.uni-leipzig.de> ;
   schema:chat "@sbin:chat.dice-research.org" ;
