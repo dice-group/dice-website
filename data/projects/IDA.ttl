@@ -35,7 +35,7 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:startDate "2020-06-01"^^xsd:date ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "IDA" ;
-  schema:fundingProgram "Softwarecampus Grant Number" .
+  schema:fundingProgram "[Softwarecampus](https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/)" .
   # schema:homepage <https://frockg.eu/> ;
   # schema:logo "frockg.png" ;
   # schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:SirmaAI .
