@@ -5,10 +5,11 @@ dice:NikitSrivastava a schema:Person ;
   schema:name "Nikit Srivastava" ;
   schema:namePrefix "" ;
   schema:role dice:StudentResearcher ;
-  schema:phone <tel:+49-176-67-371775> ;
+  schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:nikit@mail.uni-paderborn.de> ;
   schema:chat "@nikit:chat.dice-research.org" ;
-  schema:office "O4.216" ;
+  schema:office "TP6.3.201" ;
   schema:photo "srivastava.jpg" ;
+  schema:project dice:IDA ;
   schema:content """""" .
