@@ -12,8 +12,9 @@ dice:OPAL a dice:FundedProject ;
 ### Articles, Data and Software
 - **Code** repositories are listed at GitHub: https://github.com/projekt-opal/doc#repositories
 - **Data** is stored at https://hobbitdata.informatik.uni-leipzig.de/OPAL/
-- **Deliverables** are listed at the OPAL website, see http://projekt-opal.de/en/results/deliverables/ ([backup](https://hobbitdata.informatik.uni-leipzig.de/OPAL/Deliverables/))
+- **Deliverables** are listed at the OPAL website, see http://projekt-opal.de/en/results/deliverables/ (backups: [Hobbitdata](https://hobbitdata.informatik.uni-leipzig.de/OPAL/Deliverables/), [GitHub](https://github.com/projekt-opal/doc/tree/master/deliverables))
 - **Demo** is linked at the DICE website, see https://dice-research.org/OPAL-Demo
+- **Final presentation** is available as website, see https://projekt-opal.github.io/doc/final-presentation/Praesentation/ ([PDF version](https://github.com/projekt-opal/doc/raw/master/deliverables/OPAL_Abschlusspraesentation.pdf))
 - **Publications** are listed below and can be referred with https://dice-research.org/OPAL
 
 ### Problem
