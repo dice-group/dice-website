@@ -15,22 +15,38 @@ dice:MichaelRoeder a schema:Person ;
   schema:publicationTag "roeder" ;
   schema:content """
 
-<h3>Speaking hours</h3>
+## Speaking hours
 Monday, 14:00 - 16:00</br>
 <p><b>Always</b> write an e-mail to make an appointment <b>before</b> coming to the office. Otherwise, it is possible that I either won't have time for you or that I am not in the office (even throughout the speaking hours).
 </p>
 
+## Thesis Supervision
 
-<h3>Reviewing</h3>
-<p>
+I supervised several bachelor and master theses (sorted by the year of submission).
+
+#### 2018
+* FactCheck – An automatic approach to validate facts in a knowledge base</li>
+* Extraction of Linked Data from HTML webpages</li>
+
+#### 2019
+* Grammar-based Compression of RDF Graphs
+
+#### 2020
+* Benchmarking of Dataset Linkage Recommendation Systems based on real-world Linked Data Application Scenarios
+* A Recommender System for Basket Items
+* Generation of Explainable Recommendations for Song Playlists
+* Recommendation System using Embedding Models for Knowledge Graphs
+
+
+## Reviewing
 My little free time seems to be partly consumed by reviewing, e.g.,
-<ul>
-<li>International Conference on Weblogs and Social Media (ICWSM) in 2013</li>
-<li>Journal of Biomedical Semantics on Bio-Medical Information Retrieval (JBMS Bio-IR) in 2015</li>
-<li><a href="https://sites.google.com/site/cikm2015topicmodels/workshop-organizers">CIKM 2015 Workshop on Topic Models: Post-Processing and Applications</a></li>
-<li><a href="https://www.journals.elsevier.com/journal-of-web-semantics/">Journal of Web Semantics (JWS)</a> in 2018, 2019</li>
-<li><a href="https://journals.plos.org/plosone/">PLOS ONE</a> in <a href="https://doi.org/10.1371/journal.pone.0194158.s006">2018</a></li>
-<li><a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> in <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">2018</a>
-<ul>
-</p>
+
+* International Conference on Weblogs and Social Media (ICWSM) in 2013
+* Journal of Biomedical Semantics on Bio-Medical Information Retrieval (JBMS Bio-IR) in 2015
+* <a href="https://sites.google.com/site/cikm2015topicmodels/workshop-organizers">CIKM 2015 Workshop on Topic Models: Post-Processing and Applications</a>
+* <a href="https://www.journals.elsevier.com/journal-of-web-semantics/">Journal of Web Semantics (JWS)</a> in 2018, 2019
+* <a href="https://journals.plos.org/plosone/">PLOS ONE</a> in <a href="https://doi.org/10.1371/journal.pone.0194158.s006">2018</a>
+* <a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> (1394, <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned">1604</a>, <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">1809</a>, <a href="http://www.semantic-web-journal.net/content/characterizing-rdf-graphs-through-graph-based-measures-framework-and-assessment">2446</a>, <a href="http://www.semantic-web-journal.net/content/characterizing-rdf-graphs-through-graph-based-measures-framework-and-assessment-0">2529</a>)
+* <a href="https://ecis2020.ma/">European Conference on Information Systems (ECIS 2020)</a>
+* <a href="http://iswc2020.semanticweb.org/">International Semantic Web Conference (ISWC 2020)</a>
 """ .
