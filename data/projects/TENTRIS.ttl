@@ -1,0 +1,33 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Tentris a dice:IncubatorProject ;
+  schema:tagline "Fact Checking for Large Enterprise Knowledge Graphs" ;
+  schema:status "active" ;
+  schema:content """
+<h1><span style="font-variant:small-caps;">Tentris</span>: A Tensor-based Triple Store</h1>
+<p><span style="font-variant:small-caps;">Tentris</span> is a tensor-based RDF triple store with SPARQL support. It is introduced and described in:</p>
+<blockquote>
+<p>Alexander Bigerl, Felix Conrads, Charlotte Behning, Mohamed Ahmed Sherif, Muhammad Saleem and Axel-Cyrille Ngonga Ngomo (2020) <strong>Tentris – A Tensor-Based Triple Store.</strong> In: The Semantic Web – ISWC 2020</p>
+</blockquote>
+<pre><code>@InProceedings{bigerl2020tentris,
+  author = {Bigerl, Alexander and Conrads, Felix and Behning, Charlotte and Sherif, Mohamed Ahmed and Saleem, Muhammad and Ngonga Ngomo, Axel-Cyrille},
+  booktitle = {The Semantic Web -- ISWC 2020},
+  publisher = {Springer International Publishing},
+  title = { {T}entris -- {A} {T}ensor-{B}ased {T}riple {S}tore},
+  pages = {56--73},
+  url = {https://papers.dice-research.org/2020/ISWC_Tentris/iswc2020_tentris_public.pdf},
+  year = 2020,
+  isbn = {978-3-030-62419-4}
+}
+</code></pre>
+  """ ;
+  schema:maintainer dice:AlexanderBigerl ;
+  schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier,  ;
+  schema:name "<span style="font-variant:small-caps;">Tentris</span>" ;
+  schema:homepage <https://tentris.dice-research.org/> ;
+  schema:publicationTag "tentris"
+  schema:logo "tentris.svg" .
