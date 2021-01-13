@@ -26,8 +26,8 @@ dice:Tentris a dice:IncubatorProject ;
 </code></pre>
   """ ;
   schema:maintainer dice:AlexanderBigerl ;
-  schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier,  ;
+  schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier ;
   schema:name "<span style="font-variant:small-caps;">Tentris</span>" ;
   schema:homepage <https://tentris.dice-research.org/> ;
-  schema:publicationTag "tentris"
+  schema:publicationTag "tentris" ;
   schema:logo "tentris.svg" .
