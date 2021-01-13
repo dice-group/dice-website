@@ -5,7 +5,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:Tentris a dice:IncubatorProject ;
-  schema:tagline "Fact Checking for Large Enterprise Knowledge Graphs" ;
+  schema:tagline "A Tensor-Based Triple Store" ;
   schema:status "active" ;
   schema:content """
 <h1><span style="font-variant:small-caps;">Tentris</span>: A Tensor-based Triple Store</h1>
@@ -27,7 +27,7 @@ dice:Tentris a dice:IncubatorProject ;
   """ ;
   schema:maintainer dice:AlexanderBigerl ;
   schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier ;
-  schema:name "<span style="font-variant:small-caps;">Tentris</span>" ;
+  schema:name "Tentris" ;
   schema:homepage <https://tentris.dice-research.org/> ;
   schema:publicationTag "tentris" ;
   schema:logo "tentris.svg" .
