@@ -8,7 +8,7 @@ dice:LukasKerkemeier a schema:Person ;
   # schema:phone <tel:> ;
   # schema:fax <tel:> ;
   schema:email <mailto:kerkemei@mail.upb.de> ;
-  schema:chat "@kerkemei:chat.dice-research.org" ;
+  schema:chat "@kerkemei:chat.dice-research.org" .
  # schema:office "" ;
  # schema:photo "LukasKerkemeier.jpg" .
  # schema:content """""" .
