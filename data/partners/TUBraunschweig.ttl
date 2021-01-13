@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:TUBraunschweig a schema:Partner ;
+  schema:name "Technische Universität Braunschweig" ;
+  schema:country "D" ;
+  schema:url <https://www.tu-braunschweig.de/> .

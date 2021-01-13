@@ -10,6 +10,6 @@ dice:SvetlanaPestryakova a schema:Person ;
   schema:email <mailto:pestryak@mail.uni-paderborn.de> ;
   schema:chat "@pestryak:chat.dice-research.org" ;
   schema:office "" ;
-  schema:photo "" ;
-  schema:project dice:SLIPO ;
+  schema:photo "pestryakova.jpg" ;
+  schema:project dice:SLIPO , dice:OPAL ;
   schema:content """""" .

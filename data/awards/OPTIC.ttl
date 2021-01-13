@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:OPTIC a schema:Award ;
+  schema:name "OPTIC: A Deep Neural Network Approach for Entity Linking using Word and Knowledge Embeddings" ;
+  schema:content "in the 22nd International Conference on Enterprise Information Systems (ICEIS) (Runner-Up for Best research paper award)" ;
+  schema:year "2020";
+  schema:awardee dice:DiegoMoussallem;
+  schema:awardeeExternal "Italo Lopes Oliveira", "Luís Paulo Faina Garcia", "Renato Fileto".

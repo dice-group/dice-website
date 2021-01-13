@@ -1,0 +1,36 @@
+---
+date: '2020-09-29'
+title: 'Applying edge-counting semantic similarities to Link Discovery: Scalability and Accuracy (OM-2020 - Long technical paper)'
+author: 'Mohamed Ahmed Sherif'
+---
+
+
+RDF knowledge graphs (KGs) are used in a plethora of applications, especially when published using the Linked Data paradigm. The provision of links between such KGs is of central importance for numerous tasks such as federated queries and question answering. Popular solutions to linking instances (often called link discovery - “short LD” in the literature) often implement specialized measures for particular data types (e.g., geospatial or temporal data). In all other cases, state-of-the-art LD frameworks such as SILK and LIMES rely on string similarities and machine learning to compute links between instances in RDF KGs.
+
+  
+
+While the use of string similarities has been shown to work well in a large number of papers, string similarities have the major drawback of not considering the semantics of the sequences of tokens they aim to compare. Hence, most string similarity measures return low scores for pairs of strings, such as (lift, elevator), (holiday, vacation), (headmaster, principal) and (aubergine, eggplant), although they often stand for the same real-world concepts. Edge-counting semantic similarities alleviate this problem by using a dictionary to compute a semantic distance between sequences of tokens within the need for an overlap. The synonymy between aubergine and eggplant would hence lead semantic similarity to assign the pair (aubergine, eggplant) a similarity score close to 1.
+
+The use of semantic similarities has been paid little attention in LD for at least two reasons: First, semantic similarities scale poorly and are thus impractical when used on large knowledge graphs. Moreover, current works suggest that they lead to no improvement in F-measure.
+
+The goal of this paper is hence twofold:
+
+1.  We present means to accelerate the computation of four popular bounded edge-counting semantic similarities.
+    
+2.  We then combine string and semantic similarities using two state-of-the-art machine learning approaches for LD. Our results refute the current state of the art and suggest that semantic similarities can help achieve better results in LD
+
+<br />
+
+Authors: [Kleanthi Georgala](https://dice-research.org/KleanthiGeorgala), [Mohamed Ahmed Sherif](https://dice-research.org/MohamedAhmedSherif), [Michael Röder](https://dice-research.org/MichaelRoeder), and [Axel-Cyrille Ngonga Ngomo](https://dice-research.org/AxelCyrilleNgongaNgomo)  
+Paper: [https://papers.dice-research.org/2020/OM_hECATE/public.pdf](https://papers.dice-research.org/2020/OM_hECATE/public.pdf)  
+Github repository: [https://github.com/dice-group/LIMES](https://github.com/dice-group/LIMES)  
+Cite as:
+
+    @inproceedings{hecate_om_2020,
+        author = {Georgala, Kleanthi and Röder, Michael and Sherif, Mohamed Ahmed and {Ngonga Ngomo}, Axel-Cyrille}
+        biburl={https://www.bibsonomy.org/bibtex/2f501a97f376a1caaf57f7041c413d3f0/dice-research},
+        booktitle = {Proceedings of Ontology Matching Workshop 2020},
+        title = {{Applying edge-counting semantic similarities to Link Discovery: Scalability and Accuracy}},
+        url = {https://papers.dice-research.org/2020/OM_hECATE/public.pdf},
+        year = 2020
+    }

@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:JeanNDahKouagou a schema:Person ;
+  schema:name "Jean N'Dah Kouagou" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-162-39-96915> ;
+  schema:fax <tel:> ;
+  schema:project dice:KnowGraphs ;
+  schema:email <mailto:nkouagou@mail.uni-paderborn.de> ;
+  schema:chat "@nkouagou:chat.dice-research.org" ;
+  schema:office "TP6.3.101" ;
+  schema:photo "jean.jpg" ;
+  schema:content """""" .
+

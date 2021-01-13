@@ -12,4 +12,4 @@ dice:AxelCyrilleNgongaNgomo a schema:Person ;
   schema:office "TP6.3.106" ;
   schema:photo "ngonga.jpg" ;
   schema:content """""" ;
-  schema:project dice:GEISER, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS .
+  schema:project dice:GEISER, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:VEP, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS .

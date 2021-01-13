@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:DB a schema:Partner ;
+  schema:name "Deutsche Bahn" ;
+  schema:country "D" ;
+  schema:url <https://www.bahn.de/> .

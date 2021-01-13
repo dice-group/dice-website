@@ -1,0 +1,26 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ReCoDa a schema:Demo ;
+  schema:name "ReCoDa" ;
+  schema:tagline "Relicensing Combined Datasets" ;
+  schema:content """
+Metadata portals offer access to Open Data, which
+is increasingly published on the basis of RDF vocabularies and
+ontologies. Individual datasets include URIs and descriptions of
+licenses under which the datasets are published. Licenses can be
+defined by attributes of the types permission, requirement and
+prohibition. This demo focuses on the problem of relicensing
+datasets that include multiple other open datasets published
+under different licenses. If combined datasets are republished,
+a chosen license must comply with the original licenses of each
+dataset. The approach is based on mapping licenses to deontic
+interpretations and combining them using an OR-composite
+operator. The result of the operator is used to determine matching
+licenses from a Knowledge Base containing license information.""" ;
+  schema:screenshot "recoda_screenshot.png";
+  schema:logo "recoda.png" ;
+  schema:homepage <https://recoda.demos.dice-research.org/> ;
+  schema:sourceCode <https://github.com/dice-group/ReCoDa> ;
+  schema:maintainer dice:AdrianWilke ;
+  schema:developer dice:ArwaBannoura , dice:AxelCyrilleNgongaNgomo , dice:AdrianWilke .

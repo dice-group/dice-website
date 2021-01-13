@@ -4,7 +4,7 @@
 dice:ElizaSimpson a schema:Person ;
   schema:name "Eliza Simpson" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-163-48-09684> ;
   schema:fax <tel:> ;
   schema:email <mailto:elizashaw16@gmail.com> ;

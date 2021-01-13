@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:retresco a schema:Partner ;
+  schema:name "retresco" ;
+  schema:country "D" ;
+  schema:url <https://www.retresco.de/> .
