@@ -11,9 +11,9 @@ dice:Tentris a dice:IncubatorProject ;
 <p><span style="font-variant:small-caps;">Tentris</span> is a tensor-based RDF triple store with SPARQL support.</p>
   """ ;
   schema:maintainer dice:AlexanderBigerl ;
-  schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier ;
+  # schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier ;
   schema:name "Tentris" ;
   schema:homepage <https://tentris.dice-research.org/> ;
   schema:sourceCode <https://github.com/dice-group/tentris>; 
   schema:publicationTag "tentris" ;
-  schema:logo "tentris.svg" .
+  schema:logo "tentris.png" .

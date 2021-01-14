@@ -9,8 +9,7 @@ dice:NikolaosKaralis a schema:Person ;
   # schema:phone <tel:+49-525-16-05190> ;
   # schema:fax <tel:> ;
   schema:email <mailto:nkaralis@mail.upb.de> ;
-  schema:chat "@uqudus:nkaralis.dice-research.org" ;
   # schema:office "TP6.3.307" ;
   # schema:photo "NikolaosKaralis.jpg" ;
-  schema:project dice:KnowGraphs;
+  schema:project dice:KnowGraphs, dice:Tentris;
   schema:content """""" .
