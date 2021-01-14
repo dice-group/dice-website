@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LukasKerkemeier a schema:Person ;
+  schema:name "Lukas Kerkemeier" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  # schema:phone <tel:> ;
+  # schema:fax <tel:> ;
+  schema:email <mailto:kerkemei@mail.upb.de> ;
+  schema:chat "@kerkemei:chat.dice-research.org" ;
+ # schema:office "" ;
+ # schema:photo "LukasKerkemeier.jpg" ;
+ schema:project dice:Tentris ;
+ schema:content """""" .

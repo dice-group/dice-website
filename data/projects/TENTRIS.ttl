@@ -1,0 +1,19 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Tentris a dice:IncubatorProject ;
+  schema:tagline "A Tensor-Based Triple Store" ;
+  schema:status "active" ;
+  schema:content """
+<p><span style="font-variant:small-caps;">Tentris</span> is a tensor-based RDF triple store with SPARQL support.</p>
+  """ ;
+  schema:maintainer dice:AlexanderBigerl ;
+  # schema:developer dice:NikolaosKaralis, dice:FakhrShaheen, dice:LukasKerkemeier ;
+  schema:name "Tentris" ;
+  schema:homepage <https://tentris.dice-research.org/> ;
+  schema:sourceCode <https://github.com/dice-group/tentris>; 
+  schema:publicationTag "tentris" ;
+  schema:logo "tentris.png" .

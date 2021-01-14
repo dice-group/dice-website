@@ -11,4 +11,5 @@ dice:FakhrShaheen a schema:Person ;
   schema:chat "@shaheen:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "shaheen.jpg" ;
+  schema:project dice:Tentris;
   schema:content """""" .

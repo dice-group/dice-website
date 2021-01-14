@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:FelixConrads a schema:Person ;
-  schema:name "Felix Conrads" ;
+  schema:name "Lixi Conrads" ;
   schema:namePrefix "" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
