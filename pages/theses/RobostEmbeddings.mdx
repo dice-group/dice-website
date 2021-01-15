@@ -1,0 +1,31 @@
+---
+date: '2021-01-14'
+title: 'Robust Embeddings for Knowledge Graphs'
+type: 'Bachelor'
+supervisor: dice:CaglarDemir
+contact: dice:CaglarDemir
+---
+Knowledge graph embedding methods learn continuous vector representations for entities and relation in knowledge graphs and have been successfully employed for many applications including link prediction [1]. "Finding the best ratio between expressiveness and parameter space size is the keystone of embedding models" [2]. However, performing extensive hyperparameter optimization does necessicate state-of-the-hard hardware systems. For instance, the RotatE model requires 9 hours of computation [3] to reach its peak performance on the FB15K benchmark dataset with a GeForce GTX 1080 Ti GPU. The total elapsed runtime of the RotatE model during the hyperparamter optimization phase on FB15K equates 1512 hours. The availablity of state-of-the-art hardware system have often determined which research ideas succeed (and fail) [4].
+
+Meanwhile,  Nakkiran et. al. [5,6] from the OPENAI research show that the double descent phenomenon occurs in CNNs, ResNets, and transformers: "performance first improves, then gets worse, and then improves again with increasing model size, data size, or training time".
+
+In this thesis, the student is asked to answer the following questions:
+1. Does the double descent phenomenon occur in knowledge graph embeddings [1,2,3]?
+2. Can we benefit from this phenomenon to avoid extensive hyperparameter optimization by making models larger and training them longer?
+
+### Required skills
+- Machine Learning
+- Knowledge Graphs
+- Python, Numpy and PyTorch
+
+### Preferred skills
+- Knowledge Graph Embedding
+
+
+## Resources
+[1] Convolutional Complex Knowledge Graph Embeddings (https://arxiv.org/abs/2008.03130)
+[2] Complex Embeddings for Simple Link Prediction (https://arxiv.org/abs/1606.06357)
+[3] ROTATE: Knowledge Graph Embedding by relational rotation in complex space (https://arxiv.org/abs/1902.10197)
+[4] The Hardware Lottery (https://arxiv.org/abs/2009.06489)
+[5] Deep Double Descent: Where Bigger Models and More Data Hurt (https://arxiv.org/abs/1912.02292)
+[6] deep-double-descent blogpost (https://openai.com/blog/deep-double-descent/)
