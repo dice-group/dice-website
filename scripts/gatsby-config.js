@@ -53,25 +53,6 @@ module.exports = {
 
     // postcss support
     `gatsby-plugin-postcss`,
-    // css auto-cleanup
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/components/styles/main.css`],
-        content: [
-          path.join(process.cwd(), 'src/**/!(*.d).{ts,js,jsx,tsx}'),
-          path.join(process.cwd(), '..', 'data/**/*.ttl'),
-          path.join(process.cwd(), '..', 'pages/**/*.{md,mdx}'),
-        ],
-        extractors: [
-          {
-            extractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-            extensions: ['ttl'],
-          },
-        ],
-      },
-    },
 
     //  head (title, meta, etc) modification plugin
     `gatsby-plugin-react-helmet`,

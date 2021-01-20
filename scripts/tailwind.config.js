@@ -1,6 +1,13 @@
 // See https://tailwindcss.com/docs/configuration for details
 
 module.exports = {
+  purge: [
+    `./src/components/styles/main.css`,
+    './src/**/!(*.d).{ts,js,jsx,tsx}',
+    '../data/**/*.ttl',
+    '../pages/**/*.{md,mdx}',
+  ],
+  darkMode: false,
   theme: {
     extend: {
       maxWidth: {

@@ -5,6 +5,8 @@
   "rules": {
     "max-len": ["error", 120, 4],
     "camelcase": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-pascal-case": "off",
@@ -18,6 +20,7 @@
     "prettier/prettier": [
       "error",
       {
+        "arrowParens": "avoid",
         "endOfLine": "lf",
         "trailingComma": "es5",
         "tabWidth": 2,

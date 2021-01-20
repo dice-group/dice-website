@@ -9,8 +9,18 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
   // dynamic queries on the build time
   const {
     allImageSharp: { edges: images },
+    svgs: { edges: svgs },
   } = useStaticQuery(graphql`
     query {
+      svgs: allFile(filter: { extension: { eq: "svg" } }) {
+        edges {
+          node {
+            extension
+            publicURL
+          }
+        }
+      }
+
       allImageSharp {
         edges {
           node {
@@ -29,8 +39,14 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
       ? images.find(element => element.node.fluid.src.endsWith(`/${filename}`))
       : undefined;
 
+  // find svg that user wanted by matching public URL end
+  const svgEl =
+    filename && filename.length > 0
+      ? svgs.find(element => element.node.publicURL.endsWith(filename))
+      : undefined;
+
   // if image not found - return DICE logo placeholder
-  if (!imageEl) {
+  if (!imageEl && !svgEl) {
     return (
       <DICE
         viewBox="0 0 700 763"
@@ -41,14 +57,34 @@ const Image = ({ filename, alt, style, className = 'image' }) => {
     );
   }
 
-  const image = imageEl.node.fluid;
+  // render image if present
+  if (imageEl) {
+    const image = imageEl.node.fluid;
+    return (
+      <Img
+        className={className}
+        fluid={image}
+        objectFit="cover"
+        alt={alt}
+        style={style}
+      />
+    );
+  }
+
+  // render svg
+  if (svgEl) {
+    const svgPath = svgEl.node.publicURL;
+    return <img src={svgPath} alt={alt} style={style} />;
+  }
+
+  // if for some reason svg and image were found but not rendered
+  // return dice placeholder
   return (
-    <Img
-      className={className}
-      fluid={image}
-      objectFit="cover"
-      alt={alt}
-      style={style}
+    <DICE
+      viewBox="0 0 700 763"
+      height="100%"
+      width="100%"
+      preserveAspectRatio="xMidYMid meet"
     />
   );
 };
