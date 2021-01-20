@@ -14,10 +14,10 @@ const parseHtml = htmlParser({
   processingInstructions: [
     {
       // Custom <img> processing
-      shouldProcessNode: function(node) {
+      shouldProcessNode: function (node) {
         return node && node.name && node.name === 'img';
       },
-      processNode: function(node, children) {
+      processNode: function (node, children) {
         return (
           <Image
             filename={node.attribs.src}
@@ -29,7 +29,7 @@ const parseHtml = htmlParser({
     },
     {
       // Anything else
-      shouldProcessNode: function(node) {
+      shouldProcessNode: function (node) {
         return true;
       },
       processNode: processNodeDefinitions.processDefaultNode,

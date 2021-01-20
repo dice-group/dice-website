@@ -621,7 +621,7 @@ a {
   }
 
   .project-extended-info {
-    @apply flex-no-wrap mb-8;
+    @apply flex-nowrap mb-8;
 
     .column-header {
       @apply font-bold mb-1;
@@ -855,7 +855,7 @@ a {
 
 .tabs {
   @apply flex items-stretch border-b border-solid justify-around mb-6 mt-3;
-  @apply whitespace-no-wrap overflow-hidden overflow-x-auto;
+  @apply whitespace-nowrap overflow-hidden overflow-x-auto;
 
   border-bottom-color: rgb(219, 219, 219);
   border-bottom-width: 0.6px;

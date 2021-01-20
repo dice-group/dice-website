@@ -51,8 +51,9 @@ const News = ({ limit = 10, paginate = true }) => {
             {pages.map(page => (
               <li key={page}>
                 <a
-                  className={`pagination-link ${page === currentPage &&
-                    'is-current'}`}
+                  className={`pagination-link ${
+                    page === currentPage && 'is-current'
+                  }`}
                   aria-label="Goto page 1"
                   onClick={() => setCurrentPage(page)}
                 >
