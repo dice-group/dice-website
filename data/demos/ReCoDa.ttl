@@ -17,7 +17,14 @@ a chosen license must comply with the original licenses of each
 dataset. The approach is based on mapping licenses to deontic
 interpretations and combining them using an OR-composite
 operator. The result of the operator is used to determine matching
-licenses from a Knowledge Base containing license information.""" ;
+licenses from a Knowledge Base containing license information.
+
+# Resources
+
+- Article: [BibSonomy](https://www.bibsonomy.org/bibtex/2f81b43f8a3111a5ab03c708d041ad783)
+- Presentation: [Slides as PDF file](https://papers.dice-research.org/2021/ICSC2021_ReCoDa/Relicensing-Combined-Datasets-ReCoDa-slides-public.pdf)
+
+""" ;
   schema:screenshot "recoda_screenshot.png";
   schema:logo "recoda.png" ;
   schema:homepage <https://recoda.demos.dice-research.org/> ;
