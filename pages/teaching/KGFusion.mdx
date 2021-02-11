@@ -8,5 +8,18 @@ kind: 'Master'
 language: 'en'
 ---
 
-We will add a description, soon.
+
+The Knowledge Graph (KG) fusion process receives two or more KGs containing resources and their properties (attributes) as input. KG Fusion produces a fused KG, which contains consolidated descriptions of the resources within the input KGs. Each resource in the final, fused KG is described by a set of non-redundant and non-conflicting properties. Such properties are derived by merging the initial attributes for the input  KGs’ resources. Fusion is considered as the final part of the KG integration process, which usually consists of three main steps: schema integration (ontology matching), duplicate detection (instance matching) and fusion.
+
+In the frame of this project group,  we will fuse KG entities that are characterized by a set of major properties (e.g., names, description, addresses, etc.), where each of such KG entities belongs to a certain class(es). Our work within this project group will thus involve the following steps:
+
+1. We will first implement approaches for finding similar classes of the input KGs (Ontology matching). For example, both https://dbpedia.org/ontology/Town and https://yago-knowledge.org/resource/schema:City represent the same *class* from the KGs of DBpedia and Yago respectively.  
+2. For each pair of the resulting similar classes, we will implement approaches to link the KG resources that represent the same real world entities (Instance matching). For instance, https://dbpedia.org/resource/Paderborn and https://yago-knowledge.org/resource/Paderborn refer to the same real world entity of the city of Paderborn from the KGs of DBpedia and Yago respectively.
+3. We will then implement a series of fusion strategies to consolidate the linked resources (from the previous step). For example, *“majority voting strategy”*, where we keep only the most redundant value of a certain property (e.g., population). 
+4. Moreover, we will implement mechanisms for automatically selecting the proper fusion strategy given a certain properity. 
+5. As any KG is as good as its quality, we will incorporate mechanisms to assess the quality of the proposed fusion strategies and their results.
+
+## Contact
+Mohamed Sherif
+
 
