@@ -9,7 +9,7 @@ const links = [
   { url: '/awards/', text: 'Awards' },
 
   { url: '/students/', text: 'For students' },
-  { url: '/collaborators/', text: 'For collaborators' },
+  { url: '/collaborators/', text: 'Research areas' },
 
   { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Vacancies' },
