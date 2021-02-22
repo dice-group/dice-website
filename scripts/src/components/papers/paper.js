@@ -25,15 +25,16 @@ const Paper = ({
   },
 }) => (
   <div className="paper">
-    <p className="paper-text">{source}</p>
-    <h3 className="paper-name">{renderTitle({ title, url, pdfUrl })}</h3>
-    <p className="paper-meta">By {(authorName || []).join(', ')}</p>
-    <p className="paper-meta">
-      {year}, #{publicationType}{' '}
+    <p className="paper-text">
+      {source}, {year}, #{publicationType}
+    </p>
+    <h3 className="paper-name">
+      {renderTitle({ title, url, pdfUrl })}{' '}
       <a className="bib-link" href={bibsonomyId}>
         Get BibTex
       </a>
-    </p>
+    </h3>
+    <p className="paper-meta">By {(authorName || []).join(', ')}</p>
   </div>
 );
 
