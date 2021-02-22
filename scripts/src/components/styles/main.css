@@ -794,14 +794,14 @@ a {
 }
 
 .paper {
-  @apply mb-4;
+  @apply mb-6;
 
   .paper-text {
     @apply mb-0 text-xs;
   }
 
   .paper-name {
-    @apply mb-0 mt-0 text-base;
+    @apply mb-0 mt-0 text-lg font-semibold;
   }
 
   .paper-meta {
@@ -809,7 +809,7 @@ a {
   }
 
   .bib-link {
-    @apply hidden ml-1 text-sm;
+    @apply hidden ml-1 text-base;
     color: var(--primary-color);
   }
   &:hover {
