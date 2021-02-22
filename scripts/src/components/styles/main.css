@@ -812,11 +812,14 @@ a {
     @apply hidden ml-1 text-base;
     color: var(--primary-color);
   }
+
+  /*! purgecss start ignore */
   &:hover {
     .bib-link {
       @apply inline;
     }
   }
+  /*! purgecss end ignore */
 }
 
 /*
