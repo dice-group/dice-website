@@ -1,0 +1,36 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ORCA a dice:ProductionReadyProject ;
+  schema:tagline "ORCA is a Crawler Analysis Benchmark for Data Web Crawlers" ;
+  schema:status "active" ;
+  schema:sourceCode <http://w3id.org/dice-research/orca/code> ;
+  schema:content """
+
+ORCA is a benchmark for Data Web crawler, i.e., crawler that are focussed on gathering structured data. The main idea of ORCA is to generate a synthetic Data Web for which the ground truth is known. It is based on the [HOBBIT](https://dice-research.org/HOBBIT) benchmarking platform and supports distributed crawler implementations.
+
+## Available Adapters for Crawler
+
+* [LDSpider](https://github.com/ldspider/ldspider)
+* [Squirrel](https://dice-research.org/Squirrel)
+
+## Server Types
+
+* Dump file
+* Dereferencing Server
+* HTML Webserver with embedded RDFa
+* SPARQL endpoint
+* CKAN
+
+All servers work on HTTP.
+
+""" ;
+  schema:maintainer dice:MichaelRoeder ;
+  schema:developer dice:AbdelmoneimAmerDesouki, dice:DenisKuchelev ;
+  schema:startDate "2019-01-25"^^xsd:date ;
+  schema:name "ORCA" ;
+  schema:logo "orca-logo.png" ;
+  schema:publicationTag "orca" .
