@@ -27,16 +27,25 @@ ___
 
 import Plot from '../../scripts/src/components/plotly';
 
+import figure1 from 'tentris107_AvgPQPS.json';
+
 <Plot
-  data={[
-    {
-      x: [1, 2, 3],
-      y: [2, 6, 3],
-      type: 'scatter',
-      mode: 'lines+markers',
-      marker: { color: 'red' },
-    },
-    { type: 'bar', x: [1, 2, 3], y: [2, 5, 3] },
-  ]}
-  layout={{ width: 320, height: 240, title: 'A Fancy Plot' }}
+  data={figure1.data}
+  layout={figure1.layout}
 />
+
+import figure2 from 'tentris107_QMPH.json';
+
+<Plot
+  data={figure2.data}
+  layout={figure2.layout}
+/>
+
+import figure3 from 'tentris107_avgMBps.json';
+
+<Plot
+  data={figure3.data}
+  layout={figure3.layout}
+/>
+
+
