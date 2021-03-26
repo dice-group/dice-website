@@ -26,6 +26,7 @@
     "isomorphic-unfetch": "^3.1.0",
     "lodash": "^4.17.20",
     "n3": "^1.8.0",
+    "plotly.js": "^1.58.4",
     "postcss": "^8.2.4",
     "postcss-nested": "^5.0.3",
     "prop-types": "^15.7.2",
@@ -33,7 +34,9 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.1.0",
+    "react-loadable": "^5.5.0",
     "react-markdown": "^5.0.3",
+    "react-plotly.js": "^2.5.1",
     "react-select": "^3.2.0",
     "react-twitter-embed": "^3.0.3",
     "tailwindcss": "^2.0.2"
