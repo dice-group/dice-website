@@ -207,20 +207,3 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
-
-// plotly fix
-// see: https://janosh.dev/blog/gatsby-interactive-plots
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === `build-html`) {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /plotly/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    });
-  }
-};

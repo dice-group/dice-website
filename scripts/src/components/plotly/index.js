@@ -1,13 +1,19 @@
 import React from 'react';
-import Loadable from 'react-loadable';
 
 // Workaround for SSR issue with Plotly
 // load it dynamically only on client
-const LoadableComponent = Loadable({
-  loader: () => import('./plotly'),
-  loading() {
-    return <div>Loading plotly...</div>;
-  },
-});
+const ClientSideOnlyPlotly = React.lazy(() => import('./plotly.js'));
 
-export default ({ ...props }) => <LoadableComponent {...props} />;
+export default ({ ...props }) => {
+  const isSSR = typeof window === 'undefined';
+
+  return (
+    <>
+      {!isSSR && (
+        <React.Suspense fallback={<div />}>
+          <ClientSideOnlyPlotly {...props} />
+        </React.Suspense>
+      )}
+    </>
+  );
+};
