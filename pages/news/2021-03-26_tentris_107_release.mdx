@@ -7,13 +7,13 @@ author: 'Alexander Bigerl'
 We are happy to announce version [1.0.7 of <span style="font-variant:small-caps;">Tentris</span> ](https://github.com/dice-group/tentris/releases/tag/1.0.7).
 
 This update is mainly a follow-up to the initial <span style="font-variant:small-caps;">Tentris</span> paper at ISWC2020. 
-In the [paper](https://tentris.dice-research.org/) we found in the analysis that <span style="font-variant:small-caps;">Tentris</span> didn't perform best in for queries with large results. 
-We suspected the reason was <span style="font-variant:small-caps;">Tentris</span>'s json serialization engine; which turned out to be true.  
+In the [paper](https://tentris.dice-research.org/) out analysis showed that <span style="font-variant:small-caps;">Tentris</span>  was fastest for queries with large results but fell behind for some queries with large results. 
+We suspected the reason was <span style="font-variant:small-caps;">Tentris</span>' json serialization engine; what turned out to be true.  
 With <span style="font-variant:small-caps;">Tentris</span> 1.0.7 this problem is solved.
 
 The main improvements compared to [<span style="font-variant:small-caps;">Tentris</span> 1.0.5.1](https://github.com/dice-group/tentris/releases/tag/1.0.5.1) (version from the paper) at a glance:
-* Improved and fixed einsum operator graph from hypertrie/0.5.3
 * Several fixes to result serialization. A faster SAX parser based on [RapidJSON](https://rapidjson.org/) is used now.
+* Improved and fixed einsum operator graph from hypertrie/0.5.3
 * Support for chunked HTTP (streaming) of results
 * Fixed and improved Dockerfile
 * General improvements to the build process
