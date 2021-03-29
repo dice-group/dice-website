@@ -13,8 +13,8 @@ With <span style="font-variant:small-caps;">Tentris</span> 1.0.7 this problem is
 
 The main improvements compared to [<span style="font-variant:small-caps;">Tentris</span> 1.0.5.1](https://github.com/dice-group/tentris/releases/tag/1.0.5.1) (version from the paper) at a glance:
 * Several fixes to result serialization. A faster SAX parser based on [RapidJSON](https://rapidjson.org/) is used now.
-* Improved and fixed einsum operator graph from hypertrie/0.5.3
-* Support for chunked HTTP (streaming) of results
+* Improved and fixed einsum operator graph from [hypertrie/0.5.3](https://github.com/dice-group/hypertrie/releases/tag/0.5.3)
+* Support for chunked HTTP (streaming)
 * Fixed and improved Dockerfile
 * General improvements to the build process
 
@@ -30,14 +30,14 @@ import figure1 from '../../images/news/tentris107_all.json';
   config={figure1.config}
 />
 
-Throughput and Query Mixes per Hour QMpH are more than doubled. Those metrics are most sensitive to the performance of the few larger, long-running queries. 
+Throughput and Query Mixes per Hour (QMpH) are more than doubled. Those metrics are most sensitive to the performance of the few larger, long-running queries. 
 Queries per second (QpS) on the other hand is more robust to single queries taking a long time. 
 As expected, it stays stable between the versions.
 
 Another exciting new feature of <span style="font-variant:small-caps;">Tentris</span> 1.0.7 is the chunked HTTP endpoint available at `http://127.0.0.1:9080/stream`.
 It works just as the normal `/sparql` endpoint but streams the result. 
-When this endpoint is used, <span style="font-variant:small-caps;">Tentris</span> forgets calculates a solution, hands it to the client and forgets it. 
-This way, hugh results can be retrieved without ever holding storing the full result before returning it. 
+When this endpoint is used, <span style="font-variant:small-caps;">Tentris</span> calculates a solution, hands it to the client and forgets it. 
+This way, huge results can be retrieved without ever storing the full result in memory before returning it. 
 
 ___
 
