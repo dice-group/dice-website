@@ -7,8 +7,8 @@ author: 'Alexander Bigerl'
 We are happy to announce version [1.0.7 of <span style="font-variant:small-caps;">Tentris</span> ](https://github.com/dice-group/tentris/releases/tag/1.0.7).
 
 This update is mainly a follow-up to the initial <span style="font-variant:small-caps;">Tentris</span> paper at ISWC2020. 
-In the [paper](https://tentris.dice-research.org/) out analysis showed that <span style="font-variant:small-caps;">Tentris</span>  was fastest for queries with large results but fell behind for some queries with large results. 
-We suspected the reason was <span style="font-variant:small-caps;">Tentris</span>' json serialization engine; what turned out to be true.  
+In the [paper](https://tentris.dice-research.org/) our analysis showed that <span style="font-variant:small-caps;">Tentris</span>  was fastest for queries with large results but fell behind for some queries with large results. 
+We suspected the reason was <span style="font-variant:small-caps;">Tentris</span>' JSON serialization engine; what turned out to be true. 
 With <span style="font-variant:small-caps;">Tentris</span> 1.0.7 this problem is solved.
 
 The main improvements compared to [<span style="font-variant:small-caps;">Tentris</span> 1.0.5.1](https://github.com/dice-group/tentris/releases/tag/1.0.5.1) (version from the paper) at a glance:
@@ -18,7 +18,8 @@ The main improvements compared to [<span style="font-variant:small-caps;">Tentri
 * Fixed and improved Dockerfile
 * General improvements to the build process
 
-A mini benchmark on the SWDF dataset from the paper, shows the significant improvement of the new version:
+
+A mini benchmark on the SWDF dataset from the paper shows the significant improvement of the new version:
 
 import Plot from '../../scripts/src/components/plotly';
 
@@ -37,7 +38,7 @@ As expected, it stays stable between the versions.
 Another exciting new feature of <span style="font-variant:small-caps;">Tentris</span> 1.0.7 is the chunked HTTP endpoint available at `http://127.0.0.1:9080/stream`.
 It works just as the normal `/sparql` endpoint but streams the result. 
 When this endpoint is used, <span style="font-variant:small-caps;">Tentris</span> calculates a solution, hands it to the client and forgets it. 
-This way, huge results can be retrieved without ever storing the full result in memory before returning it. 
+This way, large-scale results are retrievable without full materialization in memory. 
 
 ___
 
