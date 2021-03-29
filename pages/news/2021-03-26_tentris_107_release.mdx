@@ -4,51 +4,43 @@ title: 'Release: Tentris 1.0.7'
 author: 'Alexander Bigerl'
 ---
 
-We are happy to announce an update to <span style="font-variant:small-caps;">Tentris</span> 1.0.7.
+We are happy to announce version [1.0.7 of <span style="font-variant:small-caps;">Tentris</span> ](https://github.com/dice-group/tentris/releases/tag/1.0.7).
 
-The main improvements at a glance:
-* improved and fixed einsum operator graph from hypertrie/0.5.3
-* several fixes to result serialization. A rapid SAX parser based on rapidJSON is used now.
-* chunked HTTP (streaming) of results
-* fixed Dockerfile
-* improved build process
+This update is mainly a follow-up to the initial <span style="font-variant:small-caps;">Tentris</span> paper at ISWC2020. 
+In the [paper](https://tentris.dice-research.org/) we found in the analysis that <span style="font-variant:small-caps;">Tentris</span> didn't perform best in for queries with large results. 
+We suspected the reason was <span style="font-variant:small-caps;">Tentris</span>'s json serialization engine; which turned out to be true.  
+With <span style="font-variant:small-caps;">Tentris</span> 1.0.7 this problem is solved.
 
-This update is mainly a follow-up to the initial <span style="font-variant:small-caps;">Tentris</span> paper at ISWC2020. In the Analysis we found that <span style="font-variant:small-caps;">Tentris</span> didn't perform best in for very large queries. We had pinpointed the reason to be the json serialization engine. With <span style="font-variant:small-caps;">Tentris</span> 1.0.7 this problem is solved.
+The main improvements compared to [<span style="font-variant:small-caps;">Tentris</span> 1.0.5.1](https://github.com/dice-group/tentris/releases/tag/1.0.5.1) (version from the paper) at a glance:
+* Improved and fixed einsum operator graph from hypertrie/0.5.3
+* Several fixes to result serialization. A faster SAX parser based on [RapidJSON](https://rapidjson.org/) is used now.
+* Support for chunked HTTP (streaming) of results
+* Fixed and improved Dockerfile
+* General improvements to the build process
 
-Another exciting feature is the chunked HTTP endpoint available at `http://127.0.0.1:9080/stream`.
-It works just as the normal `/sparql` endpoint but streams the result. Solutions are simply streamed to the client as they are calculated.
-This way, hugh results can be retrieved without <span style="font-variant:small-caps;">Tentris</span> needing to store it temporarily.
-
-A mini benchmark on the SWDF dataset from the paper, shows the effect of improved serialization.
-Throughput in MB/s as well as Query Mixes per Hour QMpH shows a noticeable improvement since those metrics are most sensitive to larger, long-running queries.
-Queries per second (QpS) stays mostly at the same level.
-
-___
+A mini benchmark on the SWDF dataset from the paper, shows the significant improvement of the new version:
 
 import Plot from '../../scripts/src/components/plotly';
 
-import figure1 from '../../images/news/tentris107_AvgQPS.json';
+import figure1 from '../../images/news/tentris107_all.json';
 
 <Plot
   data={figure1.data}
   layout={figure1.layout}
-  config={`{displaylogo: false}`}
+  config={figure1.config}
 />
 
-import figure2 from '../../images/news/tentris107_QMPH.json';
+Throughput and Query Mixes per Hour QMpH are more than doubled. Those metrics are most sensitive to the performance of the few larger, long-running queries. 
+Queries per second (QpS) on the other hand is more robust to single queries taking a long time. 
+As expected, it stays stable between the versions.
 
-<Plot
-  data={figure2.data}
-  layout={figure2.layout}
-  config={`{displaylogo: false}`}
-/>
+Another exciting new feature of <span style="font-variant:small-caps;">Tentris</span> 1.0.7 is the chunked HTTP endpoint available at `http://127.0.0.1:9080/stream`.
+It works just as the normal `/sparql` endpoint but streams the result. 
+When this endpoint is used, <span style="font-variant:small-caps;">Tentris</span> forgets calculates a solution, hands it to the client and forgets it. 
+This way, hugh results can be retrieved without ever holding storing the full result before returning it. 
 
-import figure3 from '../../images/news/tentris107_avgMBps.json';
+___
 
-<Plot
-  data={figure3.data}
-  layout={figure3.layout}
-  config={`{displaylogo: false}`}
-/>
-
-
+project page: https://tentris.dice-research.org/
+paper: https://link.springer.com/chapter/10.1007/978-3-030-62419-4_4
+github: https://github.com/dice-group/tentris
