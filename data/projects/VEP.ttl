@@ -4,14 +4,14 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:VEP a dice:FundedProject ;
+dice:VEP a dice:IncubatorProject ;
   schema:tagline "Traffic Detection Paderborn (Verkehrserfassung Paderborn)" ;
   schema:status "active" ;
   schema:content """
 
-In the project, we develop a traffic detection system to classify and count pedestrians and cyclists in the city of Paderborn.
+In the project, we develop a traffic detection system to classify and count pedestrians and cyclists.
 
-### Partners
+### Former partners
 
 - [Spiekermann GmbH Con­sul­ting Engi­neers](https://www.spiekermann.de/)
 - [Stadt Paderborn - Amt für Vermessung und Geoinformation - Geoinformationsservice](https://mein-digiport.de/aemter-einrichtungen/-/egov-bis-detail/einrichtung/2601/show)
@@ -19,10 +19,6 @@ In the project, we develop a traffic detection system to classify and count pede
 """ ;
 
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
-  schema:endDate "2021-12-31"^^xsd:date ;
-  schema:startDate "2020-05-01"^^xsd:date ;
   schema:name "VEP" ;
-  schema:publicationTag "VEP" ;
-  schema:logo "vep.png" ;
-  schema:partner dicepartner:StadtPaderborn, dicepartner:Spiekermann .
+  schema:publicationTag "VEP" .
 

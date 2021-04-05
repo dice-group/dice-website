@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SOLIDE a dice:FundedProject ;
+dice:SOLIDE a dice:AlumniProject ;
   schema:tagline "Sprachgesteuerte, kontextuelle Lagebildinformation für Stäbe und Einsatzkräfte im Bevölkerungsschutz" ;
   schema:status "active" ;
   schema:endDate "2020-07-31"^^xsd:date ;
