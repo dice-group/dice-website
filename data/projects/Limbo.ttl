@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:LIMBO a dice:FundedProject ;
+dice:LIMBO a dice:AlumniProject ;
   schema:tagline "Linked Data Services for Mobility" ;
   schema:status "active" ;
   schema:content """LIMBO - Linked Data Services for Mobility

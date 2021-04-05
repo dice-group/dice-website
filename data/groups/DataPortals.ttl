@@ -10,4 +10,4 @@ Open Data opens up social and commercial chances. For instance, mobility data li
 """ ;
   schema:lead dice:AdrianWilke ; # group maintainer
   schema:member dice:ZafarSyed, dice:CaglarDemir, dice:AfshinAmini, dice:TimofeyErmilov , dice:ArwaBannoura , dice:GeraldoDeSouza, dice:JochenVothknecht ; # group members list
-  schema:relatedDemo dice:OPAL-Demo . # list of related demos
+  schema:relatedDemo dice:OPAL-Demo , dice:ReCoDa . # list of related demos
