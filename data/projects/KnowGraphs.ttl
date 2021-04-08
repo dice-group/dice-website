@@ -7,9 +7,13 @@
 dice:KnowGraphs a dice:FundedProject ;
   schema:tagline "Knowledge Graphs at Scale" ;
   schema:status "active" ;
-  schema:content """Knowledge Graphs at Scale
-# Goal
-KnowGraphs addresses the problem of scaling up the use of knowledge graphs. 15 Early Stage Researchers (ESRs) will addresses challenges pertaining to the representation, creation, management and utilization of knowledge graphs. 7 beneficiaries and 7 associated partners will facilitate the career development of the ESRs through mentoring, workshops, winter schools and dedicated training. Open positions can be found [here](http://dice-research.org/jobs). This work has been supported by the [H2020 Marie Skłodowska-Curie](https://ec.europa.eu/research/mariecurieactions/actions/get-funding/innovative-training-networks_en) project [KnowGraphs](https://kg.codezen.net/) (GA no. 860801). """ ;
+  schema:content """
+KnowGraphs addresses the problem of scaling up the use of knowledge graphs.
+15 Early Stage Researchers (ESRs) will addresses challenges pertaining to the representation, creation, management and utilization of knowledge graphs.
+7 beneficiaries and 7 associated partners will facilitate the career development of the ESRs through mentoring, workshops, winter schools and dedicated training.
+Open positions can be found [here](http://dice-research.org/jobs).  
+This work has been supported by the [H2020 Marie Skłodowska-Curie](https://ec.europa.eu/research/mariecurieactions/actions/get-funding/innovative-training-networks_en) project [KnowGraphs](https://kg.codezen.net/) (GA no. 860801).
+""" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:endDate "2023-09-30"^^xsd:date ;
   schema:startDate "2017-10-01"^^xsd:date ;
