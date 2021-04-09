@@ -1,4 +1,5 @@
-const { Parser } = require('n3');
+const { Parser, Writer } = require('n3');
+const jsonld = require('jsonld');
 
 // base path for the URLs
 const basePath = 'https://dice-research.org/';
@@ -49,7 +50,12 @@ const defaultPrefixes = {
  * @param {Object} { result, resultSubject, prefixes }
  * @returns {Object} Gatsby data node
  */
-const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
+const processResult = ({
+  result,
+  resultSubject,
+  prefixes: filePrefixes,
+  jsonldData,
+}) => {
   // merge default prefixes with those from the file
   const prefixes = { ...defaultPrefixes, ...filePrefixes };
   // map prefixes into array of {url, prefix} objects
@@ -110,6 +116,9 @@ const processResult = ({ result, resultSubject, prefixes: filePrefixes }) => {
     }
   });
 
+  // append JSON-LD as string
+  data.jsonld = JSON.stringify(jsonldData);
+
   const resultObject = {
     data,
     prefixes,
@@ -161,8 +170,19 @@ async function onCreateNode({
 
   // create new N3 parser
   const parser = new Parser();
+  // create writer to convert content to JSON-LD
+  const writer = new Writer({ format: 'application/n-quads' });
+  const getWriterContent = () =>
+    new Promise((resolve, reject) => {
+      writer.end((err, result) => {
+        if (err) {
+          return reject(err);
+        }
+        resolve(result);
+      });
+    });
   // parse content loaded from file
-  parser.parse(content, (error, quad, prefixes) => {
+  parser.parse(content, async (error, quad, prefixes) => {
     // if we errored out show message in console
     // and re-throw error to interrupt build
     if (error) {
@@ -172,12 +192,25 @@ async function onCreateNode({
     // if there's no quads, but prefixes do exist - we're done
     // start processing the result
     if (!quad && prefixes) {
+      const nquads = await getWriterContent();
+      const jld = await jsonld.fromRDF(nquads, {
+        format: 'application/n-quads',
+      });
+
       // process the results
-      const resultObject = processResult({ result, resultSubject, prefixes });
+      const resultObject = processResult({
+        result,
+        resultSubject,
+        prefixes,
+        jsonldData: jld,
+      });
       // write to gatsby
       transformObject(resultObject, resultSubject, 'RDF');
       return;
     }
+
+    // write quad to writer
+    writer.addQuad(quad);
 
     // split quad into subject, predicate, object
     const {

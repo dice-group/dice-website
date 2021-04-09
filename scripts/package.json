@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "isomorphic-unfetch": "^3.1.0",
+    "jsonld": "^5.2.0",
     "lodash": "^4.17.20",
     "n3": "^1.8.0",
     "plotly.js": "^1.58.4",
