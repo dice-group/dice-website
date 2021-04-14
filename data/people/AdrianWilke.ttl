@@ -4,7 +4,7 @@
 dice:AdrianWilke a schema:Person ;
   schema:name "Adrian Wilke" ;
   schema:namePrefix "" ;
-  schema:project dice:OPAL , dice:VEP ;
+  schema:project dice:OPAL, dice:VEP, dice:EML4U ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5186> ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
@@ -18,6 +18,5 @@ dice:AdrianWilke a schema:Person ;
 - The best way to contact me is by email
 - Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
 - [Mentoring](/students/mentoring/) (obligatory for students of the Bachelor's Degree program)
-- [Java Online Exercises](https://github.com/dice-group/JavaOnlineExercises) (Jupyter + Java + grading)
 
 """ .
