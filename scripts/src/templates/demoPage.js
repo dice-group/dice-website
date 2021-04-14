@@ -1,10 +1,10 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import ReactMarkdownHTML from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
+import ReactMarkdownHTML from '../components/markdown';
 import SEO from '../components/seo';
 
 export default function DemoTemplate({
@@ -14,7 +14,7 @@ export default function DemoTemplate({
 }) {
   return (
     <Layout>
-      <SEO title={`${data.name}`} />
+      <SEO title={`${data.name}`} jsonld={data.jsonld} />
       <div className="content project demo" style={{ marginBottom: 160 }}>
         <BackButton />
 
@@ -118,6 +118,7 @@ export const pageQuery = graphql`
         screenshot
         homepage
         sourceCode
+        jsonld
         maintainer {
           path
           data {
