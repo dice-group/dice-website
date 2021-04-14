@@ -7,7 +7,7 @@
 dice:LIMBO a dice:AlumniProject ;
   schema:tagline "Linked Data Services for Mobility" ;
   schema:status "active" ;
-  schema:content """LIMBO - Linked Data Services for Mobility
+  schema:content """
 # Problem
 In open-data portals, such as the mCLOUD, citizens, researchers and entrepreneurs have access to a large number of datasets. Many of these data on the topics of weather or traffic are usually unstructured and not related to each other. The use of the available data requires expert knowledge and complicates the machine processing of the contents.
 

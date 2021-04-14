@@ -14,6 +14,7 @@ export default function SEO({
   lang = 'en',
   meta = [],
   title,
+  jsonld,
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -72,6 +73,8 @@ export default function SEO({
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script type="application/ld+json">{jsonld}</script>
+    </Helmet>
   );
 }
