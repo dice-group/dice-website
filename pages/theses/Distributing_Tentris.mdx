@@ -1,0 +1,27 @@
+---
+date: '2021-04-28'
+title: 'Tentris Cluster - A Distributing Tensor-Based Triple'
+type: 'Master'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+In the DICE group, we develop Tentris([github](https://github.com/dice-group/tentris), [paper](https://tentris.dice-research.org/iswc2020/)), one of the fastest triple stores currently availabe. 
+
+Tentris is a triplestore that is conceptually based on tensors and tensor algebra. Tensors are implemented by a condensed, monolithic indexing datastructure dubbed hypertrie. The evaluation of SPARQL queries is conducted as Einstein summation (einsum). The einsum implementation of Tentris is based on a state-of-the-art worst-case optimal join (WCOJ) algorithm. 
+
+So much, so awsome. But there are still things that need to be worked on. 
+Currently, Tentris can only run on a single machine. To scale on more machines to process even larger datasets or to serve more parallel requests, tentris needs to be distributed. So your master thesis task will be to scetch and implement Tentris Cluster.
+
+The master thesis includes:
+* develop and implement a data distrubution strategy for bulk loading data into Tentris Cluster
+* develop and implement a query planner for answering queries in the cluster
+* develop and implement a communication protocol to executed queries in the cluster
+* benchmarking the implementation regarding its loading time, query processing performance and scalability
+* compare with at least one other distributed triple store
+
+Required skills: 
+* knowledge of Semnatic Web Standards like SPARQL and RDF
+* good modern C++ coding skills (C++17/20)
+* experience with C++ template programming
+* some prior knowledge on distributed data bases might be helpful
