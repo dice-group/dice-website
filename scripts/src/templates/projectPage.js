@@ -1,11 +1,11 @@
 import format from 'date-fns/format';
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Demo from '../components/demo';
 import Image from '../components/image';
 import Layout from '../components/layout';
+import ReactMarkdown from '../components/markdown';
 import PapersList from '../components/papers/list';
 import { rdfToPeopleArray } from '../components/person';
 import Project from '../components/project';
@@ -38,7 +38,7 @@ export default function ProjectTemplate({
 
   return (
     <Layout>
-      <SEO title={`${data.name}`} />
+      <SEO title={`${data.name}`} jsonld={data.jsonld} />
       <div className="project content">
         <BackButton />
 
@@ -182,6 +182,7 @@ export const pageQuery = graphql`
         homepage
         logo
         sourceCode
+        jsonld
         fundingProgram
         publicationTag
         relatedProject {

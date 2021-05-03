@@ -21,7 +21,7 @@ licenses from a Knowledge Base containing license information.
 
 # Resources
 
-- Article: [BibSonomy](https://www.bibsonomy.org/bibtex/2f81b43f8a3111a5ab03c708d041ad783)
+- Article: A. Wilke, A. Bannoura and A.-C. N. Ngomo, "Relicensing Combined Datasets," 2021 IEEE 15th International Conference on Semantic Computing (ICSC), Laguna Hills, CA, USA, 2021, pp. 241-247, [DOI: 10.1109/ICSC50631.2021.00050](https://doi.org/10.1109/ICSC50631.2021.00050). ([Preprint as PDF file](https://papers.dice-research.org/2021/ICSC2021_ReCoDa/Relicensing-Combined-Datasets-ReCoDa-public.pdf), [BibSonomy](https://www.bibsonomy.org/bibtex/2f81b43f8a3111a5ab03c708d041ad783))
 - Presentation: [Slides as PDF file](https://papers.dice-research.org/2021/ICSC2021_ReCoDa/Relicensing-Combined-Datasets-ReCoDa-slides-public.pdf)
 
 """ ;
