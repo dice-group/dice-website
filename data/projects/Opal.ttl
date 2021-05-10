@@ -11,11 +11,12 @@ dice:OPAL a dice:AlumniProject ;
 
 ### Articles, Data and Software
 
+- **[Project results](https://arxiv.org/pdf/2105.03161.pdf)** (in German) are available as PDF file
+- **[Final presentation](https://projekt-opal.github.io/doc/final-presentation/Praesentation/)** (in German) is available as website ([PDF version](https://github.com/projekt-opal/doc/raw/master/deliverables/OPAL_Abschlusspraesentation.pdf))
+- **[Deliverables](http://projekt-opal.de/en/results/deliverables/)** are listed at the OPAL website (backups: [Hobbitdata](https://hobbitdata.informatik.uni-leipzig.de/OPAL/Deliverables/), [GitHub](https://github.com/projekt-opal/doc/tree/master/deliverables))
 - **[Code](https://github.com/projekt-opal/doc#repositories)** repositories are listed at GitHub
 - **[Data](https://hobbitdata.informatik.uni-leipzig.de/OPAL/)** is stored at a FTP server
-- **[Deliverables](http://projekt-opal.de/en/results/deliverables/)** are listed at the OPAL website (backups: [Hobbitdata](https://hobbitdata.informatik.uni-leipzig.de/OPAL/Deliverables/), [GitHub](https://github.com/projekt-opal/doc/tree/master/deliverables))
 - **[Demo](https://dice-research.org/OPAL-Demo)** is linked at the DICE website
-- **[Final presentation](https://projekt-opal.github.io/doc/final-presentation/Praesentation/)** is available as website ([PDF version](https://github.com/projekt-opal/doc/raw/master/deliverables/OPAL_Abschlusspraesentation.pdf))
 - **Publications** are listed below
 
 ### Problem
