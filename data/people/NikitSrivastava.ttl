@@ -4,7 +4,7 @@
 dice:NikitSrivastava a schema:Person ;
   schema:name "Nikit Srivastava" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:nikit@mail.uni-paderborn.de> ;
