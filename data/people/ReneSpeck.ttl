@@ -9,7 +9,7 @@ dice:ReneSpeck a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:rene.speck@uni-leipzig.de> ;
   schema:chat "@rspeck:chat.dice-research.org" ;
-  schema:office "2.OG, Hainstraße 11, 04109 Leipzig" ;
+  schema:office "Scalable Data Management, University Computing Centre (F&E II), Leipzig University, Augustusplatz 10, 04109 Leipzig, Germany" ;
   schema:photo "speck.jpg" ;
   schema:project dice:SCMS, dice:BioASQ, dice:DIESEL, dice:GEISER, dice:SAIM, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI ;
   schema:content """""" .
