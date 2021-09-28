@@ -3,13 +3,8 @@
 
 dice:FakhrShaheen a schema:Person ;
   schema:name "Fakhr Shaheen" ;
-  schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
-  schema:phone <tel:+49-157-88-064013> ;
-  schema:fax <tel:> ;
+  schema:role dice:Alumni ;
   schema:email <mailto:fakhrshaheen@gmail.com> ;
-  schema:chat "@shaheen:chat.dice-research.org" ;
-  schema:office "" ;
   schema:photo "shaheen.jpg" ;
   schema:project dice:Tentris;
   schema:content """""" .

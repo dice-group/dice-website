@@ -4,7 +4,7 @@
 dice:ArwaBannoura a schema:Person ;
   schema:name "Arwa Bannoura" ;
   schema:namePrefix "Dr. rer. nat." ;
-  schema:role dice:SeniorResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-525-16-05189> ;
   schema:fax <tel:> ;
   schema:email <mailto:arwa.bannoura@uni-paderborn.de> ;
