@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 
-export default function Teaching({
+export default function Mentoring({
   data: {
     allMdx: { edges },
   },
@@ -43,7 +43,7 @@ export const pageQuery = graphql`
   query {
     allMdx(
       filter: { fields: { type: { eq: "mentoring" } } }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { fields: frontmatter___date, order: ASC }
     ) {
       edges {
         node {
@@ -54,8 +54,6 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
-            supervisor
-            contact
             type
           }
           body
