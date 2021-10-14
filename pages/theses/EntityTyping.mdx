@@ -1,0 +1,21 @@
+---
+date: '2021-10-14'
+title: 'Master thesis: Multi-view learning for Entity Typing in Knowledge Graphs'
+type: 'Master'
+supervisor: dice:hamadazahera
+contact: dice:hamadazahera
+---
+
+Recent years have witnessed a great impact of knowledge graphs (KGs) in several applications. One of the fundamental features in KGs is the information about entities' types, which clusters a group of entities with similar properties into the same semantic type. Unfortunately, KGs often suffer from missing data issues (known as KG incompleteness problem), and consequently leads to poor performances in various NLP tasks. For example, DBpedia’s average number of types is 2.9 (5,044,223 entities with 14,760,728 types), while 36% of entities don't have types. Another example is the Freebase dataset (FB15k-237) where 10% of entities labeled with “artist/music” are missing types “people/person”. For this reason, it's critical to develop methods that tackle incompleteness in KGs.  One of the KG completeness tasks is entity typing, which aims to infer possible missing types (e.g., person, location, organization) for an entity. 
+
+This thesis investigates multi-view learning techniques to address KG incompleteness problems, particularly missing entity types. For example, multiple-view embeddings can be based on entity names, relations, and attributes. Our goal is to answer the following research questions: i) What kind of views can be learned (i.e., embedded) for a knowledge graph? ii) Which is the best strategy to combine these views?. We aim to conduct several experiments on benchmark datasets such as DBpedia, YAGO43k, and FB15k-237
+
+ Prerequisites:
+* Strong machine learning knowledge and Semantic Web
+* Proficiency with Python and deep learning frameworks (TensorFlow or PyTorch)
+* Knowledge of Knowledge Graphs embedding (e.g., TransE, rotateE, DistMult).
+
+Tasks:
+* Develop a multi-view learning approach for predicting missing entity types. 
+* Benchmark different combination strategies in multi-view learning.
+* Summarizing the current limitations and challenges in the multi-view learning literature.
