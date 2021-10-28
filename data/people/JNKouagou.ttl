@@ -10,7 +10,7 @@ dice:JeanNDahKouagou a schema:Person ;
   schema:project dice:KnowGraphs ;
   schema:email <mailto:nkouagou@mail.uni-paderborn.de> ;
   schema:chat "@nkouagou:chat.dice-research.org" ;
-  schema:office "TP6.3.110" ;
+  schema:office "TP6.3.310" ;
   schema:photo "jean.jpg" ;
   schema:content """""" .
 
