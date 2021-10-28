@@ -34,5 +34,6 @@ Enterprise Knowledge Graphs are increasingly business-critical to a growing numb
   schema:fundingProgram "Eureka Eurostars, Grant Number E! 113314 (BMBF Grant Number 01QE19418)" ;
   schema:homepage <https://frockg.eu/> ;
   schema:logo "frockg.png" ;
-  schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:SirmaAI .
+  schema:publicationTag "frockgproject" ;
+  schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:Ontotext .
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

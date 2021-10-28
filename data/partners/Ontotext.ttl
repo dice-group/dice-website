@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Ontotext a schema:Partner ;
+  schema:name "Ontotext" ;
+  schema:country "BG" ;
+  schema:url <https://www.ontotext.com/> .
