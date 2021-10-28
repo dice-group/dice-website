@@ -11,4 +11,5 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:chat "@aams:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
+  schema:publicationTag "amsilva" ;
   schema:content """""" .

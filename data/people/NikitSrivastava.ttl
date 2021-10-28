@@ -12,4 +12,5 @@ dice:NikitSrivastava a schema:Person ;
   schema:office "TP6.3.201" ;
   schema:photo "srivastava.jpg" ;
   schema:project dice:IDA ;
+  schema:publicationTag "srivastava" ;
   schema:content """""" .
