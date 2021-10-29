@@ -25,5 +25,5 @@ The second main field this group is working on is benchmarking. We are maintaini
 Additionally, we are in general interested in the area of benchmarking and are providing several benchmarks,
 """ ;
   schema:lead dice:MichaelRoeder ; # group maintainer
-  schema:member dice:AbdelmoneimAmerDesouki, dice:DenisKuchelev, dice:FelixConrads, dice:GeraldoDeSouza, dice:ZafarSyed ; # group members list (in no particular order)
+  schema:member dice:AbdelmoneimAmerDesouki, dice:DenisKuchelev, dice:FelixConrads, dice:GeraldoDeSouza, dice:ZafarSyed, dice:FarshadAfshari ; # group members list (in no particular order)
   schema:relatedDemo dice:GERBIL . # list of related demos
