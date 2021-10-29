@@ -16,4 +16,5 @@ dice:TRR318 a dice:FundedProject ;
   schema:fundingProgram "Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/1 2021 – 438445824" ;
   schema:homepage <https://trr318.uni-paderborn.de/> ;
   schema:logo "trr318.png" ;
+  schema:publicationTag "trr318" ; 
   schema:partner dicepartner:UBI .
