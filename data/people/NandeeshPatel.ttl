@@ -1,0 +1,13 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:NandeeshPatel a schema:Person ;
+  schema:name "Nandeesh Patel" ;
+  schema:namePrefix "" ;
+  schema:role dice:Alumni ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:> ;
+  schema:office "" ;
+  schema:photo "" ;
+  schema:content """""" .
