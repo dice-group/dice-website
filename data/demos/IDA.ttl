@@ -1,0 +1,19 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:IDA_Demo a schema:Demo ;
+  schema:name "IDA" ;
+  schema:tagline "Intelligent Data Science Chatbot Demo" ;
+  schema:content """
+Intelligent Data Science Chatbot (IDA) is a proof-of-concept for an open-source tool that will allow users to perform data analysis by conversing to a chatbot in English. The goal of this tool is to make data analysis available to the masses without having to learn complex tools or programming languages.
+
+IDA has been developed as part of the Software Campus program at Paderborn University (https://softwarecampus.de/en/project/ida-intelligent-data-science-chatbot/). The project started in June, 2020 and concluded at the end of July, 2021.
+
+""" ;
+  schema:logo "ida_logo_oh.svg" ;
+  schema:screenshot "ida_screenshot.png" ;
+  schema:homepage <http://ida.cs.upb.de/> ;
+  schema:sourceCode <https://github.com/dice-group/IDA> ;
+  schema:maintainer dice:NikitSrivastava ; # Current demo maintainer
+  schema:developer dice:NikitSrivastava, "Nandeesh Patel", "Maqbool ur Rahim Khan", "Sourabh Poddar", "Spoorthi S Madhavan" . # List of all people working on Demo
+
