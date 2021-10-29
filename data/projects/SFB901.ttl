@@ -1,0 +1,16 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SFB901 a dice:FundedProject ;
+  schema:tagline "SFB 901 \"Individualized IT-services in dynamic markets\"";
+  schema:status "active" ;
+  schema:content """ """ ;
+  schema:content "" ;
+  #schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "SFB 901" ;
+  schema:homepage <https://sfb901.uni-paderborn.de/de/> .
+  #schema:logo "sfb901.png" ;
+  #schema:publicationTag "sfb901" .

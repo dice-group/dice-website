@@ -1,0 +1,25 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Ingrid a dice:FundedProject ;
+  schema:tagline "Informationssystem Graffiti in Deutschland" ;
+  schema:status "active" ;
+  schema:content """
+INGRID, das „Informationssystem Graffiti in Deutschland“, ist ein gemeinsames Projekt der Universität Paderborn und des Karlsruher Instituts für Technologie (KIT), an dem die Fächer Sprachwissenschaft (Universität Paderborn) und Kunstgeschichte (KIT) beteiligt sind. Zusammen wurde eine Graffiti-Bilddatenbank für die wissenschaftliche Nutzung aufgebaut.
+
+Fotografische Dokumentationen zum Graffiti waren bisher weitgehend abseits der universitären Forschung angesiedelt. Sie finden sich in der populärwissenschaftlichen Literatur und in szenenahen Internetforen, verdanken sich oft privaten oder kommerziell orientierten Initiativen. Für die wissenschaftliche Forschung sind solche Bildarchive aus rechtlichen Gründen nur eingeschränkt nutzbar. INGRID stellt dagegen Bildbestände zur Verfügung, die wissenschaftlich genutzt werden können.
+
+INGRID ermöglicht einen wissenschaftlichen Blick auf das Phänomen Graffiti. Die Bilddatenbank ist nicht nur für die Sprachwissenschaft und die Kunstgeschichte von großem Interesse, sondern auch für weitere Fächer, die sich mit Graffiti als Forschungsgegenstand befassen, insbesondere für die Ethnologie, die Kultur- und Medienwissenschaften, die Urbanistik, die Stadtsoziologie und die Stadtplanung. Da Angaben zum Entstehungsort sowie zur Entstehungszeit der Bilder vorliegen, ist es etwa möglich, Städteprofile zu erstellen, die den Zusammenhang zwischen städtischer Infrastruktur und dem Aufkommen von Graffiti sowie die Analogien zwischen der Entwicklung von Graffiti und sozialen und städtebaulichen Veränderungen aufzeigen können.
+
+Derzeit sind 71.470 Graffitis aus dem Bestand von INGRID für die wissenschaftliche Nutzung zugänglich (Stand Juli 2021).
+""" ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:name "Ingrid" ;
+  schema:fundingProgram "Deutschen Forschungsgemeinschaft" ;
+  schema:partner dicepartner:KarlsruherInstituts ;
+  schema:homepage <https://www.uni-paderborn.de/forschungsprojekte/ingrid/projekt> ;
+  schema:sourceCode <https://github.com/dice-group/Ingrid> ;
+  schema:logo "logo-ingrid.png" .
