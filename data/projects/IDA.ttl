@@ -36,4 +36,4 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "IDA" ;
   schema:fundingProgram "<a href=\"https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/\">Software Campus</a>" ;
-  schema:logo "ida_logo_t3.svg" ;
+  schema:logo "ida_logo_t3.svg" .
