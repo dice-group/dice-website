@@ -35,5 +35,6 @@ Enterprise Knowledge Graphs are increasingly business-critical to a growing numb
   schema:homepage <https://frockg.eu/> ;
   schema:logo "frockg.png" ;
   schema:publicationTag "frockgproject" ;
+  schema:relatedDemo dice:COPAAL ;
   schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:Ontotext .
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
