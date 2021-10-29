@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:IDA a dice:FundedProject ;
+dice:IDA a dice:ProductionProject ;
   schema:tagline "Intelligent Data Science Chatbot" ;
   schema:status "active" ;
   schema:content """
@@ -36,7 +36,4 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "IDA" ;
   schema:fundingProgram "[Softwarecampus](https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/)" .
-  # schema:homepage <https://frockg.eu/> ;
   # schema:logo "frockg.png" ;
-  # schema:partner dicepartner:Metaphacts, dicepartner:Zazuko, dicepartner:SirmaAI .
-  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
