@@ -4,12 +4,9 @@
 dice:MelissaDas a schema:Person ;
   schema:name "Melissa Das" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
-  schema:phone <tel:+49-176-74-142177> ;
-  schema:fax <tel:> ;
+  schema:role dice:Alumni ;
   schema:email <mailto:dmelissa@mail.uni-paderborn.de> ;
   schema:chat "@dmelissa:chat.dice-research.org" ;
-  schema:office "" ;
   schema:photo "das.jpg" ;
   schema:project dice:OPAL ;
   schema:content """""" .

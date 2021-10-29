@@ -4,11 +4,8 @@
 dice:FelixConrads a schema:Person ;
   schema:name "Lixi Conrads" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
-  schema:phone <tel:> ;
-  schema:fax <tel:> ;
+  schema:role dice:Alumni ;
   schema:email <mailto:felix.conrads@uni-paderborn.de> ;
   schema:chat "@fconrads:chat.dice-research.org" ;
-  schema:office "" ;
   schema:photo "conrads.jpg" ;
   schema:content """""" .

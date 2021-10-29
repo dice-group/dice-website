@@ -1,0 +1,19 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:FarshadAfshari a schema:Person ;
+  schema:name "Farshad Afshari" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:farshad.afshari@uni-paderborn.de> ;
+  schema:chat "@afshari:chat.dice-research.org" ;
+  schema:office "TP6.3.109" ;
+  schema:photo "afshari.jpeg" ;
+  schema:project dice:FROCKG ;
+  schema:content """
+  <p>
+  <b>Linkedin</b><a href="https://www.linkedin.com/in/afsharifarshad/">Farshad Afshari</a>
+  </p>
+  """ .

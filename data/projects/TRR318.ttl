@@ -1,0 +1,20 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TRR318 a dice:FundedProject ;
+  schema:tagline "TRR 318 \"Constructing Explainability\"";
+  schema:status "active" ;
+  schema:content """ """ ;
+  #schema:endDate "2022-03-31"^^xsd:date ;
+  schema:startDate "2021-07-01"^^xsd:date ;
+  schema:content "" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "TRR 318" ;
+  schema:fundingProgram "Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/1 2021 – 438445824" ;
+  schema:homepage <https://trr318.uni-paderborn.de/> ;
+  schema:logo "trr318.png" ;
+  schema:publicationTag "trr318" ; 
+  schema:partner dicepartner:UBI .
