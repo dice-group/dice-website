@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:IDA a dice:ProductionProject ;
+dice:IDA a dice:AlumniProject ;
   schema:tagline "Intelligent Data Science Chatbot" ;
   schema:status "active" ; # current project status
   schema:content """

@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SAGE a dice:FundedProject ;
+dice:SAGE a dice:AlumniProject ;
   schema:tagline "Semantic Geospatial Analytics" ;
   schema:status "active" ;
   schema:content """Data integration is one of the main barriers to harnessing the full power of data in companies. Business-relevant data can be distributed across thousands of data silos in different formats in large companies. For companies driven by geospatial data (e.g., disaster management, automobile), the knowledge to be managed accounts for billions of rapidly changing facts (Big Data). Developing dedicated solutions for managing such large amounts of geospatial data is of central importance to improve the efficiency and effectiveness of data delivery for business-critical applications. However, dealing with geospatial data demands specific solutions for dealing with their intrinsic complexity (up to 5 dimensions) and the rapid changes in the data.
