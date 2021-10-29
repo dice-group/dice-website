@@ -15,5 +15,5 @@ IDA has been developed as part of the Software Campus program at Paderborn Unive
   schema:homepage <http://ida.cs.upb.de/> ;
   schema:sourceCode <https://github.com/dice-group/IDA> ;
   schema:maintainer dice:NikitSrivastava ; # Current demo maintainer
-  schema:developer dice:NikitSrivastava, "Nandeesh Patel", "Maqbool ur Rahim Khan", "Sourabh Poddar", "Spoorthi S Madhavan" . # List of all people working on Demo
+  schema:developer dice:NikitSrivastava, dice:NandeeshPatel, dice:MaqboolKhan, dice:SourabhPoddar, dice:SpoorthiMadhavan . # List of all people working on Demo
 
