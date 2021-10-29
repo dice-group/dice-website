@@ -6,7 +6,7 @@
 
 dice:IDA a dice:ProductionProject ;
   schema:tagline "Intelligent Data Science Chatbot" ;
-  schema:status "active" ;
+  schema:status "active" ; # current project status
   schema:content """
 <p>In the current day and age, data is centric to most processes and decisions being made. New and interesting concepts for analysing and understanding data have been developed. However, using these typically requires both―expensive tools and data science experts. This project aims to change this situation by developing an intelligent data science chatbot which enables data owners to access and analyze their data on a single platform, with chatbot providing all the assistance they might need.</p>
 
@@ -31,9 +31,9 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
 <li>The automatic analysis of a given dataset and the suggestion of available algorithms or visualizations has not been tackled before and can have a huge impact in all areas in which data has to be understood by the users.</li>
 </ol>
 """ ;
-  schema:endDate "2021-05-31"^^xsd:date ;
+  schema:endDate "2021-07-31"^^xsd:date ;
   schema:startDate "2020-06-01"^^xsd:date ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "IDA" ;
-  schema:fundingProgram "[Softwarecampus](https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/)" .
-  # schema:logo "frockg.png" ;
+  schema:fundingProgram "<a href=\"https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/\">Software Campus</a>" ;
+  schema:logo "ida_logo_t3.svg" ;
