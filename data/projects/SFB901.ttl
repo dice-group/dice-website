@@ -7,8 +7,11 @@
 dice:SFB901 a dice:FundedProject ;
   schema:tagline "SFB 901 \"Individualized IT-services in dynamic markets\"";
   schema:status "active" ;
-  schema:content """ """ ;
-  schema:content "" ;
+  schema:content """ 
+The objective of CRC 901 – On-The-Fly Computing (OTF Computing) – is to develop techniques and processes for automatic on-the-fly configuration and provision of individual IT services out of base services that are available on world-wide markets. In addition to the configuration by special OTF service providers and the provision by so-called OTF Compute Centers, this involves developing methods for quality assurance and the protection of participating clients and providers, methods for the target-oriented further development of markets, and methods to support the interaction of the participants in dynamically changing markets.
+
+CRC 901 is divided into four project areas. Project area A is concerned with the algorithmic and economic basics for organizing large dynamic markets. This involves, on the one hand, algorithmic processes for organizing large networks in general and the interaction in networks in particular and, on the other hand, economic concepts for incentive systems in order to direct the participants in the markets. Project area B investigates processes of the modeling, composition and quality analysis of services and service configurations aiming at on-the-fly development of high-quality IT services. Project area C develops reliable execution environments for on-the-fly computing and is concerned with questions of the stability and security of markets, the organization of highly heterogeneous OTF Compute Centers and the provision of configured services by those centers. This project area also involves an application project that deals with systems for optimizing supply and logistic networks, which is considered a long-term application field for the results of the CRC. Project area T bundles the transfer projects of our CRC, which provide a framework for joint research by our CRC researchers and external partners and facilitate the exchange of results from applied research back into our basic research.
+  """ ;
   #schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "SFB 901" ;
   schema:homepage <https://sfb901.uni-paderborn.de/de/> .

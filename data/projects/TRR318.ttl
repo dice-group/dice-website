@@ -10,7 +10,10 @@ dice:TRR318 a dice:FundedProject ;
   schema:content """ """ ;
   #schema:endDate "2022-03-31"^^xsd:date ;
   schema:startDate "2021-07-01"^^xsd:date ;
-  schema:content "" ;
+  schema:content """
+  Der von der DFG zum 01. Juli 2021 an den Universitäten Bielefeld und Paderborn neu eingerichtete Sonderforschungsbereich/Transregio „Constructing Explainability“ (TRR 318) beschäftigt sich mit der Fragestellung, wie Transparenz von algorithmischen Entscheidungen, insbesondere durch Black-Box Verfahren der modernen Künstlichen Intelligenz, hergestellt werden kann. Die zentrale Hypothese des TRR 318 ist, dass Erklärungen am effektivsten sind, wenn sie von Erklärer:in und Erklärungsempfänger:in gemeinsam ko-konstruiert werden. Die Mechanismen dieser Ko-Konstruktion werden in einem interdisziplinären Konsortium untersucht, um die Grundlagen für neue Paradigmen der Erklärungen in Mensch-Maschine-Interaktion zu schaffen und damit Menschen zur souveränen und informierten Entscheidungsfindung in Interaktion mit intelligenten Systemen zu befähigen.
+Der TRR ist in drei Bereiche gegliedert: A "Explaining", B "Social practice", C "Representing and computing explanations". Die Bereiche wiederum gliedern sich in interdisziplinäre Teilprojekte, an denen insgesamt 21 Projektleiter:innen aus der Linguistik, Psychologie, Medienwissenschaft, Soziologie, Wirtschaftswissenschaft und Informatik der Universitäten Bielefeld und Paderborn beteiligt sind.
+  """ ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "TRR 318" ;
   schema:fundingProgram "Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/1 2021 – 438445824" ;
