@@ -8,15 +8,21 @@
 dice:EML4U a dice:FundedProject ;
   schema:tagline "Erklärbares Maschinelles Lernen für interaktive episodische Updates von Modellen" ;
   schema:status "active" ;
-  schema:content """ """ ;
+  schema:content """
+The goal of the project is to develop methods of ML explainability for a question that is highly relevant for practice:
+Which explanations can be offered to the user to make episodic interactive learning efficient and valid, especially in applications where manual data annotation is costly?
+In addition to a classical feature representation of data, the project will also consider latent representations in embedding spaces
+(as is common in automatic language processing and knowledge graph processing)
+that are relevant for practice.
+
+Funding program: [Erklärbarkeit und Transparenz des Maschinellen Lernens und der Künstlichen Intelligenz](https://www.softwaresysteme.pt-dlr.de/de/ki-erkl-rbarkeit-und-transparenz.php)
+""" ;
   schema:endDate "2022-03-31"^^xsd:date ;
   schema:startDate "2020-04-01"^^xsd:date ;
-  schema:content "" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "EML4U" ;
-  # schema:fundingProgram "BMBF, Grant Number 01IS19085B" ;
-  # schema:homepage <https://daikiri-projekt.de/> ;
-  # schema:logo "daikiri.png" ;
-  schema:publicationTag "eml4u" ; 
+  schema:fundingProgram "BMBF, Grant No. 01IS19085B" ;
+  schema:homepage <https://github.com/EML4U> ;
+  schema:logo "EML4U.png" ;
+  schema:publicationTag "eml4u" ;
   schema:partner dicepartner:UBI, dicepartner:ISML, dicepartner:Semalytix .
-  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
