@@ -7,9 +7,9 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:> ;
+  schema:email <mailto:aams@campus.uni-paderborn.de> ;
   schema:chat "@aams:chat.dice-research.org" ;
   schema:office "" ;
-  schema:photo "" ;
+  schema:photo "silva.jpg" ;
   schema:publicationTag "amsilva" ;
   schema:content """""" .
