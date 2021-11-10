@@ -25,4 +25,4 @@ Funding program: [Eurostars](https://ec.europa.eu/programmes/horizon2020/en/h202
   schema:homepage <https://www.3dfed.com/> ;
   schema:logo "3dfed.png" ;
   schema:publicationTag "3dfed" ;
-  schema:partner dicepartner:UBI, dicepartner:Virtuoso, dicepartner:Eleviat .
+  schema:partner dicepartner:UBI, dicepartner:OpenLink, dicepartner:Elevait .
