@@ -1,0 +1,28 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:3DFed a dice:FundedProject ;
+  schema:tagline "3DFed: Dynamic Data Distribution and Federation " ;
+  schema:status "active" ;
+  schema:content """
+Datasets for modern applications are commonly distributed and increasingly too large to fit into a single server. 
+Current distributed solutions are designed for central storage or at best static data distribution, which can result in poor query performance.
+Modern end-user applications, however, require results within milliseconds. 
+Thus, there is an increasing need for intelligent and efficient data distribution and federated query engines to deal with these large amounts of data.
+
+In this project we aim to develop generic approaches for the automatic redistribution and federated querying of large distributed datasets to facilitate the development of high-performance distributed data storage solutions. 
+The final output will be a set of W3C-standard-conformant tools that implement automatic data distribution, federated query planning and execution, dynamic data exchange mechanisms, data storage profiling (containing useful information/statistics about the underlying data) and data monitoring. 
+Funding program: [Eurostars](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/eurostars-programme)
+""" ;
+  schema:endDate "2021-04-01"^^xsd:date ;
+  schema:startDate "2024-05-01"^^xsd:date ;
+  schema:maintainer dice:MuhammadSaleem ;
+  schema:name "3DFed" ;
+  schema:fundingProgram "Eurostars, Grant No. E114681" ;
+  schema:homepage <https://www.3dfed.com/> ;
+  schema:logo "3dfed.png" ;
+  schema:publicationTag "3dfed" ;
+  schema:partner dicepartner:UBI, dicepartner:Virtuoso, dicepartner:Eleviat .
