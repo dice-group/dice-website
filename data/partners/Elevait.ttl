@@ -2,8 +2,8 @@
 @prefix dicepartner: <https://dice-research.org/partner/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dicepartner:elevait a schema:Partner ;
-  schema:name "elevait GmbH & Co KG" ;
+dicepartner:Elevait a schema:Partner ;
+  schema:name "Elevait GmbH & Co. KG" ;
   schema:country "D" ;
-  schema:url <https://elevait.de/> ;
+  schema:url <https://elevait.de/en/home/> ;
   schema:logo "elevait.png" .

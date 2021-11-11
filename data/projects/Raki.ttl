@@ -17,5 +17,5 @@ dice:RAKI a dice:FundedProject ;
   schema:homepage <https://raki-projekt.de/> ;
   schema:logo "raki.png" ;
   schema:publicationTag "raki" ; 
-  schema:partner dicepartner:Siemens, dicepartner:LeipzigUniversity, dicepartner:elevait ;
+  schema:partner dicepartner:Siemens, dicepartner:LeipzigUniversity, dicepartner:Elevait ;
   schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
