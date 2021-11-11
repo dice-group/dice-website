@@ -7,9 +7,13 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:> ;
+  schema:email <mailto:aams@campus.uni-paderborn.de> ;
   schema:chat "@aams:chat.dice-research.org" ;
   schema:office "" ;
-  schema:photo "" ;
+  schema:photo "silva.jpg" ;
   schema:publicationTag "amsilva" ;
-  schema:content """""" .
+  schema:content """ I am a computer engineering student interested in improving data reliability and its benefits. I have recently worked on fact-checking related topics, which resulted in the Esther project. Esther is an approach that moves the corroborative path search into the embedding space of a knowledge graph. This enabled the finding of longer paths to corroborate a given statement.
+  <p>
+  Previously, I have assisted with Lemming project's code-development and evaluation. Given previous versions of a dataset, Lemming generates an artificial knowledge graph of an arbitrary size with the goal of predicting the performance and ranking of storage solutions.
+  </p>
+  """ .
