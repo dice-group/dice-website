@@ -34,7 +34,9 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:endDate "2021-07-31"^^xsd:date ;
   schema:startDate "2020-06-01"^^xsd:date ;
   schema:maintainer dice:NikitSrivastava ;
+  schema:developer dice:NikitSrivastava, dice:NandeeshPatel, dice:MaqboolKhan, dice:SourabhPoddar, dice:SpoorthiMadhavan ;
+  schema:homepage <https://softwarecampus.de/en/project/ida-intelligent-data-science-chatbot/> ;
   schema:name "IDA" ;
-  schema:fundingProgram [ schema:name "Software Campus"; schema:url <https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot/> ] ;
+  schema:fundingProgram "<Link to="https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot">Software Campus</Link>";
   schema:logo "ida_logo_t3.svg" ;
   schema:relatedDemo dice:IDA_Demo .
