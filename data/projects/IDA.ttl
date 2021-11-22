@@ -37,6 +37,6 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:developer dice:NikitSrivastava, dice:NandeeshPatel, dice:MaqboolKhan, dice:SourabhPoddar, dice:SpoorthiMadhavan ;
   schema:homepage <https://softwarecampus.de/en/project/ida-intelligent-data-science-chatbot/> ;
   schema:name "IDA" ;
-  schema:fundingProgram "<Link to="https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot">Software Campus</Link>";
+  schema:fundingProgram "<Link to=\"https://softwarecampus.de/projekt/ida-intelligent-data-science-chatbot\">Software Campus</Link>";
   schema:logo "ida_logo_t3.svg" ;
   schema:relatedDemo dice:IDA_Demo .
