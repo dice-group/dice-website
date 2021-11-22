@@ -4,11 +4,11 @@
 dice:ParamjotKaur a schema:Person ;
   schema:name "Paramjot Kaur" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
+  schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:paramjot.kaur@uni-paderborn.de> ;
   schema:chat "@paramjot:chat.dice-research.org" ;
-  schema:office "TP6.3.310" ;
+  schema:office "TP6.3.101" ;
   schema:photo "kaur.jpg" ;
   schema:content """""" .

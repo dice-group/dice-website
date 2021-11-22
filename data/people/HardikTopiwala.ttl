@@ -4,7 +4,7 @@
 dice:HardikTopiwala a schema:Person ;
   schema:name "Hardik Topiwala" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:topiwala@mail.uni-paderborn.de> ;
