@@ -4,10 +4,11 @@
 dice:SourabhPoddar a schema:Person ;
   schema:name "Sourabh Poddar" ;
   schema:namePrefix "" ;
-  schema:role dice:Alumni ;
+  schema:role dice:StudentResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
+  schema:project dice:IDA ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .

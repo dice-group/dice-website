@@ -1,0 +1,18 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:PORQUE a dice:FundedProject ;
+  schema:tagline "PORQUE: Polylingual Hybrid Question Answering" ;
+  schema:status "active" ;
+  schema:content """PORQUE will develop and evaluate an extensible platform for polylingual question answering by relying on knowledge graphs and text. We will combine neural machine translation with language-specific natural language processing techniques to make answering queries across languages efficient and accurate. We will deliver a prototype, which will be evaluated through commercial solutions in three domains (open data, publishing, energy).""" ;
+  schema:endDate "2023-10-31"^^xsd:date ;
+  schema:startDate "2020-11-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "PORQUE" ;
+  schema:fundingProgram "Eureka Eurostars, Grant Number E*114154 (BMBF Grant Number 01QE2056C)" ;
+  schema:homepage <https://www.porque.eu/> ;
+  schema:partner dicepartner:Semantic, dicepartner:SiteFusion.
+  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

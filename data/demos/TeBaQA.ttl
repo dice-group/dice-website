@@ -1,0 +1,17 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TeBaQA_Demo a schema:Demo ;
+  schema:name "TeBaQA" ;
+  schema:tagline "Template-Based Question Answering (TeBaQA) Demo" ;
+  schema:content """
+TeBaQA is knowledge-based question answering system. It learns to answer questions based on graph isomorphisms from basic graph patterns of SPARQL queries. Learning basic graph patterns is efficient due to the small number of possible patterns. This novel paradigm reduces the amount of training data necessary to achieve state-of-the-art performance. TeBaQA also speeds up the domain adaption process by transforming the QA system development task into a much smaller and easier data compilation task. In our evaluation, TeBaQA achieves state-of-the-art performance on QALD-8 and delivers comparable results on QALD-9 and LC-QuAD v1.
+
+""" ;
+  schema:logo "demo_logo.png" ;
+  schema:screenshot "demo_screenshot.png" ;
+  schema:homepage <https://tebaqa.demos.dice-research.org/> ;
+  schema:sourceCode <https://github.com/dice-group/TeBaQA> ;
+  schema:maintainer dice:DanielVollmers ; # Current demo maintainer
+  schema:developer dice:HardikTopiwala. # List of all people working on Demo
+

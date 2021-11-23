@@ -8,6 +8,7 @@ dice:SpoorthiMadhavan a schema:Person ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
+  schema:project dice:IDA ;
   schema:office "" ;
   schema:photo "" ;
   schema:content """""" .
