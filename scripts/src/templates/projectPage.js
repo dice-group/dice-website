@@ -10,6 +10,7 @@ import PapersList from '../components/papers/list';
 import { rdfToPeopleArray } from '../components/person';
 import Project from '../components/project';
 import SEO from '../components/seo';
+import FundedBy from '../components/fundedby';
 
 const dateFormat = 'MMMM yyyy';
 
@@ -83,6 +84,15 @@ export default function ProjectTemplate({
           </div>
         )}
 
+        {data.fundingProgram && (
+          <div>
+            <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
+              Funding program
+            </h6>
+            <FundedBy fundingProgram={data.fundingProgram} />
+          </div>
+        )}
+
         <div className="columns project-extended-info">
           {data.maintainer && (
             <div className="column">
@@ -118,14 +128,6 @@ export default function ProjectTemplate({
                   {partner.data.name}
                 </a>
               ))}
-            </div>
-          )}
-
-          {data.fundingProgram && (
-            <div className="column">
-              <h6 className="column-header">Funding program</h6>
-
-              {data.fundingProgram}
             </div>
           )}
         </div>
