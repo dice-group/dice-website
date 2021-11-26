@@ -35,7 +35,8 @@ const Footer = () => (
             {l.text}
           </Link>
         ))}
-        <a href="https://wikis.uni-paderborn.de/dice">DICE Wiki</a>
+        <a href="https://ckan.dice-research.org/">Datasets</a>
+        <a href="https://wikis.uni-paderborn.de/dice">Wiki</a>
       </div>
       <Social hiddenMobile={false} />
     </div>
