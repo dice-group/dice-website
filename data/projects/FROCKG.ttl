@@ -31,7 +31,7 @@ Enterprise Knowledge Graphs are increasingly business-critical to a growing numb
   schema:startDate "2020-01-01"^^xsd:date ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "FROCKG" ;
-  schema:fundingProgram "Eureka Eurostars, Grant Number E! 113314 (BMBF Grant Number 01QE19418)" ;
+  schema:fundingProgram "This work has been supported by the German Federal Ministry of Education and Research (BMBF) within the EuroStars project E!113314 FROCKG under the grant no 01QE19418." ;
   schema:homepage <https://frockg.eu/> ;
   schema:logo "frockg.png" ;
   schema:publicationTag "frockgproject" ;

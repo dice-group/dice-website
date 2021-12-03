@@ -19,8 +19,13 @@ const fundedBy = [
   },
   {
     url: 'http://www.eurostars.dlr.de/',
-    image: ['logo-eurostars.png'],
-    text: ['EuroStars'],
+    image: [
+      'logo-eurostars.png',
+      'eureka.png',
+      'eurostars_eureka_eu_logos-participants.png',
+      'eurostars_eureka_eu_logos-participants_text.png',
+    ],
+    text: ['EuroStars', 'Eurostars'],
   },
   {
     url: 'http://cordis.europa.eu/',
