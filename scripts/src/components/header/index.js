@@ -46,15 +46,17 @@ const Header = () => {
       >
         <div className="navbar-start">
           {links.map(l => (
-            <Link
-              key={l.url}
-              to={l.url}
-              className="navbar-item"
-              activeClassName="is-active"
-              partiallyActive={l.url !== '/'}
-            >
-              {l.text}
-            </Link>
+            <div className="navbar-item-div">
+              <Link
+                key={l.url}
+                to={l.url}
+                className="navbar-item"
+                activeClassName="is-active"
+                partiallyActive={l.url !== '/'}
+              >
+                {l.text}
+              </Link>
+            </div>
           ))}
         </div>
 
