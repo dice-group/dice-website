@@ -188,8 +188,13 @@ body {
         .navbar-item {
           @apply p-2 pl-3;
         }
+
       }
     }
+  }
+
+  .navbar-item-div {
+    display: flex;
   }
 
   .navbar-start {
