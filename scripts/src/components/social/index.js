@@ -1,5 +1,11 @@
 import React from 'react';
-import { FaFacebookF, FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaGithub,
+  FaTwitter,
+  FaYoutube,
+  FaDatabase,
+} from 'react-icons/fa';
 
 const links = [
   {
@@ -13,6 +19,11 @@ const links = [
     url: 'https://www.youtube.com/channel/UCDshdIaiXqwZsQ4Gl_70OMA',
     text: 'YouTube',
     icon: FaYoutube,
+  },
+  {
+    url: 'https://ckan.dice-research.org/',
+    text: 'Datasets',
+    icon: FaDatabase,
   },
 ];
 
