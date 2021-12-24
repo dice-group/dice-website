@@ -100,7 +100,7 @@ We publicly serve our final RDF dataset via our SPARQL endpoint [link](http://re
         
     } LIMIT 100
 ```
-  
+  """ ;
   schema:logo "dice-icon.png" ;
   schema:homepage <http://reld.cs.upb.de:8890/sparql> ;
   schema:sourceCode <https://github.com/dice-group/RELD> ;
