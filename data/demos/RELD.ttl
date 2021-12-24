@@ -1,0 +1,107 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+dice:RELD a schema:Demo ;
+  schema:name "RELD" ;
+  schema:tagline "A Knowledge graph of relation extraction datasets" ;
+  schema:content """
+# Introduction
+In recent years, various supervised, semi-supervised, and unsupervised models have been proposed to extract relations from natural language texts. Consequently, various relation extraction datasets
+ have been proposed to benchmark existing RE tools. These datasets are in different formats, e.g., NYT-FB, Wikipedia-Wikidata  are in JSON, WEBNLG  is in XML, SemEval 2010 Task 8 is in text form. Apart from this, these datasets have different style of annotation. The source of generation of these datasets also lack variance, which makes it hard for evaluations of RE systems. 
+
+Keeping in view the aforementioned shortcomings, we present RELD, a single unified RDF representation of six relation extraction and classification datasets NYT-FB, Wikipedia-Wikidata, WEBNLG, SemEval 2010 Task 8, Google-RE  and FewRel well-known public and freely accessible relation extraction datasets. In RELD, each relation is modelled as a unique RDF resource and attached various statistics/annotations (e.g, corresponding entities, sentences, or a number of tokens in the sentences etc.) as properties. The resulting RELD RDF knowledge graph consists of 
+55.54 million triples, 824 relations from 2 million sentences, collected from six datasets of different domains. To the best of our knowledge, RELD is the largest RDF dataset containing relations and entities annotations along with different information from diverse domains.
+
+## Used Namespaces in RELD
+
+```
+@prefix reldv: <https://reld.dice-research.org/schema/> .
+@prefix reldr: <https://reld.dice-research.org/resource/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ps: <http://www.wikidata.org/prop/statement/>
+@prefix freebase :<http://rdf.freebase.com/ns>
+@prefix dbo: <http://dbpedia.org/ontology/>
+
+```
+## RDF Example Resource
+```
+dataset:FewRel reldv:hasRelation reldr:R-2031;
+      dc:title reldr:FewRel ;
+      dc:source reldr:Wikipedia_Wikidata ;
+      reldv:primaryTask reldr:Fewshot_RE ;
+      reldv:reType reldr:binary .
+# RELATION INSTANCE #
+reldr:R-2031 rdfs:label "part of" ;
+    owl:equivalentProperty reldr:part_of ;
+    owl:sameAs ps:P361,
+        reldr:R-3031,
+        reldr:R-5031 ;
+    reldv:distribution "valid"^^xsd:string ;
+    reldv:hasSentence reldr:S_FewRel_2101 .
+# SENTANCE  INSTANCE #
+reldr:S_FewRel_2101 reldv:direction false ;
+    reldv:hasNamedEntity reldr:ne_f6706 ;
+    reldv:hasObject reldr:object_488 ;
+    reldv:hasSubject reldr:subject_2044 ;
+    reldv:hasText "Lava Tree State Monument is a public park 
+    located southeast of Pahoa in the 
+    Puna District on the island of Hawaii ."@en ;
+    reldv:numAftToken 1 ;
+    reldv:numBefToken 11 ;
+    reldv:numBetToken 6 ;
+    reldv:numOfObjToken 3 ;
+    reldv:numOfPunctuations 1 ;
+    reldv:numOfSubToken 1 ;
+    reldv:numOfTokens 22 ;
+    reldv:objPos 18 ;
+    reldv:subPos 11 .
+# SUBJECT, OBJECT & NAMED ENTITY  INSTANCES #
+reldr:object_488 reldv:object reldr:island_of_hawaii
+reldr:subject_2044 reldv:subject reldr:pahoa .
+reldr:ne_f6706 a dbo:GPE ;
+    rdfs:label "hawaii"@en .
+```
+## Sparql endpoint
+We publicly serve our final RDF dataset via our SPARQL endpoint [link](http://reld.cs.upb.de:8890/sparql). Some example queries are performed below.
+
+-   List all relation and its number of sentences in Google-RE dataset 
+```
+  SELECT DISTINCT ?relations count(?sent)
+  FROM <http://reld.dice-research.org/Google-RE>
+  WHERE {
+       ?relations <https://reld.dice-research.org/schema/hasSentence> ?sent.
+  }
+```
+-   List the top 10 relations with the most number of sentences.
+```
+  SELECT ?relations count( * ) as ?cnt
+  WHERE {
+      ?relation <https://reld.dice-research.org/schema/hasSentence> ?sent .
+      
+  }
+  ORDER BY DESC(?cnt)
+  LIMIT 10
+```
+-   List 100 sentences having more than 20 tokens
+```
+  SELECT DISTINCT  ?sent ?tokens
+    WHERE {
+        ?s <https://reld.dice-research.org/schema/hasSentence> ?sent .
+        ?sent <https://reld.dice-research.org/schema/hasNumOfToken> ?tokens.
+        FILTER(?tokens > 20)
+        
+    } LIMIT 100
+```
+  """ ;
+  schema:logo "dice-icon.png" ;
+  schema:homepage <http://reld.cs.upb.de:8890/sparql> ;
+  schema:sourceCode <https://github.com/dice-group/RELD> ;
+  schema:maintainer dice:ManzoorAli .
+  
