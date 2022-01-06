@@ -1,0 +1,50 @@
+---
+date: '2022-01-06'
+title: 'Learn RDF - Semantic Web learning resources'
+author: 'Adrian Wilke'
+---
+
+On Twitter, we asked for good open RDF learning resources for beginners.
+Suggestions were made via the [tweet](https://twitter.com/DiceResearch/status/1473292972334755840) and the hashtag [#learnRDF](https://twitter.com/search?q=%23learnRDF&src=typed_query).
+Let's collect first resources.
+
+## Articles
+
+- World Wide Web Consortium (W3C): [RDF 1.1 Primer](https://w3.org/TR/rdf11-primer/) ([tweet](https://twitter.com/DiceResearch/status/1473293240149368835))
+- World Wide Web Consortium (W3C): [RDF 1.1 Concepts and Abstract Syntax](https://w3.org/TR/rdf11-concepts/) ([tweet](https://twitter.com/DiceResearch/status/1473293240149368835))
+
+
+## Videos of lectures
+
+- [Knowledge Graphs lecture videos at openHPI](https://open.hpi.de/courses/knowledgegraphs2020)
+  ([tweet](https://twitter.com/adrianwilke/status/1473294143216623617))
+- [Harald Sack at openHPI](https://open.hpi.de/courses?q=Harald%20Sack)
+  ([tweet](https://twitter.com/adrianwilke/status/1473294143216623617))
+
+
+## Related to programming languages
+
+- [A Gateway to Knowledge Graphs](https://ldtim-kgwithr.netlify.app/)
+  ([tweet](https://twitter.com/NovasTaylor/status/1478489804220383240))  
+  R language, using the [rdflib](https://cran.r-project.org/web/packages/rdflib/) R package
+
+
+## Resources in German
+
+- [Semantic Web Technologien](https://tele-task.de/series/971/)
+  ([tweet](https://twitter.com/adrianwilke/status/1479145128170242052))  
+  Lecture videos of Harald Sack at HPI tele-TASK in German
+- [Harald Sack at HPI tele-TASK](https://tele-task.de/lecturer/15/)
+  ([tweet](https://twitter.com/adrianwilke/status/1479145128170242052))   
+  All lecture videos of Harald Sack and mostly in German
+- [Wikipedia: Semantic Web](https://de.wikipedia.org/wiki/Semantic_Web)
+  ([tweet](https://twitter.com/adrianwilke/status/1479145324748935172))   
+- [Wikipedia: Resource Description Framework](https://de.wikipedia.org/wiki/Resource_Description_Framework)
+  ([tweet](https://twitter.com/adrianwilke/status/1479145324748935172))   
+
+
+## Limited access (Paderborn University)
+
+- [UPB Library: Semantic Web](https://kurzelinks.de/upbrdf)
+  ([tweet](https://twitter.com/MAhmedSherif/status/1473593832969318408))   
+  Search for semantic web books accessible inside the UPB network (VPN)
