@@ -847,7 +847,7 @@ a {
   }
 
   .awardee {
-    &:after {
+    &::after {
       content: ', ';
     }
 
