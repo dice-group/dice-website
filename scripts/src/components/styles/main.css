@@ -847,13 +847,6 @@ a {
   }
 
   .awardee {
-    &::after {
-      content: ', ';
-    }
-
-    &:last-child::after {
-      content: '';
-    }
   }
 }
 

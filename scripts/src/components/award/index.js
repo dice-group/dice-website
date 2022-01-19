@@ -16,16 +16,26 @@ const Award = ({ node: { id, data } }) => (
     {(data.awardee || data.awardeeExternal) && (
       <p>
         Awarded to:{' '}
-        {data.awardee.map(person => (
-          <Link key={person.path} className="awardee" to={person.path}>
-            {person.data.name}
-          </Link>
-        ))}
-        {data.awardeeExternal &&
-          data.awardeeExternal.map(p => (
-            <span key={p} className="awardee">
-              {p}
-            </span>
+        {data.awardee
+          .map(person => (
+            <Link key={person.path} className="awardee" to={person.path}>
+              {person.data.name}
+            </Link>
+          ))
+          .concat(
+            data.awardeeExternal
+              ? data.awardeeExternal.map(p => (
+                  <span key={p} className="awardee">
+                    {p}
+                  </span>
+                ))
+              : []
+          )
+          .map((element, index, array) => (
+            <React.Fragment key={index}>
+              {element}
+              {index + 1 !== array.length && ', '}
+            </React.Fragment>
           ))}
       </p>
     )}
