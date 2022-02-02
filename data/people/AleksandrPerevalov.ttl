@@ -1,7 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
 dice:AleksandrPerevalov a schema:Person ;
   schema:name "Aleksandr Perevalov" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:ExternalStudent ;
   schema:phone <tel:+49-0-3496-67-3126> ;
   schema:fax <tel:> ;
   schema:email <mailto:aleksandr.perevalov@hs-anhalt.de> ;
