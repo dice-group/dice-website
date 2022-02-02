@@ -1,0 +1,12 @@
+dice:AleksandrPerevalov a schema:Person ;
+  schema:name "Aleksandr Perevalov" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-0-3496-67-3126> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:aleksandr.perevalov@hs-anhalt.de> ;
+  schema:chat "" ;
+  schema:office "Raum 23-113, Lohmannstraße 23, D-06366 Köthen" ;
+  schema:photo "perevalov.jpeg" ;
+  # schema:project <>;
+  schema:content """""" .
