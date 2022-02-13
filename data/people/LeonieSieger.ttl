@@ -19,4 +19,4 @@ dice:ExamplePerson a schema:Person ;
 ## Test
 #This is a test markdown that can include anything.
 #  """ .
- # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
+schema:project dice:TRR318 .
