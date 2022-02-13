@@ -12,5 +12,5 @@ dice:StefanHeindorf a schema:Person ;
   schema:content """
 
 # Groups
-- [Machine Learning](/collaborators/groups/#machine%20learning)
+[Machine Learning](/collaborators/groups/#machine%20learning)
 """ .
