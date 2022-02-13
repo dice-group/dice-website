@@ -1,0 +1,19 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:COLIDE a dice:FundedProject ;
+  schema:tagline "Co-Training and Co-Regulierung für Industriedaten" ;
+  schema:status "active" ;
+  schema:content """Ziel von COLIDE ist die Entwicklung von Auto-Multi-View-Learning-Verfahren (AutoMVL) für heterogene Industriedaten. Dazu werden multi-view learning (MVL) und automatisiertes maschinelles Lernen (AutoML) erstmals kombiniert. Damit werden insbesondere KMUs in die Lage versetzt, den Mehrwert der simultanen Nutzung verschiedenster ML-Methoden auf heterogenen
+Datenquellen kosteneffizient zu erfahren und so innovative, datengetriebene Lösungen insbesondere in der Produktion anzubieten. Die Machbarkeit wird anhand von 2 realen, diskjunkten Anwendungsfällen aufgezeigt.""" ;
+  schema:endDate "2024-04-30"^^xsd:date ;
+  schema:startDate "2021-05-01"^^xsd:date ;
+  schema:content "" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "COLIDE" ;
+  schema:fundingProgram "BMBF, Grant Number 01I521005D" ;
+  schema:publicationTag "colide" ; 
+  schema:partner dicepartner:Elevait, dicepartner:SundK, dicepartner:Fraunhofer .
