@@ -1,0 +1,17 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:KIAM a dice:FundedProject ;
+  schema:tagline "Kompetenzzentrum KI in der Arbeitswelt des industriellen Mittelstands in OstWestfalenLippe" ;
+  schema:status "active" ;
+  schema:endDate "2025-09-30"^^xsd:date ;
+  schema:startDate "2020-10-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "KIAM" ;
+  schema:fundingProgram "BMBF, Grant No. 02L19C115" ;
+  schema:homepage <https://www.its-owl.de/die-projekte-im-ueberblick/netzwerkprojekte/kompetenzzentrum-kiam/> ;
+  schema:publicationTag "kiam" ;
+  schema:partner dicepartner:UBI, dicepartner:Fraunhofer .
