@@ -7,8 +7,7 @@
 dice:COLIDE a dice:FundedProject ;
   schema:tagline "Co-Training and Co-Regulierung für Industriedaten" ;
   schema:status "active" ;
-  schema:content """Ziel von COLIDE ist die Entwicklung von Auto-Multi-View-Learning-Verfahren (AutoMVL) für heterogene Industriedaten. Dazu werden multi-view learning (MVL) und automatisiertes maschinelles Lernen (AutoML) erstmals kombiniert. Damit werden insbesondere KMUs in die Lage versetzt, den Mehrwert der simultanen Nutzung verschiedenster ML-Methoden auf heterogenen
-Datenquellen kosteneffizient zu erfahren und so innovative, datengetriebene Lösungen insbesondere in der Produktion anzubieten. Die Machbarkeit wird anhand von 2 realen, diskjunkten Anwendungsfällen aufgezeigt.""" ;
+  schema:content """Ziel von COLIDE ist die Entwicklung von Auto-Multi-View-Learning-Verfahren (AutoMVL) für heterogene Industriedaten. Dazu werden multi-view learning (MVL) und automatisiertes maschinelles Lernen (AutoML) erstmals kombiniert. Damit werden insbesondere KMUs in die Lage versetzt, den Mehrwert der simultanen Nutzung verschiedenster ML-Methoden auf heterogenen Datenquellen kosteneffizient zu erfahren und so innovative, datengetriebene Lösungen insbesondere in der Produktion anzubieten. Die Machbarkeit wird anhand von 2 realen, diskjunkten Anwendungsfällen aufgezeigt.""" ;
   schema:endDate "2024-04-30"^^xsd:date ;
   schema:startDate "2021-05-01"^^xsd:date ;
   schema:content "" ;
