@@ -8,5 +8,9 @@ dice:StefanHeindorf a schema:Person ;
   schema:email <mailto:heindorf@uni-paderborn.de> ;
   schema:chat "@heindorf:chat.dice-research.org" ;
   schema:photo "heindorf.jpg" ;
-  schema:project dice:RAKI, dice:DAIKIRI, dice:EML4U ;
-  schema:content """""" .
+  schema:project dice:COLIDE, dice:EML4U, dice:DAIKIRI, dice:KIAM, dice:RAKI, dice:TRR318 ;
+  schema:content """
+
+# Groups
+- [Machine Learning](/collaborators/groups/#machine%20learning)
+""" .

@@ -1,0 +1,10 @@
+
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:SundK a schema:Partner ;
+  schema:name "S&K Anlagentechnik GmbH" ;
+  schema:country "D" ;
+  schema:url <https://www.sundk.de/> ;
+  schema:logo "sundk.png" .
