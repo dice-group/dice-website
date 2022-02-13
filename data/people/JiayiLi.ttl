@@ -3,7 +3,7 @@
 
 dice:StefanHeindorf a schema:Person ;
   schema:name "Yiayi Li" ;
-  schema:role dice:Researcher ;
+  schema:role dice:ResearchStaff ;
   schema:email <jiayili@campus.uni-paderborn.de> ;
   schema:chat "@jiayili:chat.dice-research.org" ;
   schema:content """""" .
