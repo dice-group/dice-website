@@ -9,4 +9,8 @@ dice:StefanHeindorf a schema:Person ;
   schema:chat "@heindorf:chat.dice-research.org" ;
   schema:photo "heindorf.jpg" ;
   schema:project dice:RAKI, dice:DAIKIRI, dice:EML4U ;
-  schema:content """""" .
+  schema:content """
+
+# Groups
+- [Machine Learning](/collaborators/groups/#machine%20learning)
+""" .
