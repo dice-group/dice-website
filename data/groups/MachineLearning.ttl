@@ -4,9 +4,9 @@
 dice:MachineLearning a schema:Group ;
   schema:name "Machine Learning" ;
   schema:tagline "" ;
-  schema:relatedProject dice:DAIKIRI, dice:RAKI, dice:EML4U, dice:TRR318 ;
+  schema:relatedProject dice:COLIDE, dice:EML4U, dice:DAIKIRI, dice:KIAM, dice:RAKI, dice:TRR318 ;
   schema:content """
 The machine learning group focuses on machine learning technologies for knowledge graphs. The research goal is to develop novel, scalable machine learning algorithms, e.g., for entity embeddings, clustering of high-dimensional data, and explainable machine learning. Research activities of the ML group are in the scope of structured machine learning, e.g., learning concepts in description logics, and entity embeddings, e.g., based on physical models and convolutional complex models. The group provides open-source tools for machine learning on knowledge graphs.
 """ ;
   schema:lead dice:StefanHeindorf ; # group maintainer
-  schema:member dice:CaglarDemir, dice:SimonBin, dice:JeanNDahKouagou, dice:AdrianWilke, dice:HamadaMZahera . # group members list
+  schema:member dice:AdrianWilke, dice:CaglarDemir, dice:GeraldoDeSouza, dice:HamadaMZahera, dice:JeanNDahKouagou, dice:JiayiLi, dice:LeonieSieger, dice:LukasBlübaum  . # group members list
