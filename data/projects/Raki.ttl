@@ -13,9 +13,8 @@ dice:RAKI a dice:FundedProject ;
   schema:content "" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "RAKI" ;
-  schema:fundingProgram "BMWi, Grant Number 01MD19012D" ;
+  schema:fundingProgram "BMWK, Grant Number 01MD19012D (https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html)" ;
   schema:homepage <https://raki-projekt.de/> ;
   schema:logo "raki.png" ;
   schema:publicationTag "raki" ; 
-  schema:partner dicepartner:Siemens, dicepartner:LeipzigUniversity, dicepartner:Elevait ;
-  schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .
+  schema:partner dicepartner:Siemens, dicepartner:LeipzigUniversity, dicepartner:Elevait .
