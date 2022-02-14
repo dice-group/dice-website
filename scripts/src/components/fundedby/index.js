@@ -9,8 +9,8 @@ const fundedBy = [
   },
   {
     url: 'http://www.bmwi.de/',
-    image: ['logo-bmwi.png'],
-    text: ['BMWI'],
+    image: ['logo-bmwk.svg'],
+    text: ['BMWK'],
   },
   {
     url: 'http://www.bmvi.de/',
