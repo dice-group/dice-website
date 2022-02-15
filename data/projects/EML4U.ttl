@@ -19,7 +19,7 @@ Funding program: [Erklärbarkeit und Transparenz des Maschinellen Lernens und de
 """ ;
   schema:endDate "2022-03-31"^^xsd:date ;
   schema:startDate "2020-04-01"^^xsd:date ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo, dice:StefanHeindorf ;
   schema:name "EML4U" ;
   schema:fundingProgram "BMBF, Grant No. 001IS19080B" ;
   schema:homepage <https://eml4u.github.io/> ;
