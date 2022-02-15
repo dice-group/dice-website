@@ -10,4 +10,5 @@ dice:SimonBin a schema:Person ;
   schema:namePrefix "" ;
   schema:phone <tel:+49-341-22903736> ;
   schema:office "Leipzig" ;
+  schema:project dice:DAIKIRI ;
   schema:content """""" .
