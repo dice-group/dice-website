@@ -11,7 +11,7 @@ dice:DAIKIRI a dice:FundedProject ;
   schema:endDate "2021-12-31"^^xsd:date ;
   schema:startDate "2020-01-01"^^xsd:date ;
   schema:content "" ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:maintainer dice:StefanHeindorf ;
   schema:name "DAIKIRI" ;
   schema:fundingProgram "BMBF, Grant Number 01IS19085B" ;
   schema:homepage <https://daikiri-projekt.de/> ;
