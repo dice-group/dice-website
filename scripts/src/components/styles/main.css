@@ -35,13 +35,13 @@ body {
     @apply text-3xl mb-3 mt-4;
   }
   h2 {
-    @apply text-2xl mb-3 mt-3;
+    @apply text-2xl mb-5 mt-6;
   }
   h3 {
-    @apply text-xl mb-3 mt-3;
+    @apply text-xl mb-5 mt-6;
   }
   h4 {
-    @apply text-lg mb-3 mt-2;
+    @apply text-lg mb-3 mt-4;
   }
 
   ul {
