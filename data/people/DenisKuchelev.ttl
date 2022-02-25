@@ -11,4 +11,5 @@ dice:DenisKuchelev a schema:Person ;
   schema:chat "@kuchelev:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
+  schema:project dice:HOBBIT, dice:ORCA ;
   schema:content """""" .
