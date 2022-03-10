@@ -1,0 +1,52 @@
+# Allocator Aware Container
+The C++ standard definition of allocator aware containers isn't completely correct. It's problematic if you try to use an allocator based on "fancy pointers".
+
+This post collects all information I gathered on how to write a _true_ allocator aware container.
+
+First of all your container should follow [this](https://en.cppreference.com/w/cpp/named_req/Container) and [this definition](https://en.cppreference.com/w/cpp/named_req/AllocatorAwareContainer). Here it is _really_ important that you define `allocator_type` because `std::uses_allocator` only checks if this alias (or using declaration) exists.
+
+Additionally you have to introduce a pointer alias like `using pointer = std::allocator_traits::pointer`. Here lies the magic. Many containers simply do `using pointer = T*`, which isn't compatible with fancy pointers.
+
+Now you simply use the aliases on all occasions and you `allocate`, `deallocate`, `construct` and `destroy` via the `allocator_traits`.
+
+Then you only need to look out for one more thing: `construct` and `destroy` work on raw pointers. However you can use `boost::to_address` or `std::to_address` (C++ 20) on a fancy pointer to get the corresponding raw pointer.
+
+Now we can combine these information into one example:
+```c++
+template <typename T, typename Alloc = std::allocator<T>>
+class Example {
+public:
+  using value_type = T;
+  using allocator_type = Alloc; //rebind might be needed
+  using allocator_traits =  std::allocator_traits<allocator_type>;
+  using pointer = allocator_traits::pointer;
+  using const_pointer = allocator_traits::const_pointer;
+  //... the other aliases ...//
+private:
+  allocator_type _alloc;
+  allocator_type &alloc() {return _alloc;}
+  const allocator_type &alloc() const {return _alloc;}
+  pointer allocate_wrap(std::size_t n) {
+    return allocator_traits::allocate(this->alloc(), n);
+  }
+  void deallocate_wrap(pointer p, std::size_t n) {
+    allocator_traits::allocate(this->alloc(), p, n);
+  }
+  template <typename... Args>
+  void construct_wrap(pointer p, Args &&... args) {
+    allocator_traits::construct(this->alloc(),
+      std::to_address(p), std::forward<Args>(args)...);
+  }
+  void destroy_wrap(pointer p) {
+    allocator_traits::destroy(this->alloc(), std::to_address(p));
+  }
+};
+```
+__CAUTION:__ I didn't write every `typename` needed.
+
+# Scoped Allocators
+If you have a container of containers you probably need to use the `scoped_allocator_adaptor` ([cppreference](https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor)). It is a allocator specifically designed for this use case. You can imagine it as a list of allocators. The first allocator is used for the most outer container, the second allocator is used for the container inside that one and so on.
+
+The trick of the scoped allocator is that `allocate` and `deallocate` use the most outer allocator, but in `construct` and `destruct` all allocators except the outer one will be used. In reality it is a lot more complex but this is sufficient to understand the principle.
+
+So the existence of the scoped allocator can be ignored from a container perspective as long as all calls to the allocator go through the `allocator_traits`.

@@ -1,0 +1,47 @@
+# Remove a template base class at compile time 
+
+There is one pattern sometimes helpful when working with templates:
+```cpp
+template <typename> struct Base;
+
+template <int> struct Base<int> {...};
+template <char> struct Base<char> {...};
+template <bool> struct Base<bool> {...};
+```
+Now the struct `Base` is only defined for the types `int, char` and `bool`. The code will not compile for any other type. However the compiler error for using different types is now a linking error because the `Base` struct is only declared. It is possible that it is defined in a different _translation unit_.
+
+### The Old Trick
+I often used the following trick to make a compile time error out of it:
+```cpp
+template <typename T> struct Base {
+  template<typename> struct AlwaysFalse : std::false_type{};
+  static_assert(AllwaysFalse<T>::value, "Some good error message");
+};
+```
+The `value` of `AlwaysFalse` would always be `false` (hence the name). However because the type depends on a template parameter, it is only visible to the compiler as a problem if the class is instantiated.
+
+I checked this trick today against `Clang-12` and it seems like clang now can look through this construct and by that it _will_ break all code using this trick. 
+
+### The New Tricks
+But not all hope is lost. There are other constructs with the same result. For example you could use:
+```cpp
+template <typename T> struct Base {
+private:
+  struct NotEqualToT {};
+
+public:
+  static constexpr bool AlwaysFalse = std::is_same_v<T, NotEqualToT>;
+  static_assert(AlwaysFalse, "Some good error message");
+};
+```
+Now `AlwaysFalse` is a variable directly depending on `T`. In theory `T` could be equal to `NotEqualToT` but that is rather unlikely (if you do not actively try to make them equal). Because of the possibility of equality the compiler should never be able to "see" through this construct.
+
+Maybe you don't want to change a type into a value? Then there is another way. You also can rewrite the `AlwaysFalse` like this:
+```cpp
+template <typename> struct AlwaysFalse {
+  static constexpr bool value = false;
+};
+```
+Currently this trick works with `Clang-12` but it might break again, because the value does not depend on the template parameter.
+
+Both tricks were checked against `clang-12` and `gcc-10`.
