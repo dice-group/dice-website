@@ -1,0 +1,135 @@
+---
+date: '2022-03-25'
+title: 'C++: Perfect Forwarding or Forwarding References'
+author: 'Lukas Kerkemeier'
+---
+
+I ran into a pretty interesting problem regarding __perfect forwarding__.
+__TL;DR:__ _Never_ set template parameter explicitly for a forwarding reference _if_ you don't have to.
+
+## Reference Collapsing
+By the use of `using` or `alias` it is possible to create references of references. To combat this there are __reference collapsing rules__:
+
+| Inner | Outer | Result |
+--- | --- | ---
+& | & | &
+&& | & | &
+& | && | &
+&& | && | &&
+
+Also only the __inner__ qualifiers (const, volatile) are used. The outer ones will be ignored.
+
+
+## Forwarding References: why not to set parameters explicitly
+
+First of all forwarding references will never copy. They will always take a (l- or rvalue) reference.
+Say you have a function like
+
+```cpp
+template <typename T>
+auto do_something (T&& t) {
+  ...
+}
+```
+
+If you pass a value or a lvalue reference of type `int` to it, `T` will become `int&`. This happens because the reference collapsing combines `&` with `&&` to `&`. If you pass a rvalue reference of type `int`, `T` will simply become `int` and no collapsing will be needed.
+Now the problem:
+If you set `T` explicitly you might think that `T=int` should generate the code needed to pass a value. However as explained above it will expect a rvalue reference and most likely your code will not compile.
+You need to set `T=int&` to generate the expected code.
+
+## Why should I ever need to set a template parameter by hand?
+
+If you have a templated class that uses these template parameter in the constructor you will probably need to set the types by hand. In that case it can be beneficial to create a free construction function like
+```cpp
+template <typename T>
+struct ExampleStruct {
+  T t;
+  ExampleStruct(T&& t): t(std::forward<T>(t)) {}
+};
+template <typename T>
+auto construct(T&& t) {
+  return ExampleStruct<T>(std::forward<T>(t));
+}
+```
+The function can detect `T` and will pass the correct version to `ExampleStruct`.
+
+## Code example
+
+This code was tested with clang-12.
+
+```cpp
+#include <iostream>
+#include <type_traits>
+#include <utility>
+
+using namespace std;
+
+template <typename T> void print_type(T &&t) {
+  using type = decltype(t);
+  if (is_const_v<remove_reference_t<type>>) {
+    cout << "    const ";
+  } else {
+    cout << "non-const ";
+  }
+
+  if (is_lvalue_reference_v<type>) {
+    cout << "l-value";
+  } else if (is_rvalue_reference_v<type>) {
+    cout << "r-value";
+  } else {
+    cout << "  value";
+  }
+  cout << '\n';
+}
+
+int main() {
+  std::cout << "Reference Collapsing: collapsing rules\n";
+  int to_ref = 44;
+  using l_type = int &;
+  using r_type = int &&;
+  l_type &l_l = to_ref;
+  l_type &&l_r = to_ref;
+  r_type &r_l = to_ref;
+  //forward needed so the function will use the correct type
+  print_type(std::forward<decltype(l_l)>(l_l));
+  print_type(std::forward<decltype(l_r)>(l_r));
+  print_type(std::forward<decltype(r_l)>(r_l));
+  r_type &&r_r = std::move(to_ref);
+  print_type(std::forward<decltype(r_r)>(r_r));
+
+  std::cout << "Reference Collapsing: qualifier\n";
+  using const_type = const int &;
+  using non_const_type = int &;
+  const_type &n_c = to_ref;
+  non_const_type &n_n = to_ref;
+  const_type const &c_c = to_ref;
+  non_const_type const &c_n = to_ref;
+  print_type(n_c);
+  print_type(n_n);
+  print_type(c_c);
+  print_type(c_n);
+
+  std::cout << "Forwarding References: why not to set parameter explicitly\n";
+  print_type(42);
+  const int number = 43;
+  print_type(number);
+  print_type<int>(42);
+}
+```
+Output:
+```
+Reference Collapsing: collapsing rules
+non-const l-value
+non-const l-value
+non-const l-value
+non-const r-value
+Reference Collapsing: qualifier
+    const l-value
+non-const l-value
+    const l-value
+non-const l-value
+Forwarding References: why not to set parameter explicitly
+non-const r-value
+    const l-value
+non-const r-value
+```
