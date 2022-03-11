@@ -1,0 +1,49 @@
+---
+date: '2022-03-18'
+title: 'C++: Explicit Template Instantiation'
+author: 'Lukas Kerkemeier'
+---
+
+It is well known that splitting code into multiple implementation files can speed up the build times. In general this sadly cannot be done for template code because the instantiation works inside of a single translation unit.
+If however all possible template parameter are known in advance there is a technique known as __Explicit Template Instantiation__ for exactly this problem.
+
+## Code Examples
+
+Here is one usage example.
+__Caution:__ I left out some non essential details (include guards for example) for better readability.
+
+test.h:
+```c++
+template <typename T> class Test {
+private: T t;
+public:
+  Test(T t) : t(std::move(t)) {}
+  void testFunction();
+};
+```
+
+test.cpp:
+```c++
+#include "test.h"
+template <typename T> void Test<T>::testFunction() { std::cout << t << '\n'; }
+// where the magic happens
+template class Test<int>;
+template class Test<long>;
+template class Test<std::string>;
+```
+
+main.cpp:
+```c++
+#include "test.h"
+int main() {
+  Test test(std::string("Hello World!"));
+  test.testFunction();
+}
+```
+
+As you can see, the class `Test` cannot be instantiated by only including the header file because `testFunction` would not be defined (only declared). So the definition must be linked from the implementation file.
+
+So we achieved the impossible: We compiled templates!
+Not quite. For general code this pattern does not hold. General code should work on every possible type that meets given requirements. This includes user defined types that we cannot possibly know in advance.
+
+But for every situation where a template is simply used because _"otherwise I would need to write the same code for both of these types"_, Excplicit Template Instantiation is a good way to speed up compile time. Especially if the code is used multiple times through out the code base.
