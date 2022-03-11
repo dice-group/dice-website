@@ -1,10 +1,14 @@
-# Perfect Forwarding or Forwarding References 
+---
+date: '2022-03-25'
+title: 'C++: Perfect Forwarding or Forwarding References'
+author: 'Lukas Kerkemeier'
+---
 
 I ran into a pretty interesting problem regarding __perfect forwarding__.
 __TL;DR:__ _Never_ set template parameter explicitly for a forwarding reference _if_ you don't have to.
 
 ## Reference Collapsing
-By the use of `using` or `alias` it is possible to create references of references. To combat this there are __reference collapsing rules__ :
+By the use of `using` or `alias` it is possible to create references of references. To combat this there are __reference collapsing rules__:
 
 | Inner | Outer | Result |
 --- | --- | ---
@@ -16,22 +20,26 @@ By the use of `using` or `alias` it is possible to create references of referenc
 Also only the __inner__ qualifiers (const, volatile) are used. The outer ones will be ignored.
 
 
-## Forwarding References: why not to set parameter explicitly
+## Forwarding References: why not to set parameters explicitly
+
 First of all forwarding references will never copy. They will always take a (l- or rvalue) reference.
 Say you have a function like
+
 ```cpp
 template <typename T>
 auto do_something (T&& t) {
   ...
 }
 ```
+
 If you pass a value or a lvalue reference of type `int` to it, `T` will become `int&`. This happens because the reference collapsing combines `&` with `&&` to `&`. If you pass a rvalue reference of type `int`, `T` will simply become `int` and no collapsing will be needed.
 Now the problem:
 If you set `T` explicitly you might think that `T=int` should generate the code needed to pass a value. However as explained above it will expect a rvalue reference and most likely your code will not compile.
 You need to set `T=int&` to generate the expected code.
 
 ## Why should I ever need to set a template parameter by hand?
-If you have a templated class that uses these template parameter in the constructor you will probably need to set the types by hand.  In that case it can be beneficial to create a free construction function like
+
+If you have a templated class that uses these template parameter in the constructor you will probably need to set the types by hand. In that case it can be beneficial to create a free construction function like
 ```cpp
 template <typename T>
 struct ExampleStruct {
@@ -46,7 +54,9 @@ auto construct(T&& t) {
 The function can detect `T` and will pass the correct version to `ExampleStruct`.
 
 ## Code example
+
 This code was tested with clang-12.
+
 ```cpp
 #include <iostream>
 #include <type_traits>

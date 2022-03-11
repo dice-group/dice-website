@@ -1,9 +1,14 @@
-# Explicit Template Instantiation
+---
+date: '2022-03-18'
+title: 'C++: Explicit Template Instantiation'
+author: 'Lukas Kerkemeier'
+---
 
-It is well known that splitting code into multiple implementation files can speed up the build times.In general this sadly cannot be done for template code because the instantiation works inside of a single translation unit.
+It is well known that splitting code into multiple implementation files can speed up the build times. In general this sadly cannot be done for template code because the instantiation works inside of a single translation unit.
 If however all possible template parameter are known in advance there is a technique known as __Explicit Template Instantiation__ for exactly this problem.
 
-### Code Examples
+## Code Examples
+
 Here is one usage example.
 __Caution:__ I left out some non essential details (include guards for example) for better readability.
 
@@ -11,19 +16,22 @@ test.h:
 ```c++
 template <typename T> class Test {
 private: T t;
-public: Test(T t) : t(std::move(t)) {}
+public:
+  Test(T t) : t(std::move(t)) {}
   void testFunction();
 };
 ```
+
 test.cpp:
 ```c++
 #include "test.h"
 template <typename T> void Test<T>::testFunction() { std::cout << t << '\n'; }
-//where the magic happens
+// where the magic happens
 template class Test<int>;
 template class Test<long>;
 template class Test<std::string>;
 ```
+
 main.cpp:
 ```c++
 #include "test.h"

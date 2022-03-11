@@ -1,11 +1,15 @@
-# Return Type `auto`
+---
+date: '2022-04-08'
+title: 'C++: Return Type "auto"'
+author: 'Lukas Kerkemeier'
+---
 
-## TL;DR
-`auto f() {...}` will never return a reference. Use `decltype(auto) f() {...}` if a reference is needed. And even then you will need to explicitly state that it should be a reference.
+__TL;DR__: `auto f() {...}` will never return a reference. Use `decltype(auto) f() {...}` if a reference is needed. And even then you will need to explicitly state that it should be a reference.
 See [this](https://en.cppreference.com/w/cpp/language/template_argument_deduction#Other_contexts) for more information.
 
 ## The Problem
 Imagine you have the following code:
+
 ```cpp
  auto f() {
    static int i = 0;
@@ -16,7 +20,8 @@ Imagine you have the following code:
  f()++;
  f();
 ```
-What will the program print? You might think that it's `01` but that is not true. This program doesn't even compile because `f` returns by value.
+
+What will the program print? You might think that it is `01` but that is not true. This program doesn't even compile because `f` returns by value.
 
 One possible idea to fix the problem is to use `decltype(auto)`. It can be understood as "perfect forwarding" a return value. However, the code
 ```cpp
@@ -32,6 +37,7 @@ One possible idea to fix the problem is to use `decltype(auto)`. It can be under
 still does not compile.
 
 This is the case, because the `decltype(auto)` works on the "thing" that is returned. And `decltype(i)` on the _entity_ `i` is the type of `i`, which is `int`. If you replace it with `decltype((i))` it's on the _expression_ `(i)`, which is `int&`. So, with this knowledge we can fix the code to be
+
 ```cpp
  decltype(auto) f() {
    static int i = 0;
@@ -42,9 +48,11 @@ This is the case, because the `decltype(auto)` works on the "thing" that is retu
  f()++;
  f();
 ```
+
 This now works and prints `01`.
 
 Let's have a look at an example that is a bit more complicated:
+
 ```cpp
 int& f() {
   static int i = 0;
@@ -57,20 +65,26 @@ decltype(auto) g() {
  f()++;
  std::cout << f();
 ```
+
 This compiles and prints `1`. The `decltype(auto)` of `g` evaluates `decltype(f())` which evaluates to the return type of `f`, which is `int&`.
 
 ## The Problem, Level 2
+
 Let's say you want to save a reference to a local variable. The problem above also applies in this case:
+
 ```cpp
 int& f() {...}
 [...]
-auto  a = f(); // int  a
-auto& b = f(); // int& b
+auto  a = f();          // int  a
+auto& b = f();          // int& b
 decltype(auto) c = f(); // int& c
 ```
 
 ## Example Code
+#
 There is code attached that shows a few different variations on this and prints out if it would compile, and what return value can be expected.
+__CAUTION__: These cases are a bit more specific then the ones in the text above because the return value depends on the parameter type that _is_ a reference.
+
 ```cpp
 #include <iostream>
 #include <string>

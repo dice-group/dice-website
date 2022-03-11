@@ -1,5 +1,10 @@
-# Allocator Aware Container
-The C++ standard definition of allocator aware containers isn't completely correct. It's problematic if you try to use an allocator based on "fancy pointers".
+---
+date: '2022-03-11'
+title: 'C++: True Allocator Aware Containers'
+author: 'Lukas Kerkemeier'
+---
+
+The C++ standard definition of allocator aware containers is not completely correct. It is problematic if you try to use an allocator based on "fancy pointers".
 
 This post collects all information I gathered on how to write a _true_ allocator aware container.
 
@@ -12,6 +17,7 @@ Now you simply use the aliases on all occasions and you `allocate`, `deallocate`
 Then you only need to look out for one more thing: `construct` and `destroy` work on raw pointers. However you can use `boost::to_address` or `std::to_address` (C++ 20) on a fancy pointer to get the corresponding raw pointer.
 
 Now we can combine these information into one example:
+
 ```c++
 template <typename T, typename Alloc = std::allocator<T>>
 class Example {
@@ -25,7 +31,7 @@ public:
 private:
   allocator_type _alloc;
   allocator_type &alloc() {return _alloc;}
-  const allocator_type &alloc() const {return _alloc;}
+  allocator_type const &alloc() const {return _alloc;}
   pointer allocate_wrap(std::size_t n) {
     return allocator_traits::allocate(this->alloc(), n);
   }
@@ -42,9 +48,11 @@ private:
   }
 };
 ```
-__CAUTION:__ I didn't write every `typename` needed.
 
-# Scoped Allocators
+__CAUTION:__ I did not write every `typename` needed.
+
+## Scoped Allocators
+
 If you have a container of containers you probably need to use the `scoped_allocator_adaptor` ([cppreference](https://en.cppreference.com/w/cpp/memory/scoped_allocator_adaptor)). It is a allocator specifically designed for this use case. You can imagine it as a list of allocators. The first allocator is used for the most outer container, the second allocator is used for the container inside that one and so on.
 
 The trick of the scoped allocator is that `allocate` and `deallocate` use the most outer allocator, but in `construct` and `destruct` all allocators except the outer one will be used. In reality it is a lot more complex but this is sufficient to understand the principle.
