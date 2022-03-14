@@ -1,6 +1,6 @@
 ---
 date: '2022-03-14'
-title: 'sparsetable: Implementing a fast, memory-efficient modern'
+title: 'sparsetable: Implementing a memory-efficient, modern Hashtable'
 type: 'Master'
 supervisor: dice:AlexanderBigerl
 contact: dice:AlexanderBigerl
@@ -8,7 +8,7 @@ contact: dice:AlexanderBigerl
 
 Hash tables are the swiss army knife of every programmer. Numerous designs with different strengths and weeknesses have been proposed. 
 
-In this thesis you will focus on a design introduced by google as [sparsetable](https://smerity.com/articles/2015/google_sparsehash.html). 
+In this thesis you will focus on a design introduced by google as [sparsetable](https://smerity.com/articles/2015/google_sparsehash.html) which has very little memory overhead. 
 Based on the [implementation by Thibaut Goetghebuer-Planchon](https://github.com/Tessil/sparse-map) you will uplift sparsetable to C++20, introduce native support for fancy pointers and potentially further improve performance and memory efficiency. 
 The successful result of the thesis will be published as an open-source library at https://github.com/dice-group. In future job applications you can use it as a show case of your C++ skills and deep datastructure knowledge. Who knows, maybe your implementation will also become a popular C++ library. 
 
