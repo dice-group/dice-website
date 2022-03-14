@@ -1,0 +1,33 @@
+---
+date: '2022-03-14'
+title: 'sparsetable: Implementing a fast, memory-efficient modern'
+type: 'Bachelor/Master'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+Hash tables are the swiss army knife of every programmer. Numerous designs with different strengths and weeknesses have been proposed. 
+
+In this thesis you will focus on a design introduced by google as [sparsetable](https://smerity.com/articles/2015/google_sparsehash.html). 
+Based on the [implementation by Thibaut Goetghebuer-Planchon](https://github.com/Tessil/sparse-map) you will uplift sparsetable to C++20, introduce native support for fancy pointers and potentially further improve performance and memory efficiency. 
+The successful result of the thesis will be published as an open-source library at https://github.com/dice-group. In future job applications you can use it as a show case of your C++ skills and deep datastructure knowledge. Who knows, maybe your implementation will also become a popular C++ library. 
+
+The master thesis includes:
+* Scan related work on hash tables
+* Read into allocators, fancy pointers, constructor exception safty and other relevant topics in C++
+* Read, understand, describe and review the implementation of [`tsl::sparse_map/set`](https://github.com/Tessil/sparse-map)
+* Describe and implement improvements to the library design and the memory aquisition strategy. 
+* Describe and implement native support for custom allocators and fancy pointers
+* Benchmarking the implementation compared to other hashtable implementations
+* Test the implementation 
+
+Required skills: 
+* Good modern C++ coding skills (C++17/20)
+* Experience with C++ template programming
+* Some prior knowledge on hash tables might be helpful
+
+Skills and knowledge aquired during the thesis:
+* allocator-aware datastructures
+* use of fancy pointers, especially offset pointers
+* constructor exception safty influences 
+* low-level memory management
