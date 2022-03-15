@@ -42,6 +42,7 @@ body {
   }
   h4 {
     @apply text-lg mb-3 mt-4;
+    font-weight: bold;
   }
 
   ul {
