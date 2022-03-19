@@ -14,5 +14,7 @@ dice:COLIDE a dice:FundedProject ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "COLIDE" ;
   schema:fundingProgram "BMBF, Grant Number 01I521005D" ;
+  schema:homepage <http://www.colide-projekt.de/> ;
   schema:publicationTag "colide" ; 
+  schema:logo "colide.png" ;
   schema:partner dicepartner:Elevait, dicepartner:SundK, dicepartner:Fraunhofer .
