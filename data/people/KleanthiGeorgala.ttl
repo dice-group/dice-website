@@ -4,7 +4,7 @@
 dice:KleanthiGeorgala a schema:Person ;
   schema:name "Kleanthi Georgala" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-341-97-32362> ;
   schema:fax <tel:+49-341-97-32329> ;
   schema:email <mailto:georgala@informatik.uni-leipzig.de> ;
