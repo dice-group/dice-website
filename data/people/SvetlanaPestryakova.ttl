@@ -4,7 +4,7 @@
 dice:SvetlanaPestryakova a schema:Person ;
   schema:name "Svetlana Pestryakova" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:pestryak@mail.uni-paderborn.de> ;
