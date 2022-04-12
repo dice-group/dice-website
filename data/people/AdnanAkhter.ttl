@@ -4,7 +4,7 @@
 dice:AdnanAkhter a schema:Person ;
   schema:name "Adnan Akhter" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
