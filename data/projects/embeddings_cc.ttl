@@ -8,7 +8,7 @@
 dice:embeddings.cc a dice:IncubatorProject ;
   schema:tagline "Universal Knowledge Graph Embeddings" ;
   schema:status "active" ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo, dice:StefanHeindorf ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "embeddings.cc" ;
   schema:homepage <https://embeddings.cc/> ;
   schema:logo "embeddings_cc.png" ;

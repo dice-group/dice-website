@@ -4,7 +4,7 @@
 dice:AdrianWilke a schema:Person ;
   schema:name "Adrian Wilke" ;
   schema:namePrefix "" ;
-  schema:project dice:OPAL, dice:VEP, dice:EML4U ;
+  schema:project dice:OPAL, dice:VEP, dice:EML4U, dice:embeddings.cc ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5186> ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
