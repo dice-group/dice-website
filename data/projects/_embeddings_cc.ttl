@@ -1,0 +1,15 @@
+  
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:embeddings.cc a dice:IncubatorProject ;
+  schema:tagline "Universal Knowledge Graph Embeddings" ;
+  schema:status "active" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo, dice:StefanHeindorf ;
+  schema:name "embeddings.cc" ;
+  schema:homepage <https://embeddings.cc/> ;
+  schema:logo "embeddings_cc.png" ;
+  schema:publicationTag "embeddings_cc" .
