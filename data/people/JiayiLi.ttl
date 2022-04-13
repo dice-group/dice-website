@@ -7,4 +7,5 @@ dice:JiayiLi a schema:Person ;
   schema:email <mailto:jiayili@campus.uni-paderborn.de> ;
   schema:chat "@jiayili:chat.dice-research.org" ;
   schema:office "TP6.3.101" ;
+  schema:project dice:embeddings.cc ;
   schema:content """""" .
