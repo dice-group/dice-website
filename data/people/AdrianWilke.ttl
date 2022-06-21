@@ -10,7 +10,6 @@ dice:AdrianWilke a schema:Person ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
   schema:chat "@wilke:chat.dice-research.org" ;
   schema:office "TP6.3.109" ;
-  schema:photo "wilke.jpg" ;
   schema:content """
 
 # Information
@@ -18,5 +17,6 @@ dice:AdrianWilke a schema:Person ;
 - The best way to contact me is by email
 - Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
 - [Mentoring](/students/mentoring/) (obligatory for students of the Bachelor's Degree program)
+- Science communication: Sometimes I drop [@DiceResearch](https://twitter.com/DiceResearch) tweets at Twitter 
 
 """ .

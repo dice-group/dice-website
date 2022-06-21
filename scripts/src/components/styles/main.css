@@ -47,6 +47,13 @@ body {
 
   ul {
     @apply list-disc list-inside;
+
+    /* copied from and based on ol class to re-enable indentation */
+    @apply ml-3 mt-0;
+    @screen md {
+      @apply ml-6 mt-0;
+    }
+    /* end: copied from and based on ol class to re-enable indentation */
   }
 
   ol {
