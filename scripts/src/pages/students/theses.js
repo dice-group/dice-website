@@ -47,16 +47,6 @@ export default function Theses({
               ))}
             </div>
           ))}
-          
-          <h2>Department</h2>
-          <Link to="https://cs.uni-paderborn.de/en/research/research/professors-and-fields-of-expertise">
-            Professors and groups
-          </Link>
-          <br />
-          <Link to="https://cs.uni-paderborn.de/en/studies/study-organization/bachelors-masters-theses">
-            Open theses lists
-          </Link>          
-
         </div>
       </section>
     </Layout>
