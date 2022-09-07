@@ -91,5 +91,5 @@ In order to get the result of the previous run, you should click on *Check the s
   schema:logo "limes_logo.png" ;
   schema:homepage <https://limes.demos.dice-research.org/> ;
   schema:sourceCode <https://github.com/dice-group/LIMES> ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
-  schema:developer dice:AxelCyrilleNgongaNgomo, dice:KunalJha, dice:PaulSpooren .
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:developer dice:AbdullahFathiAhmed, dice:AnaAlexandraSilva .
