@@ -4,7 +4,7 @@
 dice:KevinDreßler a schema:Person ;
   schema:name "Kevin Dreßler" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-525-16-05190> ;
   schema:fax <tel:> ;
   schema:email <mailto:kevin.dressler@upb.de> ;
