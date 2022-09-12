@@ -11,4 +11,5 @@ dice:AbdullahFathiAhmed a schema:Person ;
   schema:chat "@afaahmed:chat.dice-research.org" ;
   schema:office "TP6.3.308" ;
   schema:photo "ahmed.jpg" ;
+  schema:project dice:Ingrid;
   schema:content """""" .

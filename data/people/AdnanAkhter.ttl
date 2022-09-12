@@ -11,5 +11,4 @@ dice:AdnanAkhter a schema:Person ;
   schema:chat "@akhter:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "akhter.jpg" ;
-  schema:project dice:Ingrid;
   schema:content """""" .
