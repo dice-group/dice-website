@@ -12,3 +12,4 @@ This is a repo containing DICE research group website.
 - `/scripts` folder contains scripts and templates that build the website (Gatsby and such)
 
 For more detailed info see the [wiki](https://github.com/dice-group/dice-website/wiki) and the [README in scripts](https://github.com/dice-group/dice-website/tree/develop/scripts#readme).
+
