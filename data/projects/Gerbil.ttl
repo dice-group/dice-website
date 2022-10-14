@@ -20,7 +20,7 @@ The integration and benchmarking of the tool against user-specified datasets is 
 ## Available Annotators
 
 |               | BAT-FRAMEWORK | GERBIL 1.0.0 | GERBIL1.2.5 | Experiment | Paper |
-| --------------| ------------- | ------------ | ----------- | ---------- | ----- |
+|---------------|---------------|--------------|-------------|------------|-------|
 | AGDISTIS      | (✔)           |   ✔          |   ✔         |  D2KB      |  [Link](https://www.researchgate.net/publication/264412537_AGDISTIS_-_Graph-Based_Disambiguation_of_Named_Entities_using_Linked_Data)|
 | AIDA          |  ✔            |   ✔          |   ✔         |  A2KB      |  [Link](https://dl.acm.org/citation.cfm?id=2145521)|
 | Babely        |               |   ✔          |   ✔         |  A2KB      |  [Link](https://www.aclweb.org/anthology/Q14-1019)|
@@ -52,7 +52,7 @@ Other A2KB annotators can be chosen for a D2KB experiment as well as [described 
 However, since the comparison might not be fair, we marked these annotators with (✔) in the table. The same is done for Entity Typing.
 
 |               | A2KB, C2KB <br> ENTITY RECOGNITION |  D2KB | ENTITY <br> TYPING| OKE TASK 1 | OKE TASK 2 | RT2KB | RE | 
-| --------------| ---------------------------------- | ----- | ----------------- | ---------- | ---------- | ----- | -- |
+|--------------|----------------------------------|-----|-----------------|----------|----------|-----|---|
 | AGDISTIS      |                                    |  ✔    |                   |            |            |       |    |     
 | AIDA          |  ✔                                 | (✔)   |                   |            |            |       |    |  
 | Babely        |  ✔                                 |  ✔    |                   |            |            |       |    |  
@@ -81,7 +81,7 @@ However, since the comparison might not be fair, we marked these annotators with
 The following table lists the datasets that are currently available and the experiment types they support.
 
 |               | A2KB, C2KB, D2KB <br> ENTITY RECOGNITION | ENTITY <br> TYPING| OKE TASK 1 | OKE TASK 2 | RT2KB | RE | Paper |
-| --------------| ---------------------------------------- | ----------------- | ---------- | ---------- | ----- | -- | ----- |
+|--------------|----------------------------------------|-----------------|----------|----------|-----|---|----|
 | ACE2004       |                   ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2002642)|     
 | AIDA/CoNLL-Complete|              ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|         
 | AIDA/CoNLL-Test A|                ✔                      |                   |            |            |       |    |[Link](https://dl.acm.org/citation.cfm?id=2145521)|  

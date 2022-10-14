@@ -14,6 +14,6 @@ CRC 901 is divided into four project areas. Project area A is concerned with the
   """ ;
   #schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "SFB 901" ;
-  schema:homepage <https://sfb901.uni-paderborn.de/de/> .
-  #schema:logo "sfb901.png" ;
+  schema:homepage <https://sfb901.uni-paderborn.de/de/> ;
+  schema:logo "SFB901.png" .
   #schema:publicationTag "sfb901" .

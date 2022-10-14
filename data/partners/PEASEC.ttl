@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:PEASEC a schema:Partner ;
+  schema:name "PEASEC – Science and Technology for Peace and Security" ;
+  schema:country "DE" ;
+  schema:url <https://peasec.de/> .
+  #schema:logo "upb.png" .

@@ -11,7 +11,7 @@ dice:MichaelRoeder a schema:Person ;
   schema:chat "@mroeder:chat.dice-research.org" ;
   schema:office "TP6.3.108" ;
   schema:photo "roeder.jpg" ;
-  schema:project dice:DIESEL, dice:Gerbil, dice:HOBBIT, dice:FROCKG ;
+  schema:project dice:DIESEL, dice:Gerbil, dice:HOBBIT, dice:FROCKG, dice:KnowGraphs, dice:NEBULA ;
   schema:publicationTag "roeder" ;
   schema:content """
 
