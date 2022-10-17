@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:WiNeMe a schema:Partner ;
+  schema:name "Wirtschaftsinformatik und Neue Medien der Universität Siegen" ;
+  schema:country "DE" ;
+  schema:url <https://www.wineme.uni-siegen.de/> .
+#  schema:logo "upb.png" .

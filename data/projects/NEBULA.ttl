@@ -1,0 +1,25 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:NEBULA a dice:FundedProject ;
+  schema:tagline "Nutzerzentrierte KI-basierte Erkennung von Fake-News und Fehlinformationen" ;
+  schema:status "active" ;
+  schema:content """
+<h2>Project Goal</h2>
+
+<p>The goal of this interdisciplinary project is the transparent, AI-based detection of Fake News and false information in security-relevant situations and a presentation of the detection results that is suitable for the target audience and boosts the audiences media literacy.</p>
+""" ;
+  schema:endDate "2025-06-30"^^xsd:date ;
+  schema:startDate "2022-07-01"^^xsd:date ;
+  # schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "NEBULA" ;
+  schema:fundingProgram "This work is supported by the German Federal Ministry of Education and Research (BMBF) under the grant no 13N16364." ;
+  schema:homepage <https://nebula.peasec.de/> ;
+  schema:logo "/home/micha/Downloads/Logo_Nebula_final.png" ;
+  schema:publicationTag "nebulaproject" ;
+  # schema:relatedDemo dice:COPAAL ;
+  schema:partner dicepartner:PEASEC, dicepartner:WiNeMe, dicepartner:UPB, dicepartner:NanoGiants .
+  # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

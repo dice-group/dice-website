@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:H-BRS a schema:Partner ;
+  schema:name "Hochschule Bonn-Rhein-Sieg" ;
+  schema:country "DE" ;
+  schema:url <https://www.h-brs.de> .
+#  schema:logo "upb.png" .
