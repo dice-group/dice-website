@@ -1,0 +1,33 @@
+---
+date: '2022-11-02'
+title: 'Simplifying OWL Class Expressions'
+type: 'Bachelor'
+supervisor: dice:AlexanderBigerl
+contact: dice:AlexanderBigerl
+---
+
+Consider a class expression (CE): $\text{Animal} ⊓ \text{Cat}$. To retrieve all individuals that fulllfill the class expression, a reasoner would first look at all animals then at all cats and calculate the cut. It is clear to a human reader with their background knowledge that it is sufficient to look at $\text{Cat}$ s only \(because $\text{Cat}⊏\text{Animal}$ \). However, a machine can draw this conclusion only if it has information on the hierarchical relation between $\text{cat}$ and $\text{animal}$. Your task in the thesis will be to extract all necessary information and apply simplifications on class expressions for a given knowledge base. 
+
+You will work on an existing OWL knowledge base system based on [Tentris]([https://github.com/dice-group/tentris](https://github.com/dice-group/tentris)) that supports reasoning services like individuals retrieval by class expression. The system, tentris-cwr, supports closed world reasoning with a pre-materialized database. Materialisation is here the process of making all statements explicit, e.g. if $\text{Cat}(\text{miezi})$ also $\text{Animal}(\text{miezi})$. You will be to implement the necessary bits and pieces to optimize class expressions such that they can be evaluated faster. Your implementation should support $\mathcal{ALC\ HR}$ (see [https://en.wikipedia.org/wiki/Description_logic#Naming_convention](https://en.wikipedia.org/wiki/Description_logic#Naming_convention))
+
+The bachelor thesis includes:
+
+- Readup on RDF and OWL.
+- Implement a materialisation engine for $\mathcal{ALC\ HR}$
+- Verify your results by comparing them with them with the reasoner hermit
+- Extract class and property hierarchies for  $\mathcal{ALC\ HR}$
+- Implement an class expression Optimizer  based on the materialization and hierarchies
+- Benchmark optimized class expressions against unoptimized class expressions
+- Benchmark against other closed world reasoners (DLLearner/Ontolearn)
+
+What you need to know: 
+
+- Good modern C++ coding skills (C++17 or above)
+- prior knowledge about RDF and OWL is helpful but not necessary
+
+Read up on Description Logics, RDF, OWL and Tentris:
+
+- [https://en.wikipedia.org/wiki/Description_logic](https://en.wikipedia.org/wiki/Description_logic)
+- [https://www.w3.org/TR/rdf11-primer/](https://www.w3.org/TR/rdf11-primer/)
+- [https://www.w3.org/TR/2012/REC-owl2-primer-20121211/](https://www.w3.org/TR/2012/REC-owl2-primer-20121211/)
+- [https://papers.dice-research.org/2020/ISWC_Tentris/iswc2020_tentris_public.pdf](https://papers.dice-research.org/2020/ISWC_Tentris/iswc2020_tentris_public.pdf) (you can focus on sections 1, 2, 3, 4 and 6.1)
