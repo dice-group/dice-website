@@ -25,4 +25,5 @@ Funding program: [Erklärbarkeit und Transparenz des Maschinellen Lernens und de
   schema:homepage <https://eml4u.github.io/> ;
   schema:logo "EML4U.png" ;
   schema:publicationTag "eml4u" ;
+  schema:sourceCode <https://github.com/EML4U/> ;
   schema:partner dicepartner:UBI, dicepartner:ISML, dicepartner:Semalytix .

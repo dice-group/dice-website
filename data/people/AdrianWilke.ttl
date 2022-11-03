@@ -4,7 +4,7 @@
 dice:AdrianWilke a schema:Person ;
   schema:name "Adrian Wilke" ;
   schema:namePrefix "" ;
-  schema:project dice:OPAL, dice:VEP, dice:EML4U, dice:embeddings.cc ;
+  schema:project dice:OPAL,   dice:DATEV, dice:EML4U,   dice:DAIKIRI, dice:RAKI, dice:FROCKG, dice:SPEAKER,   dice:OpenTrafficDetection, dice:embeddings.cc, dice:KIAM ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5186> ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
@@ -17,6 +17,6 @@ dice:AdrianWilke a schema:Person ;
 - The best way to contact me is by email
 - Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
 - [Mentoring](/students/mentoring/) (obligatory for students of the Bachelor's Degree program)
-- Science communication: Sometimes I drop [@DiceResearch](https://twitter.com/DiceResearch) tweets at Twitter 
+- Science communication: Sometimes I drop [@DiceResearch](https://twitter.com/DiceResearch) tweets at Twitter and news at [YouTube](https://www.youtube.com/@dice-research) as well as [LinkedIn](https://www.linkedin.com/company/dice-research/)
 
 """ .
