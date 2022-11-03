@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FaFacebookF,
+  FaLinkedin,
   FaGithub,
   FaTwitter,
   FaYoutube,
@@ -8,17 +8,17 @@ import {
 } from 'react-icons/fa';
 
 const links = [
-  {
-    url: 'https://www.facebook.com/DiceUPB',
-    text: 'Facebook',
-    icon: FaFacebookF,
-  },
   { url: 'https://twitter.com/DiceResearch', text: 'Twitter', icon: FaTwitter },
   { url: 'https://github.com/dice-group', text: 'GitHub', icon: FaGithub },
   {
-    url: 'https://www.youtube.com/channel/UCDshdIaiXqwZsQ4Gl_70OMA',
+    url: 'https://www.youtube.com/@dice-research',
     text: 'YouTube',
     icon: FaYoutube,
+  },
+  {
+    url: 'https://www.linkedin.com/company/dice-research/',
+    text: 'LinkedIn',
+    icon: FaLinkedin,
   },
   {
     url: 'https://ckan.dice-research.org/',
