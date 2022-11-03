@@ -17,8 +17,8 @@ In this project we aim to develop generic approaches for the automatic redistrib
 The final output will be a set of W3C-standard-conformant tools that implement automatic data distribution, federated query planning and execution, dynamic data exchange mechanisms, data storage profiling (containing useful information/statistics about the underlying data) and data monitoring. 
 Funding program: [Eurostars](https://ec.europa.eu/programmes/horizon2020/en/h2020-section/eurostars-programme)
 """ ;
-  schema:endDate "2021-04-01"^^xsd:date ;
-  schema:startDate "2024-05-01"^^xsd:date ;
+  schema:startDate "2021-05-01"^^xsd:date ;
+  schema:endDate "2024-04-30"^^xsd:date ;
   schema:maintainer dice:MuhammadSaleem ;
   schema:name "3DFed" ;
   schema:fundingProgram "Eurostars, Grant No. E114681" ;

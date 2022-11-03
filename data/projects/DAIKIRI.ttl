@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:DAIKIRI a dice:FundedProject ;
+dice:DAIKIRI a dice:AlumniProject ;
   schema:tagline "Diagnostische KI für industrielle Daten" ;
   schema:status "active" ;
   schema:content """Das Forschungsprojekt DAIKIRI zielt auf die erstmalige Entwicklung und Verwendung von automatischen Verfahren für die Semantifizierung von industriellen Daten und die datengetriebene Diagnose von Industrieanlagen ab. Mit Hilfe dieser Verfahren sollen diagnostische selbsterklärende Smart-Services für Industriedaten entwickelt und mit Daten aus realen Anwendungsfällen evaluiert werden. DAIKIRI wird daher KI-Verfahren entwickeln, die selbsterklärend sind und Ergebnisse von KI automatisch verbalisieren und damit transparent machen. Anwendern soll dadurch das Zustandekommen von Ergebnissen nachvollziehbar gemacht werden. Darauf basierende Entscheidungen können somit vertrauensvoll getroffen werden.""" ;

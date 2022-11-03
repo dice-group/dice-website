@@ -13,6 +13,5 @@ dice:PORQUE a dice:FundedProject ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "PORQUE" ;
   schema:fundingProgram "Eureka Eurostars, Grant Number E*114154 (BMBF Grant Number 01QE2056C)" ;
-  schema:homepage <https://www.porque.eu/> ;
   schema:partner dicepartner:Semantic, dicepartner:SiteFusion.
   # schema:fundingProgram <https://www.digitale-technologien.de/DT/Navigation/DE/ProgrammeProjekte/AktuelleTechnologieprogramme/Smarte_Datenwirtschaft/smarte-datenwirtschaft.html> .

@@ -18,7 +18,7 @@ dice:NEBULA a dice:FundedProject ;
   schema:name "NEBULA" ;
   schema:fundingProgram "This work is supported by the German Federal Ministry of Education and Research (BMBF) under the grant no 13N16364." ;
   schema:homepage <https://nebula.peasec.de/> ;
-  schema:logo "/home/micha/Downloads/Logo_Nebula_final.png" ;
+  schema:logo "Logo_Nebula_final.png" ;
   schema:publicationTag "nebulaproject" ;
   # schema:relatedDemo dice:COPAAL ;
   schema:partner dicepartner:PEASEC, dicepartner:WiNeMe, dicepartner:UPB, dicepartner:NanoGiants .

@@ -16,6 +16,8 @@ INGRID ermöglicht einen wissenschaftlichen Blick auf das Phänomen Graffiti. Di
 
 Derzeit sind 71.470 Graffitis aus dem Bestand von INGRID für die wissenschaftliche Nutzung zugänglich (Stand Juli 2021).
 """ ;
+  schema:startDate "2020-05-01"^^xsd:date ;
+  schema:endDate "2023-04-30"^^xsd:date ;
   schema:maintainer dice:MohamedAhmedSherif ;
   schema:name "Ingrid" ;
   schema:fundingProgram "Deutschen Forschungsgemeinschaft" ;
