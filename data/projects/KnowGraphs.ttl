@@ -21,7 +21,7 @@ This work has been supported by the [H2020 Marie Skłodowska-Curie](https://ec.e
   schema:fundingProgram "Innovative Training Network, Grant Number 860801" ;
   schema:partner "EU Commission" ;
   schema:homepage <http://knowgraphs.eu> ;
-  schema:sourceCode <https://github.com/dice-group> ;
+  schema:sourceCode <https://github.com/KnowGraphs> ;
   schema:logo "knowgraphs.png" ;
   schema:publicationTag "knowgraphs" ;
   schema:fundingProgram <https://ec.europa.eu/programmes/horizon2020/> .
