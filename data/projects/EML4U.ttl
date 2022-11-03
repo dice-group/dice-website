@@ -5,7 +5,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:EML4U a dice:FundedProject ;
+dice:EML4U a dice:AlumniProject ;
   schema:tagline "Erklärbares Maschinelles Lernen für interaktive episodische Updates von Modellen" ;
   schema:status "active" ;
   schema:content """
