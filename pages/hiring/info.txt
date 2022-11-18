@@ -1,4 +1,0 @@
-Please use the directory
-/pages/jobs
-instead of
-/pages/hiring
