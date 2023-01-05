@@ -47,6 +47,11 @@ const fundedBy = [
     image: ['logo-dfg.png'],
     text: ['DFG'],
   },
+  {
+    url: 'https://www.mkw.nrw/',
+    image: ['mkw-nrw.png'],
+    text: ['MKW NRW'],
+  },
 ];
 
 const getProgram = fundingProgram => {

@@ -1,0 +1,6 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ResearchStaff a schema:Role ;
+  schema:priority 5;
+  schema:name "Research Staff - PhD Students" .

@@ -1,6 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:ResearchStaff a schema:Role ;
+dice:SeniorResearcher a schema:Role ;
   schema:priority 4;
-  schema:name "Research Staff - PhD Students" .
+  schema:name "Senior Researchers" .
+
