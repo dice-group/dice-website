@@ -1,7 +1,6 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SeniorResearcher a schema:Role ;
+dice:Management a schema:Role ;
   schema:priority 3;
-  schema:name "Senior Researchers" .
-
+  schema:name "Management" .

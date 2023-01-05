@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:THOWL a schema:Partner ;
+  schema:name "Technische Hochschule Ostwestfalen-Lippe (TH OWL)" ;
+  schema:country "DE" ;
+  schema:url <https://www.th-owl.de/> .
+  # schema:logo "ususoftware.jpg" .

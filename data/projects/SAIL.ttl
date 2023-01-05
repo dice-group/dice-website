@@ -1,0 +1,21 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SAIL a dice:FundedProject ;
+  schema:tagline "Sustainable Life-cycle of Intelligent Socio-Technical Systems" ;
+  schema:status "active" ;
+  schema:content """
+SAIL addresses the next stage of AI development by looking at the entire life cycle of AI systems and their technological and societal implications. Accordingly, SAIL is interdisciplinary in nature involving researchers from the core areas of AI, engineering, computer science, and the social sciences and humanities. The research program is divided into three research pillars and two application areas. Basic research will look at the interaction of AI and human partners in evaluating and coordinating errors and goals. In addition, mature AI systems are analyzed to model and mitigate their potentially undesirable long-term effects at the functional, cognitive, and societal levels. Finally, the entire AI lifecycle is considered in terms of efficiency to enable the practical deployment of AI systems with minimal energy, time, and storage requirements and low cognitive effort on the part of the human partner. The application areas of SAIL are intelligent industrial work environments and adaptive assistance systems for healthcare. 
+""" ;
+  schema:name "SAIL" ;
+  schema:startDate "2022-08-01"^^xsd:date ;
+  schema:endDate "2026-07-31"^^xsd:date ;
+  schema:publicationTag "sailproject" ;
+  schema:partner dicepartner:UBI , dicepartner:FHBielefeld , dicepartner:THOWL ;
+  #schema:fundingProgram "Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen (MKW NRW), NW21-059D" ;
+  schema:fundingProgram "Ministry of Culture and Science of North Rhine-Westphalia (MKW NRW), NW21-059D" ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo .
+  

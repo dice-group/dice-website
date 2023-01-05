@@ -1,6 +1,6 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:StudentResearcher a schema:Role ;
+dice:ExternalStudent a schema:Role ;
   schema:priority 7;
-  schema:name "Student Researchers" .
+  schema:name "External PhD Students" .
