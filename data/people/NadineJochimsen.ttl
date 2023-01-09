@@ -6,4 +6,6 @@ dice:NadineJochimsen a schema:Person ;
   schema:namePrefix "" ;
   schema:role dice:Management ;
   schema:email <mailto:nadine.jochimsen@uni-paderborn.de> ;
+  schema:photo "jochimsen.jpg" ;
   schema:chat "@jochimse:chat.dice-research.org" .
+  
