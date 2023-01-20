@@ -1,0 +1,26 @@
+---
+date: '2023-01-20'
+title: 'Reasoning in a Database'
+type: 'Project Group'
+year: '2023'
+term: 'Summer'
+kind: 'Master'
+language: 'en'
+---
+
+
+## Content
+
+TODO: Give a brief introduction into to topic and tasks to work on. Add links, papers or software repositories if available.  
+Examples: https://dice-research.org/students/teaching/
+
+
+## Course in PAUL
+
+The PG will be available in
+[PAUL](https://paul.uni-paderborn.de/).
+
+
+## Contact
+
+<Link to="/AlexanderBigerl">Alexander Bigerl</Link>
