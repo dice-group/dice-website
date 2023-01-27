@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LissHeidrich a schema:Person ;
+  schema:name "Liss Heidrich" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+#  schema:phone <> ;
+#  schema:fax <> ;
+  schema:email <mailto:hliss@campus.uni-paderborn.de> ;
+  schema:chat "@hbrian:chat.dice-research.org" ;
+#  schema:office "" ;
+#  schema:photo "" ;
+#  schema:publicationTag "" ;
+  schema:project dice:Tentris ;
+  schema:content """""" .
