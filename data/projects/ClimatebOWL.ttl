@@ -1,0 +1,32 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ClimatebOWL a dice:FundedProject ;
+  schema:tagline "Climate bOWL" ;
+  schema:status "active" ;
+  schema:content """
+  
+<h2>Motivation</h2>
+
+Die Erreichung der Klimaneutralität von Unternehmen hat aus verschiedenen Gründen an Wichtigkeit zugenommen. Die gestiegenen Nachhaltigkeitsansprüche der Stake- und Shareholder, die steigenden Energie- und CO2e-Kosten sowie die verschärften politischen Rahmenbedingungen sind wesentliche Treiber, die Dekarbonisierung des unternehmerischen Handels zu fokussieren. Die durch das Klimaschutzgesetz verpflichtende Reduktion der Treibhausgasemissionen (THGE) um 65 % bis 2030 im Bezug zum Referenzjahr 1990 sowie die Erreichung der Klimaneutralität bis 2045 unterstreichen die Notwendigkeit für Unternehmen, sich schnell auf den Pfad zur Dekarbonisierung zu begeben.
+
+Die Einsatzreihenfolge auf diesem Weg zur Klimaneutralität lautet Minimieren, Substituieren und Kompensieren. Der Kern des unternehmerischen Klimamanagements und zugleich erste Schritt ist die Verbesserung der Material- und Energieeffizienz von Unternehmen. Jede Kilowattstunde, die nicht aufgebracht werden muss, emittiert keine Treibhausgase (THG) und verursacht keine Kosten. An dieser Stelle setzt das Verbundprojekt „Climate bOWL“ an.
+
+Die AG Data Science von Prof. Dr. Axel-Cyrille Ngonga setzt sich in der Forschung mit Fragestellungen rund um den Lebenszyklus von Wissensgraphen und Verfahren des Maschinellen Lernens auseinander. Forschungsergebnisse zu Wissensextraktion umfassen die Erarbeitung, Implementierung und Erprobung von Verfahren zur (schwach) überwachten Erkennung von Entitäten und Relationen in unstrukturierten und semi-strukturierten Daten. Prof. Ngonga erhielt u.a. den Best Paper Award für der ISWC 2014 für seine Forschung zur agnostischen Disambiguierung von Entitäten. Er untersuchte unüberwachte sowie (schwach) überwachte Verfahren zur Integration von Wissensgraphen. Daraus entstand das Werkzeug LIMES, welches bereits mehrfach ausgezeichnet wurde, z.B. mit dem Best Paper Award der ISWC 2011 und eine gute Grundlage für die Arbeiten bei der Entwicklung des Assistenzsystems bietet.
+
+<h2>Förderprogramm</h2>
+
+Das Projekt „Climate neutral Business in Ostwestfalen-Lippe (Climate bOWL)“ wird im Rahmen des Spitzenclusters „it’s OWL“ ab April 2022 für drei Jahre mit 1,86 Millionen Euro vom Ministerium für Wirtschaft, Innovation, Digitalisierung und Energie des Landes Nordrhein-Westfalen (MWIDE NRW) gefördert.
+
+""" ;
+  schema:endDate "2025-03-31"^^xsd:date ;
+  schema:startDate "2022-04-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "ClimatebOWL" ;
+  schema:homepage <https://www.climate-bowl.de/forschungsprojekte/projekt/projektinformationen> ;
+  schema:logo "climatebOWL.png" ;
+  schema:partner dicepartner:UniversityBielefeld, dicepartner:NTT, dicepartner:GEA, dicepartner:Miele, dicepartner:Phoenix.
+

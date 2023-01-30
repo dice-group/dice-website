@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:GEA a schema:Partner ;
+  schema:name "GEA Westfalia Separator Group GmbH" ;
+  schema:country "DE" ;
+  schema:url <https://www.gea.com/en/products/centrifuges-separation/index.jsp> ;
+  schema:logo "gea.jpg" .
