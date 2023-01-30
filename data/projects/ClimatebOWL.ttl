@@ -5,10 +5,9 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ClimatebOWL a dice:FundedProject ;
-  schema:tagline "Climate bOWL" ;
   schema:status "active" ;
   schema:content """
-  
+  <img src="climatebOWL_overview.png" width={100} height={100} alt="Climate bOWL Overview"  >
 <h2>Motivation</h2>
 
 Die Erreichung der Klimaneutralität von Unternehmen hat aus verschiedenen Gründen an Wichtigkeit zugenommen. Die gestiegenen Nachhaltigkeitsansprüche der Stake- und Shareholder, die steigenden Energie- und CO2e-Kosten sowie die verschärften politischen Rahmenbedingungen sind wesentliche Treiber, die Dekarbonisierung des unternehmerischen Handels zu fokussieren. Die durch das Klimaschutzgesetz verpflichtende Reduktion der Treibhausgasemissionen (THGE) um 65 % bis 2030 im Bezug zum Referenzjahr 1990 sowie die Erreichung der Klimaneutralität bis 2045 unterstreichen die Notwendigkeit für Unternehmen, sich schnell auf den Pfad zur Dekarbonisierung zu begeben.
@@ -24,7 +23,7 @@ Das Projekt „Climate neutral Business in Ostwestfalen-Lippe (Climate bOWL)“ 
 """ ;
   schema:endDate "2025-03-31"^^xsd:date ;
   schema:startDate "2022-04-01"^^xsd:date ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:maintainer dice:MohamedAhmedSherif ;
   schema:name "ClimatebOWL" ;
   schema:homepage <https://www.climate-bowl.de/forschungsprojekte/projekt/projektinformationen> ;
   schema:logo "climatebOWL.png" ;
