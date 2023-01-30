@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:NTT a schema:Partner ;
+  schema:name "NTT Data Business Solutions AG" ;
+  schema:country "DE" ;
+  schema:url <https://nttdata-solutions.com/de/> ;
+  schema:logo "ntt.png" .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Phoenix a schema:Partner ;
+  schema:name "Phoenix Contact Smart Business " ;
+  schema:country "DE" ;
+  schema:url <https://proficloud.io/> ;
+  schema:logo "ujf.gif" .
