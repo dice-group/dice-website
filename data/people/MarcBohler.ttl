@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:MarcBohler a schema:Person ;
+  schema:name "Marc Bohler" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:mbohler@campus.uni-paderborn.de> ;
+  schema:chat "@mbohler:chat.dice-research.org" ;
+  schema:content """""" .
