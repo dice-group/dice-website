@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:PalaniappanMuthuraman a schema:Person ;
+  schema:name "Palaniappan Muthuraman" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:palani@campus.uni-paderborn.de> .

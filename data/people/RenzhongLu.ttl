@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:RenzhongLu a schema:Person ;
+  schema:name "Renzhong Lu" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:renzhong@mail.uni-paderborn.de> .
