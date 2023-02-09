@@ -4,7 +4,7 @@
 dice:ParamjotKaur a schema:Person ;
   schema:name "Paramjot Kaur" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:paramjot.kaur@uni-paderborn.de> ;

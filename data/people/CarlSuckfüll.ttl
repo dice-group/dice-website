@@ -4,7 +4,7 @@
 dice:CarlSuckfüll a schema:Person ;
   schema:name "Carl Suckfüll" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:> ;
