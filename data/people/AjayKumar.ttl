@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AjayKumar a schema:Person ;
+  schema:name "Ajay Kumar" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:ajayk@campus.uni-paderborn.de> .

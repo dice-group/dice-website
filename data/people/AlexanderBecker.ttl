@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AlexanderBecker a schema:Person ;
+  schema:name "Alexander Becker" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:beckeral@campus.uni-paderborn.de> .

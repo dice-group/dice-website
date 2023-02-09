@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AlkidBaci a schema:Person ;
+  schema:name "Alkid Baci" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:alkid@campus.uni-paderborn.de> .

@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:KshitijShetty a schema:Person ;
+  schema:name "Kshitij Shetty" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:kshitij@mail.uni-paderborn.de> .

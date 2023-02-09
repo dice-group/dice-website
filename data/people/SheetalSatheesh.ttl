@@ -1,0 +1,7 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SheetalSatheesh a schema:Person ;
+  schema:name "Sheetal Satheesh" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:sheetal@campus.uni-paderborn.de> .
