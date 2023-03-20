@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TatianaMoteuNgoli a schema:Person ;
+  schema:name "Tatiana Moteu Ngoli" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff;
+  schema:phone <tel:+49-1520-65-39527> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:tatianam@mail.uni-paderborn.de> ;
+  schema:chat "@tatianam:chat.dice-research.org" ;
+  schema:office "TP6.3.303" ;
+  schema:photo "tatiana_moteu.jpg" ;
+  schema:projet dice:SAIL ;
+  schema:publicationTag "" .
