@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Holtzbrinck a schema:Partner ;
+  schema:name "Verlagsgruppe Georg von Holtzbrinck" ;
+  schema:country "DE" ;
+  schema:url <https://www.holtzbrinck.com/de/> ;
+  schema:logo "holtzbrinck.jpg" .
