@@ -1,0 +1,18 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LASSKG a dice:FundedProject ;
+  schema:tagline "LASS KG: Language Agnostic Semantic Search driven by Knowledge Graphs" ;
+  schema:status "active" ;
+  schema:content """LASS KG aims at developing efficient and language-agnostic methods for semantic search over knowledge graphs. The outcomes of this project will enpower search engines of the following industry products: Springer Materials and Springer Experiments.""" ;
+  schema:endDate "2025-02-01"^^xsd:date ;
+  schema:startDate "2023-02-01"^^xsd:date ;
+  schema:maintainer dice:AleksandrPerevalov ;
+  schema:name "LASS KG" ;
+  schema:fundingProgram "BMBF Grant within the Software Campus program" ;
+  schema:homepage <https://lass-kg.de/> ;
+  schema:logo "lass-kg.png" ;
+  schema:partner dicepartner:Holtzbrinck .
