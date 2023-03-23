@@ -1,0 +1,105 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LauNuts a schema:Demo ;
+  schema:name "LauNuts" ;
+  schema:tagline "A Knowledge Graph to identify and compare geographic regions in the European Union " ;
+  schema:content """
+
+LauNuts is a RDF Knowledge Graph consisting of:
+
+- Local Administrative Units (LAU) and
+- Nomenclature of Territorial Units for Statistics (NUTS)
+
+It is a hierarchical system where geographical areas are subdivided according to their population sizes. 
+
+## LauNuts demo usage
+
+The LauNuts Demo is a SPARQL endpoint serving data from the LauNuts Knowledge Graph.
+You can copy the following queries and use them as inputs for the provided GUI at
+[launuts.data.dice-research.org/sparql](https://launuts.data.dice-research.org/sparql).
+
+### Get available NUTS schemes:
+
+    SELECT ?scheme ?eurostat ?date WHERE {
+      ?scheme a <https://w3id.org/launuts/nutsScheme> .
+      ?scheme <http://www.w3.org/2002/07/owl#sameAs> ?eurostat .
+      ?scheme <http://purl.org/dc/terms/issued> ?date .
+    }
+    ORDER BY DESC(?date)
+
+### Get countries related to a NUTS scheme:
+
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?uniqueNuts ?nuts ?code ?label ?related WHERE {
+      ?uniqueNuts skos:inScheme <https://w3id.org/launuts/nuts/scheme#2021> .
+      ?nuts <http://data.europa.eu/nuts/level> <https://w3id.org/launuts/level/0> .
+      ?nuts skos:notation ?code .
+      ?uniqueNuts skos:hasTopConcept ?nuts .
+      ?uniqueNuts skos:prefLabel ?label .
+      OPTIONAL { ?uniqueNuts skos:related ?related } .
+    }
+    ORDER BY ASC(?code)
+
+### Get next NUTS level data:
+
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    SELECT ?uniqueNuts ?nuts ?code ?label ?related WHERE {
+      ?uniqueNuts skos:inScheme <https://w3id.org/launuts/nuts/scheme#2021> .
+      ?uniqueNutsBroader skos:hasTopConcept <https://w3id.org/launuts/nuts/code#DE> .
+      ?uniqueNuts skos:broader ?uniqueNutsBroader .
+      ?uniqueNuts skos:hasTopConcept ?nuts .
+      ?nuts skos:notation ?code .
+      ?uniqueNuts skos:prefLabel ?label .
+      OPTIONAL { ?uniqueNuts skos:related ?related } .
+    }
+    ORDER BY ASC(?code)
+
+### Get available LAU schemes:
+
+    SELECT ?lauScheme ?nutsScheme ?date WHERE {
+      ?lauScheme a <https://w3id.org/launuts/lauScheme> .
+      ?lauScheme <http://www.w3.org/2004/02/skos/core#related> ?nutsScheme .
+      ?lauScheme <http://purl.org/dc/terms/issued> ?date .
+    }
+    ORDER BY DESC(?date)
+
+### Get LAU level data:
+
+    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+    PREFIX dbo: <http://dbpedia.org/ontology/>
+    SELECT (?uniqueLau as ?lau) ?code ?name ?national ?area ?population WHERE {
+      ?uniqueLau skos:inScheme <https://w3id.org/launuts/lau/2021> .
+      ?uniqueLau skos:broader <https://w3id.org/launuts/nuts/2021#DEA47> .
+      ?uniqueLau skos:hasTopConcept ?lauBroader .
+      ?lauBroader skos:notation ?code .
+      OPTIONAL { ?uniqueLau skos:prefLabel ?name } .
+      OPTIONAL { ?uniqueLau skos:altLabel ?national } .
+      OPTIONAL { ?uniqueLau dbo:area ?area } .
+      OPTIONAL { ?uniqueLau dbo:populationTotal ?population } .
+    }
+    ORDER BY ASC(?code)
+
+## Scientific article
+
+The paper **LauNuts: A Knowledge Graph to identify and compare geographic regions in the European Union**
+was accepted at *ISWC 2023 - The 22nd International Semantic Web Conference*.
+Have a look at the
+[LauNuts preprint](https://papers.dice-research.org/2023/ESWC_LauNuts/Wilke-2023-LauNuts-KnowledgeGraph-EuropeanUnion-public.pdf)
+or use
+[Google Scholar](https://scholar.google.com/scholar?q=LauNuts%3A+A+Knowledge+Graph+to+identify+and+compare+geographic+regions+in+the+European+Union).
+
+## Resources and feedback
+
+The LauNuts website at [w3id.org/launuts](https://w3id.org/launuts) provides additional resources.
+
+## License
+
+LauNuts is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license by the Data Science Group (DICE) at Paderborn University, Adrian Wilke. The source data is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license by the European Union, 1995-2023, see https://ec.europa.eu/info/legal-notice_en. 
+
+""" ;
+  schema:screenshot "LauNuts_screenshot.png" ;
+  schema:logo "LauNuts.png" ;
+  schema:homepage <https://launuts.data.dice-research.org/sparql> ;
+  schema:sourceCode <https://github.com/dice-group/launuts> ;
+  schema:maintainer dice:AdrianWilke .
