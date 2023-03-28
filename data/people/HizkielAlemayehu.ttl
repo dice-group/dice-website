@@ -1,0 +1,14 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AleksandrPerevalov a schema:Person ;
+  schema:name "Hizkiel Mitiku Alemayehu" ;
+  schema:namePrefix "" ;
+  schema:role dice:ExternalStudent ;
+  schema:fax <tel:> ;
+  schema:email <mailto:hizkiel.alemayehu@uni-paderborn.de> ;
+  schema:chat "" ;
+  schema:office "" ;
+  schema:photo "" ;
+  # schema:project <>;
+  schema:content """""" .
