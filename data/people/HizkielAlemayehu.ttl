@@ -4,7 +4,7 @@
 dice:AleksandrPerevalov a schema:Person ;
   schema:name "Hizkiel Mitiku Alemayehu" ;
   schema:namePrefix "" ;
-  schema:role dice:ExternalStudent ;
+  schema:role dice:ResearchStaff ;
   schema:fax <tel:> ;
   schema:email <mailto:hizkiel.alemayehu@uni-paderborn.de> ;
   schema:chat "" ;
