@@ -1,0 +1,14 @@
+---
+date: '2023-03-30'
+title: 'kNN search in knowledge graph embedding spaces'
+type: 'Master'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+For several applications, knowledge graphs are transformed into a vector-based representation in an embedding space. These representations have the disadvantage that they comprise a large number of vectors with several hundred dimensions. A common task is to provide the k nearest neighbors for a given vector. There are several approaches which tackle this task. Some of them give an exact result while others provide a fast but approximate solution.
+
+The [ANN Benchmarks project](http://ann-benchmarks.com/) provides a framework to benchmark a large number of existing solutions. However, a lot of these approaches have several parameters. Hence, the optimization of these parameters is an important task.
+
+The goal of this thesis is to evaluate these approaches on several knowledge graph embedding models. Whenever parameters have to be optimized, a bayesian optimizer should be used. Please note that repeatability of the experiments is of very high importance.
+
