@@ -4,7 +4,7 @@
 dice:AbdullahFathiAhmed a schema:Person ;
   schema:name "Abdullah Fathi Ahmed" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-525-16-05189> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:afaahmed@mail.uni-paderborn.de> ;

@@ -5,18 +5,62 @@ dice:AdrianWilke a schema:Person ;
   schema:name "Adrian Wilke" ;
   schema:namePrefix "" ;
   schema:project dice:OPAL,   dice:DATEV, dice:EML4U,   dice:DAIKIRI, dice:RAKI, dice:FROCKG, dice:SPEAKER,   dice:OpenTrafficDetection, dice:embeddings.cc, dice:KIAM ;
-  schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-5251-60-5186> ;
+  schema:role dice:Alumni ;
   schema:email <mailto:adrian.wilke@uni-paderborn.de> ;
-  schema:chat "@wilke:chat.dice-research.org" ;
-  schema:office "TP6.3.109" ;
   schema:content """
 
-# Information
+[]()
 
-- The best way to contact me is by email
-- Profile, biography and publications: [go.upb.de/wilke](https://go.upb.de/wilke)  
-- [Mentoring](/students/mentoring/) (obligatory for students of the Bachelor's Degree program)
-- Science communication: Sometimes I drop [@DiceResearch](https://twitter.com/DiceResearch) tweets at Twitter and news at [YouTube](https://www.youtube.com/@dice-research) as well as [LinkedIn](https://www.linkedin.com/company/dice-research/)
+Adrian Wilke worked from 2018 to 2023 in the Data Science (DICE) group at UPB.  
+From 2015 to 2017, he was part of the [Computer Science Education group](https://cs.uni-paderborn.de/ddi/forschungsprojekte/mls).  
+Long term contact information can be found on [adrianwilke.de](https://adrianwilke.de/).
+
+## Research
+
+* Project manager of *[OPAL](https://arxiv.org/pdf/2105.03161.pdf) - Open Data Portal Germany* (BMVI/BMDV, 1.24 million €, 2019 – 2020)
+* Lead of DICE sub-group [Data Portals](https://web.archive.org/web/20210803233958/https://dice-research.org/collaborators/groups/) (2019 – 2021)
+* Developer in project *[EML4U](https://eml4u.github.io/) - Erklärbares Maschinelles Lernen für interaktive episodische Updates von Modellen* (2021 – 2023)
+
+### Scientific reviews / conference program committees
+
+* 5th International Workshop on Geospatial Linked Data ([GeoLD 2022](https://i3mainz.github.io/GeoLD2022/))  
+at 19th Extended Semantic Web Conference 2022 (ESWC 2022)
+* 6th Workshop on Storing, Querying and Benchmarking Knowledge Graphs ([QuWeDa 2022](https://sites.google.com/view/quweda2022/program-committee))  
+at International Semantic Web Conference (ISWC 2022)
+* 3rd Workshop on Querying and Benchmarking the Web of Data ([QuWeDa 2019](https://iswc2019.semanticweb.org/program-workshop/))  
+at 18th International Semantic Web Conference (ISWC 2019)
+* 15th European Semantic Web Conference (ESWC 2018),  
+sub-reviewer of Ricardo Usbeck
+
+### Scientific articles
+
+* Adrian Wilke, Axel-Cyrille Ngonga Ngomo: **LauNuts: A Knowledge Graph to identify and compare geographic regions in the European Union** (2023) In: The Semantic Web - Extended Semantic Web Conference (ESWC). [Google Scholar](https://scholar.google.com/scholar?q=LauNuts%3A+A+Knowledge+Graph+to+identify+and+compare+geographic+regions+in+the+European+Union), [website](https://w3id.org/launuts).
+* Robert Feldhans, Adrian Wilke, Stefan Heindorf, Mohammad Hossein Shaker, Barbara Hammer, Axel-Cyrille Ngonga Ngomo, Eyke Hüllermeier: **Drift Detection in Text Data with Document Embeddings** (2021) In: Intelligent Data Engineering and Automated Learning (IDEAL 2021). DOI: [10.1007/978-3-030-91608-4_11](https://doi.org/10.1007/978-3-030-91608-4_11), [Google Scholar](https://scholar.google.com/scholar?q=Drift+Detection+in+Text+Data+with+Document+Embeddings).
+* Adrian Wilke, Arwa Bannoura, Axel-Cyrille Ngonga Ngomo: **Relicensing Combined Datasets** (2021) In: IEEE 15th International Conference on Semantic Computing (ICSC). DOI: [10.1109/ICSC50631.2021.00050](https://www.doi.org/10.1109/ICSC50631.2021.00050), [Google Scholar](https://scholar.google.com/scholar?q=Relicensing+Combined+Datasets), [demo](https://dice-research.org/ReCoDa).
+* More: [Google Scholar](https://scholar.google.com/citations?user=NPWI6tMAAAAJ), [ORCID](https://orcid.org/0000-0002-6575-807X), [UPB](https://www.uni-paderborn.de/person/9101/) 
+
+## Teaching
+
+* **Thesis supervision** (together with D. Vollmers and A. Ngonga)
+    * H. Topiwala: Geospatial Question Answering over Linked Data (2022)
+    * M. Schmidt: A Question Answering (QA) System for the Data Catalog Vocabulary (DCAT) (2020)
+* **Lecture exercises** (mainly online Jupyter notebooks, partly in presence)
+    * Statistical Natural Language Processing (SNLP)
+    * Semantic Web
+* Project group Data Portals (CS master course)
+* [Student mentoring](https://dice-research.org/students/mentoring/) (2020 – 2023)
+
+## Software development & system administration
+
+* Python, e.g. [embeddings.cc](https://github.com/dice-group/embeddings.cc/tree/8c0a2986da182b0bc29992edc44efe4dfafa865d) & [KI-SAA](https://github.com/dice-group/KI-SAA-IR/tree/v2.0.0) (Elasticsearch, Web)
+* Java, e.g. [LauNuts](https://github.com/dice-group/LauNuts/tree/v1.0.1), [ReCoDa](https://github.com/dice-group/ReCoDa), [OPAL](https://github.com/projekt-opal/doc#repositories)
+* Virtual machines, e.g. [JavaOnlineExcercises](https://github.com/dice-group/JavaOnlineExercises/tree/2020.04.19) (Docker, Jupyter), [CKAN](https://github.com/dice-group/dice-ckan)
+
+## Miscellaneous
+
+* Science communication: [Twitter](https://twitter.com/search?q=(from%3ADiceResearch)%20since%3A2021-12-16%20until%3A2023-04-01&src=typed_query&f=live)/[RT](https://twitter.com/search?q=(from%3Aadrianwilke)%20(%40DiceResearch)%20since%3A2021-12-16%20until%3A2023-04-01&src=typed_query&f=live), [YouTube](https://www.youtube.com/@dice-research), [LinkedIn](https://www.linkedin.com/company/dice-research/), [website](https://dice-research.org/)
+* Creation of an internal knowledge base using MediaWiki
+* [LaTeX beamer template](https://github.com/adibaba/templates/tree/master/claw) creation and updates of lecture slide decks
+* Additional information: [UPB website](https://www.uni-paderborn.de/person/9101/)
 
 """ .
