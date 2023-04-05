@@ -11,7 +11,7 @@ dice:FarshadAfshari a schema:Person ;
   schema:chat "@afshari:chat.dice-research.org" ;
   schema:office "TP6.3.109" ;
   schema:photo "afshari.jpg" ;
-  schema:project dice:FROCKG ;
+  schema:project dice:FROCKG, dice:NEBULA;
   schema:content """
   <p>
   <b>Linkedin </b><a href="https://www.linkedin.com/in/afsharifarshad/"> &ensp;Farshad Afshari </a>
