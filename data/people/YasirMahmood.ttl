@@ -12,7 +12,7 @@ dice:YasirMahmood a schema:Person ;
   schema:office "TP6.3.303" ;
   schema:photo "ymahmood.jpg" ;
   schema:content """
-
+ 
 ## Research Interest
 
 My research is mainly in the following areas:
@@ -28,5 +28,5 @@ Feel free to write me if you are interested in a collaboration (or writing a the
 * (1) Theory of Argumentation 
 * (2) Abductive Reasoning 
 * (3) Complexity Theory 
-* (4) Database/Ontology Repairing
+* (4) Database/Ontology Repairing 
 """ .
