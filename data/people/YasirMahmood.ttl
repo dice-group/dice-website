@@ -28,5 +28,5 @@ Feel free to write me if you are interested in a collaboration (or writing a the
 * (1) Theory of Argumentation 
 * (2) Abductive Reasoning 
 * (3) Complexity Theory 
-* (4) Database/Ontology Repairing 
+* (4) Database/Ontology Repairing
 """ .
