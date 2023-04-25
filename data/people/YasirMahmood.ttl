@@ -24,4 +24,10 @@ My research is mainly in the following areas:
 * Knowledge Representation and Reasoning
 * Description Logics
 
-Feel free to write me if you are interested in a collaboration (or writing a thesis) covering any of the following topics: (1) theory of argumentation, (2) abductive reasoning, (3) complexity theory, and (4) database/ontology repairs.
+Feel free to write me if you are interested in a collaboration (or writing a thesis) covering any of the following topics:
+
+* (1) Theory of Argumentation 
+* (2) Abductive Reasoning 
+* (3) Complexity Theory 
+* (4) Database/Ontology Repairing
+""" .
