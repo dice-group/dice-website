@@ -11,7 +11,6 @@ dice:YasirMahmood a schema:Person ;
   schema:chat "@ymahmood:chat.dice-research.org" ;
   schema:office "TP6.3.303" ;
   schema:photo "ymahmood.jpg" ;
-  schema:publicationTag "mahmood" ;
   schema:content """
 
 ## Research Interest
