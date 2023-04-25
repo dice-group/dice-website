@@ -10,5 +10,5 @@ dice:YasirMahmood a schema:Person ;
   schema:email <mailto:yasir.mahmood@uni-paderborn.de> ;
   schema:chat "@ymahmood:chat.dice-research.org" ;
   schema:office "TP6.3.303" ;
-  schema:photo "ymahmood.jpg" ;
-  schema:publicationTag "" .
+  schema:photo "ymahmood.jpg" .
+  
