@@ -11,4 +11,25 @@ dice:YasirMahmood a schema:Person ;
   schema:chat "@ymahmood:chat.dice-research.org" ;
   schema:office "TP6.3.303" ;
   schema:photo "ymahmood.jpg" ;
-  schema:publicationTag "" .
+  schema:project dice:ENEXA ;
+  schema:content """
+
+## Research Interests
+
+My research is mainly in the following areas:
+
+* Theoretical Computer Science
+* Computational (Parameterized) Complexity Theory
+* Mathematical Logic
+* Knowledge Representation and Reasoning
+* Description Logics
+
+Feel free to write me if you are interested in a collaboration (or writing a thesis) covering any of the following topics.
+
+* (1) Theory of Argumentation 
+* (2) Abductive Reasoning 
+* (3) Complexity Theory 
+* (4) Database/Ontology Repairing
+
+""" .
+  
