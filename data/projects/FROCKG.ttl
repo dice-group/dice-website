@@ -6,7 +6,7 @@
 
 dice:FROCKG a dice:FundedProject ;
   schema:tagline "Fact Checking for Large Enterprise Knowledge Graphs" ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:content """
 <h2>Project Goal</h2>
 
