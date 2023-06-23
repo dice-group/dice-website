@@ -12,6 +12,6 @@ dice:KIAM a dice:FundedProject ;
   schema:maintainer dice:StefanHeindorf ;
   schema:name "KIAM" ;
   schema:fundingProgram "BMBF, Grant No. 02L19C115" ;
-  schema:homepage <https://www.its-owl.de/die-projekte-im-ueberblick/netzwerkprojekte/kompetenzzentrum-kiam/> ;
+  schema:homepage <https://arbeitswelt.plus/> ;
   schema:publicationTag "kiam" ;
   schema:partner dicepartner:UBI, dicepartner:Fraunhofer .
