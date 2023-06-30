@@ -27,5 +27,5 @@ Das Projekt „Climate neutral Business in Ostwestfalen-Lippe (Climate bOWL)“ 
   schema:name "ClimatebOWL" ;
   schema:homepage <https://www.climate-bowl.de/forschungsprojekte/projekt/projektinformationen> ;
   schema:logo "climatebOWL.png" ;
-  schema:partner dicepartner:UniversityBielefeld, dicepartner:NTT, dicepartner:GEA, dicepartner:Miele, dicepartner:Phoenix.
+  schema:partner dicepartner:UBI, dicepartner:NTT, dicepartner:GEA, dicepartner:Miele, dicepartner:Phoenix.
 

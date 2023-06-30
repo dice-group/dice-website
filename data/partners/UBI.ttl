@@ -5,5 +5,5 @@
 dicepartner:UBI a schema:Partner ;
   schema:name "Universität Bielefeld" ;
   schema:country "DE" ;
-  schema:url <https://www.uni-bielefeld.de/> .
-  # schema:logo "ususoftware.jpg" .
+  schema:url <https://www.uni-bielefeld.de/> ;
+  schema:logo "unibielefeld.gif" .
