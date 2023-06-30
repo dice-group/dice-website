@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:KULeuven a schema:Partner ;
+  schema:name "Katholieke Universiteit Leuven" ;
+  schema:country "BE" ;
+  schema:url <https://www.kuleuven.be/english/kuleuven/> .
+  # schema:logo "" .

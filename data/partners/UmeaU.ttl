@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:UmeaU a schema:Partner ;
+  schema:name "Umea Universitet" ;
+  schema:country "SE" ;
+  schema:url <https://www.umu.se/en/> .
+  # schema:logo "" .

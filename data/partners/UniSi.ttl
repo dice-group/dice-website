@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:UniSi a schema:Partner ;
+  schema:name "Università degli Studi di Siena" ;
+  schema:country "IT" ;
+  schema:url <https://en.unisi.it/> .
+  # schema:logo "" .

@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:PoliPoznanska a schema:Partner ;
+  schema:name "Politechnika Poznanska" ;
+  schema:country "PL" ;
+  schema:url <https://www.put.poznan.pl/> .
+  # schema:logo "" .

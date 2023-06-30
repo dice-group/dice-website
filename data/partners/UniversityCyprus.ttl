@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:UniversityCyprus a schema:Partner ;
+  schema:name "University of Cyprus" ;
+  schema:country "CY" ;
+  schema:url <http://www.ucy.ac.cy/> .
+  # schema:logo "" .
