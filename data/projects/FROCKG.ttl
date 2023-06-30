@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:FROCKG a dice:FundedProject ;
+dice:FROCKG a dice:AlumniProject ;
   schema:tagline "Fact Checking for Large Enterprise Knowledge Graphs" ;
   schema:status "completed" ;
   schema:content """

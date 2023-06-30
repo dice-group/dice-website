@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:RAKI a dice:FundedProject ;
+dice:RAKI a dice:AlumniProject ;
   schema:tagline "Rapide XAI for Industrial Plants" ;
   schema:status "active" ;
   schema:content """ """ ;

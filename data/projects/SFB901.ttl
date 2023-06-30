@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SFB901 a dice:FundedProject ;
+dice:SFB901 a dice:AlumniProject ;
   schema:tagline "SFB 901 \"Individualized IT-services in dynamic markets\"";
   schema:status "active" ;
   schema:content """ 
