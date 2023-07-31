@@ -26,10 +26,10 @@ My research is mainly in the following areas:
 
 Feel free to write me if you are interested in a collaboration (or writing a thesis) covering any of the following topics.
 
-* (1) Theory of Argumentation 
-* (2) Abductive Reasoning 
-* (3) Complexity Theory 
-* (4) Database/Ontology Repairing
+* Theory of Argumentation 
+* Abductive Reasoning 
+* Complexity Theory 
+* Database/Ontology Repairing
 
 """ .
   
