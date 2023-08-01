@@ -6,5 +6,5 @@ dice:AjayKumar a schema:Person ;
   schema:project dice:ClimatebOWL;
   schema:role dice:StudentResearcher ;
   schema:photo "ajayk.jpeg" ;
-  schema:content """ I am a computer science student interested in integration and automation."""
+  schema:content """ I am a computer science student interested in integration and automation.""";
   schema:email <mailto:ajayk@campus.uni-paderborn.de> .
