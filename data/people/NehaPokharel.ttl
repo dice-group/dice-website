@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:ExamplePerson a schema:Person ;
+dice:NehaPokharel a schema:Person ;
   schema:name "Neha Pokharel" ;
   schema:namePrefix "" ;
   schema:role dice:StudentResearcher ;
@@ -10,18 +10,6 @@ dice:ExamplePerson a schema:Person ;
   schema:email <mailto:neha2022@mail.uni-paderborn.de> ;
   #schema:chat "@username:chat.dice-research.org" ;
   #schema:office "TP6.3.106 (your office)" ;
-  schema:photo "yourphoto.jpg" ;
-  schema:project dice:Gerbil ;
-  #schema:publicationTag "roeder" ;
-  schema:content """ ; 
-# Content from RDF
-
-## Stuff
-
-This is a test person that has all properties.
-
-## Test
-
-This is a test markdown that can include anything.
-  """ .
- # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
+  schema:photo "neha.jpg" ;
+  schema:project dice:GERBIL ;
+  schema:content """""" .
