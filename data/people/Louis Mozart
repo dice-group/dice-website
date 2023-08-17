@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LouisMozartKAMDEM a schema:Person ;
+  schema:name "KAMDEM Louis Mozart" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-1522-5860-322> ;
+  schema:fax <tel:> ;
+  schema:project dice:KnowGraphs ;
+  schema:email <mailto:louis888@mail.uni-paderborn.de> ;
+  schema:chat "@louis888:chat.dice-research.org" ;
+  schema:office "TP6.3.308" ;
+  schema:photo "louis.jpg" ;
+  schema:project dice:KnowGraphs, dice:embeddings.cc ;
+  schema:content """""" .
