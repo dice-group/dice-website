@@ -7,5 +7,4 @@ dice:FelixConrads a schema:Person ;
   schema:role dice:Alumni ;
   schema:email <mailto:felix.conrads@uni-paderborn.de> ;
   schema:chat "@fconrads:chat.dice-research.org" ;
-  schema:photo "conrads.jpg" ;
   schema:content """""" .
