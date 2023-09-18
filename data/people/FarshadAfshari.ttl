@@ -9,11 +9,15 @@ dice:FarshadAfshari a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:farshad.afshari@uni-paderborn.de> ;
   schema:chat "@afshari:chat.dice-research.org" ;
-  schema:office "TP6.3.109" ;
+  schema:office "TP6.3.108" ;
   schema:photo "afshari.jpg" ;
-  schema:project dice:FROCKG, dice:NEBULA;
+  schema:project dice:FROCKG, dice:NEBULA, dice:ENEXA;
   schema:content """
   <p>
   <b>Linkedin </b><a href="https://www.linkedin.com/in/afsharifarshad/"> &ensp;Farshad Afshari </a>
+  </p>
+  <hr/>
+  <p>
+  <b>Personal website </b><a href="https://farshadafshari.com/"> &ensp;Farshad Afshari website </a>
   </p>
   """ .
