@@ -7,7 +7,7 @@ dice:ReneSpeck a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
-  schema:email <mailto:rspeck@upb.de> ;
+  schema:email <mailto:rene.speck@uni-paderborn.de> ;
   schema:chat "@rspeck:chat.dice-research.org" ;
   schema:office "TP6.3.102" ;
   schema:photo "speck.jpg" ;
