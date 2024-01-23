@@ -4,12 +4,12 @@
 dice:DenisKuchelev a schema:Person ;
   schema:name "Denis Kuchelev" ;
   schema:namePrefix "" ;
-  schema:role dice:Infrastructure ;
+  schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:kuchelev+diceweb@campus.uni-paderborn.de> ;
   schema:chat "@kuchelev:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "" ;
-  schema:project dice:HOBBIT, dice:ORCA ;
+  schema:project dice:HOBBIT, dice:ORCA, dice:SAIL ;
   schema:content """""" .
