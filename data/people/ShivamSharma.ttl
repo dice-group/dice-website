@@ -7,7 +7,6 @@ dice:ShivamSharma a schema:Person ;
   schema:phone <tel:+49-159-06-423973> ;
   schema:email <mailto:sshivam@mail.uni-paderborn.de> ;
   schema:chat "@sshivam:chat.dice-research.org" ;
-  schema:project dice:WHALE;
   schema:photo "shivamsharma.jpg" 
   schema:content """
   <p>
