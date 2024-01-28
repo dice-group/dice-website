@@ -3,4 +3,4 @@
 
 dice:StudentResearcher a schema:Role ;
   schema:priority 8;
-  schema:name "Student Researchers" .
+  schema:name "Student Assistants" .
