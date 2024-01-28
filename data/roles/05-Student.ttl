@@ -3,4 +3,4 @@
 
 dice:ResearchStaff a schema:Role ;
   schema:priority 5;
-  schema:name "Research Staff - PhD Students" .
+  schema:name "Research Staff" .
