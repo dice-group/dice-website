@@ -3,4 +3,4 @@
 
 dice:Infrastructure a schema:Role ;
   schema:priority 6;
-  schema:name "Infrastructure" .
+  schema:name "Infrastructure and Development" .
