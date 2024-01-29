@@ -12,8 +12,7 @@ dice:CaglarDemir a schema:Person ;
   schema:office "TP6.3.102" ;
   schema:photo "demir.jpg" ;
   schema:project dice:RAKI, dice:DAIKIRI, dice:ENEXA, dice:LEMUR, dice:SAIL, dice:embeddings.cc,  dice:OPAL;
-  schema:content """""" .
-
+  schema:content """
 
 ## Thesis Supervision
 
@@ -34,3 +33,4 @@ Topics of interest:
 
 ## Reviewing
 ECML 2023, IJCAI 2024
+""" .
