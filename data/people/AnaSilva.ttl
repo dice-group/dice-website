@@ -12,5 +12,5 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:office "" ;
   schema:photo "silva.jpg" ;
   schema:publicationTag "amsilva" ;
-  schema:project dice:Ingrid, dice:NEBULA, dice:ClimatebOWL;
+  schema:project dice:Ingrid, dice:NEBULA, dice:ClimatebOWL, dice:SAIL;
   schema:content """""" .
