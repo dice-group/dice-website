@@ -11,26 +11,29 @@ dice:CaglarDemir a schema:Person ;
   schema:chat "@cdemir:chat.dice-research.org" ;
   schema:office "TP6.3.102" ;
   schema:photo "demir.jpg" ;
-  schema:project dice:RAKI, dice:DAIKIRI, dice:ENEXA, dice:LEMUR, dice:SAIL, dice:embeddings.cc,  dice:OPAL;
+  schema:project dice:ENEXA, dice:LEMUR, dice:SAIL, dice:embeddings.cc,  dice:RAKI, dice:DAIKIRI, dice:OPAL;
   schema:content """
+
+## Research Interest
+
+My research interest centers around developing scalable algorithms for learning and reasoning on knowledge graphs.
+For more, please refer to
+* <a href="https://scholar.google.com/citations?user=PAZsbbEAAAAJ&hl=en">Google Scholar Profile</a>
+* <a href="https://github.com/Demirrr">Github Profile</a>
+
+
+## Software Frameworks
+
+* <a href="https://github.com/dice-group/dice-embeddings">DICE Embeddings: Hardware-agnostic Framework for Large-scale Knowledge Graph Embeddings</a>
+* <a href="https://github.com/dice-group/Ontolearns">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
+
+
+## PC Member
+ECML 2023, IJCAI 2024
 
 ## Thesis Supervision
 
 #### 2023
 * Answering Complex Queries with Negations in Incomplete Knowledge Graph
 
-## Research Interest
-
-My research interest centers around developing scalable algorithms for learning and reasoning on knowledge graphs.
-
-Topics of interest:
-· Machine Learning
-· Knowledge Graph Embeddings
-· Description Logic Concept Learning
-· Knowledge Graphs
-· Semantic Web
-
-
-## Reviewing
-ECML 2023, IJCAI 2024
 """ .
