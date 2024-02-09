@@ -1,0 +1,18 @@
+---
+date: '2024-02-09'
+title: 'An Embedding Space for path-based Fact Checking'
+type: 'Master'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+Validating facts before integrating them into a knowledge graph and running complex machine learning algorithms on it is an important task to ensure that the results of the used algorithms remain reliable. To this end, various Fact Checking algorithms have been created. Some of these algorithms make use of paths within a knowledge graph, as depicted below:
+
+<Image filename="Facts_Obama_complete.png" />
+
+One of these path-based steps is to identify paths that support or refute a given fact. Unfortunately, this search is quite expensive for longer paths. Hence, Da Silva et al. introduced ESTHER, an approach that searches within an embedding space for these paths. The goal of this thesis is to go beyond this idea and implement a knowledge graph embedding algorithm that is specifically designed for fact checking. The designed algorithm should be implemented within the DICE embeddings framework.
+
+### Links
+* ESTHER [publication](https://papers.dice-research.org/2021/ISWC2021_Esther/ESTHER_public.pdf) and [code](https://github.com/dice-group/esther)
+* [Embeddings framework](https://github.com/dice-group/dice-embeddings)
+

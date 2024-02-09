@@ -1,0 +1,17 @@
+---
+date: '2024-02-09'
+title: 'SameAs Retrieval Service'
+type: 'Master'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+When working with knowledge graphs, several IRIs can point to the same real-world entity. While it is a simple insight, it still creates a lot of challenges in today's semantic web based applications. A solution can be to gather owl:sameAs links to identify IRIs that point to the same real-world entity, e.g., as [GERBIL](https://www.semantic-web-journal.net/system/files/swj1671.pdf) does it (see "URI set retrieval" in 4.2.2). However, this can lead to a lot of work that has to be done locally by a single machine. What we propose instead is to develop a web service that takes a given IRI and provides a set of IRIs that point all to the same real-world entity as the given IRI.
+
+There has been works before that went into a similar direction. [SameAs.cc](https://sameas.cc/) was an effort to provide such a service. However, it comes with several drawbacks:
+1. It provides sets of IRIs from which it is known that they are faulty (i.e., IRIs with different meanings are within the same set).
+2. It relies on data from 2018.
+3. It does not provide provenance for the provided set.
+
+The goal of this thesis is to target all these drawbacks and provide a service that can be used by other knowledge-graph-based applications, easily.
+
