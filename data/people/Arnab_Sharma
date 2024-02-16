@@ -9,10 +9,10 @@ dice:ExamplePerson a schema:Person ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:arnab.sharma@upb.de> ;
   schema:chat "@asharma:chat.dice-research.org" ;
-  schema:office "TP6.3.109 (your office)" ;
-  schema:photo "yourphoto.jpg" ;
-  schema:publicationTag "asharma" ;
-  schema:content """
+  schema:office "TP6.3.109" ;
+ 
+  
+  
 # Content from RDF
 
 ## Stuff
