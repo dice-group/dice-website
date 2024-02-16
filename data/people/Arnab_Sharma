@@ -12,15 +12,3 @@ dice:ExamplePerson a schema:Person ;
   schema:office "TP6.3.109" ;
  
   
-  
-# Content from RDF
-
-## Stuff
-
-This is a test person that has all properties.
-
-## Test
-
-This is a test markdown that can include anything.
-  """ .
- # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
