@@ -2,16 +2,16 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ExamplePerson a schema:Person ;
-  schema:name "Your Name" ;
+  schema:name "Arnab Sharma" ;
   schema:namePrefix "Dr." ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-525-16-03342> ;
+  schema:phone <tel:+49-525-16-05186> ;
   schema:fax <tel:+49-525-16-03436> ;
-  schema:email <mailto:your.email@upb.de> ;
-  schema:chat "@username:chat.dice-research.org" ;
-  schema:office "TP6.3.106 (your office)" ;
+  schema:email <mailto:arnab.sharma@upb.de> ;
+  schema:chat "@asharma:chat.dice-research.org" ;
+  schema:office "TP6.3.109 (your office)" ;
   schema:photo "yourphoto.jpg" ;
-  schema:publicationTag "roeder" ;
+  schema:publicationTag "asharma" ;
   schema:content """
 # Content from RDF
 
