@@ -1,0 +1,28 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:CaglarDemir a schema:Person ;
+  schema:name "Arnab Sharma" ;
+  schema:namePrefix "Dr. rer. nat." ;
+  schema:role dice:SeniorResearcher ;
+  schema:phone <tel:+49-525-16-05186> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:arnab.sharma@uni-paderborn.de> ;
+  schema:chat "@asharma:chat.dice-research.org" ;
+  schema:office "TP6.3.109" ;
+  schema:project dice:SAIL;
+  schema:content """
+
+## Research Interest
+
+My research interests can be broadly categorized as,
+* Robustness in Graph Machine Learning
+* Explainable Machine Learning
+* Inductive Knowledge Graph Embedding
+
+
+
+
+
+
+""" .
