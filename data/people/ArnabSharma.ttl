@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:CaglarDemir a schema:Person ;
+dice:ArnabSharma a schema:Person ;
   schema:name "Arnab Sharma" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:role dice:SeniorResearcher ;
@@ -16,10 +16,11 @@ dice:CaglarDemir a schema:Person ;
 
 ## Research Interest
 
-My research interests can be broadly categorized as,
-* Robustness in Graph Machine Learning
-* Explainable Machine Learning
-* Inductive Knowledge Graph Embedding
+My research interests include but are not limited to,
+* Robustness in graph machine learning
+* Explainable machine learning
+* Inductive knowledge graph embedding
+* Security in graph machine learning 
 
 
 
