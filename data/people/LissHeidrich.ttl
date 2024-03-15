@@ -7,7 +7,7 @@ dice:LissHeidrich a schema:Person ;
   schema:role dice:Infrastructure ;
 #  schema:phone <> ;
 #  schema:fax <> ;
-  schema:email <mailto:hliss@campus.uni-paderborn.de> ;
+  schema:email <mailto:liss.heidrich@uni-paderborn.de> ;
   schema:chat "@hbrian:chat.dice-research.org" ;
 #  schema:office "" ;
 #  schema:photo "" ;
