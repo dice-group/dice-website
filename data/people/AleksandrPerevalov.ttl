@@ -5,11 +5,11 @@ dice:AleksandrPerevalov a schema:Person ;
   schema:name "Aleksandr Perevalov" ;
   schema:namePrefix "" ;
   schema:role dice:ExternalStudent ;
-  schema:phone <tel:+49-0-3496-67-3126> ;
+  # schema:phone <> ;
   schema:fax <tel:> ;
   schema:email <mailto:alpe@mail.uni-paderborn.de> ;
   schema:chat "" ;
-  schema:office "Raum 23-113, Lohmannstraße 23, D-06366 Köthen" ;
+  schema:office "ZU 530, Gustav-Freytag-Straße 42a, 04277 Leipzig" ;
   schema:photo "perevalov.jpg" ;
   # schema:project <>;
   schema:content """""" .
