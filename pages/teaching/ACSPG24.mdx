@@ -1,0 +1,37 @@
+---
+date: '2024-03-07'
+title: 'Towards more intelligent client-server architecture for SPARQL query processing'
+type: 'Project Group'
+year: '2024'
+term: 'summer'
+kind: 'Master'
+language: 'en'
+---
+
+## Towards more intelligent client-server architecture for SPARQL query processing
+
+In Smart-KG (SKG)~[1], the author proposes a client-server architecture for SPARQL query processing. Given the RDF dataset, the server first creates partitions of the given dataset based, which can be shipped to the client during the SPARQL query execution.  These partitions are compressed which are decompressed by the clients during the query execution. The  partitions are created based on the concepts of Characteristic Sets~[2,3], that exploits the structure of RDF graphs to group entities described with the same sets of predicates. Furthermore, the client can also receive uncompressed results from the server using the triple pattern fragments (TPF)~[4] interfaces. Once all the required results are shipped from the server , the client performs a local join to generate the final result of the given SPARQL query. The combination of server and client to distribute the workload has increased the efficiency of the query processing task. 
+Wise-KG (WKG)~[5] (an improved  version of SKG), on the other hand, leverages the characteristics of star-shaped sub queries and the information about the current client and server resources, to estimate the cost of processing each star-shaped subquery on the client (using SKG) or on the server (using Star Pattern Fragments (SPF)~[6]), – choosing the most efficient execution strategy dynamically. That means, unlike SKG,  servers can also perform joins of the star triple patterns. However, this improvement only deals with star-shaped joins. There exists other types of joins as well, e.g. path joins, sink joins, or hybrid joins (please refer to [7] for the details of these joins). 
+In this project, we aim to go one step forward: In WKG, the path joins are always executed on the client side, and we want to propose a cost model that decides whether the given path join should be executed on the client or on the server. The cost model will basically calculate the time required to perform the given path join both on server and one the client. The low cost option will be selected. This approach would further refine the cost model, as not only the star queries (s-s join) but the path queries (s-o join) will also be considered in the decision process. All the experiments conducted in WKG will be repeated to compare the runtime performance of the proposed model w.r.t WKG. 
+
+
+## Literature 
+* 1.Smart-KG: https://dl.acm.org/doi/abs/10.1145/3366423.3380177
+* 2.Characteristics sets: https://openproceedings.org/2014/conf/edbt/Gubichev014.pdf, https://ieeexplore.ieee.org/abstract/document/5767868
+* 3.Triple Pattern Fragments Interface: https://www.sciencedirect.com/science/article/pii/S1570826816000214
+* 4.Wise KG: https://dl.acm.org/doi/abs/10.1145/3442381.3449911
+* 5.Star Pattern Fragmemtns: https://arxiv.org/abs/2002.09172
+* 6.HibisCuS: https://svn.aksw.org/papers/2014/HiBISCuS_ESWC/public.pdfents (SPF)
+
+
+
+#### Question & Answer Session
+
+Q: Is there a seminar connected to this PG?<br/>
+A: No.
+
+Q: What are the prerequisites for this PG?<br/>
+A: You should be able to program in Java. Knowledge about RDF, knowledge graphs, SPARQL
+
+In case you have further questions, feel free to contact [Muhammad Saleem](https://dice-research.org/MuhammadSaleem).
+
