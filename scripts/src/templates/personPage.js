@@ -1,5 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
+import Helmet from 'react-helmet';
 import ReactMarkdown from '../components/markdown';
 import BackButton from '../components/backButton';
 import Image from '../components/image';
@@ -30,6 +31,13 @@ export default function PersonTemplate({ data: { rdf } }) {
   return (
     <Layout>
       <SEO title={`${namePrefix} ${name}`} />
+      <Helmet>
+        <link
+          rel="alternate"
+          type="application/x-wiki"
+          href={`https://github.com/dice-group/dice-website/edit/develop/data/people${path}.ttl`}
+        />
+      </Helmet>
       <div className="content person-page">
         <BackButton />
 
