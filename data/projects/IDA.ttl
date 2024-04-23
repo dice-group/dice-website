@@ -13,7 +13,7 @@ dice:IDA a dice:ProductionReadyProject ;
 
 <h2>Project Goal</h2>
 <p>The goal of this project is to enable a user to analyse their own data with the support of an intelligent chatbot. This chatbot will
-communicate with the user using natural language; 
+communicate with the user using natural language;
 execute data analysis algorithms and generate data visualizations based on the user's commands (e.g., clustering algorithms, bar charts);
 support the user regarding the configuration of the algorithms;
 suggest algorithms or configurations based on the data;
@@ -21,7 +21,7 @@ be extendable using a modular design (e.g., the addition of new analysis or visu
 and offer the possibility to be trained and deployed with different languages.</p>
 
 <h2>Research questions</h2>
-<p>To reach the project's goals, several research questions have to be tackled. Firstly, the given data has to be analyzed and transformed into a form which enables the chatbot to understand its structure. This is necessary to be able to communicate with the user, e.g., to ask which data should be part of a visualisation or a clustering. 
+<p>To reach the project's goals, several research questions have to be tackled. Firstly, the given data has to be analyzed and transformed into a form which enables the chatbot to understand its structure. This is necessary to be able to communicate with the user, e.g., to ask which data should be part of a visualisation or a clustering.
 Secondly, existing solutions for chatbots have to be analyzed to which extent they fit to the special scenario in which the goal of the user is to generate a certain result like a visualisation or a certain clustering. Based on the analysis result, an existing bot is chosen and adapted to be used for the prototypical implementation.
 Thirdly, the metadata of the available algorithms have to be modeled in a way to enable the chatbot to 1) ask the user for certain parameters and 2) suggest an algorithm or a configuration for a given data set.</p>
 <h2>Novelty</h2>
@@ -35,7 +35,7 @@ Thirdly, the metadata of the available algorithms have to be modeled in a way to
   schema:startDate "2020-06-01"^^xsd:date ;
   schema:maintainer dice:NikitSrivastava ;
   # schema:developer dice:NikitSrivastava, dice:NandeeshPatel, dice:MaqboolKhan, dice:SourabhPoddar, dice:SpoorthiMadhavan ;
-  schema:homepage <https://softwarecampus.de/en/project/ida-intelligent-data-science-chatbot/> ;
+  schema:homepage <https://softwarecampus.de/en/projekt/ida-intelligent-data-science-chatbot//> ;
   schema:name "IDA" ;
   schema:fundingProgram "Software Campus";
   schema:logo "ida_logo_t3.svg" ;
