@@ -4,7 +4,7 @@
 dice:LeonieSieger a schema:Person ;
   schema:name "Leonie N. Sieger" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
 #  schema:phone <> ;
 #  schema:fax <> ;
   schema:email <mailto:leonie.nora.sieger@uni-paderborn.de> ;
