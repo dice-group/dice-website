@@ -9,7 +9,7 @@ dice:IDA_Demo a schema:Demo ;
 IDA has been developed as part of the Software Campus program at Paderborn University (https://softwarecampus.de/en/project/ida-intelligent-data-science-chatbot/). The project started in June, 2020 and concluded at the end of July, 2021.""" ;
   schema:logo "ida_logo_oh.svg" ;
   schema:screenshot "ida_screenshot.png" ;
-  schema:homepage <http://ida.cs.upb.de/> ;
+  # schema:homepage <http://ida.cs.upb.de/> ;
   schema:sourceCode <https://github.com/dice-group/IDA> ;
   schema:maintainer dice:NikitSrivastava ; # Current demo maintainer
   schema:developer dice:NikitSrivastava, dice:NandeeshPatel, dice:MaqboolKhan, dice:SourabhPoddar, dice:SpoorthiMadhavan . # List of all people working on Demo

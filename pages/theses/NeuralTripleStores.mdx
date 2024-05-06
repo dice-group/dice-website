@@ -1,0 +1,27 @@
+---
+date: '2024-04-23'
+title: 'Neural Triple Stores'
+type: 'Bachelor'
+supervisor: dice:CaglarDemir
+contact: dice:CaglarDemir
+---
+
+# Topic 
+Most knowledge graphs are incomplete.
+Inference of missing knowledge during the query time is important in many applications.
+The student will focus on pretrained neural networks to answer queries over incomplete knowledge graphs.
+To this end, the student will closely work on [ontolearn](https://github.com/dice-group/Ontolearn) and [dice-embeddings](https://github.com/dice-group/dice-embeddings).
+
+A working simple example:
+```python
+Graph={("Scientist","subclass","Person"),("a","type","Scientist")}
+tp=Triplestore(G)
+ntp=NeuralTriplestore(G)
+assert len(tp.query(("?x","type","Person")))==0
+assert ntp.query(("?x","type","Person"))=={"a"}
+```
+
+
+#### Question & Answer Session
+
+In case you have further questions, feel free to contact [Caglar Demir](https://dice-research.org/CaglarDemir).
