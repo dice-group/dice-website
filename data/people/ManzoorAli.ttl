@@ -12,4 +12,25 @@ dice:ManzoorAli a schema:Person ;
   schema:office "TP6.3.305" ;
   schema:project dice:KIAM;
   schema:photo "mali.jpg" ;
-  schema:content """""" .
+  schema:content """
+
+## Research Interests
+
+My research is mainly in the following areas:
+
+* Natural Language Processing
+* Semantic Web
+* Mobile Computing
+* Generative AI
+
+Feel free to write to me if you are interested in a collaboration in:
+
+* Relation Extraction
+* Information Extraction
+* Information Retrieval
+* Knowledge Graph Construction
+* Knowledge Graph Completion
+* Large Language Models (LLMs): Fine-tuning, Chain of Thoughts, In-context learning, etc.
+
+
+""" .
