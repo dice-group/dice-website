@@ -22,7 +22,7 @@ Monday, 14:00 - 16:00</br>
 
 ## Thesis Supervision
 
-I supervised several bachelor and master theses (sorted by the year of submission).
+I supervised/supported several bachelor and master theses (sorted by the year of submission).
 
 #### 2018
 * FactCheck – An automatic approach to validate facts in a knowledge base
@@ -48,11 +48,18 @@ I supervised several bachelor and master theses (sorted by the year of submissio
 * Knowledge Graph Embedding Model Ensemble
 * Sedenion-valued Embeddings in Knowledge Graph Fact Validation
 
+#### 2023
+* Algorithm Selection Applied to Fact Validation Ensemble Learning
+
+#### 2024
+* Simulate RDF Graphs: A Simplex Approach
+* Approximate Nearest Neighbour Search in Knowledge Graph Embedding Spaces
+
 ## Research Interest
 
 I am mainly interested in:
 
-* Benchmarking Big Linked Data Systems
+* Benchmarking Big Linked Data Systems and automatically analyze the results
 * Analyzing Linked Data—especially with respect to its veracity
 * Crawling the Data Web
 
@@ -67,4 +74,6 @@ My little free time seems to be partly consumed by reviewing, e.g.,
 * <a href="http://www.semantic-web-journal.net">Semantic Web Journal</a> (1394, <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned">1604</a>, <a href="http://www.semantic-web-journal.net/content/topic-profiling-benchmarks-issues-and-lessons-learned-0">1809</a>, <a href="http://www.semantic-web-journal.net/content/characterizing-rdf-graphs-through-graph-based-measures-framework-and-assessment">2446</a>, <a href="http://www.semantic-web-journal.net/content/characterizing-rdf-graphs-through-graph-based-measures-framework-and-assessment-0">2529</a>, <a href="http://www.semantic-web-journal.net/content/prove-pipeline-automated-provenance-verification-knowledge-graphs-against-textual-sources">3296</a>, <a href="https://www.semantic-web-journal.net/content/prove-pipeline-automated-provenance-verification-knowledge-graphs-against-textual-sources-0">3467</a>)
 * <a href="https://ecis2020.ma/">European Conference on Information Systems (ECIS 2020)</a>
 * <a href="http://iswc2020.semanticweb.org/">International Semantic Web Conference (ISWC 2020)</a>
+* <a href="https://sites.google.com/view/quweda2023/home">QuWeDa 2023</a>
+* <a href="https://i3mainz.github.io/GeoLD2024/">GeoLD 2024</a>
 """ .
