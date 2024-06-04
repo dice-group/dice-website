@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:BBDC2023 a schema:Award ;
+  schema:url <https://www.kaggle.com/competitions/open-problems-single-cell-perturbations/leaderboard> ;
+  schema:name "1st Place Winner in Open Problems Single Cell Perturbations Challenge at NIPS 2023" ;
+  schema:content "1st out of 1,097 teams in Open Problems Single Cell Perturbations Challenge 2023. The competition was part of NIPS 2023 and hosted on Kaggle. Overall, there were 6,641 registrants with 1,318 active participants. The team N. Jean Kouagou won the first place with a gold medal and presented his solution at NIPS 2023." ;
+  schema:year "2023";
+  schema:awardee dice:JeanNDahKouagou .
