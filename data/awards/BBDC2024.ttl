@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:BBDC2024 a schema:Award ;
+  schema:url <https://bbdc.csl.uni-bremen.de> ;
+  schema:name "Top-5 team in the Bremen Big Data Challenge 2024" ;
+  schema:content "Top-5 team out of 18 teams--Professional Track in the Bremen Big Data Challenge 2024." ;
+  schema:year "2024";
+  schema:awardee dice:louismozartKAMDEM .
