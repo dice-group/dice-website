@@ -11,5 +11,5 @@ dice:MohamedAhmedSherif a schema:Person ;
   schema:chat "@msherif:chat.dice-research.org" ;
   schema:office "TP6.3.306" ;
   schema:photo "sherif.jpg" ;
-  schema:project dice:SLIPO, dice:DIESEL, dice:GEISER, dice:HOBBIT, dice:SAKE, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:Ingrid, dice:ClimatebOWL ;
+  schema:project dice:SLIPO, dice:DIESEL, dice:GEISER, dice:HOBBIT, dice:SAKE, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:Ingrid, dice:ClimatebOWL, dice:WHALE ;
   schema:content """""" .

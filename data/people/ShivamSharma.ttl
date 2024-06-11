@@ -12,4 +12,5 @@ dice:ShivamSharma a schema:Person ;
   <p>
   <b>Linkedin </b><a href="https://www.linkedin.com/in/shivamsharma95/"> &ensp;Shivam Sharma </a>
   </p>
-  """ .
+  """ ;
+  schema:project dice:WHALE .
