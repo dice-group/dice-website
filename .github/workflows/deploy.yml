@@ -104,3 +104,5 @@ jobs:
           host: ${{ secrets.FTP_HOST }}
           src: data.ttl
           dest: public/website/data
+          secure: true
+          rejectUnauthorized: false
