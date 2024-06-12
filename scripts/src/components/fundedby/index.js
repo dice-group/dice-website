@@ -40,7 +40,7 @@ const fundedBy = [
   {
     url: 'http://ec.europa.eu/',
     image: ['horizon2020.png'],
-    text: ['Horizon2020'],
+    text: ['Horizon2020', 'Horizon 2020'],
   },
   {
     url: 'http://www.dfg.de/',

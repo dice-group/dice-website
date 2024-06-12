@@ -1,0 +1,26 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:WHALE a dice:FundedProject ;
+  schema:name "WHALE" ;
+  schema:tagline "Web-Scale Hybrid Explainable Machine Learning" ;
+  schema:status "active" ; 
+  schema:content 
+  """
+  WHALE (Web-Scale Hybrid Explainable Machine Learning) aims at developing scalable, transparent, and explainable AI systems for web-scale knowledge graphs. Building on advanced machine learning and semantic web technologies, WHALE focuses on enhancing the explainability of AI through novel class expression learning (CEL) techniques that combine traditional and cutting-edge methodologies.
+
+  Recognizing the challenges posed by the vast size and complexity of web data, WHALE employs hybrid machine learning approaches that integrate embeddings and tensor representations to process and analyze massive datasets efficiently. The project aims to improve the speed and scalability of AI models, making them more practical for real-world applications while maintaining rigorous standards of transparency and interpretability.
+
+  WHALE's innovations are set to advance the field of explainable AI significantly, providing tools and frameworks that enhance user trust and understanding, crucial for the ethical development of AI technologies. The project not only contributes to the academic and research community but also has practical implications across various sectors reliant on large-scale data analytics.
+  """ ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:endDate "2027-09-30"^^xsd:date ;
+  schema:startDate "2023-10-01"^^xsd:date ;
+  # schema:logo "" ; # NO LOGO YET
+  # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list DISCUSS WITH AXEL
+  schema:publicationTag "whale" ; # tag used for publications list on project page
+  schema:sourceCode <https://github.com/dice/WHALE> ;
+  schema:fundingProgram "This project is funded under the Lamarr Fellow Network programme by the Ministry of Culture and Science of North Rhine-Westphalia (MKW NRW, LFN 1-04)." .
