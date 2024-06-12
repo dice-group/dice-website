@@ -11,3 +11,19 @@ dice:FranziskaSchloots a schema:Person ;
   schema:chat "@fms:chat.dice-research.org" ;
   schema:photo "schloots.png" ;
   schema:office "TP6.3.309" .
+  schema:publicationTag "schloots" ;
+  schema:content """
+
+##Research Interests
+*Self-tracking and wearable devices
+*Quantification
+*empirical media research and methods
+*Video game culture
+
+##Memberships
+*GfM - Gesellschaft für Medienwissenschaft
+*NECS - European Network for Cinema and Media Studies
+
+""" .
+
+
