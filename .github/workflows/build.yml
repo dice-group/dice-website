@@ -24,3 +24,43 @@ jobs:
       - name: build
         working-directory: ./scripts
         run: npm run build
+  uploadData:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: master
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: configure DNS server
+        run: |
+          sudo mkdir /usr/lib/systemd/resolved.conf.d
+          echo "[Resolve]" > resolved.conf
+          echo "DNS=8.8.8.8" >> resolved.conf
+          sudo mv resolved.conf /usr/lib/systemd/resolved.conf.d/resolved.conf
+          sudo systemctl daemon-reload
+          sudo systemctl restart systemd-networkd
+          sudo systemctl restart systemd-resolved
+      - name: install and lint
+        working-directory: ./scripts
+        run: |
+          npm install
+          npm run lint
+      - name: update papers
+        working-directory: ./scripts
+        run: |
+          rm ../data/**/_Example.ttl
+          npm run papers
+      - name: collect RDF data
+        run: cat `find . -name "*.ttl" | grep -v "_Example.ttl"` > data.ttl
+      - name: upload to FTP
+        uses: tomasbkk/action-ftp-upload@v1.2
+        with:
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          host: ${{ secrets.FTP_HOST }}
+          src: data.ttl
+          dest: public/website/data
