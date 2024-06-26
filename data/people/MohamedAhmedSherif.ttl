@@ -16,7 +16,7 @@ dice:MohamedAhmedSherif a schema:Person ;
 
 ## Speaking Hours
 Tuesday, 11:00 - 13:00</br>
-Always send an email to schedule an appointment before coming to the office. Without an appointment, I may not have time to meet with you or may not be in the office, even during office hours.
+<p><b>Always</b> send an email to schedule an appointment <b>before</b> coming to the office. Without an appointment, I may not have time to meet with you or may not be in the office, even during office hours.</p>
 
 ## Thesis Supervision
 
@@ -37,6 +37,8 @@ I supervised/supported several bachelor, master and doctoral theses (sorted by t
 
 #### 2024
 * Geospatial Link Discovery With Human In The Loop (PhD thesis)
+
+## Research Interest
 
 I am mainly interested in:
 
