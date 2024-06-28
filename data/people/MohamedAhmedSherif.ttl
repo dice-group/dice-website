@@ -12,4 +12,46 @@ dice:MohamedAhmedSherif a schema:Person ;
   schema:office "TP6.3.306" ;
   schema:photo "sherif.jpg" ;
   schema:project dice:SLIPO, dice:DIESEL, dice:GEISER, dice:HOBBIT, dice:SAKE, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:Ingrid, dice:ClimatebOWL, dice:WHALE ;
-  schema:content """""" .
+  schema:content """
+
+## Speaking Hours
+Tuesday, 11:00 - 13:00</br>
+<p><b>Always</b> send an email to schedule an appointment <b>before</b> coming to the office. Without an appointment, I may not have time to meet with you or may not be in the office, even during office hours.</p>
+
+## Thesis Supervision
+
+I supervised/supported several bachelor, master and doctoral theses (sorted by the year of submission).
+
+#### 2019
+* Learning Arbitrary RDF Dataset Enrichment Graphs Pre- & Postcondition Broadcasting (Master thesis)
+
+#### 2021
+* OntoConnect: Domain-Agnostic Ontology Alignment using Neural Networks (PhD thesis)
+
+#### 2022
+* Reinforced Active Learning for Link Discovery (Msc thesis)
+* Link Discovery over geo RDF data: Content similarity approach (Bachelor thesis)
+
+#### 2023
+* Leveraging Social Media in Disaster Situations (PhD thesis)
+
+#### 2024
+* Geospatial Link Discovery With Human In The Loop (PhD thesis)
+
+## Research Interest
+
+I am mainly interested in:
+
+* Data engineering, knowledge graph construction & ontology building
+* Knowledge graph integration using machine learning & large language models  
+* Novel data integration approaches for supporting  NLP tasks such as entity summarization & keyphrase extraction
+* Large language model  for supporting data integration tasks and vice versa
+
+
+## Reviewing
+My limited free time is partly consumed by tasks such as reviewing, for instance,”
+
+* <a href="https://www.sciencedirect.com/">Journal of web semantics</a>
+* <a href="https://www.semantic-web-journal.net">Semantic Web Journal</a>
+* <a href="https://i3mainz.github.io/GeoLD2024/">GeoLD 2024</a>
+""" .
