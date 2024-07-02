@@ -51,7 +51,6 @@ jobs:
         env:
           EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
   uploadData:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
