@@ -11,4 +11,16 @@ dice:AsepFajarFirmansyah a schema:Person ;
   schema:chat "@asepff:chat.dice-research.org" ;
   schema:office "TP6.3.102" ;
   schema:photo "firmansyah.jpg" ;
-  schema:content """""" .
+  schema:content """
+
+## Research Interests
+
+My primary focus is on Knowledge Graph Summarization, utilizing both extractive and abstractive approaches, as well as Natural Language Processing. Nevertheless, I am open to collaboration in the following areas:
+
+- Tasks related to knowledge graph construction, such as information extraction (named entity recognition, entity linking)
+- Knowledge graph reasoning tasks, including link prediction and missing triple prediction
+- Link specification and verbalization
+- Working with language models, such as few-shot learning and fine-tuning
+
+For more details regarding my work, you can also visit my GitHub at https://github.com/asep-fajar-firmansyah
+""" .
