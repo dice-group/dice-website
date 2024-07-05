@@ -1,0 +1,14 @@
+---
+date: '2019-04-24'
+title: 'Benchmarking Class Expression Learning'
+type: 'Bachelor'
+supervisor: dice:MichaelRoeder
+contact: dice:MichaelRoeder
+---
+
+Class Expression Learning is a challenging but important task. Given sets of positive and negative examples, the goal is to generate a class expression that includes as many positive examples as possible but excludes the negative examples. However, the search for such a class expression happens in an infinite space and, hence, can become quite challenging. A classic approach to this problem is a loop in which the currently best known expression is chosen and further refined using a refinement operator. The image below shows such a tree of refinements. The green nodes are the ones that are chosen for a further refinement.
+
+<Image filename='refinement-tree.png' style="height: 50%; width: 50%;"/>
+
+However, the benchmarks that exist to evaluate the performance of Class Expression Learning algorithms are quite small. The goal of this thesis is to come up with an approach to create a larger benchmark. This benchmark should use a knowledge graph of the size of Wikidata or DBpedia. positive and negative examples could be chosen based on Yago or Wikipedia categories.
+
