@@ -55,7 +55,7 @@ In this attack, the authors have added the adversarial text that needs to be add
 response. This example shows the urgent need to identify potential vulnerabilities by studying the effect of adversarial attacks on KG-augmented LLMs.
 
 
-### Prerequisites
+### Prerequisites for this thesis
 
 - Strong background in natural language processing methods (e.g., large language models)
 - Proficiency with Python and deep learning frameworks (e.g., PyTorch or TensorFlow)
