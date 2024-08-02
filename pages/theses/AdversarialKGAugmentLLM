@@ -1,0 +1,64 @@
+---
+date: '2024-07-02'
+title: 'Robustness Evaluation of KG-augmented LLMs under Adversarial Attacks'
+type: 'Master'
+supervisor: dice:ArnabSharma
+contact: dice:ArnabSharma
+---
+
+## Overview
+Large Language Models (LLMs) have demonstrated remarkable capabilities in understanding and generating human language. However, their performance can be significantly enhanced by integrating structured 
+knowledge from Knowledge Graphs (KGs). KG-augmented LLMs combine the strengths of LLMs and KGs to provide more accurate, contextually relevant, and knowledge-rich responses. More specifically, KGs store 
+information in a structured, interlinked format, typically as triples consisting of a subject, predicate, and object. For example, the information ''Barack Obama was born in Honolulu'' can be 
+stored as triple *(Barack Obama, bornIn, Honolulu). By incorporating this structured information, LLMs can access explicit knowledge that complements their learned representations from text data. 
+KG-augmented LLM can solve many problems that standalone LLM cannot. Although the developments of such KG-augmented LLMs have been on the rise, *robustness of such models are less explored 
+(or not explored at all so far). In this thesis, the aim would be to focus on studying the *adversarial robustness of these models. 
+
+Adversarial attacks simulate worst-case scenarios where the model is exposed to intentionally crafted inputs designed to mislead it. Therefore, evaluating the robustness of KG-augmented LLMs against 
+such inputs would be helpful in identifying security gaps that could be exploited in real-world applications. Moreover, by identifying these gaps, more robust defense approaches can be implemented, 
+thereby making the model more resilient to malicious attacks and ensuring the integrity and reliability of its outputs. Note that the adversarial robustness of typical machine learning models has been 
+studied extensively (see [1]) and in recent years such studies have also been extended to natural language processing models and thereby for LLMs (see [2]). However, in this context, KG-augmented 
+LLMs have not been studied so far.
+
+## Thesis Objective
+
+The primary objective of this thesis is to introduce malicious fact(s) or remove true fact(s) from the Knowledge Graph (KG) to influence the KG-augmented Large Language Model (LLM) to produce the 
+desired poisoned output. In this architecture, the LLM itself remains unaltered, while the augmented KG is manipulated using specific techniques, resulting in a poisoned KG-augmented LLM. This task 
+can be broadly divided into two main steps:
+
+### Tasks 
+
+### Step 1: Poisoning the Knowledge Graph
+
+To poison the KG, two approaches will be employed:
+
+1. **Fact-Checking Approach Using COPAAL**:
+    - Utilize the fact-checking tool [COPAAL](https://github.com/dice-group/COPAAL) to identify indicative paths of facts similar to the target fact.
+    - Leverage these paths to either establish or remove the target fact, effectively poisoning the KG.
+
+2. **Adversarial Attack Approach**:
+    - Apply existing adversarial attack techniques, such as those described in [3], to perform the addition or deletion of triples.
+    - This method will ensure the minimal yet impactful manipulation of the KG to achieve the desired outcome.
+
+### Step 2: Evaluating the Performance of Poisoned KG-Augmented LLMs
+
+Once the KG has been poisoned using the aforementioned techniques, the next step is to integrate this poisoned KG into existing KG-augmented LLMs (e.g., [KG-Rank](https://github.com/YangRui525/KG-Rank) 
+or [KG-RAG](https://github.com/BaranziniLab/KG_RAG)) and evaluate the performance degradation. By systematically analyzing the impact of the poisoned KG on the LLM's output, the study aims to 
+demonstrate how specific manipulations in the KG can lead to significant changes in the model's behavior, thereby providing insights into the vulnerabilities and robustness of KG-augmented LLMs.
+
+
+### Prerequisites
+
+- Strong background in natural language processing methods (e.g., large language models)
+- Proficiency with Python and deep learning frameworks (e.g., PyTorch or TensorFlow)
+- Knowledge of knowledge graphs
+
+
+
+### References and helpful material
+
+1. Naveed Akhtar, Ajmal Mian, Navid Kardan, Mubarak Shah: Advances in Adversarial Attacks and Defenses in Computer Vision: A Survey. IEEE Access 9: 155161-155196 (2021)
+2. Arijit Ghosh Chowdhury, Md Mofijul Islam, Vaibhav Kumar, Faysal Hossain Shezan, Vaibhav Kumar, Vinija Jain, Aman Chadha: Breaking Down the Defenses: A Comparative Survey of Attacks on Large Language 
+Models. CoRR abs/2403.04786 (2024)
+3. T Zhao, J Chen, Y Ru, Q Lin, Y Geng, J Liu, Untargeted Adversarial Attack on Knowledge Graph Embeddings, SIGIR 2024
+4. Andy Zou1, Zifan Wang, Nicholas Carlini, Milad Nasr3, J. Zico Kolter, Matt Fredrikson. Universal and Transferable Adversarial Attacks on Aligned Language Models
