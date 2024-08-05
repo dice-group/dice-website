@@ -36,13 +36,7 @@ can be broadly divided into two main steps:
 
 ### Step 1: Poisoning the Knowledge Graph
 
-To poison the KG, two approaches will be employed:
-
-1. **Fact-Checking Approach Using COPAAL**:
-    - Utilize the fact-checking tool [COPAAL](https://github.com/dice-group/COPAAL) to identify indicative paths of facts similar to the target fact.
-    - Leverage these paths to either establish or remove the target fact, effectively poisoning the KG.
-
-2. **Adversarial Attack Approach**:
+To poison the KG, the **Adversarial Attack Approach** will be employed which would:
     - Apply existing adversarial attack techniques, to perform the addition or deletion of triples.
     - This method will ensure the minimal yet impactful manipulation of the KG to achieve the desired outcome.
 
