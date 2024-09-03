@@ -1,0 +1,19 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AlbertKhomich a schema:Person ;
+  schema:name "Albert Khomich" ;
+  schema:namePrefix "" ;
+  schema:role dice:Infrastructure ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:akhomich@campus.uni-paderborn.de> ;
+  schema:chat "@akhomich:chat.dice-research.org" ;
+  schema:office "TP6.3.301" ;
+  schema:photo "albertkhomich.jpg" ; 
+  schema:content """
+  <p>
+  <b>Linkedin </b><a href="https://www.linkedin.com/in/albert-khomich-284034235/"> &ensp;Albert Khomich</a>
+  </p>
+  """ ;
+  schema:project dice:WHALE .
