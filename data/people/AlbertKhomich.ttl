@@ -9,7 +9,7 @@ dice:AlbertKhomich a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:akhomich@campus.uni-paderborn.de> ;
   schema:chat "@akhomich:chat.dice-research.org" ;
-  schema:office "TP6.3.301" ;
+  schema:office "" ;
   schema:photo "albertkhomich.jpg" ; 
   schema:content """
   <p>
