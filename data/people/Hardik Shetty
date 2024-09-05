@@ -1,0 +1,11 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:HardikShetty a schema:Person ;
+  schema:name "Hardik Shetty" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:shettysh@mail.uni-paderborn.de> ;
+  schema:chat "@shettysh:chat.dice-research.org" ;
+  schema:photo "HardikShetty.jpg" ;
+  schema:project dice:GERBIL ;
