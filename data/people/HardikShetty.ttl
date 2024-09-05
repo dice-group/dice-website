@@ -8,4 +8,4 @@ dice:HardikShetty a schema:Person ;
   schema:email <mailto:shettysh@mail.uni-paderborn.de> ;
   schema:chat "@shettysh:chat.dice-research.org" ;
   schema:photo "HardikShetty.jpg" ;
-  schema:project dice:GERBIL ;
+  schema:project dice:GERBIL .
