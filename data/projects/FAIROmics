@@ -1,0 +1,26 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:WHALE a dice:FundedProject ;
+  schema:name "FAIROmics" ;
+  schema:tagline "FAlRification of multiOmics data to link databases and create knowledge graphs" ;
+  schema:status "active" ; 
+  schema:content 
+  """
+  The FAIROmics innovative interdisciplinary research program aims to gather universities, research institutes and private companies to create knowledge graphs from omics data, linking them to food databases and extracting knowledge to design new healthy, safe, tasty fermented foods. The FAIROmics training programme aims at developing doctoral candidates’ skills at the interface between artificial intelligence, life sciences, humanities and social sciences.
+
+  The FAIROmics project is a joint doctorate (MSCA-DN-JD). Each doctoral candidate will be awarded a double degree at the end of their Ph.D. The joint supervision arrangements have been developed to enhance the cross-fertilisation between complementary methodologies inside and/or outside the research group recruiting the DC.
+  Expert researchers, renowned in their respective fields of expertise, from the academic and non-academic sectors, will work together to supervise the work of the different DCs and prepare them for a successful scientific career.
+  DCs will benefit from working in an international group with experts from over ten nations.
+  """ ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:endDate "2028-02-29"^^xsd:date ;
+  schema:startDate "2023-03-01"^^xsd:date ;
+  # schema:logo "" ; # NO LOGO YET
+  # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list DISCUSS WITH AXEL
+  schema:publicationTag "fairomics" ; # tag used for publications list on project page
+  schema:sourceCode <https://github.com/dice/FAIROmics> ;
+  schema:fundingProgram "This project has received funding from the European Union’s Horizon Europe research and innovation programme under the Marie Skłodowska-Curie grant agreement No 101120449." .
