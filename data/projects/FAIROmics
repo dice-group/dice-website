@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:WHALE a dice:FundedProject ;
+dice:FAIROmics a dice:FundedProject ;
   schema:name "FAIROmics" ;
   schema:tagline "FAlRification of multiOmics data to link databases and create knowledge graphs" ;
   schema:status "active" ; 
