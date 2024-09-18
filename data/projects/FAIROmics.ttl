@@ -6,7 +6,7 @@
 
 dice:FAIROmics a dice:FundedProject ;
   schema:name "FAIROmics" ;
-  schema:tagline "FAlRification of multiOmics data to link databases and create knowledge graphs" ;
+  schema:tagline "FAlRification of multiOmics data to link databases and create knowledge graphs for fermented foods" ;
   schema:status "active" ; 
   schema:content 
   """
