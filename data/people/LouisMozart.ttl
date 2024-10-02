@@ -13,15 +13,19 @@ dice:LouisMozartKAMDEM a schema:Person ;
   schema:photo "louis.jpg" ;
   schema:project dice:LEMUR ;
   schema:publicationTag "kamdem" ;
-  schema:content """""" .
+  schema:content """
+  <p>
+  My current research is about:
+
+  * Class expression learning with multiple representations
+  * Knowledge graph embedding 
+  * Neural instance retrieval 
+
+  For more detail, see my <a href="https://scholar.google.com/citations?user=IS0OrxIAAAAJ&hl=en">Google Scholar Profile</a>
+  </p>
+  """ .
 
 ## Research Interest
 
-My current research is about:
 
-* Class expression learning with multiple representations
-* Knowledge graph embedding 
-* Neural instance retrieval 
-
-For more detail, see my <a href="https://scholar.google.com/citations?user=IS0OrxIAAAAJ&hl=en">Google Scholar Profile</a>
 
