@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:LouisMozartKAMDEM a schema:Person ;
+dice:LouisMozartKamdemTeyou a schema:Person ;
   schema:name "Louis Mozart Kamdem Teyou" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
