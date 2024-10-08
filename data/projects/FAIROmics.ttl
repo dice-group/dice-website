@@ -19,7 +19,7 @@ dice:FAIROmics a dice:FundedProject ;
   schema:maintainer dice:MohamedAhmedSherif ;
   schema:endDate "2028-02-29"^^xsd:date ;
   schema:startDate "2023-03-01"^^xsd:date ;
-  # schema:logo "" ; # NO LOGO YET
+  schema:logo "FAIROmics_logo.png" ;
   # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list DISCUSS WITH AXEL
   schema:publicationTag "fairomics" ; # tag used for publications list on project page
   schema:sourceCode <https://github.com/dice/FAIROmics> ;
