@@ -6,6 +6,7 @@
 
 dice:ClimatebOWL a dice:FundedProject ;
   schema:status "active" ;
+  schema:tagline "Climate neutral Business in Ostwestfalen-Lippe" ;
   schema:content """
   <img src="climatebOWL_overview.png" width={100} height={100} alt="Climate bOWL Overview"  >
 <h2>Motivation</h2>
