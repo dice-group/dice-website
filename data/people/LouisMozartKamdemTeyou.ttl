@@ -1,0 +1,31 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LouisMozartKamdemTeyou a schema:Person ;
+  schema:name "Louis Mozart Kamdem Teyou" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-1522-5860-322> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:louis888@mail.uni-paderborn.de> ;
+  schema:chat "@louis:chat.dice-research.org" ;
+  schema:office "TP6.3.308" ;
+  schema:photo "louis.jpg" ;
+  schema:project dice:LEMUR ;
+  schema:publicationTag "kamdem" ;
+  schema:content """
+  <p>
+  My current research is about:
+
+  * Class expression learning with multiple representations
+  * Knowledge graph embedding 
+  * Neural instance retrieval 
+
+  For more detail, see my <a href="https://scholar.google.com/citations?user=IS0OrxIAAAAJ&hl=en">Google Scholar Profile</a>
+  </p>
+  """ .
+
+## Research Interest
+
+
+
