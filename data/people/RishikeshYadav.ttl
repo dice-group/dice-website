@@ -1,0 +1,11 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:RishikeshYadav a schema:Person ;
+  schema:name "Rishikesh Yadav" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:ryadav@mail.uni-paderborn.de> ;
+  schema:chat "@ryadav:chat.dice-research.org" ;
+  schema:photo "Rishikesh.jpg" ;
+  schema:project dice:GERBIL .
