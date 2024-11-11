@@ -9,7 +9,7 @@ dice:MohamedAhmedSherif a schema:Person ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:mohamed.sherif@upb.de> ;
   schema:chat "@msherif:chat.dice-research.org" ;
-  schema:office "TP6.3.306" ;
+  schema:office "F1.301" ;
   schema:photo "sherif.jpg" ;
   schema:project dice:FAIROmics, dice:ClimatebOWL, dice:WHALE, dice:Ingrid, dice:SLIPO, dice:DIESEL, dice:GEISER, dice:HOBBIT, dice:SAKE, dice:SAGE, dice:GeoKnow, dice:LinkingLOD ;
   schema:content """

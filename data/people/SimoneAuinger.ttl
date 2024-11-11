@@ -5,16 +5,16 @@ dice:SimoneAuinger a schema:Person ;
   schema:name "Simone Auinger" ;
   schema:namePrefix "" ;
   schema:role dice:Secretary ;
-  schema:phone <tel:+49-525-16-01764> ;
+  schema:phone <tel:+49-525-16-01760> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:mone@upb.de> ;
   schema:chat "@mone:chat.dice-research.org" ;
-  schema:office "TP6.3.107" ;
+  schema:office "F1.223" ;
   schema:photo "auinger.jpg" ;
   schema:content """
 
 ## Regular office hours:
-  
+
   - Tuesdays 9-11 a.m.
   - Thursdays 9-11 a.m.
   """ .
