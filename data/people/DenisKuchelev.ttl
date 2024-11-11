@@ -5,6 +5,6 @@ dice:DenisKuchelev a schema:Person ;
   schema:name "Denis Kuchelev" ;
   schema:role dice:ResearchStaff ;
   schema:email <mailto:kuchelev+diceweb@campus.uni-paderborn.de> ;
-  schema:office "F U 201.3" ;
+  schema:office "FU.201.3" ;
   schema:chat "@kuchelev:chat.dice-research.org" ;
   schema:project dice:HOBBIT, dice:ORCA, dice:SAIL, dice:SFB901 .
