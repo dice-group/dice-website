@@ -59,7 +59,7 @@ export default function PersonTemplate({ data: { rdf } }) {
             )}
             {chat && (
               <div className="meta">
-                <div className="meta-label">Riot chat</div>
+                <div className="meta-label">Matrix (Chat)</div>
                 <div className="meta-value">
                   <a href={`https://riot.im/app/#/user/${chat}`}>{chat}</a>
                 </div>

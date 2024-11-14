@@ -5,11 +5,11 @@ dice:DanielVollmers a schema:Person ;
   schema:name "Daniel Vollmers" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-525-16-05190> ;
+  schema:phone <tel:+49-525-16-05186> ;
   schema:fax <tel:> ;
   schema:email <mailto:daniel.vollmers@uni-paderborn.de> ;
   schema:chat "@vdaniel:chat.dice-research.org" ;
-  schema:office "TP6.3.307" ;
+  schema:office "FU.329" ;
   schema:photo "vollmers.jpg" ;
-  schema:project dice:SPEAKER, dice:LIMBO, dice:SOLIDE, dice:PORQUE;
+  schema:project dice:SPEAKER, dice:LIMBO, dice:SOLIDE, dice:PORQUE, dice:KIAM;
   schema:content """""" .
