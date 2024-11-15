@@ -1,0 +1,24 @@
+---
+date: '2024-11-15'
+title: 'Byte pair encoding for Knowledge Graph Embeddings'
+type: 'Bachelor'
+supervisor: dice:CaglarDemir
+contact: dice:CaglarDemir
+---
+
+# Topic 
+A knowledge graph embedding (KGE) model assigns a unique embedding row for each unique entities/nodes and relations/edges.
+As the size of the unique entities or relations grows, the memory usage of KGE increases.
+Therefore, the memory requirement to train KGE model or deploy a trained model is bounded by the size of the data.
+
+LLMs uses byte pair encoding techniques to learn to represent sequence of chars with subword unit.
+Therefore, LLM embeddings are subword units, instead of unique words.
+Recently, we show that byte pair encoding schema developed for LLMs can also be used for KGEs (see 
+[Inference over Unseen Entities, Relations and Literals on Knowledge Graphs](https://arxiv.org/pdf/2410.06742) .
+In this thesis, the student will design a byte pair encoding schema based on a given knowledge graph.
+The student will closely work on [dice-embeddings](https://github.com/dice-group/dice-embeddings).
+
+
+#### Question & Answer Session
+
+In case you have further questions, feel free to contact [Caglar Demir](https://dice-research.org/CaglarDemir).
