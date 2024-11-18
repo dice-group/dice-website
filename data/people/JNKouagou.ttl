@@ -7,7 +7,6 @@ dice:JeanNDahKouagou a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-525-16-05190> ;
   schema:fax <tel:> ;
-  schema:project dice:KnowGraphs ;
   schema:email <mailto:ndah.jean.kouagou@upb.de> ;
   schema:chat "@nkouagou:chat.dice-research.org" ;
   schema:office "FU.221" ;
