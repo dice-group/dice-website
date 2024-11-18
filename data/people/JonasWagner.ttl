@@ -7,7 +7,4 @@ dice:ExamplePerson a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:email <mailto:jonas.wagner@uni-paderborn.de> ;
   schema:chat "@jwagner6:chat.dice-research.org" ;
-  schema:office "" ;
-  schema:photo "wagner.jpg" ;
-  schema:publicationTag "" ;
-  schema:content """
+  schema:photo "wagner.jpg" . 
