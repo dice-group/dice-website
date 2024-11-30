@@ -28,7 +28,7 @@
     "lodash": "^4.17.20",
     "n3": "^1.8.0",
     "plotly.js": "^1.58.4",
-    "postcss": "^8.2.4",
+    "postcss": "^8.4.31",
     "postcss-nested": "^5.0.3",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
