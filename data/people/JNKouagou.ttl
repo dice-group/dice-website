@@ -9,7 +9,7 @@ dice:JeanNDahKouagou a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:ndah.jean.kouagou@upb.de> ;
   schema:chat "@nkouagou:chat.dice-research.org" ;
-  schema:office "FU.221" ;
+  schema:office "FU.211" ;
   schema:photo "jean.jpg" ;
   schema:project dice:KnowGraphs, dice:embeddings.cc, dice:ENEXA ;
   schema:content """""" .
