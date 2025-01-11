@@ -20,5 +20,5 @@ dice:LOLA a dice:ProductionReadyProject ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:homepage <https://arxiv.org/abs/2409.11272> ;
   schema:name "LOLA" ;
-  schema:logo "lola_logo.png"
+  schema:logo "lola_logo.png" ;
   schema:sourceCode <https://github.com/dice-group/LOLA> .
