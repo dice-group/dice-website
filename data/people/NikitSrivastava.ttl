@@ -10,6 +10,6 @@ dice:NikitSrivastava a schema:Person ;
   schema:chat "@nikit:chat.dice-research.org" ;
   schema:office "FU.335" ;
   schema:photo "srivastava.jpg" ;
-  schema:project dice:IDA, dice:PORQUE, dice:SAIL dice:LOLA ;
+  schema:project dice:IDA, dice:PORQUE, dice:SAIL, dice:LOLA ;
   schema:publicationTag "srivastava" ;
   schema:content """""" .
