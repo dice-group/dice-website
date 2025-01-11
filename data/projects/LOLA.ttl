@@ -1,0 +1,24 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:LOLA a dice:ProductionReadyProject ;
+  schema:tagline "An Open-Source Massively Multilingual Large Language Model" ;
+  schema:status "active" ; # current project status
+  schema:content """
+<p>LOLA is a massively multilingual large language model trained on more than 160 languages using a sparse Mixture-of-Experts Transformer architecture. Our architectural and implementation choices address the challenge of harnessing linguistic diversity while maintaining efficiency and avoiding the common pitfalls of multilinguality. Our analysis of the evaluation results shows competitive performance in natural language generation and understanding tasks. Additionally, we demonstrate how the learned expert-routing mechanism exploits implicit phylogenetic linguistic patterns to potentially alleviate the curse of multilinguality. We provide an in-depth look at the training process, an analysis of the datasets, and a balanced exploration of the model's strengths and limitations. As an open-source model, LOLA promotes reproducibility and serves as a robust foundation for future research. Our findings enable the development of compute-efficient multilingual models with strong, scalable performance across languages.</p>
+
+<h3>Resources</h3>
+<p>HuggingFace: <a href="https://huggingface.co/dice-research/lola_v1" target="_blank">hf.co/dice-research/lola_v1</a></p>
+<p>GitHub: <a href="https://github.com/dice-group/LOLA" target="_blank">github.com/dice-group/LOLA</a></p>
+<p>Preprint: <a href="https://arxiv.org/abs/2409.11272" target="_blank">https://arxiv.org/abs/2409.11272</a></p>
+""" ;
+#  schema:endDate "2021-07-31"^^xsd:date ;
+  schema:startDate "2022-10-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:homepage <https://arxiv.org/abs/2409.11272> ;
+  schema:name "LOLA" ;
+  schema:logo "lola_logo.png"
+  schema:sourceCode <https://github.com/dice-group/LOLA> .
