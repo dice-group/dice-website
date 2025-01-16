@@ -10,5 +10,5 @@ dice:Amgad a schema:Person ;
   schema:chat "@amgadkratos:chat.dice-research.org" ;
   schema:office "FU.338" ;
   schema:photo "Amgad.jpg" ;
-  schema:project dice:FAIROmics
+  schema:project dice:FAIROmics ;
   schema:content """""" .
