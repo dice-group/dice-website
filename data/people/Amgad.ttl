@@ -1,17 +1,14 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:AmgadMahmoud a schema:Person ;
-  schema:name "Amgad A. Mahmoud" ;
+dice:Amgad a schema:Person ;
+  schema:name "Amgad Mahmoud" ;
+  schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-170-88-68456> ;
   schema:email <mailto:amgad.mahmoud@uni-paderborn.de> ;
-  schema:chat "@amgadkratos" ;
-  schema:photo "Amgad_Abdallah.jpg" ; 
+  schema:chat "@amgadkratos:chat.dice-research.org" ;
   schema:office "FU.338" ;
-  schema:content """
-  <p>
-  <b>Linkedin </b><a href="linkedin.com/in/amgad-abdallah-985626194"> &ensp;Amgad A. Mahmoud</a>
-  </p>
-  """ ;
-  schema:project dice:FAIROmics .
+  schema:photo "Amgad.jpg" ;
+  schema:project dice:FAIROmics
+  schema:content """""" .
