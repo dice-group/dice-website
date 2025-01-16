@@ -10,5 +10,5 @@ dice:TatianaMoteuNgoli a schema:Person ;
   schema:chat "@tatianam:chat.dice-research.org" ;
   schema:office "FU.329" ;
   schema:photo "tatiana_moteu.jpg" ;
-  schema:project dice:SAIL ;
+  schema:project dice:SAIL, dice:LOLA ;
   schema:publicationTag "" .
