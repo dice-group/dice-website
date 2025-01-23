@@ -11,7 +11,7 @@ dice:DiegoMoussallem a schema:Person ;
   schema:chat "@diegom:chat.dice-research.org" ;
   schema:office "TP6.3.109" ;
   schema:photo "moussallem.jpg" ;
-  schema:project dice:DIESEL, dice:DAIKIRI, dice:SPEAKER, dice:SOLIDE, dice:HOBBIT, dice:QAMEL, dice:Gerbil, dice:RAKI, dice:KnowGraphs, dice:LIMBO, dice:PORQUE ;
+  schema:project dice:DIESEL, dice:DAIKIRI, dice:SPEAKER, dice:SOLIDE, dice:HOBBIT, dice:QAMEL, dice:Gerbil, dice:RAKI, dice:KnowGraphs, dice:LIMBO, dice:PORQUE, dice:LOLA ;
   schema:content """ My overall background is on CS, but the majority of my career I have spent on NLP. Thus, I have worked on different NLP tasks ranging from basic research in computational linguistics to Entity Linking, Machine Translation, Natural Language Generation, and Question Answering. My work resulted in the first neural machine translation model augmented with knowledge graphs and one state-of-the-art framework in respect of multilingualism and knowledge-graph-based algorithms. Additionally, I contribute actively to the scientific community, being responsible for the Portuguese chapter of DBpedia as well as mentoring students at the Google Summer of Code. I am currently a senior NLP research scientist, leading the NLP team, in the DICE research group at Paderborn University. Previously, I was a researcher at AKSW (Leipzig, DE), working on Information Retrieval and NLP. I hold an MSc. and a Ph.D. 
   
   <p>

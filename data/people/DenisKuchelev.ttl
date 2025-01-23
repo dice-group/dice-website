@@ -7,4 +7,4 @@ dice:DenisKuchelev a schema:Person ;
   schema:email <mailto:kuchelev+diceweb@campus.uni-paderborn.de> ;
   schema:office "FU.201.3" ;
   schema:chat "@kuchelev:chat.dice-research.org" ;
-  schema:project dice:HOBBIT, dice:ORCA, dice:SAIL, dice:SFB901 .
+  schema:project dice:HOBBIT, dice:ORCA, dice:SAIL, dice:SFB901, dice:LOLA .
