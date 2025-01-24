@@ -1,0 +1,44 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:InterpretableDataProcessing a schema:Group ;
+  schema:name "Interpretable Data Processing" ;
+  schema:tagline "Gathering, preparing and analysis of data as well as benchmarking in an interpretable way" ;
+  schema:relatedProject dice:HOBBIT, dice:OPAL, dice:LIMBO ; # related projects
+  schema:content """The Interpretable Data Processing group works on two main fields.
+
+Firstly, we are gathering, preparing and analysing Linked Data. 
+The first part of this pipeline is done by using our open-source 
+crawler <a href="https://dice-research.org/Squirrel">Squirrel<a/>. 
+This crawler has been used in several projects, including the two research projects OPAL and LIMBO.
+After data has been gathered, we provide several Fact Checking services including 
+<a href="https://github.com/dice-group/COPAAL">COPAAL</a>,
+<a href="https://github.com/dice-group/FactCheck">FactCheck</a>,
+<a href="https://github.com/dice-group/HybridFC">HybridFC</a>,
+<a href="https://github.com/dice-group/TemporalFC">TemporalFC</a>, and 
+<a href="https://github.com/dice-group/favel">FAVEL</a>, which 
+can be used to ensure the veracity of the data with respect to a reference knowledge base or a reference corpus.
+We also apply these tools in our research project NEBULA.
+
+The second main field this group is working on is benchmarking. We are maintaining several benchmarking platforms and tools:
+<ul>
+<li><a href="https://dice-research.org/HOBBIT-demo">HOBBIT</a> is a holistic benchmarking platform for Big Linked Data solutions.</li>
+<li><a href="https://dice-research.org/GERBIL">GERBIL</a> is a light-weight platform for benchmarking web services. Currently we are supporting the benchmarking within three areas:
+  <ul>
+  <li><a href="https://dice-research.org/GerbilKBC">Knowledge Extraction</a></li>
+  <li><a href="https://dice-research.org/GerbilQA">Question Answering</a></li>
+  <li><a href="https://dice-research.org/GerbilKBC">Knowledge Base Curation</a></li>
+  </ul>
+<li><a href="https://dice-research.org/IGUANA">IGUANA</a> is a benchmarking platform for evaluating the performance of triple stores.</li>
+<li><a href="https://dice-research.org/Palmetto">Palmetto</a> is an evaluation tool for topic models.</li>
+</ul>
+We also cover additional research areas that are connected to benchmarking like
+<ul>
+<li> The explainability of benchmarking results,</li>
+<li> The generation of synthetic benchmarking data mimiking real-world data, and</li>
+<li> Evaluating the robustness of Linked-Data-based approaches.</li>
+</ul>
+""" ;
+  schema:lead dice:MichaelRoeder ; # group maintainer
+  schema:member dice:AnaSilva, dice:DenisKuchelev, dice:FarshadAfshari, dice:UmairQudus, dice:NehaPokharel, dice:HardikShetty, dice:RishikeshYadav ; # group members list (in no particular order)
+  schema:relatedDemo dice:GerbilKE, dice:GerbilQA, dice:GerbilKBC, dice:HOBBIT-demo, dice:Palmetto . # list of related demos

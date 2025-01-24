@@ -3,8 +3,8 @@
 
 dice:ReneSpeck a schema:Person ;
   schema:name "René Speck" ;
-  schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:namePrefix "Dr. rer. nat." ;
+  schema:role dice:SeniorResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:rene.speck@uni-paderborn.de> ;
