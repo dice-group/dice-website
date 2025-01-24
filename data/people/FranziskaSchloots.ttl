@@ -6,11 +6,11 @@ dice:FranziskaSchloots a schema:Person ;
   schema:namePrefix "Dr." ;
   schema:project dice:SAIL ;
   schema:role dice:Management ;
-  schema:phone <tel:+49-5251-60-5188> ;
+  schema:phone <tel:+49-5251-60-5198> ;
   schema:email <mailto:franziska.schloots@upb.de> ;
   schema:chat "@fms:chat.dice-research.org" ;
   schema:photo "schloots.png" ;
-  schema:office "TP6.3.309" ;
+  schema:office "F1.304" ;
   schema:publicationTag "schloots" ;
   schema:content """
 

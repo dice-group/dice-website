@@ -1,0 +1,39 @@
+---
+date: '2024-11-15'
+title: 'RAG over Neural Triple Stores'
+type: 'Bachelor'
+supervisor: dice:CaglarDemir
+contact: dice:CaglarDemir
+---
+
+# Topic 
+Most knowledge graphs are incomplete.
+Neural link predictors (most knowledge graph embeddings) can accurately infer of missing knowledge even involving multi-hop reasoning.
+
+In this thesis, the student will focus on techniques that combine LLMs and neural link predictors in the context of retrieval augmented generation (RAG). 
+Through designing a novel and effective model, we aim to achieve the following workflow
+
+1. A user can ask a question.
+2. LLM renders the question into a first order logic expression via prompt engineering.
+3. The first-order logic expression is given to a neural link predictor to perform [multi-hop query answering](https://github.com/dice-group/dice-embeddings?tab=readme-ov-file#answering-complex-queries)
+4. The result (e.g. an ordered sequence of nodes/entities) is preprocessed and given to LLM to generate fluent response to the user
+
+
+The student will closely work on [dice-embeddings](https://github.com/dice-group/dice-embeddings) and a LLM provided by us.
+
+A working simple example:
+```python
+Graph={("ComputerScientist","subclass","Scientist"), ("Scientist","subclass","Person"),("CaglarDemir","type","ComputerScientist")}
+trained_kge=KGE().train(G)
+user_query="What is the occupation of Caglar?"
+llm_endpoint=""
+response=students_work(user_query, trained_kge, llm_endpoint)
+"""
+response ~ Caglar Demir is a Computer Scientist.
+"""
+```
+
+
+#### Question & Answer Session
+
+In case you have further questions, feel free to contact [Caglar Demir](https://dice-research.org/CaglarDemir).

@@ -9,7 +9,7 @@ dice:AnaAlexandraSilva a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:ana.silva@uni-paderborn.de> ;
   schema:chat "@aams:chat.dice-research.org" ;
-  schema:office "TP6.3.101" ;
+  schema:office "FU.201.2" ;
   schema:photo "silva.jpg" ;
   schema:publicationTag "amsilva" ;
   schema:project dice:Ingrid, dice:NEBULA, dice:ClimatebOWL, dice:SAIL;

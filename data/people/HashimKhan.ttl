@@ -5,10 +5,10 @@ dice:HashimKhan a schema:Person ;
   schema:name "Hashim Khan" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-5251-605188> ;
   schema:fax <tel:> ;
   schema:email <mailto:hashim.khan@uni-paderborn.de> ;
   schema:chat "@hashim:chat.dice-research.org" ;
-  schema:office "TP6.3.305" ;
+  schema:office "FU.323" ;
   schema:photo "hkhan.jpg" ;
   schema:content """""" .

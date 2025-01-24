@@ -8,6 +8,7 @@ dice:ShivamSharma a schema:Person ;
   schema:email <mailto:sshivam@mail.uni-paderborn.de> ;
   schema:chat "@sshivam:chat.dice-research.org" ;
   schema:photo "shivamsharma.jpg" ; 
+  schema:office "FU.338" ;
   schema:content """
   <p>
   <b>Linkedin </b><a href="https://www.linkedin.com/in/shivamsharma95/"> &ensp;Shivam Sharma </a>

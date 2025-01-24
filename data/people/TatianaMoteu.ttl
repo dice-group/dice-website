@@ -5,11 +5,10 @@ dice:TatianaMoteuNgoli a schema:Person ;
   schema:name "Tatiana Moteu Ngoli" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff;
-  schema:phone <tel:05251/60-5193> ;
-  schema:fax <tel:> ;
+  schema:phone <tel:+49-525-16-05193> ;
   schema:email <mailto:tatianam@mail.uni-paderborn.de> ;
   schema:chat "@tatianam:chat.dice-research.org" ;
   schema:office "FU.329" ;
   schema:photo "tatiana_moteu.jpg" ;
-  schema:project dice:SAIL ;
+  schema:project dice:SAIL, dice:LOLA ;
   schema:publicationTag "" .

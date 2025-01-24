@@ -5,11 +5,11 @@ dice:AxelCyrilleNgongaNgomo a schema:Person ;
   schema:name "Axel-Cyrille Ngonga Ngomo" ;
   schema:namePrefix "Prof. Dr." ;
   schema:role dice:Head ;
-  schema:phone <tel:+49-525-16-03342> ;
+  schema:phone <tel:+49-525-16-01761> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:axel.ngonga@upb.de> ;
   schema:chat "@ngonga:chat.dice-research.org" ;
-  schema:office "TP1.225" ;
+  schema:office "F1.225" ;
   schema:photo "ngonga.jpg" ;
   schema:content """""" ;
-  schema:project dice:GEISER, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:OpenTrafficDetection, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS, dice:embeddings.cc, dice:ENEXA, dice:SAIL .
+  schema:project dice:GEISER, dice:BDE, dice:DIESEL, dice:HOBBIT, dice:OPAL, dice:QAMEL, dice:OpenTrafficDetection, dice:SAKE, dice:SLIPO, dice:SAGE, dice:GeoKnow, dice:LinkingLOD, dice:SCMS, dice:embeddings.cc, dice:ENEXA, dice:SAIL, dice:LOLA .
