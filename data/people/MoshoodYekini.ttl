@@ -12,5 +12,5 @@ dice:MoshoodOlawaleYekini a schema:Person ;
   schema:office "FU.214" ;
   schema:photo "moshood.jpg" ;
   schema:project dice:ENEXA ;
-  schema:publicationTag "moshood" ;
-  schema:content """
+  schema:publicationTag "" ;
+  schema:content """""" .
