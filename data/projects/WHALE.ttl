@@ -20,5 +20,5 @@ dice:WHALE a dice:FundedProject ;
   # schema:logo "" ; # NO LOGO YET
   # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list DISCUSS WITH AXEL
   schema:publicationTag "whale" ; # tag used for publications list on project page
-  schema:sourceCode <https://github.com/dice/WHALE> ;
+  schema:sourceCode <https://github.com/dice-project/WHALE> ;
   schema:fundingProgram "This project is funded under the Lamarr Fellow Network programme by the Ministry of Culture and Science of North Rhine-Westphalia (MKW NRW, LFN 1-04)." .
