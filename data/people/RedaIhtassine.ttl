@@ -9,7 +9,7 @@ dice:RedaIhtassine a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:reih@mail.uni-paderborn.de> ;
   schema:chat "@reih:chat.dice-research.org" ;
-  schema:office "TP6.3.301" ;
+  schema:office "FU.338" ;
   schema:photo "redaIhtassine.jpg" ;
   schema:project dice:ClimatebOWL ;
   schema:content """""" .
