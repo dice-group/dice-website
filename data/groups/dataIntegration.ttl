@@ -4,7 +4,7 @@
 dice:DataIntegration a schema:Group ;
   schema:name "Data Integration" ;
   schema:tagline "We build algorithms for the efficient and scalable linking of RDF data" ;
-  schema:relatedProject dice:HOBBIT, dice:OPAL, dice:BDE, dice:GeoKnow, dice:Feasible, dice:DEISEL, dice:SLIPO, dice:SAGE, dice:LIMBO, dice:KnowGraphs, dice:GEISER ; # related projects
+  schema:relatedProject dice:FAIROmics, dice:WHALE, dice:embeddings.cc,  dice:ClimatebOWL, dice:SFB901, dice:Ingrid, dice:HOBBIT, dice:OPAL, dice:BDE, dice:GeoKnow, dice:Feasible, dice:DEISEL, dice:SLIPO, dice:SAGE, dice:LIMBO, dice:KnowGraphs, dice:GEISER ; # related projects
   schema:content """
 The Linked Data paradigm builds upon the backbone of distributed knowledge bases connected by typed links. 
 The mere volume of current knowledge bases as well as their sheer number pose two major challenges when aiming to support the integration of data across and within them. 
