@@ -14,6 +14,6 @@ Our solutions to the second problem build upon efficient computational approache
 All our frameworks for data integration such as LIMES and DEER are open-source and available under a GNU license at https: //github.com/dice-group together with user/developer manuals.
 """ ;
   schema:lead dice:MohamedAhmedSherif ; # group maintainer
-  schema:member dice:AbdullahFathiAhmed, dice:HamadaMZahera, dice:KevinDreßler, dice:TommasoSoru, dice:IdressTahirMugdal, dice:KleanthiGeorgala, dice:SvetlanaPestryakova ; # group members list
+  schema:member dice:AjayKumar, dice:AlbertKhomich, dice:AlexanderBecker, dice:Amgad, dice:DuyguEkinciBirol, dice:ShivamSharma, dice:RedaIhtassine, dice:AbdullahFathiAhmed, dice:HamadaMZahera, dice:KevinDreßler, dice:TommasoSoru, dice:IdressTahirMugdal, dice:KleanthiGeorgala, dice:SvetlanaPestryakova ; # group members list
   schema:relatedDemo dice:LIMES . # list of related demos
 
