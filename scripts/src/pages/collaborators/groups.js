@@ -64,26 +64,82 @@ export default function Groups({
                   <div className="column staff-list">
                     <h6 className="column-header">Members</h6>
 
-                    {node.data.member.map(person => (
-                      <Link key={person.path} to={person.path}>
-                        {person.data.name}
-                      </Link>
-                    ))}
+                    {node.data.member
+                      .filter(
+                        person => person.data.role?.data?.name !== 'Alumni'
+                      )
+                      .map(person => (
+                        <Link key={person.path} to={person.path}>
+                          {person.data.name}
+                        </Link>
+                      ))}
                   </div>
                 )}
 
-                {node.data.relatedProject &&
-                  node.data.relatedProject.length > 0 && (
-                    <div className="column staff-list">
-                      <h6 className="column-header">Projects</h6>
+                {node.data?.member.some(
+                  person => person.data.role?.data?.name === 'Alumni'
+                ) && (
+                  <div className="column staff-list">
+                    <h6 className="column-header">Alumni</h6>
 
-                      {node.data.relatedProject.map(project => (
+                    {node.data.member
+                      .filter(
+                        person => person.data.role?.data?.name === 'Alumni'
+                      )
+                      .map(person => (
+                        <Link key={person.path} to={person.path}>
+                          {person.data.name}
+                        </Link>
+                      ))}
+                  </div>
+                )}
+                {node.data?.relatedProject.some(
+                  project =>
+                    project.data.rdf_type[0].id !==
+                    'https://dice-research.org/AlumniProject'
+                ) && (
+                  <div className="column staff-list">
+                    <h6 className="column-header">Projects</h6>
+
+                    {node.data.relatedProject
+                      .filter(project =>
+                        project.data.rdf_type?.some(
+                          type =>
+                            type.id !==
+                            'https://dice-research.org/AlumniProject'
+                        )
+                      )
+                      .map(project => (
                         <a key={project.path} href={project.path}>
                           {project.data.name}
                         </a>
                       ))}
-                    </div>
-                  )}
+                  </div>
+                )}
+
+                {node.data?.relatedProject.some(
+                  project =>
+                    project.data.rdf_type[0].id ===
+                    'https://dice-research.org/AlumniProject'
+                ) && (
+                  <div className="column staff-list">
+                    <h6 className="column-header">Alumni Projects</h6>
+
+                    {node.data.relatedProject
+                      .filter(project =>
+                        project.data.rdf_type?.some(
+                          type =>
+                            type.id ===
+                            'https://dice-research.org/AlumniProject'
+                        )
+                      )
+                      .map(project => (
+                        <a key={project.path} href={project.path}>
+                          {project.data.name}
+                        </a>
+                      ))}
+                  </div>
+                )}
 
                 {node.data.relatedDemo && node.data.relatedDemo.length > 0 && (
                   <div className="column staff-list">
@@ -128,6 +184,10 @@ export const pageQuery = graphql`
               path
               data {
                 name
+                status
+                rdf_type {
+                  id
+                }
               }
             }
             content
@@ -141,6 +201,11 @@ export const pageQuery = graphql`
               path
               data {
                 name
+                role {
+                  data {
+                    name
+                  }
+                }
               }
             }
             relatedDemo {
