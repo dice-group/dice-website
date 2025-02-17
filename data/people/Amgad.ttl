@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:Amgad a schema:Person ;
-  schema:name "Amgad Mahmoud" ;
+  schema:name "Amgad Abdulmaqsod" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-170-88-68456> ;
