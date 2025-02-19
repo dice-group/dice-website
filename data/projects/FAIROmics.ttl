@@ -21,6 +21,7 @@ dice:FAIROmics a dice:FundedProject ;
   schema:startDate "2023-03-01"^^xsd:date ;
   schema:logo "FAIROmics_logo.png" ;
   # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list DISCUSS WITH AXEL
+  schema:partner dicepartner:UniversityParisSaclay, dicepartner:INRAE;
   schema:publicationTag "fairomics" ; # tag used for publications list on project page
   schema:sourceCode <https://github.com/dice/FAIROmics> ;
   schema:fundingProgram "This project has received funding from the European Union’s Horizon Europe research and innovation programme under the Marie Skłodowska-Curie grant agreement No 101120449." .

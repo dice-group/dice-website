@@ -4,7 +4,7 @@
 dice:InterpretableDataProcessing a schema:Group ;
   schema:name "Interpretable Data Processing" ;
   schema:tagline "Gathering, preparing and analysis of data as well as benchmarking in an interpretable way" ;
-  schema:relatedProject dice:HOBBIT, dice:OPAL, dice:LIMBO ; # related projects
+  schema:relatedProject dice:ENEXA, dice:FROCKG, dice:GERBIL, dice:HOBBIT, dice:IGUANA, dice:KnowGraphs, dice:LIMBO, dice:NEBULA, dice:OPAL, dice:ORCA, dice:SAIL, dice:Squirrel ; # related projects 
   schema:content """The Interpretable Data Processing group works on two main fields.
 
 Firstly, we are gathering, preparing and analysing Linked Data. 
