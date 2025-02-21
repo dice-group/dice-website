@@ -1,0 +1,46 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ClimatebOWLDemo a schema:Demo ;
+  schema:name "ClimatebOWL" ;
+  schema:tagline "Climate neutral Business in Ostwestfalen-Lippe Demo" ;
+  schema:contenthtml """
+  <img src="climatebOWL_overview.png" width={100} height={100} alt="Climate bOWL Overview"  >
+<h2>Motivation</h2>
+
+Companies worldwide are facing increasing pressure to reduce their greenhouse gas (GHG) emissions and transition towards climate neutrality. Regulatory policies such as the European Climate Law and national climate protection targets demand a 65% reduction in GHG emissions by 2030 (compared to 1990 levels) and full carbon neutrality by 2045. At the same time, businesses must address the challenges of rising energy costs, sustainability expectations from stakeholders, and the need for long-term economic resilience.
+
+To achieve these goals, companies must adopt structured, data-driven strategies to accurately measure, analyze, and mitigate their Product Carbon Footprints (PCF). The challenge, however, lies in the complexity of **PCF tracking**, which requires the integration of diverse data sources, transparency in emission calculations, and the ability to generate actionable insights for decarbonization.
+
+<h3>Overview</h3>
+
+**PCFWebUI** is a web-based platform designed to help businesses systematically track, analyze, and manage their Product Carbon Footprints (PCF). The tool leverages **real company data** and integrates it into a **Knowledge Graph (KG)** to provide a comprehensive, structured, and scalable approach to emission tracking and sustainability planning.
+
+With PCFWebUI, businesses can:
+- Gain **real-time insights** into their product-specific GHG emissions.
+- Identify key **emission-intensive processes** within their supply chains.
+- Develop and implement **effective decarbonization strategies**.
+- Ensure compliance with **climate regulations and sustainability goals**.
+
+By leveraging semantic web technologies such as Apache Jena and SPARQL, PCFWebUI enables companies to store, query, and analyze their sustainability data in a structured and efficient manner. This **data-driven approach** helps organizations track progress, measure impact, and optimize energy efficiency strategies over time.
+
+<h3>Key Features</h3>
+
+- **PCF Tracking & Analysis**: Detailed monitoring and visualization of carbon footprints across different product lifecycle phases.
+- **Knowledge Graph Integration**: Structured management and querying of emission data using **Apache Jena** and **SPARQL**.
+- **Dynamic Data Processing**: Real-time updates and interactive queries for precise insights.
+- **Efficiency Optimization**: Identification of key areas for **energy and material efficiency improvements**.
+- **Sustainability Planning**: Supports the development and implementation of effective **decarbonization strategies**.
+
+<h3>Future Development</h3>
+
+PCFWebUI is continuously evolving, with planned enhancements including **AI-driven recommendations, advanced benchmarking analytics, and automated prioritization of reduction measures** to support companies in their decarbonization efforts.
+
+
+ """ ;
+  schema:screenshot "climate_bowl_ui.png" ;
+  schema:logo "climatebOWL.png" ; 
+  schema:homepage <https://climatebowl-demo.cs.uni-paderborn.de/pcf-tracking> ;
+  schema:sourceCode <https://github.com/dice-group/ClimateBowl-KGConverter> ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:developer dice:AjayKumar, dice:RedaIhtassine.
