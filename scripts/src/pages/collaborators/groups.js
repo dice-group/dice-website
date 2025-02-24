@@ -54,7 +54,7 @@ export default function Groups({
                 {node.data.lead && (
                   <div className="column">
                     <h6 className="column-header">Lead</h6>
-                    <Link to={node.data.lead.path}>
+                    <Link className="break-normal" to={node.data.lead.path}>
                       {node.data.lead.data.name}
                     </Link>
                   </div>
@@ -69,7 +69,11 @@ export default function Groups({
                         person => person.data.role?.data?.name !== 'Alumni'
                       )
                       .map(person => (
-                        <Link key={person.path} to={person.path}>
+                        <Link
+                          className="break-normal"
+                          key={person.path}
+                          to={person.path}
+                        >
                           {person.data.name}
                         </Link>
                       ))}
@@ -87,7 +91,11 @@ export default function Groups({
                         person => person.data.role?.data?.name === 'Alumni'
                       )
                       .map(person => (
-                        <Link key={person.path} to={person.path}>
+                        <Link
+                          className="break-normal"
+                          key={person.path}
+                          to={person.path}
+                        >
                           {person.data.name}
                         </Link>
                       ))}
@@ -110,7 +118,11 @@ export default function Groups({
                         )
                       )
                       .map(project => (
-                        <a key={project.path} href={project.path}>
+                        <a
+                          className="break-normal"
+                          key={project.path}
+                          href={project.path}
+                        >
                           {project.data.name}
                         </a>
                       ))}
@@ -134,7 +146,11 @@ export default function Groups({
                         )
                       )
                       .map(project => (
-                        <a key={project.path} href={project.path}>
+                        <a
+                          className="break-normal"
+                          key={project.path}
+                          href={project.path}
+                        >
                           {project.data.name}
                         </a>
                       ))}
@@ -146,7 +162,11 @@ export default function Groups({
                     <h6 className="column-header">Demos</h6>
 
                     {node.data.relatedDemo.map(project => (
-                      <a key={project.path} href={project.path}>
+                      <a
+                        className="break-normal"
+                        key={project.path}
+                        href={project.path}
+                      >
                         {project.data.name}
                       </a>
                     ))}
