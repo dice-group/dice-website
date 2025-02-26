@@ -44,11 +44,11 @@ export default function Groups({
                 {node.data.name}
               </h2>
 
-              <p>
+              <div>
                 {node.data.content.map((mdString, i) => (
                   <ReactMarkdown key={`content_${i}`} source={mdString} />
                 ))}
-              </p>
+              </div>
 
               <div className="columns project-extended-info">
                 {node.data.lead && (
