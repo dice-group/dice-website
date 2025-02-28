@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:KnowGraphs a dice:FundedProject ;
+dice:KnowGraphs a dice:AlumniProject ;
   schema:tagline "Knowledge Graphs at Scale" ;
   schema:status "active" ;
   schema:content """
