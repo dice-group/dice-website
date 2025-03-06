@@ -23,9 +23,17 @@ The implementation should allow both query evaluation and counting the number of
 The system should be developed in Java and evaluated on synthetic and real-world datasets. 
 The evaluation should measure efficiency, scalability, and accuracy, comparing the approach to existing methods where applicable.
 
+
+
 ### Your Profile 
 * Proficiency in Java.
 * Experience with SQL and database constraints (or willingness to learn).
 * Familiarity with classical first-order logic (helps but is not required).
 
 
+
+
+### References and helpful material
+
+1. Teemu Hankala, Miika Hannula, Yasir Mahmood, Arne Meier: Parameterised Complexity of Consistent Query Answering via Graph Representations. https://arxiv.org/abs/2412.08324
+2. Dongjing Miao, Zhipeng Cai, Jianzhong Li, Xiangyu Gao, Xianmin Liu: The Computation of Optimal Subset Repairs. Proc. VLDB Endow. 13(11): 2061-2074 (2020)
