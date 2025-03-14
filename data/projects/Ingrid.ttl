@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:Ingrid a dice:FundedProject ;
+dice:Ingrid a dice:AlumniProject ;
   schema:tagline "Informationssystem Graffiti in Deutschland" ;
   schema:status "active" ;
   schema:content """

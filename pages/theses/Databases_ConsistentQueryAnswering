@@ -1,0 +1,39 @@
+---
+date: '2024-11-15'
+title: 'An Algorithm for Computing Query Answers over Inconsistent Databases'
+type: 'Master'
+supervisor: dice:YasirMahmood
+contact: dice:YasirMahmood
+---
+
+### Background 
+
+A database (DB) is a form of structured data, typically queried using languages like SQL. Integrity constraints (ICs) enforce rules to maintain data consistency. 
+Common ICs include functional dependencies (FDs), which specify that certain attributes uniquely determine others. For example, in a customer database, CustomerID → Email means that if two records have the same CustomerID, they must also have the same Email. Denial constraints (DCs) forbid specific patterns, such as ensuring that no two employees have the same email.
+An inconsistent database violates some ICs. Instead of discarding the entire DB, database repairs modify it minimally to restore consistency, typically by deleting, modifying, or inserting tuples. Consistent query answering (CQA) retrieves answers that hold in all possible repairs.
+
+
+
+### Your Task
+In an ongoing work, we presented a novel algorithm for computing consistent answers to conjunctive queries (e.g., SQL queries) over inconsistent databases. 
+The algorithm not only retrieves consistent query answers but also counts how many repairs satisfy the query.
+
+The goal of this thesis is to implement our algorithm for computing consistent answers to conjunctive queries over inconsistent databases. 
+The implementation should allow both query evaluation and counting the number of repairs satisfying a given query. 
+The system should be developed in Java and evaluated on synthetic and real-world datasets. 
+The evaluation should measure efficiency, scalability, and accuracy, comparing the approach to existing methods where applicable.
+
+
+
+### Your Profile 
+* Proficiency in Java.
+* Experience with SQL and database constraints (or willingness to learn).
+* Familiarity with classical first-order logic (helps but is not required).
+
+
+
+
+### References and helpful material
+
+1. Teemu Hankala, Miika Hannula, Yasir Mahmood, Arne Meier: Parameterised Complexity of Consistent Query Answering via Graph Representations. https://arxiv.org/abs/2412.08324
+2. Dongjing Miao, Zhipeng Cai, Jianzhong Li, Xiangyu Gao, Xianmin Liu: The Computation of Optimal Subset Repairs. Proc. VLDB Endow. 13(11): 2061-2074 (2020)
