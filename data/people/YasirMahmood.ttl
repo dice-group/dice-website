@@ -14,6 +14,15 @@ dice:YasirMahmood a schema:Person ;
   schema:project dice:ENEXA ;
   schema:content """
 
+
+## Open Thesis Topics
+The following thesis topics are currently available
+
+* An implementation a consistent query answering algorithm for databases (Master/Bachelor, proficiency in Java required)
+* Finding new tractable algorithms for consistent query answering in databases (Master, knowledge of relational databases desired)
+* Argumentation in practice (Master/Bachelor, willingness to apply theory to practical challenges)
+* Complexity of Reasoning in formal logics (Master/Bachelor, knowledge of foundations of computability and complexity)
+
 ## Research Interests
 My research is mainly in the following areas:
 
