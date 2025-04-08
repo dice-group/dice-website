@@ -9,5 +9,5 @@ dice:COPAAL a schema:Demo ;
   schema:logo "dice-icon.png" ;
   schema:homepage <http://copaal.dice-research.org/demo/> ;
   schema:sourceCode <https://github.com/dice-group/COPAAL> ;
-  schema:maintainer dice:FarshadAfshari ;
-  schema:developer dice:FarshadAfshari .
+  schema:maintainer dice:UmairQudus ;
+  schema:developer dice:UmairQudus .
