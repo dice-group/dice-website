@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:3DFed a dice:FundedProject ;
+dice:3DFed a dice:AlumniProject ;
   schema:tagline "3DFed: Dynamic Data Distribution and Federation " ;
   schema:status "active" ;
   schema:content """
