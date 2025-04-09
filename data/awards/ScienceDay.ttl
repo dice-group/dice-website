@@ -6,4 +6,4 @@ dice:ScienceDay a schema:Award ;
   schema:name "Best research idea award at UPB Science Day competition" ;
   schema:content "Award descript here" ;
   schema:year "2022 (award year)";
-  schema:awardee  dice:UmairQudus ; # Awardees from our team
+  schema:awardee  dice:UmairQudus .
