@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AIKG2024 a schema:Award ;
-  schema:url <https://doi.org/10.4126/FRL01-006488516> ;
+  schema:url <https://sites.google.com/view/aikg-sd-summer-school-day-2024/startseite> ;
   schema:name "Fake news detection Using Augmented Prompt Methodologies and KGs" ;
   schema:content "in AIKG-SD (Artificial Intelligence and Knowledge Graphs for Scholarly Data)  (Best poster award)" ;
   schema:year "2024";
