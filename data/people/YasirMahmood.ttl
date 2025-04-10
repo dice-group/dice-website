@@ -14,13 +14,22 @@ dice:YasirMahmood a schema:Person ;
   schema:project dice:ENEXA ;
   schema:content """
 
+
+## Open Thesis Topics
+The following thesis topics are currently available
+
+* An implementation a consistent query answering algorithm for databases (Master/Bachelor, proficiency in Java required)
+* Finding new tractable algorithms for consistent query answering in databases (Master, knowledge of relational databases desired)
+* Argumentation in practice (Master/Bachelor, willingness to apply theory to practical challenges)
+* Complexity of Reasoning in formal logics (Master/Bachelor, knowledge of foundations of computability and complexity)
+
 ## Research Interests
 My research is mainly in the following areas:
 
 * Theoretical Computer Science
 * Mathematical Logic
 * Knowledge Representation and Reasoning
-*Explainable AI
+* Explainable AI
 
 Feel free to write me if you are interested in collaborating (or writing a thesis) on any of the following topics.
 
@@ -36,7 +45,7 @@ Feel free to write me if you are interested in collaborating (or writing a thesi
 I enjoy reviewing and have had the opportunity to review for the following conferences. 
 
 * Sub-reviewer:​ AAAI'21, IJCAI'21, AAAI’22, Euro-Par’22, IJCAI’22, AAAI’23, CSL’23, IJCAI’23, KR’23, AAAI’24, FoIKS’24, LPNMR'24
-* PC: AAMAS'24, IJCAI'24, AAAI'25, AAMAS'25
+* PC: AAMAS'24, IJCAI'24, AAAI'25, AAMAS'25, IJCAI'25, CLAR'25
 * Journals: ACM-TOCL, Applied Sciences, Annals of Pure and Applied Logic
 
 """ .

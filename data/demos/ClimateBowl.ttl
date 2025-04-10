@@ -40,7 +40,7 @@ PCFWebUI is continuously evolving, with planned enhancements including **AI-driv
  """ ;
   schema:screenshot "climate_bowl_ui.png" ;
   schema:logo "climatebOWL.png" ; 
-  schema:homepage <https://climatebowl-demo.cs.uni-paderborn.de/pcf-tracking> ;
+  schema:homepage <https://climatebowl.demo.dice-research.org/pcf-tracking> ;
   schema:sourceCode <https://github.com/dice-group/ClimateBowl-KGConverter> ;
   schema:maintainer dice:MohamedAhmedSherif ;
   schema:developer dice:AjayKumar, dice:RedaIhtassine.
