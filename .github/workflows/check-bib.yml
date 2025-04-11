@@ -11,10 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Move dice.bib file
-      run: cp data/bib/dice.bib dice.bib
-    - name: Latex Biber Action
-      uses: stefanbringuier/bibtex-biber-action@master
-      with:
-        filename: 'dice.bib'
-        output-directory: 'bib-check'
+    - name: Install Biber
+      run: sudo apt install -y biber
+    - name: Check file
+      run: biber --tool --dieondatamodel --validate-datamodel data/bib/dice.bib
