@@ -10,6 +10,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: Latex Biber Action
       uses: julianahrens/latex-biber-action@v2
       with:
