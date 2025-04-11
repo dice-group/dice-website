@@ -10,7 +10,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/latex-biber-action@v2
+    - name: Latex Biber Action
+      uses: julianahrens/latex-biber-action@v2
       with:
         filename: 'data/bib/dice.bib'
         output-directory: 'bib-check'
