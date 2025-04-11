@@ -1,4 +1,4 @@
-name: check-bib
+name: upload-bib-test
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   upload-bib:
-    needs: check-bib
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
