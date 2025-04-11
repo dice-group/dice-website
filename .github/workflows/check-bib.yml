@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - name: Move dice.bib file
+      run: cp data/bib/dice.bib dice.bib
     - name: Latex Biber Action
       uses: julianahrens/latex-biber-action@v2
       with:
-        filename: 'data/bib/dice.bib'
-        output-directory: '.'
+        filename: 'dice.bib'
+        output-directory: 'bib-check'
