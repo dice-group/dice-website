@@ -15,4 +15,4 @@ jobs:
       uses: julianahrens/latex-biber-action@v2
       with:
         filename: 'data/bib/dice.bib'
-        output-directory: 'bib-check'
+        output-directory: '.'
