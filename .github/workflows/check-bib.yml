@@ -1,0 +1,17 @@
+name: Check bibliography
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ master, develop ]
+
+jobs:
+  check-bib:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Biber
+      run: sudo apt install -y biber
+    - name: Check file
+      run: biber --tool --dieondatamodel --validate-datamodel data/bib/dice.bib
