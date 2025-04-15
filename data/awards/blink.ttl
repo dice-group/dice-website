@@ -3,6 +3,7 @@
 
 dice:Blink a schema:Award ;
   schema:name "Blink: Blank Node Matching Using Embeddings" ;
+  schema:url <https://papers.dice-research.org/2024/ISWC_BLINK/public.pdf> ;
   schema:content "International Semantic Web Conference 2024  (Runner-Up for best paper award, research track)" ;
   schema:year "2024";
   schema:awardee dice:AlexanderBecker, dice:MohamedAhmedSherif, dice:AxelCyrilleNgongaNgomo .
