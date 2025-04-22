@@ -15,7 +15,7 @@ dice:Learn2RAG a dice:FundedProject ;
   # schema:homepage <https://dice-research.org/> ;
   # schema:logo "" ;
   # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
-  schema:relatedDemo dice:LIMES ; # list of related demos
+  # schema:relatedDemo dice:LIMES ; # list of related demos
   schema:publicationTag "learn2rag" ; # tag used for publications list on project page
   # schema:sourceCode <https://github.com/project-group/project> ;
   schema:fundingProgram "BMWK" .
