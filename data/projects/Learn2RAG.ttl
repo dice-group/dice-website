@@ -1,0 +1,21 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:Learn2RAG a dice:FundedProject ;
+  schema:name "Learn2RAG" ;
+  schema:tagline "Retrieval-Augmented Generation für den Mittelstand" ;
+  schema:status "active" ; # current project status
+  schema:content "Data-driven companies usually have to manually select a combination from the large number of available RAG approaches, software modules and basic AI models that is suitable for their specific application. Added to this are the various data sources that need to be integrated into the RAG architecture. The key challenge when using RAG in practice lies in the informed combination of adequate RAG pipelines based on their intended use. This is where Learn2RAG comes in by automating the learning of company-specific RAG pipelines and their deployment." ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
+  schema:endDate "2028-01-31"^^xsd:date ;
+  schema:startDate "2025-02-01"^^xsd:date ;
+  # schema:homepage <https://dice-research.org/> ;
+  # schema:logo "" ;
+  # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
+  schema:relatedDemo dice:LIMES ; # list of related demos
+  schema:publicationTag "learn2rag" ; # tag used for publications list on project page
+  # schema:sourceCode <https://github.com/project-group/project> ;
+  schema:fundingProgram "BMWK" .
