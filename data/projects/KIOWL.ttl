@@ -1,0 +1,18 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleProject a dice:FundedProject ;
+  schema:name "KI Akadamie OWL" ;
+  schema:status "active" ; # current project status
+  schema:content "The KI-Akademie OWL researches how artificial intelligence can be used responsibly, efficiently and sustainably. Our focus is on identifying the risks of highly complex AI models and developing specialised, resource-efficient AI solutions. In particular, we concentrate on two highly relevant areas: the safety of AI processes and the development of AI methods for applications with limited data, for example in the context of inclusion. Through interdisciplinary research, we bring together technology, social sciences and the humanities to make AI understandable, safe and inclusive - for companies, educational stakeholders and society." ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
+  schema:endDate "2028-12-31"^^xsd:date ;
+  schema:startDate "2024-07-01"^^xsd:date ;
+  schema:homepage <https://ki-akademieowl.de/> ;
+  schema:logo "kiowl_logo.png" ;
+  schema:partner dicepartner:HSBI, dicepartner:UBI, dicepartner:THOWL ; # project partners list
+  schema:publicationTag "kiowl" ; # tag used for publications list on project page
+  schema:fundingProgram "BMBF" .
