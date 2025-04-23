@@ -4,7 +4,7 @@
 @prefix dicefunding: <https://dice-research.org/funding/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:SPEAKER a dice:FundedProject ;
+dice:SPEAKER a dice:AlumniProject ;
   schema:tagline "SPEAKER: Eine Sprachassistenzplattform »Made in Germany«" ;
   schema:status "active" ;
   schema:content """The SPEAKER project seeks to develop a leading German-made voice assistant platform for business-to-business (B2B) applications. This platform should be open, modular and scalable and provide technologies, services and data via service interfaces. The SPEAKER platform will be embedded in a comprehensive ecosystem made up of big industry, SMEs, start-ups and research partners who secure high innovation capabilities.""" ;

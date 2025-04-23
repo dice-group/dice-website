@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:HSBI a schema:Partner ;
+  schema:name "Hochschule Bielefeld University of Applied Sciences and Arts " ;
+  schema:country "DE" ;
+  schema:url <https://www.hsbi.de/> ;
+  schema:logo "hsbi_logo.png" .

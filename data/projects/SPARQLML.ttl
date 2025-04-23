@@ -1,0 +1,22 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:SPARQLML a dice:FundedProject ;
+  schema:name "SPARQL-ML" ;
+  schema:tagline "Machine Learning for SPARQL Query Optimization over Centralized and Distributed RDF Knowledge Graphs" ;
+  #schema:relatedProject dice:BDE, dice:GeoKnow ; # related projects
+  schema:status "active" ; # current project status
+  schema:content "The SPARQL-ML project develops AI and machine-learning-based generic approaches for optimized query processing over large RDF Knowledge Graphs to facilitate the development of high-performance centralized and distributed data storage solutions. The final output will be a set of W3C-standard-conformant tools that implement Optimized SPARQL query execution on top of centralized and federated RDF Knowledge Graphs." ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
+  schema:endDate "2027-10-31"^^xsd:date ;
+  schema:startDate "2024-11-01"^^xsd:date ;
+  schema:homepage <https://sparql-ml.eu/> ;
+  schema:logo "sparqlml_logo.png" ;
+  #schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
+  #schema:relatedDemo dice:LIMES ; # list of related demos
+  schema:publicationTag "sparqlml" ; # tag used for publications list on project page
+  #schema:sourceCode <https://github.com/project-group/project> ;
+  schema:fundingProgram "Eurostars" .

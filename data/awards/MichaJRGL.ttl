@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExampleAward a schema:Award ;
+#  schema:url <https://award.url/external/link> ;
+  schema:name "Junior Research Group Leader" ;
+  schema:content "The award of this status confirms that Michael Röder has demonstrated outstanding academic achievements after his doctorate and experience in teaching." ;
+  schema:year "2024";
+  schema:awardee dice:MichaelRoeder . # Awardees from our team
+#  schema:awardeeExternal "Other person", "Another person" . # External awardees
