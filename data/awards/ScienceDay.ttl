@@ -4,6 +4,6 @@
 dice:ScienceDay a schema:Award ;
   schema:url <https://cs.uni-paderborn.de/cs-news-single-view/science-day-2022-nach-zwei-jahren-pause-wieder-da> ;
   schema:name "Best research idea award at UPB Science Day competition" ;
-  schema:content "Presented my PhD research proposal at Science Day 2022 and won the first prize." ;
+  schema:content "The UPB Science Day is a university-wide research showcase. Presented my PhD research proposal at Science Day 2022 and won the first prize." ;
   schema:year "2022 (award year)";
   schema:awardee  dice:UmairQudus .
