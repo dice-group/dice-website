@@ -8446,7 +8446,7 @@ abstract="Class expression learning in description logics has long been regarded
 
 @InCollection{Jalota2019,
   author    = {Jalota, Rricha and Srivastava, Nikit and Vollmers, Daniel and Speck, René and Röder, Michael and Usbeck, Ricardo and Ngonga Ngomo, Axel-Cyrille},
-  editor    = {Julia I. Lane and Ian Mulvany and Paco Nathan}
+  editor    = {Julia I. Lane and Ian Mulvany and Paco Nathan},
   booktitle = {Rich Search and Discovery for Research Datasets},
   publisher = {SAGE Publications},
   title     = {Finding Datasets in Publications: The University of Paderborn Approach},
@@ -8554,14 +8554,20 @@ abstract="Class expression learning in description logics has long been regarded
   series = {WWW '24}
 }
 
-@misc{cabot2023redrm,
-      title={RED$^{\rm FM}$: a Filtered and Multilingual Relation Extraction Dataset}, 
-      author={Pere-Lluís Huguet Cabot and Simone Tedeschi and Axel-Cyrille Ngonga Ngomo and Roberto Navigli},
-      year={2023},
-      eprint={2306.09802},
-      archivePrefix={arXiv},
-      keywords = {dice knowgraphs ngonga},
-      url = {https://arxiv.org/abs/2306.09802},
+@inproceedings{cabot2023redfm,
+    title = "{REDFM}: a Filtered and Multilingual Relation Extraction Dataset",
+    author = "Huguet Cabot, ‪Pere-Llu{\'i}s and Tedeschi, Simone and {Ngonga Ngomo}, Axel-Cyrille and Navigli, Roberto",
+    editor = "Rogers, Anna and Boyd-Graber, Jordan and Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-long.237/",
+    doi = "10.18653/v1/2023.acl-long.237",
+    pages = "4326--4343",
+    keywords = {dice knowgraphs ngonga},
+    abstract = "Relation Extraction (RE) is a task that identifies relationships between entities in a text, enabling the acquisition of relational facts and bridging the gap between natural language and structured knowledge. However, current RE models often rely on small datasets with low coverage of relation types, particularly when working with languages other than English.In this paper, we address the above issue and provide two new resources that enable the training and evaluation of multilingual RE systems. First, we present SRED$^{\textrm{FM}}$, an automatically annotated dataset covering 18 languages, 400 relation types, 13 entity types, totaling more than 40 million triplet instances. Second, we propose RED$^{\textrm{FM}}$, a smaller, human-revised dataset for seven languages that allows for the evaluation of multilingual RE systems. To demonstrate the utility of these novel datasets, we experiment with the first end-to-end multilingual RE model, mREBEL, that extracts triplets, including entity types, in multiple languages. We release our resources and model checkpoints at [\url{https://www.github.com/babelscape/rebel}](\url{https://www.github.com/babelscape/rebel})."
 }
 
 @InProceedings{karalisBDHN2024,
