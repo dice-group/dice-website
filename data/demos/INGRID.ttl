@@ -1,0 +1,37 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:IngridDemo a schema:Demo ;
+     schema:name "Ingrid" ;
+  schema:tagline "Informationssystem Graffiti in Deutschland" ;
+  schema:contenthtml """
+  
+INGRID, the ‘Information System Graffiti in Germany’, is a joint project of the University of Paderborn and the Karlsruhe Institute of Technology (KIT), in which the departments of linguistics (University of Paderborn) and art history (KIT) are involved. Together, a graffiti image database has been set up for scientific use.
+
+Until now, photographic documentation of graffiti has largely been the preserve of university research. They can be found in popular scientific literature and in scene-related internet forums, and are often the result of private or commercially orientated initiatives. For legal reasons, such image archives can only be used to a limited extent for academic research. INGRID, on the other hand, provides image collections that can be used scientifically.
+
+INGRID provides a scientific view of the phenomenon of graffiti. The image database is of great interest not only for linguistics and art history, but also for other disciplines that deal with graffiti as a subject of research, in particular ethnology, cultural and media studies, urban studies, urban sociology and urban planning. As information on the place and time of origin of the images is available, it is possible, for example, to create city profiles that can show the connection between urban infrastructure and the emergence of graffiti as well as the analogies between the development of graffiti and social and urban development changes.
+
+
+This demo showcases INGRIDKG—a FAIR, Linked Data-compliant knowledge graph dedicated to the rich, yet underexplored world of graffiti in Germany. Built as part of the INGRID project, this RDF-based knowledge graph transforms thousands of annotated graffiti images into a structured and accessible dataset for researchers, educators, and cultural institutions.
+
+The core aim of this demo is to offer an interactive experience of querying and analyzing graffiti through semantic technologies. Each graffiti entry includes detailed metadata, such as the creator crew, artistic styles, linguistic features, city locations, and even visual elements like colors and motifs. Through SPARQL endpoints and example queries, users can dive deep into:
+
+- The frequency and distribution of stylistic elements,
+- City-specific graffiti patterns,
+- Artist crew affiliations,
+- Complex textual and visual annotations.
+
+Backed by a pipeline that includes image annotation, ontology development, and data linking with external graphs like DBpedia and LinkedGeoData, INGRIDKG represents more than 460 million RDF triples and is updated weekly.
+
+This demo not only offers a glimpse into how ephemeral urban art can be preserved digitally, but also highlights its interdisciplinary value in fields like linguistics, sociology, art history, and urban studies.
+
+Explore how graffiti becomes data—and data becomes insight.
+ """ ;
+  schema:screenshot "Ingrid-demo.png" ;
+  schema:logo "logo-ingrid.png" ; 
+  schema:homepage <https://dice-group.github.io/ingrid.github.io/> ;
+  schema:sourceCode <https://github.com/dice-group/Ingrid> ;
+  schema:maintainer dice:MohamedAhmedSherif;
+  schema:developer dice:MohamedAhmedSherif, dice:AnaAlexandraSilva, dice:SvetlanaPestryakova .
