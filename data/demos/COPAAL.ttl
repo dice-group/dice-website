@@ -6,7 +6,7 @@ dice:COPAAL a schema:Demo ;
   schema:tagline "COPAAL -- An Interface for Explaining Facts using Corroborative Paths" ;
   schema:content """COPAAL is an unsupervised fact validation approach for RDF knowledge graphs which identifies paths that support a given fact (s, p, o)... For detailed information see the [ISWC publication](https://pdfs.semanticscholar.org/061d/c4da92e38f0552c12dc36b2b75fbbc98a5fc.pdf)."""; 
   schema:screenshot "COPAAL_Fact_Obama.png", "COPAAL_Screen.png";
-  schema:logo "dice-icon.png" ;
+  schema:logo "copaal_logo.png" ;
   schema:homepage <http://copaal.dice-research.org/demo/> ;
   schema:sourceCode <https://github.com/dice-group/COPAAL> ;
   schema:maintainer dice:UmairQudus ;
