@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import Layout from '../components/layout';
 import Project from '../components/project';
 import SEO from '../components/seo';
-import ProjectsNav from '../components/projectsnav';
+import ResearchNav from '../components/researchnav';
 
 export default function Projects({
   data: {
@@ -23,7 +23,7 @@ export default function Projects({
   return (
     <Layout withContainer={false}>
       <SEO title="Projects" />
-      <ProjectsNav activeLink="/projects/" />
+      <ResearchNav activeLink="/projects/" />
 
       <section className="section">
         <div className="container content">

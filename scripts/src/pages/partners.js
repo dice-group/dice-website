@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import CollaboratorsNav from '../../components/collabnav';
-import Layout from '../../components/layout';
-import Partner from '../../components/partner';
-import SEO from '../../components/seo';
+import ResearchNav from '../components/researchnav';
+import Layout from '../components/layout';
+import Partner from '../components/partner';
+import SEO from '../components/seo';
 
 export default function Partners({
   data: {
@@ -17,7 +17,7 @@ export default function Partners({
   return (
     <Layout withContainer={false}>
       <SEO title="Partners" />
-      <CollaboratorsNav activeLink="/collaborators/partners/" />
+      <ResearchNav activeLink="/collaborators/partners/" />
 
       <section className="section">
         <div className="container content">

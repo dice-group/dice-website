@@ -4,16 +4,12 @@ import DICE from '../svgs/dice.inline.svg';
 
 const links = [
   { url: '/', text: 'Home' },
-  { url: '/projects/', text: 'Projects' },
+  { url: '/groups/', text: 'Research' },
   { url: '/publications/', text: 'Publications' },
   { url: '/awards/', text: 'Awards' },
-
-  { url: '/students/', text: 'For students' },
-  { url: '/collaborators/', text: 'Research areas' },
-
+  { url: '/students/', text: 'Student Offerings' },
   { url: '/team/', text: 'Team' },
   { url: '/jobs', text: 'Vacancies' },
-  { url: '/news/', text: 'News' },
 ];
 
 const Header = () => {

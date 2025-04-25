@@ -19,9 +19,6 @@ export default function Theses({
           <li>
             <Link to="/students/teaching/">Teaching</Link>
           </li>
-          <li>
-            <Link to="/students/mentoring/">Mentoring</Link>
-          </li>
           <li className="is-active">
             <a>Theses</a>
           </li>

@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import ProjectsNav from '../components/projectsnav';
+import ResearchNav from '../components/researchnav';
 import Demo from '../components/demo';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,7 +13,7 @@ export default function Demos({
   return (
     <Layout withContainer={false}>
       <SEO title="Demos" />
-      <ProjectsNav activeLink="/demos/" />
+      <ResearchNav activeLink="/demos/" />
 
       <section className="section">
         <div className="container content">

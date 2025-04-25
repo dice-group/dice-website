@@ -3,24 +3,24 @@ import React from 'react';
 
 const links = [
   {
-    url: '/collaborators/activeprojects/',
-    title: 'Active projects',
+    url: '/groups/',
+    title: 'Research Groups',
   },
   {
-    url: '/collaborators/demos/',
+    url: '/projects/',
+    title: 'Projects',
+  },
+  {
+    url: '/demos/',
     title: 'Demos',
   },
   {
-    url: '/collaborators/partners/',
+    url: '/partners/',
     title: 'Partners',
-  },
-  {
-    url: '/collaborators/groups/',
-    title: 'Groups',
   },
 ];
 
-export default function CollaboratorsNav({ activeLink }) {
+export default function ResearchNav({ activeLink }) {
   return (
     <div className="tabs">
       <ul className="container">

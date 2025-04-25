@@ -65,9 +65,6 @@ export default function Teaching({
             <a>Teaching</a>
           </li>
           <li>
-            <Link to="/students/mentoring/">Mentoring</Link>
-          </li>
-          <li>
             <Link to="/students/theses/">Theses</Link>
           </li>
         </ul>

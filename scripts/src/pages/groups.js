@@ -1,10 +1,10 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from '../../components/markdown';
-import CollaboratorsNav from '../../components/collabnav';
-import Layout from '../../components/layout';
-import SEO from '../../components/seo';
-import SideMenu from '../../components/sidemenu';
+import ReactMarkdown from '../components/markdown';
+import ResearchNav from '../components/researchnav';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import SideMenu from '../components/sidemenu';
 
 export default function Groups({
   data: {
@@ -24,7 +24,7 @@ export default function Groups({
   return (
     <Layout withContainer={false}>
       <SEO title="Groups" />
-      <CollaboratorsNav activeLink="/collaborators/groups/" />
+      <ResearchNav activeLink="/collaborators/groups/" />
       <SideMenu targets={menu} style={{ margin: 'auto' }} />
 
       <section className="section">
