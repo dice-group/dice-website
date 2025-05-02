@@ -9,31 +9,32 @@ dice:CaglarDemir a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:caglar.demir@uni-paderborn.de> ;
   schema:chat "@cdemir:chat.dice-research.org" ;
-  schema:office "TP6.3.102" ;
+  schema:office "F1.304" ;
   schema:photo "demir.jpg" ;
   schema:project dice:ENEXA, dice:LeMuR, dice:SAIL, dice:embeddings.cc,  dice:RAKI, dice:DAIKIRI, dice:OPAL;
   schema:content """
 
 ## Research Interest
 
-My research interest centers around developing scalable algorithms for learning and reasoning on knowledge graphs.
-For more, please refer to
+My research interest centers around developing scalable algorithms for learning & reasoning on knowledge graphs.
+
 * <a href="https://scholar.google.com/citations?user=PAZsbbEAAAAJ&hl=en">Google Scholar Profile</a>
 * <a href="https://github.com/Demirrr">Github Profile</a>
 
 
 ## Software Frameworks
-
-* <a href="https://github.com/dice-group/dice-embeddings">DICE Embeddings: Hardware-agnostic Framework for Large-scale Knowledge Graph Embeddings</a>
 * <a href="https://github.com/dice-group/Ontolearns">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
+* <a href="https://github.com/dice-group/dice-embeddings">DICE Embeddings: Hardware-agnostic Framework for Large-scale Knowledge Graph Embeddings</a>
+* <a href="https://github.com/dice-group/owlapy">OWLAPY:OWL Engineering & Reasoning in Python</a>
 
 
 ## PC Member
 ECML 2023, IJCAI 2024
 
 ## Thesis Supervision
-
-#### 2023
+* Enhancing the Capabilities of Large Language Models Using Knowledge Graphs in Finance
+* Multimodal RAG over Knowledge Graph
+* OWL Neural Reasoner
 * Answering Complex Queries with Negations in Incomplete Knowledge Graph
 
 """ .
