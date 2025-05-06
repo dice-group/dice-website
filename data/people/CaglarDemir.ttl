@@ -32,6 +32,7 @@ My research interest centers around developing scalable algorithms for learning 
 ECML 2023, IJCAI 2024
 
 ## Thesis Supervision
+
 * Enhancing the Capabilities of Large Language Models Using Knowledge Graphs in Finance
 * Multimodal RAG over Knowledge Graph
 * OWL Neural Reasoner
