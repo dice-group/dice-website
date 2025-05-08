@@ -4,7 +4,7 @@
 dice:HashimKhan a schema:Person ;
   schema:name "Hashim Khan" ;
   schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-5251-605188> ;
   schema:fax <tel:> ;
   schema:email <mailto:hashim.khan@uni-paderborn.de> ;

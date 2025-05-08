@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:DRK-RLP a schema:Partner ;
+  schema:name "DRK-Landesverbandes Rheinland-Pfalz e.V." ;
+  schema:country "DE" ;
+  schema:url <https://itc.drk.de/> ;
+  schema:logo "DRK-RLP.svg" .
