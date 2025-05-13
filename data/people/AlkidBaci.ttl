@@ -8,5 +8,5 @@ dice:AlkidBaci a schema:Person ;
   schema:email <mailto:alkid@campus.uni-paderborn.de> ;
   schema:chat "@alkid:chat.dice-research.org" ;
   schema:office "FU.211" ;
-  schema:project dice:ENEXA, dice:TENTRIS, dice:TRR318 ;
+  schema:project dice:ENEXA, dice:TENTRIS, dice:TRR318, dice:KIOWL ;
   schema:photo "alkidbaci.jpg" .
