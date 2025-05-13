@@ -12,9 +12,9 @@ dice:Learn2RAG a dice:FundedProject ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
   schema:endDate "2028-01-31"^^xsd:date ;
   schema:startDate "2025-02-01"^^xsd:date ;
-  # schema:homepage <https://dice-research.org/> ;
-  # schema:logo "" ;
-  # schema:partner dicepartner:Metaphacts, dicepartner:TomTomDevelopmentGermanyGmbHD ; # project partners list
+  schema:homepage <https://learn2rag.de/> ;
+  schema:logo "Learn2RAG.light.png" ;
+  schema:partner dicepartner:IfDT, dicepartner:USU, dicepartner:DRK-RLP, dicepartner:FraunhoferIEM ; # project partners list
   # schema:relatedDemo dice:LIMES ; # list of related demos
   schema:publicationTag "learn2rag" ; # tag used for publications list on project page
   # schema:sourceCode <https://github.com/project-group/project> ;

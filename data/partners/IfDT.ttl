@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:IfDT a schema:Partner ;
+  schema:name "Institut für Digitale Technologien" ;
+  schema:country "DE" ;
+  schema:url <https://ifdt.org/> ;
+  schema:logo "IfDT.png" .
