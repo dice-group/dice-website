@@ -7,7 +7,7 @@
 dice:KIOWL a dice:FundedProject ;
   schema:name "KI Akadamie OWL" ;
   schema:status "active" ; # current project status
-  schema:content "The KI-Akademie OWL researches how artificial intelligence can be used responsibly, efficiently and sustainably. Our focus is on identifying the risks of highly complex AI models and developing specialised, resource-efficient AI solutions. In particular, we concentrate on two highly relevant areas: the safety of AI processes and the development of AI methods for applications with limited data, for example in the context of inclusion. Through interdisciplinary research, we bring together technology, social sciences and the humanities to make AI understandable, safe and inclusive - for companies, educational stakeholders and society." ;
+  schema:content "The KI-Akademie OWL researches how artificial intelligence can be used responsibly, efficiently and sustainably. The focus is on identifying the risks of highly complex AI models and developing specialised, resource-efficient AI solutions. In particular, we concentrate on two highly relevant areas: the safety of AI processes and the development of AI methods for applications with limited data, for example in the context of inclusion. Through interdisciplinary research, we bring together technology, social sciences and the humanities to make AI understandable, safe and inclusive - for companies, educational stakeholders and society." ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ; # project maintainer
   schema:endDate "2028-12-31"^^xsd:date ;
   schema:startDate "2024-07-01"^^xsd:date ;
