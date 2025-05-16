@@ -15,14 +15,13 @@ dice:FranziskaSchloots a schema:Person ;
   schema:content """
 
 ##Research Interests
-*Self-tracking and wearable devices
-*Quantification
-*empirical media research and methods
-*Video game culture
+* Self-tracking and wearable devices
+* Quantification
+* empirical media research and methods
+* Video game culture
 
 ##Memberships
-*GfM - Gesellschaft für Medienwissenschaft
-*NECS - European Network for Cinema and Media Studies
+* GfM - Gesellschaft für Medienwissenschaft
 
 """ .
 

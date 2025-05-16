@@ -16,7 +16,7 @@ SAIL addresses the next stage of AI development by looking at the entire life cy
   schema:startDate "2022-08-01"^^xsd:date ;
   schema:endDate "2026-07-31"^^xsd:date ;
   schema:publicationTag "sailproject" ;
-  schema:partner dicepartner:UBI , dicepartner:FHBielefeld , dicepartner:THOWL ;
+  schema:partner dicepartner:UBI , dicepartner:HSBI , dicepartner:THOWL ;
   #schema:fundingProgram "Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen (MKW NRW), NW21-059D" ;
   schema:fundingProgram "Ministry of Culture and Science of North Rhine-Westphalia (MKW NRW), NW21-059D" ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo .
