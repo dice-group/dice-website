@@ -14,6 +14,7 @@ Specifically, LMR algorithms will allow flexible representations (e.g., suitable
 """ ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
   schema:name "LeMuR" ;
+  schema:logo "lemur_logo.png" ;
   schema:endDate "2026-12-31"^^xsd:date ;
   schema:startDate "2023-01-01"^^xsd:date ;
   schema:homepage <https://lemur-dn.github.io/> ;
