@@ -48,7 +48,7 @@ export default function Home() {
               extraction, integration, querying and use of{' '}
               <Link to="/KnowGraphs/">knowledge graphs</Link> in all forms. We
               currently focus on developing{' '}
-              <Link to="/collaborators/demos/">data-driven solutions</Link> to
+              <Link to="/demos/">data-driven solutions</Link> to
               challenges such as question answering, explainable and responsible
               machine learning as well as safety. The results of our research
               has led to more than 25{' '}
@@ -66,16 +66,16 @@ export default function Home() {
                 job vacancies for students and postgraduates
               </Link>{' '}
               and welcome applications. We are dedicated to{' '}
-              <Link to="collaborators/demos/">
+              <Link to="/demos/">
                 open-source software
               </Link> and <Link to="/publications/">open publications</Link> and
               are always up to a good research challenge. Do not hesitate to{' '}
               <Link to="/contact/">contact us</Link> if you are interested in{' '}
-              <Link to="collaborators/activeprojects/">collaborating</Link> with
+              <Link to="/projects/">collaborating</Link> with
               us. Please scroll down for more info on our current activities.{' '}
             </p>
             <button
-              onClick={() => navigate('/collaborators/groups/')}
+              onClick={() => navigate('/groups/')}
               className="action-button"
             >
               Learn more
