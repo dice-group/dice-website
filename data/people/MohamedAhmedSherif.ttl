@@ -5,7 +5,7 @@ dice:MohamedAhmedSherif a schema:Person ;
   schema:name "Mohamed Ahmed Sherif" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:role dice:SeniorResearcher ;
-  schema:phone <tel:+49-525-16-01708> ;
+  schema:phone <tel:+49-525-16-05197> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:mohamed.sherif@upb.de> ;
   schema:chat "@msherif:chat.dice-research.org" ;
