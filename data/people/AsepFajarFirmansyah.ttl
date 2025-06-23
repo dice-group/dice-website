@@ -9,6 +9,7 @@ dice:AsepFajarFirmansyah a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:asep.fajar.firmansyah@uni-paderborn.de> ;
   schema:chat "@asepff:chat.dice-research.org" ;
+  schema:project dice:ClimatebOWL, dice:ENEXA ;
   schema:office "FU.335" ;
   schema:photo "firmansyah.jpg" ;
   schema:content """
