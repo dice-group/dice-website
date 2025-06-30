@@ -3,8 +3,8 @@
 
 dice:JeanNDahKouagou a schema:Person ;
   schema:name "N'Dah Jean Kouagou" ;
-  schema:namePrefix "" ;
-  schema:role dice:ResearchStaff ;
+  schema:namePrefix "Dr. rer. nat." ;
+  schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05190> ;
   schema:fax <tel:> ;
   schema:email <mailto:ndah.jean.kouagou@upb.de> ;
@@ -12,5 +12,17 @@ dice:JeanNDahKouagou a schema:Person ;
   schema:office "FU.211" ;
   schema:photo "jean.jpg" ;
   schema:project dice:KnowGraphs, dice:embeddings.cc, dice:ENEXA ;
-  schema:content """""" .
+  schema:content """
+## Research Interest
+
+My research interests include machine learning on knowledge graphs, explainable machine learning on RDF knowledge bases, deep learning, and large reasoning models.
+For more, please refer to
+* <a href="https://scholar.google.com/citations?user=V3py6YMAAAAJ&hl=en">Google Scholar Profile</a>
+* <a href="https://github.com/Jean-KOUAGOU">Github Profile</a>
+
+
+## Software Frameworks
+
+* <a href="https://github.com/dice-group/Ontolearns">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
+  """ .
 
