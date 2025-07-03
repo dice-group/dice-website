@@ -23,6 +23,6 @@ For more, please refer to
 
 ## Software Frameworks
 
-* <a href="https://github.com/dice-group/Ontolearns">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
+* <a href="https://github.com/dice-group/Ontolearn">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
   """ .
 

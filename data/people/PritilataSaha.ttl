@@ -1,0 +1,8 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:PritilataSaha a schema:Person ;
+  schema:name "Pritilata Saha" ;
+  schema:role dice:StudentResearcher ;
+  schema:photo "pritilata.jpg" ;
+  schema:email <mailto:psaha@mail.uni-paderborn.de> .
