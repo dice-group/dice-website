@@ -20,7 +20,7 @@ jobs:
     - name: Check file
       id: check
       run: |
-        docker run --name=biber -v /home/mroeder/workspace/dice-website/data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
+        docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
         $result = docker wait biber
     - name: Check test result
       if: ${{ steps.check.outputs.result > 0 }}
