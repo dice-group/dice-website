@@ -18,12 +18,14 @@ jobs:
         username: ${{ vars.DOCKER_REGISTRY_USERNAME }}
         password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
     - name: Check file
-      id: check
-      run: |
-        docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
-        $result = docker wait biber
+      run: docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
+# Check according to https://timheuer.com/blog/manually-force-a-failure-in-github-action-step/
+    - name Collect test result
+      id: collect  
+      shell: pwsh  
+      run: $result = docker wait biber
     - name: Check test result
-      if: ${{ steps.check.outputs.result > 0 }}
+      if: ${{ steps.collect.outputs.result > 0 }}
       uses: actions/github-script@v3
       with:
         script: |
