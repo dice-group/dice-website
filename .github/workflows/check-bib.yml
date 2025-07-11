@@ -20,7 +20,7 @@ jobs:
     - name: Check file
       run: docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
 # Check according to https://timheuer.com/blog/manually-force-a-failure-in-github-action-step/
-    - name Collect test result
+    - name: Collect test result
       id: collect  
       shell: pwsh  
       run: $result = docker wait biber
