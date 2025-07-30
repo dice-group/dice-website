@@ -17,5 +17,5 @@ dice:Learn2RAG a dice:FundedProject ;
   schema:partner dicepartner:IfDT, dicepartner:USU, dicepartner:DRK-RLP, dicepartner:FraunhoferIEM ; # project partners list
   # schema:relatedDemo dice:LIMES ; # list of related demos
   schema:publicationTag "learn2rag" ; # tag used for publications list on project page
-  # schema:sourceCode <https://github.com/project-group/project> ;
-  schema:fundingProgram "BMWK" .
+  schema:sourceCode <https://github.com/learn2rag> ;
+  schema:fundingProgram "This work has been supported by the by the German Federal Ministry of Research, Technology and Space (BMFTR) under the grant no 01MK250104." .
