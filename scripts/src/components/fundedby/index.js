@@ -52,6 +52,11 @@ const fundedBy = [
     image: ['mkw-nrw.png'],
     text: ['MKW NRW'],
   },
+  {
+    url: 'https://www.bmftr.bund.de',
+    image: ['bmftr.png'],
+    text: ['BMFTR'],
+  },
 ];
 
 const getProgram = fundingProgram => {
