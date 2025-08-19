@@ -73,13 +73,38 @@ function checkUrl(url) {
 }
 
 /**
- * A simple method for pre processing PDF URLs removing '\\_' and '\\%'.
+ * Extract a raw URL from possible Markdown like: [text](https://example)
  */
-function preprocessPdfUrl(url) {
-  if (url === null || url === undefined) {
-    return '';
+function extractUrl(s) {
+  if (!s) return '';
+  const str = String(s);
+  const m = str.match(/\((https?:\/\/[^)]+)\)/); // [text](URL)
+  if (m) return m[1];
+  const bare = str.match(/https?:\/\/[^\s)>]+/); // fallback: first http(s)://...
+  return bare ? bare[0] : str;
+}
+
+// Normalize a URL:
+//  - remove backslashes used as escapes (\_ \%)
+//  - collapse accidental multiple slashes is path (keep scheme //)
+//  - trim
+function normalizeUrl(s) {
+  if (!s) return '';
+  let url = extractUrl(String(s).trim());
+  url = url.replace(/^<+|>+$/g, '');
+  url = url.replace(/\\/g, '');
+  const m = url.match(/^(https?:\/\/[^/]+)(\/.*)?$/i);
+  if (m) {
+    const host = m[1];
+    const path = (m[2] || '').replace(/\/{2,}/g, '/');
+    url = host + path;
   }
-  return url.replace(/\\/g, '');
+  return url;
+}
+
+// Keep legacy behaivor for PDF URLs but reuse the generic normalizer.
+function preprocessPdfUrl(url) {
+  return normalizeUrl(url);
 }
 
 /**
@@ -143,10 +168,23 @@ const main = async () => {
         writeLiteral('tag', tag);
       });
     }
-    // make sure that URL is valid before adding it
-    if (checkUrl(paper.url)) {
-      writeUrl(`${prefixes.schema}url`, paper.url);
+
+    // sanitize and add the canonical URL
+    const cleanUrl = normalizeUrl(paper.url);
+    if (checkUrl(cleanUrl)) {
+      writeUrl(`${prefixes.schema}url`, cleanUrl);
+    } else if (paper.doi) {
+      const doiUrl = normalizeUrl(
+        `https://doi.org/${String(paper.doi).replace(
+          /^https?:\/\/(dx\.)?doi\.org\//i,
+          ''
+        )}`
+      );
+      if (checkUrl(doiUrl)) {
+        writeUrl(`${prefixes.schema}url`, doiUrl);
+      }
     }
+
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
     var pdfUrl = preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']);
     if (checkUrl(pdfUrl)) {
