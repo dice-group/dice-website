@@ -1129,3 +1129,48 @@ a {
     }
   }
 }
+
+:root {
+  --group-bg: #e2eaf2;
+}
+
+.groups-page .group-card {
+  @apply rounded-xl p-6 mb-10 border;
+  border-color: rgba(0,0,0,.08);
+  background: var(--group-bg);
+}
+
+.groups-page .group-header {
+  @apply flex flex-col md:flex-row items-start md:items-center gap-6 mb-6;
+}
+
+.groups-page .group-figure {
+  @apply w-full md:w-72 lg:w-80 flex-shrink-0;
+}
+
+.groups-page .group-figure img {
+  @apply w-full h-48 md:h-56 object-cover rounded-lg;
+  background: linear-gradient(135deg,#dbe6f2,#e9f0f8);
+}
+
+.groups-page .group-title {
+  @apply text-2xl font-bold mb-2;
+  color: var(--primary-color);
+}
+
+.groups-page .meta-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 mt-4;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.groups-page .column-header {
+  @apply font-bold mb-1;
+}
+.groups-page .staff-list { @apply flex flex-col; }
+.groups-page .staff-list a { @apply mb-1; }
+.groups-page .group-tagline { @apply text-gray-700 mb-3; }
+
+.groups-page .container { @apply max-w-6xl; }
+@screen lg {
+  .groups-page .container { @apply max-w-7xl pr-28; }
+}
