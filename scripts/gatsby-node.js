@@ -101,6 +101,16 @@ exports.createPages = async ({
     toPath: `/collaborators/activeprojects/`,
   });
 
+  exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+    createTypes(`
+      type RDFData {
+        image: String
+        logo: String
+      }
+    `);
+  };
+
   // mdx news rendering
   await renderMarkdownType({
     type: '"news"',
