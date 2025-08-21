@@ -1191,7 +1191,7 @@ a {
 }
 
 .teaching-page .kind-icon {
-  @apply w-9 h-9 flex-shrink-0;
+  @apply w-12 h-12 flex-shrink-0;
 }
 
 .teaching-page .course {

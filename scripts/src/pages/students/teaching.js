@@ -122,8 +122,6 @@ export default function Teaching({
                                     src={icon}
                                     alt=""
                                     aria-hidden="true"
-                                    width="36"
-                                    headth="36"
                                     loading="lazy"
                                     decoding="async"
                                   />
