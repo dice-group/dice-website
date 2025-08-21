@@ -22,6 +22,12 @@ const canonicalTerm = t => {
   return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
 };
 
+const displayYear = (year, term) => {
+  const base = parseInt(String(year).slice(0, 4), 10);
+  if (!Number.isFinite(base)) return year;
+  return canonicalTerm(term) === 'Winter' ? `${base}/${base + 1}` : `${base}`;
+};
+
 const processData = edges => {
   const years = [...new Set(edges.map(it => it.node.frontmatter.year))];
   const data = {};
@@ -102,7 +108,7 @@ export default function Teaching({
                   .map(term => (
                     <div className="terms term-wrap" key={term}>
                       <h2 className="term-title">
-                        {term} Term {year}
+                        {term} Term {displayYear(year, term)}
                       </h2>
                       <div className="term-card">
                         {Object.keys(result[year][term]).map(kind => {
@@ -115,11 +121,16 @@ export default function Teaching({
                                     className="kind-icon"
                                     src={icon}
                                     alt=""
+                                    aria-hidden="true"
+                                    width="36"
+                                    headth="36"
                                     loading="lazy"
                                     decoding="async"
                                   />
                                 )}
-                                <h3 className="kind">{kind}</h3>
+                                <h3 className="kind">
+                                  {kind.replace(/s?$/, 's')}
+                                </h3>
                               </div>
 
                               {result[year][term][kind].map(course => (
