@@ -3,6 +3,7 @@
 
 dice:DataIntegration a schema:Group ;
   schema:name "Data Integration" ;
+  schema:image "";
   schema:tagline "We build algorithms for the efficient and scalable linking of RDF data" ;
   schema:relatedProject dice:FAIROmics, dice:WHALE, dice:embeddings.cc,  dice:ClimatebOWL, dice:SFB901, dice:Ingrid, dice:HOBBIT, dice:OPAL, dice:BDE, dice:GeoKnow, dice:Feasible, dice:DEISEL, dice:SLIPO, dice:SAGE, dice:LIMBO, dice:KnowGraphs, dice:GEISER ; # related projects
   schema:content """
