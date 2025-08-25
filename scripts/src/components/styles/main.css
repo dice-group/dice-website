@@ -1174,3 +1174,34 @@ a {
 @screen lg {
   .groups-page .container { @apply max-w-7xl pr-28; }
 }
+
+.teaching-page .term-title {
+  @apply text-3xl mb-3;
+  color: var(--primary-color);
+}
+
+.teaching-page .term-card {
+  @apply rounded-xl p-6 mb-10 border;
+  background: #e2eaf2;
+  border-color: rgba(0,0,0,.08);
+}
+
+.teaching-page .kind-row {
+  @apply flex items-center gap-3 mt-6 mb-2;
+}
+
+.teaching-page .kind-icon {
+  @apply w-12 h-12 flex-shrink-0;
+}
+
+.teaching-page .course {
+  @apply mt-1;
+}
+
+.teaching-page .kind-label {
+  @apply text-gray-500 ml-2 mr-2;
+}
+
+.teaching-page .kind { @apply mt-3 font-semibold; }
+
+.teaching-page .term-wrap .term-card > div:last-child { @apply mb-0; }
