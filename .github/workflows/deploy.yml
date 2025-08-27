@@ -41,7 +41,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Download uploader
-        run: curl --retry 4 -L -o "bibupload_18.jar" "https://files.dice-research.org/website/bib-uploader/bibupload_18.jar"
+        run: curl --retry 4 -L -o "bibupload_18.jar" "https://github.com/dice-group/bibsonomy-uploader/releases/download/v1.0.0/bibsonomy_uploader.jar"
       - name: Upload
         shell: bash
         env:
