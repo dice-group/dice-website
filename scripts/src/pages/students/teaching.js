@@ -12,6 +12,22 @@ import DEFlag from '../../components/svgs/deflag.inline.svg';
  * @param {Object} edges term data from graphql
  * @returns {Object} data object split by year and term
  */
+
+const canonicalTerm = t => {
+  const s = String(t || '')
+    .trim()
+    .toLowerCase();
+  if (['summer', 'ss', 'sose', 's'].includes(s)) return 'Summer';
+  if (['winter', 'ws', 'wise', 'w'].includes(s)) return 'Winter';
+  return s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+};
+
+const displayYear = (year, term) => {
+  const base = parseInt(String(year).slice(0, 4), 10);
+  if (!Number.isFinite(base)) return year;
+  return canonicalTerm(term) === 'Winter' ? `${base}/${base + 1}` : `${base}`;
+};
+
 const processData = edges => {
   const years = [...new Set(edges.map(it => it.node.frontmatter.year))];
   const data = {};
@@ -22,7 +38,9 @@ const processData = edges => {
 
     const itemsInYear = edges.filter(it => it.node.frontmatter.year === year);
     const termsInYear = [
-      ...new Set(itemsInYear.map(it => it.node.frontmatter.term)),
+      ...new Set(
+        itemsInYear.map(it => canonicalTerm(it.node.frontmatter.term))
+      ),
     ];
 
     for (const term of termsInYear) {
@@ -31,7 +49,7 @@ const processData = edges => {
       }
 
       const itemsInYearTerm = itemsInYear.filter(
-        it => it.node.frontmatter.term === term
+        it => canonicalTerm(it.node.frontmatter.term) === term
       );
       const typesInTerm = [
         ...new Set(itemsInYearTerm.map(it => it.node.frontmatter.type)),
@@ -47,6 +65,13 @@ const processData = edges => {
   }
 
   return data;
+};
+
+const iconFor = kind => {
+  const k = (kind || '').toLowerCase();
+  if (k.includes('seminar')) return '/images/teaching/seminar.png';
+  if (k.includes('project')) return '/images/teaching/project.png';
+  if (k.includes('lecture')) return '/images/teaching/lecture.png';
 };
 
 export default function Teaching({
@@ -70,7 +95,7 @@ export default function Teaching({
         </ul>
       </div>
 
-      <section className="section">
+      <section className="section teaching-page">
         <div className="container content teaching">
           <h1 className="header">Teaching</h1>
 
@@ -78,49 +103,73 @@ export default function Teaching({
             .sort((a, b) => b - a)
             .map(year => (
               <div className="years" key={year}>
-                <h2 className="subheader">{year}</h2>
-
                 {Object.keys(result[year])
                   .sort((a, b) => b.localeCompare(a))
                   .map(term => (
-                    <div className="terms" key={term}>
-                      <h3 className="term">{term} Term</h3>
+                    <div className="terms term-wrap" key={term}>
+                      <h2 className="term-title">
+                        {term} Term {displayYear(year, term)}
+                      </h2>
+                      <div className="term-card">
+                        {Object.keys(result[year][term]).map(kind => {
+                          const icon = iconFor(kind);
+                          return (
+                            <div key={kind}>
+                              <div className="kind-row">
+                                {icon && (
+                                  <img
+                                    className="kind-icon"
+                                    src={icon}
+                                    alt=""
+                                    aria-hidden="true"
+                                    loading="lazy"
+                                    decoding="async"
+                                  />
+                                )}
+                                <h3 className="kind">
+                                  {kind.replace(/s?$/, 's')}
+                                </h3>
+                              </div>
 
-                      {Object.keys(result[year][term]).map(kind => (
-                        <div key={kind}>
-                          <div className="kind">{kind}</div>
-
-                          {result[year][term][kind].map(course => (
-                            <div
-                              key={course.node.fields.path}
-                              className="course"
-                            >
-                              <Link to={course.node.fields.path}>
-                                {course.node.frontmatter.title}
-                              </Link>
-                              <span className="kind-label">
-                                {course.node.frontmatter.kind}
-                              </span>
-                              {course.node.frontmatter.language === 'en' && (
-                                <span
-                                  className="language"
-                                  title="English language"
+                              {result[year][term][kind].map(course => (
+                                <div
+                                  key={course.node.fields.path}
+                                  className="course"
                                 >
-                                  <UKFlag style={{ width: 24, height: 12 }} />
-                                </span>
-                              )}
-                              {course.node.frontmatter.language === 'de' && (
-                                <span
-                                  className="language"
-                                  title="German language"
-                                >
-                                  <DEFlag style={{ width: 24, height: 12 }} />
-                                </span>
-                              )}
+                                  <Link to={course.node.fields.path}>
+                                    {course.node.frontmatter.title}
+                                  </Link>
+                                  <span className="kind-label">
+                                    {course.node.frontmatter.kind}
+                                  </span>
+                                  {course.node.frontmatter.language ===
+                                    'en' && (
+                                    <span
+                                      className="language"
+                                      title="English language"
+                                    >
+                                      <UKFlag
+                                        style={{ width: 24, height: 12 }}
+                                      />
+                                    </span>
+                                  )}
+                                  {course.node.frontmatter.language ===
+                                    'de' && (
+                                    <span
+                                      className="language"
+                                      title="German language"
+                                    >
+                                      <DEFlag
+                                        style={{ width: 24, height: 12 }}
+                                      />
+                                    </span>
+                                  )}
+                                </div>
+                              ))}
                             </div>
-                          ))}
-                        </div>
-                      ))}
+                          );
+                        })}
+                      </div>
                     </div>
                   ))}
               </div>
