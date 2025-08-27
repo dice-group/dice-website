@@ -6,9 +6,6 @@ on:
       code:
         description: 'code from callback page'
         required: true
-      state:
-        description: 'state from callback page'
-        required: false
       redirect_uri:
         description: 'EXACT redirect URI used during authorization'
         required: true
@@ -27,7 +24,7 @@ jobs:
           CODE: ${{ github.event.inputs.code }}
           CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
-          REDIRECT_URI: $ {{ github.event.inputs.redirect_uri }}
+          REDIRECT_URI: ${{ github.event.inputs.redirect_uri }}
         run: |
           set -e
           TOKENS=$(curl -s https://www.linkedin.com/oauth/v2/accessToken \
