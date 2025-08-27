@@ -1,41 +1,20 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>LinkedIn authorization - DICE</title>
-<style>
-    body {
-        font: 16px system-ui;
-        margin: 2rem;
-        max-width: 720px;
-    }
+<meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'">
 
-    code {
-        padding: .25rem .5rem;
-        background: #f5f5f5;
-        border-radius: 6px;
-    }
-</style>
-<h1>LinkedIn authorization</h1>
-<p>Step 1: Copy the values below.</p>
-<script>
-    const qs = new URLSearchParams(location.search)
-    const hsh = new URLSearchParams((location.hash || '').replace(/^#/, ''))
-    const code = qs.get('code') || hsh.get('code');
-    const state = qs.get('state') || hsh.get('state');
-    const err = qs.get('error') || hsh.get('error');
-    const desc = qs.get('error_description') || hsh.get('error_description')
+<link rel="stylesheet" href="./style.css" />
 
-    document.write(`<p><strong>URL:</strong> <code>${location.href}</code></p>`)
+<div class="wrap">
+    <h1>LinkedIn authorization</h1>
+    <p>Step 1: Copy the values below.</p>
 
-    if (code) {
-        document.write(`<p><strong>Code:</strong> <code>${code}</code></p>`)
-        document.write(`<p><strong>State:</strong> <code>${state || '(missing)'}</code></p>`)
-    } else if (err) {
-        document.write(`<p><strong>Error:</strong> <code>${err}</code></p>`)
-        document.write(`<p><strong>Description:</strong> <code>${decodeURIComponent(desc || '')}</code></p>`)
-        document.write(`<p><strong>State:</strong> <code>${state || '(missing)'}</code></p>`)
-    } else {
-        document.write('<p><b>No code and no error found.</b> (The query string may have been stripped by a redirect.</p>')
-        document.write(`<p><strong>State:</strong> <code>${state || '(missing)'}</code></p>`)
-    }
-</script>
-<p>Step 2: Open GitHub → Actions → "Save LinkedIn Token" and paste both.</p>
+    <div id="out"></div>
+    <p class="note">Step 2: Open GitHub → Actions → <b>Save LinkedIn Token</b> and paste credentials.</p>
+    <noscript>
+        <p class="error">JavaScript is required on this page.</p>
+    </noscript>
+</div>
+
+<script src="./script.js" defer></script>

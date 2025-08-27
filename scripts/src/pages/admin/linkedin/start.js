@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import * as styles from './start.module.css';
 
 const CLIENT_ID = process.env.GATSBY_LINKEDIN_CLIENT_ID;
 const SCOPES = ['r_organization_social'];
@@ -28,19 +29,23 @@ export default function StartLinkedIn() {
   return (
     <main className="section">
       <div className="container content">
-        <h1>Authorize LinkedIn</h1>
-        <p>
-          Click the button below while logged in as <b>Page Admin/Poster</b>.
-        </p>
-        <a className="button is-link" href={url}>
-          Authorize with LinkedIn
-        </a>
-        <p className="mt-4">
-          <small>
-            After approval you'll see a <code>code</code> and <code>state</code>{' '}
-            on the callback page.
-          </small>
-        </p>
+        <div className={styles.wrap}>
+          <h1>Authorize LinkedIn</h1>
+          <p>
+            Click the button below to log in as <b>Page Admin/Poster</b>.
+          </p>
+          <div className={styles.btnRow}>
+            <a className="button is-link is-medium" href={url}>
+              Authorize with LinkedIn
+            </a>
+          </div>
+          <p className={styles.helper}>
+            <small>
+              After approval you'll see a <code>code</code> and{' '}
+              <code>state</code> on the callback page.
+            </small>
+          </p>
+        </div>
       </div>
     </main>
   );
