@@ -10,43 +10,43 @@ jobs:
   check-bib:
     runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v4
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        registry: hub.cs.upb.de
-        username: ${{ vars.DOCKER_REGISTRY_USERNAME }}
-        password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
-    - name: Check file
-      run: docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
-# Check according to https://timheuer.com/blog/manually-force-a-failure-in-github-action-step/
-    - name: Collect test result
-      id: collect  
-      shell: pwsh  
-      run: $result = docker wait biber
-    - name: Check test result
-      if: ${{ steps.collect.outputs.result > 0 }}
-      uses: actions/github-script@v3
-      with:
-        script: |
-          core.setFailed('Biber detected an error in the bib file')
+      - uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          registry: hub.cs.upb.de
+          username: ${{ vars.DOCKER_REGISTRY_USERNAME }}
+          password: ${{ secrets.DOCKER_REGISTRY_TOKEN }}
+      - name: Check file
+        run: docker run --name=biber -v ./data:/data -e BIB_FILE=/data/bib/dice.bib hub.cs.upb.de/ag-ngonga/biber-image
+      # Check according to https://timheuer.com/blog/manually-force-a-failure-in-github-action-step/
+      - name: Collect test result
+        id: collect
+        shell: pwsh
+        run: $result = docker wait biber
+      - name: Check test result
+        if: ${{ steps.collect.outputs.result > 0 }}
+        uses: actions/github-script@v3
+        with:
+          script: |
+            core.setFailed('Biber detected an error in the bib file')
   upload-bib:
     needs: check-bib
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
-        distribution: 'adopt'
-    - name: Download uploader
-      run: curl --retry 4 -L -o "bibupload_18.jar" "https://github.com/dice-group/bibsonomy-uploader/releases/download/v1.0.0/bibsonomy_uploader.jar"
-    - name: Upload
-      shell: bash
-      env:
-        BIBSONOMY_SECRET: ${{ secrets.BIBSONOMY_API_TOKEN }}
-      run: java -jar bibupload_18.jar dice-research "$BIBSONOMY_SECRET" "http://www.bibsonomy.org/api" data/bib/dice.bib
+      - uses: actions/checkout@v4
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Download uploader
+        run: curl --retry 4 -L -o "bibupload_18.jar" "https://github.com/dice-group/bibsonomy-uploader/releases/download/v1.0.0/bibsonomy_uploader.jar"
+      - name: Upload
+        shell: bash
+        env:
+          BIBSONOMY_SECRET: ${{ secrets.BIBSONOMY_API_TOKEN }}
+        run: java -jar bibupload_18.jar dice-research "$BIBSONOMY_SECRET" "http://www.bibsonomy.org/api" data/bib/dice.bib
   deploy:
     needs: upload-bib
     runs-on: ubuntu-latest
@@ -79,6 +79,8 @@ jobs:
           npm run papers
       - name: build
         working-directory: ./scripts
+        env:
+          GATSBY_LINKEDIN_CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
         run: npm run build
       - name: prepare deploy
         working-directory: ./scripts

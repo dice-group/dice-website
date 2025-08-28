@@ -1,0 +1,69 @@
+name: Save LinkedIn Token
+
+on:
+  workflow_dispatch:
+    inputs:
+      code:
+        description: 'code from callback page'
+        required: true
+      redirect_uri:
+        description: 'EXACT redirect URI used during authorization'
+        required: true
+        default: https://dice-research.org/oauth/linkedin/callback/index.html
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  exchange:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Exchange code → tokens
+        env:
+          CODE: ${{ github.event.inputs.code }}
+          CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          REDIRECT_URI: ${{ github.event.inputs.redirect_uri }}
+        run: |
+          set -e
+          TOKENS=$(curl -s https://www.linkedin.com/oauth/v2/accessToken \
+              -H "Content-Type: application/x-www-form-urlencoded" \
+              --data-urlencode grant_type=authorization_code \
+              --data-urlencode code="$CODE" \
+              --data-urlencode redirect_uri="$REDIRECT_URI" \
+              --data-urlencode client_id="$CLIENT_ID" \
+              --data-urlencode client_secret="$CLIENT_SECRET")
+          echo "$TOKENS" > tokens.json
+
+          ACCESS_TOKEN=$(python - <<'PY'
+          import json
+          j=json.load(open('tokens.json'))
+          print(j.get('access_token', ''))
+          PY
+          )
+
+          EXPIRES_IN=$(python - << 'PY'
+          import json
+          j=json.load(open('tokens.json'))
+          print(j.get('expires_in'))
+          PY
+          )
+
+          if [ -z "$ACCESS_TOKEN" ] || [ "$ACCESS_TOKEN" = "null" ]; then
+              echo "Token exchange failed:"
+              cat tokens.json
+              exit 1
+          fi
+
+          echo "::add-mask::$ACCESS_TOKEN"
+          echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+          echo "::notice title=Token expires in::${EXPIRES_IN}s"
+
+      - name: Save as repo secret LINKEDIN_ACCESS_TOKEN
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "$GH_TOKEN" | gh auth login --with-token
+          echo -n "$ACCESS_TOKEN" | gh secret set LINKEDIN_ACCESS_TOKEN -R "$GITHUB_REPOSITORY"
+          echo "Saved LINKEDIN_ACCESS_TOKEN"

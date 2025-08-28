@@ -4,25 +4,22 @@ import ActiveProjects from '../components/activeProjects';
 import ContactForm from '../components/contact';
 import FundedBy from '../components/fundedby';
 import Layout from '../components/layout';
-import News from '../components/news';
 import SEO from '../components/seo';
 import SideMenu from '../components/sidemenu';
 import Social from '../components/social';
-import TwitterFeed from '../components/twitterFeed';
+import LinkedInFeed from '../components/linkedinFeed';
 
 export default function Home() {
   const heroRef = React.createRef();
   const fundedRef = React.createRef();
   const newsRef = React.createRef();
   const projectsRef = React.createRef();
-  const tweetsRef = React.createRef();
   const contactRef = React.createRef();
 
   const menu = [
     { target: heroRef, title: 'About', url: 'about' },
     { target: projectsRef, title: 'Active projects', url: 'projects' },
     { target: fundedRef, title: 'Funded by', url: 'funded' },
-    { target: tweetsRef, title: 'Latest tweets', url: 'tweets' },
     { target: newsRef, title: 'News', url: 'news' },
     { target: contactRef, title: 'Contact us', url: 'contact' },
   ];
@@ -112,36 +109,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="tweets" className="hero has-background-light">
-        <div className="hero-body">
-          <div className="container">
-            <div className="section-header">
-              <h1 className="title" ref={tweetsRef}>
-                Latest tweets
-              </h1>
-              <a className="link-more" href="https://twitter.com/DiceResearch">
-                Follow →
-              </a>
-            </div>
-
-            <TwitterFeed />
-          </div>
-        </div>
-      </section>
-
-      <section id="news" className="hero">
+      <section id="news" className="hero has-background-light">
         <div className="hero-body">
           <div className="container">
             <div className="section-header">
               <h1 className="title" ref={newsRef}>
                 News
               </h1>
-              <Link className="link-more" to="/news/">
-                More news →
-              </Link>
+              <a
+                className="link-more"
+                href="https://www.linkedin.com/company/88654324"
+              >
+                Follow on LinkedIn →
+              </a>
             </div>
 
-            <News paginate={false} />
+            <LinkedInFeed />
           </div>
         </div>
       </section>
