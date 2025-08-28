@@ -22,7 +22,7 @@ jobs:
       - name: Exchange code → tokens
         env:
           CODE: ${{ github.event.inputs.code }}
-          CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
           REDIRECT_URI: ${{ github.event.inputs.redirect_uri }}
         run: |
