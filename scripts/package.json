@@ -57,6 +57,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "prebuild": "node ./fetch-linkedin.js",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx} plugins/**/*.js papers-to-ttl/**/*.js",

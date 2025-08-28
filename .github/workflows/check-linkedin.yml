@@ -1,0 +1,60 @@
+name: Check LinkedIn fetch
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  check-linkedin:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./scripts
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run fetch-linkedin.js
+        continue-on-error: true
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_ID: '88654324'
+          LINKEDIN_VERSION: '202507'
+        run: node ./fetch-linkedin.js
+
+      - name: Validate linkedin.json
+        id: validate
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const token = process.env.LINKEDIN_ACCESS_TOKEN || '';
+          const p = path.join(process.cwd(), 'static', 'data', 'linkedin.json');
+          if (!fs.existsSync(p)) throw new Error('linkedin.json not found at ' + p);
+          const j = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (!j || !Array.isArray(j.urns)) throw new Error('Missing "urns" array in linkedin.json');
+          const bad = j.urns.filter(u => !/^urn:li:(share|ugcPost):/.test(u));
+          if (bad.length) throw new Error('Invalid URN(s): ' + bad.join(', '));
+          if (token && j.urns.length === 0) {
+            throw new Error('Token provided but no URNs returned (check app scopes/permissions).');
+          }
+          console.log('OK - urns:', j.urns.length);
+          NODE
+
+      - name: Upload linkedin.json (debug)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linkedin-json
+          path: scripts/static/data/linkedin.json

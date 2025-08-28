@@ -37,8 +37,13 @@ jobs:
         run: |
           rm ../data/**/_Example.ttl
           npm run papers
-      - name: build
+      - name: 'build (runs prebuild: fetch LinkedIn posts)'
         working-directory: ./scripts
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_ORG_ID: '88654324'
+          LINKEDIN_VERSION: '202507'
+          GATSBY_LINKEDIN_CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
         run: npm run build
       - name: prepare deploy
         working-directory: ./scripts
