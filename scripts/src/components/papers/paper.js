@@ -3,10 +3,18 @@ import ExternalLink from '../externalLink';
 
 const renderTitle = ({ title, url, pdfUrl }) => {
   if (pdfUrl) {
-    return <ExternalLink to={pdfUrl}>{title}</ExternalLink>;
+    return (
+      <ExternalLink to={pdfUrl} showIcon>
+        {title}
+      </ExternalLink>
+    );
   }
   if (url) {
-    return <ExternalLink to={url}>{title}</ExternalLink>;
+    return (
+      <ExternalLink to={url} showIcon>
+        {title}
+      </ExternalLink>
+    );
   }
 
   return title;

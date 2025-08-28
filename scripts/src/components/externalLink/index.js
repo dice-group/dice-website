@@ -20,7 +20,12 @@ export default function ExternalLink({
       {...(isHttp ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       {...rest}
     >
-      {children} {showIcon && <Icon className="icon" />}
+      {children}
+      {showIcon && (
+        <span className="title-icon" aria-hidden="true">
+          <Icon className="title-icon__svg" />
+        </span>
+      )}
     </a>
   );
 }
