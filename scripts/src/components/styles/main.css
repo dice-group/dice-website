@@ -1241,3 +1241,6 @@ a {
 .teaching-page .kind { @apply mt-3 font-semibold; }
 
 .teaching-page .term-wrap .term-card > div:last-child { @apply mb-0; }
+
+.no-js .js-only { display: none; }
+.js .no-js-only { display: none; }
