@@ -61,9 +61,11 @@ jobs:
           echo "::notice title=Token expires in::${EXPIRES_IN}s"
 
       - name: Save as repo secret LINKEDIN_ACCESS_TOKEN
+        shell: bash
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "$GH_TOKEN" | gh auth login --with-token
-          echo -n "$ACCESS_TOKEN" | gh secret set LINKEDIN_ACCESS_TOKEN -R "$GITHUB_REPOSITORY"
+          gh secret set LINKEDIN_ACCESS_TOKEN \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "$ACCESS_TOKEN"
           echo "Saved LINKEDIN_ACCESS_TOKEN"
