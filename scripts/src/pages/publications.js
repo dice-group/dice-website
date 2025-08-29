@@ -49,6 +49,9 @@ export const pageQuery = graphql`
             tag
             url
             pdfUrl
+            doi
+            presentationUrl
+            videoUrl
             bibsonomyId
             author {
               id
