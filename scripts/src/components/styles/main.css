@@ -656,7 +656,7 @@ a {
  */
 
 .button {
-  @apply flex items-center justify-center border border-solid rounded;
+  @apply inline-flex items-center justify-center border border-solid rounded;
   @apply text-white cursor-pointer ml-1 mr-1 pl-12 pr-12 pt-3 pb-4;
 
   background-color: var(--primary-color);
