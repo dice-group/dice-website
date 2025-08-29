@@ -5,11 +5,11 @@ dice:JeanNDahKouagou a schema:Person ;
   schema:name "N'Dah Jean Kouagou" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:role dice:SeniorResearcher ;
-  schema:phone <tel:+49-525-16-05190> ;
+  schema:phone <tel:+49-5251-60-5198> ;
   schema:fax <tel:> ;
   schema:email <mailto:ndah.jean.kouagou@upb.de> ;
   schema:chat "@nkouagou:chat.dice-research.org" ;
-  schema:office "FU.211" ;
+  schema:office "F1.304" ;
   schema:photo "jean.jpg" ;
   schema:project dice:KnowGraphs, dice:embeddings.cc, dice:ENEXA ;
   schema:content """
