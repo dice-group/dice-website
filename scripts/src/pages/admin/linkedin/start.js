@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as styles from './start.module.css';
 
 const CLIENT_ID = process.env.GATSBY_LINKEDIN_CLIENT_ID;
@@ -12,8 +12,9 @@ function randomState() {
 }
 
 export default function StartLinkedIn() {
-  const url = useMemo(() => {
-    if (typeof window === 'undefined' || !CLIENT_ID) return '#';
+  const [url, setUrl] = useState('#');
+  useEffect(() => {
+    if (typeof window === 'undefined' || !CLIENT_ID) return;
     const redirect = new URL(
       '/oauth/linkedin/callback/index.html',
       window.location.origin
@@ -24,7 +25,7 @@ export default function StartLinkedIn() {
     u.searchParams.set('redirect_uri', redirect);
     u.searchParams.set('scope', SCOPES.join(' '));
     u.searchParams.set('state', randomState());
-    return u.toString();
+    setUrl(u.toString());
   }, []);
   return (
     <main className="section">
