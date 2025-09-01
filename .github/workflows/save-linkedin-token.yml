@@ -63,7 +63,7 @@ jobs:
       - name: Save as repo secret LINKEDIN_ACCESS_TOKEN
         shell: bash
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_ADMIN_PAT }}
         run: |
           gh secret set LINKEDIN_ACCESS_TOKEN \
             --repo "$GITHUB_REPOSITORY" \
