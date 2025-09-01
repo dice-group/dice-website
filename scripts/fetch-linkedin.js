@@ -7,11 +7,13 @@ const outFile = path.join(outDir, 'linkedin.json');
 
 const ORG_ID = process.env.LINKEDIN_ORG_ID || '88654324';
 const TOKEN = process.env.LINKEDIN_ACCESS_TOKEN;
-const VERSION = process.env.LINKEDIN_VERSION || '202507';
+const VERSION = process.env.LINKEDIN_VERSION || '202508';
 
 function writeEmptyFeed(msg) {
-  fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(outFile, JSON.stringify({ urns: [] }, null, 2));
+  try {
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(outFile, JSON.stringify({ urns: [] }, null, 2));
+  } catch {}
   console.warn(`[linkedin] ${msg} -> wrote empty feed and continued.`);
 }
 
@@ -20,46 +22,57 @@ if (!TOKEN) {
   process.exit(0);
 }
 
-const url = new URL('https://api.linkedin.com/rest/posts');
-url.searchParams.set('q', 'owners');
-url.searchParams.set('owners', `urn:li:organization:${ORG_ID}`);
-url.searchParams.set('sortBy', 'LAST_MODIFIED');
-url.searchParams.set('count', '3');
-
-const headers = {
-  Authorization: `Bearer ${TOKEN}`,
-  'LinkedIn-Version': VERSION,
-  'X-Restli-Protocol-Version': '2.0.0',
-  Accept: 'application/json',
-};
-
-https
-  .get(url, { headers }, res => {
-    let body = '';
-    res.on('data', c => (body += c));
-    res.on('end', () => {
-      if (res.statusCode !== 200) {
-        return writeEmptyFeed(`API error ${res.statusCode}`);
-      }
-      let data;
-      try {
-        data = JSON.parse(body);
-      } catch {
-        return writeEmptyFeed('Bad JSON from API');
-      }
-      const urns = (data.elements || [])
-        .map(e => e.id)
-        .filter(Boolean)
-        .slice(0, 3);
-
-      fs.mkdirSync(outDir, { recursive: true });
-      fs.writeFileSync(
-        path.join(outDir, 'linkedin.json'),
-        JSON.stringify({ urns }, null, 2)
-      );
-      console.log('[linkedin] Saved', urns);
-    });
-  })
-  .on('error', e => {
-    writeEmptyFeed(`Request failed: ${e.message}`);
+function getJSON(url, extraHeaders = {}) {
+  return new Promise((resolve, reject) => {
+    const headers = {
+      Authorization: `Bearer ${TOKEN}`,
+      'LinkedIn-Version': VERSION,
+      'X-Restli-Protocol-Version': '2.0.0',
+      Accept: 'application/json',
+      ...extraHeaders,
+    };
+    https
+      .get(url, { headers }, res => {
+        let body = '';
+        res.on('data', c => (body += c));
+        res.on('end', () => {
+          if (res.statusCode !== 200) {
+            return reject(
+              new Error(
+                `API error ${
+                  res.statusCode
+                } for ${url.toString()} :: ${body.slice(0, 200)}`
+              )
+            );
+          }
+          try {
+            resolve(JSON.parse(body));
+          } catch (e) {
+            reject(new Error(`Bad JSON: ${e.message}`));
+          }
+        });
+      })
+      .on('error', reject);
   });
+}
+
+(async () => {
+  try {
+    const postsUrl = new URL('https://api.linkedin.com/rest/posts');
+    postsUrl.searchParams.set('q', 'author');
+    postsUrl.searchParams.set('author', `urn:li:organization:${ORG_ID}`);
+    postsUrl.searchParams.set('sortBy', 'CREATED');
+    postsUrl.searchParams.set('count', '3');
+    const posts = await getJSON(postsUrl, { 'X-RestLi-Method': 'FINDER' });
+    const urns = (posts.elements || [])
+      .map(e => e.id)
+      .filter(Boolean)
+      .slice(0, 3);
+
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(outFile, JSON.stringify({ urns }, null, 2));
+    console.log('[linkedin] Saved URNs:', urns);
+  } catch (e) {
+    writeEmptyFeed(`Fetch failed: ${e.message}`);
+  }
+})();
