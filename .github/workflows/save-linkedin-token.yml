@@ -42,6 +42,12 @@ jobs:
           print(j.get('access_token', ''))
           PY
           )
+          REFRESH_TOKEN=$(python - <<'PY'
+          import json
+          j=json.load(open('tokens.json'))
+          print(j.get('refresh_token', ''))
+          PY
+          )
 
           EXPIRES_IN=$(python - << 'PY'
           import json
@@ -57,13 +63,20 @@ jobs:
           fi
 
           echo "::add-mask::$ACCESS_TOKEN"
+          if [ -n "$REFRESH_TOKEN" ]; then echo "::add-mask::$REFRESH_TOKEN"; fi
           echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
+          echo "REFRESH_TOKEN=$REFRESH_TOKEN" >> $GITHUB_ENV
           echo "::notice title=Token expires in::${EXPIRES_IN}s"
 
-      - name: Save as repo secret LINKEDIN_ACCESS_TOKEN
+      - name: Save as repo secrets (access + refresh) and redirect URI
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_ADMIN_PAT }}
+          REDIRECT_URI: ${{ github.event.inputs.redirect_uri }}
         run: |
           echo "$GH_TOKEN" | gh auth login --with-token
-          echo -n "$ACCESS_TOKEN" | gh secret set LINKEDIN_ACCESS_TOKEN -R "$GITHUB_REPOSITORY"
+          gh secret set LINKEDIN_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" --body "$ACCESS_TOKEN"
           echo "Saved LINKEDIN_ACCESS_TOKEN"
+          if [ -n "$REFRESH_TOKEN" ] && [ "$REFRESH_TOKEN" != "null" ]; then
+            gh secret set LINKEDIN_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" --body "$REFRESH_TOKEN"
+            echo "Saved LINKEDIN_REFRESH_TOKEN"
+          fi

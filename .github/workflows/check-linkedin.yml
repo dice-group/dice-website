@@ -27,9 +27,32 @@ jobs:
         continue-on-error: true
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_REFRESH_TOKEN: ${{ secrets.LINKEDIN_REFRESH_TOKEN }}
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LINKEDIN_REDIRECT_URI: ${{ vars.LINKEDIN_REDIRECT_URI}}
           LINKEDIN_ORG_ID: '88654324'
-          LINKEDIN_VERSION: '202507'
+          LINKEDIN_VERSION: '202508'
         run: node ./fetch-linkedin.js
+
+      - name: Save refreshed secrets (if file exists)
+        if: always()
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GH_ADMIN_PAT }}
+        run: |
+          if [ -f new_tokens.json ]; then
+            AT=$(jq -r '.access_token // empty' new_tokens.json)
+            RT=$(jq -r '.refresh_token // empty' new_tokens.json)
+            if [ -n "$AT" ]; then
+              gh secret set LINKEDIN_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY" --body "$AT"
+              echo "Saved LINKEDIN_ACCESS_TOKEN"
+            fi
+            if [ -n "$RT" ] && [ "$RT" != "null" ]; then
+              gh secret set LINKEDIN_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" --body "$RT"
+              echo "Saved LINKEDIN_REFRESH_TOKEN"
+            fi
+          fi
 
       - name: Validate linkedin.json
         id: validate
