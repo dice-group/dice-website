@@ -102,7 +102,7 @@ function normalizeUrl(s) {
   return url;
 }
 
-// Keep legacy behaivor for PDF URLs but reuse the generic normalizer.
+// Keep legacy behavior for PDF URLs but reuse the generic normalizer.
 function preprocessPdfUrl(url) {
   return normalizeUrl(url);
 }
@@ -185,11 +185,35 @@ const main = async () => {
       }
     }
 
+    if (paper.doi) {
+      writeLiteral(
+        'doi',
+        String(paper.doi)
+          .replace(/^https?:\/\/(dx\.)?doi\.org\//i, '')
+          .trim()
+      );
+    }
+
     writeUrl(`${prefixes.schema}bibsonomyId`, paper.id);
     var pdfUrl = preprocessPdfUrl(paper['bdsk-url-1'] || paper['1']);
     if (checkUrl(pdfUrl)) {
       writeUrl(`${prefixes.schema}pdfUrl`, pdfUrl);
     }
+
+    const presentationUrl = normalizeUrl(
+      paper.presentation || paper.slides || paper.presentationurl
+    );
+    if (checkUrl(presentationUrl)) {
+      writeUrl(`${prefixes.schema}presentationUrl`, presentationUrl);
+    }
+
+    const videoUrl = normalizeUrl(
+      paper.video || paper.recording || paper.videourl
+    );
+    if (checkUrl(videoUrl)) {
+      writeUrl(`${prefixes.schema}videoUrl`, videoUrl);
+    }
+
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
