@@ -28,12 +28,18 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_REFRESH_TOKEN: ${{ secrets.LINKEDIN_REFRESH_TOKEN }}
-          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
           LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
           LINKEDIN_REDIRECT_URI: ${{ vars.LINKEDIN_REDIRECT_URI}}
           LINKEDIN_ORG_ID: '88654324'
-          LINKEDIN_VERSION: '202508'
+          LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION}}
         run: node ./fetch-linkedin.js
+
+      - name: Ensure jq
+        run: |
+          if ! command -v jq >/dev/null; then
+            sudo apt-get update -y && sudo apt-get install -y jq
+          fi
 
       - name: Save refreshed secrets (if file exists)
         if: always()
