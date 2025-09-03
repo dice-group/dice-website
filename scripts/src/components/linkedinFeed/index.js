@@ -7,7 +7,7 @@ const Embed = ({ urn }) => (
       title={urn}
       src={`https://www.linkedin.com/embed/feed/update/${encodeURIComponent(
         urn
-      )}?compact=1`}
+      )}`}
       width="100%"
       height="650"
       loading="lazy"
