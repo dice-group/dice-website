@@ -1,109 +1,99 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Image from '../image';
 
-const fundedBy = [
+const query = graphql`
   {
-    url: 'http://www.bmbf.de/',
-    image: ['logo-bmbf.png'],
-    text: ['BMBF'],
-  },
-  {
-    url: 'http://www.bmwi.de/',
-    image: ['logo-bmwk.svg'],
-    text: ['BMWK'],
-  },
-  {
-    url: 'http://www.bmvi.de/',
-    image: ['logo-bmVI.png'],
-    text: ['BMVI'],
-  },
-  {
-    url: 'http://www.eurostars.dlr.de/',
-    image: [
-      'logo-eurostars.png',
-      'eureka.png',
-      'eurostars_eureka_eu_logos-participants.png',
-      'eurostars_eureka_eu_logos-participants_text.png',
-    ],
-    text: ['EuroStars', 'Eurostars'],
-  },
-  {
-    url: 'http://cordis.europa.eu/',
-    image: ['logo-fp7.png'],
-    text: ['FP7'],
-  },
-  {
-    url: 'http://www.daad.de/',
-    image: ['logo-daad.png'],
-    text: ['DAAD'],
-  },
-  {
-    url: 'http://ec.europa.eu/',
-    image: ['horizon2020.png'],
-    text: ['Horizon2020', 'Horizon 2020'],
-  },
-  {
-    url: 'http://www.dfg.de/',
-    image: ['logo-dfg.png'],
-    text: ['DFG'],
-  },
-  {
-    url: 'https://www.mkw.nrw/',
-    image: ['mkw-nrw.png'],
-    text: ['MKW NRW'],
-  },
-  {
-    url: 'https://www.bmftr.bund.de',
-    image: ['bmftr.png'],
-    text: ['BMFTR'],
-  },
-];
+    allRdf(
+      filter: {
+        data: {
+          rdf_type: {
+            elemMatch: { id: { eq: "https://schema.dice-research.org/Funder" } }
+          }
+        }
+      }
+    ) {
+      edges {
+        node {
+          id
+          data {
+            name
+            url
+            logo
+            text
+            image
+          }
+        }
+      }
+    }
+  }
+`;
 
-const getProgram = fundingProgram => {
-  const fundedPrograms = fundedBy.filter(fp =>
-    // fundingProgram.toLowerCase().includes(fp.text.toLowerCase())
-    fp.text.some(t => fundingProgram.toLowerCase().includes(t.toLowerCase()))
+const normalize = s => (s || '').toLowerCase();
+
+const useFunders = fundingProgram => {
+  const {
+    allRdf: { edges },
+  } = useStaticQuery(query);
+  const funders = useMemo(
+    () =>
+      edges.map(({ node }) => ({
+        url: node.data.url,
+        images:
+          Array.isArray(node.data.image) && node.data.image.length
+            ? node.data.image
+            : [node.data.logo].filter(Boolean),
+        texts: [node.data.name].concat(node.data.text || []).filter(Boolean),
+      })),
+    [edges]
   );
-  return fundedPrograms || null;
+
+  const fp = normalize(fundingProgram);
+  if (!fundingProgram) return funders;
+  return funders.filter(f => f.texts.some(t => fp.includes(normalize(t))));
 };
 
-const FundedBy = ({ fundingProgram }) =>
-  fundingProgram ? (
-    <div>
-      <span>{fundingProgram}</span>
+const FundedBy = ({ fundingProgram }) => {
+  const funders = useFunders(fundingProgram);
+
+  if (fundingProgram) {
+    return (
       <div>
-        {getProgram(fundingProgram).map(fp =>
-          fp.image.map((image, index) => (
-            <span
-              style={{ display: 'inline-block', verticalAlign: 'middle' }}
-              key={fp.url + index}
-            >
-              <a href={fp.url}>
-                <Image
-                  filename={image}
-                  style={{ width: 100 }}
-                  key={image + index}
-                />
-              </a>
-            </span>
-          ))
-        )}
+        <div>
+          {funders.map(funder =>
+            funder.images.map((img, i) => (
+              <span
+                style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                key={`${funder.url}-${i}`}
+              >
+                <a href={funder.url} target="_blank" rel="noopener noreferrer">
+                  <Image filename={img} style={{ width: 100 }} />
+                </a>
+              </span>
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="columns is-padded">
+        {funders.map(funder => (
+          <div key={funder.url} className="column funded-by-item">
+            <a href={funder.url} target="_blank" rel="noopener noreferrer">
+              <Image
+                filename={funder.images[0]}
+                alt={funder.texts[0]}
+                style={{ width: 100 }}
+              />
+            </a>
+          </div>
+        ))}
       </div>
     </div>
-  ) : (
-    <div className="columns">
-      {fundedBy.map(org => (
-        <div key={org.url} className="column funded-by-item">
-          <a href={org.url} target="_blank" rel="noopener noreferrer">
-            <Image
-              filename={org.image[0]}
-              alt={org.text[0]}
-              style={{ width: 100 }}
-            />
-          </a>
-        </div>
-      ))}
-    </div>
   );
+};
 
 export default FundedBy;

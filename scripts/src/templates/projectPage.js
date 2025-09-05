@@ -89,6 +89,7 @@ export default function ProjectTemplate({
             <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
               Funding program
             </h6>
+            <p style={{ marginBottom: '0.5rem' }}>{data.fundingProgram}</p>
             <FundedBy fundingProgram={data.fundingProgram} />
           </div>
         )}
