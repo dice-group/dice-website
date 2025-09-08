@@ -84,13 +84,20 @@ export default function ProjectTemplate({
           </div>
         )}
 
-        {data.fundingProgram && (
+        {(data.fundingProgram || (data.funder && data.funder.length)) && (
           <div>
-            <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
-              Funding program
-            </h6>
-            <p style={{ marginBottom: '0.5rem' }}>{data.fundingProgram}</p>
-            <FundedBy fundingProgram={data.fundingProgram} />
+            {data.fundingProgram && (
+              <>
+                <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
+                  Funding program
+                </h6>
+                <p style={{ marginBottom: '0.5rem' }}>{data.fundingProgram}</p>
+              </>
+            )}
+            <FundedBy
+              fundingProgram={data.fundingProgram}
+              funders={data.funder}
+            />
           </div>
         )}
 
@@ -187,6 +194,16 @@ export const pageQuery = graphql`
         sourceCode
         jsonld
         fundingProgram
+        funder {
+          path
+          data {
+            name
+            url
+            logo
+            image
+            text
+          }
+        }
         publicationTag
         relatedProject {
           id

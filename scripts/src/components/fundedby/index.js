@@ -53,8 +53,33 @@ const useFunders = fundingProgram => {
   return funders.filter(f => f.texts.some(t => fp.includes(normalize(t))));
 };
 
-const FundedBy = ({ fundingProgram }) => {
-  const funders = useFunders(fundingProgram);
+const FundedBy = ({ fundingProgram, funders: linkedFunders = [] }) => {
+  const allFunders = useFunders(null);
+  const byAlias = fundingProgram
+    ? allFunders.filter(f =>
+        f.texts.some(t =>
+          (fundingProgram || '').toLowerCase().includes(t.toLowerCase())
+        )
+      )
+    : [];
+
+  const byLink = (Array.isArray(linkedFunders) ? linkedFunders : []).map(n => ({
+    url: n.data.url,
+    images: (Array.isArray(n.data.image) && n.data.image.length
+      ? n.data.image
+      : [n.data.logo]
+    ).filter(Boolean),
+    texts: [n.data.name].concat(n.data.text || []).filter(Boolean),
+  }));
+
+  const seen = new Set();
+  const base = fundingProgram ? [...byLink, ...byAlias] : allFunders;
+  const funders = base.filter(f => {
+    const k = f.url || f.texts[0];
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
 
   if (fundingProgram) {
     return (
