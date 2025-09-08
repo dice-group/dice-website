@@ -1,0 +1,48 @@
+---
+date: '2025-09-09'
+title: 'Adaptive Retrieval-Augmented Generation'
+type: 'Project Group'
+year: '2025'
+term: 'Summer'
+kind: 'Master'
+language: 'en'
+---
+
+
+## Content
+
+Are you interested in pushing the boundaries of existing Large Language Models (LLMs)? Join our project ARAG, where you will be developing new Retrieval-Augmented Generation (RAG) pipelines that are Adaptive (ARAG) in the sense that they can decide on the actual architecture at runtime for a given query.
+
+In this project, we will focus on addressing a critical challenge in LLMs: their inability to handle current and factual knowledge effectively. Many real-world queries to LLMs involve information that an LLMs may not have access to. A solution to this issue is RAG, and there are plenty of approaches to enhance LLM's reasoning capabilities one way or another.
+In this project group (PG), you will implement an RAG system that can choose a query-dependent architecture, i.e., for the given query, it can decide on the run which route to follow.
+
+Your group will target three main components to handle ARAG: Retrieval (how additional information is actually retrieved), Augmentation (how retrieved information is passed on to an LLM), and Generation (how to generate the final response given a query and additional context from the previous steps).
+
+## Roadmap
+1. Read into RAG literature.
+2. Implement individual components in the RAG pipeline.
+3. Implement Adaptive RAG.
+4. Build an API.
+5. Evaluate performance and result quality.
+
+## Requirements
+
+- Very good Python skills.
+- Experience in working with LLMs.
+- Experience in software development and with git flow.
+
+
+## Course in PAUL
+
+The PG will be available in
+[PAUL (TBA)](https://paul.uni-paderborn.de/).
+
+## Related Work
+Yunfan Gao, Yun Xiong, Xinyu Gao, Kangxiang Jia, Jinliu Pan, Yuxi Bi, Yi Dai, Jiawei Sun, Qianyu Guo, Meng Wang, Haofen Wang: Retrieval-Augmented Generation for Large Language Models: A Survey. CoRR abs/2312.10997 (2023)
+Wenqi Fan, Yujuan Ding, Liangbo Ning, Shijie Wang, Hengyun Li, Dawei Yin, Tat-Seng Chua, Qing Li: A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models. KDD 2024: 6491-6501
+
+## Contact
+
+<Link to="/YasirMahmood">Yasir Mahmood</Link>
+
+<Link to="/AlexanderBigerl">Mohamed Sherif</Link>
