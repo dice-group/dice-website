@@ -1235,3 +1235,9 @@ a {
 @media (max-width: 640px) {
   .title-icon__svg {width: 13px !important; height: 13px !important; }
 }
+
+.funder-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 4px;
+}

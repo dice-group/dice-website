@@ -30,21 +30,28 @@ const query = graphql`
 `;
 
 const normalize = s => (s || '').toLowerCase();
+const uniq = arr => Array.from(new Set(arr));
 
 const useFunders = fundingProgram => {
   const {
     allRdf: { edges },
   } = useStaticQuery(query);
+
   const funders = useMemo(
     () =>
-      edges.map(({ node }) => ({
-        url: node.data.url,
-        images:
-          Array.isArray(node.data.image) && node.data.image.length
-            ? node.data.image
-            : [node.data.logo].filter(Boolean),
-        texts: [node.data.name].concat(node.data.text || []).filter(Boolean),
-      })),
+      edges.map(({ node }) => {
+        const allImgs = uniq(
+          [
+            ...(Array.isArray(node.data.image) ? node.data.image : []),
+            node.data.logo,
+          ].filter(Boolean)
+        );
+        return {
+          url: node.data.url,
+          images: allImgs,
+          texts: [node.data.name].concat(node.data.text || []).filter(Boolean),
+        };
+      }),
     [edges]
   );
 
@@ -53,27 +60,30 @@ const useFunders = fundingProgram => {
   return funders.filter(f => f.texts.some(t => fp.includes(normalize(t))));
 };
 
-const FundedBy = ({ fundingProgram, funders: linkedFunders = [] }) => {
+const FundedBy = ({ fundingProgram, funders: linkedFunders }) => {
   const allFunders = useFunders(null);
-  const byAlias = fundingProgram
-    ? allFunders.filter(f =>
-        f.texts.some(t =>
-          (fundingProgram || '').toLowerCase().includes(t.toLowerCase())
-        )
-      )
+
+  const hasLinked = Array.isArray(linkedFunders) && linkedFunders.length > 0;
+
+  const byLink = hasLinked
+    ? linkedFunders.map(n => ({
+        url: n.data.url,
+        images: (Array.isArray(n.data.image) && n.data.image.length
+          ? n.data.image
+          : [n.data.logo]
+        ).filter(Boolean),
+        texts: [n.data.name].concat(n.data.text || []).filter(Boolean),
+      }))
     : [];
 
-  const byLink = (Array.isArray(linkedFunders) ? linkedFunders : []).map(n => ({
-    url: n.data.url,
-    images: (Array.isArray(n.data.image) && n.data.image.length
-      ? n.data.image
-      : [n.data.logo]
-    ).filter(Boolean),
-    texts: [n.data.name].concat(n.data.text || []).filter(Boolean),
-  }));
+  const byAlias = fundingProgram ? useFunders(fundingProgram) : [];
+
+  const isHomepage = !hasLinked && fundingProgram == null;
+
+  const merged = [...byLink, ...byAlias];
+  const base = merged.length ? merged : isHomepage ? allFunders : [];
 
   const seen = new Set();
-  const base = fundingProgram ? [...byLink, ...byAlias] : allFunders;
   const funders = base.filter(f => {
     const k = f.url || f.texts[0];
     if (seen.has(k)) return false;
@@ -81,22 +91,23 @@ const FundedBy = ({ fundingProgram, funders: linkedFunders = [] }) => {
     return true;
   });
 
-  if (fundingProgram) {
+  if (funders.length === 0) return null;
+
+  if (isHomepage) {
     return (
       <div>
-        <div>
-          {funders.map(funder =>
-            funder.images.map((img, i) => (
-              <span
-                style={{ display: 'inline-block', verticalAlign: 'middle' }}
-                key={`${funder.url}-${i}`}
-              >
-                <a href={funder.url} target="_blank" rel="noopener noreferrer">
-                  <Image filename={img} style={{ width: 100 }} />
-                </a>
-              </span>
-            ))
-          )}
+        <div className="columns is-padded">
+          {funders.map(funder => (
+            <div key={funder.url} className="column funded-by-item">
+              <a href={funder.url} target="_blank" rel="noopener noreferrer">
+                <Image
+                  filename={funder.images[0]}
+                  alt={funder.texts[0]}
+                  style={{ width: 100 }}
+                />
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -104,18 +115,23 @@ const FundedBy = ({ fundingProgram, funders: linkedFunders = [] }) => {
 
   return (
     <div>
-      <div className="columns is-padded">
-        {funders.map(funder => (
-          <div key={funder.url} className="column funded-by-item">
-            <a href={funder.url} target="_blank" rel="noopener noreferrer">
-              <Image
-                filename={funder.images[0]}
-                alt={funder.texts[0]}
-                style={{ width: 100 }}
-              />
-            </a>
-          </div>
-        ))}
+      <div>
+        {funders.map((funder, i) =>
+          funder.images.map((img, j) => (
+            <div
+              className="funder-logo"
+              key={`{funder.url || funder.texts[0]}-${i}-${j}`}
+            >
+              <a href={funder.url} target="_blank" rel="noopener noreferrer">
+                <Image
+                  filename={img}
+                  alt={funder.texts[0]}
+                  style={{ width: 100 }}
+                />
+              </a>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
