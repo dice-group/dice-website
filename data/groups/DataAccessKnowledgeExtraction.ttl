@@ -4,12 +4,11 @@
 dice:NLPGroup a schema:Group ;
   schema:name "NLP and Data Access" ;
   schema:tagline "We extract knowledge and make them accessible and understandable for borh humans and computers" ;
-  schema:relatedProject dice:LIMBO, dice:SOLIDE, dice:QAMEL, dice:DIESEL, dice:RAKI, dice:DAIKIRI, dice:KnowGraphs, dice:SPEAKER, dice:PORQUE ; # related projects
+  schema:relatedProject dice:LIMBO, dice:SOLIDE, dice:QAMEL, dice:DIESEL, dice:RAKI, dice:DAIKIRI, dice:SAIL, dice:SPEAKER, dice:PORQUE, dice:KIOWL, dice:COLIDE ; # related projects
   schema:content """
 Our group works on the intersection of Data Science and Natural Language Processing areas. We focus on creating algorithms that allow computers to extract automatically large-scale knowledge from unstructured data and process them while preserving their semantic key information. We aim to make the acquired knowledge accessible and understandable for both humans and computers. Our team has started addressing two of the most important tasks in NLP by relying on Knowledge Graphs,  Named Entity Recognition, and Entity Linking. Our research resulted in two state-of-the-art frameworks in respect of multilingualism and knowledge-graph-based algorithms. Recently, we expanded our focus on different NLP tasks ranging from basic research in computational linguistics to Question Answering, Machine Translation, Natural Language Generation, and Understanding.
 
 Our group includes members of both Paderborn and Leipzig universities.""" ;
-  schema:lead dice:DiegoMoussallem ; # group maintainer
-#  schema:member dice:RrichaJalota, dice:ParamjotKaur, dice:JanReineke, dice:RiaHariGusmita, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck; # group members list
-  schema:member  dice:ParamjotKaur, dice:RiaHariGusmita, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava, dice:SourabhPoddar, dice:NandeeshPatel; # group members list
+  schema:lead dice:HamadaMZahera ; # group maintainer
+  schema:member dice:RiaHariGusmita, dice:TatianaMoteu, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava ; # group members list
   schema:relatedDemo dice:FOX, dice:AGDISTIS, dice:TeBaQA_Demo, dice:IDA_Demo . # list of related demos
