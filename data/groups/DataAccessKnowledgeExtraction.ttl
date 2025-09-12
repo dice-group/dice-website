@@ -3,6 +3,7 @@
 
 dice:NLPGroup a schema:Group ;
   schema:name "NLP and Data Access" ;
+  schema:image "DataAccessKnowledgeExtraction.png" ;   
   schema:tagline "We extract knowledge and make them accessible and understandable for borh humans and computers" ;
   schema:relatedProject dice:LIMBO, dice:SOLIDE, dice:QAMEL, dice:DIESEL, dice:RAKI, dice:DAIKIRI, dice:SAIL, dice:SPEAKER, dice:PORQUE, dice:KIOWL, dice:COLIDE ; # related projects
   schema:content """
@@ -10,5 +11,5 @@ Our group works on the intersection of Data Science and Natural Language Process
 
 Our group includes members of both Paderborn and Leipzig universities.""" ;
   schema:lead dice:HamadaMZahera ; # group maintainer
-  schema:member dice:RiaHariGusmita, dice:TatianaMoteu, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava ; # group members list
+  schema:member dice:RiaHariGusmita, dice:TatianaMoteu, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava, dice:ManzoorAli ; # group members list
   schema:relatedDemo dice:FOX, dice:AGDISTIS, dice:TeBaQA_Demo, dice:IDA_Demo . # list of related demos
