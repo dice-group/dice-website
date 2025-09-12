@@ -1,0 +1,8 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:BMBF a schema:Funder ;
+    schema:name "BMBF" ;
+    schema:url <http://www.bmbf.de/> ;
+    schema:logo "logo-bmbf.png" ;
+    schema:text "BMBF" .
