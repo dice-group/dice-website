@@ -1,0 +1,8 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:BMVI a schema:Funder ;
+    schema:name "BMVI" ;
+    schema:url <http://www.bmvi.de/> ;
+    schema:logo "logo-bmVI.png" ;
+    schema:text "BMVI" .

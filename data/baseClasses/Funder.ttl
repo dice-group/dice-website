@@ -1,0 +1,4 @@
+@prefix schema: <https://schema.dice-research.org/> .
+
+schema:Funder a schema:BaseClass ;
+    schema:name "Funder" .

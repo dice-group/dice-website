@@ -1,6 +1,17 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+      type RDFData {
+        image: [String]
+        text: [String]
+        logo: String
+      }
+    `);
+};
+
 const renderRdfType = async ({
   template,
   type,
@@ -100,16 +111,6 @@ exports.createPages = async ({
     redirectInBrowser: true,
     toPath: `/collaborators/activeprojects/`,
   });
-
-  exports.createSchemaCustomization = ({ actions }) => {
-    const { createTypes } = actions;
-    createTypes(`
-      type RDFData {
-        image: String
-        logo: String
-      }
-    `);
-  };
 
   // mdx news rendering
   await renderMarkdownType({

@@ -1,0 +1,11 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:MKWNRW a schema:Funder ;
+    schema:name "MKW NRW" ;
+    schema:url <https://www.mkw.nrw/> ;
+    schema:logo "mkw-nrw.png" ;
+    schema:text "MKW NRW" ;
+    schema:text "MKW" ;
+    schema:text "NRW" ;
+    schema:text "Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen" .
