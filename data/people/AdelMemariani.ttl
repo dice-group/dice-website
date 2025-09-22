@@ -10,7 +10,7 @@ dice:AdelMemariani a schema:Person ;
   schema:email <mailto:adel.memariani@uni-paderborn.de> ;
   schema:chat "@adme:chat.dice-research.org" ;
   schema:office "FU.201.3" ;
-  schema:photo "AdelMemariani2025.jpg" ;
+  schema:photo "AdelMemariani.jpg" ;
   schema:publicationTag "" ;
   schema:project dice:SAIL;
   schema:content """""" .
