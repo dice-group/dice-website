@@ -1,0 +1,8 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:DFG a schema:Funder ;
+    schema:name "DFG" ;
+    schema:url <http://www.dfg.de/> ;
+    schema:logo "logo-dfg.png" ;
+    schema:text "DFG" .

@@ -37,7 +37,8 @@ export default function Groups({
           <h1 className="header">Research Groups</h1>
 
           {data.map(({ node }) => {
-            const img = node?.data?.image || node?.data?.logo;
+            const rawImg = node?.data?.image ?? node?.data?.logo;
+            const img = Array.isArray(rawImg) ? rawImg[0] : rawImg;
             const imgSrc = img
               ? `/images/groups/${img}`
               : '/images/groups/group-placeholder.png';
