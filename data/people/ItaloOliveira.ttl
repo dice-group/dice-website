@@ -1,0 +1,15 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ReneSpeck a schema:Person ;
+  schema:name "Italo Lopes Oliveira" ;
+  schema:namePrefix "Dr." ;
+  schema:role dice:SeniorResearcher ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:italo.lopes.oliveira@uni-paderborn.de> ;
+  schema:chat "@italo:chat.dice-research.org" ;
+  schema:office "F U 335" ;
+  schema:photo "italo.jpg" ;
+  schema:project dice:SAIL ;
+  schema:content """""" .
