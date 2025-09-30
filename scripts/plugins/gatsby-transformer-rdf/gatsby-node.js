@@ -7,6 +7,9 @@ const basePath = 'https://dice-research.org/';
 // list of predicates that can have multiple values
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+  'https://schema.dice-research.org/text',
+  'https://schema.dice-research.org/image',
+  'https://schema.dice-research.org/funder',
   'https://schema.dice-research.org/content',
   'https://schema.dice-research.org/contenthtml',
   'https://schema.dice-research.org/project',
@@ -37,6 +40,7 @@ const relationPredicates = [
   'schema:awardee',
   'schema:member',
   'schema:lead',
+  'schema:funder',
 ];
 
 // default predicates mapping
