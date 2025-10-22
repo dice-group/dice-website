@@ -10,5 +10,5 @@ dice:PabloFaundez a schema:Person ;
   schema:email <mailto:pablofg@mail.uni-paderborn.de> ;
   schema:chat "@pablofg:chat.dice-research.org" ;
   schema:office "FU.323" ;
-  schema:photo "pablo_faundez.jpg" ;
+  schema:photo "faundez_garces.jpg" ;
   schema:project dice:KIOWL.
