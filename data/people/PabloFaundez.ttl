@@ -11,4 +11,4 @@ dice:PabloFaundez a schema:Person ;
   schema:chat "@pablofg:chat.dice-research.org" ;
   schema:office "FU.323" ;
   schema:photo "pablo_faundez.jpg" ;
-  schema:project dice:KIOWL;
+  schema:project dice:KIOWL.
