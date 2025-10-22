@@ -11,5 +11,5 @@ Our group works on the intersection of Data Science and Natural Language Process
 
 Our group includes members of both Paderborn and Leipzig universities.""" ;
   schema:lead dice:HamadaMZahera ; # group maintainer
-  schema:member dice:RiaHariGusmita, dice:TatianaMoteu, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava, dice:ManzoorAli ; # group members list
+  schema:member dice:RiaHariGusmita, dice:TatianaMoteuNgoli, dice:AsepFajarFirmansyah, dice:DanielVollmers, dice:ReneSpeck, dice:NikitSrivastava, dice:ManzoorAli, dice:ItaloOliveira; # group members list
   schema:relatedDemo dice:FOX, dice:AGDISTIS, dice:TeBaQA_Demo, dice:IDA_Demo . # list of related demos
