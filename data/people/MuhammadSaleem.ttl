@@ -7,9 +7,9 @@ dice:MuhammadSaleem a schema:Person ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-341-97-32362> ;
   schema:fax <tel:+49-341-97-32329> ;
-  schema:email <mailto:saleem@informatik.uni-leipzig.de> ;
+  schema:email <mailto:saleem@mail.upb.de> ;
   schema:chat "@saleem:chat.dice-research.org" ;
   schema:office "" ;
   schema:photo "saleem.jpg" ;
-  schema:project dice:DIESEL, dice:SAKE, dice:SLIPO, dice:HOBBIT, dice:BDE, dice:GeoKnow, dice:Feasible ;
+  schema:project dice:DIESEL, dice:3dFed, dice:SPARQLML dice:SAKE, dice:SLIPO, dice:HOBBIT, dice:BDE, dice:GeoKnow, dice:Feasible ;
   schema:content """""" .
