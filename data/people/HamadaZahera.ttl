@@ -1,7 +1,7 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
-dice:HamadaZahera a schema:Person ;
+dice:HamadaMZahera a schema:Person ;
   schema:name "Hamada Zahera" ;
   schema:namePrefix "Dr." ;
   schema:role dice:SeniorResearcher ;
