@@ -1,0 +1,14 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:PabloFaundez a schema:Person ;
+  schema:name "Pablo Faúndez-Garcés" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-1768-468-4024> ;
+  schema:fax "" ;
+  schema:email <mailto:pablofg@mail.uni-paderborn.de> ;
+  schema:chat "@pablofg:chat.dice-research.org" ;
+  schema:office "FU.323" ;
+  schema:photo "faundez_garces.jpg" ;
+  schema:project dice:KIOWL.
