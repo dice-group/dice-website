@@ -1,0 +1,26 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ItaloOliveira a schema:Person ;
+  schema:name "Italo Lopes Oliveira" ;
+  schema:namePrefix "Dr." ;
+  schema:role dice:SeniorResearcher ;
+  schema:phone <tel:> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:italo.lopes.oliveira@uni-paderborn.de> ;
+  schema:chat "@italo:chat.dice-research.org" ;
+  schema:office "FU.335" ;
+  schema:photo "italo.jpg" ;
+  schema:project dice:SAIL ;
+  schema:content """
+  
+  ## Research Interests
+
+  Currently, my primary focus is on Ontology Learning from text. I also have an interest and experience in Entity Linking.
+  I am open to collaboration in the following areas:
+
+  - Entity Linking (in any language)
+  - Ontology Learning
+  - Ontology Verbalization
+  - Natural Language Processing with Language Models 
+  """ .

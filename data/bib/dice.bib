@@ -1,5 +1,15 @@
 % Encoding: UTF-8
 
+@InProceedings{nl2ls_kcap25,
+  author    = {Reda Ihtassine and Asep Fajar Firmansyah and Nikit Srivastava and Manzoor Ali and Axel{-}Cyrille Ngonga Ngomo and Mohamed Ahmed Sherif},
+  booktitle = {Proceedings of the 12th Knowledge Capture Conference 2025, {K-CAP} 2025, The Thirteenth International Conference on Knowledge Capture, December 10 - 12, 2025, Dayton, Ohio, USA},
+  title     = {NL2LS: LLM-based Automatic Linking of Knowledge Graphs},
+  year      = {2025},
+  publisher = {{ACM}},
+  url    = {https://papers.dice-research.org/2025/KCAP_NL2LS/public.pdf},
+  keywords  = {dice sherif ihtassine firmansyah Srivastava ali ngonga whale enexa sailproject},
+}
+
 @inproceedings{glide_iswc25,
   abstract = {The number of datasets on the web of data increases continuously. However, the knowledge contained therein cannot be fully utilized without finding links between the entities contained in these datasets. Equivalent entities can not be identified solely by checking the equivalence of IRIs because of the different origins and naming schemes of different data providers. Yet, such equivalences can be discovered by computing the similarity of their attributes. In this paper we propose GLIDE, an approach that links entities from two different datasets by embedding a joint model of these datasets enriched by additional relations describing the similarity of literals. The joint model is embedded into a latent vector space while paying attention to juxtaposing similar literals. We evaluate our approach against state-of-the-art algorithms using real-world datasets commonly used in link discovery literature. The results show that GLIDE outperforms all baselines on 5 of 7 datasets with perfect or near-perfect accuracy. Our approach achieves its best performance on datasets that feature several literals with similarities. Our experiments indicate that researchers should not only pay attention to equal literals in knowledge graph embedding but should also be aware of the distance between similar literals.},
   address = {Nara, Japan},
@@ -477,7 +487,7 @@
 	url          = {https://papers.dice-research.org/2024/ISWC_BLINK/public.pdf},
 	year         = {2024},
 	bdsk-url-1   = {https://papers.dice-research.org/2024/ISWC_BLINK/public.pdf},
-  presentation = {https://papers.dice-research.org/2025/ISWC_BLINK/Presentation/presentation_public.pdf},
+  presentation = {https://papers.dice-research.org/2024/ISWC_BLINK/Presentation/presentation_public.pdf},
   doi          = {10.1007/978-3-031-77844-5_12}
 }
 
@@ -7987,7 +7997,9 @@ of string-based and phonetic-based measures can improve the Fmeasures achieved b
 	keywords = {dice speaker firmansyah mousallem ngonga},
 	title = {GATES: Using Graph Attention Networks for Entity Summarization},
 	url = {https://papers.dice-research.org/2021/KCAP2021_GATES/public.pdf},
-	year = {2021}
+	year = {2021},
+  presentation = {https://papers.dice-research.org/2021/KCAP2021_GATES/presentation/presentation_public.pdf},
+  video      = {https://youtu.be/oYMMdiUbXT4}
 }
 
 @inproceedings{khan2021peak,
@@ -8074,9 +8086,50 @@ of string-based and phonetic-based measures can improve the Fmeasures achieved b
 	publisher = {Springer International Publishing},
 	title = {HybridFC: A Hybrid Fact-Checking Approach for Knowledge Graphs},
 	url = {https://papers.dice-research.org/2022/ISWC_HybridFC/public.pdf},
+  video = {https://youtu.be/jJKm5Iw2ZHM?si=1jFxUZbDkkZu8Vvq},
 	year = {2022},
 	bdsk-url-1 = {https://papers.dice-research.org/2022/ISWC_HybridFC/public.pdf},
-	bdsk-url-2 = {https://doi.org/10.1007/978-3-031-19433-7_27}}
+  presentation = {https://svn.dice-research.org/open/papers/2022/ISWC_HybridFC/HybridFC-A_Hybrid_Fact-Checking_Approach_for_Knowledge_Graphs_slides_public.pdf},
+	bdsk-url-2 = {https://doi.org/10.1007/978-3-031-19433-7_27}
+}
+@inproceedings{qudus2023temporalfc,
+	address = {Cham},
+	author = {Qudus, Umair and R{\"o}der, Michael and Kirrane, Sabrina and Ngomo, Axel-Cyrille Ngonga},
+	biburl = {https://www.bibsonomy.org/bibtex/2ec2f0b9ee7ca0c1c6ef1d8fbcd7262e4/dice-research},
+	booktitle = {The Semantic Web -- ISWC 2023},
+	editor = {R. Payne, Terry and Presutti, Valentina and Qi, Guilin and Poveda-Villalónt, María and Stoilos, Giorgos and Hollink, Laura and Kaoudi, Zoi and Cheng, Gong and Juanzi Li},
+	keywords = {knowgraphs enexa sailproject nebulaproject dice ngonga saleem roeder qudus},
+	publisher = {Springer International Publishing},
+  doi = {10.1007/978-3-031-47240-4_25},
+  isbn = {978-3-031-47239-8},
+	title = {TEMPORALFC: A Temporal Fact Checking approach over Knowledge Graphs},
+  presentation = {https://svn.dice-research.org/open/papers/2023/ISWC_TemporalFC/presentation/TemporalFC-presentation/TemporalFC_presentation.pdf},
+	url = {https://papers.dice-research.org/2023/ISWC_TemporalFC/public.pdf},
+	year = {2023},
+  video = {https://videolectures.net/videos/iswc2023_qudus_temporalfc_fact},
+	bdsk-url-1 = {https://papers.dice-research.org/2023/ISWC_TemporalFC/public.pdf},
+  bdsk-url-2 = {https://doi.org/10.1007/978-3-031-47240-4_25}
+}
+
+
+@article{qudus2024FCSurvey,
+author = {Qudus, Umair and R\"{o}der, Michael and Saleem, Muhammad and Ngonga Ngomo, Axel-Cyrille},
+title = {Fact Checking Knowledge Graphs - A Survey},
+year = {2025},
+issue_date = {January 2026},
+volume = {58},
+number = {1},
+issn = {0360-0300},
+url = {https://dl.acm.org/doi/pdf/10.1145/3749838},
+doi = {10.1145/3749838},
+abstract = {Knowledge graphs are used by a growing number of applications to represent structured data. Hence, evaluating the veracity of assertions in knowledge graphs—dubbed fact checking—is currently a challenge of growing importance. However, manual fact checking is commonly impractical due to the sheer size of knowledge graphs. This article is a systematic survey of recent works on automatic fact checking with a focus on knowledge graphs. We present recent fact-checking approaches, the varied sources they use as background knowledge, and the features they rely upon. Finally, we draw conclusions pertaining to possible future research directions in fact checking knowledge graphs.},
+journal = {ACM Comput. Surv.},
+month = sep,
+articleno = {8},
+numpages = {36},
+bdsk-url-1 = {https://dl.acm.org/doi/pdf/10.1145/3749838},
+keywords = {knowgraphs nebulaproject  sailproject whale sparqlml dice ngonga saleem roeder qudus}
+}
 
 @inproceedings{ali2022rebench,
 	author = {Ali, Manzoor and Saleem, Muhammad and Ngomo, Axel-Cyrille Ngonga},
@@ -8267,6 +8320,7 @@ of string-based and phonetic-based measures can improve the Fmeasures achieved b
 	year = {2023},
 	doi = {10.1007/978-3-031-35320-8_9},
 	url = {https://papers.dice-research.org/2023/NLDB_NMVLS/public.pdf},
+  presentation = {https://papers.dice-research.org/2023/NLDB_NMVLS/presentation/presentation_public.pdf}
 }
 
 @inproceedings{gusmita2023indqner,
@@ -8341,19 +8395,7 @@ abstract="Class expression learning in description logics has long been regarded
 }
 
 
-@inproceedings{qudus2023temporalfc,
-	address = {Cham},
-	author = {Qudus, Umair and R{\"o}der, Michael and Kirrane, Sabrina and Ngomo, Axel-Cyrille Ngonga},
-	biburl = {https://www.bibsonomy.org/bibtex/2ec2f0b9ee7ca0c1c6ef1d8fbcd7262e4/dice-research},
-	booktitle = {The Semantic Web -- ISWC 2023},
-	editor = {R. Payne, Terry and Presutti, Valentina and Qi, Guilin and Poveda-Villalónt, María and Stoilos, Giorgos and Hollink, Laura and Kaoudi, Zoi and Cheng, Gong and Juanzi Li},
-	keywords = {knowgraphs enexa sailproject nebulaproject dice ngonga saleem roeder qudus},
-	publisher = {Springer International Publishing},
-	title = {TEMPORALFC: A Temporal Fact Checking approach over Knowledge Graphs},
-	url = {https://papers.dice-research.org/2023/ISWC_TemporalFC/public.pdf},
-	year = {2023},
-	bdsk-url-1 = {https://papers.dice-research.org/2022/ISWC_HybridFC/public.pdf}
-}
+
 
 @inproceedings{MahmoodHHKMV23,
 	author       = {Miika Hannula and Minna Hirvonen and Juha Kontinen and Yasir Mahmood and Arne Meier and Jonni Virtema},
@@ -8520,23 +8562,36 @@ abstract="Class expression learning in description logics has long been regarded
   url       = {https://doi.org/10.1145/3587259.3627567},
 }
 
+
 @InProceedings{karalisBHSN2024,
   author     = {Karalis, Nikolaos and Bigerl, Alexander and Heidrich, Liss and Sherif, Mohamed Ahmed and Ngonga Ngomo, Axel-Cyrille},
+  editor     ="Mero{\~{n}}o Pe{\~{n}}uela, Albert  and Dimou, Anastasia  and Troncy, Rapha{\"e}l and Hartig, Olaf and Acosta, Maribel and Alam, Mehwish and Paulheim, Heiko and Lisena, Pasquale",
   title      = {Efficient Evaluation of Conjunctive Regular Path Queries Using Multi-way Joins},
+  publisher  ="Springer Nature Switzerland",
   booktitle  = {{ESWC}},
   year       = {2024},
+  address    ="Cham",
+  pages      ="218--235",
   keywords   = {karalis bigerl heidrich sherif ngonga enexa sailproject dice},
+  abstract   ="Recent analyses of real-world queries show that a prominent type of queries is that of conjunctive regular path queries. Despite the increasing popularity of this type of queries, only limited efforts have been invested in their efficient evaluation. Motivated by recent results on the efficiency of worst-case optimal multi-way join algorithms for the evaluation of conjunctive queries, we present a novel multi-way join algorithm for the efficient evaluation of conjunctive regular path queries. The hallmark of our algorithm is the evaluation of the regular path queries found in conjunctive regular path queries using multi-way joins. This enables the exploitation of regular path queries in the planning steps of the proposed algorithm, which is crucial for the algorithm's efficiency, as shown by the results of our detailed evaluation using the Wikidata-based benchmark WDBench. The results of this evaluation also show that our approach achieves a value of query mixes per hour that is 4.3 higher than the state of the art and that it outperforms all of the competing graph storage solutions in almost 70{\%} of the benchmark's queries.",
+  isbn       ="978-3-031-60626-7",
   url        = {https://papers.dice-research.org/2024/ESWC_C2RPQs/public.pdf}
 }
 
 @InProceedings{ESLM2024,
   author     = {Firmansyah, Asep Fajar and Mousallem, Diego and Ngonga Ngomo, Axel-Cyrille},
+  editor     = "Mero{\~{n}}o Pe{\~{n}}uela, Albert and Dimou, Anastasia and Troncy, Rapha{\"e}l and Hartig, Olaf and Acosta, Maribel and Alam, Mehwish and Paulheim, Heiko and Lisena, Pasquale",
   title      = {ESLM: Improving Entity Summarization by Leveraging Language Models},
   booktitle  = {The Semantic Web},
   year       = {2024},
+  publisher  = "Springer Nature Switzerland",
+  address    = "Cham",
+  pages      = "162--179",
   keywords   = {firmansyah mousallem ngonga climatebowl kiam colide enexa trr318 dice},
   doi        = {10.1007/978-3-031-60626-7_9},
-  url        = {https://papers.dice-research.org/2024/ESWC_ESLM/public.pdf}
+  url        = {https://papers.dice-research.org/2024/ESWC_ESLM/public.pdf},
+  presentation = {https://papers.dice-research.org/2024/ESWC_ESLM/presentation/presentation_public.pdf},
+  video      = {https://videolectures.net/videos/eswc2024_fajar_firmansyah_language_models}
 }
 
 @InProceedings{IndEL2024,
@@ -8592,7 +8647,7 @@ abstract="Class expression learning in description logics has long been regarded
 
 @inproceedings{cabot2023redfm,
     title = "{REDFM}: a Filtered and Multilingual Relation Extraction Dataset",
-    author = "Huguet Cabot, ‪Pere-Llu{\'i}s and Tedeschi, Simone and {Ngonga Ngomo}, Axel-Cyrille and Navigli, Roberto",
+    author = "Huguet Cabot, Pere-Llu{\'i}s and Tedeschi, Simone and {Ngonga Ngomo}, Axel-Cyrille and Navigli, Roberto",
     editor = "Rogers, Anna and Boyd-Graber, Jordan and Okazaki, Naoaki",
     booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
     month = jul,
@@ -8679,6 +8734,7 @@ abstract="Class expression learning in description logics has long been regarded
 	keywords = {knowgraphs sailproject nebulaproject dice ngonga vollmers roeder qudus},
 	publisher = {Springer International Publishing},
 	title = {ExPrompt: Augmenting Prompts Using Examples as Modern Baseline for Stance Classification},
+  presentation = {https://svn.dice-research.org/open/papers/2024/CIKM_ExPrompt/poster/ExPrompt_CIKM.pdf},
 	url = {https://papers.dice-research.org/2024/CIKM_ExPrompt/public.pdf},
 	year = {2024},
 	bdsk-url-1 = {https://papers.dice-research.org/2024/CIKM_ExPrompt/public.pdf}
@@ -8786,6 +8842,7 @@ abstract="Class expression learning in description logics has long been regarded
   publisher    = {Springer},
   year         = {2024},
   url          = {https://papers.dice-research.org/2024/EKAW_FaVeL/public.pdf},
+  presentation = {https://svn.dice-research.org/open/papers/2024/EKAW_FaVeL/presentation/FaVeL_EKAW2024.pdf},
   doi          = {10.1007/978-3-031-77792-9\_13},
   keywords     = {knowgraphs nebulaproject dice ngonga amsilva roeder qudus}}
 
@@ -8874,19 +8931,24 @@ abstract="Class expression learning in description logics has long been regarded
   journal  = {COLING 2025},
   title    = {Contextual Augmentation for Entity Linking using Large Language Models},
   year     = {2025},
-  keywords = {dice vollmers zahera moussallem ngonga sailproject kiam colide},
+  keywords = {dice vollmers zahera moussallem ngonga sailproject enexa kiam colide},
   url      = {https://papers.dice-research.org/2025/COLING_EL_Augmentation/public.pdf},
 }
 
 @InProceedings{ANTS2025,
-  author     = {Firmansyah, Asep Fajar and Zahera, Hamada M. and Sherif, Mohamed Ahmed and and Moussallem, Diego and Ngonga Ngomo, Axel-Cyrille},
+  author     = {Firmansyah, Asep Fajar and Zahera, Hamada M. and Sherif, Mohamed Ahmed and Moussallem, Diego and Ngonga Ngomo, Axel-Cyrille},
   title      = {ANTS: Abstractive Entity Summarization in Knowledge Graphs},
-  editors    = {Curry, Edward and Acosta, Maribel and Poveda-
-Villalón, María and van Erp, Marieke and Ojo, Adegboyega and Hose, Katja and Shimizu, Cogan and Lisena, Pasquale},
-  booktitle  = {Semantic Web – 22nd International Conference, ESWC 2025, Portoroz, Slovenia, June 1-5, 2025, Proceedings},
+  editors    = {Curry, Edward and Acosta, Maribel and Poveda-Villalón, María and van Erp, Marieke and Ojo, Adegboyega and Hose, Katja and Shimizu, Cogan and Lisena, Pasquale},
+  publisher  = "Springer Nature Switzerland",
+  address    = "Cham",
+  pages      = "133--151",
   year       = {2025},
+  booktitle  = {The Semantic Web – 22nd International Conference, ESWC 2025, Portoroz, Slovenia, June 1-5, 2025, Proceedings},
   keywords   = {dice enexa whale trr318 firmansyah zahera sherif moussallem ngonga},
-  url        = {https://papers.dice-research.org/2025/ESWC_ANTS/public.pdf}
+  url        = {https://papers.dice-research.org/2025/ESWC_ANTS/public.pdf},
+  presentation = {https://papers.dice-research.org/2025/ESWC_ANTS/presentation/presentation_public.pdf},
+  video      = {https://videolectures.net/videos/eswc2025_bernardin_fajar_firmansyah},
+  doi        = {https://doi.org/10.1007/978-3-031-94575-5_8}
 }
 
 @article{demir2025ontolearn,
@@ -8918,12 +8980,12 @@ Villalón, María and van Erp, Marieke and Ojo, Adegboyega and Hose, Katja and S
 @inproceedings{bigerl2025tentriswcojupdate,
 	address = {Baltimore, USA},
 	author = {Bigerl, Alexander and Heidrich, Liss and Karalis, Nikolaos and Ngonga Ngomo, Axel-Cyrille},
-	booktitle = {The Semantic Web -- ISWC 2024},
+	booktitle = {The Semantic Web -- ISWC 2025},
 	keywords = {bigerl nkaralis ngonga tentris knowgraphs enexa tentris nebula enexa dice simba},
 	title = {{E}fficient {U}pdates for {W}orst-{C}ase {O}ptimal {J}oin {T}riple {S}tores},
 	url = {https://papers.dice-research.org/2025/ISWC_Tentris-WCOJ-Update/public.pdf},
-	year = {2024},
-	bdsk-url-1 = {https://papers.dice-research.org/2024/ISWC_Tentris-WCOJ-Update/public.pdf}
+	year = {2025},
+	bdsk-url-1 = {https://papers.dice-research.org/2025/ISWC_Tentris-WCOJ-Update/public.pdf}
 }
 
 @inproceedings{moteu2025benchmarkingke,
@@ -8931,9 +8993,9 @@ Villalón, María and van Erp, Marieke and Ojo, Adegboyega and Hose, Katja and S
 	booktitle  = {The Semantic Web -- ISWC 2025},
 	keywords   = {dice sailproject kiowl tatianam kouagou zahera ngonga},
 	title      = {Benchmarking Knowledge Editing using Logical Rules},
-	url        = {https://svn.dice-research.org/open/papers/2025/ISWC_Benchmarking-KE/public.pdf},
+	url        = {https://papers.dice-research.org/2025/ISWC_Benchmarking-KE/public.pdf},
 	year       = {2025}, 
-	bdsk-url-1 = {https://svn.dice-research.org/open/papers/2025/ISWC_Benchmarking-KE/public.pdf}}
+	bdsk-url-1 = {https://papers.dice-research.org/2025/ISWC_Benchmarking-KE/public.pdf}}
 
 @Comment{jabref-meta: databaseType:bibtex;}
 
@@ -8945,7 +9007,7 @@ pages = {102504},
 year = {2026},
 issn = {0169-023X},
 doi = {https://doi.org/10.1016/j.datak.2025.102504},
-url = {https://svn.dice-research.org/open/papers/2025/DKE_ELEVATE-ID/public.pdf},
+url = {https://papers.dice-research.org/2025/DKE_ELEVATE-ID/public.pdf},
 author = {Gusmita, Ria Hari and Firmansyah, Asep Fajar and Zahera, Hamada M. and Ngonga Ngomo, Axel-Cyrille},
 keywords = {dice kiowl gusmita firmansyah zahera ngonga},
 abstract = {Large Language Models (LLMs) have demonstrated remarkable performance across a wide range of natural language processing tasks. However, their effectiveness in low-resource languages remains underexplored, particularly in complex tasks such as end-to-end Entity Linking (EL), which requires both mention detection and disambiguation against a knowledge base (KB). In earlier work, we introduced IndEL — the first end-to-end EL benchmark dataset for the Indonesian language — covering both a general domain (news) and a specific domain (religious text from the Indonesian translation of the Quran), and evaluated four traditional end-to-end EL systems on this dataset. In this study, we propose ELEVATE-ID, a comprehensive evaluation framework for assessing LLM performance on end-to-end EL in Indonesian. The framework evaluates LLMs under both zero-shot and fine-tuned conditions, using multilingual and Indonesian monolingual models, with Wikidata as the target KB. Our experiments include performance benchmarking, generalization analysis across domains, and systematic error analysis. Results show that GPT-4 and GPT-3.5 achieve the highest accuracy in zero-shot and fine-tuned settings, respectively. However, even fine-tuned GPT-3.5 underperforms compared to DBpedia Spotlight — the weakest of the traditional model baselines — in the general domain. Interestingly, GPT-3.5 outperforms Babelfy in the specific domain. Generalization analysis indicates that fine-tuned GPT-3.5 adapts more effectively to cross-domain and mixed-domain scenarios. Error analysis uncovers persistent challenges that hinder LLM performance: difficulties with non-complete mentions, acronym disambiguation, and full-name recognition in formal contexts. These issues point to limitations in mention boundary detection and contextual grounding. Indonesian-pretrained LLMs, Komodo and Merak, reveal core weaknesses: template leakage and entity hallucination, respectively—underscoring architectural and training limitations in low-resource end-to-end EL.11Code and dataset are available at https://github.com/dice-group/ELEVATE-ID.}
@@ -8959,35 +9021,160 @@ abstract = {Large Language Models (LLMs) have demonstrated remarkable performanc
   volume={13},
   number={},
   pages={151907-151933},
-  url = {https://svn.dice-research.org/open/papers/2025/IEEEAccess_MRE_Survey/public.pdf},
+  url = {https://papers.dice-research.org/2025/IEEEAccess_MRE_Survey/public.pdf},
   keywords = {dice kiowl trr318 sparqlml manzoor moussallem speck saleem  zahera ngonga},
   doi={10.1109/ACCESS.2025.3604258}
 }
 
-
-
-@article{qudus2024FCSurvey,
-author = {Qudus, Umair and R\"{o}der, Michael and Saleem, Muhammad and Ngonga Ngomo, Axel-Cyrille},
-title = {Fact Checking Knowledge Graphs - A Survey},
-year = {2025},
-issue_date = {January 2026},
-volume = {58},
-number = {1},
-issn = {0360-0300},
-url = {https://doi.org/10.1145/3749838},
-doi = {10.1145/3749838},
-abstract = {Knowledge graphs are used by a growing number of applications to represent structured data. Hence, evaluating the veracity of assertions in knowledge graphs—dubbed fact checking—is currently a challenge of growing importance. However, manual fact checking is commonly impractical due to the sheer size of knowledge graphs. This article is a systematic survey of recent works on automatic fact checking with a focus on knowledge graphs. We present recent fact-checking approaches, the varied sources they use as background knowledge, and the features they rely upon. Finally, we draw conclusions pertaining to possible future research directions in fact checking knowledge graphs.},
-journal = {ACM Comput. Surv.},
-month = sep,
-articleno = {8},
-numpages = {36},
-keywords = {knowgraphs nebulaproject  sailproject whale sparqlml dice ngonga saleem roeder qudus}
-
+@inproceedings{memariani2025linkprediction,
+	author     = {Memariani, Adel and Röder, Michael and Sharma, Arnab and Demir, Caglar and Ngonga Ngomo, Axel-Cyrille},
+	booktitle  = {The Semantic Web -- ISWC 2025},
+	keywords   = {dice sailproject WHALE enexa adme ngonga},
+	title      = {Link Prediction Under Non-targeted Attacks: Do Soft Labels Always Help?},
+	url        = {https://papers.dice-research.org/2025/ISWC_Link_Prediction_with_Soft_Labels/Link_Prediction_Under_Non_targeted_Attacks_Do_Soft_Labels_Always_Help_public.pdf},
+	year       = {2025}
 }
 
+@article{memariani2025box,
+	author     = {Memariani, Adel and Glauer, Martin and Flügel, Simon and Neuhaus, Fabian and Hastings, Janna and Mossakowski, Till},
+	journal  = {Journal of Cheminformatics},
+	keywords   = {dice sailproject adme},
+	title      = {Box embeddings for extending ontologies: a data-driven and interpretable approach},
+	url        = {https://link.springer.com/content/pdf/10.1186/s13321-025-01086-1.pdf},
+	year       = {2025}
+}
 
+@inproceedings{memariani2021,
+	author     = {Memariani, Adel and Glauer, Martin and Neuhaus, Fabian and Mossakowski, Till and Hastings, Janna},
+	booktitle  = {3rd International Workshop on Data meets Applied Ontologies},
+	keywords   = {adme, simba},
+	title      = {Automated and explainable ontology extension based on deep learning: A case study in the chemical domain},
+	url        = {https://ceur-ws.org/Vol-2998/paper1.pdf},
+	year       = {2021}
+}
 
+@article{hastings2021learning,
+  title={Learning chemistry: exploring the suitability of machine learning for the task of structure-based chemical ontology classification},
+  author={Hastings, Janna and Glauer, Martin and Memariani, Adel and Neuhaus, Fabian and Mossakowski, Till},
+  journal={Journal of Cheminformatics},
+  keywords={adme, simba},
+  volume={13},
+  number={1},
+  pages={23},
+  year={2021},
+  url = {https://link.springer.com/article/10.1186/s13321-021-00500-8},
+}
 
+@article{https://doi.org/10.1002/dvr2.70040,
+author = {Lorke, Mariya and Amelung, Rena and Kuchling, Peter and Paaßen, Benjamin and Pein-Hackelbusch, Miriam and Schloots, Franziska and Schulz, Klara and Nauerth, Annette},
+title = {Development and Implementation of Diversity Programs in Large Collaborative Research Projects: An Example From Germany},
+journal = {Diversity \& Inclusion Research},
+volume = {2},
+number = {4},
+pages = {e70040},
+keywords = {dice sailproject schloots},
+doi = {https://doi.org/10.1002/dvr2.70040},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/dvr2.70040},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/dvr2.70040},
+abstract = {ABSTRACT In recent years, there has been an increasing awareness of the importance of incorporating diversity into research projects, focusing on both how they are conducted and their content. Funding organizations have started to require that research applicants pay attention to inclusion and diversity by considering gender dimensions and other diversity factors in their project plans and ensuring gender equality during execution. Based on an extensive literature research and expert discussions on how to develop and implement diversity strategies in large collaborative research projects, we argue that there is a lack of practical advice in existing literature. Drawing from our own experiences in conceptualizing and implementing a Diversity Program across four universities in Germany, we propose a framework for effectively integrating diversity into collaborative research initiatives across various academic fields.},
+year = {2025}
+}
+
+@article{glauer2024interpretable,
+  title={Interpretable ontology extension in chemistry},
+  author={Glauer, Martin and Memariani, Adel and Neuhaus, Fabian and Mossakowski, Till and Hastings, Janna},
+  journal={Semantic Web},
+  keywords={adme, simba},
+  volume={15},
+  number={4},
+  pages={937--958},
+  year={2024},
+  url = {https://journals.sagepub.com/doi/abs/10.3233/SW-233183},
+}
+
+@article{glauer2024chebifier,
+  title={Chebifier: automating semantic classification in ChEBI to accelerate data-driven discovery},
+  author={Glauer, Martin and Neuhaus, Fabian and Fl{\"u}gel, Simon and Wosny, Marie and Mossakowski, Till and Memariani, Adel and Schwerdt, Johannes and Hastings, Janna},
+  journal={Digital Discovery},
+  volume={3},
+  keywords={adme, simba},
+  number={5},
+  pages={896--907},
+  year={2024},
+  url = {https://pubs.rsc.org/en/content/articlehtml/2024/dd/d3dd00238a},
+}
+
+@inproceedings{memariani2024oekg,
+  title={The Open Energy Knowledge Graph},
+  author={Memariani, Adel and Stappel, Mirjam and Glauer, Martin and Neuhaus, Fabian and Mossakowski, Till},
+  booktitle={1st NFDI4Energy Conference},
+  keywords={adme, simba},
+  year={2024},
+  url = {https://zenodo.org/records/10782857},
+  organization={NFDI4Energy}
+}
+
+@inproceedings{nikoukar2020predictive,
+  title={Predictive interference management for wireless channels in the Internet of Things},
+  author={Nikoukar, Ali and Shah, Yash and Memariani, Adel and G{\"u}ne{\c{s}}, Mesut and Dezfouli, Behnam},
+  booktitle={2020 IEEE 31st Annual International Symposium on Personal, Indoor and Mobile Radio Communications},
+  pages={1--7},
+  keywords={adme, simba},
+  year={2020},
+  url = {https://ieeexplore.ieee.org/abstract/document/9217227/},
+  organization={IEEE}
+}
+
+@inproceedings{glauer2023neuro,
+  title={Neuro-symbolic semantic learning for chemistry},
+  author={Glauer, Martin and Mossakowski, Till and Neuhaus, Fabian and Memariani, Adel and Hastings, Janna},
+  booktitle={Compendium of Neurosymbolic Artificial Intelligence},
+  pages={460--484},
+  keywords={adme, simba},
+  year={2023},
+  url = {https://ebooks.iospress.nl/volumearticle/63730},
+  publisher={IOS Press}
+}
+
+@InProceedings{demir2025tree,
+	author		= {Demir, Caglar and Yekini, Moshood and R{\"o}der, Michael and Mahmood, Yasir and Ngonga Ngomo, Axel-Cyrille},
+	editor		= {Ribeiro, Rita P. and Pfahringer, Bernhard and Japkowicz, Nathalie and Larra{\~{n}}aga, Pedro and Jorge, Al{\'i}pio M. and Soares, Carlos and Abreu, Pedro H. and Gama, Jo{\~a}o},
+	title		= {Tree-Based OWL Class Expression Learner over Large Graphs},
+	booktitle	= {Machine Learning and Knowledge Discovery in Databases. Research Track},
+	year		= {2026},
+	publisher	= {Springer Nature Switzerland},
+	address		= {Cham},
+	pages		= {495--511},
+	isbn		= {978-3-032-06066-2},
+	doi			= {10.1007/978-3-032-06066-2_29},
+	url			= {https://rdcu.be/eKvoL},
+	bdsk-url-1  = {https://svn.dice-research.org/open/papers/2025/ECML_TDL/tdl-public.pdf},
+	abstract	= {Learning continuous vector representations for knowledge graphs has significantly improved state-of-the-art performances in many challenging tasks. Yet, deep-learning-based models are only post-hoc and locally explainable. In contrast, learning Web Ontology Language (OWL) class expressions in Description Logics (DLs) is ante-hoc and globally explainable. However, state-of-the-art learners have two well-known limitations: scaling to large knowledge graphs and handling missing information. Here, we present a decision-tree-based learner (tDL) to learn Web Ontology Languages (OWLs) class expressions over large knowledge graphs, while imputing missing triples. Given positive and negative example individuals, tDL firstly constructs unique OWL expressions in SHOIN from concise bounded descriptions of individuals. Each OWL class expression is used as a feature in a binary classification problem to represent input individuals. Thereafter, tDL fits a CART decision tree to learn Boolean decision rules distinguishing positive examples from negative examples. A final OWL expression in SHOIN is built by traversing the built CART decision tree from the root node to leaf nodes for each positive example. By this, tDL can learn OWL class expressions without exploration, i.e., the number of queries to a knowledge graph is bounded by the number of input individuals. Our empirical results show that tDL outperforms the current state-of-the-art models across datasets. Importantly, our experiments over a large knowledge graph (DBpedia with 1.1 billion triples) show that tDL can effectively learn accurate OWL class expressions, while the state-of-the-art models fail to return any results. Finally, expressions learned by tDL can be seamlessly translated into natural language explanations using a pre-trained large language model and a DL verbalizer.}
+}
+
+@inproceedings{sapkota2025parameter,
+  author    = {Sapkota, Rupesh and Demir, Caglar and Sharma, Arnab and Ngonga Ngomo, Axel-Cyrille},
+  title     = {Parameter Averaging in Link Prediction},
+  booktitle = {Proceedings of the Knowledge Capture Conference 2025 (K-CAP '25)},
+  year      = {2025},
+  address   = {Dayton, OH, USA},
+  publisher = {ACM},
+  organization = {K-CAP},
+  pages     = {1--8},
+  doi       = {10.1145/3731443.3771365},
+  url       = {https://papers.dice-research.org/2025/KCAP_ASWA/public.pdf},
+  keywords  = {dice sailproject kiowl enexa sapkota demir ngonga sharma}
+}
+
+@InProceedings{vollmers2025eleval,
+  author    = {Daniel Vollmers and Ren{\'e} Speck and Hamada M. Zahera and Axel{-}Cyrille Ngonga Ngomo},
+  booktitle = {Proceedings of the 12th Knowledge Capture Conference 2025, {K-CAP} 2025, The Thirteenth International Conference on Knowledge Capture, December 10 - 12, 2025, Dayton, Ohio, USA},
+  title     = {Evaluation of Entity and Relation Linking for Question Answering over Knowledge Graphs},
+  year      = {2025},
+  publisher = {ACM},
+  url       = {https://papers.dice-research.org/2025/KCAP_Evaluation-Entity-Linking/public.pdf},
+  keywords  = {dice vollmers speck zahera ngonga sailproject kiowl nebulaproject},
+}
 
 
 
