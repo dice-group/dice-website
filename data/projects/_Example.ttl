@@ -19,4 +19,6 @@ dice:ExampleProject a dice:AlumniProject ;
   schema:relatedDemo dice:LIMES ; # list of related demos
   schema:publicationTag "opal" ; # tag used for publications list on project page
   schema:sourceCode <https://github.com/project-group/project> ;
-  schema:fundingProgram "Horizon 2020" .
+  schema:fundingProgram "Horizon 2020" ;
+  # OR
+  schema:funder dicefunding:H2020 .
