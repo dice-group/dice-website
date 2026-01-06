@@ -5,6 +5,9 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-22.04
+    env:
+      BIBSONOMY_USER: ${{ vars.BIBSONOMY_USER }}
+      BIBSONOMY_API_TOKEN: ${{ secrets.BIBSONOMY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js 14
@@ -21,6 +24,10 @@ jobs:
         run: |
           rm ../data/**/_Example.ttl
           npm run papers
+      - name: Count generated TTL files
+        run: |
+          ls -lah data/papers | head -n 30
+          find data/papers -name "*.ttl" | wc -l
       - name: build
         working-directory: ./scripts
         run: npm run build

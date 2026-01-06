@@ -50,6 +50,9 @@ jobs:
   deploy:
     needs: upload-bib
     runs-on: ubuntu-latest
+    env:
+      BIBSONOMY_USER: ${{ vars.BIBSONOMY_USER }}
+      BIBSONOMY_API_TOKEN: ${{ secrets.BIBSONOMY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v1
         with:
@@ -113,6 +116,9 @@ jobs:
   uploadData:
     needs: deploy
     runs-on: ubuntu-latest
+    env:
+      BIBSONOMY_USER: ${{ vars.BIBSONOMY_USER }}
+      BIBSONOMY_API_TOKEN: ${{ secrets.BIBSONOMY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v1
         with:

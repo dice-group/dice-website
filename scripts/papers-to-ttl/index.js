@@ -6,6 +6,10 @@ const {
   Writer,
   DataFactory: { namedNode, literal, quad },
 } = require('n3');
+const BIBSONOMY_BASE =
+  process.env.BIBSONOMY_BASE || 'https://www.bibsonomy.org';
+const BIBSONOMY_USER = process.env.BIBSONOMY_USER;
+const BIBSONOMY_API_TOKEN = process.env.BIBSONOMY_API_TOKEN;
 
 // path to folder with papers
 // uses ./data/papers from project root
@@ -63,6 +67,18 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
   );
 };
 
+function bibAuthHeaders() {
+  const headers = { Accept: 'application/json' };
+  if (BIBSONOMY_API_TOKEN) {
+    headers.Authorization =
+      'Basic ' +
+      Buffer.from(`${BIBSONOMY_USER}:${BIBSONOMY_API_TOKEN}`).toString(
+        'base64'
+      );
+  }
+  return headers;
+}
+
 /**
  * Function for checking whether a given string is a valid URL. The regex is copied from
  * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
@@ -112,13 +128,21 @@ function preprocessPdfUrl(url) {
  */
 const main = async () => {
   // get papers for tag `simba`
-  const { items: papers } = await fetch(
-    `https://www.bibsonomy.org/json/user/dice-research/simba?items=1000`
+  const {
+    items: papers,
+  } = await fetch(
+    `${BIBSONOMY_BASE}/api/user/${encodeURIComponent(
+      BIBSONOMY_USER
+    )}/simba?items=1000`,
+    { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
   // load papers with "dice" tag and add them to result dataset
   const papersDice = await fetch(
-    `https://www.bibsonomy.org/json/user/dice-research/dice?items=1000`
+    `${BIBSONOMY_BASE}/api/user/${encodeURIComponent(
+      BIBSONOMY_USER
+    )}/dice?items=1000`,
+    { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
   // merge papers into one array
@@ -244,4 +268,7 @@ const main = async () => {
   });
 };
 
-main();
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
