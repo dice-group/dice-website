@@ -131,17 +131,17 @@ const main = async () => {
   const {
     items: papers,
   } = await fetch(
-    `${BIBSONOMY_BASE}/api/user/${encodeURIComponent(
+    `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
-    )}/simba?items=1000`,
+    )}&tags=simba&resourcetype=bibtex&format=json`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
   // load papers with "dice" tag and add them to result dataset
   const papersDice = await fetch(
-    `${BIBSONOMY_BASE}/api/user/${encodeURIComponent(
+    `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
-    )}/dice?items=1000`,
+    )}&tags=dice&resourcetype=bibtex&format=json`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
   console.log('dice keys', Object.keys(papersDice));
