@@ -144,6 +144,14 @@ const main = async () => {
     )}/dice?items=1000`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
+  console.log('dice keys', Object.keys(papersDice));
+  console.log(
+    'Dice items?',
+    papersDice.items && Array.isArray(papersDice.items),
+    'type:',
+    typeof papersDice.items
+  );
+  console.log('dice snippet:', JSON.stringify(papersDice).slice(0, 800));
 
   // merge papers into one array
   papersDice.items.forEach(paper => {
