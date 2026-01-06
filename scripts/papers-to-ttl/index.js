@@ -144,14 +144,11 @@ const main = async () => {
     )}&tags=dice&resourcetype=bibtex&format=json`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
-  console.log('dice keys', Object.keys(papersDice));
-  console.log(
-    'Dice items?',
-    papersDice.items && Array.isArray(papersDice.items),
-    'type:',
-    typeof papersDice.items
-  );
-  console.log('dice snippet:', JSON.stringify(papersDice).slice(0, 800));
+
+  const postsRaw = papersDice?.posts?.post;
+  const posts = Array.isArray(postsRaw) ? postsRaw : postsRaw ? [postsRaw] : [];
+  const first = posts[0];
+  console.log(JSON.stringify(first, null, 2)).slice(0, 10000);
 
   // merge papers into one array
   papersDice.items.forEach(paper => {
