@@ -207,12 +207,12 @@ const main = async () => {
     papers.push(paper);
   });
 
-  //TODO: remove below test
+  // TODO: remove below test
   const targetTitle =
     'TEMPORALFC: A Temporal Fact Checking approach over Knowledge Graphs';
   const dicePosts = getPostsArray(dicePayload);
 
-  let hit = dicePosts.find(
+  const hit = dicePosts.find(
     p => (p?.bibtex?.title || '').trim() === targetTitle
   );
 
