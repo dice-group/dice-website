@@ -128,8 +128,8 @@ function postToLegacyPaper(post) {
 
   paper.presentation = miscFields.presentation || '';
   paper.video = miscFields.video || '';
-  paper['bdsk-url-1'] = miscfields['bdsk-url-1'] || '';
-  paper['bdsk-url-2'] = miscfields['bdsk-url-2'] || '';
+  paper['bdsk-url-1'] = miscFields['bdsk-url-1'] || '';
+  paper['bdsk-url-2'] = miscFields['bdsk-url-2'] || '';
   paper.doi = miscFields.doi || '';
 
   paper.tags = (post?.tag || [])
@@ -235,8 +235,6 @@ const main = async () => {
     if (papers.find(p => p.id === paper.id)) return;
     papers.push(paper);
   });
-
-  console.log(JSON.stringify(hit));
 
   console.log('Processing papers:', papers.length);
 
