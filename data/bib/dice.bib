@@ -6,7 +6,8 @@
   title     = {NL2LS: LLM-based Automatic Linking of Knowledge Graphs},
   year      = {2025},
   publisher = {{ACM}},
-  url    = {https://papers.dice-research.org/2025/KCAP_NL2LS/public.pdf},
+  doi       = {10.1145/3731443.3771374},
+  url       = {https://papers.dice-research.org/2025/KCAP_NL2LS/public.pdf},
   keywords  = {dice sherif ihtassine firmansyah Srivastava ali ngonga whale enexa sailproject},
 }
 
@@ -8749,7 +8750,7 @@ abstract="Class expression learning in description logics has long been regarded
   month        = oct,
   organization = {CIKM24},
   abstract     = {We introduce a novel embedding method diverging from conventional approaches by operating within function spaces of finite dimension rather than finite vector space, thus departing significantly from standard knowledge graph embedding techniques. Initially employing polynomial functions to compute embeddings, we progress to more intricate representations using neural networks with varying layer complexities. We argue that employing functions for embedding computation enhances expressiveness and allows for more degrees of freedom, enabling operations such as composition, derivatives and primitive of entities representation. Additionally, we meticulously outline the step-by-step construction of our approach and provide code for reproducibility, thereby facilitating further exploration and application in the field.},
-  keywords     = {kamdem demir ngonga lemurproject 2024 dice},
+  keywords     = {kamdem demir ngonga enexa lemurproject dice},
   url          = {https://papers.dice-research.org/2024/CIKM_FMULT/public.pdf},
 }
 
@@ -8762,7 +8763,7 @@ abstract="Class expression learning in description logics has long been regarded
   month        = oct,
   organization = {ECAI24},
   abstract     = {Clifford algebras are a natural extension of division algebras, including real numbers, complex numbers, quaternions, and octonions. Previous research in knowledge graph embeddings has focused exclusively on Clifford algebras of a specific type, which do not include nilpotent base vectors—elements that square to zero. In this work, we introduce a novel approach by incorporating nilpotent base vectors with a nilpotency index of two, leading to a more general form of Clifford algebras named degenerate Clifford algebras. This generalization to degenerate Clifford algebras does allow for covering dual numbers and as such include translations and rotations models under the same generalization paradigm for the first time. We develop two models to determine the parameters that define the algebra: one using a greedy search and another predicting the parameters based on neural network embeddings of the input knowledge graph. Our evaluation on seven benchmark datasets demonstrates that this incorporation of nilpotent vectors enhances the quality of embeddings. Additionally, our method outperforms state-of-the-art approaches in terms of generalization, particularly regarding the mean reciprocal rank achieved on validation data. Finally, we show that even a simple greedy search can effective},
-  keywords     = {kamdem demir ngonga lemurproject 2024 dice},
+  keywords     = {kamdem demir ngonga enexa lemurproject dice},
   url          = {https://papers.dice-research.org/2024/ECAI_DeCaL/public.pdf},
 }
 
@@ -9149,6 +9150,7 @@ year = {2025}
 	doi			= {10.1007/978-3-032-06066-2_29},
 	url			= {https://rdcu.be/eKvoL},
 	bdsk-url-1  = {https://svn.dice-research.org/open/papers/2025/ECML_TDL/tdl-public.pdf},
+	keywords	= {dice enexa sailproject demir moshood roeder mahmood ngonga},
 	abstract	= {Learning continuous vector representations for knowledge graphs has significantly improved state-of-the-art performances in many challenging tasks. Yet, deep-learning-based models are only post-hoc and locally explainable. In contrast, learning Web Ontology Language (OWL) class expressions in Description Logics (DLs) is ante-hoc and globally explainable. However, state-of-the-art learners have two well-known limitations: scaling to large knowledge graphs and handling missing information. Here, we present a decision-tree-based learner (tDL) to learn Web Ontology Languages (OWLs) class expressions over large knowledge graphs, while imputing missing triples. Given positive and negative example individuals, tDL firstly constructs unique OWL expressions in SHOIN from concise bounded descriptions of individuals. Each OWL class expression is used as a feature in a binary classification problem to represent input individuals. Thereafter, tDL fits a CART decision tree to learn Boolean decision rules distinguishing positive examples from negative examples. A final OWL expression in SHOIN is built by traversing the built CART decision tree from the root node to leaf nodes for each positive example. By this, tDL can learn OWL class expressions without exploration, i.e., the number of queries to a knowledge graph is bounded by the number of input individuals. Our empirical results show that tDL outperforms the current state-of-the-art models across datasets. Importantly, our experiments over a large knowledge graph (DBpedia with 1.1 billion triples) show that tDL can effectively learn accurate OWL class expressions, while the state-of-the-art models fail to return any results. Finally, expressions learned by tDL can be seamlessly translated into natural language explanations using a pre-trained large language model and a DL verbalizer.}
 }
 
@@ -9166,6 +9168,20 @@ year = {2025}
   keywords  = {dice sailproject kiowl enexa sapkota demir ngonga sharma}
 }
 
+@InProceedings{Teyou2025,
+  author    = {Louis Mozart {Kamdem Teyou} and Luke Friedrichs and N'Dah Jean Kouagou and Caglar Demir and Yasir Mahmood and Stefan Heindorf and Axel-Cyrille {Ngonga Ngomo}},
+  booktitle = {Proceedings of the Knowledge Capture Conference 2025 (K-CAP '25)},
+  title     = {Neural Reasoning for Robust Instance Retrieval in SHOIQ},
+  year      = {2025},
+  pages     = {1--8},
+  address   = {Dayton, OH, USA},
+  publisher = {ACM},
+  organization = {K-CAP},
+  doi       = {10.1145/3731443.3771348},
+  url       = {https://svn.dice-research.org/open/papers/2025/KCAP_EBR/public.pdf},
+  keywords = {kamdem demir ngonga luke kouagou friedrichs mahmood enexa lemurproject sailproject kiowl whale dice}
+}
+
 @InProceedings{vollmers2025eleval,
   author    = {Daniel Vollmers and Ren{\'e} Speck and Hamada M. Zahera and Axel{-}Cyrille Ngonga Ngomo},
   booktitle = {Proceedings of the 12th Knowledge Capture Conference 2025, {K-CAP} 2025, The Thirteenth International Conference on Knowledge Capture, December 10 - 12, 2025, Dayton, Ohio, USA},
@@ -9175,6 +9191,27 @@ year = {2025}
   url       = {https://papers.dice-research.org/2025/KCAP_Evaluation-Entity-Linking/public.pdf},
   keywords  = {dice vollmers speck zahera ngonga sailproject kiowl nebulaproject},
 }
+
+@inproceedings{10.1145/3731443.3771359,
+author = {Zhang, Quannian and R\"{o}der, Michael and Srivastava, Nikit and Kouagou, N'Dah Jean and Ngonga Ngomo, Axel-Cyrille},
+title = {Explainable Benchmarking through the Lense of Concept Learning},
+year = {2025},
+isbn = {9798400718670},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3731443.3771359},
+doi = {10.1145/3731443.3771359},
+abstract = {Evaluating competing systems in a comparable way, i.e., benchmarking them, is an undeniable pillar of the scientific method. However, system performance is often summarized via a small number of metrics. The analysis of the evaluation details and the derivation of insights for further development or use remains a tedious manual task with often biased results. Thus, this paper argues for a new type of benchmarking, which is dubbed explainable benchmarking. The aim of explainable benchmarking approaches is to automatically generate explanations for the performance of systems in a benchmark. We provide a first instantiation of this paradigm for knowledge-graph-based question answering systems. We compute explanations by using a novel concept learning approach developed for large knowledge graphs called PruneCEL. Our evaluation shows that PruneCEL outperforms state-of-the-art concept learners on the task of explainable benchmarking by up to 0.55 points F1 measure. A task-driven user study with 41 participants shows that in 80\% of the cases, the majority of participants can accurately predict the behavior of a system based on our explanations. Our code and data are available at https://github.com/dice-group/PruneCEL/tree/K-cap2025.},
+booktitle = {Proceedings of the 13th Knowledge Capture Conference 2025},
+pages = {139–147},
+numpages = {9},
+keywords = {dice sailproject whale enexa zhang roeder srivastava kouagou ngonga},
+location = {
+},
+series = {K-CAP '25}
+}
+
+
 
 
 
