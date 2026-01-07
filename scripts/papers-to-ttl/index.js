@@ -186,7 +186,7 @@ const main = async () => {
   const simbaPayload = await fetch(
     `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
-    )}&tags=simba&resourcetype=bibtex&format=json`,
+    )}&tags=simba&resourcetype=bibtex&format=json&items=1000`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
@@ -194,7 +194,7 @@ const main = async () => {
   const dicePayload = await fetch(
     `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
-    )}&tags=dice&resourcetype=bibtex&format=json`,
+    )}&tags=dice&resourcetype=bibtex&format=json&items=1000`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
