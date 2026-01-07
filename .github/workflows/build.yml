@@ -24,10 +24,16 @@ jobs:
         run: |
           rm ../data/**/_Example.ttl
           npm run papers
-      - name: Count generated TTL files
+      - name: Print one generated TTL (by pattern)
+        shell: bash
         run: |
-          ls -lah data/papers | head -n 30
-          find data/papers -name "*.ttl" | wc -l
+          set -euo pipefail
+          ttl="$(grep -rl --include='*.ttl' 'TemporalFC' data/papers | head -n 1 || true)"
+          if [ -z "${ttl:-}" ]; then
+            echo "No match"
+            exit 0
+          fi
+          cat "$ttl"
       - name: build
         working-directory: ./scripts
         run: npm run build
