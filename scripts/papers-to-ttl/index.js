@@ -85,6 +85,32 @@ function getPostsArray(payload) {
   return Array.isArray(p) ? p : [p];
 }
 
+function parseBibtexMisc(misc) {
+  const out = {};
+  if (!misc) return out;
+
+  const lines = String(misc).split(/\r?\n/);
+
+  for (const line of lines) {
+    const s = line.trim();
+    if (!s) continue;
+
+    let m = s.match(/^([A-Za-z0-9_-]+)\s*=\s*\{([\s\S]*)\}\s*,?\s*$/);
+    if (m) {
+      out[m[1]] = m[2].trim();
+      continue;
+    }
+
+    m = s.match(/^([A-Za-z0-9_-]+)\s*=\s*"([\s\S]*)"\s*,?\s*$/);
+    if (m) {
+      out[m[1]] = m[2].trim();
+      continue;
+    }
+  }
+
+  return out;
+}
+
 function postToLegacyPaper(post) {
   const bib = post?.bibtex || {};
   const paper = { ...bib };
@@ -97,6 +123,14 @@ function postToLegacyPaper(post) {
   paper.journal = bib.journal || '';
   paper.url = bib.url || '';
   paper.doi = bib.doi || '';
+
+  const miscFields = parseBibtexMisc(bib.misc);
+
+  paper.presentation = miscFields.presentation || '';
+  paper.video = miscFields.video || '';
+  paper['bdsk-url-1'] = miscfields['bdsk-url-1'] || '';
+  paper['bdsk-url-2'] = miscfields['bdsk-url-2'] || '';
+  paper.doi = miscFields.doi || '';
 
   paper.tags = (post?.tag || [])
     .map(t => (typeof t === 'string' ? t : t?.name))
@@ -118,11 +152,6 @@ function postToLegacyPaper(post) {
         last: parts.slice(-1).join(' '),
       };
     });
-
-  if (!paper.doi && typeof bib.misc === 'string') {
-    const m = bib.misc.match(/doi\s*=\s*[{"]([^}"]+)[}"]/i);
-    if (m) paper.doi = m[1].trim();
-  }
 
   const intrahash = bib.intrahash || bib.intraHash;
   paper.id = intrahash
@@ -207,16 +236,7 @@ const main = async () => {
     papers.push(paper);
   });
 
-  // TODO: remove below test
-  const targetTitle =
-    'TEMPORALFC: A Temporal Fact Checking approach over Knowledge Graphs';
-  const dicePosts = getPostsArray(dicePayload);
-
-  const hit = dicePosts.find(
-    p => (p?.bibtex?.title || '').trim() === targetTitle
-  );
-
-  console.log(JSON.stringify(hit, null, 2));
+  console.log(JSON.stringify(hit));
 
   console.log('Processing papers:', papers.length);
 
