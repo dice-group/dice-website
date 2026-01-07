@@ -235,6 +235,13 @@ const main = async () => {
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
+  // TODO: remove test bellow
+  getPostsArray(dicePayload)
+    .slice(0, 5)
+    .forEach((p, i) => {
+      console.log(JSON.stringify(p, null, 2));
+    });
+
   const papers = getPostsArray(simbaPayload).map(postToLegacyPaper);
   const papersDice = getPostsArray(dicePayload).map(postToLegacyPaper);
 

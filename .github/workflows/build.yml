@@ -24,24 +24,6 @@ jobs:
         run: |
           rm ../data/**/_Example.ttl
           npm run papers
-      - name: Print one generated TTL (by pattern)
-        shell: bash
-        run: |
-          set -euo pipefail
-          ttl="$(grep -rl --include='*.ttl' 'TemporalFC' data/papers | head -n 1 || true)"
-          if [ -z "${ttl:-}" ]; then
-            echo "No match"
-            exit 0
-          fi
-          cat "$ttl"
-      - name: List first 10 ttl
-        shell: bash
-        run: |
-          set -euo pipefail
-          find data/papers -maxdepth 1 -type f -name "*.ttl" -print0 \
-            | sort -z \
-            | head -z -n 10 \
-            | xargs -0 cat
       - name: build
         working-directory: ./scripts
         run: npm run build
