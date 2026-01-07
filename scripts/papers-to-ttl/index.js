@@ -10,6 +10,7 @@ const BIBSONOMY_BASE =
   process.env.BIBSONOMY_BASE || 'https://www.bibsonomy.org';
 const BIBSONOMY_USER = process.env.BIBSONOMY_USER;
 const BIBSONOMY_API_TOKEN = process.env.BIBSONOMY_API_TOKEN;
+const UMLAUTS = { a: 'ä', o: 'ö', u: 'ü', A: 'Ä', O: 'Ö', U: 'Ü' };
 
 // path to folder with papers
 // uses ./data/papers from project root
@@ -62,7 +63,7 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
     quad(
       namedNode(paperUrl),
       namedNode(`${prefixes.schema}${predicate}`),
-      literal(obj)
+      literal(bibtexToUnicode(obj))
     )
   );
 };
@@ -83,6 +84,14 @@ function getPostsArray(payload) {
   const p = payload?.posts?.post;
   if (!p) return [];
   return Array.isArray(p) ? p : [p];
+}
+
+function bibtexToUnicode(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/\\+\"{?([aouAOU])}?/g, (_, ch) => UMLAUTS[ch] || ch)
+    .replace(/\{\\ss\}|\\ss/g, 'ß')
+    .replace(/[{}]/g, '');
 }
 
 function parseBibtexMisc(misc) {
@@ -122,7 +131,6 @@ function postToLegacyPaper(post) {
   paper.booktitle = bib.booktitle || '';
   paper.journal = bib.journal || '';
   paper.url = bib.url || '';
-  paper.doi = bib.doi || '';
 
   const miscFields = parseBibtexMisc(bib.misc);
 
@@ -130,7 +138,7 @@ function postToLegacyPaper(post) {
   paper.video = miscFields.video || '';
   paper['bdsk-url-1'] = miscFields['bdsk-url-1'] || '';
   paper['bdsk-url-2'] = miscFields['bdsk-url-2'] || '';
-  paper.doi = miscFields.doi || '';
+  paper.doi = paper.doi || miscFields.doi || '';
 
   paper.tags = (post?.tag || [])
     .map(t => (typeof t === 'string' ? t : t?.name))
@@ -322,7 +330,9 @@ const main = async () => {
     if (paper.authors && paper.authors.length > 0) {
       // write URLs that link to our website
       paper.authors.forEach(author => {
-        const name = _.upperFirst(_.camelCase(author.first + author.last));
+        const first = bibtexToUnicode(author.first);
+        const last = bibtexToUnicode(author.last);
+        const name = _.upperFirst(_.camelCase(first + last));
         writeUrl(`${prefixes.schema}author`, `${prefixes.dice}${name}`);
       });
       // write plaintext names

@@ -34,6 +34,14 @@ jobs:
             exit 0
           fi
           cat "$ttl"
+      - name: List first 10 ttl
+        shell: bash
+        run: |
+          set -euo pipefail
+          find data/papers -maxdepth 1 -type f -name "*.ttl" -print0 \
+            | sort -z \
+            | head -z -n 10 \
+            | xargs -0 cat
       - name: build
         working-directory: ./scripts
         run: npm run build
