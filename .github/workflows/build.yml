@@ -24,6 +24,10 @@ jobs:
         run: |
           rm ../data/**/_Example.ttl
           npm run papers
+      - name: Count generated TTL files
+        run: |
+          ls -lah data/papers | head -n 30
+          find data/papers -name "*.ttl" | wc -l
       - name: build
         working-directory: ./scripts
         run: npm run build

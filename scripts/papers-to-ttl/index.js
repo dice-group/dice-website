@@ -79,6 +79,61 @@ function bibAuthHeaders() {
   return headers;
 }
 
+function getPostsArray(payload) {
+  const p = payload?.posts?.post;
+  if (!p) return [];
+  return Array.isArray(p) ? p : [p];
+}
+
+function postToLegacyPaper(post) {
+  const bib = post?.bibtex || {};
+  const paper = { ...bib };
+
+  paper.label = bib.title || '';
+  paper.year = bib.year || '';
+  paper.type = bib.entrytype || '';
+  paper['pub-type'] = bib.entrytype || '';
+  paper.booktitle = bib.booktitle || '';
+  paper.journal = bib.journal || '';
+  paper.url = bib.url || '';
+  paper.doi = bib.doi || '';
+
+  paper.tags = (post?.tag || [])
+    .map(t => (typeof t === 'string' ? t : t?.name))
+    .filter(Boolean);
+
+  const authorStr = bib.author || '';
+  paper.authors = String(authorStr)
+    .split(/\s+and\s+/i)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .map(name => {
+      if (name.includes(',')) {
+        const [last, first] = name.split(',').map(x => x.trim());
+        return { first: first || '', last: last || '' };
+      }
+      const parts = name.split(/\s+/);
+      return {
+        first: parts.slice(0, -1).join(' '),
+        last: parts.slice(-1).join(' '),
+      };
+    });
+
+  if (!paper.doi && typeof bib.misc === 'string') {
+    const m = bib.misc.match(/doi\s*=\s*[{"]([^}"]+)[}"]/i);
+    if (m) paper.doi = m[1].trim();
+  }
+
+  const intrahash = bib.intrahash || bib.intraHash;
+  paper.id = intrahash
+    ? `${BIBSONOMY_BASE}/bibtex/${intrahash}/${BIBSONOMY_USER}`
+    : bib.href ||
+      paper.id ||
+      `${BIBSONOMY_BASE}/bibtex/unknown/${BIBSONOMY_USER}`;
+
+  return paper;
+}
+
 /**
  * Function for checking whether a given string is a valid URL. The regex is copied from
  * https://stackoverflow.com/questions/17726427/check-if-url-is-valid-or-not .
@@ -128,9 +183,7 @@ function preprocessPdfUrl(url) {
  */
 const main = async () => {
   // get papers for tag `simba`
-  const {
-    items: papers,
-  } = await fetch(
+  const simbaPayload = await fetch(
     `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
     )}&tags=simba&resourcetype=bibtex&format=json`,
@@ -138,27 +191,32 @@ const main = async () => {
   ).then(r => r.json());
 
   // load papers with "dice" tag and add them to result dataset
-  const papersDice = await fetch(
+  const dicePayload = await fetch(
     `${BIBSONOMY_BASE}/api/posts?user=${encodeURIComponent(
       BIBSONOMY_USER
     )}&tags=dice&resourcetype=bibtex&format=json`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
 
-  const postsRaw = papersDice?.posts?.post;
-  const posts = Array.isArray(postsRaw) ? postsRaw : postsRaw ? [postsRaw] : [];
-  const first = posts[0];
-  console.log(JSON.stringify(first, null, 2)).slice(0, 10000);
+  const papers = getPostsArray(simbaPayload).map(postToLegacyPaper);
+  const papersDice = getPostsArray(dicePayload).map(postToLegacyPaper);
 
   // merge papers into one array
-  papersDice.items.forEach(paper => {
-    // ignore papers that are already added
-    if (papers.find(p => p.id === paper.id)) {
-      return;
-    }
-
+  papersDice.forEach(paper => {
+    if (papers.find(p => p.id === paper.id)) return;
     papers.push(paper);
   });
+
+  //TODO: remove below test
+  const targetTitle =
+    'TEMPORALFC: A Temporal Fact Checking approach over Knowledge Graphs';
+  const dicePosts = getPostsArray(dicePayload);
+
+  let hit = dicePosts.find(
+    p => (p?.bibtex?.title || '').trim() === targetTitle
+  );
+
+  console.log(JSON.stringify(hit, null, 2));
 
   console.log('Processing papers:', papers.length);
 
