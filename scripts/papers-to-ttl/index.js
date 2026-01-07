@@ -89,7 +89,7 @@ function getPostsArray(payload) {
 function bibtexToUnicode(s) {
   if (s == null) return '';
   return String(s)
-    .replace(/\\+\"{?([aouAOU])}?/g, (_, ch) => UMLAUTS[ch] || ch)
+    .replace(/\\+"{?([aouAOU])}?/g, (_, ch) => UMLAUTS[ch] || ch)
     .replace(/\{\\ss\}|\\ss/g, 'ß')
     .replace(/[{}]/g, '');
 }
