@@ -228,14 +228,6 @@ function getPostsArray(payload) {
   return Array.isArray(p) ? p : [p];
 }
 
-function bibtexToUnicode(s) {
-  if (s == null) return '';
-  return String(s)
-    .replace(/\\+"{?([aouAOU])}?/g, (_, ch) => UMLAUTS[ch] || ch)
-    .replace(/\{\\ss\}|\\ss/g, 'ß')
-    .replace(/[{}]/g, '');
-}
-
 function parseBibtexMisc(misc) {
   const out = {};
   if (!misc) return out;
