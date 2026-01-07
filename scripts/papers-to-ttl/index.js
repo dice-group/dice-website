@@ -10,7 +10,6 @@ const BIBSONOMY_BASE =
   process.env.BIBSONOMY_BASE || 'https://www.bibsonomy.org';
 const BIBSONOMY_USER = process.env.BIBSONOMY_USER;
 const BIBSONOMY_API_TOKEN = process.env.BIBSONOMY_API_TOKEN;
-const UMLAUTS = { a: 'ä', o: 'ö', u: 'ü', A: 'Ä', O: 'Ö', U: 'Ü' };
 
 // path to folder with papers
 // uses ./data/papers from project root
@@ -67,6 +66,149 @@ const createLiteralWriter = (writer, paperUrl) => (predicate, obj) => {
     )
   );
 };
+
+function bibtexToUnicode(input) {
+  if (input == null) return '';
+
+  const str = String(input);
+
+  if (!/[\\{}]/.test(str)) return str;
+
+  const accents = {
+    "'": {
+      a: 'á',
+      A: 'Á',
+      e: 'é',
+      E: 'É',
+      i: 'í',
+      I: 'Í',
+      o: 'ó',
+      O: 'Ó',
+      u: 'ú',
+      U: 'Ú',
+      y: 'ý',
+      Y: 'Ý',
+      c: 'ć',
+      C: 'Ć',
+      n: 'ń',
+      N: 'Ń',
+    },
+    '`': {
+      a: 'à',
+      A: 'À',
+      e: 'è',
+      E: 'È',
+      i: 'ì',
+      I: 'Ì',
+      o: 'ò',
+      O: 'Ò',
+      u: 'ù',
+      U: 'Ù',
+    },
+    '^': {
+      a: 'â',
+      A: 'Â',
+      e: 'ê',
+      E: 'Ê',
+      i: 'î',
+      I: 'Î',
+      o: 'ô',
+      O: 'Ô',
+      u: 'û',
+      U: 'Û',
+    },
+    '"': {
+      a: 'ä',
+      A: 'Ä',
+      e: 'ë',
+      E: 'Ë',
+      i: 'ï',
+      I: 'Ï',
+      o: 'ö',
+      O: 'Ö',
+      u: 'ü',
+      U: 'Ü',
+      y: 'ÿ',
+      Y: 'Ÿ',
+    },
+    '~': { a: 'ã', A: 'Ã', n: 'ñ', N: 'Ñ', o: 'õ', O: 'Õ' },
+    c: { c: 'ç', C: 'Ç' }, // \c{c}
+    v: {
+      s: 'š',
+      S: 'Š',
+      z: 'ž',
+      Z: 'Ž',
+      c: 'č',
+      C: 'Č',
+      r: 'ř',
+      R: 'Ř',
+      n: 'ň',
+      N: 'Ň',
+    }, // \v{s}
+    '=': {
+      a: 'ā',
+      A: 'Ā',
+      e: 'ē',
+      E: 'Ē',
+      i: 'ī',
+      I: 'Ī',
+      o: 'ō',
+      O: 'Ō',
+      u: 'ū',
+      U: 'Ū',
+    }, // \={a}
+    '.': { z: 'ż', Z: 'Ż', e: 'ė', E: 'Ė' }, // \.{z}
+    u: { a: 'ă', A: 'Ă', g: 'ğ', G: 'Ğ' }, // \u{g}
+    H: { o: 'ő', O: 'Ő', u: 'ű', U: 'Ű' }, // \H{o}
+    k: { a: 'ą', A: 'Ą', e: 'ę', E: 'Ę', i: 'į', I: 'Į', u: 'ų', U: 'Ų' }, // \k{a}
+    r: { a: 'å', A: 'Å', u: 'ů', U: 'Ů' }, // \r{a}
+  };
+
+  const commands = {
+    '\\ss': 'ß',
+    '\\SS': 'ẞ',
+    '\\ae': 'æ',
+    '\\AE': 'Æ',
+    '\\oe': 'œ',
+    '\\OE': 'Œ',
+    '\\aa': 'å',
+    '\\AA': 'Å',
+    '\\o': 'ø',
+    '\\O': 'Ø',
+    '\\l': 'ł',
+    '\\L': 'Ł',
+  };
+
+  let out = str;
+
+  out = out
+    .replace(/\\&/g, '&')
+    .replace(/\\_/g, '_')
+    .replace(/\\%/g, '%')
+    .replace(/\\#/g, '#')
+    .replace(/\\\$/g, '$')
+    .replace(/\\\{/g, '{')
+    .replace(/\\\}/g, '}');
+
+  out = out.replace(
+    /\\(ss|SS|ae|AE|oe|OE|aa|AA|o|O|l|L)\b/g,
+    m => commands[m] || m
+  );
+
+  out = out.replace(
+    /\\([`'^"~=.uvHckr])\s*\{?\s*([A-Za-z])\s*\}?/g,
+    (_, acc, ch) => {
+      const rep = accents[acc]?.[ch];
+      return rep || ch;
+    }
+  );
+
+  out = out.replace(/\\i\b/g, 'ı').replace(/\\j\b/g, 'ȷ');
+
+  out = out.replace(/[{}]/g, '');
+
+  return out.normalize('NFC');
+}
 
 function bibAuthHeaders() {
   const headers = { Accept: 'application/json' };
@@ -234,13 +376,6 @@ const main = async () => {
     )}&tags=dice&resourcetype=bibtex&format=json&start=0&end=1000`,
     { headers: bibAuthHeaders() }
   ).then(r => r.json());
-
-  // TODO: remove test bellow
-  getPostsArray(dicePayload)
-    .slice(0, 5)
-    .forEach((p, i) => {
-      console.log(JSON.stringify(p, null, 2));
-    });
 
   const papers = getPostsArray(simbaPayload).map(postToLegacyPaper);
   const papersDice = getPostsArray(dicePayload).map(postToLegacyPaper);
