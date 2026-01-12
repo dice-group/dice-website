@@ -9,8 +9,9 @@ dice:QuannianZhang a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:quannian@mail.uni-paderborn.de> ;
   schema:chat "@quannian:chat.dice-research.org" ;
-  schema:office "TP6.3.302" ;
+  schema:office "FU.201.2" ;
   schema:photo "" ;
+  schema:publicationTag "zhang" ;
   schema:project dice:SAIL ;
   schema:content """""" .
 
