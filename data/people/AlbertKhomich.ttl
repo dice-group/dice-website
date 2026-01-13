@@ -16,4 +16,4 @@ dice:AlbertKhomich a schema:Person ;
   <b>Linkedin </b><a href="https://www.linkedin.com/in/albert-khomich-284034235/"> &ensp;Albert Khomich</a>
   </p>
   """ ;
-  schema:project dice:WHALE .
+  schema:project dice:WHALE, dice:TRR318 .
