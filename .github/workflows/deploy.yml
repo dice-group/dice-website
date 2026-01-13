@@ -99,7 +99,9 @@ jobs:
           node-version: '22'
       - name: deploy
         working-directory: ./scripts/public
-        run: npx exoframe@7 -u -vvv -e https://dice-website.cs.upb.de -t $EXO_TOKEN_DICE
+        run: |
+          npx -y exoframe@7 endpoint https://dice-website.cs.upb.de 
+          npx -y exoframe@7 deploy --update -t "$EXO_TOKEN_DICE"
         env:
           EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
   syncBranches:
