@@ -13,13 +13,13 @@ jobs:
       BIBSONOMY_API_TOKEN: ${{ secrets.BIBSONOMY_API_TOKEN }}
     steps:
       # use master branch
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
         with:
           ref: master
-      - name: Use Node.js 14
-        uses: actions/setup-node@v1
+      - name: Use Node.js 14 (build)
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: '14'
 
       - name: configure DNS server
         run: |
@@ -53,24 +53,29 @@ jobs:
         run: |
           cp exoframe.json public/
           cp Dockerfile public/
+      - name: Use Node.js 22 (deploy tooling)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: deploy
         working-directory: ./scripts/public
-        run: npx exoframe -u -e https://dice-website.cs.upb.de -t $EXO_TOKEN_DICE
+        run: npx -y exoframe@6.2.0 -u -vvv -e https://dice-website.cs.upb.de -t "$EXO_TOKEN_DICE"
         env:
           EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
   uploadData:
+    needs: deploy
     runs-on: ubuntu-latest
     env:
       BIBSONOMY_USER: ${{ vars.BIBSONOMY_USER }}
       BIBSONOMY_API_TOKEN: ${{ secrets.BIBSONOMY_API_TOKEN }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
         with:
           ref: master
       - name: Use Node.js 14
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: '14'
       - name: configure DNS server
         run: |
           sudo mkdir /usr/lib/systemd/resolved.conf.d
