@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Babelscape a schema:Partner ;
+  schema:name "Babelscape" ;
+  schema:country "IT" ;
+  schema:url <http://babelscape.com/> ;
+  schema:kind "Beneficiaries" ;
+  schema:logo "babelscape.png" .
