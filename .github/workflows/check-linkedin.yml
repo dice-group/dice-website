@@ -1,6 +1,7 @@
 name: Check LinkedIn fetch
 
 on:
+  workflow_call: 
   push:
     branches: [ master ]
   pull_request:
