@@ -1,0 +1,16 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ExamplePerson a schema:Person ;
+  schema:name "Sahana Yadnakudige Subramanya" ;
+  schema:namePrefix "" ;
+  schema:role dice:ResearchStaff ;
+  schema:phone <tel:+49-152-2656-4159> ;
+  schema:fax <tel:> ;
+  schema:email <mailto:sahana.yadnakudige.subramanya@upb.de> ;
+  schema:chat "@sahanays:chat.dice-research.org" ;
+  schema:office "FU.214" ;
+  schema:photo "sahana.jpg" ;
+  schema:publicationTag "" ;
+  chema:project dice:Learn2RAG;
+  schema:content """
