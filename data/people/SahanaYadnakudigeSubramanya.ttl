@@ -13,4 +13,4 @@ dice:ExamplePerson a schema:Person ;
   schema:photo "sahana.jpg" ;
   schema:publicationTag "" ;
   schema:project dice:Learn2RAG;
-  schema:content """
+  schema:content "".
