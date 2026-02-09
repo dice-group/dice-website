@@ -6,7 +6,12 @@ on:
     - cron: '0 0 * * 0'
 
 jobs:
+  checkLinkedin:
+    uses: ./.github/workflows/check-linkedin.yml
+    secrets: inherit
+    
   deploy:
+    needs: checkLinkedin
     runs-on: ubuntu-22.04
     env:
       BIBSONOMY_USER: ${{ vars.BIBSONOMY_USER }}
