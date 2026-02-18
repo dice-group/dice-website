@@ -3,5 +3,5 @@
 
 dice:PalaniappanMuthuraman a schema:Person ;
   schema:name "Palaniappan Muthuraman" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   schema:email <mailto:palani@campus.uni-paderborn.de> .
