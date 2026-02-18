@@ -14,15 +14,15 @@ dice:FranziskaSchloots a schema:Person ;
   schema:publicationTag "schloots" ;
   schema:content """
 
-##Research Interests
+## Research Interests
+
 * Self-tracking and wearable devices
 * Quantification
 * empirical media research and methods
 * Video game culture
 
-##Memberships
+## Memberships
 * GfM - Gesellschaft für Medienwissenschaft
 
 """ .
-
 
