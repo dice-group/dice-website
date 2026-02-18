@@ -1,0 +1,22 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TRR318_INF a dice:FundedProject ;
+  schema:tagline "TRR 318 Constructing Explainability - Subproject INF: Retrieval-augmented information provision";
+  schema:status "active" ;
+  schema:content """ """ ;
+  schema:endDate "2029-06-30"^^xsd:date ;
+  schema:startDate "2026-01-01"^^xsd:date ;
+  schema:content """
+  Project aims to build a data and information management infrastructure (DMI) that models internal TRR artifacts and integrates open external data, and provides question answering via retrieval-augmented generation (RAG) aligned with TRR goals.
+  """ ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "TRR 318 INF" ;
+  schema:fundingProgram "Funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/3 2026 – 438445824" ;
+  schema:homepage <https://trr318.uni-paderborn.de/> ;
+  schema:logo "trr318.png" ;
+  schema:publicationTag "trr318_inf" ;
+  schema:partner dicepartner:UBI .
