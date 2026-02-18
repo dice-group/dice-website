@@ -4,7 +4,7 @@
 dice:NehaPokharel a schema:Person ;
   schema:name "Neha Pokharel" ;
   schema:namePrefix "" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:Alumni ;
   #schema:phone <tel:+49-525-16-03342> ;
   #schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:neha2022@mail.uni-paderborn.de> ;
