@@ -13,7 +13,7 @@ dice:TRR318_INF a dice:FundedProject ;
   schema:content """
   Project aims to build a data and information management infrastructure (DMI) that models internal TRR artifacts and integrates open external data, and provides question answering via retrieval-augmented generation (RAG) aligned with TRR goals.
   """ ;
-  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:maintainer dice:MohamedAhmedSherif ;
   schema:name "TRR 318 INF" ;
   schema:fundingProgram "Funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/3 2026 – 438445824" ;
   schema:homepage <https://trr318.uni-paderborn.de/> ;
