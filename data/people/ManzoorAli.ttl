@@ -5,7 +5,7 @@ dice:ManzoorAli a schema:Person ;
   schema:name "Manzoor Ali" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-525-16-05187> ;
   schema:fax <tel:> ;
   schema:email <mailto:manzoor@campus.uni-paderborn.de> ;
   schema:chat "@manzoor:chat.dice-research.org" ;

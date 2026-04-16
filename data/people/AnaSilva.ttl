@@ -2,7 +2,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AnaAlexandraSilva a schema:Person ;
-  schema:name "Ana Alexandra Morim da Silva" ;
+  schema:name "Ana Alexandra Morim da Silva Srivastava" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;

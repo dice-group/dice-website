@@ -3,6 +3,7 @@
 
 dice:PritilataSaha a schema:Person ;
   schema:name "Pritilata Saha" ;
-  schema:role dice:StudentResearcher ;
+  schema:role dice:ResearchStaff ;
+  schema:office "FU.214" ;
   schema:photo "pritilata.jpg" ;
   schema:email <mailto:psaha@mail.uni-paderborn.de> .
