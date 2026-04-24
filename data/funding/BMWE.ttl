@@ -4,6 +4,6 @@
 dicefunding:BMWE a schema:Funder ;
     schema:name "BMWE" ;
     schema:url <https://www.bundeswirtschaftsministerium.de/> ;
-    schema:logo "bmwe.png" ;
+    schema:logo "logo_bmwe.jpg" ;
     schema:text "BMWE" ;
     schema:text "bundeswirtschaftsministerium.de" .
