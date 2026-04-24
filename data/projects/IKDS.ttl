@@ -1,0 +1,16 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:ikds a dice:FundedProject ;
+  schema:tagline "Entwicklung eines interaktiven und kontextbezogenen Dialogsystems für die datengetriebene Optimierung von Maschinen während ihrer Betriebsphase auf Basis eines individuellen Unternehmens-Wissensgraphen" ;
+  schema:status "active" ;
+  schema:endDate "2027-11-30"^^xsd:date ;
+  schema:startDate "2025-12-01"^^xsd:date ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "IKDS" ;
+  schema:fundingProgram "BMWE, Grant No. KK5175206LO4" ;
+  schema:funder dicefunding:BMWE ;
+  schema:publicationTag "ikds" ; .

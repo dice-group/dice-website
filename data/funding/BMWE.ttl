@@ -1,0 +1,9 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:BMWE a schema:Funder ;
+    schema:name "BMWE" ;
+    schema:url <https://www.bundeswirtschaftsministerium.de/> ;
+    schema:logo "logo_bmwe.jpg" ;
+    schema:text "BMWE" ;
+    schema:text "bundeswirtschaftsministerium.de" .
