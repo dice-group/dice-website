@@ -10,7 +10,7 @@ dice:ikds a dice:FundedProject ;
   schema:endDate "2027-11-30"^^xsd:date ;
   schema:startDate "2025-12-01"^^xsd:date ;
   schema:maintainer dice:Hamada Zahera ;
-  schema:name "ikds" ;
+  schema:name "IKDS" ;
   schema:fundingProgram "BMWE, Grant No. KK5175206LO4" ;
   schema:funder dicefunding:BMWE ;
   schema:publicationTag "ikds" ; .
