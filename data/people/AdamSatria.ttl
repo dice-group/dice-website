@@ -1,0 +1,9 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:AdamSatriaAdidarma a schema:Person ;
+  schema:name "Adam Satria Adidarma" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:asatria@mail.uni-paderborn.de> ;
+  schema:chat "@asatria:chat.dice-research.org" ;
+  schema:photo "adamsatria.jpg" .
