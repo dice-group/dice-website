@@ -12,6 +12,6 @@ dice:BillHappiPerson a schema:Person ;
   schema:office "F.U.211" ;
   # schema:photo "yourphoto.jpg" ;
   schema:publicationTag "billhappi" ;
-  schema:project dice:TRR318_INF
-  schema:content """""" .
+  schema:project dice:TRR318_INF .
+  # schema:content """""" .
  # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
