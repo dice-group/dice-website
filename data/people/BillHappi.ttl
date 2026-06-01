@@ -13,8 +13,5 @@ dice:BillHappiPerson a schema:Person ;
   # schema:photo "yourphoto.jpg" ;
   schema:publicationTag "billhappi" ;
   schema:project dice:TRR318_INF
-  schema:content """<p>
-  <b>Linkedin </b><a href="https://www.linkedin.com/in/bill-gates-happi-happi-%CF%80h-d-a71228181/"> &ensp;Bill Gates Happi Happi </a>
-  </p>
-  """ .
+  schema:content """""" .
  # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
