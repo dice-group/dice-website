@@ -5,7 +5,7 @@ dice:SahanaYadnakudigeSubramanya a schema:Person ;
   schema:name "Sahana Yadnakudige Subramanya" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-5251-60-5189> ;
   schema:fax <tel:> ;
   schema:email <mailto:sahana.yadnakudige.subramanya@upb.de> ;
   schema:chat "@sahanays:chat.dice-research.org" ;
