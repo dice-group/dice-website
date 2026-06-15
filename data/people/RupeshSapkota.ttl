@@ -4,6 +4,7 @@
 dice:RupeshSapkota a schema:Person ;
   schema:name "Rupesh Sapkota" ;
   schema:namePrefix "" ;
+  schema:familyName "Sapkota" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

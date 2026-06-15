@@ -4,6 +4,7 @@
 dice:AsepFajarFirmansyah a schema:Person ;
   schema:name "Asep Fajar Firmansyah" ;
   schema:namePrefix "" ;
+  schema:familyName "Firmansyah" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-525-16-05185> ;
   schema:fax <tel:> ;

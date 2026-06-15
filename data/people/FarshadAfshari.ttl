@@ -4,6 +4,7 @@
 dice:FarshadAfshari a schema:Person ;
   schema:name "Farshad Afshari" ;
   schema:namePrefix "" ;
+  schema:familyName "Afshari" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

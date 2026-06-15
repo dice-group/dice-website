@@ -4,6 +4,7 @@
 dice:YasirMahmood a schema:Person ;
   schema:name "Yasir Mahmood" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Mahmood" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

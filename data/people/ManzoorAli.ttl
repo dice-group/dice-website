@@ -4,6 +4,7 @@
 dice:ManzoorAli a schema:Person ;
   schema:name "Manzoor Ali" ;
   schema:namePrefix "" ;
+  schema:familyName "Ali" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-525-16-05187> ;
   schema:fax <tel:> ;

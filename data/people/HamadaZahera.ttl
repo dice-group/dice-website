@@ -4,6 +4,7 @@
 dice:HamadaMZahera a schema:Person ;
   schema:name "Hamada Zahera" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Zahera" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-5251-605194> ;
   schema:fax <tel:+49-5251-603436> ;

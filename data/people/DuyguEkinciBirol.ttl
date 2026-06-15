@@ -3,6 +3,7 @@
 
 dice:DuyguEkinciBirol a schema:Person ;
   schema:name "Duygu Ekinci Birol" ;
+  schema:familyName "Ekinci Birol" ;
   schema:role dice:ResearchStaff ;
   schema:email <mailto:duygu.ekinci.birol@uni-paderborn.de> ;
   schema:chat "@duygue:chat.dice-research.org" ;

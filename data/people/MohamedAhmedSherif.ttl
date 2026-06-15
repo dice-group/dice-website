@@ -4,6 +4,7 @@
 dice:MohamedAhmedSherif a schema:Person ;
   schema:name "Mohamed Ahmed Sherif" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Sherif" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05197> ;
   schema:fax <tel:+49-525-16-03436> ;

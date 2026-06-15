@@ -4,6 +4,7 @@
 dice:MoshoodOlawaleYekini a schema:Person ;
   schema:name "Moshood Olawale Yekini" ;
   schema:namePrefix "" ;
+  schema:familyName "Yekini" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-0155-6314-7657> ;
   schema:fax <tel:> ;

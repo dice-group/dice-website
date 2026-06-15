@@ -3,6 +3,7 @@
 
 dice:Amgad a schema:Person ;
   schema:name "Amgad Abdulmaqsod" ;
+  schema:familyName "Abdulmaqsod" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-170-88-68456> ;

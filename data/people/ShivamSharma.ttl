@@ -3,6 +3,7 @@
 
 dice:ShivamSharma a schema:Person ;
   schema:name "Shivam Sharma" ;
+  schema:familyName "Sharma" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:+49-159-06-423973> ;
   schema:email <mailto:sshivam@mail.uni-paderborn.de> ;

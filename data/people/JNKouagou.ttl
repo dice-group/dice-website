@@ -4,6 +4,7 @@
 dice:JeanNDahKouagou a schema:Person ;
   schema:name "N'Dah Jean Kouagou" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Kouagou" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-5251-60-5198> ;
   schema:fax <tel:> ;
