@@ -5,7 +5,7 @@ dice:MoshoodOlawaleYekini a schema:Person ;
   schema:name "Moshood Olawale Yekini" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-0155-6314-7657> ;
+  schema:phone <tel:+49-5251-60-5189> ;
   schema:fax <tel:> ;
   schema:email <mailto:moshood.olawale.yekini@upb.de> ;
   schema:chat "@myekini:chat.dice-research.org" ;

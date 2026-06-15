@@ -9,7 +9,7 @@ dice:MuhammadSohailNisar a schema:Person ;
   schema:fax <tel:> ;
   schema:email <mailto:msohail@campus.uni-paderborn.de> ;
   schema:chat "@msohail:chat.dice-research.org" ;
-  schema:office "TP6.3.304" ;
+  schema:office "FU.214" ;
   schema:photo "sohail.jpg" ;
   schema:project dice:SPARQLML ;
   schema:content """""" .

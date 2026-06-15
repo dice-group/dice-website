@@ -41,14 +41,14 @@ I supervised/supported several bachelor, master and doctoral theses (sorted by t
 #### 2025
 * Developing Search Approach to Support Software Engineers Making Architectural Design Decisions (Msc thesis)
 
+#### 2026
+* TIM: Tiered Iterative Knowledge Graph Matching (Msc thesis)
+
 ## Research Interest
-
-I am mainly interested in:
-
-* Data engineering, knowledge graph construction & ontology building
-* Knowledge graph integration using machine learning & large language models  
-* Novel data integration approaches for supporting  NLP tasks such as entity summarization & keyphrase extraction
-* Large language model  for supporting data integration tasks and vice versa
+My research focuses on Knowledge Graphs, Semantic Web technologies, and Machine Learning, with an emphasis on scalable, explainable, and FAIR data integration and representation. I develop methods for link discovery, ontology and entity alignment, and knowledge graph construction, combining symbolic reasoning with neural and embedding-based approaches.
+My recent work explores adaptive and post-hoc alignment techniques for knowledge graph embeddings, including attribute- and structure-aware alignment methods, self-configuring matching frameworks, and approaches for entity alignment without retraining. I also investigate relation-aware alignment and large-scale embedding infrastructures for web-scale knowledge graphs.
+In parallel, I work on learning and reasoning in Description Logics, including belief-driven and structure-aware class expression learning and recursive policy-based concept induction in expressive logical fragments. I am particularly interested in bridging statistical learning with formal logic to improve robustness and interpretability in concept learning.
+Overall, my research aims to advance intelligent knowledge graph systems that are scalable, adaptive, and semantically grounded, enabling more effective integration, reasoning, and exploitation of large heterogeneous data sources.
 
 
 ## Reviewing

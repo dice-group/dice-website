@@ -5,7 +5,7 @@ dice:YasirMahmood a schema:Person ;
   schema:name "Yasir Mahmood" ;
   schema:namePrefix "Dr." ;
   schema:role dice:SeniorResearcher ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-525160-5199>  ;
   schema:fax <tel:> ;
   schema:email <mailto:yasir.mahmood@uni-paderborn.de> ;
   schema:chat "@ymahmood:chat.dice-research.org" ;
