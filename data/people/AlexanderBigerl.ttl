@@ -4,6 +4,7 @@
 dice:AlexanderBigerl a schema:Person ;
   schema:name "Alexander Bigerl" ;
   schema:namePrefix "" ;
+  schema:familyName "Bigerl" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-3342> ;
   schema:email <mailto:alexander.bigerl@uni-paderborn.de> ;

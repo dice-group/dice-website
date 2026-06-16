@@ -4,6 +4,7 @@
 dice:YasirMahmood a schema:Person ;
   schema:name "Yasir Mahmood" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Mahmood" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525160-5199>  ;
   schema:fax <tel:> ;

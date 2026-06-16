@@ -4,6 +4,7 @@
 dice:MuhammadSaleem a schema:Person ;
   schema:name "Muhammad Saleem" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Saleem" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-341-97-32362> ;
   schema:fax <tel:+49-341-97-32329> ;

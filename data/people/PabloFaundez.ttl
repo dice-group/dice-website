@@ -4,6 +4,7 @@
 dice:PabloFaundez a schema:Person ;
   schema:name "Pablo Faúndez-Garcés" ;
   schema:namePrefix "" ;
+  schema:familyName "Faundez-Garces" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-1768-468-4024> ;
   schema:fax "" ;

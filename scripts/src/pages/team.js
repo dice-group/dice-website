@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import _ from 'lodash';
 import React from 'react';
 import Layout from '../components/layout';
-import { Person, rdfToPeopleArray } from '../components/person';
+import { Person, rdfToPeopleArray, comparePersons } from '../components/person';
 import SEO from '../components/seo';
 
 export default function Team({
@@ -27,13 +27,11 @@ export default function Team({
           <div key={role} className="mb-8">
             <h2 style={{ marginBottom: '1em' }}>{role}</h2>
             <div className="columns">
-              {peopleByRole[role]
-                .sort((a, b) => a.name.localeCompare(b.name))
-                .map(person => (
-                  <div className="column is-one-quarter" key={person.path}>
-                    <Person person={person} />
-                  </div>
-                ))}
+              {peopleByRole[role].sort(comparePersons).map(person => (
+                <div className="column is-one-quarter" key={person.path}>
+                  <Person person={person} />
+                </div>
+              ))}
             </div>
           </div>
         ))}
@@ -59,6 +57,7 @@ export const pageQuery = graphql`
           data {
             name
             namePrefix
+            familyName
             phone
             fax
             email

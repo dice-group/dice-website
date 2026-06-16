@@ -4,6 +4,7 @@
 dice:ExamplePerson a schema:Person ;
   schema:name "Your Name" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Name" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-525-16-03342> ;
   schema:fax <tel:+49-525-16-03436> ;

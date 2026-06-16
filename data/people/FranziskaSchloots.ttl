@@ -4,6 +4,7 @@
 dice:FranziskaSchloots a schema:Person ;
   schema:name "Franziska Schloots" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Schloots" ;
   schema:project dice:SAIL ;
   schema:role dice:Management ;
   schema:phone <tel:+49-5251-60-5198> ;
@@ -25,4 +26,3 @@ dice:FranziskaSchloots a schema:Person ;
 * GfM - Gesellschaft für Medienwissenschaft
 
 """ .
-

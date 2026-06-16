@@ -4,6 +4,7 @@
 dice:LissHeidrich a schema:Person ;
   schema:name "Liss Heidrich" ;
   schema:namePrefix "" ;
+  schema:familyName "Heidrich" ;
   schema:role dice:Infrastructure ;
 #  schema:phone <> ;
 #  schema:fax <> ;
