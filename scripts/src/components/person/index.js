@@ -33,3 +33,7 @@ export const rdfToPerson = ({ data, path }) => ({
 
 export const rdfToPeopleArray = edges =>
   edges.map(n => n.node).map(rdfToPerson);
+
+const collator = new Intl.Collator();
+const cmpStr = p => (p.familyName ? `1 ${p.familyName}` : `9 ${p.name}`);
+export const comparePersons = (a, b) => collator.compare(cmpStr(a), cmpStr(b));

@@ -7,7 +7,7 @@ import Image from '../components/image';
 import Layout from '../components/layout';
 import ReactMarkdown from '../components/markdown';
 import PapersList from '../components/papers/list';
-import { rdfToPeopleArray } from '../components/person';
+import { rdfToPeopleArray, comparePersons } from '../components/person';
 import Project from '../components/project';
 import SEO from '../components/seo';
 import FundedBy from '../components/fundedby';
@@ -119,6 +119,7 @@ export default function ProjectTemplate({
                     !data.maintainer ||
                     (data.maintainer && data.maintainer.path !== p.path)
                 )
+                .sort(comparePersons)
                 .map(person => (
                   <Link key={person.path} to={person.path}>
                     {person.name}
@@ -256,6 +257,7 @@ export const pageQuery = graphql`
         node {
           data {
             name
+            familyName
             email
             project {
               path

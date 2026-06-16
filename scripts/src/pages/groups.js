@@ -3,6 +3,7 @@ import React from 'react';
 import ReactMarkdown from '../components/markdown';
 import ResearchNav from '../components/researchnav';
 import Layout from '../components/layout';
+import { comparePersons } from '../components/person';
 import SEO from '../components/seo';
 import SideMenu from '../components/sidemenu';
 
@@ -94,6 +95,7 @@ export default function Groups({
                       <h6 className="column-header">Members</h6>
                       {node.data.member
                         .filter(p => p.data.role?.data?.name !== 'Alumni')
+                        .sort((a, b) => comparePersons(a.data, b.data))
                         .map(person => (
                           <Link
                             className="break-normal"
@@ -196,6 +198,7 @@ export const pageQuery = graphql`
               path
               data {
                 name
+                familyName
                 role {
                   data {
                     name
