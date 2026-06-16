@@ -4,6 +4,7 @@
 dice:NikolaosKaralis a schema:Person ;
   schema:name "Nikolaos Karalis" ;
   schema:namePrefix "" ;
+  schema:familyName "Karalis" ;
   schema:role dice:ResearchStaff ;
   schema:chat "@nkaralis:chat.dice-research.org" ;
   schema:phone <tel:+49-525-16-05190> ;

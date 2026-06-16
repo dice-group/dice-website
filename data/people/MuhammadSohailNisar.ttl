@@ -4,6 +4,7 @@
 dice:MuhammadSohailNisar a schema:Person ;
   schema:name "Muhammad Sohail Nisar" ;
   schema:namePrefix "" ;
+  schema:familyName "Nisar" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5192> ;
   schema:fax <tel:> ;

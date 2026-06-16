@@ -4,6 +4,7 @@
 dice:AlbertKhomich a schema:Person ;
   schema:name "Albert Khomich" ;
   schema:namePrefix "" ;
+  schema:familyName "Khomich" ;
   schema:role dice:Infrastructure ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

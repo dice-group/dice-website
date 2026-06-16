@@ -3,6 +3,7 @@
 
 dice:DenisKuchelev a schema:Person ;
   schema:name "Denis Kuchelev" ;
+  schema:familyName "Kuchelev" ;
   schema:role dice:ResearchStaff ;
   schema:email <mailto:kuchelev+diceweb@campus.uni-paderborn.de> ;
   schema:office "FU.201.3" ;

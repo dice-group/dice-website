@@ -4,6 +4,7 @@
 dice:ItaloOliveira a schema:Person ;
   schema:name "Italo Lopes Oliveira" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Oliveira" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

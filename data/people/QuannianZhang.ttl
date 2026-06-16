@@ -4,6 +4,7 @@
 dice:QuannianZhang a schema:Person ;
   schema:name "Quannian Zhang" ;
   schema:namePrefix "" ;
+  schema:familyName "Zhang" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
@@ -14,4 +15,3 @@ dice:QuannianZhang a schema:Person ;
   schema:publicationTag "zhang" ;
   schema:project dice:SAIL ;
   schema:content """""" .
-

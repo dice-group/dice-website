@@ -4,6 +4,7 @@
 dice:ReneSpeck a schema:Person ;
   schema:name "René Speck" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Speck" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

@@ -4,6 +4,7 @@
 dice:MichaelRoeder a schema:Person ;
   schema:name "Michael Röder" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Röder" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05196> ;
   schema:fax <tel:+49-525-16-03436> ;

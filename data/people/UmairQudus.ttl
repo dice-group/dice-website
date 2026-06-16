@@ -4,6 +4,7 @@
 dice:UmairQudus a schema:Person ;
   schema:name "Umair Qudus" ;
   schema:namePrefix "" ;
+  schema:familyName "Qudus" ;
   schema:role dice:ResearchStaff ;
   schema:chat "@uqudus:chat.dice-research.org" ;
   schema:phone <tel:+49-525160-5194> ;

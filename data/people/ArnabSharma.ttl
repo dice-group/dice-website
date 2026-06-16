@@ -4,6 +4,7 @@
 dice:ArnabSharma a schema:Person ;
   schema:name "Arnab Sharma" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Sharma" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05197> ;
   schema:fax <tel:> ;
