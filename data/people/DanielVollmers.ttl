@@ -5,7 +5,7 @@ dice:DanielVollmers a schema:Person ;
   schema:name "Daniel Vollmers" ;
   schema:familyName "Vollmers" ;
   schema:namePrefix "Dr. rer. nat." ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05186> ;
   schema:fax <tel:> ;
   schema:email <mailto:daniel.vollmers@uni-paderborn.de> ;
