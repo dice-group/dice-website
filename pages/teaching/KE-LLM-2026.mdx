@@ -1,0 +1,52 @@
+---
+date: '2026-09-01'
+title: 'Knowledge Editing in Large Language Model'
+type: 'Project Group'
+year: '2026'
+term: 'Winter'
+kind: 'Master'
+language: 'en'
+---
+
+<br/>
+Knowledge editing (KE) in large language models (LLMs) aims to update outdated or incorrect factual knowledge without retraining the entire model from scratch. This capability is essential because LLMs do not automatically adapt to newly acquired information after training, while full model retraining is computationally expensive and often impractical. Consequently, knowledge editing has emerged as an effective approach for maintaining up-to-date factual knowledge and correcting erroneous assertions within pre-trained language models.
+Existing knowledge editing methods can be broadly categorized into two classes:
+
+1. **Parameter-preserving methods:** modify the model's behavior without changing its internal parameters. These approaches typically rely on techniques such as prompt engineering, in-context learning, retrieval augmentation, or external memory modules to inject updated factual knowledge at inference time.
+2. **Parameter-modifying methods:** directly update a localized subset of the model's parameters to incorporate new information while attempting to preserve the remaining knowledge stored in the model. The objective is to modify only the targeted fact with minimal impact on unrelated knowledge.
+
+Despite significant progress, both categories suffer from important limitations. Knowledge edits may produce unintended ripple effects, where modifying one fact inadvertently alters predictions for semantically related or even unrelated facts. Furthermore, inconsistencies between outdated and newly edited knowledge can degrade multi-step reasoning and overall logical consistency. Existing methods also struggle to generalize edits to paraphrased queries, support multi-hop reasoning, and maintain long-term consistency across interconnected facts. In addition, approaches relying on external context or retrieval incur increasing inference latency and memory consumption as the number of accumulated edits grows.
+
+### Project Objectives
+The objective of this project is to develop a neuro-symbolic knowledge editing framework that updates the internal knowledge of large language models while grounding the editing process in an ontological knowledge graph. By integrating symbolic reasoning with neural knowledge editing, the framework aims to improve edit reliability, logical consistency, and reasoning robustness beyond existing knowledge editing approaches.
+
+The project also provides students with the opportunity to experience the complete research lifecycle, including literature review, identification of research gaps, methodology design, implementation, experimental evaluation, and analysis of results.
+To achieve these objectives, the project investigates several research directions, including:
+
+- Leveraging large language models to automatically construct ontology-based knowledge bases from existing knowledge editing benchmark datasets.
+- Building reasoning-oriented knowledge graphs from structured resources such as Wikidata or DBpedia to improve the robustness and consistency of knowledge edits.
+- Integrating machine learning and natural language processing techniques with symbolic reasoning to enhance the reasoning capabilities of edited language models.
+- Representing logical entailments using logical  and ontology-based rules to propagate knowledge edits through inferred facts while preserving global consistency.
+- Developing neuro-symbolic knowledge editing algorithms that jointly optimize factual accuracy and logical consistency during the editing process.
+- 
+Through participation in this project, students will gain hands-on experience across the entire knowledge editing pipeline, including ontology engineering, benchmark construction, neural model implementation, neuro-symbolic reasoning, knowledge graph integration, experimental evaluation, and performance optimization.
+
+#### FAQs
+Q: What is the selection process for this project?
+
+A: Candidates will need to submit a short  assignment and undergo an interview as part of the selection process.
+
+Q: Is there a seminar connected to this PG?
+
+A: No
+
+Q: What are the prerequisites for this PG?
+
+A: The ideal candidate should possess foundational knowledge in NLP and ML, along with strong programming skills in Python and shell scripting. Additionally, proficiency in Linux is essential. Familiarity with knowledge Graphs in general. The ability to learn quickly and adapt to new technologies and methodologies is also critical as the PG domain is expected to have a steep learning curve.
+In case you have further questions, feel free to contact Tatiana Moteu.
+
+In case you have further questions, feel free to contact [Tatiana Moteu](https://dice-research.org/TatianaMoteuNgoli).
+
+### Course in PAUL
+
+Coming soon
