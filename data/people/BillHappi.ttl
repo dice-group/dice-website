@@ -4,13 +4,13 @@
 dice:BillHappiPerson a schema:Person ;
   schema:name "Bill Gates Happi Happi" ;
   schema:namePrefix "Dr." ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:SeniorResearcher ;
   # schema:phone <tel:+49-***-**-*****> ;
   # schema:fax <tel:+49-***-**-*****> ;
   schema:email <mailto:bill.happi@uni-paderborn.de> ;
   schema:chat "@billhappi:chat.dice-research.org" ;
   schema:office "F.U.211" ;
-  # schema:photo "yourphoto.jpg" ;
+  schema:photo "billhappi.jpg" ;
   schema:publicationTag "billhappi" ;
   schema:project dice:TRR318_INF .
   # schema:content """""" .
