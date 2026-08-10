@@ -103,7 +103,7 @@ jobs:
       - name: collect RDF data
         run: cat `find . -name "*.ttl" | grep -v "_Example.ttl"` > data.ttl
       - name: upload to FTP
-        uses: tomasbkk/action-ftp-upload@v1.2
+        uses: tomasbkk/action-ftp-upload@v1.2.1
         with:
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
