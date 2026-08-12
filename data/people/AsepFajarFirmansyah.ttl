@@ -17,12 +17,18 @@ dice:AsepFajarFirmansyah a schema:Person ;
 
 ## Research Interests
 
-My primary focus is on Knowledge Graph Summarization, utilizing both extractive and abstractive approaches, as well as Natural Language Processing. Nevertheless, I am open to collaboration in the following areas:
+My primary focus is on <b>Knowledge Graph Summarization</b>, utilizing both extractive and abstractive approaches. Nevertheless, I am open to collaboration in the following areas:
 
-- Tasks related to knowledge graph construction, such as information extraction (named entity recognition, entity linking)
-- Knowledge graph reasoning tasks, including link prediction and missing triple prediction
-- Link specification and verbalization
-- Working with language models, such as few-shot learning and fine-tuning
+- Knowledge Graphs: Construction, Reasoning, and RAG. 
+- Link Specification and Verbalization
 
-For more details regarding my work, you can also visit my GitHub at https://github.com/asep-fajar-firmansyah
+For more details regarding my work, feel free to visit my GitHub at https://github.com/asep-fajar-firmansyah
+
+## Thesis Supervision
+
+I supervised master's theses:
+
+#### 2025
+* Leveraging Large Language Models for KG Constructions
+
 """ .
