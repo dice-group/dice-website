@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:SahanaYadnakudigeSubramanya a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0002-9504-7479>,
+        <https://scholar.google.com/citations?hl=en&user=5d2vtasAAAAJ> ;
   schema:name "Sahana Yadnakudige Subramanya" ;
   schema:namePrefix "" ;
   schema:familyName "Yadnakudige Subramanya" ;

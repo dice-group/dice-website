@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AsepFajarFirmansyah a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0001-5775-6966>,
+        <https://scholar.google.com/citations?user=LOwq-ccAAAAJ&hl=en&oi=ao>,
+        <https://dblp.org/pid/194/8627.html> ;
   schema:name "Asep Fajar Firmansyah" ;
   schema:namePrefix "" ;
   schema:familyName "Firmansyah" ;

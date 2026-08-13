@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ItaloOliveira a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-2357-5814>,
+        <https://scholar.google.com/citations?user=8hmi5y4AAAAJ&hl=en> ;
   schema:name "Italo Lopes Oliveira" ;
   schema:namePrefix "Dr." ;
   schema:familyName "Oliveira" ;

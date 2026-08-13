@@ -5,6 +5,7 @@ import BackButton from '../components/backButton';
 import Image from '../components/image';
 import Layout from '../components/layout';
 import PapersList from '../components/papers/list';
+import PersonIdentityLinks from '../components/personIdentityLinks';
 import Phone from '../components/phone';
 import SEO from '../components/seo';
 
@@ -24,6 +25,7 @@ export default function PersonTemplate({ data: { rdf } }) {
       office,
       photo,
       publicationTag,
+      sameAs,
     },
   } = rdf;
 
@@ -45,9 +47,12 @@ export default function PersonTemplate({ data: { rdf } }) {
           </div>
 
           <div className="person-data">
-            <h2>
-              {namePrefix} {name}
-            </h2>
+            <div className="person-heading">
+              <h2>
+                {namePrefix} {name}
+              </h2>
+              <PersonIdentityLinks links={sameAs} name={name} />
+            </div>
             <p className="role">{role.data.name}</p>
             {email && (
               <div className="meta">
@@ -134,6 +139,7 @@ export const pageQuery = graphql`
         photo
         content
         publicationTag
+        sameAs
         role {
           data {
             name

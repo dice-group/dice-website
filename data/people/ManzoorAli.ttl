@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ManzoorAli a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0001-8403-5160>,
+        <https://scholar.google.com/citations?user=9qPNJUgAAAAJ&hl=en> ;
   schema:name "Manzoor Ali" ;
   schema:namePrefix "" ;
   schema:familyName "Ali" ;

@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:HamadaMZahera a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0003-0215-1278>,
+        <https://scholar.google.com/citations?user=G_RFJ18AAAAJ&hl=en>,
+        <https://dblp.org/pid/77/9393.html> ;
   schema:name "Hamada Zahera" ;
   schema:namePrefix "Dr." ;
   schema:familyName "Zahera" ;

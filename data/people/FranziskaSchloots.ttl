@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:FranziskaSchloots a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0008-9673-2615>,
+        <https://scholar.google.com/citations?user=pV_9k4EAAAAJ&hl=de> ;
   schema:name "Franziska Schloots" ;
   schema:namePrefix "Dr." ;
   schema:familyName "Schloots" ;

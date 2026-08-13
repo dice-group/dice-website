@@ -8,6 +8,7 @@ exports.createSchemaCustomization = ({ actions }) => {
         image: [String]
         text: [String]
         logo: String
+        sameAs: [String]
       }
     `);
 };

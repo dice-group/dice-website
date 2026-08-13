@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:RiaHariGusmita a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0003-4808-850X>,
+        <https://scholar.google.dk/citations?user=ECdO80sAAAAJ&hl=th>,
+        <https://dblp.org/pid/194/8700> ;
   schema:name "Ria Hari Gusmita" ;
   schema:namePrefix "" ;
   schema:role dice:ExternalStudent ;

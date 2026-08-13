@@ -1051,6 +1051,56 @@ a {
     @apply flex flex-col flex-1;
   }
 
+  .person-heading {
+    @apply flex flex-wrap justify-center mb-2;
+
+    align-items: baseline;
+
+    h2 {
+      @apply mb-0;
+    }
+
+    @screen md {
+      @apply justify-start;
+    }
+  }
+
+  .person-identity-links {
+    @apply inline-flex items-center ml-3;
+
+    align-self: baseline;
+    gap: 0.5rem;
+    position: relative;
+    top: 2px;
+  }
+
+  .person-identity-link {
+    @apply inline-flex items-center justify-center rounded;
+
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+    }
+
+    &--orcid {
+      color: #a6ce39;
+    }
+
+    &--google-scholar {
+      color: #4285f4;
+    }
+
+    &--dblp {
+      color: #004f9f;
+    }
+  }
+
   .role {
     @apply opacity-50 mb-2;
 

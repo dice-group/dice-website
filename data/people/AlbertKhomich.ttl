@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AlbertKhomich a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0006-9466-1783>,
+        <https://scholar.google.com/citations?view_op=list_works&hl=en&user=yh31Kv4AAAAJ>,
+        <https://dblp.org/pid/418/8282.html> ;
   schema:name "Albert Khomich" ;
   schema:namePrefix "" ;
   schema:familyName "Khomich" ;
