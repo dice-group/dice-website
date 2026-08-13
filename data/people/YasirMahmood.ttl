@@ -19,16 +19,16 @@ dice:YasirMahmood a schema:Person ;
 ## Open Thesis Topics
 The following thesis topics are currently available
 
-* An implementation a consistent query answering algorithm for databases (Master/Bachelor, proficiency in Java required)
-* Finding new tractable algorithms for consistent query answering in databases (Master, knowledge of relational databases desired)
-* Argumentation in practice (Master/Bachelor, willingness to apply theory to practical challenges)
-* Complexity of Reasoning in formal logics (Master/Bachelor, knowledge of foundations of computability and complexity)
+* Implementation of a consistent query answering algorithm for databases (Master/Bachelor, proficiency in Java/Python required)
+* Applying SAT/ASP techniques to develop new algorithms for consistent query answering (Master, knowledge of relational databases required)
+* Argumentation for conflict-resolution, social choice, and explainable AI (Master/Bachelor, apply theory to practical challenges)
+* Planning in multiagent systems (Master/Bachelor, interest in agentic AI and LLMs for planning)
 
 ## Research Interests
 My research is mainly in the following areas:
 
 * Theoretical Computer Science
-* Mathematical Logic
+* Databases and Query Answering
 * Knowledge Representation and Reasoning
 * Explainable AI
 
@@ -37,16 +37,16 @@ Feel free to write me if you are interested in collaborating (or writing a thesi
 * Formal Argumentation: Theory and Applications
 * Abductive Reasoning
 * Contrastive Explanations
-* (Parameterized) Complexity Theory
 * Reasoning with Inconsistencies 
 * Description Logics
 * Database Repairs and Consistent Query Answering
+* (Parameterized) Complexity Theory
 
 ## Reviewing
 I enjoy reviewing and have had the opportunity to review for the following conferences. 
 
-* Sub-reviewer:​ AAAI'21, IJCAI'21, AAAI’22, Euro-Par’22, IJCAI’22, AAAI’23, CSL’23, IJCAI’23, KR’23, AAAI’24, FoIKS’24, LPNMR'24
-* PC: AAMAS'24, IJCAI'24, AAAI'25, AAMAS'25, IJCAI'25, CLAR'25
+* Sub-reviewer:​ AAAI (2021--24), IJCAI (2021--24), Euro-Par’2022, CSL’2023, KR (2023,2025,2026), FoIKS’2024, LPNMR'2024
+* PC: AAMAS (since 2024), IJCAI (since 2024), AAAI (since 2025), CLAR'2025
 * Journals: ACM-TOCL, Applied Sciences, Annals of Pure and Applied Logic
 
 """ .
