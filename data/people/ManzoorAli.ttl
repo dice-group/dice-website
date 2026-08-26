@@ -5,7 +5,8 @@
 dice:ManzoorAli a schema:Person ;
     owl:sameAs
         <https://orcid.org/0000-0001-8403-5160>,
-        <https://scholar.google.com/citations?user=9qPNJUgAAAAJ&hl=en> ;
+        <https://scholar.google.com/citations?user=9qPNJUgAAAAJ&hl=en>,
+        <https://dblp.org/pid/297/6183>;
   schema:name "Manzoor Ali" ;
   schema:namePrefix "" ;
   schema:familyName "Ali" ;
