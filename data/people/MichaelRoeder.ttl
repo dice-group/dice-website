@@ -5,7 +5,8 @@
 dice:MichaelRoeder a schema:Person ;
     owl:sameAs
         <https://orcid.org/0000-0002-8609-8277>,
-        <https://scholar.google.com/citations?user=1wHn8M0AAAAJ&hl=en> ;
+        <https://scholar.google.com/citations?user=1wHn8M0AAAAJ&hl=en>,
+        <https://dblp.org/pid/138/4906> ;
   schema:name "Michael Röder" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:familyName "Röder" ;
