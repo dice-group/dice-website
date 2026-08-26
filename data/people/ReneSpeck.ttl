@@ -2,6 +2,10 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ReneSpeck a schema:Person ;
+  owl:sameAs
+      <https://orcid.org/0009-0001-0151-5538>,
+      <https://scholar.google.com/citations?user=bUHpdWUAAAAJ>,
+      <https://dblp.org/pid/67/10288.html> ;
   schema:name "René Speck" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:familyName "Speck" ;
