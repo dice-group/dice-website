@@ -12,6 +12,7 @@ dice:BillGatesHappiHappi a schema:Person ;
   schema:office "F.U.211" ;
   schema:photo "billhappi.jpg" ;
   schema:publicationTag "billhappi" ;
-  schema:project dice:TRR318_INF .
+  schema:project dice:TRR318_INF ;
+  owl:sameAs  <https://dblp.org/pid/338/0322.html>, <https://orcid.org/0000-0003-1199-7726>,  <https://scholar.google.com/citations?user=LXrSV6IAAAAJ&hl=en>  .
   # schema:content """""" .
  # schema:project dice:GEISER, dice:GERBIL . # list of projects you work on
