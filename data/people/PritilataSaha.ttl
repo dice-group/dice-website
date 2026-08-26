@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:PritilataSaha a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-7776-1620>,
+        <https://scholar.google.com/citations?user=7CWGYEkAAAAJ> ;
   schema:name "Pritilata Saha" ;
   schema:familyName "Saha" ;
   schema:role dice:ResearchStaff ;

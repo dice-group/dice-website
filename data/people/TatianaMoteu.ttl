@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:TatianaMoteuNgoli a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0000-9798-7902>,
+        <https://scholar.google.com/citations?user=C0ua0P0AAAAJ&hl=en> ;
   schema:name "Tatiana Moteu Ngoli" ;
   schema:namePrefix "" ;
   schema:familyName "Moteu Ngoli" ;

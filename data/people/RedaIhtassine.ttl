@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:RedaIhtassine a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0003-0784-0942>,
+        <https://scholar.google.com/citations?view_op=list_works&hl=en&user=TO31rOYAAAAJ> ;
   schema:name "Reda Ihtassine" ;
   schema:namePrefix "" ;
   schema:familyName "Ihtassine" ;

@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AdelMemariani a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-8368-7658>,
+        <https://scholar.google.com/citations?hl=en&user=xLuHnzIAAAAJ&view_op=list_works&sortby=pubdate> ;
   schema:name "Adel Memariani" ;
   schema:namePrefix "" ;
   schema:familyName "Memariani" ;

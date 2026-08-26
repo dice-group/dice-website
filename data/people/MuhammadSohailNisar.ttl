@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MuhammadSohailNisar a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0005-3378-896X>,
+        <https://scholar.google.com/citations?user=HzOedzkAAAAJ&hl=en> ;
   schema:name "Muhammad Sohail Nisar" ;
   schema:namePrefix "" ;
   schema:familyName "Nisar" ;

@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:NikitSrivastava a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0004-5164-4911>,
+        <https://scholar.google.com/citations?user=XihSSJcAAAAJ&hl=en> ;
   schema:name "Nikit Srivastava" ;
   schema:namePrefix "" ;
   schema:familyName "Srivastava" ;

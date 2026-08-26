@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:NikolaosKaralis a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-0710-7180>,
+        <https://scholar.google.com/citations?view_op=list_works&hl=en&user=IIruMbQAAAAJ> ;
   schema:name "Nikolaos Karalis" ;
   schema:namePrefix "" ;
   schema:familyName "Karalis" ;

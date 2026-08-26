@@ -24,6 +24,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/developer',
   'https://schema.dice-research.org/screenshot',
   'https://schema.dice-research.org/member',
+  'http://www.w3.org/2002/07/owl#sameAs',
 ];
 
 // list of predicates that define relations between entities
@@ -46,6 +47,7 @@ const relationPredicates = [
 // default predicates mapping
 const defaultPrefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+  owl: 'http://www.w3.org/2002/07/owl#',
 };
 
 /**
@@ -117,6 +119,10 @@ const processResult = ({
       delete data[key];
       // add link to other node
       data[newKey] = val;
+    } else if (key === 'owl:sameAs') {
+      const val = data[key];
+      delete data[key];
+      data.sameAs = val;
     }
   });
 

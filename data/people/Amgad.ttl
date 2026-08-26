@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:Amgad a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0002-4151-4588>,
+        <https://scholar.google.com/citations?user=CCFFO2AAAAAJ&hl=en> ;
   schema:name "Amgad Abdulmaqsod" ;
   schema:familyName "Abdulmaqsod" ;
   schema:namePrefix "" ;

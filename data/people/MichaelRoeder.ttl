@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MichaelRoeder a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-8609-8277>,
+        <https://scholar.google.com/citations?user=1wHn8M0AAAAJ&hl=en> ;
   schema:name "Michael Röder" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:familyName "Röder" ;

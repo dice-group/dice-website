@@ -1,7 +1,11 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:RupeshSapkota a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0009-3928-1130>,
+        <https://scholar.google.com/citations?hl=en&user=oN02e0kAAAAJ> ;
   schema:name "Rupesh Sapkota" ;
   schema:namePrefix "" ;
   schema:familyName "Sapkota" ;

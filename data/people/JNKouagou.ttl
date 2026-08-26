@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:JeanNDahKouagou a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-4217-897X>,
+        <https://scholar.google.com/citations?user=V3py6YMAAAAJ&hl=en>,
+        <https://dblp.org/pid/297/3548.html> ;
   schema:name "N'Dah Jean Kouagou" ;
   schema:namePrefix "Dr. rer. nat." ;
   schema:familyName "Kouagou" ;

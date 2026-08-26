@@ -1,7 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ExamplePerson a schema:Person ;
+    owl:sameAs
+            <https://orcid.org/0009-0000-0000-0000>,
+            <https://scholar.google.com/id>,
+            <https://dblp.org/pid/00/0000.html> ;
   schema:name "Your Name" ;
   schema:namePrefix "Dr." ;
   schema:familyName "Name" ;
