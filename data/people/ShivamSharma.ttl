@@ -1,5 +1,6 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 dice:ShivamSharma a schema:Person ;
   schema:name "Shivam Sharma" ;
@@ -15,4 +16,6 @@ dice:ShivamSharma a schema:Person ;
   <b>Linkedin </b><a href="https://www.linkedin.com/in/shivamsharma95/"> &ensp;Shivam Sharma </a>
   </p>
   """ ;
+  owl:sameAs <https://orcid.org/0009-0006-0070-3162>, 
+             <https://scholar.google.com/citations?user=mj8HR5sAAAAJ&hl=en>;
   schema:project dice:WHALE .
