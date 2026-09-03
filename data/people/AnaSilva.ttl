@@ -2,6 +2,8 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AnaAlexandraSilva a schema:Person ;
+  owl:sameAs <https://orcid.org/0000-0002-1614-2391>,
+              <https://scholar.google.com/citations?user=k13cwSEAAAAJ>.
   schema:name "Ana Alexandra Morim da Silva Srivastava" ;
   schema:namePrefix "" ;
   schema:familyName "Morim da Silva Srivastava" ;
