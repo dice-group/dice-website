@@ -1,5 +1,6 @@
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 dice:AnaAlexandraSilva a schema:Person ;
   owl:sameAs <https://orcid.org/0000-0002-1614-2391>,
