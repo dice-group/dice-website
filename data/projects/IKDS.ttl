@@ -13,4 +13,5 @@ dice:ikds a dice:FundedProject ;
   schema:name "IKDS" ;
   schema:fundingProgram "BMWE, Grant No. KK5175206LO4" ;
   schema:funder dicefunding:BMWE ;
+  schema:logo "ikds.png" ;
   schema:publicationTag "ikds" ; .
