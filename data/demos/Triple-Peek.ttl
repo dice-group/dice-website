@@ -1,0 +1,49 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:triple-peek a schema:Demo ;
+  schema:name "Triple Peek" ;
+  schema:tagline "TriplePeek is a lightweight search frontend for SPARQL knowledge graphs. It uses a local search catalog for fast entity discovery and configurable SPARQL queries for retrieving live RDF data." ;
+  schema:logo "triplepeek-logo-animated_light_theme.svg" ;
+  schema:screenshot "" ;
+  schema:sourceCode <https://github.com/dice-group/triple-peek> ;
+  schema:maintainer dice:MohamedAhmedSherif ;
+  schema:developer dice:AlbertKhomich ;
+  
+  schema:contenthtml """
+
+TriplePeek combines a PostgreSQL search catalog for fast entity discovery with configurable SPARQL queries for retrieving live RDF data.
+
+## What TriplePeek does
+
+- Fast entity search using a local catalog
+- Live SPARQL queries against your endpoint
+- Configurable query buttons
+- Automatic catalog generation from SPARQL endpoints
+
+## How It Works
+
+<p align="center">
+  <div style="max-width:1200px;margin:0 auto;">
+    <img src="triple-peek-how-it-works.svg" alt="How TriplePeek works">
+  </div>
+</p>
+
+TriplePeek does not query the SPARQL endpoint for every search keystroke.
+
+Instead, searchable entity metadata is stored locally in PostgreSQL. Search returns an IRI, and that IRI becomes the anchor for live queries against the configured SPARQL endpoint.
+
+This keeps text search fast while leaving the RDF data in its original knowledge graph.
+
+The search catalog can remain intentionally small and optimized for discovery even when the underlying knowledge graph is very large.
+
+The repository includes a ready-to-run Wikidata demo. 
+<details>
+  <summary>Show demo screenshot</summary>
+  <div style="max-width:1000px;margin:0 auto;">
+    <img src="triple-peek-demo-screenshot.png" alt="TriplePeek demo screenshot">
+  </div>
+</details>
+<br>
+
+""" .
