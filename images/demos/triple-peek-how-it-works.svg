@@ -17,9 +17,9 @@
 <text x="724" y="107" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#60627e" text-anchor="middle"><tspan x="724" dy="0">Find resources. Explore them. Access and federate linked data.</tspan></text>
 </g>
 <g id="three-overview-panels">
-<path id="search-panel" d="M444 171Q444 155 459 161L596 229Q604 233 604 245V509Q604 520 597 524L460 590Q444 597 444 581Z" fill="url(#navy)" filter="url(#shadow)"/>
-<path id="triplepeek-panel" d="M648 144Q648 128 662 134L802 203Q811 207 811 220V519Q811 530 802 534L663 600Q648 607 648 591Z" fill="url(#blue)" filter="url(#shadow)"/>
-<path id="sparql-panel" d="M853 171Q853 155 867 161L999 229Q1007 234 1007 247V512Q1007 523 999 527L868 590Q853 597 853 581Z" fill="url(#teal)" filter="url(#shadow)"/>
+<path id="search-panel" d="M444 171Q444 155 459 161L596 229Q604 233 604 245V509Q604 520 597 524L460 590Q444 597 444 581Z" fill="url(#navy)" />
+<path id="triplepeek-panel" d="M648 144Q648 128 662 134L802 203Q811 207 811 220V519Q811 530 802 534L663 600Q648 607 648 591Z" fill="url(#blue)" />
+<path id="sparql-panel" d="M853 171Q853 155 867 161L999 229Q1007 234 1007 247V512Q1007 523 999 527L868 590Q853 597 853 581Z" fill="url(#teal)" />
 <g transform="translate(491 260) scale(1.65)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
 <circle cx="19" cy="19" r="13"/><path d="M29 29L42 42"/>
 </g>
