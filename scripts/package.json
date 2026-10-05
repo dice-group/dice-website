@@ -5,6 +5,7 @@
   "version": "1.1.0",
   "author": "Tim Ermilov <yamalight@gmail.com>",
   "dependencies": {
+    "@huggingface/transformers": "^4.3.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@mdx-js/tag": "^0.20.3",
@@ -67,7 +68,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "papers": "node ./papers-to-ttl",
     "lint": "eslint src/ papers-to-ttl/ plugins/",
-    "rag:documents": "node rag/build-rag-documents.js ../data ../data/rag/rag_documents.jsonl"
+    "rag:documents": "node rag/build-rag-documents.js ../data ../data/rag/rag_documents.jsonl",
+    "rag:embed": "node rag/embed-documents.mjs ../data/rag/rag_documents.jsonl ../data/rag/rag_embeddings.jsonl",
+    "rag:search": "node rag/search-local.mjs ../data/rag/rag_embeddings.jsonl"
   },
   "repository": {
     "type": "git",
