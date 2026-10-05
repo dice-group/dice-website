@@ -1,12 +1,12 @@
 ---
-date: '2024-11-15'
+date: '2026-09-30'
 title: 'An Algorithm for Computing Query Answers over Inconsistent Databases'
 type: 'Master'
 supervisor: dice:YasirMahmood
 contact: dice:YasirMahmood
 ---
 
-# Background 
+### Background 
 
 A database (DB) is a form of structured data, typically queried using languages like SQL. Integrity constraints (ICs) enforce rules to maintain data consistency. 
 Common ICs include functional dependencies (FDs), which specify that certain attributes uniquely determine others. For example, in a customer database, CustomerID → Email means that if two records have the same CustomerID, they must also have the same Email. Denial constraints (DCs) forbid specific patterns, such as ensuring that no two employees have the same email.
@@ -14,8 +14,8 @@ An inconsistent database violates some ICs. Instead of discarding the entire DB,
 
 
 
-# Your Task
-In an ongoing work, we presented a novel algorithm for computing consistent answers to conjunctive queries (e.g., SQL queries) over inconsistent databases. 
+### Your Task
+In ongoing work, we presented a novel algorithm for computing consistent answers to conjunctive queries (e.g., SQL queries) over inconsistent databases. 
 The algorithm not only retrieves consistent query answers but also counts how many repairs satisfy the query.
 
 This thesis aims to implement our algorithm for computing consistent answers to conjunctive queries over inconsistent databases. 
@@ -25,7 +25,7 @@ The evaluation should measure efficiency, scalability, and accuracy, comparing t
 
 
 
-# Your Profile 
+### Your Profile 
 * Proficiency in Java.
 * Experience with SQL and database constraints (or willingness to learn).
 * Familiarity with classical first-order logic (helps but is not required).
@@ -33,7 +33,7 @@ The evaluation should measure efficiency, scalability, and accuracy, comparing t
 
 
 
-# References and helpful material
+### References and helpful material
 
 1. Teemu Hankala, Miika Hannula, Yasir Mahmood, Arne Meier: Parameterised Complexity of Consistent Query Answering via Graph Representations. https://arxiv.org/abs/2412.08324
 2. Dongjing Miao, Zhipeng Cai, Jianzhong Li, Xiangyu Gao, Xianmin Liu: The Computation of Optimal Subset Repairs. Proc. VLDB Endow. 13(11): 2061-2074 (2020)

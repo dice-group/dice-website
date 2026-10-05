@@ -1,0 +1,19 @@
+---
+date: '2026-10-15'
+title: 'Federated Query Processing over Knowledge Graphs'
+type: 'Master'
+supervisor: dice:MuhammadSaleem
+contact: dice:MuhammadSaleem
+---
+
+### Background 
+Federated query processing aims to collect data from multiple databases. In the dice research group, we have an engine named CostFed that performs the federated SPARQL query processing over multipl Knowledge Graphs. 
+It performs the traditional binary join approach, i.e., takes two SPARQL triple pattern and make a join of the results. The results are then joined with another triple pattern, untill all the triple patterns are joined and final results are computed for the given query.  
+In this thesis, we aim to extended the query processing capabilities of Costfed to perform the multi-way joins, i.e., take more than one triple pattern at a time and perform a join, untill left no join variable. 
+### Your Task
+You will extend CostFed engine (developed in Java) and implement the multi-way join query processing. Your implemenation will be in Java. The evaluation will be performed using the standard LargeRDFBench.
+
+### Your Profil 
+* Good Java programming skills
+* You have fun with query processing and interested in developing new query processing schemes.
+* Experience with knowledge graph standards like SPARQL and RDF (helps, but is not required)
