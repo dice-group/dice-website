@@ -39,12 +39,17 @@ Return:
 Render answer in Gatsby
 ```
 
-# Qdrant for embeddings
-
 # One TTL object's main RDF resource = one vector document.
 
 Retrieval unit: one primary RDF resource represented by one TTL file / RDF subject. Generate type-specific human-readable embedding text from selected semantic properties. Preserve the URI and entity type as vector metadata. Relationships are resolved/enriched through GraphQL at query time rather than expanded fully into the embedding document.
 
 ```sh
-scripts % npm run rag:documents
+npm run rag:documents
+```
+
+# Qdrant for embeddings
+
+```sh
+npm run rag:embed
+npm run rag:search -- "scalable RDF data integration"
 ```

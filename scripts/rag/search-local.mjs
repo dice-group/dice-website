@@ -1,28 +1,35 @@
-import fs from 'fs';
-import readline from 'readline';
-import { pipeline, env } from '@huggingface/transformers';
+import fs from "fs";
+import readline from "readline";
+import { pipeline } from "@huggingface/transformers";
 
-env.backends.onnx.wasm.numThreads = 1;
+const FILE =
+  process.argv[2] || "../data/rag/rag_embeddings.jsonl";
 
-const FILE = process.argv[2] || '../data/rag/rag_embeddings.jsonl';
-
-const QUERY = process.argv.slice(3).join(' ');
+const QUERY = process.argv.slice(3).join(" ").trim();
 
 if (!QUERY) {
-  console.error('Usage: node search-local.mjs <file> "your query"');
+  console.error(
+    'Usage: node rag/search-local.mjs <embeddings-file> "your query"'
+  );
   process.exit(1);
 }
 
-const MODEL = 'Xenova/all-MiniLM-L6-v2';
+const MODEL = "Xenova/all-MiniLM-L6-v2";
 
-const extractor = await pipeline('feature-extraction', MODEL, {
-  device: 'wasm',
-});
+console.log(`Loading model: ${MODEL}`);
+
+const extractor = await pipeline(
+  "feature-extraction",
+  MODEL,
+  {
+    device: "cpu",
+  }
+);
 
 console.log(`Query: ${QUERY}`);
 
 const tensor = await extractor(QUERY, {
-  pooling: 'mean',
+  pooling: "mean",
   normalize: true,
 });
 
@@ -50,7 +57,6 @@ for await (const line of rl) {
 
   const doc = JSON.parse(line);
 
-  // Both vectors are normalized, so dot product == cosine similarity.
   const score = dot(queryVector, doc.embedding);
 
   results.push({
@@ -63,18 +69,18 @@ for await (const line of rl) {
 
 results.sort((a, b) => b.score - a.score);
 
-console.log('\nTop results:\n');
+console.log("\nTop 10 results:\n");
 
 for (const result of results.slice(0, 10)) {
   console.log(
-    `${result.score.toFixed(4)} | ${result.metadata.kind} | ${
-      result.metadata.name
-    }`
+    `${result.score.toFixed(4)} | ${result.metadata.kind} | ${result.metadata.name}`
   );
 
   console.log(`  ${result.metadata.uri}`);
 
-  console.log(`  ${result.text.replace(/\n/g, ' ').slice(0, 180)}`);
+  console.log(
+    `  ${result.text.replace(/\n/g, " ").slice(0, 220)}`
+  );
 
   console.log();
 }

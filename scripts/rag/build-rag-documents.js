@@ -6,7 +6,7 @@ const { Parser } = require('n3');
 const INPUT_DIR = process.argv[2] || './data';
 const OUTPUT_FILE = process.argv[3] || './rag_documents.jsonl';
 
-const EXCLUDED_DIRS = new Set(['papers_all']);
+const EXCLUDED_DIRS = new Set(['papers_all', 'rag']);
 
 const TYPE_CONFIG = {
   person: {
@@ -23,7 +23,7 @@ const TYPE_CONFIG = {
     folders: ['papers'],
     typeLabel: 'Publication',
     fields: [
-      ['Title', ['http://schema.org/title', 'http://schema.org/name']],
+      ["Title", ["title", "name"]],
       ['Authors', ['http://schema.org/authorName']],
       ['Publication type', ['http://schema.org/publicationType']],
       ['Published in', ['http://schema.org/source']],
@@ -102,16 +102,13 @@ const TYPE_CONFIG = {
   },
 
   award: {
-    folders: ['awards'],
-    typeLabel: 'Award',
-    fields: [
-      ['Name', ['http://schema.org/name']],
-      ['Year', ['http://schema.org/year']],
-      [
-        'Description',
-        ['http://schema.org/description', 'http://schema.org/content'],
-      ],
-      ['Awardees', ['http://schema.org/awardee']],
+  folders: ["awards"],
+  typeLabel: "Award",
+  fields: [
+      ["Name", ["name"]],
+      ["Year", ["year"]],
+      ["Description", ["content", "description"]],
+      ["Awardees", ["awardee", "awardeeExternal"]],
     ],
   },
 };
@@ -227,21 +224,31 @@ function findMainSubject(subjectMap) {
   return best;
 }
 
+function predicateLocalName(uri) {
+  const parts = uri.split(/[\/#]/);
+  return parts[parts.length - 1];
+}
+
 function valuesForPredicates(quads, predicates) {
   return quads
-    .filter(q => predicates.includes(q.predicate.value))
-    .map(q => q.object);
+    .filter((q) =>
+      predicates.includes(predicateLocalName(q.predicate.value))
+    )
+    .map((q) => q.object);
 }
 
 function getPreferredLabel(quads) {
   const preferredPredicates = [
-    'http://schema.org/name',
-    'http://schema.org/title',
-    'http://www.w3.org/2000/01/rdf-schema#label',
+    "name",
+    "title",
+    "label",
   ];
 
   for (const predicate of preferredPredicates) {
-    const obj = quads.find(q => q.predicate.value === predicate)?.object;
+    const obj = quads.find(
+      (q) =>
+        predicateLocalName(q.predicate.value) === predicate
+    )?.object;
 
     if (obj) {
       return cleanLiteral(obj.value);

@@ -13,10 +13,10 @@ const MODEL = 'Xenova/all-MiniLM-L6-v2';
 console.log(`Loading model: ${MODEL}`);
 
 const extractor = await pipeline(
-  'feature-extraction',
-  'Xenova/all-MiniLM-L6-v2',
+  "feature-extraction",
+  MODEL,
   {
-    device: 'wasm',
+    device: "cpu",
   }
 );
 
