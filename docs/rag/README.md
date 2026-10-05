@@ -47,9 +47,25 @@ Retrieval unit: one primary RDF resource represented by one TTL file / RDF subje
 npm run rag:documents
 ```
 
-# Qdrant for embeddings
+# Embeddings
 
 ```sh
 npm run rag:embed
 npm run rag:search -- "scalable RDF data integration"
+```
+
+# Qdrant 
+
+```sh
+docker run -d \
+  --name qdrant \
+  -p 6333:6333 \
+  -v qdrant_storage:/qdrant/storage \
+  qdrant/qdrant
+```
+
+```sh
+curl http://127.0.0.1:6333/collections
+npm run rag:index
+curl http://127.0.0.1:6333/collections/dice_rag
 ```
