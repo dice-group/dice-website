@@ -35,6 +35,47 @@ const tensor = await extractor(QUERY, {
 
 const queryVector = tensor.tolist()[0];
 
+function detectRequestedKinds(query) {
+  const q = query.toLowerCase();
+
+  if (/\b(project|projects)\b/.test(q)) {
+    return ["project"];
+  }
+
+  if (
+    /\bwho\b/.test(q) ||
+    /\b(person|people|researcher|researchers|staff|member|members)\b/.test(q)
+  ) {
+    return ["person"];
+  }
+
+  if (/\b(paper|papers|publication|publications)\b/.test(q)) {
+    return ["paper"];
+  }
+
+  if (/\b(award|awards)\b/.test(q)) {
+    return ["award"];
+  }
+
+  if (/\b(demo|demos|demonstration|demonstrations)\b/.test(q)) {
+    return ["demo"];
+  }
+
+  if (/\b(group|groups|research group)\b/.test(q)) {
+    return ["group"];
+  }
+
+  if (/\b(partner|partners)\b/.test(q)) {
+    return ["partner"];
+  }
+
+  if (/\b(funder|funders|funding body)\b/.test(q)) {
+    return ["funder"];
+  }
+
+  return null;
+}
+
 function dot(a, b) {
   let result = 0;
 
@@ -67,12 +108,26 @@ for await (const line of rl) {
   });
 }
 
-results.sort((a, b) => b.score - a.score);
+const requestedKinds = detectRequestedKinds(QUERY);
+
+let filteredResults = results;
+
+if (requestedKinds) {
+  filteredResults = results.filter((result) =>
+    requestedKinds.includes(result.metadata.kind)
+  );
+
+  console.log(
+    `Type filter: ${requestedKinds.join(", ")}`
+  );
+}
+
+filteredResults.sort((a, b) => b.score - a.score);
 
 console.log("\nTop 10 results:\n");
 
-for (const result of results.slice(0, 10)) {
-  console.log(
+for (const result of filteredResults.slice(0, 10)) {
+    console.log(
     `${result.score.toFixed(4)} | ${result.metadata.kind} | ${result.metadata.name}`
   );
 

@@ -10,12 +10,12 @@ const EXCLUDED_DIRS = new Set(['papers_all', 'rag']);
 
 const TYPE_CONFIG = {
   person: {
-    folders: ['people'],
-    typeLabel: 'Person',
+    folders: ["people"],
+    typeLabel: "Person",
     fields: [
-      ['Name', ['http://schema.org/name']],
-      ['Role', ['http://schema.org/role']],
-      ['Projects', ['http://schema.org/project']],
+      ["Name", ["name"]],
+      ["Role", ["role"]],
+      ["Projects", ["project"]],
     ],
   },
 
@@ -34,18 +34,17 @@ const TYPE_CONFIG = {
   },
 
   project: {
-    folders: ['projects'],
-    typeLabel: 'Project',
+    folders: ["projects"],
+    typeLabel: "Project",
     fields: [
-      ['Name', ['http://schema.org/name']],
-      ['Tagline', ['http://schema.org/tagline']],
-      [
-        'Description',
-        ['http://schema.org/content', 'http://schema.org/description'],
-      ],
-      ['Maintainers', ['http://schema.org/maintainer']],
-      ['Partners', ['http://schema.org/partner']],
-      ['Keywords', ['http://schema.org/tag']],
+      ["Name", ["name"]],
+      ["Tagline", ["tagline"]],
+      ["Description", ["content"]],
+      ["Status", ["status"]],
+      ["Start date", ["startDate"]],
+      ["End date", ["endDate"]],
+      ["Maintainers", ["maintainer"]],
+      ["Publication tags", ["publicationTag"]],
     ],
   },
 
@@ -229,6 +228,14 @@ function predicateLocalName(uri) {
   return parts[parts.length - 1];
 }
 
+function normalizeText(value) {
+  return value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .trim();
+}
+
 function valuesForPredicates(quads, predicates) {
   return quads
     .filter((q) =>
@@ -379,6 +386,7 @@ function main() {
 
   const documents = [];
   const seenUris = new Set();
+  const seenPaperTitles = new Set();
   const counts = {};
   let errors = 0;
 
@@ -387,6 +395,19 @@ function main() {
       const doc = buildDocument(file, labelIndex);
 
       if (!doc) continue;
+
+      if (doc.metadata.kind === "paper") {
+        const titleKey = normalizeText(doc.metadata.name);
+
+        if (seenPaperTitles.has(titleKey)) {
+          console.warn(
+            `Duplicate paper title skipped: ${doc.metadata.name}`
+          );
+          continue;
+        }
+
+        seenPaperTitles.add(titleKey);
+      }
 
       if (seenUris.has(doc.metadata.uri)) {
         console.warn(`Duplicate URI skipped: ${doc.metadata.uri}`);
