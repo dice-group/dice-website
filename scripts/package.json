@@ -66,7 +66,8 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "papers": "node ./papers-to-ttl",
-    "lint": "eslint src/ papers-to-ttl/ plugins/"
+    "lint": "eslint src/ papers-to-ttl/ plugins/",
+    "rag:documents": "node rag/build-rag-documents.js ../data ../data/rag/rag_documents.jsonl"
   },
   "repository": {
     "type": "git",
