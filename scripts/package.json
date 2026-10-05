@@ -74,7 +74,8 @@
     "rag:embed": "node rag/embed-documents.mjs ../data/rag/rag_documents.jsonl ../data/rag/rag_embeddings.jsonl",
     "rag:search": "node rag/search-local.mjs ../data/rag/rag_embeddings.jsonl",
     "rag:index": "node rag/index-qdrant.mjs ../data/rag/rag_embeddings.jsonl",
-    "rag:qdrant-search": "node rag/search-qdrant.mjs"
+    "rag:qdrant-search": "node rag/search-qdrant.mjs",
+    "rag:enrich": "node rag/test-enrichment.mjs"
   },
   "repository": {
     "type": "git",
