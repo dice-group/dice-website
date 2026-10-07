@@ -8,8 +8,9 @@ services:
     ports:
       - '8787:8787'
     environment:
-      OPENAI_API_KEY: ${OPENAI_API_KEY:?Set OPENAI_API_KEY in the environment or a Compose env file}
-      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.4-mini}
+      LLM_API_KEY: ${LLM_API_KEY:-${OPENAI_API_KEY:?Set LLM_API_KEY or OPENAI_API_KEY}}
+      LLM_MODEL: ${LLM_MODEL:-${OPENAI_MODEL:-gpt-5.4-mini}}
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
       QDRANT_URL: ${QDRANT_URL:-http://host.docker.internal:6333}
       QDRANT_COLLECTION: ${QDRANT_COLLECTION:-dice_rag}
     extra_hosts:

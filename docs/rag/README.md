@@ -128,3 +128,28 @@ After changing frontend settings, rebuild the static site. After changing Compos
 ```sh
 docker compose --env-file scripts/.env -f compose.rag.yml up -d
 ```
+
+## GitHub Actions deployment (Exoframe)
+
+Both `.github/workflows/deploy.yml` and `.github/workflows/weekly-deploy.yml` deploy the RAG API through the existing Exoframe endpoint before deploying the website. They share a deployment concurrency group to prevent overlapping production updates. The website build sets `GATSBY_RAG_API_URL=/api/rag`.
+
+RAG has its own deployment/project name, `dice-rag`, separate from `dice-website`. Its Traefik rule routes `/api/rag` on `dice-research.org` and `www.dice-research.org` to container port 8787; there is no host port publishing. A persistent `dice-rag-model-cache` volume holds model downloads. A bounded readiness check calls `/api/rag/health` before the website update. This checks server readiness, not OpenAI or Qdrant responses.
+
+Before enabling these workflow changes:
+
+1. Set GitHub Actions secrets **`LLM_API_KEY`** and **`LLM_MODEL`**. For the current provider, use your OpenAI key and desired model name. Optionally set **`LLM_BASE_URL`** to a replacement provider's API base URL. No separate Exoframe LLM secret is required.
+2. Set GitHub Actions repository variable **`RAG_QDRANT_URL`** to the existing production Qdrant URL reachable from the Exoframe container. Use a private network address, not container loopback or the development host-gateway assumption. Ensure the database already contains the matching index; these deployment steps do not provision Qdrant or regenerate embeddings.
+3. Optionally set **`RAG_QDRANT_COLLECTION`** (default `dice_rag`). The existing **`EXO_TOKEN_DICE`** secret is reused for deployment.
+4. Confirm Exoframe can route the combined Host/PathPrefix rule and that the deployment user can create the model-cache volume. Run a manual deployment and check `/api/rag/health`, then submit a real query.
+
+`prepare-deploy.mjs` creates a temporary, explicitly allowlisted upload containing only the runtime files, locked dependency manifests, Dockerfile, generated entities, and Exoframe configuration. It never uploads `scripts/.env` or the full checkout. `entities.json` comes from the same paper update and TTL snapshot as the website build. Coordinate Qdrant index updates with that snapshot; stale index entries missing from the new store will fail queries. Missing `RAG_QDRANT_URL` stops deployment rather than silently selecting a development database.
+
+The workflow integration does not change the existing public API's lack of authentication or add request rate limits. HTTPS protects transport; configure usage controls at the proxy before opening the paid API to unrestricted traffic.
+
+### LLM configuration
+
+GitHub is the source of deployment credentials: both workflows inject `LLM_API_KEY`, `LLM_MODEL`, and optional `LLM_BASE_URL` into the temporary Exoframe runtime configuration. That file has restricted permissions, is excluded from the Docker build context, is never uploaded as an Actions artifact, and is removed after the deployment step even on failure. Exoframe receives these values over HTTPS and supplies them as container environment variables; administrators of the deployment host can access them.
+
+The adapter currently uses the OpenAI SDK's **Responses API with structured JSON output**. A replacement endpoint must support that contract; a provider offering only Chat Completions or another protocol will require an adapter change in `ask-rag.mjs`. Provider-neutral configuration does not imply compatibility with every LLM API.
+
+Local Compose accepts the same `LLM_*` settings in `scripts/.env`. Existing `OPENAI_API_KEY` and `OPENAI_MODEL` settings remain supported as local fallbacks. Changes to GitHub secrets take effect on the next deployment.

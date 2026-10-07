@@ -9,8 +9,11 @@ jobs:
   checkLinkedin:
     uses: ./.github/workflows/check-linkedin.yml
     secrets: inherit
-    
+
   deploy:
+    concurrency:
+      group: dice-website-production
+      cancel-in-progress: false
     needs: checkLinkedin
     runs-on: ubuntu-22.04
     env:
@@ -51,6 +54,7 @@ jobs:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_ORG_ID: '88654324'
           LINKEDIN_VERSION: ${{ vars.LINKEDIN_VERSION}}
+          GATSBY_RAG_API_URL: /api/rag
           GATSBY_LINKEDIN_CLIENT_ID: ${{ vars.LINKEDIN_CLIENT_ID }}
         run: npm run build
       - name: prepare deploy
@@ -62,6 +66,33 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Prepare RAG deployment
+        env:
+          RAG_QDRANT_URL: ${{ vars.RAG_QDRANT_URL }}
+          RAG_QDRANT_COLLECTION: ${{ vars.RAG_QDRANT_COLLECTION }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+        run: node scripts/rag/prepare-deploy.mjs "$RUNNER_TEMP/dice-rag-deploy"
+      - name: Deploy RAG API
+        working-directory: ${{ runner.temp }}/dice-rag-deploy
+        env:
+          EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
+        run: npx -y exoframe@6.2.0 -u -e https://dice-website.cs.upb.de -t "$EXO_TOKEN_DICE"
+      - name: Remove temporary RAG credentials
+        if: always()
+        run: |
+          node -e 'require("node:fs").rmSync(require("node:path").join(process.env.RUNNER_TEMP, "dice-rag-deploy", "exoframe.json"), { force: true })'
+      - name: Wait for RAG readiness
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 10 https://dice-research.org/api/rag/health; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "RAG API did not become ready" >&2
+          exit 1
       - name: deploy
         working-directory: ./scripts/public
         run: npx -y exoframe@6.2.0 -u -vvv -e https://dice-website.cs.upb.de -t "$EXO_TOKEN_DICE"

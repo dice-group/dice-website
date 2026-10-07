@@ -27,7 +27,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  if (req.method === 'GET' && req.url === '/health') {
+  if (
+    req.method === 'GET' &&
+    ['/health', '/api/rag/health'].includes(req.url)
+  ) {
     sendJson(res, 200, {
       status: 'ok',
     });

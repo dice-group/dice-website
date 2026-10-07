@@ -2,10 +2,12 @@ import 'dotenv/config';
 import OpenAI from 'openai';
 
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.LLM_API_KEY || process.env.OPENAI_API_KEY,
+  baseURL: process.env.LLM_BASE_URL || undefined,
 });
 
-const MODEL = process.env.OPENAI_MODEL || 'gpt-5.4-mini';
+const MODEL =
+  process.env.LLM_MODEL || process.env.OPENAI_MODEL || 'gpt-5.4-mini';
 
 export async function askLlm(question, context) {
   const response = await client.responses.create({
