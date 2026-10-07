@@ -1,17 +1,43 @@
+import { readFileSync } from 'node:fs';
 import { pipeline } from '@huggingface/transformers';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { askLlm } from './ask-rag.mjs';
 
 const MODEL = 'Xenova/all-MiniLM-L6-v2';
 
-const QDRANT_URL =
-  process.env.QDRANT_URL || 'http://127.0.0.1:6333';
+const QDRANT_URL = process.env.QDRANT_URL || 'http://127.0.0.1:6333';
 
-const COLLECTION =
-  process.env.QDRANT_COLLECTION || 'dice_rag';
+const COLLECTION = process.env.QDRANT_COLLECTION || 'dice_rag';
 
-const GRAPHQL_URL =
-  process.env.GRAPHQL_URL || 'http://127.0.0.1:8000/___graphql';
+const ENTITY_STORE_PATH =
+  process.env.RAG_ENTITY_STORE ||
+  new URL('../../data/rag/entities.json', import.meta.url);
+let entityStore;
+try {
+  entityStore = JSON.parse(readFileSync(ENTITY_STORE_PATH, 'utf8'));
+} catch (error) {
+  throw new Error(
+    'Cannot load RAG entity store. Run npm run rag:entities or set RAG_ENTITY_STORE.',
+    { cause: error }
+  );
+}
+
+function getRdfEntity(id) {
+  const entity = entityStore[id];
+  if (!entity)
+    throw new Error(
+      `RAG entity missing from store: ${id}. Regenerate the entity store and index together.`
+    );
+  return entity;
+}
+
+function getAllProjects() {
+  return Object.values(entityStore)
+    .filter(entity => Array.isArray(entity.staff))
+    .map(entity => entity.data.name)
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b));
+}
 
 const CATEGORY_PATHS = {
   group: '/groups/',
@@ -34,10 +60,31 @@ function normalize(value) {
 }
 
 const QUERY_STOP_WORDS = new Set([
-  'who', 'what', 'where', 'when', 'why', 'how',
-  'is', 'are', 'was', 'were', 'do', 'does', 'did',
-  'the', 'a', 'an', 'of', 'for', 'with', 'in', 'on', 'at',
-  'about', 'tell', 'me',
+  'who',
+  'what',
+  'where',
+  'when',
+  'why',
+  'how',
+  'is',
+  'are',
+  'was',
+  'were',
+  'do',
+  'does',
+  'did',
+  'the',
+  'a',
+  'an',
+  'of',
+  'for',
+  'with',
+  'in',
+  'on',
+  'at',
+  'about',
+  'tell',
+  'me',
 ]);
 
 function nameMatchScore(question, name) {
@@ -52,9 +99,10 @@ function nameMatchScore(question, name) {
     .split(' ')
     .filter(token => token.length >= 3 && !QUERY_STOP_WORDS.has(token));
   const nameTokens = n.split(' ');
-  const matchingTokens = queryTokens.filter(token =>
-    nameTokens.includes(token) ||
-    nameTokens.some(nameToken => nameToken.startsWith(token))
+  const matchingTokens = queryTokens.filter(
+    token =>
+      nameTokens.includes(token) ||
+      nameTokens.some(nameToken => nameToken.startsWith(token))
   );
 
   if (!matchingTokens.length) return 0;
@@ -67,8 +115,8 @@ function compact(values) {
   return Array.isArray(values)
     ? values.filter(Boolean)
     : values
-      ? [values]
-      : [];
+    ? [values]
+    : [];
 }
 
 function names(items) {
@@ -147,245 +195,17 @@ function isBroadCategoryQuery(question, kind) {
   );
 }
 
-async function graphql(query, variables = {}) {
-  const response = await fetch(GRAPHQL_URL, {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error(
-      `GraphQL HTTP ${response.status}: ${await response.text()}`
-    );
-  }
-
-  const result = await response.json();
-
-  if (result.errors) {
-    throw new Error(JSON.stringify(result.errors));
-  }
-
-  return result.data;
-}
-
-async function fetchAllProjects() {
-  const response = await qdrant.scroll(COLLECTION, {
-    limit: 1000,
-    with_payload: true,
-    with_vector: false,
-    filter: {
-      must: [
-        {
-          key: 'kind',
-          match: {
-            value: 'project',
-          },
-        },
-      ],
-    },
-  });
-
-  return response.points
-    .map(point => point.payload?.name)
-    .filter(Boolean)
-    .sort((a, b) => a.localeCompare(b));
-}
-
-async function fetchProjectStaff(projectId) {
-  const query = `
-    query ProjectStaff($projectId: String!) {
-      allRdf(
-        filter: {
-          data: {
-            project: {
-              elemMatch: {
-                id: { eq: $projectId }
-              }
-            }
-          }
-        }
-      ) {
-        nodes {
-          id
-          path
-          data {
-            name
-            role {
-              id
-              data {
-                name
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const data = await graphql(query, { projectId });
-
-  return (data.allRdf?.nodes || []).filter(person => {
-    const roles = compact(person?.data?.role);
-
-    return !roles.some(role => {
-      const roleId = String(role?.id || '').toLowerCase();
-      const roleName = String(
-        role?.data?.name || ''
-      ).toLowerCase();
-
-      return (
-        roleId.endsWith('/alumni') ||
-        roleName === 'alumni'
-      );
-    });
-  });
-}
-
-async function fetchRdfEntity(id) {
-  const query = `
-    query EntityById($id: String!) {
-      rdf(id: { eq: $id }) {
-        id
-        path
-
-        data {
-          name
-          tagline
-          content
-          status
-          startDate
-          endDate
-          publicationTag
-
-          maintainer {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          lead {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          partner {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          funder {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          role {
-            id
-            data {
-              name
-            }
-          }
-
-          project {
-            id
-            path
-            data {
-              name
-              tagline
-            }
-          }
-
-          member {
-            id
-            path
-            data {
-              name
-              role {
-                id
-                data {
-                  name
-                }
-              }
-            }
-          }
-
-          relatedProject {
-            id
-            path
-            data {
-              name
-              tagline
-            }
-          }
-
-          author {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          authorName
-          title
-          publicationType
-          source
-          year
-          tag
-
-          awardee {
-            id
-            path
-            data {
-              name
-            }
-          }
-
-          awardeeExternal
-        }
-      }
-    }
-  `;
-
-  const data = await graphql(query, { id });
-
-  return data.rdf;
-}
-
 function activeNames(items) {
   return compact(items)
     .filter(item => {
       const roles = compact(item?.data?.role);
 
       return !roles.some(role => {
-        const roleId = String(
-          role?.id || ''
-        ).toLowerCase();
+        const roleId = String(role?.id || '').toLowerCase();
 
-        const roleName = String(
-          role?.data?.name || ''
-        ).toLowerCase();
+        const roleName = String(role?.data?.name || '').toLowerCase();
 
-        return (
-          roleId.endsWith('/alumni') ||
-          roleName === 'alumni'
-        );
+        return roleId.endsWith('/alumni') || roleName === 'alumni';
       });
     })
     .map(item => item?.data?.name || item?.id)
@@ -412,12 +232,7 @@ function truncate(value, max = 2000) {
   return `${value.slice(0, max)}...`;
 }
 
-function buildContext(
-  hit,
-  entity,
-  staff = [],
-  headProjects = []
-) {
+function buildContext(hit, entity, staff = [], headProjects = []) {
   if (!entity) {
     return [
       `URI: ${hit.payload.uri}`,
@@ -449,9 +264,7 @@ function buildContext(
   }
 
   if (d.content?.length) {
-    const description = truncate(
-      cleanContent(d.content.join('\n'))
-    );
+    const description = truncate(cleanContent(d.content.join('\n')));
 
     lines.push(`Description: ${description}`);
   }
@@ -477,9 +290,7 @@ function buildContext(
   }
 
   if (d.publicationType) {
-    lines.push(
-      `Publication type: ${d.publicationType}`
-    );
+    lines.push(`Publication type: ${d.publicationType}`);
   }
 
   if (d.source) {
@@ -487,9 +298,7 @@ function buildContext(
   }
 
   if (d.publicationTag) {
-    lines.push(
-      `Publication tag: ${d.publicationTag}`
-    );
+    lines.push(`Publication tag: ${d.publicationTag}`);
   }
 
   if (d.tag?.length) {
@@ -499,9 +308,7 @@ function buildContext(
   const maintainers = names(d.maintainer);
 
   if (maintainers.length) {
-    lines.push(
-      `Maintainers: ${maintainers.join(', ')}`
-    );
+    lines.push(`Maintainers: ${maintainers.join(', ')}`);
   }
 
   const staffNames = staff
@@ -535,9 +342,7 @@ function buildContext(
       'Head association: As Head of DICE Research, this person is associated with all DICE projects.'
     );
 
-    lines.push(
-      `All DICE projects: ${headProjects.join(', ')}`
-    );
+    lines.push(`All DICE projects: ${headProjects.join(', ')}`);
   }
 
   const projects = names(d.project);
@@ -555,24 +360,16 @@ function buildContext(
   const relatedProjects = names(d.relatedProject);
 
   if (relatedProjects.length) {
-    lines.push(
-      `Related projects: ${relatedProjects.join(', ')}`
-    );
+    lines.push(`Related projects: ${relatedProjects.join(', ')}`);
   }
 
-  const authors = [
-    ...names(d.author),
-    ...compact(d.authorName),
-  ];
+  const authors = [...names(d.author), ...compact(d.authorName)];
 
   if (authors.length) {
     lines.push(`Authors: ${authors.join(', ')}`);
   }
 
-  const awardees = [
-    ...names(d.awardee),
-    ...compact(d.awardeeExternal),
-  ];
+  const awardees = [...names(d.awardee), ...compact(d.awardeeExternal)];
 
   if (awardees.length) {
     lines.push(`Awardees: ${awardees.join(', ')}`);
@@ -581,22 +378,15 @@ function buildContext(
   return lines.join('\n');
 }
 
-const extractor = await pipeline(
-  'feature-extraction',
-  MODEL,
-  {
-    device: 'cpu',
-  }
-);
+const extractor = await pipeline('feature-extraction', MODEL, {
+  device: 'cpu',
+});
 
 const qdrant = new QdrantClient({
   url: QDRANT_URL,
 });
 
-async function runBroadCategoryQuery(
-  question,
-  kind
-) {
+async function runBroadCategoryQuery(question, kind) {
   const response = await qdrant.scroll(COLLECTION, {
     limit: 1000,
     with_payload: true,
@@ -615,15 +405,10 @@ async function runBroadCategoryQuery(
 
   const items = response.points
     .map(point => ({
-      name:
-        point.payload?.name ||
-        point.payload?.uri ||
-        'Unknown',
+      name: point.payload?.name || point.payload?.uri || 'Unknown',
       uri: point.payload?.uri || null,
     }))
-    .sort((a, b) =>
-      a.name.localeCompare(b.name)
-    );
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const itemNames = items.map(item => item.name);
 
@@ -635,10 +420,7 @@ async function runBroadCategoryQuery(
     ...itemNames.map(name => `- ${name}`),
   ].join('\n');
 
-  const llmResult = await askLlm(
-    question,
-    context
-  );
+  const llmResult = await askLlm(question, context);
 
   const path = CATEGORY_PATHS[kind];
 
@@ -660,14 +442,8 @@ async function runBroadCategoryQuery(
 export async function runRag(question) {
   const kind = detectRequestedKind(question);
 
-  if (
-    kind &&
-    isBroadCategoryQuery(question, kind)
-  ) {
-    return runBroadCategoryQuery(
-      question,
-      kind
-    );
+  if (kind && isBroadCategoryQuery(question, kind)) {
+    return runBroadCategoryQuery(question, kind);
   }
 
   const tensor = await extractor(question, {
@@ -691,27 +467,25 @@ export async function runRag(question) {
     : undefined;
 
   // Semantic candidates.
-  const semanticResponse =
-    await qdrant.query(COLLECTION, {
-      query: queryVector,
-      limit: 10,
-      with_payload: true,
-      filter,
-    });
+  const semanticResponse = await qdrant.query(COLLECTION, {
+    query: queryVector,
+    limit: 10,
+    with_payload: true,
+    filter,
+  });
 
   // Lexical/name candidates.
   // The collection is small enough to scan
   // payload names directly.
-  const lexicalResponse =
-    await qdrant.scroll(COLLECTION, {
-      limit: 1000,
-      with_payload: true,
-      with_vector: false,
-      filter,
-    });
+  const lexicalResponse = await qdrant.scroll(COLLECTION, {
+    limit: 1000,
+    with_payload: true,
+    with_vector: false,
+    filter,
+  });
 
-  const lexicalMatches = lexicalResponse.points.filter(point =>
-    nameMatchScore(question, point.payload?.name) > 0
+  const lexicalMatches = lexicalResponse.points.filter(
+    point => nameMatchScore(question, point.payload?.name) > 0
   );
 
   // Merge semantic and lexical candidates.
@@ -743,47 +517,31 @@ export async function runRag(question) {
 
       return {
         ...hit,
-        rerankScore:
-          (hit.semanticScore || 0) +
-          nameBonus,
+        rerankScore: (hit.semanticScore || 0) + nameBonus,
       };
     })
-    .sort(
-      (a, b) =>
-        b.rerankScore -
-        a.rerankScore
-    )
+    .sort((a, b) => b.rerankScore - a.rerankScore)
     .slice(0, 3);
 
   const enriched = [];
 
   for (const hit of ranked) {
-    const entity = await fetchRdfEntity(
-      hit.payload.uri
-    );
+    const entity = getRdfEntity(hit.payload.uri);
 
     let staff = [];
     let headProjects = [];
 
     if (hit.payload.kind === 'project') {
-      staff = await fetchProjectStaff(
-        hit.payload.uri
-      );
+      staff = entity.staff || [];
     }
 
     if (hit.payload.kind === 'person') {
-      const roles = names(
-        entity?.data?.role
-      );
+      const roles = names(entity?.data?.role);
 
-      const isHead = roles.some(
-        role =>
-          role.toLowerCase() === 'head'
-      );
+      const isHead = roles.some(role => role.toLowerCase() === 'head');
 
       if (isHead) {
-        headProjects =
-          await fetchAllProjects();
+        headProjects = getAllProjects();
       }
     }
 
@@ -792,38 +550,21 @@ export async function runRag(question) {
       entity,
       staff,
       headProjects,
-      context: buildContext(
-        hit,
-        entity,
-        staff,
-        headProjects
-      ),
+      context: buildContext(hit, entity, staff, headProjects),
     });
   }
 
   const ragContext = enriched
-    .map(
-      ({ context }, i) =>
-        `SOURCE ${i + 1}\n${context}`
-    )
+    .map(({ context }, i) => `SOURCE ${i + 1}\n${context}`)
     .join('\n\n---\n\n');
 
-  const llmResult = await askLlm(
-    question,
-    ragContext
-  );
+  const llmResult = await askLlm(question, ragContext);
 
   const usedIndexes = new Set(
     llmResult.sourceNumbers
-      .filter(number =>
-        Number.isInteger(number)
-      )
+      .filter(number => Number.isInteger(number))
       .map(number => number - 1)
-      .filter(
-        index =>
-          index >= 0 &&
-          index < enriched.length
-      )
+      .filter(index => index >= 0 && index < enriched.length)
   );
 
   const sources = enriched
@@ -838,9 +579,7 @@ export async function runRag(question) {
         path = '/demos/';
       }
 
-      if (
-        hit.payload.kind === 'partner'
-      ) {
+      if (hit.payload.kind === 'partner') {
         path = '/partners/';
       }
 
@@ -857,9 +596,7 @@ export async function runRag(question) {
         score: hit.score,
       };
     })
-    .filter(source =>
-      usedIndexes.has(source.index)
-    )
+    .filter(source => usedIndexes.has(source.index))
     .map(({ index, ...source }) => source);
 
   return {
