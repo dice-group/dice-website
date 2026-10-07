@@ -1,5 +1,6 @@
 import { pipeline } from "@huggingface/transformers";
 import { QdrantClient } from "@qdrant/js-client-rest";
+import { askLlm } from "./ask-rag.mjs";
 
 const QUERY = process.argv.slice(2).join(" ").trim();
 
@@ -388,6 +389,13 @@ for (const hit of hits) {
   });
 }
 
+const ragContext = enriched
+  .map(
+    ({ context }, i) =>
+      `SOURCE ${i + 1}\n${context}`
+  )
+  .join("\n\n---\n\n");
+
 console.log("\n===== RAG CONTEXT =====\n");
 
 console.log(
@@ -414,3 +422,12 @@ for (const { hit, entity } of enriched) {
     { depth: null }
   );
 }
+
+console.log("\n===== LLM ANSWER =====\n");
+
+const answer = await askLlm(
+  QUERY,
+  ragContext
+);
+
+console.log(answer);

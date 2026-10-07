@@ -1,13 +1,12 @@
 ```text
-Question
-   ↓
-semantic entity retrieval
-   ↓
-KG neighborhood expansion
-   ↓
-GraphQL
-   ↓
-LLM
+user query
+→ MiniLM embedding
+→ Qdrant
+→ top 3
+→ Gatsby GraphQL enrichment
+→ cleaned context
+→ LLM
+→ final answer
 ```
 
 # Runtime flow
