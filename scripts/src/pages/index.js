@@ -8,6 +8,7 @@ import SEO from '../components/seo';
 import SideMenu from '../components/sidemenu';
 import Social from '../components/social';
 import LinkedInFeed from '../components/linkedinFeed';
+import RagSearch from '../components/RagSearch';
 
 export default function Home() {
   const heroRef = React.createRef();
@@ -77,6 +78,16 @@ export default function Home() {
               Learn more
             </button>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="ask"
+        className="section rag-search-section"
+        aria-labelledby="ask-title"
+      >
+        <div className="container">
+          <RagSearch />
         </div>
       </section>
 
