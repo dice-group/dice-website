@@ -98,3 +98,33 @@ RAG_ENTITY_STORE=/srv/dice-rag/entities.json npm run rag:server
 ```
 
 Restart the RAG server after replacing the store: it is loaded once at startup. Missing or invalid files stop startup with a generation hint; missing indexed entities fail the query with a regeneration hint instead of silently losing enrichment. `GRAPHQL_URL` is no longer used by `run-rag.mjs` (the standalone legacy enrichment diagnostic still uses it).
+
+## Docker RAG server
+
+From the repository root, generate the entity store and start the container:
+
+```sh
+npm --prefix scripts run rag:entities
+# Set OPENAI_API_KEY in your shell first, or use --env-file with a private file.
+docker compose --env-file scripts/.env -f compose.rag.yml up -d --build
+curl http://127.0.0.1:8787/health
+```
+
+Stop any locally running RAG server first so port 8787 is available. The image contains only the RAG runtime dependencies and generated entity store; it does not include Gatsby, TTL files, or API keys. It runs as a non-root user on Node 22. The first startup downloads MiniLM; subsequent starts reuse the `rag-model-cache` volume. Initial startup needs access to Hugging Face, and answering needs access to OpenAI and Qdrant.
+
+Compose uses your **existing indexed Qdrant** at `http://host.docker.internal:6333` by default. Qdrant must be reachable through the host gateway (for example, the published port from the Qdrant Docker command above). A service bound only to host loopback is not reachable through that gateway. Set `QDRANT_URL` to another reachable address as needed; `127.0.0.1` inside the RAG container refers to the RAG container itself. `QDRANT_COLLECTION` and `OPENAI_MODEL` can also be overridden. No Qdrant data is created or replaced by this Compose file.
+
+```sh
+docker compose -f compose.rag.yml logs -f rag
+docker compose -f compose.rag.yml down
+```
+
+After changing TTL data, regenerate both the entity store and matching Qdrant index, then rebuild/recreate the container. The entity store is bundled into the image. The health check confirms HTTP server readiness after model initialization; it does not test Qdrant or OpenAI availability.
+
+The API is published on port 8787 on all host interfaces for LAN access. Restrict it to your trusted network: the API has no authentication. For HTTP previews, the frontend uses the website hostname with port 8787, so a site opened at `http://SERVER:9000` calls `http://SERVER:8787/api/rag`. For HTTPS deployments, proxy `/api/rag` on the website origin. Set `GATSBY_RAG_API_URL` at website build time to override this URL.
+
+After changing frontend settings, rebuild the static site. After changing Compose ports, recreate the service:
+
+```sh
+docker compose --env-file scripts/.env -f compose.rag.yml up -d
+```

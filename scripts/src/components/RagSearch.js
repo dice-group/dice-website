@@ -17,8 +17,17 @@ export default function RagSearch() {
     setError('');
     setResult(null);
 
+    const controller = new window.AbortController();
+    const timeout = setTimeout(() => controller.abort(), 45000);
+    let endpoint = '';
+
     try {
-      const response = await fetch('http://127.0.0.1:8787/api/rag', {
+      const apiUrl = new URL('/api/rag', window.location.href);
+      // Local/LAN preview uses the API port; HTTPS deployments use a proxy.
+      if (apiUrl.protocol === 'http:') apiUrl.port = '8787';
+      endpoint = process.env.GATSBY_RAG_API_URL || apiUrl.toString();
+      const response = await fetch(endpoint, {
+        signal: controller.signal,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,8 +45,13 @@ export default function RagSearch() {
 
       setResult(data);
     } catch (err) {
-      setError(err.message);
+      setError(
+        err.name === 'AbortError'
+          ? `The request timed out. Check that the API at ${endpoint} is reachable from your browser and try again.`
+          : err.message
+      );
     } finally {
+      clearTimeout(timeout);
       setLoading(false);
     }
   }

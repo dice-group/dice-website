@@ -1,0 +1,21 @@
+services:
+  rag:
+    build:
+      context: .
+      dockerfile: scripts/rag/Dockerfile
+    restart: unless-stopped
+    init: true
+    ports:
+      - '8787:8787'
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?Set OPENAI_API_KEY in the environment or a Compose env file}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.4-mini}
+      QDRANT_URL: ${QDRANT_URL:-http://host.docker.internal:6333}
+      QDRANT_COLLECTION: ${QDRANT_COLLECTION:-dice_rag}
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - rag-model-cache:/app/model-cache
+
+volumes:
+  rag-model-cache:

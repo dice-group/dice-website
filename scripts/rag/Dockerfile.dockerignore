@@ -1,0 +1,12 @@
+**
+!scripts/
+!scripts/rag/
+!scripts/rag/server.mjs
+!scripts/rag/run-rag.mjs
+!scripts/rag/ask-rag.mjs
+!scripts/rag/docker/
+!scripts/rag/docker/package.json
+!scripts/rag/docker/package-lock.json
+!data/
+!data/rag/
+!data/rag/entities.json

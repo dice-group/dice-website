@@ -1,9 +1,13 @@
 import { readFileSync } from 'node:fs';
-import { pipeline } from '@huggingface/transformers';
+import { env, pipeline } from '@huggingface/transformers';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { askLlm } from './ask-rag.mjs';
 
 const MODEL = 'Xenova/all-MiniLM-L6-v2';
+
+if (process.env.RAG_MODEL_CACHE) {
+  env.cacheDir = process.env.RAG_MODEL_CACHE;
+}
 
 const QDRANT_URL = process.env.QDRANT_URL || 'http://127.0.0.1:6333';
 

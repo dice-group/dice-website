@@ -1,0 +1,12 @@
+{
+  "name": "dice-rag-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@huggingface/transformers": "4.3.0",
+    "@qdrant/js-client-rest": "1.19.0",
+    "dotenv": "18.0.6",
+    "openai": "7.30.0"
+  }
+}
