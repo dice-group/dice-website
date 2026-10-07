@@ -10,12 +10,12 @@ const EXCLUDED_DIRS = new Set(['papers_all', 'rag']);
 
 const TYPE_CONFIG = {
   person: {
-    folders: ["people"],
-    typeLabel: "Person",
+    folders: ['people'],
+    typeLabel: 'Person',
     fields: [
-      ["Name", ["name"]],
-      ["Role", ["role"]],
-      ["Projects", ["project"]],
+      ['Name', ['name']],
+      ['Role', ['role']],
+      ['Projects', ['project']],
     ],
   },
 
@@ -23,7 +23,7 @@ const TYPE_CONFIG = {
     folders: ['papers'],
     typeLabel: 'Publication',
     fields: [
-      ["Title", ["title", "name"]],
+      ['Title', ['title', 'name']],
       ['Authors', ['http://schema.org/authorName']],
       ['Publication type', ['http://schema.org/publicationType']],
       ['Published in', ['http://schema.org/source']],
@@ -34,17 +34,17 @@ const TYPE_CONFIG = {
   },
 
   project: {
-    folders: ["projects"],
-    typeLabel: "Project",
+    folders: ['projects'],
+    typeLabel: 'Project',
     fields: [
-      ["Name", ["name"]],
-      ["Tagline", ["tagline"]],
-      ["Description", ["content"]],
-      ["Status", ["status"]],
-      ["Start date", ["startDate"]],
-      ["End date", ["endDate"]],
-      ["Maintainers", ["maintainer"]],
-      ["Publication tags", ["publicationTag"]],
+      ['Name', ['name']],
+      ['Tagline', ['tagline']],
+      ['Description', ['content']],
+      ['Status', ['status']],
+      ['Start date', ['startDate']],
+      ['End date', ['endDate']],
+      ['Maintainers', ['maintainer']],
+      ['Publication tags', ['publicationTag']],
     ],
   },
 
@@ -101,16 +101,30 @@ const TYPE_CONFIG = {
   },
 
   award: {
-  folders: ["awards"],
-  typeLabel: "Award",
-  fields: [
-      ["Name", ["name"]],
-      ["Year", ["year"]],
-      ["Description", ["content", "description"]],
-      ["Awardees", ["awardee", "awardeeExternal"]],
+    folders: ['awards'],
+    typeLabel: 'Award',
+    fields: [
+      ['Name', ['name']],
+      ['Year', ['year']],
+      ['Description', ['content', 'description']],
+      ['Awardees', ['awardee', 'awardeeExternal']],
     ],
   },
 };
+
+function isExampleEntity(doc) {
+  const uri = String(doc.metadata?.uri || '').toLowerCase();
+  const name = String(doc.metadata?.name || '').toLowerCase();
+  const source = String(doc.metadata?.source || '').toLowerCase();
+
+  return (
+    source.includes('example') ||
+    uri.includes('/example') ||
+    uri.includes('#example') ||
+    name.startsWith('example ') ||
+    name === 'example'
+  );
+}
 
 function walk(dir) {
   const files = [];
@@ -231,30 +245,23 @@ function predicateLocalName(uri) {
 function normalizeText(value) {
   return value
     .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .normalize('NFKD')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim();
 }
 
 function valuesForPredicates(quads, predicates) {
   return quads
-    .filter((q) =>
-      predicates.includes(predicateLocalName(q.predicate.value))
-    )
-    .map((q) => q.object);
+    .filter(q => predicates.includes(predicateLocalName(q.predicate.value)))
+    .map(q => q.object);
 }
 
 function getPreferredLabel(quads) {
-  const preferredPredicates = [
-    "name",
-    "title",
-    "label",
-  ];
+  const preferredPredicates = ['name', 'title', 'label'];
 
   for (const predicate of preferredPredicates) {
     const obj = quads.find(
-      (q) =>
-        predicateLocalName(q.predicate.value) === predicate
+      q => predicateLocalName(q.predicate.value) === predicate
     )?.object;
 
     if (obj) {
@@ -396,13 +403,16 @@ function main() {
 
       if (!doc) continue;
 
-      if (doc.metadata.kind === "paper") {
+      if (isExampleEntity(doc)) {
+        console.warn(`Example entity skipped: ${doc.metadata.name}`);
+        continue;
+      }
+
+      if (doc.metadata.kind === 'paper') {
         const titleKey = normalizeText(doc.metadata.name);
 
         if (seenPaperTitles.has(titleKey)) {
-          console.warn(
-            `Duplicate paper title skipped: ${doc.metadata.name}`
-          );
+          console.warn(`Duplicate paper title skipped: ${doc.metadata.name}`);
           continue;
         }
 

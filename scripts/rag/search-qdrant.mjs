@@ -1,59 +1,55 @@
-import { pipeline } from "@huggingface/transformers";
-import { QdrantClient } from "@qdrant/js-client-rest";
+import { pipeline } from '@huggingface/transformers';
+import { QdrantClient } from '@qdrant/js-client-rest';
 
-const QUERY = process.argv.slice(2).join(" ").trim();
+const QUERY = process.argv.slice(2).join(' ').trim();
 
 if (!QUERY) {
-  console.error(
-    'Usage: node rag/search-qdrant.mjs "your query"'
-  );
+  console.error('Usage: node rag/search-qdrant.mjs "your query"');
   process.exit(1);
 }
 
-const MODEL = "Xenova/all-MiniLM-L6-v2";
+const MODEL = 'Xenova/all-MiniLM-L6-v2';
 
-const QDRANT_URL =
-  process.env.QDRANT_URL || "http://127.0.0.1:6333";
+const QDRANT_URL = process.env.QDRANT_URL || 'http://127.0.0.1:6333';
 
-const COLLECTION =
-  process.env.QDRANT_COLLECTION || "dice_rag";
+const COLLECTION = process.env.QDRANT_COLLECTION || 'dice_rag';
 
 function detectRequestedKind(query) {
   const q = query.toLowerCase();
 
   if (/\b(project|projects)\b/.test(q)) {
-    return "project";
+    return 'project';
   }
 
   if (
     /\bwho\b/.test(q) ||
     /\b(person|people|researcher|researchers|staff|member|members)\b/.test(q)
   ) {
-    return "person";
+    return 'person';
   }
 
   if (/\b(paper|papers|publication|publications)\b/.test(q)) {
-    return "paper";
+    return 'paper';
   }
 
   if (/\b(award|awards)\b/.test(q)) {
-    return "award";
+    return 'award';
   }
 
   if (/\b(demo|demos|demonstration|demonstrations)\b/.test(q)) {
-    return "demo";
+    return 'demo';
   }
 
   if (/\b(group|groups|research group)\b/.test(q)) {
-    return "group";
+    return 'group';
   }
 
   if (/\b(partner|partners)\b/.test(q)) {
-    return "partner";
+    return 'partner';
   }
 
   if (/\b(funder|funders|funding body)\b/.test(q)) {
-    return "funder";
+    return 'funder';
   }
 
   return null;
@@ -61,18 +57,14 @@ function detectRequestedKind(query) {
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline(
-  "feature-extraction",
-  MODEL,
-  {
-    device: "cpu",
-  }
-);
+const extractor = await pipeline('feature-extraction', MODEL, {
+  device: 'cpu',
+});
 
 console.log(`Query: ${QUERY}`);
 
 const tensor = await extractor(QUERY, {
-  pooling: "mean",
+  pooling: 'mean',
   normalize: true,
 });
 
@@ -92,7 +84,7 @@ const filter = kind
   ? {
       must: [
         {
-          key: "kind",
+          key: 'kind',
           match: {
             value: kind,
           },
@@ -110,21 +102,17 @@ const response = await client.query(COLLECTION, {
 
 const results = response.points;
 
-console.log("\nTop 10 results:\n");
+console.log('\nTop 10 results:\n');
 
 for (const result of results) {
   const payload = result.payload;
 
-  console.log(
-    `${result.score.toFixed(4)} | ${payload.kind} | ${payload.name}`
-  );
+  console.log(`${result.score.toFixed(4)} | ${payload.kind} | ${payload.name}`);
 
   console.log(`  ${payload.uri}`);
 
   if (payload.text) {
-    console.log(
-      `  ${payload.text.replace(/\n/g, " ").slice(0, 220)}`
-    );
+    console.log(`  ${payload.text.replace(/\n/g, ' ').slice(0, 220)}`);
   }
 
   console.log();

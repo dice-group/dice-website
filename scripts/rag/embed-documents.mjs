@@ -12,13 +12,9 @@ const MODEL = 'Xenova/all-MiniLM-L6-v2';
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline(
-  "feature-extraction",
-  MODEL,
-  {
-    device: "cpu",
-  }
-);
+const extractor = await pipeline('feature-extraction', MODEL, {
+  device: 'cpu',
+});
 
 const input = fs.createReadStream(INPUT);
 

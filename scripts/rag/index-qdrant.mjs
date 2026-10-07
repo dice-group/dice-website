@@ -1,16 +1,13 @@
-import fs from "fs";
-import readline from "readline";
-import crypto from "crypto";
-import { QdrantClient } from "@qdrant/js-client-rest";
+import fs from 'fs';
+import readline from 'readline';
+import crypto from 'crypto';
+import { QdrantClient } from '@qdrant/js-client-rest';
 
-const INPUT =
-  process.argv[2] || "../data/rag/rag_embeddings.jsonl";
+const INPUT = process.argv[2] || '../data/rag/rag_embeddings.jsonl';
 
-const QDRANT_URL =
-  process.env.QDRANT_URL || "http://127.0.0.1:6333";
+const QDRANT_URL = process.env.QDRANT_URL || 'http://127.0.0.1:6333';
 
-const COLLECTION =
-  process.env.QDRANT_COLLECTION || "dice_rag";
+const COLLECTION = process.env.QDRANT_COLLECTION || 'dice_rag';
 
 const VECTOR_SIZE = 384;
 const BATCH_SIZE = 100;
@@ -20,10 +17,7 @@ const client = new QdrantClient({
 });
 
 function uriToUuid(uri) {
-  const hash = crypto
-    .createHash("sha256")
-    .update(uri)
-    .digest("hex");
+  const hash = crypto.createHash('sha256').update(uri).digest('hex');
 
   return [
     hash.slice(0, 8),
@@ -31,14 +25,14 @@ function uriToUuid(uri) {
     hash.slice(12, 16),
     hash.slice(16, 20),
     hash.slice(20, 32),
-  ].join("-");
+  ].join('-');
 }
 
 async function ensureCollection() {
   const collections = await client.getCollections();
 
   const exists = collections.collections.some(
-    (collection) => collection.name === COLLECTION
+    collection => collection.name === COLLECTION
   );
 
   if (exists) {
@@ -51,7 +45,7 @@ async function ensureCollection() {
   await client.createCollection(COLLECTION, {
     vectors: {
       size: VECTOR_SIZE,
-      distance: "Cosine",
+      distance: 'Cosine',
     },
   });
 }
@@ -95,7 +89,7 @@ async function main() {
     if (doc.embedding.length !== VECTOR_SIZE) {
       throw new Error(
         `Wrong vector size for ${doc.id}: ` +
-        `${doc.embedding.length}, expected ${VECTOR_SIZE}`
+          `${doc.embedding.length}, expected ${VECTOR_SIZE}`
       );
     }
 
@@ -126,12 +120,12 @@ async function main() {
     total += batch.length;
   }
 
-  console.log("");
+  console.log('');
   console.log(`Done.`);
   console.log(`Indexed ${total} documents.`);
 }
 
-main().catch((error) => {
+main().catch(error => {
   console.error(error);
   process.exit(1);
 });

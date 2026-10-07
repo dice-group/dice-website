@@ -1,11 +1,10 @@
-import fs from "fs";
-import readline from "readline";
-import { pipeline } from "@huggingface/transformers";
+import fs from 'fs';
+import readline from 'readline';
+import { pipeline } from '@huggingface/transformers';
 
-const FILE =
-  process.argv[2] || "../data/rag/rag_embeddings.jsonl";
+const FILE = process.argv[2] || '../data/rag/rag_embeddings.jsonl';
 
-const QUERY = process.argv.slice(3).join(" ").trim();
+const QUERY = process.argv.slice(3).join(' ').trim();
 
 if (!QUERY) {
   console.error(
@@ -14,22 +13,18 @@ if (!QUERY) {
   process.exit(1);
 }
 
-const MODEL = "Xenova/all-MiniLM-L6-v2";
+const MODEL = 'Xenova/all-MiniLM-L6-v2';
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline(
-  "feature-extraction",
-  MODEL,
-  {
-    device: "cpu",
-  }
-);
+const extractor = await pipeline('feature-extraction', MODEL, {
+  device: 'cpu',
+});
 
 console.log(`Query: ${QUERY}`);
 
 const tensor = await extractor(QUERY, {
-  pooling: "mean",
+  pooling: 'mean',
   normalize: true,
 });
 
@@ -39,38 +34,38 @@ function detectRequestedKinds(query) {
   const q = query.toLowerCase();
 
   if (/\b(project|projects)\b/.test(q)) {
-    return ["project"];
+    return ['project'];
   }
 
   if (
     /\bwho\b/.test(q) ||
     /\b(person|people|researcher|researchers|staff|member|members)\b/.test(q)
   ) {
-    return ["person"];
+    return ['person'];
   }
 
   if (/\b(paper|papers|publication|publications)\b/.test(q)) {
-    return ["paper"];
+    return ['paper'];
   }
 
   if (/\b(award|awards)\b/.test(q)) {
-    return ["award"];
+    return ['award'];
   }
 
   if (/\b(demo|demos|demonstration|demonstrations)\b/.test(q)) {
-    return ["demo"];
+    return ['demo'];
   }
 
   if (/\b(group|groups|research group)\b/.test(q)) {
-    return ["group"];
+    return ['group'];
   }
 
   if (/\b(partner|partners)\b/.test(q)) {
-    return ["partner"];
+    return ['partner'];
   }
 
   if (/\b(funder|funders|funding body)\b/.test(q)) {
-    return ["funder"];
+    return ['funder'];
   }
 
   return null;
@@ -113,29 +108,27 @@ const requestedKinds = detectRequestedKinds(QUERY);
 let filteredResults = results;
 
 if (requestedKinds) {
-  filteredResults = results.filter((result) =>
+  filteredResults = results.filter(result =>
     requestedKinds.includes(result.metadata.kind)
   );
 
-  console.log(
-    `Type filter: ${requestedKinds.join(", ")}`
-  );
+  console.log(`Type filter: ${requestedKinds.join(', ')}`);
 }
 
 filteredResults.sort((a, b) => b.score - a.score);
 
-console.log("\nTop 10 results:\n");
+console.log('\nTop 10 results:\n');
 
 for (const result of filteredResults.slice(0, 10)) {
-    console.log(
-    `${result.score.toFixed(4)} | ${result.metadata.kind} | ${result.metadata.name}`
+  console.log(
+    `${result.score.toFixed(4)} | ${result.metadata.kind} | ${
+      result.metadata.name
+    }`
   );
 
   console.log(`  ${result.metadata.uri}`);
 
-  console.log(
-    `  ${result.text.replace(/\n/g, " ").slice(0, 220)}`
-  );
+  console.log(`  ${result.text.replace(/\n/g, ' ').slice(0, 220)}`);
 
   console.log();
 }

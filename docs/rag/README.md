@@ -53,7 +53,7 @@ npm run rag:embed
 npm run rag:search -- "scalable RDF data integration"
 ```
 
-# Qdrant 
+# Qdrant
 
 ```sh
 docker run -d \
