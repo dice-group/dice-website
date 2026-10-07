@@ -612,6 +612,11 @@ export async function runRag(question) {
     .map(({ hit, entity }, index) => {
       let path = entity?.path || null;
 
+      // RDF paper paths are identifiers, not generated Gatsby pages.
+      if (hit.payload.kind === 'paper') {
+        path = '/publications/';
+      }
+
       if (hit.payload.kind === 'group') {
         path = '/groups/';
       }
@@ -635,6 +640,26 @@ export async function runRag(question) {
           hit.payload.uri,
         path,
         score: hit.score,
+        ...(hit.payload.kind === 'paper'
+          ? {
+              paper: {
+                title:
+                  entity.data.title || entity.data.name || hit.payload.name,
+                authorName: entity.data.authorName?.length
+                  ? entity.data.authorName
+                  : names(entity.data.author),
+                source: entity.data.source,
+                year: entity.data.year,
+                publicationType: entity.data.publicationType,
+                url: entity.data.url,
+                pdfUrl: entity.data.pdfUrl,
+                doi: entity.data.doi,
+                presentationUrl: entity.data.presentationUrl,
+                videoUrl: entity.data.videoUrl,
+                bibsonomyId: entity.data.bibsonomyId,
+              },
+            }
+          : {}),
       };
     })
     .filter(source => usedIndexes.has(source.index))

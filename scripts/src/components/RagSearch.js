@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
+import Paper from './papers/paper';
 import './styles/rag-search.css';
 
 export default function RagSearch() {
@@ -112,13 +113,28 @@ export default function RagSearch() {
                 <h3 className="rag-search-heading">Sources</h3>
                 <ul>
                   {result.sources.map(source => (
-                    <li key={source.uri}>
-                      <a href={source.path || source.uri}>
-                        {source.name || source.uri}
-                        <span aria-hidden="true"> ↗</span>
-                      </a>
-                      {source.kind && (
-                        <span className="rag-search-kind">{source.kind}</span>
+                    <li
+                      key={source.uri}
+                      className={
+                        source.kind === 'paper' && source.paper
+                          ? 'rag-search-paper'
+                          : undefined
+                      }
+                    >
+                      {source.kind === 'paper' && source.paper ? (
+                        <Paper data={source.paper} />
+                      ) : (
+                        <>
+                          <a href={source.path || source.uri}>
+                            {source.name || source.uri}
+                            <span aria-hidden="true"> ↗</span>
+                          </a>
+                          {source.kind && (
+                            <span className="rag-search-kind">
+                              {source.kind}
+                            </span>
+                          )}
+                        </>
                       )}
                     </li>
                   ))}

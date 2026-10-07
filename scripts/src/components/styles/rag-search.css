@@ -163,3 +163,20 @@
     animation: none;
   }
 }
+
+/* Let the shared publication card retain its own layout and styling. */
+.rag-search-sources li.rag-search-paper {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.rag-search-paper .paper {
+  margin-bottom: 0;
+}
+
+.rag-search-paper .paper-links {
+  flex-wrap: wrap;
+}
