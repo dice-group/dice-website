@@ -1,3 +1,5 @@
+# Runtime flow
+
 ```text
 user query
 → MiniLM embedding
@@ -9,34 +11,15 @@ user query
 → final answer
 ```
 
-# Runtime flow
-
-```text
-User types a question in Gatsby
-        ↓
-POST /api/rag
-        ↓
-Create embedding for the question
-        ↓
-Search vector DB for top 5 relevant entities
-        ↓
-Get their URIs
-        ↓
-Use those URIs in GraphQL
-        ↓
-Fetch structured facts / relations for those entities
-        ↓
-Build compact context
-        ↓
-Send question + context to LLM
-        ↓
-Return:
-  - answer
-  - source entities
-  - Gatsby page links
-        ↓
-Render answer in Gatsby
-```
+# The RAG index currently contains these entity types:
+- person
+- paper
+- project
+- group
+- demo
+- partner
+- funder
+- award
 
 # One TTL object's main RDF resource = one vector document.
 
@@ -68,3 +51,29 @@ curl http://127.0.0.1:6333/collections
 npm run rag:index
 curl http://127.0.0.1:6333/collections/dice_rag
 ```
+
+### FAQ
+
+**What data is included in the RAG system?**  
+People, projects, publications, research groups, demos, partners, funders, and awards from the DICE RDF data.
+
+**How are entities searched?**  
+The system combines semantic vector search with lexical name matching.
+
+**Which embedding model is used?**  
+`Xenova/all-MiniLM-L6-v2`, producing 384-dimensional embeddings.
+
+**Where are embeddings stored?**  
+In Qdrant.
+
+**Does the LLM answer directly from Qdrant?**  
+No. Qdrant finds relevant entities, then Gatsby GraphQL enriches them with current RDF data before the LLM generates the answer.
+
+**Is all RDF data embedded?**  
+No. Only useful human-readable fields such as names, descriptions, roles, projects, authors, members, tags, and similar metadata are embedded.
+
+**How is the RAG index updated?**  
+The documents, embeddings, and Qdrant collection are regenerated when the website data is updated.
+
+**How are sources shown?**  
+The answer includes links back to the relevant DICE website pages.

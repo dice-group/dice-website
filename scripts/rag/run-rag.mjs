@@ -33,6 +33,36 @@ function normalize(value) {
     .trim();
 }
 
+const QUERY_STOP_WORDS = new Set([
+  'who', 'what', 'where', 'when', 'why', 'how',
+  'is', 'are', 'was', 'were', 'do', 'does', 'did',
+  'the', 'a', 'an', 'of', 'for', 'with', 'in', 'on', 'at',
+  'about', 'tell', 'me',
+]);
+
+function nameMatchScore(question, name) {
+  const q = normalize(question);
+  const n = normalize(name);
+
+  if (!q || !n) return 0;
+  if (q === n) return 3;
+  if (q.includes(n)) return 2.5;
+
+  const queryTokens = q
+    .split(' ')
+    .filter(token => token.length >= 3 && !QUERY_STOP_WORDS.has(token));
+  const nameTokens = n.split(' ');
+  const matchingTokens = queryTokens.filter(token =>
+    nameTokens.includes(token) ||
+    nameTokens.some(nameToken => nameToken.startsWith(token))
+  );
+
+  if (!matchingTokens.length) return 0;
+  if (matchingTokens.length >= 2) return 2;
+  if (matchingTokens[0].length >= 4) return 1.5;
+  return 0;
+}
+
 function compact(values) {
   return Array.isArray(values)
     ? values.filter(Boolean)
@@ -660,9 +690,6 @@ export async function runRag(question) {
       }
     : undefined;
 
-  const normalizedQuestion =
-    normalize(question);
-
   // Semantic candidates.
   const semanticResponse =
     await qdrant.query(COLLECTION, {
@@ -683,27 +710,9 @@ export async function runRag(question) {
       filter,
     });
 
-  const lexicalMatches =
-    lexicalResponse.points.filter(point => {
-      const name = normalize(
-        point.payload?.name
-      );
-
-      if (!name) {
-        return false;
-      }
-
-      return (
-        name === normalizedQuestion ||
-        name.startsWith(
-          normalizedQuestion
-        ) ||
-        name.includes(
-          normalizedQuestion
-        ) ||
-        normalizedQuestion.includes(name)
-      );
-    });
+  const lexicalMatches = lexicalResponse.points.filter(point =>
+    nameMatchScore(question, point.payload?.name) > 0
+  );
 
   // Merge semantic and lexical candidates.
   const merged = new Map();
@@ -730,28 +739,7 @@ export async function runRag(question) {
   // Hybrid reranking.
   const ranked = [...merged.values()]
     .map(hit => {
-      const name = normalize(
-        hit.payload?.name
-      );
-
-      let nameBonus = 0;
-
-      if (name === normalizedQuestion) {
-        nameBonus = 2;
-      } else if (
-        name.startsWith(
-          normalizedQuestion
-        )
-      ) {
-        nameBonus = 1.5;
-      } else if (
-        name.includes(
-          normalizedQuestion
-        ) ||
-        normalizedQuestion.includes(name)
-      ) {
-        nameBonus = 1;
-      }
+      const nameBonus = nameMatchScore(question, hit.payload?.name);
 
       return {
         ...hit,

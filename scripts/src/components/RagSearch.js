@@ -56,7 +56,7 @@ export default function RagSearch() {
           <label htmlFor="rag-question">Your question</label>
           <input
             id="rag-question"
-            className="input"
+            className="input papers-filter"
             type="text"
             value={question}
             onChange={event => setQuestion(event.target.value)}
