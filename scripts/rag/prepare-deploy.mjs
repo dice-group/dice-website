@@ -51,9 +51,8 @@ const config = {
   env: {
     LLM_API_KEY: process.env.LLM_API_KEY,
     LLM_MODEL: process.env.LLM_MODEL,
-    ...(process.env.LLM_BASE_URL
-      ? { LLM_BASE_URL: process.env.LLM_BASE_URL }
-      : {}),
+    LLM_BASE_URL:
+      process.env.LLM_BASE_URL || 'https://dice-llm-api.cs.uni-paderborn.de/v1',
     QDRANT_URL: process.env.RAG_QDRANT_URL,
     QDRANT_COLLECTION: process.env.RAG_QDRANT_COLLECTION || 'dice_rag',
   },

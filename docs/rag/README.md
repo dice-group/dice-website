@@ -105,14 +105,14 @@ From the repository root, generate the entity store and start the container:
 
 ```sh
 npm --prefix scripts run rag:entities
-# Set OPENAI_API_KEY in your shell first, or use --env-file with a private file.
+# Set DICE_LLM_API_KEY in your shell first, or use --env-file with a private file.
 docker compose --env-file scripts/.env -f compose.rag.yml up -d --build
 curl http://127.0.0.1:8787/health
 ```
 
-Stop any locally running RAG server first so port 8787 is available. The image contains only the RAG runtime dependencies and generated entity store; it does not include Gatsby, TTL files, or API keys. It runs as a non-root user on Node 22. The first startup downloads MiniLM; subsequent starts reuse the `rag-model-cache` volume. Initial startup needs access to Hugging Face, and answering needs access to OpenAI and Qdrant.
+Stop any locally running RAG server first so port 8787 is available. The image contains only the RAG runtime dependencies and generated entity store; it does not include Gatsby, TTL files, or API keys. It runs as a non-root user on Node 22. The first startup downloads MiniLM; subsequent starts reuse the `rag-model-cache` volume. Initial startup needs access to Hugging Face, and answering needs access to the DICE LLM API and Qdrant.
 
-Compose uses your **existing indexed Qdrant** at `http://host.docker.internal:6333` by default. Qdrant must be reachable through the host gateway (for example, the published port from the Qdrant Docker command above). A service bound only to host loopback is not reachable through that gateway. Set `QDRANT_URL` to another reachable address as needed; `127.0.0.1` inside the RAG container refers to the RAG container itself. `QDRANT_COLLECTION` and `OPENAI_MODEL` can also be overridden. No Qdrant data is created or replaced by this Compose file.
+Compose uses your **existing indexed Qdrant** at `http://host.docker.internal:6333` by default. Qdrant must be reachable through the host gateway (for example, the published port from the Qdrant Docker command above). A service bound only to host loopback is not reachable through that gateway. Set `QDRANT_URL` to another reachable address as needed; `127.0.0.1` inside the RAG container refers to the RAG container itself. `QDRANT_COLLECTION` and `LLM_MODEL` can also be overridden. No Qdrant data is created or replaced by this Compose file.
 
 ```sh
 docker compose -f compose.rag.yml logs -f rag
@@ -133,11 +133,11 @@ docker compose --env-file scripts/.env -f compose.rag.yml up -d
 
 Both `.github/workflows/deploy.yml` and `.github/workflows/weekly-deploy.yml` deploy the RAG API through the existing Exoframe endpoint before deploying the website. They share a deployment concurrency group to prevent overlapping production updates. The website build sets `GATSBY_RAG_API_URL=/api/rag`.
 
-RAG has its own deployment/project name, `dice-rag`, separate from `dice-website`. Its Traefik rule routes `/api/rag` on `dice-research.org` and `www.dice-research.org` to container port 8787; there is no host port publishing. A persistent `dice-rag-model-cache` volume holds model downloads. A bounded readiness check calls `/api/rag/health` before the website update. This checks server readiness, not OpenAI or Qdrant responses.
+RAG has its own deployment/project name, `dice-rag`, separate from `dice-website`. Its Traefik rule routes `/api/rag` on `dice-research.org` and `www.dice-research.org` to container port 8787; there is no host port publishing. A persistent `dice-rag-model-cache` volume holds model downloads. A bounded readiness check calls `/api/rag/health` before the website update. This checks server readiness, not the LLM or Qdrant responses.
 
 Before enabling these workflow changes:
 
-1. Set GitHub Actions secrets **`LLM_API_KEY`** and **`LLM_MODEL`**. For the current provider, use your OpenAI key and desired model name. Optionally set **`LLM_BASE_URL`** to a replacement provider's API base URL. No separate Exoframe LLM secret is required.
+1. Set GitHub Actions secrets **`LLM_API_KEY`** and **`LLM_MODEL`**. Use your DICE LLM token and `general-purpose` as the model. Optionally set **`LLM_BASE_URL`** to a replacement provider's API base URL. No separate Exoframe LLM secret is required.
 2. Set GitHub Actions repository variable **`RAG_QDRANT_URL`** to the existing production Qdrant URL reachable from the Exoframe container. Use a private network address, not container loopback or the development host-gateway assumption. Ensure the database already contains the matching index; these deployment steps do not provision Qdrant or regenerate embeddings.
 3. Optionally set **`RAG_QDRANT_COLLECTION`** (default `dice_rag`). The existing **`EXO_TOKEN_DICE`** secret is reused for deployment.
 4. Confirm Exoframe can route the combined Host/PathPrefix rule and that the deployment user can create the model-cache volume. Run a manual deployment and check `/api/rag/health`, then submit a real query.
@@ -150,6 +150,22 @@ The workflow integration does not change the existing public API's lack of authe
 
 GitHub is the source of deployment credentials: both workflows inject `LLM_API_KEY`, `LLM_MODEL`, and optional `LLM_BASE_URL` into the temporary Exoframe runtime configuration. That file has restricted permissions, is excluded from the Docker build context, is never uploaded as an Actions artifact, and is removed after the deployment step even on failure. Exoframe receives these values over HTTPS and supplies them as container environment variables; administrators of the deployment host can access them.
 
-The adapter currently uses the OpenAI SDK's **Responses API with structured JSON output**. A replacement endpoint must support that contract; a provider offering only Chat Completions or another protocol will require an adapter change in `ask-rag.mjs`. Provider-neutral configuration does not imply compatibility with every LLM API.
+The adapter uses **Chat Completions** at `https://dice-llm-api.cs.uni-paderborn.de/v1`, with model `general-purpose`. It requests the answer and source numbers as JSON in the prompt, then validates the response locally. It does not require Responses API or server-side JSON-schema support. The OpenAI SDK is retained only as a compatible HTTP client.
 
-Local Compose accepts the same `LLM_*` settings in `scripts/.env`. Existing `OPENAI_API_KEY` and `OPENAI_MODEL` settings remain supported as local fallbacks. Changes to GitHub secrets take effect on the next deployment.
+For local use, set these in `scripts/.env`:
+
+```dotenv
+DICE_LLM_API_KEY=YOUR_DICE_TOKEN
+DICE_LLM_BASE_URL=https://dice-llm-api.cs.uni-paderborn.de/v1
+LLM_MODEL=general-purpose
+```
+
+Generic `LLM_API_KEY` and `LLM_BASE_URL` aliases remain supported. `DICE_LLM_*` values take precedence locally. Old `OPENAI_*` settings are no longer used, to avoid sending an OpenAI token to the DICE endpoint. GitHub workflows keep the generic secret names: update `LLM_API_KEY` with your DICE token, `LLM_MODEL` with `general-purpose`, and replace any old `LLM_BASE_URL` secret with the DICE URL (or remove it to use the default).
+
+Rebuild the RAG container after updating the settings:
+
+```sh
+docker compose --env-file scripts/.env -f compose.rag.yml up -d --build
+```
+
+No embedding or Qdrant index rebuild is needed for changing the answer model.

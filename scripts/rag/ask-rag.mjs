@@ -2,24 +2,31 @@ import 'dotenv/config';
 import OpenAI from 'openai';
 
 const client = new OpenAI({
-  apiKey: process.env.LLM_API_KEY || process.env.OPENAI_API_KEY,
-  baseURL: process.env.LLM_BASE_URL || undefined,
+  apiKey: process.env.DICE_LLM_API_KEY || process.env.LLM_API_KEY,
+  baseURL:
+    process.env.DICE_LLM_BASE_URL ||
+    process.env.LLM_BASE_URL ||
+    'https://dice-llm-api.cs.uni-paderborn.de/v1',
 });
 
-const MODEL =
-  process.env.LLM_MODEL || process.env.OPENAI_MODEL || 'gpt-5.4-mini';
+const MODEL = process.env.LLM_MODEL || 'general-purpose';
 
 export async function askLlm(question, context) {
-  const response = await client.responses.create({
+  const response = await client.chat.completions.create({
     model: MODEL,
 
-    input: [
+    messages: [
       {
         role: 'system',
         content: `
 You answer questions about the DICE Research website.
 
 Use only the supplied sources.
+
+Return only a JSON object with exactly these fields:
+{"answer": "your answer", "sourceNumbers": [1, 2]}
+Use an empty sourceNumbers array when no supplied sources support the answer.
+Do not wrap the JSON in Markdown.
 
 Rules:
 - Do not invent facts.
@@ -43,31 +50,39 @@ ${context}
         `.trim(),
       },
     ],
-
-    text: {
-      format: {
-        type: 'json_schema',
-        name: 'rag_answer',
-        strict: true,
-        schema: {
-          type: 'object',
-          properties: {
-            answer: {
-              type: 'string',
-            },
-            sourceNumbers: {
-              type: 'array',
-              items: {
-                type: 'integer',
-              },
-            },
-          },
-          required: ['answer', 'sourceNumbers'],
-          additionalProperties: false,
-        },
-      },
-    },
   });
 
-  return JSON.parse(response.output_text);
+  const choice = response.choices?.[0];
+  if (choice?.finish_reason && choice.finish_reason !== 'stop') {
+    throw new Error('LLM response was incomplete. Please try again.');
+  }
+  const content = choice?.message?.content;
+  if (typeof content !== 'string' || !content.trim()) {
+    throw new Error('LLM returned an empty answer.');
+  }
+  // Some compatible models add a JSON fence despite the output instructions.
+  const json = content
+    .trim()
+    .replace(/^```(?:json)?\s*([\s\S]*?)\s*```$/i, '$1');
+  let result;
+  try {
+    result = JSON.parse(json);
+  } catch {
+    throw new Error('LLM returned invalid answer JSON. Please try again.');
+  }
+  if (
+    !result ||
+    typeof result.answer !== 'string' ||
+    !result.answer.trim() ||
+    !Array.isArray(result.sourceNumbers) ||
+    !result.sourceNumbers.every(
+      number => Number.isInteger(number) && number > 0
+    )
+  ) {
+    throw new Error('LLM returned an invalid answer format. Please try again.');
+  }
+  return {
+    answer: result.answer,
+    sourceNumbers: [...new Set(result.sourceNumbers)],
+  };
 }
