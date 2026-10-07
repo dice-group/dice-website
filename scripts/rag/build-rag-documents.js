@@ -56,7 +56,11 @@ const TYPE_CONFIG = {
       ['Tagline', ['http://schema.org/tagline']],
       [
         'Description',
-        ['http://schema.org/content', 'http://schema.org/description'],
+        [
+          'http://schema.org/content',
+          'http://schema.org/contenthtml',
+          'http://schema.org/description',
+        ],
       ],
       ['Members', ['http://schema.org/member']],
       ['Related projects', ['http://schema.org/relatedProject']],
@@ -72,7 +76,11 @@ const TYPE_CONFIG = {
       ['Tagline', ['http://schema.org/tagline']],
       [
         'Description',
-        ['http://schema.org/content', 'http://schema.org/description'],
+        [
+          'http://schema.org/content',
+          'http://schema.org/contenthtml',
+          'http://schema.org/description',
+        ],
       ],
       ['Maintainers', ['http://schema.org/maintainer']],
       ['Developers', ['http://schema.org/developer']],
@@ -251,8 +259,9 @@ function normalizeText(value) {
 }
 
 function valuesForPredicates(quads, predicates) {
+  const names = new Set(predicates.map(predicateLocalName));
   return quads
-    .filter(q => predicates.includes(predicateLocalName(q.predicate.value)))
+    .filter(q => names.has(predicateLocalName(q.predicate.value)))
     .map(q => q.object);
 }
 

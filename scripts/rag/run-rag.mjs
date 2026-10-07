@@ -91,6 +91,32 @@ const QUERY_STOP_WORDS = new Set([
   'me',
 ]);
 
+// Category words identify the kind of entity, not its name.
+const ENTITY_KIND_WORDS = new Set([
+  'demo',
+  'demos',
+  'demonstration',
+  'demonstrations',
+  'project',
+  'projects',
+  'paper',
+  'papers',
+  'publication',
+  'publications',
+  'group',
+  'groups',
+  'person',
+  'people',
+  'researcher',
+  'researchers',
+  'partner',
+  'partners',
+  'funder',
+  'funders',
+  'award',
+  'awards',
+]);
+
 function nameMatchScore(question, name) {
   const q = normalize(question);
   const n = normalize(name);
@@ -101,7 +127,12 @@ function nameMatchScore(question, name) {
 
   const queryTokens = q
     .split(' ')
-    .filter(token => token.length >= 3 && !QUERY_STOP_WORDS.has(token));
+    .filter(
+      token =>
+        token.length >= 3 &&
+        !QUERY_STOP_WORDS.has(token) &&
+        !ENTITY_KIND_WORDS.has(token)
+    );
   const nameTokens = n.split(' ');
   const matchingTokens = queryTokens.filter(
     token =>
@@ -267,8 +298,9 @@ function buildContext(hit, entity, staff = [], headProjects = []) {
     lines.push(`Tagline: ${d.tagline}`);
   }
 
-  if (d.content?.length) {
-    const description = truncate(cleanContent(d.content.join('\n')));
+  const descriptions = [...compact(d.content), ...compact(d.contenthtml)];
+  if (descriptions.length) {
+    const description = truncate(cleanContent(descriptions.join('\n')));
 
     lines.push(`Description: ${description}`);
   }
@@ -313,6 +345,11 @@ function buildContext(hit, entity, staff = [], headProjects = []) {
 
   if (maintainers.length) {
     lines.push(`Maintainers: ${maintainers.join(', ')}`);
+  }
+
+  const developers = names(d.developer);
+  if (developers.length) {
+    lines.push(`Developers: ${developers.join(', ')}`);
   }
 
   const staffNames = staff

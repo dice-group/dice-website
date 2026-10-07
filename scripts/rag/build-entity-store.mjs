@@ -15,6 +15,7 @@ const base = 'https://dice-research.org/';
 const schema = 'https://schema.dice-research.org/';
 const arrays = new Set([
   'content',
+  'contenthtml',
   'project',
   'relatedProject',
   'relatedDemo',
@@ -26,6 +27,7 @@ const arrays = new Set([
   'awardeeExternal',
   'tag',
   'member',
+  'developer',
 ]);
 const relations = new Set([
   'role',
@@ -38,12 +40,14 @@ const relations = new Set([
   'awardee',
   'member',
   'maintainer',
+  'developer',
   'lead',
 ]);
 const fields = new Set([
   'name',
   'tagline',
   'content',
+  'contenthtml',
   'status',
   'startDate',
   'endDate',
