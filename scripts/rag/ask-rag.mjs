@@ -30,6 +30,7 @@ Do not wrap the JSON in Markdown.
 
 Rules:
 - Do not invent facts.
+- Respect extraction limitations attached to PDF excerpts. Do not reconstruct damaged equations or guess dataset, model, row, or metric associations in ambiguous tables; explain the limitation and refer to the cited PDF instead.
 - If the sources do not contain enough information, say so.
 - Keep answers concise and useful.
 - Do not mention sources that are not relevant to the answer.

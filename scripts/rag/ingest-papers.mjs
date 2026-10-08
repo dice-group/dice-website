@@ -20,6 +20,7 @@ import {
   downloadPdf,
   extractPdf,
   chunkPdf,
+  embedPdfChunk,
 } from './pdf-chunks.mjs';
 
 // The deployment launcher holds a filesystem flock for the entire run. Manual
@@ -274,7 +275,7 @@ async function main() {
         );
         points.push({
           id: pointId(chunkId),
-          vector: await embed(chunk.text),
+          vector: await embedPdfChunk(chunk, extractor),
           payload: {
             ...chunk,
             kind: 'paper_chunk',

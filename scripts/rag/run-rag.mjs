@@ -341,6 +341,10 @@ function buildContext(hit, entity, staff = [], headProjects = []) {
       `Pages: ${p.pageStart}-${p.pageEnd}`,
       p.section && `Section: ${p.section}`,
       p.subsection && `Subsection: ${p.subsection}`,
+      p.contentType && `Content type: ${p.contentType}`,
+      ...(p.extractionWarnings || []).map(
+        warning => `Extraction limitation: ${warning}`
+      ),
       `Excerpt: ${p.text}`,
     ]
       .filter(Boolean)
