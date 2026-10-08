@@ -640,6 +640,24 @@ export async function runRag(question) {
           hit.payload.uri,
         path,
         score: hit.score,
+        ...(hit.payload.kind === 'person' && entity?.data?.name
+          ? {
+              person: Object.fromEntries(
+                [
+                  'name',
+                  'namePrefix',
+                  'role',
+                  'phone',
+                  'fax',
+                  'email',
+                  'chat',
+                  'office',
+                  'photo',
+                  'sameAs',
+                ].map(field => [field, entity.data[field]])
+              ),
+            }
+          : {}),
         ...(hit.payload.kind === 'paper'
           ? {
               paper: {

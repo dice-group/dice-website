@@ -180,3 +180,26 @@
 .rag-search-paper .paper-links {
   flex-wrap: wrap;
 }
+
+.rag-search-sources li.rag-search-person {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 16px;
+}
+
+.rag-search-person .person-image {
+  flex-shrink: 0;
+  width: 160px;
+  min-height: 160px;
+  max-height: 160px;
+}
+
+.rag-search-person .person-image .image,
+.rag-search-person .person-image img {
+  max-width: 100%;
+}
+
+.rag-search-person .person-data {
+  min-width: 0;
+  max-width: 100%;
+}

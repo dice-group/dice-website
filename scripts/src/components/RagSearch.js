@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Paper from './papers/paper';
+import PersonInfo from './personInfo';
 import './styles/rag-search.css';
 
 export default function RagSearch() {
@@ -118,11 +119,20 @@ export default function RagSearch() {
                       className={
                         source.kind === 'paper' && source.paper
                           ? 'rag-search-paper'
+                          : source.kind === 'person' && source.person
+                          ? 'rag-search-person'
                           : undefined
                       }
                     >
                       {source.kind === 'paper' && source.paper ? (
                         <Paper data={source.paper} />
+                      ) : source.kind === 'person' && source.person ? (
+                        <>
+                          <PersonInfo data={source.person} />
+                          <a href={source.path || source.uri}>
+                            View full profile<span aria-hidden="true"> ↗</span>
+                          </a>
+                        </>
                       ) : (
                         <>
                           <a href={source.path || source.uri}>

@@ -97,7 +97,11 @@ Deploy `entities.json` alongside the Node RAG service. The existing static websi
 RAG_ENTITY_STORE=/srv/dice-rag/entities.json npm run rag:server
 ```
 
-Restart the RAG server after replacing the store: it is loaded once at startup. Missing or invalid files stop startup with a generation hint; missing indexed entities fail the query with a regeneration hint instead of silently losing enrichment. `GRAPHQL_URL` is no longer used by `run-rag.mjs` (the standalone legacy enrichment diagnostic still uses it).
+Restart the RAG server 
+```sh
+docker compose --env-file scripts/.env -f compose.rag.yml restart rag
+```
+after replacing the store: it is loaded once at startup. Missing or invalid files stop startup with a generation hint; missing indexed entities fail the query with a regeneration hint instead of silently losing enrichment. `GRAPHQL_URL` is no longer used by `run-rag.mjs` (the standalone legacy enrichment diagnostic still uses it).
 
 ## Docker RAG server
 

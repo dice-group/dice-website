@@ -14,6 +14,7 @@ const output = path.resolve(
 const base = 'https://dice-research.org/';
 const schema = 'https://schema.dice-research.org/';
 const arrays = new Set([
+  'sameAs',
   'content',
   'contenthtml',
   'project',
@@ -44,6 +45,14 @@ const relations = new Set([
   'lead',
 ]);
 const fields = new Set([
+  'namePrefix',
+  'phone',
+  'fax',
+  'email',
+  'chat',
+  'office',
+  'photo',
+  'sameAs',
   'name',
   'tagline',
   'content',
@@ -105,8 +114,12 @@ function walk(dir) {
           entity.types.push(object.value);
           continue;
         }
-        if (!predicate.value.startsWith(schema)) continue;
-        const field = predicate.value.slice(schema.length);
+        const isSameAs =
+          predicate.value === 'http://www.w3.org/2002/07/owl#sameAs';
+        if (!isSameAs && !predicate.value.startsWith(schema)) continue;
+        const field = isSameAs
+          ? 'sameAs'
+          : predicate.value.slice(schema.length);
         if (!fields.has(field)) continue;
         if (arrays.has(field)) {
           const values = entity.data[field] || (entity.data[field] = []);
