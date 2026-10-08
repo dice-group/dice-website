@@ -120,6 +120,7 @@ const ENTITY_KIND_WORDS = new Set([
 
 const GLOBAL_SEMANTIC_LIMIT = 20;
 const GLOBAL_FINAL_LIMIT = 6;
+const MAX_GLOBAL_CHUNKS_PER_PAPER = 3;
 const PAPER_SEMANTIC_LIMIT = 10;
 const PAPER_CONTEXT_LIMIT = 5;
 const LEXICAL_WEIGHT = 0.2;
@@ -258,10 +259,25 @@ function recognizePaper(question) {
   return matches.length === 1 ? matches[0] : null;
 }
 
+function limitGlobalChunksPerPaper(
+  hits,
+  maxPerPaper = MAX_GLOBAL_CHUNKS_PER_PAPER
+) {
+  const counts = new Map();
+  return hits.filter(hit => {
+    const payload = hit.payload ?? {};
+    if (payload.kind === 'paper_chunk' && payload.paperUri) {
+      const count = counts.get(payload.paperUri) ?? 0;
+      if (count >= maxPerPaper) return false;
+      counts.set(payload.paperUri, count + 1);
+    }
+    return true;
+  });
+}
+
 function selectContext(candidates, scoped) {
   const selected = [];
   const seen = new Set();
-  const limit = scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_FINAL_LIMIT;
   for (const hit of candidates) {
     const p = hit.payload;
     const parent = p.paperUri || p.uri;
@@ -273,9 +289,12 @@ function selectContext(candidates, scoped) {
     if (seen.has(key)) continue;
     seen.add(key);
     selected.push(hit);
-    if (selected.length === limit) break;
   }
-  return selected;
+  // Cap after deduplication, before taking the final slots, so lower-ranked
+  // evidence from other papers can fill slots vacated by excess chunks.
+  return scoped
+    ? selected.slice(0, PAPER_CONTEXT_LIMIT)
+    : limitGlobalChunksPerPaper(selected).slice(0, GLOBAL_FINAL_LIMIT);
 }
 
 function compact(values) {
@@ -789,7 +808,7 @@ export async function runRag(question) {
   }
 
   // Global lexical scoring reranks only the semantic candidates. No scroll,
-  // additional lexical candidates, name bonus, or per-paper grouping.
+  // additional lexical candidates or name bonus; the cap is applied later.
   const reranked = paper
     ? [...semanticResponse.points].sort(
         (a, b) => (b.score ?? 0) - (a.score ?? 0)

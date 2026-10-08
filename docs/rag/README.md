@@ -6,7 +6,9 @@ user query
 → recognize a named paper when unambiguous
 → Qdrant top 10 (paper-scoped) / top 20 (global)
 → global lexical reranking: vector score + 0.20 × lexical score
-→ deduplicate and select up to 5 scoped / 6 global sources
+→ remove stale hits and deduplicate
+→ global only: max 3 paper chunks per paperUri
+→ select up to 5 scoped / 6 global sources
 → mixed scoped questions: add the paper metadata source
 → Local entity store enrichment
 → cleaned context
@@ -235,7 +237,7 @@ For “What datasets were used in ASTRA?”, the recognized paper URI restricts 
 
 Global questions such as “Which DICE papers use DBpedia-Wikidata?” retrieve the semantic top 20 using the existing kind filter. Only these candidates receive a lexical bonus over their title, section, subsection, and text: `hybridScore = vectorScore + 0.20 * lexicalScore`. Normalization folds case and punctuation/dashes, and stopwords remove generic query words; the example leaves `dbpedia` and `wikidata`. Lexical score is query-term coverage plus 0.5 when the significant terms form a matching phrase, capped at 1.5. Thus the maximum bonus is 0.30.
 
-Candidates are sorted by hybrid score, stale parent references are excluded, exact duplicate excerpts are removed, and the best 6 are sent to the LLM. There is no extra metadata-name scan and no per-paper cap on the global path, so the effect of lexical reranking can be measured separately. A temporary `console.table` logs vector, lexical, and hybrid scores plus kind/title/section/chunk for all global candidates before selection. Paper-scoped retrieval retains semantic top 10 → dedupe → best 5. No new Qdrant index, full-text search, or re-ingestion is required. Constants and scoring live in `scripts/rag/run-rag.mjs`.
+Candidates are sorted by hybrid score, stale parent references are excluded, and exact duplicate excerpts are removed. Global retrieval then keeps at most 3 `paper_chunk` hits per `paperUri` before selecting the best 6 sources for the LLM. Excess chunks are skipped while lower-ranked candidates remain eligible to fill the remaining slots. Paper metadata and other entity kinds do not count toward this cap. There is no extra metadata-name scan. Scoped paper queries bypass the cap and can still use up to 5 chunks from that paper; mixed scoped questions retain their additional metadata source. A temporary `console.table` logs vector, lexical, and hybrid scores plus kind/title/section/chunk for all global candidates before selection. Paper-scoped retrieval retains semantic top 10 → dedupe → best 5. No new Qdrant index, full-text search, or re-ingestion is required. Constants and scoring live in `scripts/rag/run-rag.mjs`.
 
 Source grouping happens **after** the LLM returns its used source numbers. The LLM still receives up to 6 separate global sources, or 5 scoped chunks plus a metadata source for mixed scoped questions, with independent `SOURCE N` labels. Only the selected citations are grouped by `paperUri` for presentation. A paper metadata citation and PDF citations for the same URI share a single paper card; other entity cards retain their existing presentation. Grouped responses preserve the cited chunk objects in `chunks` and the original citation numbers in `sourceNumbers`.
 
@@ -267,7 +269,9 @@ Qdrant
                            ↓
           global: vector + 0.20 × lexical
                            ↓
-         dedupe: 5 scoped / 6 global sources
+            remove stale hits, dedupe
+         global only: max 3 chunks/paperUri
+             5 scoped / 6 global sources
          mixed scoped: add paper metadata
                      ↙          ↘
              normal entity    paper_chunk
