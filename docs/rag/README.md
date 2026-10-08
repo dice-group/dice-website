@@ -4,12 +4,15 @@
 user query
 → MiniLM embedding
 → recognize a named paper when unambiguous
-→ Qdrant top 10 (paper-scoped or global)
+→ Qdrant top 10 (paper-scoped) / top 20 (global)
+→ global lexical reranking: vector score + 0.20 × lexical score
 → deduplicate and select up to 5 scoped / 6 global sources
+→ mixed scoped questions: add the paper metadata source
 → Local entity store enrichment
 → cleaned context
-→ LLM
-→ final answer
+→ LLM returns answer and used source numbers
+→ group cited paper sources by paperUri; merge pages and sections
+→ final answer and one source card per paper
 ```
 
 # The RAG index currently contains these entity types:
@@ -79,7 +82,7 @@ No. Only useful human-readable fields such as names, descriptions, roles, projec
 Each RAG container deployment synchronizes paper metadata and checks PDF bytes for changes, then updates paper chunks incrementally. Other entity types still use the document/embed/index commands.
 
 **How are sources shown?**  
-The answer includes links back to the relevant DICE website pages.
+The answer includes links back to relevant DICE website pages. Cited chunks from the same paper share one publication card with merged PDF page ranges and unique sections/subsections; each page range links to its first PDF page.
 
 ## Production entity store
 
@@ -228,9 +231,15 @@ PDF ingestion writes directly to Qdrant; the local `rag_documents.jsonl` and `ra
 
 Retrieval first looks for an unambiguous paper title or a distinctive acronym before a title colon (for example, `ASTRA: Adaptive ...`) in the local entity store. Matching is case-insensitive and respects word boundaries. Generic title-word overlap is not enough to scope a query. Ambiguous matches, questions naming multiple papers, and plural/comparison queries remain global.
 
-For “What datasets were used in ASTRA?”, the recognized paper URI restricts the semantic search to `kind = paper_chunk AND paperUri = <ASTRA URI>`. Qdrant returns up to 10 candidates; exact duplicate excerpts are removed, and the best 5 go to the LLM in semantic-score order. There is no global lexical expansion for this path. If the paper has no indexed chunks, retrieval falls back to that paper’s metadata. Authorship/publication metadata questions search its `kind = paper` record directly.
+For “What datasets were used in ASTRA?”, the recognized paper URI restricts the semantic search to `kind = paper_chunk AND paperUri = <ASTRA URI>`. Qdrant returns up to 10 candidates; exact duplicate excerpts are removed, and the best 5 go to the LLM in semantic-score order. There is no global lexical expansion for this path. If the paper has no indexed chunks, retrieval falls back to that paper’s metadata. The metadata-only shortcut applies only when metadata intent is present and no content signal is detected. “Who authored ASTRA?” and “When/where was ASTRA published?” search its `kind = paper` record directly. Content signals include datasets, methods, experiments, results, evaluation, baselines, limitations, performance, how, and why. “Who authored ASTRA and what datasets were used?” searches the paper’s PDF chunks and adds a separate metadata source from the recognized paper in the local entity store. The metadata source is reserved independently of semantic ranking, so it cannot displace the best 5 chunks. Mixed scoped questions therefore supply up to 6 sources: one metadata record plus up to 5 chunks. If PDF retrieval falls back to metadata because no chunks exist, that metadata source is not added twice. This routing uses explicit keyword signals and is heuristic.
 
-Global questions such as “Which DICE papers use DBpedia-Wikidata?” retain the existing kind-aware semantic and metadata-name retrieval. After reranking, duplicate excerpts are removed, at most 3 chunks per paper are kept, and up to 6 sources are passed to the LLM. Recognized single-paper queries intentionally allow up to 5 chunks from that paper. These limits are defined in `scripts/rag/run-rag.mjs`; no re-ingestion is required for retrieval changes.
+Global questions such as “Which DICE papers use DBpedia-Wikidata?” retrieve the semantic top 20 using the existing kind filter. Only these candidates receive a lexical bonus over their title, section, subsection, and text: `hybridScore = vectorScore + 0.20 * lexicalScore`. Normalization folds case and punctuation/dashes, and stopwords remove generic query words; the example leaves `dbpedia` and `wikidata`. Lexical score is query-term coverage plus 0.5 when the significant terms form a matching phrase, capped at 1.5. Thus the maximum bonus is 0.30.
+
+Candidates are sorted by hybrid score, stale parent references are excluded, exact duplicate excerpts are removed, and the best 6 are sent to the LLM. There is no extra metadata-name scan and no per-paper cap on the global path, so the effect of lexical reranking can be measured separately. A temporary `console.table` logs vector, lexical, and hybrid scores plus kind/title/section/chunk for all global candidates before selection. Paper-scoped retrieval retains semantic top 10 → dedupe → best 5. No new Qdrant index, full-text search, or re-ingestion is required. Constants and scoring live in `scripts/rag/run-rag.mjs`.
+
+Source grouping happens **after** the LLM returns its used source numbers. The LLM still receives up to 6 separate global sources, or 5 scoped chunks plus a metadata source for mixed scoped questions, with independent `SOURCE N` labels. Only the selected citations are grouped by `paperUri` for presentation. A paper metadata citation and PDF citations for the same URI share a single paper card; other entity cards retain their existing presentation. Grouped responses preserve the cited chunk objects in `chunks` and the original citation numbers in `sourceNumbers`.
+
+Overlapping and adjacent page intervals are merged without filling gaps: pages 10, 12, and 13 display as `PDF pages 10, 12–13`. Invalid or reversed page intervals are ignored. The UI links each interval to its starting PDF page and lists unique sections/subsections in citation order. Uncited chunks never contribute pages or section labels. This grouping does not affect retrieval, ranking, or the LLM context.
 
 ```text
 TTL paper
@@ -254,10 +263,12 @@ Qdrant
                            ↓
                        MiniLM
                            ↓
-          Qdrant top 10 (scoped or global)
+       Qdrant top 10 scoped / top 20 global
+                           ↓
+          global: vector + 0.20 × lexical
                            ↓
          dedupe: 5 scoped / 6 global sources
-         global: at most 3 chunks per paper
+         mixed scoped: add paper metadata
                      ↙          ↘
              normal entity    paper_chunk
                   ↓                ↓
@@ -265,5 +276,9 @@ Qdrant
                      ↘          ↙
                      LLM context
                            ↓
-                         answer
+                    answer + citations
+                           ↓
+              group cited chunks by paperUri
+                           ↓
+              one card per paper, merged pages
 ```

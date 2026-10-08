@@ -118,39 +118,116 @@ const ENTITY_KIND_WORDS = new Set([
   'awards',
 ]);
 
-function nameMatchScore(question, name) {
-  const q = normalize(question);
-  const n = normalize(name);
+const GLOBAL_SEMANTIC_LIMIT = 20;
+const GLOBAL_FINAL_LIMIT = 6;
+const PAPER_SEMANTIC_LIMIT = 10;
+const PAPER_CONTEXT_LIMIT = 5;
+const LEXICAL_WEIGHT = 0.2;
+const PAPER_CONTENT_TERMS = new Set([
+  'dataset',
+  'datasets',
+  'method',
+  'methods',
+  'approach',
+  'approaches',
+  'experiment',
+  'experiments',
+  'result',
+  'results',
+  'evaluation',
+  'baseline',
+  'baselines',
+  'limitation',
+  'limitations',
+  'conclusion',
+  'conclusions',
+  'how',
+  'why',
+  'performance',
+  'benchmark',
+  'benchmarks',
+  'algorithm',
+  'algorithms',
+  'architecture',
+  'training',
+  'accuracy',
+  'mrr',
+]);
 
-  if (!q || !n) return 0;
-  if (q === n) return 3;
-  if (q.includes(n)) return 2.5;
+const QUERY_STOPWORDS = new Set([
+  'a',
+  'an',
+  'and',
+  'are',
+  'about',
+  'does',
+  'do',
+  'for',
+  'from',
+  'how',
+  'in',
+  'is',
+  'of',
+  'on',
+  'the',
+  'to',
+  'used',
+  'use',
+  'uses',
+  'what',
+  'which',
+  'who',
+  'with',
+  'dice',
+  'paper',
+  'papers',
+]);
 
-  const queryTokens = q
-    .split(' ')
-    .filter(
-      token =>
-        token.length >= 3 &&
-        !QUERY_STOP_WORDS.has(token) &&
-        !ENTITY_KIND_WORDS.has(token)
-    );
-  const nameTokens = n.split(' ');
-  const matchingTokens = queryTokens.filter(
-    token =>
-      nameTokens.includes(token) ||
-      nameTokens.some(nameToken => nameToken.startsWith(token))
-  );
-
-  if (!matchingTokens.length) return 0;
-  if (matchingTokens.length >= 2) return 2;
-  if (matchingTokens[0].length >= 4) return 1.5;
-  return 0;
+function normalizeLexical(value = '') {
+  return value
+    .normalize('NFKD')
+    .toLowerCase()
+    .replace(/[‐‑‒–—−]/g, '-')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-const SEMANTIC_CANDIDATES = 10;
-const GLOBAL_CONTEXT_LIMIT = 6;
-const PAPER_CONTEXT_LIMIT = 5;
-const GLOBAL_CHUNKS_PER_PAPER = 3;
+function lexicalTerms(query) {
+  return normalizeLexical(query)
+    .split(' ')
+    .filter(token => token.length >= 3 && !QUERY_STOPWORDS.has(token));
+}
+
+function lexicalScore(query, payload = {}) {
+  const terms = lexicalTerms(query);
+  if (!terms.length) return 0;
+  const haystack = normalizeLexical(
+    [payload.title, payload.section, payload.subsection, payload.text]
+      .filter(Boolean)
+      .join(' ')
+  );
+  const hits = terms.filter(term => haystack.includes(term)).length;
+  const coverage = hits / terms.length;
+  const phraseBonus =
+    terms.length > 1 && haystack.includes(terms.join(' ')) ? 0.5 : 0;
+  return Math.min(coverage + phraseBonus, 1.5);
+}
+
+function rerankGlobalHits(hits, query) {
+  return hits
+    .map(hit => {
+      const vectorScore = hit.score ?? 0;
+      const lexScore = lexicalScore(query, hit.payload ?? {});
+      return {
+        ...hit,
+        vectorScore,
+        lexicalScore: lexScore,
+        hybridScore: vectorScore + LEXICAL_WEIGHT * lexScore,
+      };
+    })
+    .sort((a, b) => b.hybridScore - a.hybridScore);
+}
 
 function recognizePaper(question) {
   // Comparisons and discovery across publications must retain global scope.
@@ -184,8 +261,7 @@ function recognizePaper(question) {
 function selectContext(candidates, scoped) {
   const selected = [];
   const seen = new Set();
-  const chunksPerPaper = new Map();
-  const limit = scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_CONTEXT_LIMIT;
+  const limit = scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_FINAL_LIMIT;
   for (const hit of candidates) {
     const p = hit.payload;
     const parent = p.paperUri || p.uri;
@@ -195,12 +271,6 @@ function selectContext(candidates, scoped) {
       ? JSON.stringify([parent, normalize(p.text)])
       : JSON.stringify([p.kind, parent]);
     if (seen.has(key)) continue;
-    if (isChunk) {
-      const count = chunksPerPaper.get(parent) || 0;
-      if (count >= (scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_CHUNKS_PER_PAPER))
-        continue;
-      chunksPerPaper.set(parent, count + 1);
-    }
     seen.add(key);
     selected.push(hit);
     if (selected.length === limit) break;
@@ -565,12 +635,96 @@ async function runBroadCategoryQuery(question, kind) {
   };
 }
 
+function mergePageRanges(chunks) {
+  const intervals = chunks
+    .map(chunk => ({
+      start: Number(chunk.pageStart),
+      end: Number(chunk.pageEnd),
+    }))
+    .filter(
+      ({ start, end }) =>
+        Number.isSafeInteger(start) &&
+        Number.isSafeInteger(end) &&
+        start > 0 &&
+        end >= start
+    )
+    .sort((a, b) => a.start - b.start || a.end - b.end);
+  const merged = [];
+  for (const interval of intervals) {
+    const last = merged[merged.length - 1];
+    if (last && interval.start <= last.end + 1) {
+      last.end = Math.max(last.end, interval.end);
+    } else merged.push({ ...interval });
+  }
+  return merged;
+}
+
+function groupSourcesByPaper(sources) {
+  const groups = new Map();
+  for (const source of sources) {
+    const isPaper = ['paper', 'paper_chunk'].includes(source.kind);
+    const paperUri =
+      source.paperUri || (source.kind === 'paper' ? source.uri : null);
+    if (!isPaper || !paperUri) {
+      groups.set(`entity:${source.kind}:${source.uri}`, source);
+      continue;
+    }
+    const key = `paper:${paperUri}`;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        kind: 'paper',
+        uri: paperUri,
+        paperUri,
+        title: source.paper?.title || source.name,
+        name: source.name,
+        path: source.path,
+        paper: source.paper,
+        pdfUrl: source.pdfUrl || source.paper?.pdfUrl,
+        score: source.score,
+        chunks: [],
+        sourceNumbers: [],
+      });
+    }
+    const group = groups.get(key);
+    group.sourceNumbers.push(source.sourceNumber);
+    if (source.kind === 'paper_chunk') {
+      group.chunks.push(source);
+      // Use the URL attached to the cited PDF evidence, including url fallback.
+      group.pdfUrl = source.pdfUrl || group.pdfUrl;
+    }
+  }
+  return [...groups.values()].map(source => {
+    if (source.kind !== 'paper' || !source.chunks) return source;
+    const pageRanges = mergePageRanges(source.chunks);
+    return {
+      ...source,
+      pageRanges,
+      pages: pageRanges
+        .map(({ start, end }) =>
+          start === end ? `${start}` : `${start}–${end}`
+        )
+        .join(', '),
+      sections: [
+        ...new Set(
+          source.chunks
+            .flatMap(chunk => [chunk.section, chunk.subsection])
+            .filter(Boolean)
+        ),
+      ],
+    };
+  });
+}
+
 export async function runRag(question) {
   const paper = recognizePaper(question);
   const kind = paper ? 'paper' : detectRequestedKind(question);
   const asksForPaperMetadata = /\b(authored|authors?|wrote|written by|published|publication year)\b/i.test(
     question
   );
+  const hasContentQuestion = normalizeLexical(question)
+    .split(' ')
+    .some(term => PAPER_CONTENT_TERMS.has(term));
+  const metadataOnly = asksForPaperMetadata && !hasContentQuestion;
 
   if (kind && isBroadCategoryQuery(question, kind)) {
     return runBroadCategoryQuery(question, kind);
@@ -588,10 +742,10 @@ export async function runRag(question) {
         must: [
           {
             key: 'kind',
-            match: { value: asksForPaperMetadata ? 'paper' : 'paper_chunk' },
+            match: { value: metadataOnly ? 'paper' : 'paper_chunk' },
           },
           {
-            key: asksForPaperMetadata ? 'uri' : 'paperUri',
+            key: metadataOnly ? 'uri' : 'paperUri',
             match: { value: paper.id },
           },
         ],
@@ -602,7 +756,7 @@ export async function runRag(question) {
           {
             key: 'kind',
             match:
-              kind === 'paper' && !asksForPaperMetadata
+              kind === 'paper' && !metadataOnly
                 ? { any: ['paper', 'paper_chunk'] }
                 : { value: kind },
           },
@@ -613,14 +767,14 @@ export async function runRag(question) {
   // Semantic candidates.
   let semanticResponse = await qdrant.query(COLLECTION, {
     query: queryVector,
-    limit: SEMANTIC_CANDIDATES,
+    limit: paper ? PAPER_SEMANTIC_LIMIT : GLOBAL_SEMANTIC_LIMIT,
     with_payload: true,
     filter,
   });
 
   // No indexed PDF: retain the recognized paper's metadata instead of filling
   // the answer with unrelated global hits. The LLM can report missing detail.
-  if (paper && !asksForPaperMetadata && !semanticResponse.points.length) {
+  if (paper && !metadataOnly && !semanticResponse.points.length) {
     semanticResponse = await qdrant.query(COLLECTION, {
       query: queryVector,
       limit: 1,
@@ -634,64 +788,55 @@ export async function runRag(question) {
     });
   }
 
-  // Lexical/name candidates.
-  // The collection is small enough to scan
-  // payload names directly.
-  const lexicalResponse = paper
-    ? { points: [] }
-    : await qdrant.scroll(COLLECTION, {
-        limit: 1000,
-        with_payload: true,
-        with_vector: false,
-        filter: {
-          must: kind ? [{ key: 'kind', match: { value: kind } }] : [],
-          must_not: [{ key: 'kind', match: { value: 'paper_chunk' } }],
-        },
-      });
+  // Global lexical scoring reranks only the semantic candidates. No scroll,
+  // additional lexical candidates, name bonus, or per-paper grouping.
+  const reranked = paper
+    ? [...semanticResponse.points].sort(
+        (a, b) => (b.score ?? 0) - (a.score ?? 0)
+      )
+    : rerankGlobalHits(semanticResponse.points, question);
 
-  const lexicalMatches = lexicalResponse.points.filter(
-    point => nameMatchScore(question, point.payload?.name) > 0
-  );
-
-  // Merge semantic and lexical candidates.
-  const merged = new Map();
-
-  for (const hit of semanticResponse.points) {
-    merged.set(String(hit.id), {
-      ...hit,
-      semanticScore: hit.score,
-    });
+  if (!paper) {
+    // Temporary diagnostic: show every semantic candidate before deduplication.
+    console.table(
+      reranked.map(hit => ({
+        vector: hit.vectorScore?.toFixed(4),
+        lexical: hit.lexicalScore?.toFixed(2),
+        hybrid: hit.hybridScore?.toFixed(4),
+        kind: hit.payload?.kind,
+        title: hit.payload?.title,
+        section: hit.payload?.section,
+        chunk: hit.payload?.chunkIndex,
+      }))
+    );
   }
 
-  for (const hit of lexicalMatches) {
-    const key = String(hit.id);
-
-    if (!merged.has(key)) {
-      merged.set(key, {
-        ...hit,
-        score: 0,
-        semanticScore: 0,
-      });
-    }
-  }
-
-  // Hybrid reranking.
   const ranked = selectContext(
-    [...merged.values()]
-      .filter(hit => entityStore[hit.payload.paperUri || hit.payload.uri])
-      .map(hit => {
-        const nameBonus = paper
-          ? 0
-          : nameMatchScore(question, hit.payload?.name);
-
-        return {
-          ...hit,
-          rerankScore: (hit.semanticScore || 0) + nameBonus,
-        };
-      })
-      .sort((a, b) => b.rerankScore - a.rerankScore),
+    reranked.filter(
+      hit => entityStore[hit.payload?.paperUri || hit.payload?.uri]
+    ),
     Boolean(paper)
   );
+
+  if (
+    paper &&
+    asksForPaperMetadata &&
+    hasContentQuestion &&
+    !ranked.some(hit => hit.payload.kind === 'paper')
+  ) {
+    // Reserve metadata independently of semantic ranking: PDF chunks must not
+    // displace the authors/venue source, nor should metadata displace content.
+    // The recognized entity is already available from the authoritative store.
+    ranked.unshift({
+      id: paper.id,
+      score: null,
+      payload: {
+        kind: 'paper',
+        uri: paper.id,
+        name: paper.data.title || paper.data.name || paper.id,
+      },
+    });
+  }
 
   const enriched = [];
 
@@ -737,7 +882,7 @@ export async function runRag(question) {
       .filter(index => index >= 0 && index < enriched.length)
   );
 
-  const sources = enriched
+  const usedSources = enriched
     .map(({ hit, entity }, index) => {
       let path = entity?.path || null;
 
@@ -760,6 +905,7 @@ export async function runRag(question) {
 
       return {
         index,
+        sourceNumber: index + 1,
         uri: hit.payload.uri,
         kind: hit.payload.kind,
         name:
@@ -822,6 +968,10 @@ export async function runRag(question) {
     })
     .filter(source => usedIndexes.has(source.index))
     .map(({ index, ...source }) => source);
+
+  // Presentation-only grouping: the LLM still receives independently numbered
+  // chunk evidence, and only the sources it actually cited contribute pages.
+  const sources = groupSourcesByPaper(usedSources);
 
   return {
     question,

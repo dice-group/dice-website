@@ -129,6 +129,30 @@ export default function RagSearch() {
                       source.paper ? (
                         <>
                           <Paper data={source.paper} />
+                          {source.pages && source.pdfUrl && (
+                            <div>
+                              PDF pages{' '}
+                              {source.pageRanges.map((range, index) => (
+                                <React.Fragment
+                                  key={`${range.start}-${range.end}`}
+                                >
+                                  {index > 0 && ', '}
+                                  <a
+                                    href={`${
+                                      source.pdfUrl.split('#')[0]
+                                    }#page=${range.start}`}
+                                  >
+                                    {range.start === range.end
+                                      ? range.start
+                                      : `${range.start}–${range.end}`}
+                                  </a>
+                                </React.Fragment>
+                              ))}
+                            </div>
+                          )}
+                          {source.sections?.length > 0 && (
+                            <div>Sections: {source.sections.join('; ')}</div>
+                          )}
                           {source.kind === 'paper_chunk' && source.pdfUrl && (
                             <a
                               href={`${source.pdfUrl.split('#')[0]}#page=${
