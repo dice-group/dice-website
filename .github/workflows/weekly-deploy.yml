@@ -68,6 +68,11 @@ jobs:
           node-version: '22'
       - name: Prepare RAG deployment
         env:
+          RAG_DEPLOYMENT_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+          QDRANT_API_KEY: ${{ secrets.QDRANT_API_KEY }}
+          RAG_PDF_STRICT: ${{ vars.RAG_PDF_STRICT }}
+          RAG_EMBEDDING_MODEL: ${{ vars.RAG_EMBEDDING_MODEL }}
+          RAG_EMBEDDING_REVISION: ${{ vars.RAG_EMBEDDING_REVISION }}
           RAG_QDRANT_URL: ${{ vars.RAG_QDRANT_URL }}
           RAG_QDRANT_COLLECTION: ${{ vars.RAG_QDRANT_COLLECTION }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
@@ -98,6 +103,10 @@ jobs:
         run: npx -y exoframe@6.2.0 -u -vvv -e https://dice-website.cs.upb.de -t "$EXO_TOKEN_DICE"
         env:
           EXO_TOKEN_DICE: ${{ secrets.EXO_TOKEN_DICE }}
+      - name: Report paper PDF ingestion
+        env:
+          RAG_DEPLOYMENT_ID: ${{ github.run_id }}-${{ github.run_attempt }}
+        run: node scripts/rag/wait-ingestion.mjs
   uploadData:
     needs: deploy
     runs-on: ubuntu-latest

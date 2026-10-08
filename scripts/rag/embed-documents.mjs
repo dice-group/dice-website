@@ -1,6 +1,11 @@
 import fs from 'fs';
 import readline from 'readline';
 import { pipeline, env } from '@huggingface/transformers';
+import {
+  EMBEDDING_MODEL,
+  EMBEDDING_OPTIONS,
+  EMBEDDING_VERSION,
+} from './embedding-config.mjs';
 
 env.backends.onnx.wasm.numThreads = 1;
 
@@ -8,13 +13,15 @@ const INPUT = process.argv[2] || '../data/rag/rag_documents.jsonl';
 
 const OUTPUT = process.argv[3] || '../data/rag/rag_embeddings.jsonl';
 
-const MODEL = 'Xenova/all-MiniLM-L6-v2';
+const MODEL = EMBEDDING_MODEL;
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline('feature-extraction', MODEL, {
-  device: 'cpu',
-});
+const extractor = await pipeline(
+  'feature-extraction',
+  MODEL,
+  EMBEDDING_OPTIONS
+);
 
 const input = fs.createReadStream(INPUT);
 
@@ -42,6 +49,7 @@ for await (const line of rl) {
   output.write(
     JSON.stringify({
       ...doc,
+      metadata: { ...doc.metadata, embeddingModel: EMBEDDING_VERSION },
       embedding,
     }) + '\n'
   );

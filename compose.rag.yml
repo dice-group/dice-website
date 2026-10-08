@@ -13,6 +13,11 @@ services:
       LLM_BASE_URL: ${DICE_LLM_BASE_URL:-${LLM_BASE_URL:-https://dice-llm-api.cs.uni-paderborn.de/v1}}
       QDRANT_URL: ${QDRANT_URL:-http://host.docker.internal:6333}
       QDRANT_COLLECTION: ${QDRANT_COLLECTION:-dice_rag}
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-}
+      RAG_INGEST_PAPERS: ${RAG_INGEST_PAPERS:-1}
+      RAG_PDF_STRICT: ${RAG_PDF_STRICT:-0}
+      RAG_EMBEDDING_MODEL: ${RAG_EMBEDDING_MODEL:-Xenova/all-MiniLM-L6-v2}
+      RAG_EMBEDDING_REVISION: ${RAG_EMBEDDING_REVISION:-main}
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     volumes:

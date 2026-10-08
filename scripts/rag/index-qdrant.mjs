@@ -14,6 +14,7 @@ const BATCH_SIZE = 100;
 
 const client = new QdrantClient({
   url: QDRANT_URL,
+  apiKey: process.env.QDRANT_API_KEY,
 });
 
 function uriToUuid(uri) {
@@ -94,11 +95,14 @@ async function main() {
     }
 
     batch.push({
-      id: uriToUuid(doc.metadata.uri),
+      id: uriToUuid(
+        doc.metadata.kind === 'paper_chunk' ? doc.id : doc.metadata.uri
+      ),
 
       vector: doc.embedding,
 
       payload: {
+        ...doc.metadata,
         uri: doc.metadata.uri,
         kind: doc.metadata.kind,
         name: doc.metadata.name,

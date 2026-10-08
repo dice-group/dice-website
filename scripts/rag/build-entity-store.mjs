@@ -155,6 +155,8 @@ for (const id of Object.keys(raw).sort()) {
       : reference(data[field]);
   }
   entities[id] = { id, path: entity.path, data };
+  if (entity.types.includes(`${schema}Publication`))
+    entities[id].kind = 'paper';
   if (
     entity.types.some(
       type =>

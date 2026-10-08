@@ -380,6 +380,15 @@ function buildDocument(filePath, labelIndex) {
       name,
       source: path.relative(INPUT_DIR, filePath),
       contentHash: contentHash(text),
+      ...(kind === 'paper'
+        ? {
+            paperUri: mainSubject,
+            title: name,
+            pdfUrl:
+              valuesForPredicates(subjectQuads, ['pdfUrl'])[0]?.value || null,
+            url: valuesForPredicates(subjectQuads, ['url'])[0]?.value || null,
+          }
+        : {}),
     },
   };
 }

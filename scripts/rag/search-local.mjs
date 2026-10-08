@@ -1,3 +1,4 @@
+import { EMBEDDING_MODEL, EMBEDDING_OPTIONS } from './embedding-config.mjs';
 import fs from 'fs';
 import readline from 'readline';
 import { pipeline } from '@huggingface/transformers';
@@ -13,13 +14,15 @@ if (!QUERY) {
   process.exit(1);
 }
 
-const MODEL = 'Xenova/all-MiniLM-L6-v2';
+const MODEL = EMBEDDING_MODEL;
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline('feature-extraction', MODEL, {
-  device: 'cpu',
-});
+const extractor = await pipeline(
+  'feature-extraction',
+  MODEL,
+  EMBEDDING_OPTIONS
+);
 
 console.log(`Query: ${QUERY}`);
 

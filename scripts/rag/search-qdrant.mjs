@@ -1,3 +1,4 @@
+import { EMBEDDING_MODEL, EMBEDDING_OPTIONS } from './embedding-config.mjs';
 import { pipeline } from '@huggingface/transformers';
 import { QdrantClient } from '@qdrant/js-client-rest';
 
@@ -8,7 +9,7 @@ if (!QUERY) {
   process.exit(1);
 }
 
-const MODEL = 'Xenova/all-MiniLM-L6-v2';
+const MODEL = EMBEDDING_MODEL;
 
 const QDRANT_URL = process.env.QDRANT_URL || 'http://127.0.0.1:6333';
 
@@ -57,9 +58,11 @@ function detectRequestedKind(query) {
 
 console.log(`Loading model: ${MODEL}`);
 
-const extractor = await pipeline('feature-extraction', MODEL, {
-  device: 'cpu',
-});
+const extractor = await pipeline(
+  'feature-extraction',
+  MODEL,
+  EMBEDDING_OPTIONS
+);
 
 console.log(`Query: ${QUERY}`);
 
@@ -72,6 +75,7 @@ const queryVector = tensor.tolist()[0];
 
 const client = new QdrantClient({
   url: QDRANT_URL,
+  apiKey: process.env.QDRANT_API_KEY,
 });
 
 const kind = detectRequestedKind(QUERY);
@@ -85,9 +89,10 @@ const filter = kind
       must: [
         {
           key: 'kind',
-          match: {
-            value: kind,
-          },
+          match:
+            kind === 'paper'
+              ? { any: ['paper', 'paper_chunk'] }
+              : { value: kind },
         },
       ],
     }

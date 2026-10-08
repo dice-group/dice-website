@@ -2,8 +2,9 @@ import { readFileSync } from 'node:fs';
 import { env, pipeline } from '@huggingface/transformers';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { askLlm } from './ask-rag.mjs';
+import { EMBEDDING_MODEL, EMBEDDING_OPTIONS } from './embedding-config.mjs';
 
-const MODEL = 'Xenova/all-MiniLM-L6-v2';
+const MODEL = EMBEDDING_MODEL;
 
 if (process.env.RAG_MODEL_CACHE) {
   env.cacheDir = process.env.RAG_MODEL_CACHE;
@@ -146,6 +147,67 @@ function nameMatchScore(question, name) {
   return 0;
 }
 
+const SEMANTIC_CANDIDATES = 10;
+const GLOBAL_CONTEXT_LIMIT = 6;
+const PAPER_CONTEXT_LIMIT = 5;
+const GLOBAL_CHUNKS_PER_PAPER = 3;
+
+function recognizePaper(question) {
+  // Comparisons and discovery across publications must retain global scope.
+  if (/\b(papers|publications|compare|comparison|versus|vs)\b/i.test(question))
+    return null;
+  const query = ` ${normalize(question)} `;
+  const matches = Object.values(entityStore).filter(entity => {
+    if (entity.kind !== 'paper') return false;
+    const title = String(entity.data.title || entity.data.name || '');
+    const normalized = normalize(title);
+    if (normalized.split(' ').length >= 3 && query.includes(` ${normalized} `))
+      return true;
+    // Recognize a distinctive named title prefix, e.g. "ASTRA: Adaptive ...".
+    // Do not infer identity from generic words anywhere in a title.
+    const prefix = title.match(
+      /^\s*([\p{L}\p{N}][\p{L}\p{N}-]{2,29})\s*:/u
+    )?.[1];
+    if (
+      !prefix ||
+      QUERY_STOP_WORDS.has(normalize(prefix)) ||
+      ENTITY_KIND_WORDS.has(normalize(prefix))
+    )
+      return false;
+    if ((prefix.match(/[A-Z]/g) || []).length < 2) return false;
+    return query.includes(` ${normalize(prefix)} `);
+  });
+  // Ambiguous acronyms and questions naming multiple papers stay global.
+  return matches.length === 1 ? matches[0] : null;
+}
+
+function selectContext(candidates, scoped) {
+  const selected = [];
+  const seen = new Set();
+  const chunksPerPaper = new Map();
+  const limit = scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_CONTEXT_LIMIT;
+  for (const hit of candidates) {
+    const p = hit.payload;
+    const parent = p.paperUri || p.uri;
+    const isChunk = p.kind === 'paper_chunk';
+    // Deduplicate identical excerpts across generations as well as point IDs.
+    const key = isChunk
+      ? JSON.stringify([parent, normalize(p.text)])
+      : JSON.stringify([p.kind, parent]);
+    if (seen.has(key)) continue;
+    if (isChunk) {
+      const count = chunksPerPaper.get(parent) || 0;
+      if (count >= (scoped ? PAPER_CONTEXT_LIMIT : GLOBAL_CHUNKS_PER_PAPER))
+        continue;
+      chunksPerPaper.set(parent, count + 1);
+    }
+    seen.add(key);
+    selected.push(hit);
+    if (selected.length === limit) break;
+  }
+  return selected;
+}
+
 function compact(values) {
   return Array.isArray(values)
     ? values.filter(Boolean)
@@ -162,6 +224,7 @@ function names(items) {
 
 function detectRequestedKind(query) {
   const q = query.toLowerCase();
+  if (/\b(authored|authors?|wrote|written by)\b/.test(q)) return 'paper';
 
   // If a group is explicitly mentioned, retrieve the group,
   // even for questions such as "who leads...".
@@ -268,6 +331,21 @@ function truncate(value, max = 2000) {
 }
 
 function buildContext(hit, entity, staff = [], headProjects = []) {
+  if (hit.payload.kind === 'paper_chunk') {
+    const p = hit.payload;
+    return [
+      `URI: ${p.paperUri}`,
+      'Type: Paper content excerpt',
+      `Title: ${p.title}`,
+      `PDF: ${p.pdfUrl}`,
+      `Pages: ${p.pageStart}-${p.pageEnd}`,
+      p.section && `Section: ${p.section}`,
+      p.subsection && `Subsection: ${p.subsection}`,
+      `Excerpt: ${p.text}`,
+    ]
+      .filter(Boolean)
+      .join('\n');
+  }
   if (!entity) {
     return [
       `URI: ${hit.payload.uri}`,
@@ -419,12 +497,15 @@ function buildContext(hit, entity, staff = [], headProjects = []) {
   return lines.join('\n');
 }
 
-const extractor = await pipeline('feature-extraction', MODEL, {
-  device: 'cpu',
-});
+const extractor = await pipeline(
+  'feature-extraction',
+  MODEL,
+  EMBEDDING_OPTIONS
+);
 
 const qdrant = new QdrantClient({
   url: QDRANT_URL,
+  apiKey: process.env.QDRANT_API_KEY,
 });
 
 async function runBroadCategoryQuery(question, kind) {
@@ -481,7 +562,11 @@ async function runBroadCategoryQuery(question, kind) {
 }
 
 export async function runRag(question) {
-  const kind = detectRequestedKind(question);
+  const paper = recognizePaper(question);
+  const kind = paper ? 'paper' : detectRequestedKind(question);
+  const asksForPaperMetadata = /\b(authored|authors?|wrote|written by|published|publication year)\b/i.test(
+    question
+  );
 
   if (kind && isBroadCategoryQuery(question, kind)) {
     return runBroadCategoryQuery(question, kind);
@@ -494,36 +579,71 @@ export async function runRag(question) {
 
   const queryVector = tensor.tolist()[0];
 
-  const filter = kind
+  const filter = paper
     ? {
         must: [
           {
             key: 'kind',
-            match: {
-              value: kind,
-            },
+            match: { value: asksForPaperMetadata ? 'paper' : 'paper_chunk' },
+          },
+          {
+            key: asksForPaperMetadata ? 'uri' : 'paperUri',
+            match: { value: paper.id },
+          },
+        ],
+      }
+    : kind
+    ? {
+        must: [
+          {
+            key: 'kind',
+            match:
+              kind === 'paper' && !asksForPaperMetadata
+                ? { any: ['paper', 'paper_chunk'] }
+                : { value: kind },
           },
         ],
       }
     : undefined;
 
   // Semantic candidates.
-  const semanticResponse = await qdrant.query(COLLECTION, {
+  let semanticResponse = await qdrant.query(COLLECTION, {
     query: queryVector,
-    limit: 10,
+    limit: SEMANTIC_CANDIDATES,
     with_payload: true,
     filter,
   });
 
+  // No indexed PDF: retain the recognized paper's metadata instead of filling
+  // the answer with unrelated global hits. The LLM can report missing detail.
+  if (paper && !asksForPaperMetadata && !semanticResponse.points.length) {
+    semanticResponse = await qdrant.query(COLLECTION, {
+      query: queryVector,
+      limit: 1,
+      with_payload: true,
+      filter: {
+        must: [
+          { key: 'kind', match: { value: 'paper' } },
+          { key: 'uri', match: { value: paper.id } },
+        ],
+      },
+    });
+  }
+
   // Lexical/name candidates.
   // The collection is small enough to scan
   // payload names directly.
-  const lexicalResponse = await qdrant.scroll(COLLECTION, {
-    limit: 1000,
-    with_payload: true,
-    with_vector: false,
-    filter,
-  });
+  const lexicalResponse = paper
+    ? { points: [] }
+    : await qdrant.scroll(COLLECTION, {
+        limit: 1000,
+        with_payload: true,
+        with_vector: false,
+        filter: {
+          must: kind ? [{ key: 'kind', match: { value: kind } }] : [],
+          must_not: [{ key: 'kind', match: { value: 'paper_chunk' } }],
+        },
+      });
 
   const lexicalMatches = lexicalResponse.points.filter(
     point => nameMatchScore(question, point.payload?.name) > 0
@@ -552,22 +672,27 @@ export async function runRag(question) {
   }
 
   // Hybrid reranking.
-  const ranked = [...merged.values()]
-    .map(hit => {
-      const nameBonus = nameMatchScore(question, hit.payload?.name);
+  const ranked = selectContext(
+    [...merged.values()]
+      .filter(hit => entityStore[hit.payload.paperUri || hit.payload.uri])
+      .map(hit => {
+        const nameBonus = paper
+          ? 0
+          : nameMatchScore(question, hit.payload?.name);
 
-      return {
-        ...hit,
-        rerankScore: (hit.semanticScore || 0) + nameBonus,
-      };
-    })
-    .sort((a, b) => b.rerankScore - a.rerankScore)
-    .slice(0, 3);
+        return {
+          ...hit,
+          rerankScore: (hit.semanticScore || 0) + nameBonus,
+        };
+      })
+      .sort((a, b) => b.rerankScore - a.rerankScore),
+    Boolean(paper)
+  );
 
   const enriched = [];
 
   for (const hit of ranked) {
-    const entity = getRdfEntity(hit.payload.uri);
+    const entity = getRdfEntity(hit.payload.paperUri || hit.payload.uri);
 
     let staff = [];
     let headProjects = [];
@@ -613,7 +738,7 @@ export async function runRag(question) {
       let path = entity?.path || null;
 
       // RDF paper paths are identifiers, not generated Gatsby pages.
-      if (hit.payload.kind === 'paper') {
+      if (['paper', 'paper_chunk'].includes(hit.payload.kind)) {
         path = '/publications/';
       }
 
@@ -640,6 +765,17 @@ export async function runRag(question) {
           hit.payload.uri,
         path,
         score: hit.score,
+        ...(hit.payload.kind === 'paper_chunk'
+          ? {
+              paperUri: hit.payload.paperUri,
+              chunkId: hit.payload.chunkId,
+              pdfUrl: hit.payload.pdfUrl,
+              pageStart: hit.payload.pageStart,
+              pageEnd: hit.payload.pageEnd,
+              section: hit.payload.section,
+              subsection: hit.payload.subsection,
+            }
+          : {}),
         ...(hit.payload.kind === 'person' && entity?.data?.name
           ? {
               person: Object.fromEntries(
@@ -658,7 +794,7 @@ export async function runRag(question) {
               ),
             }
           : {}),
-        ...(hit.payload.kind === 'paper'
+        ...(['paper', 'paper_chunk'].includes(hit.payload.kind)
           ? {
               paper: {
                 title:

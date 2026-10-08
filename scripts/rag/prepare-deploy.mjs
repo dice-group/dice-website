@@ -28,6 +28,9 @@ for (const filename of [
   'scripts/rag/server.mjs',
   'scripts/rag/run-rag.mjs',
   'scripts/rag/ask-rag.mjs',
+  'scripts/rag/embedding-config.mjs',
+  'scripts/rag/ingest-papers.mjs',
+  'scripts/rag/pdf-chunks.mjs',
   'scripts/rag/docker/package.json',
   'scripts/rag/docker/package-lock.json',
   'data/rag/entities.json',
@@ -55,6 +58,19 @@ const config = {
       process.env.LLM_BASE_URL || 'https://dice-llm-api.cs.uni-paderborn.de/v1',
     QDRANT_URL: process.env.RAG_QDRANT_URL,
     QDRANT_COLLECTION: process.env.RAG_QDRANT_COLLECTION || 'dice_rag',
+    RAG_DEPLOYMENT_ID: process.env.RAG_DEPLOYMENT_ID || 'local',
+    ...(process.env.QDRANT_API_KEY
+      ? { QDRANT_API_KEY: process.env.QDRANT_API_KEY }
+      : {}),
+    ...(process.env.RAG_PDF_STRICT
+      ? { RAG_PDF_STRICT: process.env.RAG_PDF_STRICT }
+      : {}),
+    ...(process.env.RAG_EMBEDDING_MODEL
+      ? { RAG_EMBEDDING_MODEL: process.env.RAG_EMBEDDING_MODEL }
+      : {}),
+    ...(process.env.RAG_EMBEDDING_REVISION
+      ? { RAG_EMBEDDING_REVISION: process.env.RAG_EMBEDDING_REVISION }
+      : {}),
   },
   volumes: ['dice-rag-model-cache:/app/model-cache'],
 };

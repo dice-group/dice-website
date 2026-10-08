@@ -4,6 +4,9 @@
 !scripts/rag/server.mjs
 !scripts/rag/run-rag.mjs
 !scripts/rag/ask-rag.mjs
+!scripts/rag/embedding-config.mjs
+!scripts/rag/ingest-papers.mjs
+!scripts/rag/pdf-chunks.mjs
 !scripts/rag/docker/
 !scripts/rag/docker/package.json
 !scripts/rag/docker/package-lock.json

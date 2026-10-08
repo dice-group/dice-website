@@ -115,17 +115,33 @@ export default function RagSearch() {
                 <ul>
                   {result.sources.map(source => (
                     <li
-                      key={source.uri}
+                      key={source.chunkId || source.uri}
                       className={
-                        source.kind === 'paper' && source.paper
+                        ['paper', 'paper_chunk'].includes(source.kind) &&
+                        source.paper
                           ? 'rag-search-paper'
                           : source.kind === 'person' && source.person
                           ? 'rag-search-person'
                           : undefined
                       }
                     >
-                      {source.kind === 'paper' && source.paper ? (
-                        <Paper data={source.paper} />
+                      {['paper', 'paper_chunk'].includes(source.kind) &&
+                      source.paper ? (
+                        <>
+                          <Paper data={source.paper} />
+                          {source.kind === 'paper_chunk' && source.pdfUrl && (
+                            <a
+                              href={`${source.pdfUrl.split('#')[0]}#page=${
+                                source.pageStart
+                              }`}
+                            >
+                              PDF pages {source.pageStart}–{source.pageEnd}
+                              {source.subsection || source.section
+                                ? ` · ${source.subsection || source.section}`
+                                : ''}
+                            </a>
+                          )}
+                        </>
                       ) : source.kind === 'person' && source.person ? (
                         <>
                           <PersonInfo data={source.person} />
