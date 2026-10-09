@@ -7,7 +7,7 @@ import Image from '../components/image';
 import Layout from '../components/layout';
 import ReactMarkdown from '../components/markdown';
 import PapersList from '../components/papers/list';
-import { rdfToPeopleArray } from '../components/person';
+import { rdfToPeopleArray, comparePersons } from '../components/person';
 import Project from '../components/project';
 import SEO from '../components/seo';
 import FundedBy from '../components/fundedby';
@@ -84,12 +84,20 @@ export default function ProjectTemplate({
           </div>
         )}
 
-        {data.fundingProgram && (
+        {(data.fundingProgram || (data.funder && data.funder.length)) && (
           <div>
-            <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
-              Funding program
-            </h6>
-            <FundedBy fundingProgram={data.fundingProgram} />
+            {data.fundingProgram && (
+              <>
+                <h6 style={{ fontWeight: '700', marginBottom: '0.25rem' }}>
+                  Funding program
+                </h6>
+                <p style={{ marginBottom: '0.5rem' }}>{data.fundingProgram}</p>
+              </>
+            )}
+            <FundedBy
+              fundingProgram={data.fundingProgram}
+              funders={data.funder}
+            />
           </div>
         )}
 
@@ -111,6 +119,7 @@ export default function ProjectTemplate({
                     !data.maintainer ||
                     (data.maintainer && data.maintainer.path !== p.path)
                 )
+                .sort(comparePersons)
                 .map(person => (
                   <Link key={person.path} to={person.path}>
                     {person.name}
@@ -186,6 +195,16 @@ export const pageQuery = graphql`
         sourceCode
         jsonld
         fundingProgram
+        funder {
+          path
+          data {
+            name
+            url
+            logo
+            image
+            text
+          }
+        }
         publicationTag
         relatedProject {
           id
@@ -238,6 +257,7 @@ export const pageQuery = graphql`
         node {
           data {
             name
+            familyName
             email
             project {
               path

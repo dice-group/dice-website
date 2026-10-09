@@ -4,7 +4,7 @@
 dice:AleksandrPerevalov a schema:Person ;
   schema:name "Aleksandr Perevalov" ;
   schema:namePrefix "" ;
-  schema:role dice:ExternalStudent ;
+  schema:role dice:Alumni ;
   # schema:phone <> ;
   schema:fax <tel:> ;
   schema:email <mailto:alpe@mail.uni-paderborn.de> ;

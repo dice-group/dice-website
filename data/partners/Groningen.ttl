@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Groningen a schema:Partner ;
+  schema:name "University of Groningen" ;
+  schema:country "NL" ;
+  schema:url <https://www.rug.nl/?lang=en> ;
+  schema:kind "Beneficiaries" ;
+  schema:logo "rugr_logoen_rood_rgb.jpeg" .

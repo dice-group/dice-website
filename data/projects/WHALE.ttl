@@ -15,6 +15,7 @@ dice:WHALE a dice:FundedProject ;
   Recognizing the challenges posed by the vast size and complexity of web data, WHALE employs hybrid machine learning approaches that integrate embeddings and tensor representations to process and analyze massive datasets efficiently. The project aims to improve the speed and scalability of AI models, making them more practical for real-world applications while maintaining rigorous standards of transparency and interpretability.
   """ ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo, dice:MohamedAhmedSherif ;
+  schema:logo "whale_logo.png" ;
   schema:endDate "2027-09-30"^^xsd:date ;
   schema:startDate "2023-10-01"^^xsd:date ;
   # schema:logo "" ; # NO LOGO YET

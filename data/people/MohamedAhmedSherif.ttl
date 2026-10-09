@@ -1,11 +1,17 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MohamedAhmedSherif a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-9927-2203>,
+        <https://scholar.google.com/citations?user=rhmdFgUAAAAJ&hl=en>,
+        <https://dblp.org/pid/145/1160.html> ;
   schema:name "Mohamed Ahmed Sherif" ;
   schema:namePrefix "Dr. rer. nat." ;
-  schema:role dice:SeniorResearcher ;
-  schema:phone <tel:+49-525-16-01708> ;
+  schema:familyName "Sherif" ;
+  schema:role dice:SeniorResearcher, dice:SubsProfSWE ;
+  schema:phone <tel:+49-525-16-05197> ;
   schema:fax <tel:+49-525-16-03436> ;
   schema:email <mailto:mohamed.sherif@upb.de> ;
   schema:chat "@msherif:chat.dice-research.org" ;
@@ -22,39 +28,49 @@ Tuesday, 11:00 - 13:00</br>
 
 I supervised/supported several bachelor, master and doctoral theses (sorted by the year of submission).
 
-#### 2019
-* Learning Arbitrary RDF Dataset Enrichment Graphs Pre- & Postcondition Broadcasting (Master thesis)
+#### 2026
+* TIM: Tiered Iterative Knowledge Graph Matching (Msc thesis)
 
-#### 2021
-* OntoConnect: Domain-Agnostic Ontology Alignment using Neural Networks (PhD thesis)
+#### 2025
+* Developing Search Approach to Support Software Engineers Making Architectural Design Decisions (Msc thesis)
+
+#### 2024
+* Geospatial Link Discovery With Human In The Loop (PhD thesis)
+
+#### 2023
+* Leveraging Social Media in Disaster Situations (PhD thesis)
 
 #### 2022
 * Reinforced Active Learning for Link Discovery (Msc thesis)
 * Link Discovery over geo RDF data: Content similarity approach (Bachelor thesis)
 
-#### 2023
-* Leveraging Social Media in Disaster Situations (PhD thesis)
+#### 2021
+* OntoConnect: Domain-Agnostic Ontology Alignment using Neural Networks (PhD thesis)
 
-#### 2024
-* Geospatial Link Discovery With Human In The Loop (PhD thesis)
-
-#### 2025
-* Developing Search Approach to Support Software Engineers Making Architectural Design Decisions (Msc thesis)
+#### 2019
+* Learning Arbitrary RDF Dataset Enrichment Graphs Pre- & Postcondition Broadcasting (Master thesis)
 
 ## Research Interest
-
-I am mainly interested in:
-
-* Data engineering, knowledge graph construction & ontology building
-* Knowledge graph integration using machine learning & large language models  
-* Novel data integration approaches for supporting  NLP tasks such as entity summarization & keyphrase extraction
-* Large language model  for supporting data integration tasks and vice versa
-
+My research focuses on Knowledge Graphs, Semantic Web technologies, and Machine Learning, with an emphasis on scalable, explainable, and FAIR data integration and representation. I develop methods for link discovery, ontology and entity alignment, and knowledge graph construction, combining symbolic reasoning with neural and embedding-based approaches.
+My recent work explores adaptive and post-hoc alignment techniques for knowledge graph embeddings, including attribute- and structure-aware alignment methods, self-configuring matching frameworks, and approaches for entity alignment without retraining. I also investigate relation-aware alignment and large-scale embedding infrastructures for web-scale knowledge graphs.
+In parallel, I work on learning and reasoning in Description Logics, including belief-driven and structure-aware class expression learning and recursive policy-based concept induction in expressive logical fragments. I am particularly interested in bridging statistical learning with formal logic to improve robustness and interpretability in concept learning.
+Overall, my research aims to advance intelligent knowledge graph systems that are scalable, adaptive, and semantically grounded, enabling more effective integration, reasoning, and exploitation of large heterogeneous data sources.
 
 ## Reviewing
 My limited free time is partly consumed by tasks such as reviewing, for instance,”
 
+* <a href="https://iswc2026.semanticweb.org/">International Semantic Web Conference</a> 
+* <a href="https://aaai.org/conference/aaai/aaai-27/">AAAI Conference on Artificial Intelligence</a> 
+* <a href="https://ecmlpkdd.org/2026/">European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases</a> 
 * <a href="https://www.sciencedirect.com/">Journal of web semantics</a>
 * <a href="https://www.semantic-web-journal.net">Semantic Web Journal</a>
 * <a href="https://i3mainz.github.io/GeoLD2024/">GeoLD 2024</a>
+
+## Profile on other platforms
+
+* [UPB](https://www.uni-paderborn.de/person/67234)
+* [OrcID](https://orcid.org/0000-0002-9927-2203)
+* [DBLP](https://dblp.org/pid/145/1160)
+* [Google Scholar](https://scholar.google.com/citations?user=rhmdFgUAAAAJ&hl=en)
+* [semanticscholar](https://www.semanticscholar.org/author/Mohamed-Ahmed-Sherif/37273320)
 """ .

@@ -6,7 +6,7 @@
 
 dice:LASSKG a dice:FundedProject ;
   schema:tagline "LASS KG: Language Agnostic Semantic Search driven by Knowledge Graphs" ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:content """LASS KG aims at developing efficient and language-agnostic methods for semantic search over knowledge graphs. The outcomes of this project will enpower search engines of the following industry products: Springer Materials and Springer Experiments.""" ;
   schema:endDate "2025-02-01"^^xsd:date ;
   schema:startDate "2023-02-01"^^xsd:date ;

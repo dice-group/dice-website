@@ -1,15 +1,20 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MuhammadSohailNisar a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0009-0005-3378-896X>,
+        <https://scholar.google.com/citations?user=HzOedzkAAAAJ&hl=en> ;
   schema:name "Muhammad Sohail Nisar" ;
   schema:namePrefix "" ;
+  schema:familyName "Nisar" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-5251-60-5192> ;
   schema:fax <tel:> ;
   schema:email <mailto:msohail@campus.uni-paderborn.de> ;
   schema:chat "@msohail:chat.dice-research.org" ;
-  schema:office "TP6.3.304" ;
+  schema:office "FU.214" ;
   schema:photo "sohail.jpg" ;
   schema:project dice:SPARQLML ;
   schema:content """""" .

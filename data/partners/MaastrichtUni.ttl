@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Maastricht a schema:Partner ;
+  schema:name "Maastricht University" ;
+  schema:country "NL" ;
+  schema:url <https://www.maastrichtuniversity.nl/> ;
+  schema:kind "Beneficiaries" ;
+  schema:logo "masstricht.jpg" .

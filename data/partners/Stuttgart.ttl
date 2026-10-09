@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Stuttgart a schema:Partner ;
+  schema:name "University of Stuttgart" ;
+  schema:country "DE" ;
+  schema:url <https://www.uni-stuttgart.de/> ;
+  schema:kind "Beneficiaries" ;
+  schema:logo "unistuttgart_logo_englisch.jpg" .

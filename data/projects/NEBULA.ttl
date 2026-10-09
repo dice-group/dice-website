@@ -6,7 +6,7 @@
 
 dice:NEBULA a dice:FundedProject ;
   schema:tagline "Nutzerzentrierte KI-basierte Erkennung von Fake-News und Fehlinformationen" ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:content """
 <h2>Project Goal</h2>
 

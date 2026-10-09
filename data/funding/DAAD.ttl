@@ -1,0 +1,8 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:DAAD a schema:Funder ;
+    schema:name "DAAD" ;
+    schema:url <http://www.daad.de/> ;
+    schema:logo "logo-daad.png" ;
+    schema:text "DAAD" .

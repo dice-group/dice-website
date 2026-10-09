@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1448" height="1086" viewBox="0 0 1448 1086">
+<title>From search to linked data</title><desc>Editable vector recreation of the TriplePeek workflow diagram. All labels are live text and all icons and connectors are vector shapes.</desc>
+<defs>
+<linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#084678"/><stop offset=".5" stop-color="#083b6a"/><stop offset="1" stop-color="#064779"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#008af2"/><stop offset=".55" stop-color="#0077df"/><stop offset="1" stop-color="#008cf5"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#009a91"/><stop offset=".5" stop-color="#00887d"/><stop offset="1" stop-color="#00988b"/></linearGradient>
+<linearGradient id="paleBlue"><stop stop-color="#e4eff8"/><stop offset="1" stop-color="#e0effb"/></linearGradient>
+<linearGradient id="paleCyan"><stop stop-color="#dff1ff"/><stop offset="1" stop-color="#dbefff"/></linearGradient>
+<linearGradient id="paleTeal"><stop stop-color="#e3f6ef"/><stop offset="1" stop-color="#e0f6ef"/></linearGradient>
+<filter id="shadow" x="-25%" y="-15%" width="150%" height="135%"><feDropShadow dx="0" dy="4" stdDeviation="9" flood-color="#3383af" flood-opacity=".13"/></filter>
+<marker id="arrow" viewBox="0 0 10 14" refX="9" refY="7" markerWidth="7" markerHeight="10" orient="auto-start-reverse"><path d="M0 0L10 7L0 14L2 7Z" fill="context-stroke"/></marker>
+</defs>
+<rect width="1448" height="1086" fill="#fff"/>
+
+<g id="heading">
+<text x="724" y="68" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#071e3b" text-anchor="middle"><tspan x="724" dy="0">From search to linked data</tspan></text>
+<text x="724" y="107" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#60627e" text-anchor="middle"><tspan x="724" dy="0">Find resources. Explore them. Access and federate linked data.</tspan></text>
+</g>
+<g id="three-overview-panels">
+<path id="search-panel" d="M444 171Q444 155 459 161L596 229Q604 233 604 245V509Q604 520 597 524L460 590Q444 597 444 581Z" fill="url(#navy)" />
+<path id="triplepeek-panel" d="M648 144Q648 128 662 134L802 203Q811 207 811 220V519Q811 530 802 534L663 600Q648 607 648 591Z" fill="url(#blue)" />
+<path id="sparql-panel" d="M853 171Q853 155 867 161L999 229Q1007 234 1007 247V512Q1007 523 999 527L868 590Q853 597 853 581Z" fill="url(#teal)" />
+<g transform="translate(491 260) scale(1.65)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="19" cy="19" r="13"/><path d="M29 29L42 42"/>
+</g>
+<text x="526" y="374" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="526" dy="0">Search</tspan><tspan x="526" dy="32">layer</tspan></text>
+<text x="479" y="449" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#e8f2ff" text-anchor="start"><tspan x="479" dy="0">Find and</tspan><tspan x="479" dy="24">identify</tspan><tspan x="479" dy="24">resources</tspan></text>
+<g id="triplepeek-logo" fill="#fff"><path d="M696 265Q696 262 699 264L715 273V313L696 323Z"/><path d="M718 252L739 264V317L721 327V268L717 266V254Z"/><path d="M746 264L762 274V307L746 316Z"/></g>
+<text x="729" y="374" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="729" dy="0">TriplePeek</tspan></text>
+<text x="679" y="417" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#eef8ff" text-anchor="start"><tspan x="679" dy="0">Orchestrate</tspan><tspan x="679" dy="24">and enrich</tspan><tspan x="679" dy="24">the discovery</tspan><tspan x="679" dy="24">process</tspan></text>
+<g transform="translate(887 263) scale(1.6)" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M17.36 22.18L27.64 10.82M18.94 29.64L34.06 36.36"/><circle cx="13" cy="27" r="6.5"/><circle cx="32" cy="6" r="6.5"/><circle cx="40" cy="39" r="6.5"/>
+</g>
+<text x="930" y="374" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="930" dy="0">SPARQL</tspan><tspan x="930" dy="32">endpoint</tspan></text>
+<text x="886" y="449" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#e9fffa" text-anchor="start"><tspan x="886" dy="0">Access,</tspan><tspan x="886" dy="24">query and</tspan><tspan x="886" dy="24">federate</tspan><tspan x="886" dy="24">linked data</tspan></text>
+<path d="M615 366h19m-8 -11l8 11 -8 11" fill="none" stroke="#b4c4d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M821 366h19m-8 -11l8 11 -8 11" fill="none" stroke="#b4c4d2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="workflow-backgrounds">
+<rect x="24" y="647" width="633" height="320" rx="14" fill="url(#paleBlue)"/>
+<rect x="663" y="647" width="323" height="320" rx="14" fill="url(#paleCyan)"/>
+<rect x="993" y="647" width="431" height="320" rx="14" fill="url(#paleTeal)"/>
+<rect x="134" y="621" width="412" height="44" rx="15" fill="url(#navy)"/>
+<text x="340.0" y="653" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="340.0" dy="0">Search layer</tspan></text>
+<text x="340" y="687" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#06457d" text-anchor="middle"><tspan x="340" dy="0">Search and identify the right resource</tspan></text>
+<rect x="682" y="621" width="284" height="44" rx="15" fill="url(#blue)"/>
+<text x="824.0" y="653" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="824.0" dy="0">TriplePeek</tspan></text>
+<text x="826" y="687" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#07508b" text-anchor="middle"><tspan x="826" dy="0">Orchestrate and enrich</tspan></text>
+<rect x="1041" y="621" width="335" height="44" rx="15" fill="url(#teal)"/>
+<text x="1208.5" y="653" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#fff" text-anchor="middle"><tspan x="1208.5" dy="0">SPARQL endpoint</tspan></text>
+<text x="1209" y="687" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="500" fill="#007c7c" text-anchor="middle"><tspan x="1209" dy="0">Access data and federate</tspan></text>
+</g>
+<g id="connectors">
+<path d="M161 818H187" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M328 818H355" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M477 818H505" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M640 818H682" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M929 757H948Q963 757 963 776V803Q963 818 977 818H1009" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M929 874H948Q963 874 963 857V833Q963 818 977 818" fill="none" stroke="#356ea1" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M671 818Q685 818 685 802V772Q685 757 699 757H721" fill="none" stroke="#3b86bc" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M671 818Q685 818 685 834V858Q685 873 699 873H721" fill="none" stroke="#3b86bc" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1162 818H1170Q1184 818 1184 803V773Q1184 758 1198 758H1219" fill="none" stroke="#009488" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<path d="M1162 818H1170Q1184 818 1184 833V859Q1184 874 1198 874H1221" fill="none" stroke="#009488" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+</g>
+<g id="search-workflow">
+<rect x="47" y="749" width="114" height="139" rx="13" fill="#fff" stroke="#cce7fc" stroke-width="2.4"/>
+<rect x="189" y="749" width="139" height="139" rx="13" fill="#fff" stroke="#cce7fc" stroke-width="2.4"/>
+<rect x="357" y="749" width="120" height="139" rx="13" fill="#fff" stroke="#cce7fc" stroke-width="2.4"/>
+<rect x="507" y="749" width="133" height="139" rx="13" fill="#fff" stroke="#cce7fc" stroke-width="2.4"/>
+<g transform="translate(87 768) scale(0.9)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 3H25L33 11V35Q33 38 30 38H10Q7 38 7 35V6Q7 3 10 3ZM25 3V13H33M14 18H25M14 24H23M14 30H19"/>
+</g>
+<text x="104" y="831" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="middle"><tspan x="104" dy="0">Search</tspan><tspan x="104" dy="22">catalog</tspan></text>
+<g transform="translate(235 765) scale(1)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="22" cy="8" rx="15" ry="6.5"/><path d="M7 8V33C7 42 37 42 37 33V8M7 21C7 30 37 30 37 21"/>
+</g>
+<text x="258" y="832" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="middle"><tspan x="258" dy="0">PostgreSQL</tspan></text>
+<text x="258" y="854" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="middle"><tspan x="258" dy="0">Index of</tspan><tspan x="258" dy="20">metadata</tspan></text>
+<g transform="translate(399 766) scale(0.84)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="19" cy="19" r="13"/><path d="M29 29L42 42"/>
+</g>
+<text x="417" y="828" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="middle"><tspan x="417" dy="0">Search</tspan></text>
+<text x="417" y="853" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="middle"><tspan x="417" dy="0">Find</tspan><tspan x="417" dy="20">resources</tspan></text>
+<g transform="translate(553 765) scale(0.95)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<rect x="7" y="2" width="29" height="39" rx="5"/><path d="M14 14H29M14 21H29M14 28H23"/>
+</g>
+<text x="574" y="831" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="middle"><tspan x="574" dy="0">IRI found</tspan></text>
+<text x="574" y="854" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="middle"><tspan x="574" dy="0">Resource</tspan><tspan x="574" dy="20">identified</tspan></text>
+</g>
+<g id="triplepeek-workflow">
+<rect x="723" y="714" width="206" height="92" rx="15" fill="#fff" stroke="#b7dfff" stroke-width="2.4"/>
+<g transform="translate(741 739) scale(0.9)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M10 3H25L33 11V35Q33 38 30 38H10Q7 38 7 35V6Q7 3 10 3ZM25 3V13H33M14 18H25M14 24H23M14 30H19"/>
+</g>
+<text x="794" y="747" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="start"><tspan x="794" dy="0">Describe</tspan></text>
+<text x="794" y="769" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="start"><tspan x="794" dy="0">Get a summary</tspan><tspan x="794" dy="20">of the resource</tspan></text>
+<rect x="723" y="829" width="206" height="111" rx="15" fill="#fff" stroke="#bfe4ff" stroke-width="2.4"/>
+<g transform="translate(740 854) scale(0.95)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M34.934 15.642L35.523 17.377L39.727 17.874L39.727 24.126L35.523 24.623L34.934 26.358L34.124 28.000L36.745 31.324L32.324 35.745L29.000 33.124L27.358 33.934L25.623 34.523L25.126 38.727L18.874 38.727L18.377 34.523L16.642 33.934L15.000 33.124L11.676 35.745L7.255 31.324L9.876 28.000L9.066 26.358L8.477 24.623L4.273 24.126L4.273 17.874L8.477 17.377L9.066 15.642L9.876 14.000L7.255 10.676L11.676 6.255L15.000 8.876L16.642 8.066L18.377 7.477L18.874 3.273L25.126 3.273L25.623 7.477L27.358 8.066L29.000 8.876L32.324 6.255L36.745 10.676L34.124 14.000Z"/><circle cx="22" cy="21" r="6"/>
+</g>
+<text x="794" y="861" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="start"><tspan x="794" dy="0">Custom query</tspan><tspan x="794" dy="21">buttons</tspan></text>
+<text x="794" y="904" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="start"><tspan x="794" dy="0">Run predefined</tspan><tspan x="794" dy="19">queries</tspan></text>
+</g>
+<g id="sparql-workflow">
+<rect x="1012" y="758" width="150" height="147" rx="16" fill="#fff" stroke="#c5eee8" stroke-width="2.4"/>
+<g transform="translate(1058 773) scale(0.95)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M17.36 22.18L27.64 10.82M18.94 29.64L34.06 36.36"/><circle cx="13" cy="27" r="6.5"/><circle cx="32" cy="6" r="6.5"/><circle cx="40" cy="39" r="6.5"/>
+</g>
+<text x="1087" y="842" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="middle"><tspan x="1087" dy="0">SPARQL</tspan><tspan x="1087" dy="21">endpoint</tspan></text>
+<text x="1087" y="885" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#52638a" text-anchor="middle"><tspan x="1087" dy="0">Query RDF data</tspan></text>
+<rect x="1222" y="711" width="184" height="95" rx="15" fill="#fff" stroke="#c2eee7" stroke-width="2.4"/>
+<g transform="translate(1240 738) scale(0.87)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="22" cy="8" rx="15" ry="6.5"/><path d="M7 8V33C7 42 37 42 37 33V8M7 21C7 30 37 30 37 21"/>
+</g>
+<text x="1291" y="743" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#07244b" text-anchor="start"><tspan x="1291" dy="0">RDF data</tspan></text>
+<text x="1291" y="767" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" fill="#52638a" text-anchor="start"><tspan x="1291" dy="0">Resource data</tspan><tspan x="1291" dy="19">in RDF</tspan></text>
+<rect x="1224" y="825" width="186" height="123" rx="15" fill="#fff" stroke="#c2eee7" stroke-width="2.4"/>
+<g transform="translate(1238 854) scale(0.88)" fill="none" stroke="#07518d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M17.36 22.18L27.64 10.82M18.94 29.64L34.06 36.36"/><circle cx="13" cy="27" r="6.5"/><circle cx="32" cy="6" r="6.5"/><circle cx="40" cy="39" r="6.5"/>
+</g>
+<text x="1293" y="855" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#07244b" text-anchor="start"><tspan x="1293" dy="0">SERVICE →</tspan><tspan x="1293" dy="18">other SPARQL</tspan><tspan x="1293" dy="18">endpoints</tspan></text>
+<text x="1293" y="914" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#52638a" text-anchor="start"><tspan x="1293" dy="0">Federated queries</tspan><tspan x="1293" dy="18">across datasets</tspan></text>
+</g>
+<g id="workflow-stages">
+<path d="M28 995H651" fill="none" stroke="#2c7bb8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="339" y="1024" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#064376" text-anchor="middle"><tspan x="339" dy="0">Discover</tspan></text>
+<text x="339" y="1049" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#5b6388" text-anchor="middle"><tspan x="339" dy="0">Find the resource you need</tspan></text>
+<path d="M667 995H983" fill="none" stroke="#008cf0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="828" y="1024" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#064376" text-anchor="middle"><tspan x="828" dy="0">Explore</tspan></text>
+<text x="828" y="1049" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#5b6388" text-anchor="middle"><tspan x="828" dy="0">Get information and run queries</tspan></text>
+<path d="M1000 995H1421" fill="none" stroke="#009389" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<text x="1201" y="1024" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#00757c" text-anchor="middle"><tspan x="1201" dy="0">Access</tspan></text>
+<text x="1201" y="1049" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#5b6388" text-anchor="middle"><tspan x="1201" dy="0">Retrieve and federate data</tspan></text>
+</g>
+</svg>

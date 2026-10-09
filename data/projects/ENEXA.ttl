@@ -7,7 +7,7 @@
 
 dice:ENEXA a dice:FundedProject ;
   schema:tagline "Efficient Explainable Learning on Knowledge Graphs" ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:content """
 
 Efficient Explainable Learning on Knowledge Graphs (ENEXA) is a European project developing human-centered explainable machine learning approaches for real world knowledge graphs.

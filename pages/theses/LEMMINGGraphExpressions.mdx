@@ -1,0 +1,22 @@
+---
+date: '2026-09-03'
+title: 'Towards Meaningful Characteristic Graph Expressions'
+type: 'Master'
+supervisor: dice:AnaAlexandraSilva
+contact: dice:AnaAlexandraSilva
+---
+
+Synthetic knowledge graphs (KGs) that mimic the structure of real-world KGs are essential for benchmarking the scalability of KG-based approaches: they allow us to generate graphs of arbitrary size while preserving the structural characteristics of a given set of input graphs. LEMMING [1] is an example-based KG generator that follows this idea. Given a set of input graphs, LEMMING analyzes them, learns graph-specific invariants — arithmetic expressions over graph features (e.g., number of vertices, number of edges, in-/out-degrees) whose values remain nearly constant across the input graphs — and uses these invariants to guide the generation and refinement of a mimic graph.
+The quality of the mimic graph therefore depends directly on the quality and diversity of the invariant expressions LEMMING is able to discover. In its current form, LEMMING builds candidate expressions iteratively: an existing expression is extended by concatenating a new feature f via an arithmetic operator, i.e., as a binary tree. The image below defines an expression as (f1+f3) - f2.
+
+<Image filename="graph_expressions.png" />
+
+This construction has a major shortcoming: the fitness function used to select promising expressions prefers expressions that share the same parent expressions. As a consequence, the search converges towards structurally similar expressions and the resulting set of invariants lacks diversity.
+The goal of this thesis is to design and implement an algorithm to generate a more diverse and more expressive set of arithmetic expressions. A promising direction is to represent expressions as binary trees, and assign penalties to expressions that are structurally too similar to already selected ones (e.g., based on tree edit distance or shared subtrees), thereby counteracting the bias of the fitness function.
+
+### Prerequisites for this thesis
+- Java programming skills 
+- Prior knowledge of RDF and knowledge graphs is helpful but not necessary 
+
+### References
+1. LEMMING [publication](https://papers.dice-research.org/2021/ICSC2021_Lemming/presentation/lemming-public.pdf) and [code](https://github.com/dice-group/Lemming)

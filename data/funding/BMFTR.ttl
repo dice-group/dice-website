@@ -1,0 +1,9 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:BMFTR a schema:Funder ;
+    schema:name "BMFTR" ;
+    schema:url <https://www.bmftr.bund.de/> ;
+    schema:logo "bmftr.png" ;
+    schema:text "BMFTR" ;
+    schema:text "bmftr.bund.de" .

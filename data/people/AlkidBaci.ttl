@@ -3,7 +3,7 @@
 
 dice:AlkidBaci a schema:Person ;
   schema:name "Alkid Baci" ;
-  schema:role dice:ResearchStaff ;
+  schema:role dice:Alumni ;
   schema:phone <tel:+49-525-16-05190> ;
   schema:email <mailto:alkid@campus.uni-paderborn.de> ;
   schema:chat "@alkid:chat.dice-research.org" ;

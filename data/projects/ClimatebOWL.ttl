@@ -5,7 +5,7 @@
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:ClimatebOWL a dice:FundedProject ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:tagline "Climate neutral Business in Ostwestfalen-Lippe" ;
   schema:content """
   <img src="climatebOWL_overview.png" width={100} height={100} alt="Climate bOWL Overview"  >
@@ -26,7 +26,7 @@ Das Projekt „Climate neutral Business in Ostwestfalen-Lippe (Climate bOWL)“ 
   schema:startDate "2022-04-01"^^xsd:date ;
   schema:maintainer dice:MohamedAhmedSherif ;
   schema:name "ClimatebOWL" ;
-  schema:homepage <https://www.climate-bowl.de/forschungsprojekte/projekt/projektinformationen> ;
+  schema:homepage <https://www.climate-bowl.de/> ;
   schema:logo "climatebOWL.png" ;
   schema:partner dicepartner:UBI, dicepartner:NTT, dicepartner:GEA, dicepartner:Miele, dicepartner:Phoenix.
 

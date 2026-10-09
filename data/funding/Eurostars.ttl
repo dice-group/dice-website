@@ -1,0 +1,12 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:Eurostars a schema:Funder ;
+    schema:name "Eurostars" ;
+    schema:url <http://www.eurostars.dlr.de/> ;
+    schema:logo "logo-eurostars.png" ;
+    schema:text "Eurostars" ;
+    schema:text "EuroStars" ;
+    schema:image "eureka.png" ;
+    schema:image "eurostars_eureka_eu_logos-participants.png" ;
+    schema:image "eurostars_eureka_eu_logos-participants_text.png" .

@@ -25,6 +25,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── node_modules
     ├── papers-to-ttl
     ├── plugins/gatsby-transformer-rdf
+    ├── same-as
     ├── src/components
     ├── src/pages
     ├── src/templates
@@ -49,6 +50,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 8.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
 9.  **`Dockerfile`**: This file is describes the build process for Docker.
+10. **`same-as`**: script to update sameAs links for team members from .csv file.
 
 ### Styling
 

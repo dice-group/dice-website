@@ -6,12 +6,13 @@
 
 dice:KIAM a dice:FundedProject ;
   schema:tagline "Kompetenzzentrum KI in der Arbeitswelt des industriellen Mittelstands in OstWestfalenLippe" ;
-  schema:status "active" ;
+  schema:status "completed" ;
   schema:endDate "2025-09-30"^^xsd:date ;
   schema:startDate "2020-10-01"^^xsd:date ;
   schema:maintainer dice:StefanHeindorf ;
   schema:name "KIAM" ;
   schema:fundingProgram "BMBF, Grant No. 02L19C115" ;
+  schema:funder dicefunding:BMBF ;
   schema:homepage <https://arbeitswelt.plus/> ;
   schema:publicationTag "kiam" ;
   schema:partner dicepartner:UBI, dicepartner:Fraunhofer .

@@ -4,5 +4,43 @@
       "directory": "./scripts",
       "changeProcessCWD": true
     }
-  ]
+  ],
+"editor.formatOnType": false,
+"eslint.run": "onSave",
+"editor.inlineSuggest.enabled": false,
+"editor.inlayHints.enabled": "off",
+
+"files.watcherExclude": {
+  "**/node_modules/**": true,
+  "**/dist/**": true,
+  "**/build/**": true,
+  "**/.next/**": true,
+  "**/out/**": true,
+  "**/.git/**": true,
+  "**/tmp/**": true,
+  "**/data/**": true
+},
+"search.exclude": {
+  "**/node_modules": true,
+  "**/dist": true,
+  "**/build": true,
+  "**/.next": true,
+  "**/out": true,
+  "**/.git": true,
+  "**/tmp": true,
+  "**/data": true
+},
+
+"typescript.tsserver.maxTsServerMemory": 4096,
+
+"typescript.disableAutomaticTypeAcquisition": true,
+"typtscript.tsserver.useSeparateSyntaxServer": true,
+"typescript.tsserver.watchOptions": {
+  "watchFile": "useFsEvents",
+  "watchDirectory": "useFsEvents"
+},
+"typescript.suggest.autoImports": false,
+"javascript.suggest.autoImports": false,
+"editor.suggestOnTriggerCharacters": false,
+"editor.quickSuggestions": {"other": false, "comments": false, "strings":false}
 }

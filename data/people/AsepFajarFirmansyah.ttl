@@ -1,26 +1,39 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AsepFajarFirmansyah a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0001-5775-6966>,
+        <https://scholar.google.com/citations?user=LOwq-ccAAAAJ&hl=en&oi=ao>,
+        <https://dblp.org/pid/194/8627.html> ;
   schema:name "Asep Fajar Firmansyah" ;
   schema:namePrefix "" ;
+  schema:familyName "Firmansyah" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:+49-525-16-05185> ;
   schema:fax <tel:> ;
   schema:email <mailto:asep.fajar.firmansyah@uni-paderborn.de> ;
   schema:chat "@asepff:chat.dice-research.org" ;
+  schema:project dice:ClimatebOWL, dice:ENEXA ;
   schema:office "FU.335" ;
   schema:photo "firmansyah.jpg" ;
   schema:content """
 
 ## Research Interests
 
-My primary focus is on Knowledge Graph Summarization, utilizing both extractive and abstractive approaches, as well as Natural Language Processing. Nevertheless, I am open to collaboration in the following areas:
+My primary focus is on <b>Knowledge Graph Summarization</b>, utilizing both extractive and abstractive approaches. Nevertheless, I am open to collaboration in the following areas:
 
-- Tasks related to knowledge graph construction, such as information extraction (named entity recognition, entity linking)
-- Knowledge graph reasoning tasks, including link prediction and missing triple prediction
-- Link specification and verbalization
-- Working with language models, such as few-shot learning and fine-tuning
+- Knowledge Graphs: Construction, Reasoning, and RAG. 
+- Link Specification and Verbalization
 
-For more details regarding my work, you can also visit my GitHub at https://github.com/asep-fajar-firmansyah
+For more details regarding my work, feel free to visit my GitHub at https://github.com/asep-fajar-firmansyah
+
+## Thesis Supervision
+
+I supervised master's theses:
+
+#### 2025
+* Leveraging Large Language Models for KG Constructions
+
 """ .

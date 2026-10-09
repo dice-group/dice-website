@@ -1,9 +1,15 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:MichaelRoeder a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-8609-8277>,
+        <https://scholar.google.com/citations?user=1wHn8M0AAAAJ&hl=en>,
+        <https://dblp.org/pid/138/4906> ;
   schema:name "Michael Röder" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Röder" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-525-16-05196> ;
   schema:fax <tel:+49-525-16-03436> ;
@@ -76,4 +82,10 @@ My little free time seems to be partly consumed by reviewing, e.g.,
 * <a href="http://iswc2020.semanticweb.org/">International Semantic Web Conference (ISWC 2020)</a>
 * <a href="https://sites.google.com/view/quweda2023/home">QuWeDa 2023</a>
 * <a href="https://i3mainz.github.io/GeoLD2024/">GeoLD 2024</a>
+
+## Profile on other platforms
+
+* [OrcID](https://orcid.org/0000-0002-8609-8277)
+* [DBLP](https://dblp.org/pid/138/4906)
+* [Google Scholar](https://scholar.google.com/citations?user=1wHn8M0AAAAJ)
 """ .

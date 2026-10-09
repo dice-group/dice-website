@@ -1,0 +1,10 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:BMWK a schema:Funder ;
+    schema:name "BMWK" ;
+    schema:url <http://www.bmwi.de/> ;
+    schema:logo "logo-bmwk.svg" ;
+    schema:text "BMWK" ;
+    schema:text "BMWi" ;
+    schema:text "BMWI" .

@@ -4,6 +4,7 @@
 dice:ExamplePerson a schema:Person ;
   schema:name "Daniel Leite" ;
   schema:namePrefix "Dr." ;
+  schema:familyName "Leite" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:+49-0151-11046544> ;
   schema:email <mailto:daniel.leite@uni-paderborn.de> ;

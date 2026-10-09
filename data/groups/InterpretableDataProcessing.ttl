@@ -40,5 +40,5 @@ We also cover additional research areas that are connected to benchmarking like
 </ul>
 """ ;
   schema:lead dice:MichaelRoeder ; # group maintainer
-  schema:member dice:AnaSilva, dice:DenisKuchelev, dice:FarshadAfshari, dice:UmairQudus, dice:NehaPokharel, dice:HardikShetty, dice:RishikeshYadav ; # group members list (in no particular order)
+  schema:member dice:AdelMemariani, dice:AnaAlexandraSilva, dice:DenisKuchelev, dice:FarshadAfshari, dice:UmairQudus, dice:NehaPokharel, dice:HardikShetty, dice:QuannianZhang, dice:RishikeshYadav ; # group members list (in no particular order)
   schema:relatedDemo dice:GerbilKE, dice:GerbilQA, dice:GerbilKBC, dice:HOBBIT-demo, dice:Palmetto . # list of related demos

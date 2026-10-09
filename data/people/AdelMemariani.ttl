@@ -1,16 +1,21 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix dice: <https://dice-research.org/> .
 @prefix schema: <https://schema.dice-research.org/> .
 
 dice:AdelMemariani a schema:Person ;
+    owl:sameAs
+        <https://orcid.org/0000-0002-8368-7658>,
+        <https://scholar.google.com/citations?hl=en&user=xLuHnzIAAAAJ&view_op=list_works&sortby=pubdate> ;
   schema:name "Adel Memariani" ;
   schema:namePrefix "" ;
+  schema:familyName "Memariani" ;
   schema:role dice:ResearchStaff ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;
   schema:email <mailto:adel.memariani@uni-paderborn.de> ;
   schema:chat "@adme:chat.dice-research.org" ;
   schema:office "FU.201.3" ;
-  schema:photo "AdelMemariani2025.jpg" ;
+  schema:photo "AdelMemariani.jpg" ;
   schema:publicationTag "" ;
   schema:project dice:SAIL;
   schema:content """""" .

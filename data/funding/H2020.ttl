@@ -1,0 +1,10 @@
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicefunding:H2020 a schema:Funder ;
+    schema:name "Horizon2020" ;
+    schema:url <http://ec.europa.eu/> ;
+    schema:logo "horizon2020.png" ;
+    schema:text "Horizon2020" ;
+    schema:text "Horizon 2020" ;
+    schema:text "H2020" .

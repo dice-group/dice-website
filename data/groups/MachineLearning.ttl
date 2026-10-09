@@ -4,9 +4,9 @@
 dice:MachineLearning a schema:Group ;
   schema:name "Machine Learning" ;
   schema:tagline "" ;
-  schema:relatedProject dice:COLIDE, dice:EML4U, dice:DAIKIRI, dice:KIAM, dice:RAKI, dice:TRR318, dice:VEP ;
+  schema:relatedProject dice:KnowGraphs, dice:ENEXA, dice:embeddings.cc, dice:LeMuR, dice:SAIL, dice:WHALE, dice:TRR318 ;
   schema:content """
-The machine learning group focuses on machine learning technologies for knowledge graphs. The research goal is to develop novel, scalable machine learning algorithms, e.g., for entity embeddings, clustering of high-dimensional data, and explainable machine learning. Research activities of the ML group are in the scope of structured machine learning, e.g., learning concepts in description logics, and entity embeddings, e.g., based on physical models and convolutional complex models. The group provides open-source tools for machine learning on knowledge graphs.
+The machine learning group focuses on machine learning technologies for knowledge graphs. The research goal is to develop novel, scalable machine learning algorithms, e.g., for knowledge graph embeddings, clustering of high-dimensional data, and explainable machine learning. The research activities of the ML group are in the scope of structured machine learning, e.g., efficient learning of concepts in description logics, and knowledge graph embeddings (e.g., based on Clifford Algebras). The group provides open-source tools (e.g., Ontolearn (https://github.com/dice-group/Ontolearn), DICE-Embeddings (https://github.com/dice-group/dice-embeddings), and OWLAPy (https://github.com/dice-group/owlapy)) for machine learning on knowledge graphs.
 """ ;
-  schema:lead dice:StefanHeindorf ; # group maintainer
-  schema:member dice:AdrianWilke, dice:CaglarDemir, dice:GeraldoDeSouza, dice:HamadaMZahera, dice:JeanNDahKouagou, dice:JiayiLi, dice:LeonieSieger, dice:LukasBlübaum  . # group members list
+  schema:lead dice:JeanNDahKouagou ; # group maintainer
+  schema:member dice:LouisMozartKamdemTeyou, dice:RupeshSapkota, dice:DuyguEkinciBirol, dice:MoshoodOlawaleYekini, dice:AlkidBaci, dice:ArnabSharma, dice:YasirMahmood, dice:CaglarDemir . # group members list

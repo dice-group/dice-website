@@ -656,7 +656,7 @@ a {
  */
 
 .button {
-  @apply flex items-center justify-center border border-solid rounded;
+  @apply inline-flex items-center justify-center border border-solid rounded;
   @apply text-white cursor-pointer ml-1 mr-1 pl-12 pr-12 pt-3 pb-4;
 
   background-color: var(--primary-color);
@@ -669,14 +669,7 @@ a {
   }
 }
 
-.external-link {
-  @apply inline-flex items-center;
-
-  .icon {
-    @apply ml-1;
-    color: rgba(0, 0, 0, 0.3);
-  }
-}
+.external-link .icon {margin-left: .25rem;}
 
 /*
  * Inputs
@@ -807,31 +800,45 @@ a {
   @apply mb-6;
 
   .paper-text {
-    @apply mb-0 text-xs;
+    @apply mb-0 text-xs italic;
   }
 
   .paper-name {
-    @apply mb-0 mt-0 text-lg font-semibold;
+    @apply mb-0 mt-0 text-xl font-semibold;
+  }
+
+  .paper-name a {
+    color: var(--primary-color)
+  }
+
+  .paper-name .external-link {display: inline;}
+
+  .paper-name .external-link .icon {
+    vertical-align: text-bottom;
+  }
+
+
+  .paper-links {
+    @apply flex items-center gap-3 mt-3;
+  }
+
+  .paper-links .paper-icon {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-lg border bg-white;
+    border-color: #d1d5db;
+  }
+
+  .paper-links .paper-icon img {
+    @apply w-5 h-5;
+  }
+
+  &.paper--light {
+    @apply bg-blue-50 rounded-xl p-4;
   }
 
   .paper-meta {
     @apply mb-0 text-gray-600 text-sm;
   }
-
-  .bib-link {
-    @apply hidden ml-1 text-base;
-    color: var(--primary-color);
-  }
-
-  /*! purgecss start ignore */
-  &:hover {
-    .bib-link {
-      @apply inline;
-    }
-  }
-  /*! purgecss end ignore */
 }
-
 /*
  * Awards
  */
@@ -1044,6 +1051,56 @@ a {
     @apply flex flex-col flex-1;
   }
 
+  .person-heading {
+    @apply flex flex-wrap justify-center mb-2;
+
+    align-items: baseline;
+
+    h2 {
+      @apply mb-0;
+    }
+
+    @screen md {
+      @apply justify-start;
+    }
+  }
+
+  .person-identity-links {
+    @apply inline-flex items-center ml-3;
+
+    align-self: baseline;
+    gap: 0.5rem;
+    position: relative;
+    top: 2px;
+  }
+
+  .person-identity-link {
+    @apply inline-flex items-center justify-center rounded;
+
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+
+    &:hover {
+      opacity: 0.75;
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+    }
+
+    &--orcid {
+      color: #a6ce39;
+    }
+
+    &--google-scholar {
+      color: #4285f4;
+    }
+
+    &--dblp {
+      color: #004f9f;
+    }
+  }
+
   .role {
     @apply opacity-50 mb-2;
 
@@ -1128,4 +1185,109 @@ a {
       color: var(--bright-text-color);
     }
   }
+}
+
+:root {
+  --group-bg: #e2eaf2;
+}
+
+.groups-page .group-card {
+  @apply rounded-xl p-6 mb-10 border;
+  border-color: rgba(0,0,0,.08);
+  background: var(--group-bg);
+}
+
+.groups-page .group-header {
+  @apply flex flex-col md:flex-row items-start md:items-center gap-6 mb-6;
+}
+
+.groups-page .group-figure {
+  @apply w-full md:w-72 lg:w-80 flex-shrink-0;
+}
+
+.groups-page .group-figure img {
+  @apply w-full h-48 md:h-56 object-cover rounded-lg;
+  background: linear-gradient(135deg,#dbe6f2,#e9f0f8);
+}
+
+.groups-page .group-title {
+  @apply text-2xl font-bold mb-2;
+  color: var(--primary-color);
+}
+
+.groups-page .meta-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 mt-4;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.groups-page .column-header {
+  @apply font-bold mb-1;
+}
+.groups-page .staff-list { @apply flex flex-col; }
+.groups-page .staff-list a { @apply mb-1; }
+.groups-page .group-tagline { @apply text-gray-700 mb-3; }
+
+.groups-page .container { @apply max-w-6xl; }
+@screen lg {
+  .groups-page .container { @apply max-w-7xl pr-28; }
+}
+
+.teaching-page .term-title {
+  @apply text-3xl mb-3;
+  color: var(--primary-color);
+}
+
+.teaching-page .term-card {
+  @apply rounded-xl p-6 mb-10 border;
+  background: #e2eaf2;
+  border-color: rgba(0,0,0,.08);
+}
+
+.teaching-page .kind-row {
+  @apply flex items-center gap-3 mt-6 mb-2;
+}
+
+.teaching-page .kind-icon {
+  @apply w-12 h-12 flex-shrink-0;
+}
+
+.teaching-page .course {
+  @apply mt-1;
+}
+
+.teaching-page .kind-label {
+  @apply text-gray-500 ml-2 mr-2;
+}
+
+.teaching-page .kind { @apply mt-3 font-semibold; }
+
+.teaching-page .term-wrap .term-card > div:last-child { @apply mb-0; }
+
+.no-js .js-only { display: none; }
+.js .no-js-only { display: none; }
+
+.title-icon {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  margin-left: .25rem;
+  line-height: 1;
+}
+
+.title-icon__svg {
+  width: 14px !important;
+  height: 14px !important;
+  flex: 0 0 14px;
+  vertical-align: text-bottom;
+  color: #6b7280;
+}
+
+@media (max-width: 640px) {
+  .title-icon__svg {width: 13px !important; height: 13px !important; }
+}
+
+.funder-logo {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 4px;
 }

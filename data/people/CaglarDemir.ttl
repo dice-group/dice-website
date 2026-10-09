@@ -4,6 +4,7 @@
 dice:CaglarDemir a schema:Person ;
   schema:name "Caglar Demir" ;
   schema:namePrefix "Dr. rer. nat." ;
+  schema:familyName "Demir" ;
   schema:role dice:SeniorResearcher ;
   schema:phone <tel:> ;
   schema:fax <tel:> ;

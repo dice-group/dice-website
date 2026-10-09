@@ -7,6 +7,9 @@ const basePath = 'https://dice-research.org/';
 // list of predicates that can have multiple values
 const arrayPredicates = [
   'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
+  'https://schema.dice-research.org/text',
+  'https://schema.dice-research.org/image',
+  'https://schema.dice-research.org/funder',
   'https://schema.dice-research.org/content',
   'https://schema.dice-research.org/contenthtml',
   'https://schema.dice-research.org/project',
@@ -21,6 +24,7 @@ const arrayPredicates = [
   'https://schema.dice-research.org/developer',
   'https://schema.dice-research.org/screenshot',
   'https://schema.dice-research.org/member',
+  'http://www.w3.org/2002/07/owl#sameAs',
 ];
 
 // list of predicates that define relations between entities
@@ -37,11 +41,13 @@ const relationPredicates = [
   'schema:awardee',
   'schema:member',
   'schema:lead',
+  'schema:funder',
 ];
 
 // default predicates mapping
 const defaultPrefixes = {
   rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+  owl: 'http://www.w3.org/2002/07/owl#',
 };
 
 /**
@@ -113,6 +119,10 @@ const processResult = ({
       delete data[key];
       // add link to other node
       data[newKey] = val;
+    } else if (key === 'owl:sameAs') {
+      const val = data[key];
+      delete data[key];
+      data.sameAs = val;
     }
   });
 

@@ -1,0 +1,55 @@
+---
+date: '2026-07-18'
+title: 'Autonomous Semantic Immune Systems for Knowledge Graph Validation'
+type: 'Project Group'
+year: '2026'
+term: 'Winter'
+kind: 'Master'
+language: 'en'
+---
+<br/>
+Knowledge Graphs (KGs) are the structural backbone of modern AI, representing facts as triples (Subject, Predicate, Object)—for instance, (<i>MarieCurie, wonPrize, NobelPrize_Physics</i>) . While Large Language Models (LLMs) enable the automatic extraction of facts from text at scale—a process known as <b>Induced Semantics</b>—they introduce a critical flaw: <b><i>hallucinations</i></b>. These are triples that are structurally valid (passing standard SHACL/OWL checks) yet factually false, e.g., (MarieCurie, wonPrize, NobelPrize_Literature). 
+
+Static validation breaks down here because it only checks for schema compliance, not world knowledge. To solve this, our project brings to life the **Semantic Immune System (SIS)**—a bio-inspired framework that treats a KG as a living ecosystem. Instead of relying on rigid human-written rules, the SIS autonomously learns to distinguish "Self" (correct facts) from "Non-Self" (semantic pathogens) through evolutionary logic. This project group focuses on the adaptive core of the SIS, moving beyond static validation toward a self-healing semantic infrastructure based on three foundational pillars:
+
+1. **Semantic Self & Innate Immunity**: Formalizing the trusted "core" of a KG using embeddings and enforcing baseline structural constraints.
+2. **Adaptive Negative Selection**: Automatically generating and filtering logical detectors (SPARQL-like rules) that react exclusively to hallucinated triples without touching the verified Self.
+3. **Clonal Selection & Semantic Memory**: Evolving the best detectors via mutation (to catch novel error patterns) and caching pathogen signatures for ultra-fast secondary response.
+
+### Project Objectives
+Our project group aims to design, implement, and evaluate a functional prototype of the adaptive SIS detection pipeline. Students will traverse the entire research lifecycle—from literature review and formal problem definition to implementation, experimental benchmarking, and critical analysis.
+
+To achieve these objectives, we are investigating several advanced techniques, including:
+
+- Utilizing embedding models (e.g., RDF2Vec, TransE) to represent the semantic space of a Knowledge Graph;
+- Leveraging Large Language Models (LLMs) to generate and mutate candidate logical rules (detectors) through few-shot prompting;
+- Implementing evolutionary algorithms (fitness evaluation, elitist selection, and mutation) to improve detector populations over time;
+- Building a semantic memory cache (using FAISS) to enable rapid recognition of recurring hallucination families;
+- Quantitatively benchmarking the adaptive system against static SHACL/OWL constraints to measure gains in precision, recall, and robustness under noisy oracle conditions.
+
+Through participation in this project group, students will acquire hands-on experience across the entire pipeline of autonomous KG integrity management, covering conceptual formalization, dataset engineering, neuro-symbolic AI integration, and performance optimization.
+
+<!--For more information, check out the slides: [SIS_PG_WiSe_26.pdf](https://github.com/dice-group/SIS-2026/blob/main/SIS_PG_WiSe_2026.pdf) *(slides will be provided during the kick-off)* -->
+
+#### FAQs
+
+**Q: What is the selection process for this project?**  
+A: Candidates will need to submit a short assignment (implementing a simple embedding-based similarity check) and undergo an interview as part of the selection process.
+
+**Q: Is there a seminar connected to this PG?**  
+A: No.
+
+**Q: What are the prerequisites for this PG?**  
+A: The ideal candidate should possess foundational knowledge in Machine Learning and Natural Language Processing, along with programming skills in Python. Familiarity with Knowledge Graphs (RDF, SPARQL) is a strong plus but not strictly mandatory—willingness to learn quickly is essential. Experience with version control (Git) are also required. The domain is highly interdisciplinary (AI + symbolic logic + bio-inspired algorithms), so a steep but rewarding learning curve is expected.
+
+**Q: Do we need to implement the entire SIS framework?**  
+A: No. The project strictly focuses on the *Adaptive Detection & Evolution* layer (Negative Selection, Clonal Selection, and Semantic Memory). The "Vaccination" and full-scale KG repair components are explicitly scoped out as future work, allowing us to dive deep into measurable experimental results.
+
+**Q: How do we evaluate if our system works?**  
+A: You will inject controlled synthetic hallucinations into a KG (e.g., a subset of Wikidata) and measure how many are correctly quarantined (Precision/Recall/F1). Your primary baseline will be standard SHACL constraints. You will also analyze performance degradation when the "oracle" (ground truth) is noisy—a core discussion point in your thesis.
+
+In case you have further questions, feel free to contact [Manzoor Ali](https://dice-research.org/ManzoorAli).
+
+### Course in PAUL
+
+Project Group: Autonomous Semantic Immune Systems for Knowledge Graph Validation (in English)

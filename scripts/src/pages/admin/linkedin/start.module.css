@@ -1,0 +1,17 @@
+.wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.btnRow {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.75rem;
+}
+
+.helper {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: rgba(0,0,0,.6);
+}

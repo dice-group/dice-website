@@ -1,0 +1,23 @@
+---
+date: '2026-09-03'
+title: 'Gradient-guided Refinement of Synthetic Knowledge Graphs'
+type: 'Master'
+supervisor: dice:AnaAlexandraSilva
+contact: dice:AnaAlexandraSilva
+---
+
+Generating synthetic knowledge graphs (KGs) that mimic the structure of real-world KGs is a key building block for benchmarking the scalability of KG-based systems. LEMMING [1] is an example-based KG generator that first creates an initial mimic graph and then refines it in a graph amendment phase. LEMMING currently optimizes the graph via a trial and error scheme as depicted below:
+
+<Image filename="lemming_optimization.png" />
+
+The core weakness of this scheme is that it offers no guidance. In practice, this leads to the necessity of tens of thousands of iterations, dominating the overall runtime of the generation process.
+A more principled alternative is to treat the refinement as an explicit optimization problem: instead of testing random edits, exploit (approximations of) the partial derivatives of the error function with respect to the graph metrics to determine which metric values should change, in which direction, and by how much — and then derive edit operations on the graph that realize this change. Since the underlying search space is discrete (adding/removing triples), this raises interesting open questions, most prominently: how do we choose the optimization step, i.e., how do we translate a desired change in metric values into concrete edit operations, and how large should each step be?
+The goal of this thesis is to design, implement, and evaluate optimization techniques that guide the graph amendment phase. Possible directions include gradient-based optimization or heuristics that map feature gradients to candidate triples.
+
+### Prerequisites for this thesis
+- Java programming skills 
+- Prior knowledge of RDF and knowledge graphs is helpful but not necessary 
+
+### References
+1. LEMMING [publication](https://papers.dice-research.org/2021/ICSC2021_Lemming/presentation/lemming-public.pdf) and [code](https://github.com/dice-group/Lemming)
+

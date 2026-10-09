@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dicepartner:Leibniz a schema:Partner ;
+  schema:name "Leibniz Universität Hannover" ;
+  schema:country "DE" ;
+  schema:url <https://www.uni-hannover.de/en/> ;
+  schema:kind "Beneficiaries" ;
+  schema:logo "l3s.png" .

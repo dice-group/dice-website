@@ -1,6 +1,18 @@
 const path = require(`path`);
 const { createFilePath } = require('gatsby-source-filesystem');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  createTypes(`
+      type RDFData {
+        image: [String]
+        text: [String]
+        logo: String
+        sameAs: [String]
+      }
+    `);
+};
+
 const renderRdfType = async ({
   template,
   type,
