@@ -73,3 +73,9 @@ yarn-error.log
 # ignore auto-generated papers files
 data/papers/*.ttl
 !data/papers/_Example.ttl
+
+data/rag/
+docs/rag/pipeline.png
+package-lock.json
+package.json
+__MACOSX/
