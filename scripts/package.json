@@ -29,6 +29,7 @@
     "gatsby-transformer-sharp": "^2.11.0",
     "isomorphic-unfetch": "^3.1.0",
     "jsonld": "^5.2.0",
+    "katex": "^0.16.47",
     "lodash": "^4.17.20",
     "n3": "^1.8.0",
     "onnxruntime-node": "^1.30.0",
@@ -44,6 +45,7 @@
     "react-plotly.js": "^2.5.1",
     "react-select": "^3.2.0",
     "react-twitter-embed": "^3.0.3",
+    "remark-math": "^4.0.0",
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import Paper from './papers/paper';
 import PersonInfo from './personInfo';
+import RagAnswer from './RagAnswer';
 import './styles/rag-search.css';
 
 export default function RagSearch() {
@@ -108,7 +109,7 @@ export default function RagSearch() {
         {result && (
           <div className="rag-search-result">
             <h3 className="rag-search-heading">Answer</h3>
-            <div className="rag-search-answer">{result.answer}</div>
+            <RagAnswer answer={result.answer} />
             {result.sources?.length > 0 && (
               <div className="rag-search-sources">
                 <h3 className="rag-search-heading">Sources</h3>

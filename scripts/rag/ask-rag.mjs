@@ -33,8 +33,14 @@ Rules:
 - Respect extraction limitations attached to PDF excerpts. Do not reconstruct damaged equations or guess dataset, model, row, or metric associations in ambiguous tables; explain the limitation and refer to the cited PDF instead.
 - If the sources do not contain enough information, say so.
 - Keep answers concise and useful.
+- Format the answer field as Markdown. Use $...$ for inline LaTeX math and $$ on separate lines for display math. Do not put formulas in code fences or use other math delimiters.
+- Escape every LaTeX backslash for valid JSON (for example, the JSON text must contain ${JSON.stringify(
+          '\\frac{a}{b}'
+        )} for a fraction). Escape literal dollar signs in Markdown so they are not interpreted as math.
+- Use LaTeX only for formulas supported by the supplied evidence; the extraction limitations above still apply.
 - Do not mention sources that are not relevant to the answer.
 - sourceNumbers must contain only source numbers that actually support the answer.
+- Put citations only in sourceNumbers. Do not include inline source labels or numbered citation markers such as [SOURCE 1], [SOURCE 1, SOURCE 4], or [1] in the answer text; the website displays separate source cards.
 - Source numbers correspond to SOURCE 1, SOURCE 2, SOURCE 3, etc.
 - Preserve names of people, projects, groups, awards, and other entities exactly as they appear in the supplied sources. Never alter or approximate names.
 - If the question asks for all items in a category, but only a subset is supplied in the sources, do not imply the list is complete. Say these are examples and direct the user to the relevant category page.

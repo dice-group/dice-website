@@ -97,9 +97,39 @@
 }
 
 .rag-search-answer {
-  white-space: pre-wrap;
+  white-space: normal;
   overflow-wrap: anywhere;
   line-height: 1.75;
+}
+
+.rag-search-answer p,
+.rag-search-answer ul,
+.rag-search-answer ol {
+  margin: 0 0 12px;
+}
+
+.rag-search-answer ul,
+.rag-search-answer ol {
+  padding-left: 24px;
+}
+
+.rag-search-answer ul {
+  list-style: disc;
+}
+
+.rag-search-answer ol {
+  list-style: decimal;
+}
+
+.rag-search-answer .katex-display,
+.rag-search-answer pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+
+.rag-search-answer .katex {
+  overflow-wrap: normal;
 }
 
 .rag-search-sources {
