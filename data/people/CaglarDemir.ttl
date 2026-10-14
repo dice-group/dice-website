@@ -27,17 +27,6 @@ For more, please refer to
 
 * <a href="https://github.com/dice-group/dice-embeddings">DICE Embeddings: Hardware-agnostic Framework for Large-scale Knowledge Graph Embeddings</a>
 * <a href="https://github.com/dice-group/Ontolearn">Ontolearn: Scalable Description Logic Concept Learning Framework</a>
-
-
-## PC Member
-ECML 2023, IJCAI 2024
-
-## Thesis Supervision
-
-#### 2023
-* Enhancing the Capabilities of Large Language Models Using Knowledge Graphs in Finance
-* Multimodal RAG over Knowledge Graph
-* OWL Neural Reasoner
-* Answering Complex Queries with Negations in Incomplete Knowledge Graph
+* <a href="https://github.com/dice-group/owlapy">OWLAPY: Python Framework for Creating and Manipulating OWL Ontologies</a>
 
 """ .

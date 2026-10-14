@@ -1,0 +1,30 @@
+---
+date: '2026-10-09'
+title: 'Improving Search-based OWL Class Expression Learners'
+type: 'Bachelor'
+supervisor: dice:CaglarDemir
+contact: dice:CaglarDemir
+---
+
+# Topic
+Given positive and negative examples, OWL class expression learners search for a class expression that describes the positive examples and excludes the negative ones.
+Search-based learners such as CELOE and [EvoLearner](https://github.com/dice-group/Ontolearn) are inherently explainable, as the learned expression is a first-order logical expression.
+EvoLearner is an evolutionary algorithm that evolves a population of class expressions through crossover and mutation, guided by a fitness function.
+
+Yet, the search remains expensive on large knowledge graphs, and the quality of the learned expressions depends strongly on the initial population, the variation operators, and the fitness function.
+
+In this thesis, the student will investigate how to improve an existing search-based learner such as EvoLearner.
+Possible directions include (but are not limited to)
+* better initialization of the population,
+* new crossover and mutation operators,
+* fitness functions that balance predictive quality and expression length,
+* techniques that preserve diversity in the population to avoid premature convergence,
+* using knowledge graph embeddings (e.g. trained with [dice-embeddings](https://github.com/dice-group/dice-embeddings)) to guide the search.
+
+The proposed improvements will be evaluated against CELOE, EvoLearner, and other learners on benchmark datasets (e.g. Family, Mutagenesis, and Carcinogenesis) in terms of F1 score, expression length, and runtime.
+
+The student will closely work on [ontolearn](https://github.com/dice-group/ontolearn) and [owlapy](https://github.com/dice-group/owlapy).
+
+#### Question & Answer Session
+
+In case you have further questions, feel free to contact [Caglar Demir](https://dice-research.org/CaglarDemir).
