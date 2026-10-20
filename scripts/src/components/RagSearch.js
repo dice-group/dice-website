@@ -40,17 +40,38 @@ export default function RagSearch() {
         }),
       });
 
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        throw new Error(
+          `The RAG server returned an unreadable response (HTTP ${
+            response.status
+          }). ${
+            response.status === 504
+              ? 'The gateway timed out; the failing stage is unknown.'
+              : 'The server or gateway may be unavailable. Please try again later.'
+          }`
+        );
+      }
 
       if (!response.ok) {
-        throw new Error(data.error || 'Request failed');
+        throw new Error(
+          `${
+            data?.error || `The RAG request failed (HTTP ${response.status}).`
+          }${data?.requestId ? ` Request ID: ${data.requestId}` : ''}`
+        );
       }
 
       setResult(data);
     } catch (err) {
       setError(
         err.name === 'AbortError'
-          ? `The request timed out. Check that the API at ${endpoint} is reachable from your browser and try again.`
+          ? 'No answer arrived within 45 seconds. The failing stage is unknown: ' +
+              'search, answer generation, or the connection may be slow. Please try again.'
+          : err instanceof TypeError
+          ? 'Could not connect to the RAG server. Check your connection and try again. ' +
+            'The server may be offline or the browser may have blocked the connection.'
           : err.message
       );
     } finally {

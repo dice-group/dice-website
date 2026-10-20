@@ -7,6 +7,7 @@ import path from 'node:path';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { runRag } from './run-rag.mjs';
+import { RagError, publicRagError } from './errors.mjs';
 
 const PORT = Number(process.env.RAG_PORT || 8787);
 const deployment = process.env.RAG_DEPLOYMENT_ID || 'local';
@@ -73,6 +74,7 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (req.method === 'POST' && req.url === '/api/rag') {
+    const requestId = randomUUID();
     try {
       let body = '';
 
@@ -80,10 +82,19 @@ const server = http.createServer(async (req, res) => {
         body += chunk;
       }
 
-      const data = JSON.parse(body || '{}');
+      let data;
+      try {
+        data = JSON.parse(body || '{}');
+      } catch {
+        throw new RagError(
+          'INVALID_REQUEST',
+          'The request must contain valid JSON.',
+          400
+        );
+      }
 
       const question =
-        typeof data.question === 'string' ? data.question.trim() : '';
+        typeof data?.question === 'string' ? data.question.trim() : '';
 
       if (!question) {
         sendJson(res, 400, {
@@ -99,11 +110,9 @@ const server = http.createServer(async (req, res) => {
 
       sendJson(res, 200, result);
     } catch (error) {
-      console.error(error);
-
-      sendJson(res, 500, {
-        error: 'RAG request failed',
-      });
+      console.error(`RAG request ${requestId} failed:`, error);
+      const failure = publicRagError(error, requestId);
+      sendJson(res, failure.status, failure.body);
     }
 
     return;

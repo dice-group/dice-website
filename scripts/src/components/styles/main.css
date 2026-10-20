@@ -686,6 +686,23 @@ a {
 
 .papers-filter {
   height: 60px;
+  background-color: #fff;
+}
+
+.papers-filter:focus {
+  border-color: var(--primary-color);
+  outline: 1px solid var(--primary-color);
+  outline-offset: 0;
+}
+
+.papers-filter:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #000;
+}
+
+.papers-filter:autofill {
+  box-shadow: 0 0 0 1000px #fff inset;
+  color: #000;
 }
 
 .papers-facets {

@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { env, pipeline } from '@huggingface/transformers';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { askLlm } from './ask-rag.mjs';
+import { ragStage } from './errors.mjs';
 import { EMBEDDING_MODEL, EMBEDDING_OPTIONS } from './embedding-config.mjs';
 
 const MODEL = EMBEDDING_MODEL;
@@ -596,10 +597,17 @@ const extractor = await pipeline(
   EMBEDDING_OPTIONS
 );
 
-const qdrant = new QdrantClient({
+const qdrantClient = new QdrantClient({
   url: QDRANT_URL,
   apiKey: process.env.QDRANT_API_KEY,
 });
+
+const qdrant = Object.fromEntries(
+  ['query', 'scroll'].map(method => [
+    method,
+    (...args) => ragStage('retrieval', () => qdrantClient[method](...args)),
+  ])
+);
 
 async function runBroadCategoryQuery(question, kind) {
   const response = await qdrant.scroll(COLLECTION, {
@@ -749,10 +757,12 @@ export async function runRag(question) {
     return runBroadCategoryQuery(question, kind);
   }
 
-  const tensor = await extractor(question, {
-    pooling: 'mean',
-    normalize: true,
-  });
+  const tensor = await ragStage('embedding', () =>
+    extractor(question, {
+      pooling: 'mean',
+      normalize: true,
+    })
+  );
 
   const queryVector = tensor.tolist()[0];
 

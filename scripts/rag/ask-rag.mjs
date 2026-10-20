@@ -1,7 +1,11 @@
 import 'dotenv/config';
 import OpenAI from 'openai';
+import { RagError, ragStage } from './errors.mjs';
 
 const client = new OpenAI({
+  // Return a useful provider timeout before the browser's 45-second deadline.
+  timeout: 30000,
+  maxRetries: 0,
   apiKey: process.env.DICE_LLM_API_KEY || process.env.LLM_API_KEY,
   baseURL:
     process.env.DICE_LLM_BASE_URL ||
@@ -12,6 +16,10 @@ const client = new OpenAI({
 const MODEL = process.env.LLM_MODEL || 'general-purpose';
 
 export async function askLlm(question, context) {
+  return ragStage('llm', () => generateAnswer(question, context));
+}
+
+async function generateAnswer(question, context) {
   const response = await client.chat.completions.create({
     model: MODEL,
 
@@ -61,11 +69,14 @@ ${context}
 
   const choice = response.choices?.[0];
   if (choice?.finish_reason && choice.finish_reason !== 'stop') {
-    throw new Error('LLM response was incomplete. Please try again.');
+    throw new RagError(
+      'LLM_INCOMPLETE',
+      'LLM response was incomplete. Please try again.'
+    );
   }
   const content = choice?.message?.content;
   if (typeof content !== 'string' || !content.trim()) {
-    throw new Error('LLM returned an empty answer.');
+    throw new RagError('LLM_EMPTY', 'LLM returned an empty answer.');
   }
   // Some compatible models add a JSON fence despite the output instructions.
   const json = content
@@ -75,7 +86,10 @@ ${context}
   try {
     result = JSON.parse(json);
   } catch {
-    throw new Error('LLM returned invalid answer JSON. Please try again.');
+    throw new RagError(
+      'LLM_INVALID_JSON',
+      'LLM returned invalid answer JSON. Please try again.'
+    );
   }
   if (
     !result ||
@@ -86,7 +100,10 @@ ${context}
       number => Number.isInteger(number) && number > 0
     )
   ) {
-    throw new Error('LLM returned an invalid answer format. Please try again.');
+    throw new RagError(
+      'LLM_INVALID_FORMAT',
+      'LLM returned an invalid answer format. Please try again.'
+    );
   }
   return {
     answer: result.answer,
