@@ -9,4 +9,5 @@ dice:AlexanderBecker a schema:Person ;
   schema:role dice:ResearchStaff ;
   schema:chat "@beckeral:matrix.org" ;
   schema:office "FU.335" ;
+  schema:photo "becker.jpg" ;
   schema:email <mailto:beckeral@campus.uni-paderborn.de> .
