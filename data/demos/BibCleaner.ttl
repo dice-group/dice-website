@@ -1,0 +1,21 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:BibCleaner a schema:Demo ;
+  schema:name "BibCleaner" ;
+  schema:tagline "Clean, normalize, and enrich BibTeX bibliographies" ;
+  schema:content """
+BibCleaner is an open-source tool for preparing research bibliographies. Paste BibTeX or upload a `.bib` file, choose the cleaning options, and download the result.
+
+It can resolve arXiv preprints to published conference or journal records, expand incomplete author lists, and normalize venue names. Additional options protect title capitalization, merge duplicates, normalize citation keys, and validate bibliography entries. Matches with low confidence are flagged for verification rather than silently applied.
+
+The web interface processes bibliographies through a background job and displays the cleaned BibTeX alongside validation results. Metadata enrichment consults scholarly services including arXiv, DBLP, Crossref, Semantic Scholar, and OpenAlex. To try the interface locally, follow the [Docker Compose instructions](https://github.com/dice-group/BibCleaner#frontend-with-docker-compose).
+
+BibCleaner is also available as a command-line tool and Python library. See the source repository for installation instructions and details.
+""" ;
+  schema:screenshot "bibcleaner-ui.png" ;
+  schema:logo "bibcleaner-logo.png" ;
+  schema:homepage <https://bibcleaner.demos.dice-research.org/> ;
+  schema:sourceCode <https://github.com/dice-group/BibCleaner> ;
+  schema:maintainer dice:HamadaMZahera ;
+  schema:developer dice:ItaloOliveira .
