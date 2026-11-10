@@ -17,5 +17,5 @@ dice:ReneSpeck a schema:Person ;
   schema:chat "@rspeck:chat.dice-research.org" ;
   schema:office "F1.301" ;
   schema:photo "speck.jpg" ;
-  schema:project dice:SCMS, dice:BioASQ, dice:DIESEL, dice:GEISER, dice:SAIM, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI ;
+  schema:project dice:SCMS, dice:BioASQ, dice:DIESEL, dice:GEISER, dice:SAIM, dice:HOBBIT, dice:Qamel, dice:Gerbil, dice:RAKI, dice:COLIDE, dice:ikds ;
   schema:content """""" .
