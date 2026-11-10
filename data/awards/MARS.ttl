@@ -1,0 +1,10 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:MARS a schema:Award ;
+  schema:url <https://www.linkedin.com/posts/dice-research_diceontour-ekaw2026-knowledgegraphs-activity-7515692460270927872-xloC> ;
+  schema:name "MARS: Multi-hop Adaptive Retrieval and SPARQL Generation for KGQA" ;
+  schema:content "Best Paper nomination at EKAW 2026" ;
+  schema:year "2026";
+  schema:awardee dice:NikitSrivastava, dice:DanielVollmers,  dice:ReneSpeck ,  dice:HamadaMZahera, dice:AxelCyrilleNgongaNgomo  .
+  
