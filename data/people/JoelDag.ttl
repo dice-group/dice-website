@@ -1,0 +1,12 @@
+@prefix dice: <https://dice-research.org/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:JoelDag a schema:Person ;
+  schema:name "Joel Dag" ;
+  schema:namePrefix "" ;
+  schema:role dice:StudentResearcher ;
+  schema:email <mailto:joeldag@mail.uni-paderborn.de> ;
+  schema:chat "@joeldag:chat.dice-research.org" ;
+  schema:photo "JoelDag.jpg" ;
+  schema:publicationTag "dag" ;
+  schema:project dice:TRR318_2 .

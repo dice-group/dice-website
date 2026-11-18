@@ -15,7 +15,7 @@ dice:TRR318 a dice:FundedProject ;
 Der TRR ist in drei Bereiche gegliedert: A "Explaining", B "Social practice", C "Representing and computing explanations". Die Bereiche wiederum gliedern sich in interdisziplinäre Teilprojekte, an denen insgesamt 21 Projektleiter:innen aus der Linguistik, Psychologie, Medienwissenschaft, Soziologie, Wirtschaftswissenschaft und Informatik der Universitäten Bielefeld und Paderborn beteiligt sind.
   """ ;
   schema:maintainer dice:AxelCyrilleNgongaNgomo ;
-  schema:name "TRR 318" ;
+  schema:name "TRR 318 (Phase 1)" ;
   schema:fundingProgram "Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/1 2021 – 438445824" ;
   schema:homepage <https://trr318.uni-paderborn.de/> ;
   schema:logo "trr318.png" ;

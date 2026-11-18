@@ -1,0 +1,30 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dice: <https://dice-research.org/> .
+@prefix dicepartner: <https://dice-research.org/partner/> .
+@prefix dicefunding: <https://dice-research.org/funding/> .
+@prefix schema: <https://schema.dice-research.org/> .
+
+dice:TRR318_2 a dice:FundedProject ;
+  schema:tagline "TRR 318 \"Constructing Explainability\"";
+  schema:status "active" ;
+  schema:content """ """ ;
+  schema:endDate "2029-06-30"^^xsd:date ;
+  schema:startDate "2026-01-01"^^xsd:date ;
+  schema:content """
+The scope of the EU right to explanation has fueled the need to improve eXplainable Artificial Intelligence capacities aiming at strengthening the rights of individuals affected by AI-based recommendations. Among other purposes, explanations serve the right to contest an AI output and protect humans from being left out of control. However, explanations can only be functional if they are relevant. Yet, the current state of the art in XAI, is criticized for being driven by the requirements of developers rather than those of users (explainees). A key challenge is, thus, to make an explanation relevant for a particular explainee.
+
+For the first funding period, TRR 318 proposed taking co-constructive interaction as an approach in XAI. We carried out theoretical and empirical basic research to understand the explanation processes and the involvement of explainees in human–human and human–AI interactions. We obtained insights into how explanatory dialogs are structured and unfold, and how users can be modeled to adapt explanations. Building on these insights, we have developed first XAI systems that involve the users: These interact co-constructively and adapt the explanation process incrementally. We further asked whether and in what situations users care about understanding AI’s function and outputs. Our results show that users’ explanatory needs are diverse and change dynamically.
+
+Our research on the explainees’ active involvement in the explanation process and the relevant social aspects builds a strong foundation for the paradigm of sXAI (social XAI). We position ourselves as pushing explainable AI toward the development of explaining AI systems that provide an environment – a context that emerges during interaction – in which users can exercise their agency and build knowledge.
+
+For the second funding period, we recognize that explanations need to be assessed within the context of explaining. Therefore, we will focus on the relevance of explanations and endow explaining algorithms with the ability to proactively and jointly construct a shared context and establish the relevant factors together with the explainee. Our innovative proposal is that the context itself is co-constructed as part of the interaction. Driven by AI’s growing ubiquity, our aim is to develop context-aware XAI systems that can co-construct the relevant context incrementally with the user both in and from an interaction. Therefore, we are extending our sXAI approach with a systematization into four types of contexts guiding us toward more relevant, flexible, and versatile XAI applications in contrast to current technology.
+
+In the long term, we envision investigating autonomous co-constructive XAI in the real world to gain insights into how human interlocutors (co-)adapt their behavior in co-constructive sociotechnical settings, thereby generating novel practices. These insights will complement our theoretical work concerned with a critical reflection on co-construction as a process.
+  """ ;
+  schema:maintainer dice:AxelCyrilleNgongaNgomo ;
+  schema:name "TRR 318 (Phase 2)" ;
+  schema:fundingProgram "Deutsche Forschungsgemeinschaft (DFG, German Research Foundation): TRR 318/3 2026 – 438445824" ;
+  schema:homepage <https://trr318.uni-paderborn.de/> ;
+  schema:logo "trr318.png" ;
+  schema:publicationTag "trr318" ; 
+  schema:partner dicepartner:UBI, dicepartner:LUH .
