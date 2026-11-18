@@ -10,11 +10,11 @@ dice:ItaloOliveira a schema:Person ;
   schema:namePrefix "Dr." ;
   schema:familyName "Oliveira" ;
   schema:role dice:SeniorResearcher ;
-  schema:phone <tel:> ;
+  schema:phone <tel:+49-5251-605186> ;
   schema:fax <tel:> ;
   schema:email <mailto:italo.lopes.oliveira@uni-paderborn.de> ;
   schema:chat "@italo:chat.dice-research.org" ;
-  schema:office "FU.335" ;
+  schema:office "FU.329" ;
   schema:photo "italo.jpg" ;
   schema:project dice:SAIL ;
   schema:content """
