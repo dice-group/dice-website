@@ -10,11 +10,26 @@ dice:LOLA a dice:ProductionReadyProject ;
   schema:content """
 <p>LOLA is a massively multilingual large language model trained on more than 160 languages using a sparse Mixture-of-Experts Transformer architecture. Our architecture addresses the challenge of harnessing linguistic diversity efficiently while avoiding the common pitfalls of multilinguality. LOLA demonstrates competitive performance in natural language generation and understanding tasks. Its expert-routing mechanism leverages implicit phylogenetic linguistic patterns, potentially alleviating <em>the curse of multilinguality</em>. As an open-source model, LOLA promotes reproducibility and serves as a robust foundation for future research. Our findings pave the way for compute-efficient multilingual models with scalable, strong performance across languages.</p>
 
-<p>To learn more about LOLA, read our preprint: <a href="https://arxiv.org/abs/2409.11272" target="_blank">https://arxiv.org/abs/2409.11272</a></p>
+<p>To learn more about LOLA, read our <a href="https://aclanthology.org/2025.coling-main.428/" target="_blank" rel="noopener noreferrer">paper</a>, or <a href="https://arxiv.org/abs/2409.11272" target="_blank" rel="noopener noreferrer">preprint</a>.</p>
+
+<h3>Towards LOLA 2</h3>
+
+<p>Our next goal is to scale LOLA to <strong>1,000 languages with LOLA 2</strong>, taking another step toward truly inclusive multilingual language models. As part of this journey, we are exploring how to efficiently scale Mixture-of-Experts architectures across an increasing number of languages and how to improve multilingual adaptation. Our recent research provides important steps toward this goal:</p>
+
+<ul>
+  <li><a href="https://arxiv.org/abs/2611.23158" target="_blank" rel="noopener noreferrer">MoE–LoRA Methods for Multilingual Adaptation: A Systematic Empirical Study</a></li>
+  <li><a href="https://arxiv.org/abs/2610.20247" target="_blank" rel="noopener noreferrer">Scaling Multilingual Mixture-of-Experts: How Language Coverage Changes Capacity and Compute Allocation</a></li>
+</ul>
 
 <h3>Resources</h3>
-<p>HuggingFace: <a href="https://huggingface.co/dice-research/lola_v1" target="_blank">hf.co/dice-research/lola_v1</a></p>
-<p>GitHub: <a href="https://github.com/dice-group/LOLA" target="_blank">github.com/dice-group/LOLA</a></p>
+
+<p>HuggingFace: <a href="https://huggingface.co/dice-research/lola_v1" target="_blank" rel="noopener noreferrer">hf.co/dice-research/lola_v1</a></p>
+
+<p>GitHub: <a href="https://github.com/dice-group/LOLA" target="_blank" rel="noopener noreferrer">github.com/dice-group/LOLA</a></p>
+
+<hr>
+
+<p><strong>Interested in collaborating?</strong> If you would like to contribute to LOLA 2 or explore research collaborations, we would love to hear from you. You can write an email to: <a href="mailto:nikit.srivastava+lola@uni-paderborn.de">nikit.srivastava+lola@uni-paderborn.de</a>.</p>
 """ ;
 #  schema:endDate "2021-07-31"^^xsd:date ;
   schema:startDate "2022-10-01"^^xsd:date ;
