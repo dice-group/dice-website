@@ -10,7 +10,7 @@ dice:Amgad a schema:Person ;
   schema:familyName "Abdulmaqsod" ;
   schema:namePrefix "" ;
   schema:role dice:ResearchStaff ;
-  schema:phone <tel:+49-170-88-68456> ;
+  schema:phone <tel:> ;
   schema:email <mailto:amgad.mahmoud@uni-paderborn.de> ;
   schema:chat "@amgadkratos:chat.dice-research.org" ;
   schema:office "FU.338" ;
